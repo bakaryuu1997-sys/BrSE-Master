@@ -1,0 +1,14 @@
+# GPU-only Speech-to-Text extras (Phase 3: WhisperX + pyannote diarization).
+#
+# Do NOT install these in the default python:3.12-slim CPU image — they are
+# large (torch CUDA ~2GB) and only useful on a GPU host. Install on the GPU box:
+#
+#   pip install -r requirements.txt -r requirements-gpu.txt
+#
+# Then set in .env: STT_ENGINE=whisperx, STT_DIARIZATION=true, HUGGINGFACE_TOKEN=hf_...
+# See docs/reviews/STT-PHASE3-WHISPERX-PLAN.md for full enablement + verification.
+
+# Install the CUDA build of torch that matches your driver (see pytorch.org).
+torch>=2.1
+whisperx>=3.1
+pyannote.audio>=3.1

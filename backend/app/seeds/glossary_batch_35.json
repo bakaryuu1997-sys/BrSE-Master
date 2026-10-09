@@ -1,0 +1,752 @@
+[
+  {
+    "id": "web3-cold-wallet",
+    "english": "Cold Wallet",
+    "japanese": "コールドウォレット",
+    "kana": "こーるどうぉれっと",
+    "vietnamese": "Ví lạnh",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Ví không kết nối internet, bảo mật cao.",
+    "example": "資産の大部分をコールドウォレットで保管。"
+  },
+  {
+    "id": "web3-consensus",
+    "english": "Consensus / Consensus Mechanism",
+    "japanese": "コンセンサス / 合意形成",
+    "kana": "こんせんさす",
+    "vietnamese": "Cơ chế đồng thuận",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Cách thức các nút trong mạng đạt được sự thống nhất.",
+    "example": "合意形成アルゴリズムを選択します。"
+  },
+  {
+    "id": "web3-consortium-blockchain",
+    "english": "Consortium Blockchain",
+    "japanese": "コンソーシアム型ブロックチェーン",
+    "kana": "こんそーしあむがた",
+    "vietnamese": "Blockchain liên hợp",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mạng blockchain dành cho một nhóm tổ chức.",
+    "example": "銀行間でコンソーシアムを組む。"
+  },
+  {
+    "id": "web3-dao",
+    "english": "DAO / Decentralized Autonomous Organization",
+    "japanese": "DAO / 自律分散型組織",
+    "kana": "だお",
+    "vietnamese": "Tổ chức tự trị phi tập trung / DAO",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tổ chức hoạt động dựa trên mã nguồn và smart contract.",
+    "example": "DAOの投票に参加します。"
+  },
+  {
+    "id": "web3-dapp",
+    "english": "DApp / Decentralized Application",
+    "japanese": "分散型アプリケーション / DApp",
+    "kana": "だっぷ",
+    "vietnamese": "Ứng dụng phi tập trung / DApp",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Ứng dụng chạy trên hệ thống mạng ngang hàng.",
+    "example": "新しいDAppを開発しています。"
+  },
+  {
+    "id": "web3-decentralization",
+    "english": "Decentralization",
+    "japanese": "非中央集権 / 分散化",
+    "kana": "ひちゅうおうしゅうけん",
+    "vietnamese": "Phi tập trung hóa",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Sự phân tán quyền lực và quản lý ra khỏi trung tâm.",
+    "example": "システムの非中央集権化を目指します。"
+  },
+  {
+    "id": "web3-defi",
+    "english": "DeFi / Decentralized Finance",
+    "japanese": "分散型金融 / DeFi",
+    "kana": "でぃーふぁい",
+    "vietnamese": "Tài chính phi tập trung / DeFi",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Dịch vụ tài chính không cần trung gian ngân hàng.",
+    "example": "DeFiプロトコルで運用します。"
+  },
+  {
+    "id": "web3-delegation",
+    "english": "Delegation",
+    "japanese": "デリゲーション / 委任",
+    "kana": "でりげーしょん",
+    "vietnamese": "Ủy quyền / Delegation",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giao quyền staking cho một validator khác.",
+    "example": "バリデーターにステークを委任。"
+  },
+  {
+    "id": "web3-dex",
+    "english": "DEX / Decentralized Exchange",
+    "japanese": "分散型取引所 / DEX",
+    "kana": "でっくす",
+    "vietnamese": "Sàn giao dịch phi tập trung / DEX",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Nơi mua bán tiền ảo trực tiếp giữa người dùng.",
+    "example": "DEXでスワップを行います。"
+  },
+  {
+    "id": "web3-difficulty",
+    "english": "Difficulty / Mining Difficulty",
+    "japanese": "難易度 / ディフィカルティ",
+    "kana": "なんいど",
+    "vietnamese": "Độ khó khai thác",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mức độ phức tạp để tìm ra khối mới.",
+    "example": "ビットコインの難易度調整。"
+  },
+  {
+    "id": "web3-double-spending",
+    "english": "Double Spending",
+    "japanese": "二重支払い",
+    "kana": "にじゅうしはらい",
+    "vietnamese": "Chi tiêu gấp đôi",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giao dịch lận khi dùng cùng một số tiền hai lần.",
+    "example": "ブロックチェーンで二重支払いを防止。"
+  },
+  {
+    "id": "web3-erc-1155",
+    "english": "ERC-1155",
+    "japanese": "ERC-1155",
+    "kana": "いーあーるしーせんひゃくごじゅうご",
+    "vietnamese": "Tiêu chuẩn ERC-1155",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tiêu chuẩn cho cả token thay thế và không thay thế.",
+    "example": "ERC-1155で複数のアイテムを一括管理。"
+  },
+  {
+    "id": "web3-erc-20",
+    "english": "ERC-20",
+    "japanese": "ERC-20",
+    "kana": "いーあーるしーにじゅう",
+    "vietnamese": "Tiêu chuẩn ERC-20",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tiêu chuẩn cho token có thể thay thế trên Ethereum.",
+    "example": "ERC-20準拠のトークンを作成。"
+  },
+  {
+    "id": "web3-erc-721",
+    "english": "ERC-721",
+    "japanese": "ERC-721",
+    "kana": "いーあーるしーななひゃくにじゅういち",
+    "vietnamese": "Tiêu chuẩn ERC-721",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tiêu chuẩn cho NFT trên Ethereum.",
+    "example": "ERC-721で唯一無二のデジタル資産。"
+  },
+  {
+    "id": "web3-ethereum",
+    "english": "Ethereum",
+    "japanese": "イーサリアム / Ethereum",
+    "kana": "いーさりあむ",
+    "vietnamese": "Mạng Ethereum",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Nền tảng blockchain phổ biến nhất cho Smart Contracts.",
+    "example": "イーサリアム上でトークンを発行します。"
+  },
+  {
+    "id": "web3-evm",
+    "english": "EVM / Ethereum Virtual Machine",
+    "japanese": "EVM / イーサリアム仮想マシン",
+    "kana": "いーぶいえむ",
+    "vietnamese": "Máy ảo Ethereum / EVM",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Môi trường thực thi code trên Ethereum.",
+    "example": "EVM互換のチェーンを開発。"
+  },
+  {
+    "id": "web3-exploit",
+    "english": "Exploit",
+    "japanese": "脆弱性攻撃 / エクスプロイト",
+    "kana": "えくすぷろいと",
+    "vietnamese": "Khai thác lỗ hổng / Exploit",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tận dụng lỗi mã nguồn để đánh cắp tài sản.",
+    "example": "ブリッジの脆弱性がエクスプロイトされた。"
+  },
+  {
+    "id": "web3-fomo",
+    "english": "FOMO",
+    "japanese": "FOMO / 取り残される恐怖",
+    "kana": "ふぉも",
+    "vietnamese": "Hội chứng sợ bỏ lỡ / FOMO",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tâm lý sợ lỡ cơ hội khi giá đang tăng.",
+    "example": "FOMOで高値掴みをしないように。"
+  },
+  {
+    "id": "web3-fork",
+    "english": "Fork / Forks",
+    "japanese": "フォーク / 分岐",
+    "kana": "ふぉーく",
+    "vietnamese": "Sự phân tách / Fork",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thay đổi trong giao thức dẫn đến chia tách chuỗi.",
+    "example": "ハードフォークが実施されました。"
+  },
+  {
+    "id": "web3-fud",
+    "english": "FUD",
+    "japanese": "FUD / 恐怖・不確実性・疑惑",
+    "kana": "ふぁど",
+    "vietnamese": "Tin đồn tiêu cực / FUD",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thông tin gây sợ hãi để hạ giá thị trường.",
+    "example": "SNSのFUDに惑わされない。"
+  },
+  {
+    "id": "web3-gas-fee",
+    "english": "Gas Fee / Gas Fees",
+    "japanese": "ガス代 / ガス料金",
+    "kana": "がすだい",
+    "vietnamese": "Phí gas / Phí giao dịch",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chi phí để thực hiện giao dịch trên mạng blockchain.",
+    "example": "ガス代が高騰しています。"
+  },
+  {
+    "id": "web3-gas-limit",
+    "english": "Gas Limit",
+    "japanese": "ガスリミット / ガス限度額",
+    "kana": "がすりみっと",
+    "vietnamese": "Giới hạn Gas",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Lượng gas tối đa cho phép trong một giao dịch.",
+    "example": "ガスリミットが低すぎて失敗。"
+  },
+  {
+    "id": "web3-genesis-block",
+    "english": "Genesis Block",
+    "japanese": "ジェネシスブロック / 最初のブロック",
+    "kana": "じぇねしすぶろっく",
+    "vietnamese": "Khối khởi nguyên",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Khối đầu tiên của một chuỗi blockchain.",
+    "example": "ジェネシスブロックにはメッセージが刻まれています。"
+  },
+  {
+    "id": "web3-governance-token",
+    "english": "Governance Token",
+    "japanese": "ガバナンストークン",
+    "kana": "がばなんすとーくん",
+    "vietnamese": "Token quản trị",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Token dùng để bỏ phiếu cho các quyết định của dự án.",
+    "example": "ガバナンストークンを保有。"
+  },
+  {
+    "id": "web3-halving",
+    "english": "Halving",
+    "japanese": "半減期",
+    "kana": "はんげんき",
+    "vietnamese": "Sự kiện chia đôi / Halving",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giai đoạn giảm một nửa phần thưởng khối (BTC).",
+    "example": "半減期後の価格動向。"
+  },
+  {
+    "id": "web3-hard-fork",
+    "english": "Hard Fork",
+    "japanese": "ハードフォーク",
+    "kana": "はーどふぉーく",
+    "vietnamese": "Phân tách cứng / Hard Fork",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Sự thay đổi không tương thích ngược.",
+    "example": "旧チェーンとの互換性がなくなります。"
+  },
+  {
+    "id": "web3-hash",
+    "english": "Hash / Hashes",
+    "japanese": "ハッシュ値",
+    "kana": "はっしゅち",
+    "vietnamese": "Mã băm / Hash",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chuỗi ký tự duy nhất tạo ra từ dữ liệu đầu vào.",
+    "example": "トランザクションハッシュを確認します。"
+  },
+  {
+    "id": "web3-hodl",
+    "english": "HODL",
+    "japanese": "HODL / ホドル",
+    "kana": "ほどる",
+    "vietnamese": "Nắm giữ dài hạn / HODL",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giữ tiền ảo lâu dài bất chấp biến động giá.",
+    "example": "一度買ったらHODL。"
+  },
+  {
+    "id": "web3-hot-wallet",
+    "english": "Hot Wallet",
+    "japanese": "ホットウォレット",
+    "kana": "ほっとうぉれっと",
+    "vietnamese": "Ví nóng",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Ví kết nối internet, tiện cho giao dịch nhanh.",
+    "example": "ホットウォレットには少額のみ残します。"
+  },
+  {
+    "id": "web3-hyperledger-fabric",
+    "english": "Hyperledger Fabric",
+    "japanese": "ハイパーレジャーファブリック",
+    "kana": "はいぱーれじゃーふぁぶりっく",
+    "vietnamese": "Hyperledger Fabric",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Nền tảng blockchain doanh nghiệp của Linux Foundation.",
+    "example": "Hyperledgerでプライベートチェーン構築。"
+  },
+  {
+    "id": "web3-ico",
+    "english": "ICO / Initial Coin Offering",
+    "japanese": "ICO / イニシャル・コイン・オファリング",
+    "kana": "あいしーおー",
+    "vietnamese": "Chào bán coin lần đầu / ICO",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hình thức huy động vốn bằng cách bán token.",
+    "example": "多くのICOが実施されました。"
+  },
+  {
+    "id": "web3-ido",
+    "english": "IDO / Initial DEX Offering",
+    "japanese": "IDO",
+    "kana": "あいでぃーおー",
+    "vietnamese": "Chào bán trên sàn phi tập trung / IDO",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Huy động vốn trên các nền tảng DEX.",
+    "example": "IDOに参加するための抽選。"
+  },
+  {
+    "id": "web3-ieo",
+    "english": "IEO / Initial Exchange Offering",
+    "japanese": "IEO",
+    "kana": "あいいーおー",
+    "vietnamese": "Chào bán trên sàn / IEO",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Huy động vốn thông qua một sàn giao dịch.",
+    "example": "取引所が審査を行うIEO。"
+  },
+  {
+    "id": "web3-immutable",
+    "english": "Immutable / Immutability",
+    "japanese": "不変性",
+    "kana": "ふへんせい",
+    "vietnamese": "Tính không thể thay đổi",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Dữ liệu đã ghi lên blockchain không thể sửa.",
+    "example": "データの不変性が信頼の源。"
+  },
+  {
+    "id": "web3-interoperability",
+    "english": "Interoperability",
+    "japanese": "相互運用性",
+    "kana": "そうごうんようせい",
+    "vietnamese": "Khả năng tương tác",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Khả năng các blockchain khác nhau làm việc cùng nhau.",
+    "example": "ブロックチェーン間の相互運用性を高める。"
+  },
+  {
+    "id": "web3-ipfs",
+    "english": "IPFS / InterPlanetary File System",
+    "japanese": "IPFS / 分散型ファイルシステム",
+    "kana": "あいぴーえふえす",
+    "vietnamese": "Hệ thống lưu trữ phi tập trung IPFS",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giao thức lưu trữ tệp tin phân tán.",
+    "example": "画像をIPFSにアップロード。"
+  },
+  {
+    "id": "web3-layer-1",
+    "english": "Layer 1",
+    "japanese": "レイヤー1",
+    "kana": "れいやーわん",
+    "vietnamese": "Lớp 1 / Layer 1",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Lớp blockchain cơ sở (như BTC, ETH).",
+    "example": "レイヤー1のスケーラビリティ問題。"
+  },
+  {
+    "id": "web3-layer-2",
+    "english": "Layer 2",
+    "japanese": "レイヤー2 / セカンドレイヤー",
+    "kana": "れいやーつー",
+    "vietnamese": "Lớp 2 / Layer 2",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giải pháp xây dựng trên Layer 1 để tăng tốc độ.",
+    "example": "Layer 2ソリューションでガス代を節約。"
+  },
+  {
+    "id": "web3-liquidity-mining",
+    "english": "Liquidity Mining",
+    "japanese": "流動性マイニング",
+    "kana": "りゅうどうせいまいにんぐ",
+    "vietnamese": "Khai thác thanh khoản",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kiếm lợi nhuận từ việc cung cấp thanh khoản cho sàn DEX.",
+    "example": "流動性マイニングで報酬を得る。"
+  },
+  {
+    "id": "web3-liquidity-pool",
+    "english": "Liquidity Pool",
+    "japanese": "流動性プール",
+    "kana": "りゅうどうせいぷーる",
+    "vietnamese": "Bể thanh khoản / Liquidity Pool",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tập hợp các token được khóa để hỗ trợ giao dịch.",
+    "example": "流動性プールに資金を提供します。"
+  },
+  {
+    "id": "web3-mainnet",
+    "english": "Mainnet",
+    "japanese": "メインネット",
+    "kana": "めいんねっと",
+    "vietnamese": "Mạng chính thức / Mainnet",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Phiên bản blockchain thực tế nơi giao dịch có giá trị.",
+    "example": "メインネットへの移行が完了しました。"
+  },
+  {
+    "id": "web3-metadata",
+    "english": "Metadata",
+    "japanese": "メタデータ",
+    "kana": "めたでーた",
+    "vietnamese": "Siêu dữ liệu",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Dữ liệu mô tả thông tin của tài sản (như tên NFT).",
+    "example": "IPFSにメタデータを保存。"
+  },
+  {
+    "id": "web3-metaverse",
+    "english": "Metaverse",
+    "japanese": "メタバース",
+    "kana": "めたばーす",
+    "vietnamese": "Vũ trụ ảo / Metaverse",
+    "roles": [
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Không gian ảo nơi mọi người tương tác như thực.",
+    "example": "メタバースでのビジネス展開。"
+  },
+  {
+    "id": "web3-miner",
+    "english": "Miner / Miners",
+    "japanese": "マイナー / 採掘者",
+    "kana": "まいなー",
+    "vietnamese": "Thợ đào / Miner",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Người giải mã toán học để tạo khối mới (PoW).",
+    "example": "マイナーによる攻撃のリスク。"
+  },
+  {
+    "id": "web3-mining",
+    "english": "Mining",
+    "japanese": "マイニング / 採掘",
+    "kana": "まいにんぐ",
+    "vietnamese": "Khai thác / Đào coin",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quá trình xác thực giao dịch trong PoW.",
+    "example": "マイニングの難易度が上がりました。"
+  },
+  {
+    "id": "web3-minting",
+    "english": "Minting",
+    "japanese": "ミント / 鋳造",
+    "kana": "みんと",
+    "vietnamese": "Đúc Token",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quá trình tạo ra token mới (thường là NFT).",
+    "example": "NFTをミントしました。"
+  },
+  {
+    "id": "web3-nft",
+    "english": "NFT / Non-Fungible Token",
+    "japanese": "非代替性トークン / NFT",
+    "kana": "えぬえふてぃー",
+    "vietnamese": "Token không thể thay thế / NFT",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tài sản kỹ thuật số duy nhất, không thể sao chép.",
+    "example": "NFTをマーケットプレイスに出品します。"
+  },
+  {
+    "id": "web3-node",
+    "english": "Node / Nodes",
+    "japanese": "ノード",
+    "kana": "のーど",
+    "vietnamese": "Nút mạng / Node",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Máy tính tham gia vào mạng lưới blockchain.",
+    "example": "フルノードを立ち上げます。"
+  },
+  {
+    "id": "web3-nonce",
+    "english": "Nonce",
+    "japanese": "ナンス / 使い捨ての数字",
+    "kana": "なんす",
+    "vietnamese": "Số Nonce",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Số dùng một lần trong khai thác khối hoặc giao dịch.",
+    "example": "正解のナンスを見つける作業。"
+  },
+  {
+    "id": "web3-oracle",
+    "english": "Oracle / Oracles",
+    "japanese": "オラクル",
+    "kana": "おらくる",
+    "vietnamese": "Nguồn dữ liệu / Oracle",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Dịch vụ đưa dữ liệu ngoài thực tế vào blockchain.",
+    "example": "オラクルを介して株価情報を取得。"
+  }
+]

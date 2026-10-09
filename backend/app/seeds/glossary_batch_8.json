@@ -1,0 +1,703 @@
+[
+  {
+    "id": "se-oidc",
+    "english": "OIDC / OpenID Connect",
+    "japanese": "オープンアイディーコネクト",
+    "kana": "オープンアイディーコネクト",
+    "vietnamese": "Giao thức định danh OpenID Connect / OIDC",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Security",
+    "note": "Lớp định danh nằm trên giao thức OAuth 2.0.",
+    "example": "OIDC allows applications to verify the identity of the end-user."
+  },
+  {
+    "id": "se-patch-management",
+    "english": "Patch Management",
+    "japanese": "パッチ管理",
+    "kana": "パッチかんり",
+    "vietnamese": "Quản lý bản vá lỗi",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Security",
+    "note": "Quy trình cập nhật các bản vá lỗi cho phần mềm và hệ điều hành.",
+    "example": "Regular patch management is essential to protect against zero-day attacks."
+  },
+  {
+    "id": "se-penetration-testing",
+    "english": "Penetration Testing / Pentest",
+    "japanese": "侵入テスト / ペネトレーションテスト",
+    "kana": "しんにゅうテスト / ペネトレーションテスト",
+    "vietnamese": "Kiểm thử xâm nhập / Pentest",
+    "roles": [
+      "Dev",
+      "QA"
+    ],
+    "category": "Security",
+    "note": "Mô phỏng tấn công mạng để tìm ra các lỗ hổng có thể bị khai thác.",
+    "example": "We hired a specialized firm to conduct penetration testing on our portal."
+  },
+  {
+    "id": "se-rbac",
+    "english": "RBAC / Role-Based Access Control",
+    "japanese": "ロールベースアクセス制御",
+    "kana": "ロールベースアクセスせいぎょ",
+    "vietnamese": "Kiểm soát truy cập dựa trên vai trò / RBAC",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Security",
+    "note": "Phương pháp cấp quyền dựa trên các vai trò trong tổ chức.",
+    "example": "We use RBAC to manage permissions across our internal tools."
+  },
+  {
+    "id": "se-security-audit",
+    "english": "Security Audit",
+    "japanese": "セキュリティ監査",
+    "kana": "セキュリティかんさ",
+    "vietnamese": "Kiểm toán bảo mật",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "Security",
+    "note": "Đánh giá toàn diện hệ thống IT để tìm ra các lỗ hổng bảo mật.",
+    "example": "The bank undergoes a security audit every six months."
+  },
+  {
+    "id": "se-vulnerability-scanning",
+    "english": "Vulnerability Scanning",
+    "japanese": "脆弱性診断 / スキャン",
+    "kana": "ぜいじゃくせいしんだん",
+    "vietnamese": "Quét lỗ hổng bảo mật",
+    "roles": [
+      "Dev",
+      "QA"
+    ],
+    "category": "Security",
+    "note": "Sử dụng công cụ tự động để tìm kiếm các lỗ hổng đã biết.",
+    "example": "Automated vulnerability scanning is integrated into our CI pipeline."
+  },
+  {
+    "id": "sec-abac",
+    "english": "ABAC / Attribute-Based Access Control",
+    "japanese": "属性ベースアクセス制御 / ABAC",
+    "kana": "ぞくせいベースアクセスせいぎょ / ABAC",
+    "vietnamese": "Kiểm soát truy cập dựa trên thuộc tính / ABAC",
+    "roles": [
+      "Architect",
+      "Security Engineer"
+    ],
+    "category": "Security",
+    "note": "Cấp quyền truy cập dựa trên các đặc điểm (thuộc tính) của người dùng, tài nguyên và môi trường.",
+    "example": "ABAC provides more granular control than RBAC."
+  },
+  {
+    "id": "sec-access-control",
+    "english": "Access Control / Access Controlling / ACL",
+    "japanese": "アクセス制御 / アクセスコントロール / ACL",
+    "kana": "アクセスコントロール",
+    "vietnamese": "Kiểm soát truy cập / ACL",
+    "roles": [
+      "Security",
+      "Architect"
+    ],
+    "category": "Security",
+    "note": "Cơ chế quản lý ai có quyền truy cập vào tài nguyên nào.",
+    "example": "アクセスコントロール（Access Control）リストを適用し、機密データへのアクセスを制限します。"
+  },
+  {
+    "id": "sec-audit-log",
+    "english": "Audit Log / Audit Trail",
+    "japanese": "監査ログ",
+    "kana": "かんさログ",
+    "vietnamese": "Nhật ký kiểm toán / Audit log",
+    "roles": [
+      "Compliance Officer",
+      "Dev"
+    ],
+    "category": "Security",
+    "note": "Bản ghi các hoạt động của hệ thống và người dùng để phục vụ việc kiểm tra sau này.",
+    "example": "Audit logs are essential for investigating security incidents."
+  },
+  {
+    "id": "sec-authentication",
+    "english": "Authentication / AuthN",
+    "japanese": "認証",
+    "kana": "にんしょう",
+    "vietnamese": "Xác thực người dùng / Authentication / Login",
+    "roles": [
+      "Dev",
+      "Security Engineer"
+    ],
+    "category": "Security",
+    "note": "Quá trình xác minh danh tính của người dùng hoặc hệ thống.",
+    "example": "Multi-factor authentication provides an extra layer of security."
+  },
+  {
+    "id": "sec-authentication-1",
+    "english": "Authentication / Authenticating / AuthN",
+    "japanese": "認証 / オーセンティケーション",
+    "kana": "にんしょう",
+    "vietnamese": "Xác thực / Authen",
+    "roles": [
+      "Dev",
+      "Security"
+    ],
+    "category": "Security",
+    "note": "Quá trình kiểm tra danh tính của người dùng (bạn là ai?).",
+    "example": "ログイン時のユーザー認証（Authentication）を多要素化し、セキュリティを高めます。"
+  },
+  {
+    "id": "sec-authorization",
+    "english": "Authorization / AuthZ",
+    "japanese": "認可 / 権限付与",
+    "kana": "にんか / けんげんふよ",
+    "vietnamese": "Phân quyền / Authorization / Permission",
+    "roles": [
+      "Dev",
+      "Security Engineer"
+    ],
+    "category": "Security",
+    "note": "Quá trình xác định những gì một người dùng đã xác thực được phép làm.",
+    "example": "The admin has authorization to delete user accounts."
+  },
+  {
+    "id": "sec-authorization-1",
+    "english": "Authorization / Authorizing / AuthZ",
+    "japanese": "認可 / オーソライゼーション",
+    "kana": "にんか",
+    "vietnamese": "Ủy quyền / Phân quyền / Author",
+    "roles": [
+      "Dev",
+      "Security"
+    ],
+    "category": "Security",
+    "note": "Quá trình kiểm tra quyền hạn của người dùng (bạn được làm gì?).",
+    "example": "ユーザーの役割（Role）に基づいて、適切なリソースへの認可（Authorization）を行います。"
+  },
+  {
+    "id": "sec-biometrics",
+    "english": "Biometrics / Biometric",
+    "japanese": "生体認証 / バイオメトリクス",
+    "kana": "せいたいにんしょう",
+    "vietnamese": "Sinh trắc học",
+    "roles": [
+      "Security",
+      "User"
+    ],
+    "category": "Security",
+    "note": "Sử dụng các đặc điểm sinh học (vân tay, khuôn mặt) để xác thực danh tính.",
+    "example": "スマートフォンのロック解除に生体認証（Biometrics）を導入しています。"
+  },
+  {
+    "id": "sec-botnet",
+    "english": "Botnet / Botnets",
+    "japanese": "ボットネット",
+    "kana": "ボットネット",
+    "vietnamese": "Mạng máy tính ma / Botnet",
+    "roles": [
+      "Security",
+      "Networking"
+    ],
+    "category": "Security",
+    "note": "Mạng lưới các máy tính bị nhiễm mã độc và bị kiểm soát từ xa để thực hiện các cuộc tấn công DDoS.",
+    "example": "所有者が気づかないうちに、PCがボットネット（Botnet）の一部として利用されることがあります。"
+  },
+  {
+    "id": "sec-brute-force",
+    "english": "Brute-force Attack / Brute-force",
+    "japanese": "ブルートフォース攻撃 / 総当たり攻撃",
+    "kana": "ブルートフォースこうげき / そうあたりこうげき",
+    "vietnamese": "Tấn công vét cạn / Brute-force",
+    "roles": [
+      "Security Engineer"
+    ],
+    "category": "Security",
+    "note": "Tấn công bằng cách thử tất cả các tổ hợp mật khẩu có thể cho đến khi đúng.",
+    "example": "Account lockout after 5 failed attempts prevents brute-force attacks."
+  },
+  {
+    "id": "sec-brute-force-2",
+    "english": "Brute Force Attack / Brute-forcing",
+    "japanese": "総当たり攻撃 / ブルートフォースアタック",
+    "kana": "ブルートフォースアタック",
+    "vietnamese": "Tấn công vét cạn / Tấn công brute force",
+    "roles": [
+      "Security",
+      "Dev"
+    ],
+    "category": "Security",
+    "note": "Thử mọi kết hợp mật khẩu có thể cho đến khi tìm đúng.",
+    "example": "ブルートフォースアタック（Brute Force）を防ぐため、ログインの試行回数制限を設けています。"
+  },
+  {
+    "id": "sec-certificate",
+    "english": "Digital Certificate / SSL Certificate / Certificates",
+    "japanese": "デジタル証明書 / SSL証明書 / 証明書",
+    "kana": "デジタルしょうめいしょ",
+    "vietnamese": "Chứng chỉ số / Chứng chỉ SSL",
+    "roles": [
+      "Security",
+      "DevOps"
+    ],
+    "category": "Security",
+    "note": "Tệp dữ liệu dùng để xác nhận quyền sở hữu của một khóa công khai (public key).",
+    "example": "SSL証明書（Certificate）の有効期限が切れる前に、新しいものに更新する必要があります。"
+  },
+  {
+    "id": "sec-compliance",
+    "english": "Compliance / Complying",
+    "japanese": "コンプライアンス / 法令遵守",
+    "kana": "コンプライアンス / ほうれいじゅんしゅ",
+    "vietnamese": "Sự tuân thủ (pháp luật, quy định) / Compliance",
+    "roles": [
+      "Legal",
+      "Compliance Officer"
+    ],
+    "category": "Security",
+    "note": "Việc tuân thủ các quy tắc, quy định và tiêu chuẩn do nhà nước hoặc tổ chức đề ra.",
+    "example": "Our security policy ensures compliance with local laws."
+  },
+  {
+    "id": "sec-cors",
+    "english": "Cross-Origin Resource Sharing / CORS",
+    "japanese": "オリジン間リソース共有 / CORS / リソース",
+    "kana": "コルス",
+    "vietnamese": "Chia sẻ tài nguyên chéo",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Security",
+    "note": "Cơ chế cho phép nhiều tài nguyên khác nhau của một trang web có thể được truy vấn từ domain khác với domain của trang đó.",
+    "example": "フロントエンドとバックエンドのドメインが異なるため、API側でCORSの設定が必要です。"
+  },
+  {
+    "id": "sec-csrf",
+    "english": "CSRF / Cross-Site Request Forgery",
+    "japanese": "クロスサイトリクエストフォージェリ / CSRF",
+    "kana": "クロスサイトリクエストフォージェリ / CSRF",
+    "vietnamese": "Tấn công giả mạo yêu cầu liên trang / CSRF",
+    "roles": [
+      "Dev",
+      "Security Engineer"
+    ],
+    "category": "Security",
+    "note": "Tấn công đánh lừa người dùng thực hiện các hành động không mong muốn trên một ứng dụng web mà họ đã xác thực.",
+    "example": "CSRF tokens are used to protect against this type of attack."
+  },
+  {
+    "id": "sec-csrf-1",
+    "english": "Cross-Site Request Forgery / CSRF",
+    "japanese": "クロスサイトリクエストフォージェリ / CSRF",
+    "kana": "シーエスアールエフ",
+    "vietnamese": "Giả mạo yêu cầu chéo trang / CSRF",
+    "roles": [
+      "Security",
+      "Dev"
+    ],
+    "category": "Security",
+    "note": "Hình thức tấn công đánh lừa người dùng đã xác thực thực hiện các hành động mà họ không mong muốn.",
+    "example": "CSRF（シーエスアールエフ）対策として、リクエストごとにトークンを検証する仕組みを導入します。"
+  },
+  {
+    "id": "sec-data-breach",
+    "english": "Data Breach / Security Breach",
+    "japanese": "データ漏洩 / セキュリティ侵害",
+    "kana": "データろうえい / セキュリティしんがい",
+    "vietnamese": "Rò rỉ dữ liệu / Vi phạm bảo mật / Data breach",
+    "roles": [
+      "Security Engineer",
+      "Manager"
+    ],
+    "category": "Security",
+    "note": "Sự cố trong đó thông tin nhạy cảm bị truy cập hoặc lấy cắp trái phép.",
+    "example": "The company had to notify its customers about a recent data breach."
+  },
+  {
+    "id": "sec-ddos",
+    "english": "DDoS / Distributed Denial of Service",
+    "japanese": "DDoS攻撃 / 分散型サービス拒否攻撃",
+    "kana": "ディーボスこうげき / ぶんさんがたサービスきょひこうげき",
+    "vietnamese": "Tấn công từ chối dịch vụ phân tán / DDoS",
+    "roles": [
+      "DevOps",
+      "Security Engineer"
+    ],
+    "category": "Security",
+    "note": "Tấn công làm sập hệ thống bằng cách gửi một lượng lớn traffic từ nhiều nguồn khác nhau.",
+    "example": "Cloudflare provides strong protection against DDoS attacks."
+  },
+  {
+    "id": "sec-ddos-1",
+    "english": "Distributed Denial of Service / DDoS",
+    "japanese": "分散サービス拒否攻撃 / DDoS攻撃",
+    "kana": "ディードス",
+    "vietnamese": "Tấn công từ chối dịch vụ phân tán / DDoS",
+    "roles": [
+      "Security",
+      "DevOps"
+    ],
+    "category": "Security",
+    "note": "Làm tràn ngập lưu lượng truy cập từ nhiều nguồn khiến hệ thống bị quá tải và ngưng trệ.",
+    "example": "DDoS（ディードス）攻撃の対策として、トラフィックの監視と制限を強化しました。"
+  },
+  {
+    "id": "sec-decryption",
+    "english": "Decryption / Decrypting / Decrypted",
+    "japanese": "復号 / 復号化",
+    "kana": "ふくごう / ふくごうか",
+    "vietnamese": "Giải mã / Decryption",
+    "roles": [
+      "Security Engineer",
+      "Dev"
+    ],
+    "category": "Security",
+    "note": "Quá trình chuyển đổi dữ liệu đã mã hóa trở lại dạng ban đầu.",
+    "example": "The recipient uses a private key for decryption."
+  },
+  {
+    "id": "sec-decryption-1",
+    "english": "Decryption / Decrypting / Decrypted / Decrypt",
+    "japanese": "復号 / デクリプション",
+    "kana": "ふくごう",
+    "vietnamese": "Giải mã / Decrypt",
+    "roles": [
+      "Security",
+      "Dev"
+    ],
+    "category": "Security",
+    "note": "Quá trình chuyển đổi dữ liệu đã mã hóa trở lại dạng ban đầu.",
+    "example": "正しい鍵を使用しない限り、データの復号（Decryption）は不可能です。"
+  },
+  {
+    "id": "sec-digital-signature",
+    "english": "Digital Signature",
+    "japanese": "電子署名 / デジタル署名",
+    "kana": "でんししょめい / デジタルしょめい",
+    "vietnamese": "Chữ ký số / Digital signature",
+    "roles": [
+      "BrSE",
+      "QA",
+      "Legal",
+      "Dev"
+    ],
+    "category": "Security",
+    "note": "Cơ chế toán học dùng để xác thực tính toàn vẹn và nguồn gốc của một thông điệp hoặc tài liệu.",
+    "example": "Digital signatures ensure that the document has not been altered."
+  },
+  {
+    "id": "sec-encryption",
+    "english": "Encryption / Encrypting / Encrypted",
+    "japanese": "暗号化",
+    "kana": "あんごうか",
+    "vietnamese": "Mã hóa / Encryption",
+    "roles": [
+      "Security Engineer",
+      "Dev"
+    ],
+    "category": "Security",
+    "note": "Quá trình biến đổi thông tin để ngăn chặn những người không có quyền truy cập đọc được.",
+    "example": "Data must be encrypted both at rest and in transit."
+  },
+  {
+    "id": "sec-encryption-1",
+    "english": "Encryption / Encrypting / Encrypted / Encrypt",
+    "japanese": "暗号化 / エンクリプション",
+    "kana": "あんごうか",
+    "vietnamese": "Mã hóa / Encrypt",
+    "roles": [
+      "Security",
+      "Dev"
+    ],
+    "category": "Security",
+    "note": "Quá trình chuyển đổi dữ liệu sang dạng không thể đọc được nếu không có khóa giải mã.",
+    "example": "個人情報をデータベースに保存する前に、必ず暗号化（Encryption）処理を行ってください。"
+  },
+  {
+    "id": "sec-encryption-at-rest",
+    "english": "Encryption at Rest",
+    "japanese": "保存データの暗号化",
+    "kana": "ほぞんデータのあんごうか",
+    "vietnamese": "Mã hóa dữ liệu khi lưu trữ / Encryption at rest",
+    "roles": [
+      "DBA",
+      "Security Engineer"
+    ],
+    "category": "Security",
+    "note": "Mã hóa dữ liệu khi nó được lưu trữ trên ổ đĩa hoặc phương tiện lưu trữ khác.",
+    "example": "AWS RDS supports encryption at rest for your databases."
+  },
+  {
+    "id": "sec-encryption-in-transit",
+    "english": "Encryption in Transit / Encryption in Flight",
+    "japanese": "通信データの暗号化",
+    "kana": "つうしんデータのあんごうか",
+    "vietnamese": "Mã hóa dữ liệu khi truyền tải / Encryption in transit",
+    "roles": [
+      "DevOps",
+      "Security Engineer"
+    ],
+    "category": "Security",
+    "note": "Mã hóa dữ liệu khi nó di chuyển qua mạng (thường dùng HTTPS/TLS).",
+    "example": "SSL certificates are used for encryption in transit."
+  },
+  {
+    "id": "sec-exploit",
+    "english": "Exploit / Exploiting / Exploited",
+    "japanese": "エクスプロイト / 脆弱性悪用プログラム",
+    "kana": "エクスプロイト",
+    "vietnamese": "Khai thác lỗ hổng / Exploit",
+    "roles": [
+      "Security",
+      "Hacker"
+    ],
+    "category": "Security",
+    "note": "Mã nguồn hoặc kỹ thuật dùng để tận dụng lỗ hổng bảo mật nhằm xâm nhập hệ thống.",
+    "example": "古いブラウザには既知のエクスプロイト（Exploit）が存在するため、使用を控えてください。"
+  },
+  {
+    "id": "sec-firewall",
+    "english": "Firewall / Firewalls",
+    "japanese": "ファイアウォール",
+    "kana": "ファイアウォール",
+    "vietnamese": "Tường lửa / Firewall",
+    "roles": [
+      "DevOps",
+      "Security Engineer"
+    ],
+    "category": "Security",
+    "note": "Hệ thống an ninh mạng giám sát và kiểm soát lưu lượng mạng dựa trên các quy tắc bảo mật.",
+    "example": "The firewall blocks unauthorized access to the internal network."
+  },
+  {
+    "id": "sec-firewall-1",
+    "english": "Firewall / Firewalls",
+    "japanese": "ファイアウォール / 防火壁",
+    "kana": "ファイアウォール",
+    "vietnamese": "Tường lửa",
+    "roles": [
+      "Security",
+      "DevOps"
+    ],
+    "category": "Security",
+    "note": "Hệ thống bảo mật mạng giám sát và kiểm soát lưu lượng truy cập dựa trên các quy tắc bảo mật.",
+    "example": "外部からの不正アクセスを防ぐため、ファイアウォール（Firewall）の設定を最適化します。"
+  },
+  {
+    "id": "sec-gdpr",
+    "english": "GDPR / General Data Protection Regulation",
+    "japanese": "一般データ保護規則 / GDPR",
+    "kana": "いっぱんデータほごきそく / GDPR",
+    "vietnamese": "Quy định bảo vệ dữ liệu chung / GDPR",
+    "roles": [
+      "Legal",
+      "Compliance Officer",
+      "BrSE"
+    ],
+    "category": "Security",
+    "note": "Quy định của EU về bảo mật và quyền riêng tư dữ liệu cá nhân.",
+    "example": "All European projects must comply with GDPR."
+  },
+  {
+    "id": "sec-governance",
+    "english": "Governance / IT Governance",
+    "japanese": "ガバナンス / ITガバナンス",
+    "kana": "ガバナンス / ITガバナンス",
+    "vietnamese": "Quản trị công nghệ thông tin / IT Governance",
+    "roles": [
+      "Manager",
+      "CIO"
+    ],
+    "category": "Security",
+    "note": "Hệ thống các chính sách, quy trình để đảm bảo IT hỗ trợ hiệu quả các mục tiêu kinh doanh.",
+    "example": "Strong IT governance improves risk management."
+  },
+  {
+    "id": "sec-hashing",
+    "english": "Hashing / Hash Function",
+    "japanese": "ハッシュ化",
+    "kana": "ハッシュか",
+    "vietnamese": "Băm dữ liệu / Hashing",
+    "roles": [
+      "Dev",
+      "Security Engineer"
+    ],
+    "category": "Security",
+    "note": "Quá trình biến đổi một lượng dữ liệu thành một chuỗi ký tự có độ dài cố định.",
+    "example": "Passwords should always be hashed before storing them in the database."
+  },
+  {
+    "id": "sec-hashing-1",
+    "english": "Hashing / Hash",
+    "japanese": "ハッシュ化 / ハッシュ関数",
+    "kana": "ハッシュか",
+    "vietnamese": "Băm dữ liệu / Hashing",
+    "roles": [
+      "Dev",
+      "Security"
+    ],
+    "category": "Security",
+    "note": "Chuyển đổi dữ liệu thành một chuỗi ký tự có độ dài cố định, không thể đảo ngược.",
+    "example": "パスワードをデータベースに保存する際は、必ずハッシュ化（Hashing）を行います。"
+  },
+  {
+    "id": "sec-hippa",
+    "english": "HIPAA / Health Insurance Portability and Accountability Act",
+    "japanese": "HIPAA",
+    "kana": "ヒパ / ヒッパ",
+    "vietnamese": "Luật về bảo mật và trách nhiệm bảo hiểm y tế (Hoa Kỳ) / HIPAA",
+    "roles": [
+      "Compliance Officer",
+      "Healthcare Dev"
+    ],
+    "category": "Security",
+    "note": "Quy định của Hoa Kỳ về bảo vệ dữ liệu y tế cá nhân.",
+    "example": "Healthcare applications in the US must follow HIPAA regulations."
+  },
+  {
+    "id": "sec-iam",
+    "english": "IAM / Identity and Access Management",
+    "japanese": "ID管理とアクセス管理 / IAM",
+    "kana": "IDかんりとアクセスかんり / IAM",
+    "vietnamese": "Quản lý định danh và truy cập / IAM",
+    "roles": [
+      "DevOps",
+      "Architect",
+      "Security Engineer"
+    ],
+    "category": "Security",
+    "note": "Khung làm việc đảm bảo đúng người được truy cập đúng tài nguyên vào đúng thời điểm.",
+    "example": "Use IAM roles to grant permissions to AWS services."
+  },
+  {
+    "id": "sec-ids",
+    "english": "IDS / Intrusion Detection System",
+    "japanese": "不正侵入検知システム / IDS",
+    "kana": "ふせいしんにゅうけんちシステム / IDS",
+    "vietnamese": "Hệ thống phát hiện xâm nhập / IDS",
+    "roles": [
+      "DevOps",
+      "Security Engineer"
+    ],
+    "category": "Security",
+    "note": "Hệ thống giám sát mạng để phát hiện các dấu hiệu của cuộc tấn công.",
+    "example": "The IDS alerts the security team when a possible breach is detected."
+  },
+  {
+    "id": "sec-incident-response",
+    "english": "Incident Response / IR",
+    "japanese": "インシデント対応",
+    "kana": "インシデントたいおう",
+    "vietnamese": "Ứng phó sự cố bảo mật / Incident response",
+    "roles": [
+      "Security Engineer",
+      "DevOps"
+    ],
+    "category": "Security",
+    "note": "Quy trình xử lý một vụ tấn công mạng hoặc vi phạm bảo mật.",
+    "example": "The incident response team was activated after the breach detection."
+  },
+  {
+    "id": "sec-ips",
+    "english": "IPS / Intrusion Prevention System",
+    "japanese": "不正侵入防止システム / IPS",
+    "kana": "ふせいしんにゅうぼうしシステム / IPS",
+    "vietnamese": "Hệ thống ngăn chặn xâm nhập / IPS",
+    "roles": [
+      "DevOps",
+      "Security Engineer"
+    ],
+    "category": "Security",
+    "note": "Thiết bị hoặc phần mềm giám sát mạng để phát hiện và ngăn chặn các hoạt động độc hại.",
+    "example": "The IPS automatically blocked the suspicious traffic pattern."
+  },
+  {
+    "id": "sec-iso27001",
+    "english": "ISO27001 / ISO / IEC 27001",
+    "japanese": "ISO27001 / 情報セキュリティマネジメントシステム",
+    "kana": "ISO27001 / じょうほうセキュリティマネジメントシステム",
+    "vietnamese": "Tiêu chuẩn quốc tế về quản lý an toàn thông tin / ISO27001",
+    "roles": [
+      "Manager",
+      "Security Engineer"
+    ],
+    "category": "Security",
+    "note": "Tiêu chuẩn quốc tế quy định các yêu cầu đối với hệ thống quản lý an toàn thông tin (ISMS).",
+    "example": "Our company is seeking ISO27001 certification."
+  },
+  {
+    "id": "sec-jwt",
+    "english": "JSON Web Token / JWT / JSON Web Tokens",
+    "japanese": "JSON Web Token / JWT",
+    "kana": "ジェイダブリューティー",
+    "vietnamese": "Chuỗi mã thông báo JSON",
+    "roles": [
+      "Dev",
+      "Security",
+      "BrSE"
+    ],
+    "category": "Security",
+    "note": "Tiêu chuẩn mở (RFC 7519) định nghĩa một cách nhỏ gọn và độc lập để truyền thông tin an toàn giữa các bên dưới dạng đối tượng JSON.",
+    "example": "認証（Authentication）の仕組みとして、JWTを利用したステートレスな設計にします。"
+  },
+  {
+    "id": "sec-key-management",
+    "english": "Key Management / KMS",
+    "japanese": "鍵管理",
+    "kana": "かぎかんり",
+    "vietnamese": "Quản lý khóa mã hóa / Key management",
+    "roles": [
+      "Architect",
+      "Security Engineer"
+    ],
+    "category": "Security",
+    "note": "Quá trình quản lý vòng đời của các khóa mật mã (tạo, lưu trữ, sử dụng, thay thế).",
+    "example": "AWS KMS makes it easy to manage encryption keys."
+  },
+  {
+    "id": "sec-least-privilege",
+    "english": "Least Privilege / Principle of Least Privilege",
+    "japanese": "最小権限の原則",
+    "kana": "さいしょうけんげんのげんそく",
+    "vietnamese": "Nguyên tắc đặc quyền tối thiểu / Least privilege",
+    "roles": [
+      "Architect",
+      "Security Engineer"
+    ],
+    "category": "Security",
+    "note": "Nguyên tắc cấp cho người dùng hoặc tiến trình chỉ những quyền cần thiết nhất để hoàn thành công việc.",
+    "example": "Following the principle of least privilege limits the potential damage from a breach."
+  },
+  {
+    "id": "sec-malware",
+    "english": "Malware / Malicious Software",
+    "japanese": "マルウェア / 悪意のあるソフトウェア",
+    "kana": "マルウェア",
+    "vietnamese": "Phần mềm độc hại / Malware",
+    "roles": [
+      "Security Engineer"
+    ],
+    "category": "Security",
+    "note": "Phần mềm được thiết kế để gây hại cho máy tính hoặc mạng (virus, worm, trojan).",
+    "example": "Always use antivirus software to protect against malware."
+  },
+  {
+    "id": "sec-malware-1",
+    "english": "Malware / Malwares",
+    "japanese": "マルウェア / 悪意のあるソフトウェア",
+    "kana": "マルウェア",
+    "vietnamese": "Phần mềm độc hại / Mã độc",
+    "roles": [
+      "Security",
+      "IT Support"
+    ],
+    "category": "Security",
+    "note": "Tên gọi chung cho các phần mềm được thiết kế để gây hại hoặc xâm nhập trái phép vào hệ thống.",
+    "example": "不審なメールの添付ファイルを開くと、マルウェア（Malware）に感染する恐れがあります。"
+  }
+]

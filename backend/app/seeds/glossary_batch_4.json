@@ -1,0 +1,699 @@
+[
+  {
+    "id": "ss-time-management",
+    "english": "Time Management",
+    "japanese": "時間管理 / タイムマネジメント",
+    "kana": "じかんかんり / タイムマネジメント",
+    "vietnamese": "Quản lý thời gian / Time management",
+    "roles": [
+      "Team",
+      "Manager"
+    ],
+    "category": "Agile",
+    "note": "Quá trình lập kế hoạch và kiểm soát thời gian dành cho các hoạt động cụ thể.",
+    "example": "Good time management leads to higher productivity and less stress."
+  },
+  {
+    "id": "ss-trust-building",
+    "english": "Trust Building",
+    "japanese": "信頼構築",
+    "kana": "しんらいこうちく",
+    "vietnamese": "Xây dựng niềm tin / Trust building",
+    "roles": [
+      "BrSE",
+      "Manager",
+      "Sales"
+    ],
+    "category": "Agile",
+    "note": "Quá trình tạo dựng sự tin tưởng và uy tín với đồng nghiệp và khách hàng.",
+    "example": "Trust building is a long-term process that starts with small actions."
+  },
+  {
+    "id": "ss-visionary-thinking",
+    "english": "Visionary Thinking",
+    "japanese": "ビジョナリーシンキング",
+    "kana": "ビジョナリーシンキング",
+    "vietnamese": "Tư duy tầm nhìn / Visionary thinking",
+    "roles": [
+      "Manager",
+      "CEO"
+    ],
+    "category": "Agile",
+    "note": "Khả năng hình dung và lập kế hoạch cho tương lai dài hạn.",
+    "example": "The CEO's visionary thinking inspired the entire company."
+  },
+  {
+    "id": "ss-work-ethic",
+    "english": "Work Ethic",
+    "japanese": "勤労倫理 / ワークエシック",
+    "kana": "きんろうりんり / ワークエシック",
+    "vietnamese": "Đạo đức nghề nghiệp / Tác phong làm việc / Work ethic",
+    "roles": [
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Niềm tin và thái độ tích cực đối với công việc và trách nhiệm.",
+    "example": "A strong work ethic is highly valued in Japanese companies."
+  },
+  {
+    "id": "be-acid",
+    "english": "ACID / ACID Properties",
+    "japanese": "ACID特性",
+    "kana": "ACIDとくせい",
+    "vietnamese": "Tính chất ACID (Atomicity, Consistency, Isolation, Durability)",
+    "roles": [
+      "Backend Dev",
+      "DBA"
+    ],
+    "category": "Backend",
+    "note": "Bốn tính chất đảm bảo các transaction trong database được thực hiện tin cậy.",
+    "example": "Relational databases strictly follow ACID properties."
+  },
+  {
+    "id": "be-availability",
+    "english": "Availability",
+    "japanese": "可用性",
+    "kana": "かようせい",
+    "vietnamese": "Tính sẵn sàng / Availability",
+    "roles": [
+      "DevOps",
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Khả năng hệ thống vẫn hoạt động và phản hồi yêu cầu ngay cả khi có lỗi xảy ra.",
+    "example": "High availability is a key requirement for financial systems."
+  },
+  {
+    "id": "be-backup-and-recovery",
+    "english": "Backup and Recovery",
+    "japanese": "バックアップと復旧",
+    "kana": "バックアップとふっきゅう",
+    "vietnamese": "Sao lưu và phục hồi / Backup & Recovery",
+    "roles": [
+      "DBA",
+      "DevOps"
+    ],
+    "category": "Backend",
+    "note": "Quy trình bảo vệ dữ liệu khỏi bị mất mát và khôi phục lại khi có sự cố.",
+    "example": "We have a daily backup and recovery drill to ensure data safety."
+  },
+  {
+    "id": "be-base",
+    "english": "BASE / BASE Consistency",
+    "japanese": "BASE特性",
+    "kana": "BASEとくせい",
+    "vietnamese": "Tính chất BASE (Basically Available, Soft state, Eventual consistency)",
+    "roles": [
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Mô hình nhất quán lỏng lẻo hơn ACID, thường dùng trong hệ thống phân tán quy mô lớn.",
+    "example": "Many NoSQL databases trade strict consistency for BASE."
+  },
+  {
+    "id": "be-caching",
+    "english": "Caching / Cache",
+    "japanese": "キャッシング / キャッシュ",
+    "kana": "キャッシング / キャッシュ",
+    "vietnamese": "Lưu trữ đệm / Caching",
+    "roles": [
+      "Backend Dev",
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Lưu trữ dữ liệu tạm thời để truy xuất nhanh hơn trong tương lai.",
+    "example": "Implement caching to reduce the load on the database."
+  },
+  {
+    "id": "be-circuit-breaker",
+    "english": "Circuit Breaker / Circuit Breaker Pattern",
+    "japanese": "サーキットブレーカー",
+    "kana": "サーキットブレーカー",
+    "vietnamese": "Mẫu ngắt mạch / Circuit breaker",
+    "roles": [
+      "Backend Dev",
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Mẫu thiết kế ngăn hệ thống cố gắng thực hiện một thao tác chắc chắn sẽ thất bại.",
+    "example": "The circuit breaker tripped because the downstream service was down."
+  },
+  {
+    "id": "be-concurrency-control",
+    "english": "Concurrency Control / Locking",
+    "japanese": "並行性制御 / ロック",
+    "kana": "へいこうせいせいぎょ / ロック",
+    "vietnamese": "Kiểm soát truy cập đồng thời / Locking",
+    "roles": [
+      "Backend Dev",
+      "DBA"
+    ],
+    "category": "Backend",
+    "note": "Cơ chế ngăn chặn xung đột khi nhiều transaction cùng truy cập và sửa đổi một dữ liệu.",
+    "example": "Optimistic locking is often used for high-concurrency scenarios."
+  },
+  {
+    "id": "be-consistency",
+    "english": "Consistency",
+    "japanese": "一貫性",
+    "kana": "いっかんせい",
+    "vietnamese": "Tính nhất quán / Consistency",
+    "roles": [
+      "Backend Dev",
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Đảm bảo mọi node trong hệ thống phân tán đều nhìn thấy cùng một dữ liệu tại cùng một thời điểm.",
+    "example": "Achieving strong consistency in a distributed system is challenging."
+  },
+  {
+    "id": "be-content-delivery-network",
+    "english": "CDN / Content Delivery Network",
+    "japanese": "CDN / コンテンツデリバリネットワーク",
+    "kana": "CDN / コンテンツデリバリネットワーク",
+    "vietnamese": "Mạng phân phối nội dung / CDN",
+    "roles": [
+      "DevOps",
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Hệ thống các máy chủ đặt tại nhiều nơi để phân phối nội dung (ảnh, video) nhanh hơn cho người dùng.",
+    "example": "Using a CDN reduces the latency for international users."
+  },
+  {
+    "id": "be-data-replication",
+    "english": "Data Replication / Replication",
+    "japanese": "データレプリケーション / 複製",
+    "kana": "データレプリケーション / ふくせい",
+    "vietnamese": "Sao chép dữ liệu / Replication",
+    "roles": [
+      "DBA",
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Quá trình lưu trữ cùng một dữ liệu trên nhiều máy chủ khác nhau để tăng tính sẵn sàng.",
+    "example": "Database replication ensures data is not lost if one server fails."
+  },
+  {
+    "id": "be-data-warehouse",
+    "english": "Data Warehouse",
+    "japanese": "データウェアハウス / DWH",
+    "kana": "データウェアハウス / DWH",
+    "vietnamese": "Kho dữ liệu / Data warehouse",
+    "roles": [
+      "Data Engineer",
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Hệ thống lưu trữ dữ liệu tập trung từ nhiều nguồn khác nhau để phục vụ phân tích.",
+    "example": "We move historical data to the data warehouse for reporting."
+  },
+  {
+    "id": "be-database-migration",
+    "english": "Database Migration / Migration",
+    "japanese": "データベースマイグレーション / 移行",
+    "kana": "データベースマイグレーション / いこう",
+    "vietnamese": "Di cư dữ liệu / Thay đổi cấu trúc database / Migration",
+    "roles": [
+      "Backend Dev",
+      "DBA"
+    ],
+    "category": "Backend",
+    "note": "Quá trình thay đổi cấu trúc database hoặc chuyển dữ liệu từ hệ thống này sang hệ thống khác.",
+    "example": "Always create a backup before running a database migration."
+  },
+  {
+    "id": "be-distributed-tracing",
+    "english": "Distributed Tracing",
+    "japanese": "分散トレーシング",
+    "kana": "ぶんさんトレーシング",
+    "vietnamese": "Truy vết phân tán / Distributed tracing",
+    "roles": [
+      "Architect",
+      "Backend Dev"
+    ],
+    "category": "Backend",
+    "note": "Kỹ thuật theo dõi một request khi nó đi qua nhiều dịch vụ khác nhau trong hệ thống microservices.",
+    "example": "Jaeger helps us visualize the request flow in our microservices."
+  },
+  {
+    "id": "be-distributed-transaction",
+    "english": "Distributed Transaction",
+    "japanese": "分散トランザクション",
+    "kana": "ぶんさんトランザクション",
+    "vietnamese": "Giao dịch phân tán / Distributed transaction",
+    "roles": [
+      "Architect",
+      "Backend Dev"
+    ],
+    "category": "Backend",
+    "note": "Giao dịch ảnh hưởng đến dữ liệu trên nhiều máy chủ hoặc database khác nhau.",
+    "example": "Implementing distributed transactions is complex and can impact performance."
+  },
+  {
+    "id": "be-etl",
+    "english": "ETL / Extract, Transform, Load",
+    "japanese": "ETL",
+    "kana": "イーティーエル",
+    "vietnamese": "Quy trình Trích xuất, Chuyển đổi, Tải dữ liệu / ETL",
+    "roles": [
+      "Data Engineer"
+    ],
+    "category": "Backend",
+    "note": "Quy trình lấy dữ liệu từ nguồn, biến đổi nó và nạp vào kho dữ liệu.",
+    "example": "The ETL job runs every night at midnight."
+  },
+  {
+    "id": "be-event-driven",
+    "english": "Event-driven Architecture",
+    "japanese": "イベント駆動型アーキテクチャ",
+    "kana": "イベントくどうがたアーキテクチャ",
+    "vietnamese": "Kiến trúc hướng sự kiện / Event-driven",
+    "roles": [
+      "Architect",
+      "Backend Dev"
+    ],
+    "category": "Backend",
+    "note": "Kiến trúc phần mềm phản ứng lại các sự kiện (thay đổi trạng thái).",
+    "example": "Event-driven architecture is highly scalable and decoupled."
+  },
+  {
+    "id": "be-eventual-consistency",
+    "english": "Eventual Consistency",
+    "japanese": "結果整合性",
+    "kana": "けっかせいごうせい",
+    "vietnamese": "Nhất quán cuối cùng / Eventual consistency",
+    "roles": [
+      "Architect",
+      "Backend Dev"
+    ],
+    "category": "Backend",
+    "note": "Đảm bảo rằng nếu không có update mới, tất cả các bản sao dữ liệu cuối cùng sẽ giống nhau.",
+    "example": "Eventual consistency is common in global-scale distributed systems."
+  },
+  {
+    "id": "be-graphql",
+    "english": "GraphQL",
+    "japanese": "GraphQL",
+    "kana": "グラフキューエル",
+    "vietnamese": "Ngôn ngữ truy vấn dữ liệu GraphQL",
+    "roles": [
+      "Backend Dev",
+      "Frontend Dev",
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Ngôn ngữ truy vấn cho API cho phép client yêu cầu chính xác dữ liệu họ cần.",
+    "example": "GraphQL reduces over-fetching and under-fetching of data."
+  },
+  {
+    "id": "be-grpc",
+    "english": "gRPC",
+    "japanese": "gRPC",
+    "kana": "ジーアールピーシー",
+    "vietnamese": "gRPC / Remote Procedure Call hiệu năng cao",
+    "roles": [
+      "Backend Dev",
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Framework RPC mã nguồn mở hiệu năng cao của Google, sử dụng HTTP/2 và Protocol Buffers.",
+    "example": "We use gRPC for internal communication between microservices."
+  },
+  {
+    "id": "be-health-check",
+    "english": "Health Check / Monitoring",
+    "japanese": "ヘルスチェック / 監視",
+    "kana": "ヘルスチェック / かんし",
+    "vietnamese": "Kiểm tra tình trạng hệ thống / Health check",
+    "roles": [
+      "DevOps",
+      "Backend Dev"
+    ],
+    "category": "Backend",
+    "note": "Cơ chế tự động kiểm tra xem một dịch vụ có đang hoạt động bình thường không.",
+    "example": "The load balancer uses a health check to remove unhealthy nodes."
+  },
+  {
+    "id": "be-horizontal-scaling",
+    "english": "Horizontal Scaling / Scaling Out",
+    "japanese": "水平スケール / スケールアウト",
+    "kana": "すいへいスケール / スケールアウト",
+    "vietnamese": "Mở rộng theo chiều ngang / Thêm máy chủ",
+    "roles": [
+      "DevOps",
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Tăng năng lực hệ thống bằng cách thêm nhiều máy chủ mới.",
+    "example": "Horizontal scaling is the preferred way to scale cloud applications."
+  },
+  {
+    "id": "be-idempotency",
+    "english": "Idempotency / Idempotent",
+    "japanese": "べき等性 / イデムポテンシー",
+    "kana": "べきとうせい / イデムポテンシー",
+    "vietnamese": "Tính ổn định kết quả / Idempotency",
+    "roles": [
+      "Backend Dev",
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Đảm bảo rằng một thao tác có thể thực hiện nhiều lần mà không làm thay đổi kết quả so với lần đầu tiên.",
+    "example": "API endpoints for payments must be idempotent."
+  },
+  {
+    "id": "be-load-balancing",
+    "english": "Load Balancing / Load Balancer",
+    "japanese": "ロードバランシング / 負荷分散",
+    "kana": "ロードバランシング / ふかぶんさん",
+    "vietnamese": "Cân bằng tải / Load balancing",
+    "roles": [
+      "DevOps",
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Phân phối lưu lượng truy cập mạng hoặc ứng dụng trên nhiều máy chủ.",
+    "example": "The load balancer distributes traffic evenly across the web servers."
+  },
+  {
+    "id": "be-log-aggregation",
+    "english": "Log Aggregation / Logging",
+    "japanese": "ログ集約 / ロギング",
+    "kana": "ログしゅうやく / ロギング",
+    "vietnamese": "Tập trung nhật ký / Log aggregation",
+    "roles": [
+      "DevOps",
+      "Backend Dev"
+    ],
+    "category": "Backend",
+    "note": "Quá trình thu thập log từ nhiều nguồn khác nhau vào một nơi duy nhất để dễ quản lý.",
+    "example": "ELK stack is widely used for log aggregation and analysis."
+  },
+  {
+    "id": "be-message-broker",
+    "english": "Message Broker",
+    "japanese": "メッセージブローカー",
+    "kana": "メッセージブローカー",
+    "vietnamese": "Bộ môi giới thông điệp / Message broker",
+    "roles": [
+      "Backend Dev",
+      "DevOps"
+    ],
+    "category": "Backend",
+    "note": "Phần mềm trung gian điều phối việc truyền thông điệp giữa các ứng dụng.",
+    "example": "Apache Kafka is a high-throughput message broker."
+  },
+  {
+    "id": "be-message-queue",
+    "english": "Message Queue / MQ",
+    "japanese": "メッセージキュー",
+    "kana": "メッセージキュー",
+    "vietnamese": "Hàng đợi thông điệp / Message queue",
+    "roles": [
+      "Backend Dev",
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Cơ chế giao tiếp bất đồng bộ giữa các dịch vụ thông qua hàng đợi.",
+    "example": "RabbitMQ and Kafka are popular message queue systems."
+  },
+  {
+    "id": "be-microservices",
+    "english": "Microservices / Microservice Architecture",
+    "japanese": "マイクロサービス",
+    "kana": "マイクロサービス",
+    "vietnamese": "Kiến trúc vi dịch vụ / Microservices",
+    "roles": [
+      "Backend Dev",
+      "Architect",
+      "DevOps"
+    ],
+    "category": "Backend",
+    "note": "Kiến trúc chia nhỏ ứng dụng thành các dịch vụ nhỏ, độc lập và có thể deploy riêng lẻ.",
+    "example": "The transition to microservices improved our deployment frequency."
+  },
+  {
+    "id": "be-nosql",
+    "english": "NoSQL / Not Only SQL",
+    "japanese": "NoSQL",
+    "kana": "ノーエスキューエル",
+    "vietnamese": "Cơ sở dữ liệu phi quan hệ / NoSQL",
+    "roles": [
+      "Backend Dev",
+      "DBA"
+    ],
+    "category": "Backend",
+    "note": "Các hệ quản trị cơ sở dữ liệu không sử dụng mô hình quan hệ truyền thống.",
+    "example": "MongoDB is a document-oriented NoSQL database."
+  },
+  {
+    "id": "be-orm",
+    "english": "ORM / Object-Relational Mapping",
+    "japanese": "ORM / オブジェクト関係マッピング",
+    "kana": "ORM / オブジェクトかんけいマッピング",
+    "vietnamese": "Ánh xạ đối tượng - quan hệ / ORM",
+    "roles": [
+      "Backend Dev"
+    ],
+    "category": "Backend",
+    "note": "Kỹ thuật cho phép thao tác với database bằng ngôn ngữ lập trình đối tượng thay vì SQL thuần.",
+    "example": "Hibernate is a popular ORM for Java developers."
+  },
+  {
+    "id": "be-partition-tolerance",
+    "english": "Partition Tolerance",
+    "japanese": "分断耐性",
+    "kana": "ぶんだんたいせい",
+    "vietnamese": "Khả năng chịu lỗi phân đoạn / Partition tolerance",
+    "roles": [
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Khả năng hệ thống vẫn hoạt động ngay cả khi mạng bị ngắt kết nối giữa các node.",
+    "example": "The CAP theorem states you can only have two out of three: C, A, or P."
+  },
+  {
+    "id": "be-polling",
+    "english": "Polling / Long Polling",
+    "japanese": "ポーリング / ロングポーリング",
+    "kana": "ポーリング / ロングポーリング",
+    "vietnamese": "Truy vấn định kỳ / Polling",
+    "roles": [
+      "Backend Dev",
+      "Frontend Dev"
+    ],
+    "category": "Backend",
+    "note": "Client định kỳ gửi request lên server để kiểm tra xem có dữ liệu mới không.",
+    "example": "Long polling is a more efficient alternative to regular polling."
+  },
+  {
+    "id": "be-pub-sub",
+    "english": "Pub-Sub / Publish-Subscribe",
+    "japanese": "パブサブ / 出版購読モデル",
+    "kana": "パブサブ",
+    "vietnamese": "Mô hình Xuất bản - Đăng ký / Pub-Sub",
+    "roles": [
+      "Backend Dev",
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Kiến trúc truyền thông điệp nơi người gửi (publisher) không gửi trực tiếp đến người nhận (subscriber).",
+    "example": "Redis can be used as a Pub-Sub message broker."
+  },
+  {
+    "id": "be-rest-api",
+    "english": "REST API / Representational State Transfer",
+    "japanese": "REST API",
+    "kana": "レストエーピーアイ",
+    "vietnamese": "API theo chuẩn REST",
+    "roles": [
+      "Backend Dev",
+      "Frontend Dev"
+    ],
+    "category": "Backend",
+    "note": "Kiến trúc API phổ biến nhất hiện nay, dựa trên các phương thức HTTP (GET, POST, PUT, DELETE).",
+    "example": "The frontend communicates with the backend via a REST API."
+  },
+  {
+    "id": "be-reverse-proxy",
+    "english": "Reverse Proxy",
+    "japanese": "リバースプロキシ",
+    "kana": "リバースプロキシ",
+    "vietnamese": "Proxy ngược / Reverse proxy",
+    "roles": [
+      "DevOps",
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Máy chủ đứng trước các máy chủ backend để điều phối và bảo vệ chúng (ví dụ: Nginx).",
+    "example": "Nginx is often used as a reverse proxy and load balancer."
+  },
+  {
+    "id": "be-saga-pattern",
+    "english": "Saga Pattern",
+    "japanese": "Sagaパターン",
+    "kana": "Sagaパターン",
+    "vietnamese": "Mẫu thiết kế Saga (quản lý transaction trong microservices)",
+    "roles": [
+      "Architect",
+      "Backend Dev"
+    ],
+    "category": "Backend",
+    "note": "Chuỗi các local transaction được điều phối để đảm bảo tính nhất quán trong microservices.",
+    "example": "The Saga pattern uses compensating transactions to handle failures."
+  },
+  {
+    "id": "be-service-discovery",
+    "english": "Service Discovery",
+    "japanese": "サービスディスカバリ",
+    "kana": "サービスディスカバリ",
+    "vietnamese": "Tự động phát hiện dịch vụ / Service discovery",
+    "roles": [
+      "DevOps",
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Cơ chế giúp các dịch vụ trong microservices tự động tìm thấy địa chỉ của nhau.",
+    "example": "Consul and Eureka are tools for service discovery."
+  },
+  {
+    "id": "be-sharding",
+    "english": "Sharding / Shard / Sharded",
+    "japanese": "シャーディング",
+    "kana": "シャーディング",
+    "vietnamese": "Phân mảnh dữ liệu / Sharding",
+    "roles": [
+      "Backend Dev",
+      "DBA",
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Kỹ thuật chia nhỏ một database lớn thành các phần nhỏ hơn (shard) để tăng hiệu năng và khả năng mở rộng.",
+    "example": "Database sharding is necessary for handling billions of rows."
+  },
+  {
+    "id": "be-stateless",
+    "english": "Stateless",
+    "japanese": "ステートレス",
+    "kana": "ステートレス",
+    "vietnamese": "Không lưu trạng thái / Stateless",
+    "roles": [
+      "Backend Dev",
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Thiết kế nơi mỗi request là độc lập và không phụ thuộc vào các request trước đó.",
+    "example": "Stateless applications are much easier to scale horizontally."
+  },
+  {
+    "id": "be-sticky-session",
+    "english": "Sticky Session / Session Affinity",
+    "japanese": "スティッキーセッション / セッション維持",
+    "kana": "スティッキーセッション",
+    "vietnamese": "Phiên làm việc cố định / Sticky session",
+    "roles": [
+      "DevOps",
+      "Backend Dev"
+    ],
+    "category": "Backend",
+    "note": "Cơ chế của load balancer đảm bảo một user luôn được gửi đến cùng một máy chủ backend.",
+    "example": "Sticky sessions are useful if the application stores session data locally."
+  },
+  {
+    "id": "be-two-phase-commit",
+    "english": "2PC / Two-Phase Commit",
+    "japanese": "2フェーズコミット / 2PC",
+    "kana": "2フェーズコミット / 2PC",
+    "vietnamese": "Cam kết hai giai đoạn / 2PC",
+    "roles": [
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Giao thức đảm bảo tất cả các node trong giao dịch phân tán đều commit hoặc cùng rollback.",
+    "example": "2PC provides strong consistency but can be a bottleneck."
+  },
+  {
+    "id": "be-vertical-scaling",
+    "english": "Vertical Scaling / Scaling Up",
+    "japanese": "垂直スケール / スケールアップ",
+    "kana": "すいちょくスケール / スケールアップ",
+    "vietnamese": "Mở rộng theo chiều dọc / Nâng cấp phần cứng",
+    "roles": [
+      "DevOps",
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Tăng năng lực hệ thống bằng cách nâng cấp CPU, RAM cho máy chủ hiện tại.",
+    "example": "Vertical scaling has hardware limits and usually requires downtime."
+  },
+  {
+    "id": "be-websocket",
+    "english": "WebSocket / WebSockets",
+    "japanese": "WebSocket",
+    "kana": "ウェブソケット",
+    "vietnamese": "Kết nối hai chiều thời gian thực / WebSocket",
+    "roles": [
+      "Backend Dev",
+      "Frontend Dev"
+    ],
+    "category": "Backend",
+    "note": "Giao thức truyền thông hai chiều liên tục giữa client và server qua một kết nối TCP duy nhất.",
+    "example": "Use WebSockets for real-time chat features."
+  },
+  {
+    "id": "lib-fastapi-di",
+    "english": "Dependency Injection / DI",
+    "japanese": "依存性の注入 / デペンデンシーインジェクション / DI",
+    "kana": "いぞんせいのちゅうにゅう",
+    "vietnamese": "Tiêm phụ thuộc / Dependency Injection",
+    "roles": [
+      "Backend Dev",
+      "Architect"
+    ],
+    "category": "Backend",
+    "note": "Mô hình thiết kế trong đó một đối tượng nhận các đối tượng khác mà nó phụ thuộc vào. FastAPI dùng 'Depends' để thực hiện việc này rất hiệu quả.",
+    "example": "FastAPIのDependsを使用して、データベースセッションの依存性の注入（DI）を行います。"
+  },
+  {
+    "id": "lib-pydantic-schema",
+    "english": "Schema / Pydantic / Validation",
+    "japanese": "スキーマ / バリデーション / パイダンティック",
+    "kana": "スキーマ",
+    "vietnamese": "Sơ đồ dữ liệu / Kiểm định dữ liệu / Schema",
+    "roles": [
+      "Backend Dev",
+      "QA"
+    ],
+    "category": "Backend",
+    "note": "Định nghĩa cấu trúc dữ liệu đầu vào/đầu ra và tự động kiểm tra tính hợp lệ của chúng. Pydantic là trái tim của FastAPI.",
+    "example": "Pydanticモデルでリクエストのスキーマ（Schema）を定義し、型安全なバリデーションを実現します。"
+  },
+  {
+    "id": "lib-pydantic-settings",
+    "english": "Environment Variables / Env / pydantic-settings",
+    "japanese": "環境変数 / エンバイロメントバリアブル",
+    "kana": "かんきょうへんすう",
+    "vietnamese": "Biến môi trường / Env",
+    "roles": [
+      "DevOps",
+      "Backend Dev"
+    ],
+    "category": "Backend",
+    "note": "Các tham số cấu hình hệ thống (như Database URL, API Key) được lưu bên ngoài mã nguồn để đảm bảo tính bảo mật.",
+    "example": "APIキーなどの機密情報は、環境変数（Env）として.envファイルで管理します。"
+  },
+  {
+    "id": "lib-sqlalchemy-orm",
+    "english": "Object-Relational Mapping / ORM / SQLAlchemy",
+    "japanese": "オブジェクト関係マッピング / ORM / アルケミー",
+    "kana": "オーアールエム",
+    "vietnamese": "Ánh xạ quan hệ đối tượng / ORM",
+    "roles": [
+      "Backend Dev"
+    ],
+    "category": "Backend",
+    "note": "Thư viện giúp thao tác với Database bằng ngôn ngữ lập trình (Python) thay vì viết SQL thuần. Dự án sử dụng SQLAlchemy 2.0.",
+    "example": "SQLAlchemyのORM機能を利用して、Pythonのクラスとデータベースのテーブルを紐付けます。"
+  }
+]

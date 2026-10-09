@@ -1,0 +1,707 @@
+[
+  {
+    "id": "erp-warehouse-management",
+    "english": "Warehouse Management / WM",
+    "japanese": "倉庫管理 / WM",
+    "kana": "そうこかんり",
+    "vietnamese": "Quản lý kho bãi",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quản lý vị trí và sơ đồ trong kho.",
+    "example": "WMでピッキング作業を効率化。"
+  },
+  {
+    "id": "erp-workflow",
+    "english": "Workflow / Workflows",
+    "japanese": "ワークフロー",
+    "kana": "わーくふろー",
+    "vietnamese": "Quy trình công việc / Workflow",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Trình tự các bước thực hiện một công việc.",
+    "example": "承認ワークフローを設定。"
+  },
+  {
+    "id": "exam-acceptance-test",
+    "english": "Acceptance Test / UAT",
+    "japanese": "受け入れテスト",
+    "kana": "うけいれテスト",
+    "vietnamese": "Kiểm thử chấp nhận / UAT",
+    "roles": [
+      "BrSE",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kiểm tra cuối cùng do người dùng hoặc khách hàng thực hiện.",
+    "example": "The client will start the UAT next Monday."
+  },
+  {
+    "id": "exam-agile",
+    "english": "Agile Development",
+    "japanese": "アジャイル開発",
+    "kana": "アジャイルかいはつ",
+    "vietnamese": "Phát triển phần mềm linh hoạt / Agile",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Phương pháp phát triển tập trung vào sự linh hoạt và phản hồi nhanh.",
+    "example": "We adopted Agile to better respond to changing client needs."
+  },
+  {
+    "id": "exam-alu",
+    "english": "ALU / Arithmetic Logic Unit",
+    "japanese": "算術論理演算装置",
+    "kana": "さんじゅつろんりえんざんそうち",
+    "vietnamese": "Đơn vị tính toán số học và logic / ALU",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Bộ phận trong CPU thực hiện các phép tính số học và logic.",
+    "example": "The ALU is responsible for performing integer binary operations."
+  },
+  {
+    "id": "exam-api",
+    "english": "API / Application Programming Interface",
+    "japanese": "アプリケーションプログラミングインターフェース",
+    "kana": "アプリケーションプログラミングインターフェース",
+    "vietnamese": "Giao diện lập trình ứng dụng / API",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Tập hợp các quy tắc cho phép các ứng dụng giao tiếp với nhau.",
+    "example": "The frontend communicates with the backend via a REST API."
+  },
+  {
+    "id": "exam-availability",
+    "english": "Availability / Uptime",
+    "japanese": "稼働率 / アベイラビリティ",
+    "kana": "かどうりつ / アベイラビリティ",
+    "vietnamese": "Độ sẵn sàng / Tỉ lệ hoạt động / Availability",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Tỉ lệ thời gian hệ thống hoạt động bình thường trên tổng thời gian.",
+    "example": "High availability is achieved through redundancy and failover."
+  },
+  {
+    "id": "exam-bcp",
+    "english": "BCP / Business Continuity Plan",
+    "japanese": "事業継続計画 / BCP",
+    "kana": "じぎょうけいぞくけいかく / BCP",
+    "vietnamese": "Kế hoạch kinh doanh liên tục / BCP",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Chiến lược giúp doanh nghiệp duy trì hoạt động khi gặp sự cố.",
+    "example": "The BCP includes backup data centers and remote work procedures."
+  },
+  {
+    "id": "exam-big-o",
+    "english": "Big O Notation",
+    "japanese": "オーダー記法 / ビッグオー記法",
+    "kana": "オーダーきほう / ビッグオーきほう",
+    "vietnamese": "Ký hiệu Big O / Độ phức tạp thuật toán",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Ký hiệu toán học dùng để mô tả giới hạn trên của độ phức tạp.",
+    "example": "We need to analyze the Big O notation to compare algorithm efficiency."
+  },
+  {
+    "id": "exam-binary-search",
+    "english": "Binary Search",
+    "japanese": "二分探索法 / バイナリサーチ",
+    "kana": "にぶんたんさくほう / バイナリサーチ",
+    "vietnamese": "Tìm kiếm nhị phân / Binary Search",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Tìm kiếm phần tử trong mảng đã sắp xếp bằng cách chia đôi.",
+    "example": "Binary search is much more efficient than linear search for large datasets."
+  },
+  {
+    "id": "exam-binary-tree",
+    "english": "Binary Tree",
+    "japanese": "二分木",
+    "kana": "にぶんぎ",
+    "vietnamese": "Cây nhị phân / Binary Tree",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Cấu trúc dữ liệu dạng cây mà mỗi nút có tối đa 2 con.",
+    "example": "A binary search tree allows for efficient searching and sorting."
+  },
+  {
+    "id": "exam-black-box",
+    "english": "Black Box Testing",
+    "japanese": "ブラックボックステスト",
+    "kana": "ブラックボックステスト",
+    "vietnamese": "Kiểm thử hộp đen",
+    "roles": [
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kiểm thử dựa trên yêu cầu mà không cần biết cấu trúc code bên trong.",
+    "example": "Black box testing focuses on inputs and outputs of the application."
+  },
+  {
+    "id": "exam-bubble-sort",
+    "english": "Bubble Sort",
+    "japanese": "基本交換法 / バブルソート",
+    "kana": "きほんこうかんほう / バブルソート",
+    "vietnamese": "Sắp xếp nổi bọt / Bubble Sort",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Thuật toán sắp xếp cơ bản bằng cách đổi chỗ các phần tử kề nhau.",
+    "example": "Bubble sort has an average time complexity of O(n^2)."
+  },
+  {
+    "id": "exam-cache-memory",
+    "english": "Cache Memory / CPU Cache",
+    "japanese": "キャッシュメモリ",
+    "kana": "キャッシュメモリ",
+    "vietnamese": "Bộ nhớ đệm / Cache",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Bộ nhớ tốc độ cao nằm gần CPU để lưu trữ dữ liệu hay dùng.",
+    "example": "L1 and L2 cache memory significantly reduce data access latency."
+  },
+  {
+    "id": "exam-cisc",
+    "english": "CISC / Complex Instruction Set Computer",
+    "japanese": "複雑命令セットコンピュータ",
+    "kana": "ふくざつめいれいセットコンピュータ",
+    "vietnamese": "Kiến trúc máy tính tập lệnh phức tạp / CISC",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Kiến trúc CPU có nhiều tập lệnh phức tạp, ngược với RISC.",
+    "example": "x86 architecture is a typical example of CISC."
+  },
+  {
+    "id": "exam-compliancy",
+    "english": "Compliance / Legal Compliance",
+    "japanese": "コンプライアンス / 法令遵守",
+    "kana": "コンプライアンス / ほうれいじゅんしゅ",
+    "vietnamese": "Tuân thủ quy định / Compliance",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Việc tuân thủ các quy định, luật lệ và tiêu chuẩn ngành.",
+    "example": "We must ensure compliance with GDPR when handling user data."
+  },
+  {
+    "id": "exam-critical-path",
+    "english": "Critical Path Method / CPM",
+    "japanese": "クリティカルパス法",
+    "kana": "クリティカルパスほう",
+    "vietnamese": "Phương pháp đường găng / Critical Path",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Chuỗi các công việc quyết định thời gian hoàn thành dự án ngắn nhất.",
+    "example": "Any delay in the critical path will postpone the final delivery."
+  },
+  {
+    "id": "exam-deadlock",
+    "english": "Deadlock",
+    "japanese": "デッドロック",
+    "kana": "デッドロック",
+    "vietnamese": "Tắc nghẽn / Khóa chết / Deadlock",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Trạng thái hai hoặc nhiều tiến trình chờ đợi lẫn nhau giải phóng tài nguyên.",
+    "example": "Proper resource ordering can prevent deadlocks in multi-threaded apps."
+  },
+  {
+    "id": "exam-dma",
+    "english": "DMA / Direct Memory Access",
+    "japanese": "直接メモリ伝送 / ダイレクトメモリアクセス",
+    "kana": "ちょくせつメモリでんそう / ダイレクトメモリアクセス",
+    "vietnamese": "Truy cập bộ nhớ trực tiếp (không qua CPU) / DMA",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Cơ chế cho phép phần cứng truyền dữ liệu trực tiếp vào RAM.",
+    "example": "DMA allows I/O devices to transfer data without involving the CPU."
+  },
+  {
+    "id": "exam-dr",
+    "english": "DR / Disaster Recovery",
+    "japanese": "災害復旧 / ディザスタリカバリ",
+    "kana": "さいがいふっきゅう / ディザスタリカバリ",
+    "vietnamese": "Khôi phục sau thảm họa / DR",
+    "roles": [
+      "Manager",
+      "BrSE",
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Tập hợp các chính sách và quy trình để khôi phục hạ tầng IT sau khi gặp thảm họa tự nhiên hoặc do con người gây ra.",
+    "example": "We perform annual DR drills to ensure data can be recovered."
+  },
+  {
+    "id": "exam-dx",
+    "english": "DX / Digital Transformation",
+    "japanese": "デジタルトランスフォーメーション / DX",
+    "kana": "デジタルトランスフォーメーション / DX",
+    "vietnamese": "Chuyển đổi số / DX",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Sử dụng công nghệ số để thay đổi cách thức hoạt động của doanh nghiệp.",
+    "example": "Many Japanese companies are investing heavily in DX."
+  },
+  {
+    "id": "exam-dynamic-programming",
+    "english": "Dynamic Programming / DP",
+    "japanese": "動的計画法",
+    "kana": "どうてきけいかくほう",
+    "vietnamese": "Quy hoạch động / DP",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Phương pháp giải bài toán phức tạp bằng cách chia nhỏ thành các bài toán con.",
+    "example": "Dynamic programming can solve the knapsack problem efficiently."
+  },
+  {
+    "id": "exam-erp",
+    "english": "ERP / Enterprise Resource Planning",
+    "japanese": "企業資源計画 / ERP",
+    "kana": "きぎょうしげんけいかく / ERP",
+    "vietnamese": "Hệ thống quản trị nguồn lực doanh nghiệp / ERP",
+    "roles": [
+      "QA",
+      "Manager",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống tích hợp quản lý toàn bộ hoạt động của doanh nghiệp.",
+    "example": "The client is planning to migrate their legacy ERP system to the cloud."
+  },
+  {
+    "id": "exam-evm",
+    "english": "EVM / Earned Value Management",
+    "japanese": "アーンドバリュー管理 / EVM",
+    "kana": "アーンドバリューかんり / EVM",
+    "vietnamese": "Quản lý giá trị thu được / EVM",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật đo lường hiệu suất dự án dựa trên phạm vi, thời gian và chi phí.",
+    "example": "EVM analysis shows that we are slightly over budget but ahead of schedule."
+  },
+  {
+    "id": "exam-gantt-chart",
+    "english": "Gantt Chart",
+    "japanese": "ガントチャート",
+    "kana": "ガントチャート",
+    "vietnamese": "Sơ đồ Gantt / Tiến độ dự án",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Sơ đồ thanh ngang biểu diễn lịch trình và thời gian thực hiện dự án.",
+    "example": "Update the Gantt chart to reflect the current progress of development."
+  },
+  {
+    "id": "exam-hash-table",
+    "english": "Hash Table / Hash Map",
+    "japanese": "ハッシュ表 / ハッシュテーブル",
+    "kana": "ハッシュひょう / ハッシュテーブル",
+    "vietnamese": "Bảng băm / Hash Table",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Cấu trúc dữ liệu lưu trữ cặp key-value sử dụng hàm băm.",
+    "example": "A hash table provides constant time complexity for lookups on average."
+  },
+  {
+    "id": "exam-heap",
+    "english": "Heap / Heap Memory",
+    "japanese": "ヒープ",
+    "kana": "ヒープ",
+    "vietnamese": "Vùng nhớ Heap / Bộ nhớ động",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Vùng nhớ được cấp phát động trong quá trình chạy chương trình.",
+    "example": "Objects in Java are allocated on the heap memory."
+  },
+  {
+    "id": "exam-iaas",
+    "english": "IaaS / Infrastructure as a Service",
+    "japanese": "サービスとしてのインフラストラクチャ / IaaS",
+    "kana": "サービスとしてのインフラストラクチャ / IaaS",
+    "vietnamese": "Hạ tầng dưới dạng dịch vụ / IaaS",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cung cấp tài nguyên máy tính ảo (server, storage, network) qua internet.",
+    "example": "AWS EC2 is a prime example of IaaS."
+  },
+  {
+    "id": "exam-integration-test",
+    "english": "Integration Test / IT",
+    "japanese": "結合テスト / 統合テスト",
+    "kana": "けつごうテスト / とうごうテスト",
+    "vietnamese": "Kiểm thử tích hợp / IT",
+    "roles": [
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kiểm tra sự tương tác giữa các module hoặc hệ thống.",
+    "example": "Integration tests reveal bugs in the interfaces between components."
+  },
+  {
+    "id": "exam-interrupt",
+    "english": "Interrupt / Interrupt Request",
+    "japanese": "割込み / インタラプト",
+    "kana": "わりこみ / インタラプト",
+    "vietnamese": "Ngắt / Tín hiệu ngắt / Interrupt",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Tín hiệu báo cho CPU tạm dừng tác vụ hiện tại để xử lý việc khẩn cấp.",
+    "example": "The kernel handles hardware interrupts from the keyboard."
+  },
+  {
+    "id": "exam-kpi",
+    "english": "KPI / Key Performance Indicator",
+    "japanese": "重要業績評価指標 / KPI",
+    "kana": "じゅうようぎょうせきひょうかしひょう / KPI",
+    "vietnamese": "Chỉ số đánh giá hiệu quả công việc / KPI",
+    "roles": [
+      "QA",
+      "Manager",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Chỉ số định lượng dùng để đo lường mức độ thành công.",
+    "example": "Server uptime is one of our infrastructure team's primary KPIs."
+  },
+  {
+    "id": "exam-linked-list",
+    "english": "Linked List",
+    "japanese": "連結リスト",
+    "kana": "れんけつリスト",
+    "vietnamese": "Danh sách liên kết / Linked List",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Cấu trúc dữ liệu gồm các nút nối tiếp nhau qua con trỏ.",
+    "example": "Inserting an element into a linked list is O(1) if you have the pointer."
+  },
+  {
+    "id": "exam-mtbf",
+    "english": "MTBF / Mean Time Between Failures",
+    "japanese": "平均故障間隔",
+    "kana": "へいきんこしょうかんかく",
+    "vietnamese": "Thời gian trung bình giữa các lỗi / MTBF",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Chỉ số đo lường độ tin cậy của một thiết bị phần cứng.",
+    "example": "High MTBF indicates that the hardware is very reliable."
+  },
+  {
+    "id": "exam-mttr",
+    "english": "MTTR / Mean Time To Repair",
+    "japanese": "平均修理時間",
+    "kana": "へいきんしゅうりじかん",
+    "vietnamese": "Thời gian trung bình để sửa chữa / MTTR",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Thời gian trung bình để khắc phục một sự cố phần cứng.",
+    "example": "Automated recovery can significantly reduce the MTTR."
+  },
+  {
+    "id": "exam-mutex",
+    "english": "Mutex / Mutual Exclusion",
+    "japanese": "ミューテックス / 相互排除",
+    "kana": "ミューテックス / そうごはいじょ",
+    "vietnamese": "Loại trừ lẫn nhau / Khóa Mutex",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Cơ chế đảm bảo tại một thời điểm chỉ một tiến trình truy cập tài nguyên.",
+    "example": "A mutex is used to protect shared data from race conditions."
+  },
+  {
+    "id": "exam-paas",
+    "english": "PaaS / Platform as a Service",
+    "japanese": "サービスとしてのプラットフォーム / PaaS",
+    "kana": "サービスとしてのプラットフォーム / PaaS",
+    "vietnamese": "Nền tảng dưới dạng dịch vụ / PaaS",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cung cấp môi trường cho phép khách hàng phát triển và chạy ứng dụng.",
+    "example": "Heroku is a popular PaaS for deploying web applications."
+  },
+  {
+    "id": "exam-pert",
+    "english": "PERT Chart / Program Evaluation and Review Technique",
+    "japanese": "PERT / アローダイアグラム",
+    "kana": "パート / アローダイアグラム",
+    "vietnamese": "Sơ đồ PERT / Sơ đồ mạng lưới công việc",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Sơ đồ dùng để phân tích và lập kế hoạch thời gian cho các nhiệm vụ.",
+    "example": "The PERT chart helps visualize dependencies between project phases."
+  },
+  {
+    "id": "exam-pipeline",
+    "english": "Pipelining / Pipeline Processing",
+    "japanese": "パイプライン処理",
+    "kana": "パイプラインしょり",
+    "vietnamese": "Xử lý song song kiểu đường ống / Pipeline",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật thực hiện đồng thời nhiều giai đoạn của các lệnh khác nhau.",
+    "example": "Instruction pipelining improves the instruction throughput of a CPU."
+  },
+  {
+    "id": "exam-pmbok",
+    "english": "PMBOK / Project Management Body of Knowledge",
+    "japanese": "プロジェクトマネジメント知識体系ガイド",
+    "kana": "プロジェクトマネジメントちしきたいけいガイド",
+    "vietnamese": "Kiến thức quản lý dự án chuẩn quốc tế / PMBOK",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Bộ tiêu chuẩn và hướng dẫn về quản lý dự án của PMI.",
+    "example": "Our project management process is aligned with PMBOK best practices."
+  },
+  {
+    "id": "exam-queue",
+    "english": "Queue",
+    "japanese": "キュー / 待ち行列",
+    "kana": "キュー / まちぎょうれつ",
+    "vietnamese": "Hàng đợi / Queue",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Cấu trúc dữ liệu FIFO (First In, First Out).",
+    "example": "The task queue handles asynchronous jobs in the background."
+  },
+  {
+    "id": "exam-quick-sort",
+    "english": "Quick Sort",
+    "japanese": "クイックソート",
+    "kana": "クイックソート",
+    "vietnamese": "Sắp xếp nhanh / Quick Sort",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Thuật toán sắp xếp hiệu quả sử dụng phương pháp chia để trị.",
+    "example": "Quick sort is often faster than merge sort for in-memory data."
+  },
+  {
+    "id": "exam-raid",
+    "english": "RAID / Redundant Array of Independent Disks",
+    "japanese": "RAID / ディスクアレイ",
+    "kana": "レイド / ディスクアレイ",
+    "vietnamese": "Hệ thống ổ đĩa dự phòng / RAID",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật kết hợp nhiều ổ đĩa vật lý để tăng tốc hoặc dự phòng.",
+    "example": "RAID 1 provides data mirroring for improved reliability."
+  },
+  {
+    "id": "exam-recursion",
+    "english": "Recursion / Recursive",
+    "japanese": "再帰",
+    "kana": "さいき",
+    "vietnamese": "Đệ quy / Recursion",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật lập trình mà một hàm tự gọi lại chính nó.",
+    "example": "Recursion is often used to traverse tree structures."
+  },
+  {
+    "id": "exam-regression-test",
+    "english": "Regression Test",
+    "japanese": "回帰テスト / リグレッションテスト",
+    "kana": "かいきテスト / リグレッションテスト",
+    "vietnamese": "Kiểm thử hồi quy / Regression test",
+    "roles": [
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kiểm tra lại các tính năng cũ để đảm bảo không bị lỗi sau khi sửa đổi.",
+    "example": "Automated regression tests save a lot of time during release cycles."
+  },
+  {
+    "id": "exam-rfi",
+    "english": "RFI / Request for Information",
+    "japanese": "情報提供依頼書 / RFI",
+    "kana": "じょうほうていきょういらいしょ / RFI",
+    "vietnamese": "Yêu cầu cung cấp thông tin / RFI",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Văn bản khách hàng gửi để tìm hiểu năng lực của nhà cung cấp.",
+    "example": "The client sent an RFI to several software vendors last week."
+  },
+  {
+    "id": "exam-rfp",
+    "english": "RFP / Request for Proposal",
+    "japanese": "提案依頼書 / RFP",
+    "kana": "ていあんいらいしょ / RFP",
+    "vietnamese": "Yêu cầu gửi đề xuất / RFP",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Văn bản khách hàng gửi để yêu cầu giải pháp và báo giá cụ thể.",
+    "example": "We are currently drafting a response to the client's RFP."
+  },
+  {
+    "id": "exam-rfq",
+    "english": "RFQ / Request for Quotation",
+    "japanese": "見積依頼書 / RFQ",
+    "kana": "みつもりいらいしょ / RFQ",
+    "vietnamese": "Yêu cầu báo giá / RFQ",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Văn bản tập trung yêu cầu về mặt giá cả cho sản phẩm/dịch vụ.",
+    "example": "After the technical review, the client issued an RFQ."
+  },
+  {
+    "id": "exam-risc",
+    "english": "RISC / Reduced Instruction Set Computer",
+    "japanese": "縮小命令セットコンピュータ",
+    "kana": "しゅくしょうめいれいセットコンピュータ",
+    "vietnamese": "Kiến trúc máy tính tập lệnh tối giản / RISC",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Kiến trúc CPU tập trung vào các tập lệnh đơn giản, hiệu suất cao.",
+    "example": "ARM processors are based on RISC architecture."
+  },
+  {
+    "id": "exam-roi",
+    "english": "ROI / Return on Investment",
+    "japanese": "投資利益率 / ROI",
+    "kana": "とうしりえきりつ / ROI",
+    "vietnamese": "Tỷ suất hoàn vốn / Chỉ số ROI",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Chỉ số đo lường hiệu quả của một khoản đầu tư.",
+    "example": "We need to calculate the ROI of this automation project."
+  },
+  {
+    "id": "exam-round-robin",
+    "english": "Round Robin",
+    "japanese": "ラウンドロビン",
+    "kana": "ラウンドロビン",
+    "vietnamese": "Lập lịch vòng tròn / Round Robin",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Thuật toán cấp phát thời gian CPU đều cho các tiến trình.",
+    "example": "Round robin scheduling ensures fair CPU time distribution."
+  }
+]

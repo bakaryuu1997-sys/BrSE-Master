@@ -1,0 +1,86 @@
+# Environment
+.env
+.env.*
+!.env.example
+
+# Local agent/runtime metadata
+.agent/
+.brain/
+.codegraph/
+.codex
+.codex/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Node
+node_modules/
+.next/
+out/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Transfer packaging staging (bundled 9router package + config, built by
+# scripts/package-for-transfer.sh — never commit the user's 9router keys)
+/ninerouter/
+/backup/
+
+# Build artifacts
+dist/
+build/
+coverage/
+*.tsbuildinfo
+*.db
+*.sqlite
+*.sqlite3
+*.log
+
+# Heavy local media artifacts
+*.mp3
+*.mp4
+*.m4a
+*.wav
+*.webm
+*.mkv
+*.mov
+*.avi
+*.flac
+*.tar.gz
+*.tgz
+*.zip
+*.brsebackup
+*Zone.Identifier*
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/
+uploads/
+backend/uploads/
+backend/memos/
+backend/transcripts/
+memos/
+transcripts/
+memory/
+backend/scratch/
+backend/scratch_check_ocr.py
+# Runtime AI state. The model-choice file is runtime state; the secrets file
+# holds provider API keys/endpoints written by PUT /api/ai/config and must never
+# be committed. Shapes: runtime_ai_config.example.json / runtime_ai_secrets.example.json.
+backend/app/runtime_ai_config.json
+backend/app/runtime_ai_secrets.json
+# Local database dumps / backup artifacts (may contain personal data).
+backup/
+*.sql.bak
+.run/
+
+# Local Claude Code settings (machine-specific)
+.claude/settings.local.json

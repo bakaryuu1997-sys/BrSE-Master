@@ -1,0 +1,75 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-brse}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-brse_password}
+      POSTGRES_DB: ${POSTGRES_DB:-brse}
+    # ports:
+    #   - "127.0.0.1:55433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-brse} -d ${POSTGRES_DB:-brse}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+    restart: unless-stopped
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    env_file:
+      - .env
+    # Frontend reaches the API through the internal compose network (`backend:8000`).
+    # Keep the backend port unpublished to avoid conflicts with local/native uvicorn runs.
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./backend/app:/app/app
+      - ./backend/tests:/app/tests
+      - ./uploads:/app/uploads
+      - ./transcripts:/app/transcripts
+      - ./memos:/app/memos
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        INTERNAL_API_BASE_URL: ${INTERNAL_API_BASE_URL:-http://backend:8000}
+        TEST_GATE_PASSWORD: ${TEST_GATE_PASSWORD:-}
+        TEST_GATE_ENABLED: ${TEST_GATE_ENABLED:-false}
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      NEXT_PUBLIC_API_BASE_URL: /api
+      INTERNAL_API_BASE_URL: ${INTERNAL_API_BASE_URL:-http://backend:8000}
+      TEST_GATE_PASSWORD: ${TEST_GATE_PASSWORD:-}
+      TEST_GATE_ENABLED: ${TEST_GATE_ENABLED:-false}
+    ports:
+      - "127.0.0.1:3010:3000"
+    depends_on:
+      - backend
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    user: root
+    # Opt-in only: the tunnel exposes the app publicly. It does not start with a
+    # plain `docker compose up`; enable it with `docker compose --profile tunnel up`
+    # or via BRSE_ENABLE_TUNNEL=1 in scripts/start-brse-stack.sh.
+    profiles:
+      - tunnel
+    command: tunnel --no-autoupdate --config /etc/cloudflared/config.yml run Master
+    volumes:
+      - ./.run/cloudflared:/etc/cloudflared:ro
+    restart: unless-stopped
+    depends_on:
+      - frontend
+
+volumes:
+  postgres_data:

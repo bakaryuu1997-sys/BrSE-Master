@@ -1,0 +1,751 @@
+[
+  {
+    "id": "iot-mutex",
+    "english": "Mutex / Mutual Exclusion",
+    "japanese": "ミューテックス / 排他制御",
+    "kana": "みゅーてっくす",
+    "vietnamese": "Cơ chế khóa Mutex",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Đồng bộ hóa để tránh xung đột tài nguyên.",
+    "example": "ミューテックスで共有変数を保護します。"
+  },
+  {
+    "id": "iot-nfc",
+    "english": "NFC",
+    "japanese": "NFC / 近距離無線通信",
+    "kana": "えぬえふしー",
+    "vietnamese": "Giao tiếp tầm gần",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chuẩn giao tiếp không dây khoảng cách rất ngắn.",
+    "example": "NFCでペアリングを行います。"
+  },
+  {
+    "id": "iot-opc-ua",
+    "english": "OPC UA",
+    "japanese": "OPC UA",
+    "kana": "おーぴーしーゆーえー",
+    "vietnamese": "Chuẩn OPC UA",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giao thức truyền thông công nghiệp an toàn.",
+    "example": "OPC UAサーバーを立ち上げます。"
+  },
+  {
+    "id": "iot-oscillator",
+    "english": "Oscillator",
+    "japanese": "発振器 / オシレータ",
+    "kana": "はっしんき / おしれーた",
+    "vietnamese": "Bộ dao động",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Linh kiện tạo xung nhịp cho chip.",
+    "example": "外部オシレータを使用します。"
+  },
+  {
+    "id": "iot-ota",
+    "english": "OTA / Over The Air",
+    "japanese": "OTAアップデート",
+    "kana": "おーてぃーえーあっぷでーと",
+    "vietnamese": "Cập nhật qua mạng / Cập nhật OTA",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Cập nhật firmware từ xa.",
+    "example": "OTAでファームウェアを更新します。"
+  },
+  {
+    "id": "iot-payload",
+    "english": "Payload / Payloads",
+    "japanese": "ペイロード / データ本体",
+    "kana": "ぺいろーど",
+    "vietnamese": "Tải trọng / Dữ liệu truyền tải",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Phần dữ liệu thực tế trong gói tin.",
+    "example": "ペイロードのサイズを最小化します。"
+  },
+  {
+    "id": "iot-pcb",
+    "english": "PCB / Printed Circuit Board",
+    "japanese": "プリント基板 / PCB",
+    "kana": "ぷりんとだばん / ぴーしーびー",
+    "vietnamese": "Bo mạch in",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Bảng mạch điện tử.",
+    "example": "PCBのレイアウト設計を依頼します。"
+  },
+  {
+    "id": "iot-plc",
+    "english": "PLC",
+    "japanese": "プログラマブルロジックコントローラ / PLC",
+    "kana": "ぴーえるしー",
+    "vietnamese": "Bộ điều khiển logic có thể lập trình",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Máy tính công nghiệp để điều khiển tự động.",
+    "example": "PLCのラダー図を修正します。"
+  },
+  {
+    "id": "iot-pll",
+    "english": "PLL / Phase-Locked Loop",
+    "japanese": "位相同期回路 / PLL",
+    "kana": "ぴーえるえる",
+    "vietnamese": "Vòng khóa pha",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mạch nhân tần số xung nhịp.",
+    "example": "PLLで内部クロックを高速化します。"
+  },
+  {
+    "id": "iot-power-on-reset",
+    "english": "Power-On Reset / POR",
+    "japanese": "パワーオンリセット",
+    "kana": "ぱわーおんりせっと",
+    "vietnamese": "Khởi động lại khi cấp nguồn",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quá trình khởi tạo khi vừa được cấp điện.",
+    "example": "POR直後の初期化処理を記述します。"
+  },
+  {
+    "id": "iot-provisioning",
+    "english": "Provisioning",
+    "japanese": "プロビジョニング / 機器設定",
+    "kana": "ぷろびじょにんぐ",
+    "vietnamese": "Cung cấp thiết bị / Cài đặt ban đầu",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quá trình đăng ký và cấp quyền cho thiết bị.",
+    "example": "一括プロビジョニングを実行します。"
+  },
+  {
+    "id": "iot-pwm",
+    "english": "PWM",
+    "japanese": "PWM制御",
+    "kana": "ぴーだぶりゅーえむせいぎょ",
+    "vietnamese": "Điều chế độ rộng xung / PWM",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật điều khiển thiết bị analog bằng tín hiệu digital.",
+    "example": "PWMでモーターの回転数を制御します。"
+  },
+  {
+    "id": "iot-race-condition",
+    "english": "Race Condition",
+    "japanese": "競合状態 / レースコンディション",
+    "kana": "れーすこんでぃしょん",
+    "vietnamese": "Điều kiện tương tranh",
+    "roles": [
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Lỗi xảy ra khi kết quả chương trình phụ thuộc vào thứ tự thực hiện ngẫu nhiên của các luồng.",
+    "example": "Use locking mechanisms to prevent race conditions in shared memory."
+  },
+  {
+    "id": "iot-rfid",
+    "english": "RFID",
+    "japanese": "RFID / 電波自動識別",
+    "kana": "あーるえふあいでぃー",
+    "vietnamese": "Nhận dạng qua tần số vô tuyến",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Công nghệ đọc thẻ bằng sóng vô tuyến.",
+    "example": "RFIDタグをスキャンします。"
+  },
+  {
+    "id": "iot-rohs",
+    "english": "RoHS",
+    "japanese": "RoHS指令",
+    "kana": "ろーずしれい",
+    "vietnamese": "Chỉ thị RoHS",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quy định hạn chế chất độc hại trong điện tử.",
+    "example": "RoHS対応の部品のみ使用します。"
+  },
+  {
+    "id": "iot-rtos",
+    "english": "RTOS / Real-Time Operating System",
+    "japanese": "リアルタイムOS / RTOS",
+    "kana": "りあるたいむおーえす / あーるとす",
+    "vietnamese": "Hệ điều hành thời gian thực",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hệ điều hành chuyên dụng cho xử lý thời gian thực.",
+    "example": "RTOSを導入して応答速度を上げます。"
+  },
+  {
+    "id": "iot-scada",
+    "english": "SCADA",
+    "japanese": "SCADA / 監視制御システム",
+    "kana": "すきゃーだ",
+    "vietnamese": "Hệ thống SCADA",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống thu thập dữ liệu và điều khiển giám sát.",
+    "example": "SCADAシステムと連携します。"
+  },
+  {
+    "id": "iot-schematic",
+    "english": "Schematic",
+    "japanese": "回路図",
+    "kana": "かいろず",
+    "vietnamese": "Sơ đồ mạch",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Bản vẽ thiết kế mạch điện tử.",
+    "example": "回路図を確認して配線します。"
+  },
+  {
+    "id": "iot-semaphore",
+    "english": "Semaphore / Semaphores",
+    "japanese": "セマフォ",
+    "kana": "せまふぉ",
+    "vietnamese": "Biến cờ hiệu / Semaphore",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Cơ chế đồng bộ hóa đa luồng.",
+    "example": "セマフォを使ってタスク間の同期を取ります。"
+  },
+  {
+    "id": "iot-sensor",
+    "english": "Sensor / Sensors",
+    "japanese": "センサー / 感知器",
+    "kana": "せんさー / かんちき",
+    "vietnamese": "Cảm biến",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thiết bị nhận biết các yếu tố vật lý và hóa học.",
+    "example": "温度センサーのデータを確認して。"
+  },
+  {
+    "id": "iot-sigfox",
+    "english": "Sigfox",
+    "japanese": "Sigfox",
+    "kana": "しぐふぉっくす",
+    "vietnamese": "Mạng Sigfox",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mạng LPWAN tương tự LoRa.",
+    "example": "Sigfox回線を利用したデバイスです。"
+  },
+  {
+    "id": "iot-sleep-mode",
+    "english": "Sleep Mode",
+    "japanese": "スリープモード / 省電力モード",
+    "kana": "すりーぷもーど",
+    "vietnamese": "Chế độ ngủ",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chế độ tiết kiệm năng lượng của thiết bị.",
+    "example": "待機時はスリープモードに入ります。"
+  },
+  {
+    "id": "iot-smart-city",
+    "english": "Smart City / Smart Cities",
+    "japanese": "スマートシティ",
+    "kana": "すまーとしてぃ",
+    "vietnamese": "Thành phố thông minh",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Khu vực đô thị sử dụng IoT để quản lý tài sản.",
+    "example": "スマートシティの実証実験に参加します。"
+  },
+  {
+    "id": "iot-smart-grid",
+    "english": "Smart Grid",
+    "japanese": "スマートグリッド / 次世代送電網",
+    "kana": "すまーとぐりっど",
+    "vietnamese": "Lưới điện thông minh",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mạng lưới điện sử dụng công nghệ thông tin.",
+    "example": "スマートグリッドで電力網を最適化します。"
+  },
+  {
+    "id": "iot-smart-home",
+    "english": "Smart Home / Smart Homes",
+    "japanese": "スマートホーム",
+    "kana": "すまーとほーむ",
+    "vietnamese": "Nhà thông minh",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống tự động hóa nhà ở.",
+    "example": "スマートホームデバイスを開発しています。"
+  },
+  {
+    "id": "iot-smd",
+    "english": "SMD / Surface Mount Device",
+    "japanese": "表面実装部品 / SMD",
+    "kana": "ひょうめんじっそうぶひん",
+    "vietnamese": "Linh kiện dán",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Linh kiện điện tử gắn trên bề mặt PCB.",
+    "example": "小型化のためにSMDを使用します。"
+  },
+  {
+    "id": "iot-soc",
+    "english": "SoC / System on a Chip",
+    "japanese": "SoC / システムオンチップ",
+    "kana": "えすおーしー",
+    "vietnamese": "Hệ thống trên một vi mạch",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tích hợp toàn bộ hệ thống vào một chip.",
+    "example": "このIoTデバイスは最新のSoCを搭載しています。"
+  },
+  {
+    "id": "iot-soldering",
+    "english": "Soldering",
+    "japanese": "はんだ付け / ソルダリング",
+    "kana": "はんだづけ",
+    "vietnamese": "Hàn linh kiện",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quá trình gắn linh kiện lên bo mạch.",
+    "example": "手作業ではんだ付けを行います。"
+  },
+  {
+    "id": "iot-spi",
+    "english": "SPI",
+    "japanese": "SPI通信 / SPI",
+    "kana": "えすぴーあいつうしん",
+    "vietnamese": "Giao thức SPI",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giao diện ngoại vi nối tiếp đồng bộ.",
+    "example": "SPIはI2Cより高速です。"
+  },
+  {
+    "id": "iot-sram",
+    "english": "SRAM",
+    "japanese": "SRAM",
+    "kana": "えすらむ",
+    "vietnamese": "RAM tĩnh",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Loại RAM lưu dữ liệu miễn là còn nguồn.",
+    "example": "マイコン内蔵のSRAMを利用します。"
+  },
+  {
+    "id": "iot-stack",
+    "english": "Stack / Stack Memory",
+    "japanese": "スタック領域 / スタック",
+    "kana": "すたっくりょういき",
+    "vietnamese": "Bộ nhớ Stack",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Bộ nhớ lưu trữ biến cục bộ và thông tin hàm.",
+    "example": "スタックオーバーフローが発生しました。"
+  },
+  {
+    "id": "iot-state-machine",
+    "english": "State Machine",
+    "japanese": "状態遷移機械 / ステートマシン",
+    "kana": "すてーとましん",
+    "vietnamese": "Máy trạng thái",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mô hình toán học mô tả hành vi hệ thống.",
+    "example": "ステートマシン図を作成して仕様を定義します。"
+  },
+  {
+    "id": "iot-swd",
+    "english": "SWD / Serial Wire Debug",
+    "japanese": "SWD",
+    "kana": "えすだぶりゅーでぃー",
+    "vietnamese": "Giao tiếp gỡ lỗi nối tiếp",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giao thức gỡ lỗi thay thế JTAG dùng ít chân hơn.",
+    "example": "SWDを使ってマイコンをデバッグします。"
+  },
+  {
+    "id": "iot-task-scheduler",
+    "english": "Task Scheduler",
+    "japanese": "タスクスケジューラ",
+    "kana": "たすくすけじゅーら",
+    "vietnamese": "Bộ lập lịch tác vụ",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thành phần OS quyết định thứ tự chạy task.",
+    "example": "タスクスケジューラの挙動をチューニングします。"
+  },
+  {
+    "id": "iot-telemetry",
+    "english": "Telemetry",
+    "japanese": "テレメトリ / 遠隔測定",
+    "kana": "てれめとり / えんかくそくてい",
+    "vietnamese": "Đo lường từ xa",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thu thập và truyền dữ liệu tự động từ các nguồn xa.",
+    "example": "テレメトリデータをクラウドに送信します。"
+  },
+  {
+    "id": "iot-throughput",
+    "english": "Throughput",
+    "japanese": "スループット / 処理能力",
+    "kana": "するーぷっと",
+    "vietnamese": "Lưu lượng / Băng thông thực tế",
+    "roles": [
+      "Backend Dev",
+      "DevOps",
+      "Dev",
+      "BrSE",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Số lượng yêu cầu mà hệ thống có thể xử lý trong một đơn vị thời gian (ví dụ: request/second).",
+    "example": "We need to optimize the database to improve overall system throughput."
+  },
+  {
+    "id": "iot-toolchain",
+    "english": "Toolchain / Toolchains",
+    "japanese": "ツールチェーン",
+    "kana": "つーるちぇーん",
+    "vietnamese": "Chuỗi công cụ / Toolchain",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tập hợp công cụ lập trình cho một hệ thống.",
+    "example": "ARM用のツールチェーンをインストールします。"
+  },
+  {
+    "id": "iot-uart",
+    "english": "UART",
+    "japanese": "UART通信",
+    "kana": "ゆーあーとつうしん",
+    "vietnamese": "Giao thức UART",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giao tiếp nối tiếp bất đồng bộ.",
+    "example": "UARTでデバッグログを出力します。"
+  },
+  {
+    "id": "iot-wake-on-lan",
+    "english": "Wake-on-LAN / WOL",
+    "japanese": "Wake-on-LAN / WOL",
+    "kana": "うぇいくおんらん",
+    "vietnamese": "Đánh thức qua mạng",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Gửi tín hiệu mạng để bật thiết bị.",
+    "example": "WOLでサーバーを起動します。"
+  },
+  {
+    "id": "iot-watchdog-reset",
+    "english": "Watchdog Reset",
+    "japanese": "ウォッチドッグリセット",
+    "kana": "うぉっちどっぐりせっと",
+    "vietnamese": "Khởi động lại do Watchdog",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống reset do WDT kích hoạt.",
+    "example": "ウォッチドッグリセットの原因を特定します。"
+  },
+  {
+    "id": "iot-watchdog-timer",
+    "english": "Watchdog Timer / WDT",
+    "japanese": "ウォッチドッグタイマー",
+    "kana": "うぉっちどっぐたいまー",
+    "vietnamese": "Bộ đếm thời gian giám sát",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Reset hệ thống khi có lỗi phần mềm treo.",
+    "example": "WDTがタイムアウトしました。"
+  },
+  {
+    "id": "iot-wearable",
+    "english": "Wearable / Wearables",
+    "japanese": "ウェアラブルデバイス",
+    "kana": "うぇあらぶるでばいす",
+    "vietnamese": "Thiết bị đeo",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thiết bị công nghệ có thể mặc trên người.",
+    "example": "ウェアラブル端末で心拍数を測ります。"
+  },
+  {
+    "id": "iot-z-wave",
+    "english": "Z-Wave",
+    "japanese": "Z-Wave",
+    "kana": "ぜっとうぇーぶ",
+    "vietnamese": "Mạng Z-Wave",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giao thức truyền thông không dây cho tự động hóa nhà.",
+    "example": "Z-Wave対応の照明です。"
+  },
+  {
+    "id": "iot-zigbee",
+    "english": "Zigbee",
+    "japanese": "Zigbee",
+    "kana": "じぐびー",
+    "vietnamese": "Mạng Zigbee",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giao thức mạng không dây cục bộ.",
+    "example": "Zigbeeでスマートホームを構築します。"
+  },
+  {
+    "id": "lib-vitest-testing",
+    "english": "Unit Testing / Vitest / Pytest",
+    "japanese": "ユニットテスト / 単体テスト / ビテスト / パイテスト",
+    "kana": "ユニットテスト",
+    "vietnamese": "Kiểm thử đơn vị / Unit Test",
+    "roles": [
+      "QA",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Quy trình kiểm tra từng thành phần nhỏ nhất của mã nguồn để đảm bảo chúng hoạt động đúng như thiết kế.",
+    "example": "新機能のリリース前に、VitestとPytestを使用して網羅的なユニットテストを実施します。"
+  },
+  {
+    "id": "lib-whisper-stt",
+    "english": "Speech-to-Text / STT / Whisper",
+    "japanese": "音声文字起こし / 音声認識 / STT",
+    "kana": "エスティーティー",
+    "vietnamese": "Chuyển đổi giọng nói thành văn bản / STT",
+    "roles": [
+      "AI Engineer",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Công nghệ chuyển đổi âm thanh hội thoại trực tiếp thành văn bản. Dự án sử dụng Faster-Whisper cho tốc độ xử lý nhanh.",
+    "example": "OpenAIのWhisperモデルを採用し、高精度な音声文字起こし（STT）を実現しています。"
+  },
+  {
+    "id": "log-back-order",
+    "english": "Back Order / Back Orders",
+    "japanese": "欠品注文 / 入荷待ち注文",
+    "kana": "けっぴんちゅうぶん",
+    "vietnamese": "Đơn hàng chờ nhập kho",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Cho khách đặt hàng ngay cả khi kho đã hết, hàng về sẽ giao sau.",
+    "example": "現在在庫切れですが、バックオーダー（予約注文）として受け付け、入荷次第優先的に発送します。"
+  },
+  {
+    "id": "log-lead-time",
+    "english": "Lead Time",
+    "japanese": "リードタイム",
+    "kana": "りーどたいむ",
+    "vietnamese": "Thời gian chờ / Thời gian thực hiện",
+    "roles": [
+      "Dev",
+      "PO",
+      "BrSE",
+      "PM",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tổng thời gian từ lúc một yêu cầu được tạo ra đến khi nó được hoàn thành.",
+    "example": "We are trying to reduce the lead time for customer requests."
+  },
+  {
+    "id": "log-packing-slip",
+    "english": "Packing Slip",
+    "japanese": "納品書 / 同梱明細",
+    "kana": "のうひんしょ",
+    "vietnamese": "Phiếu giao hàng / Phiếu đóng gói",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Tờ giấy bỏ trong hộp hàng ghi danh sách món hàng.",
+    "example": "倉庫でのピッキング効率を上げるため、納品書と送り状を一体化したラベルを印刷する仕様にしました。"
+  },
+  {
+    "id": "log-safety-stock",
+    "english": "Safety Stock / Safety Stocks",
+    "japanese": "安全在庫",
+    "kana": "あんぜんざいこ",
+    "vietnamese": "Tồn kho an toàn",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Lượng hàng dự trữ tối thiểu để không bị cháy hàng khi có biến cố.",
+    "example": "需要予測のブレを考慮し、欠品を起こさないための安全在庫数をシステムで自動計算します。"
+  }
+]

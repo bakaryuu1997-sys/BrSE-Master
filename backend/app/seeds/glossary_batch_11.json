@@ -1,0 +1,724 @@
+[
+  {
+    "id": "ai-overfitting-1",
+    "english": "Overfitting / Overfitted",
+    "japanese": "過学習 / オーバーフィッティング",
+    "kana": "かがくしゅう",
+    "vietnamese": "Quá khớp / Overfitting",
+    "roles": [
+      "AI Engineer",
+      "Data Scientist"
+    ],
+    "category": "System Design",
+    "note": "Hiện tượng mô hình học quá kỹ dữ liệu huấn luyện dẫn đến kết quả kém trên dữ liệu thực tế.",
+    "example": "過学習（Overfitting）を防ぐために、ドロップアウトや正則化の手法を用います。"
+  },
+  {
+    "id": "ai-parameters-count",
+    "english": "Parameters Count / Model Size",
+    "japanese": "パラメータ数 / モデルサイズ",
+    "kana": "パラメータすう",
+    "vietnamese": "Số lượng tham số / Kích thước mô hình",
+    "roles": [
+      "AI Engineer",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Tổng số lượng trọng số bên trong một mô hình (ví dụ: GPT-3 có 175 tỷ tham số).",
+    "example": "パラメータ数（Parameters Count）が多いほど、より複雑な表現が可能になります。"
+  },
+  {
+    "id": "ai-predictive-maintenance",
+    "english": "Predictive Maintenance",
+    "japanese": "予兆検知 / 予知保全",
+    "kana": "よちょうけんち / よちほぜん",
+    "vietnamese": "Bảo trì dự đoán",
+    "roles": [
+      "BrSE",
+      "PM",
+      "Business"
+    ],
+    "category": "System Design",
+    "note": "AI phân tích rung động/nhiệt độ của máy móc để đoán xem khi nào nó sắp hỏng.",
+    "example": "工場のセンサーデータをAIで分析し、故障が発生する前に部品交換を行う予知保全システムを導入しました。"
+  },
+  {
+    "id": "ai-prompt-engineering",
+    "english": "Prompt Engineering",
+    "japanese": "プロンプトエンジニアリング",
+    "kana": "ぷろんぷとえんじにありんぐ",
+    "vietnamese": "Kỹ thuật viết câu lệnh AI",
+    "roles": [
+      "BA",
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cách viết câu hỏi để AI (như ChatGPT) trả lời đúng ý nhất.",
+    "example": "LLMから精度の高い回答を引き出すため、プロンプトエンジニアリングの手法を用いて指示文を最適化します。"
+  },
+  {
+    "id": "ai-prompt-engineering-1",
+    "english": "Prompt Engineering / Prompting",
+    "japanese": "プロンプトエンジニアリング",
+    "kana": "プロンプトエンジニアリング",
+    "vietnamese": "Kỹ thuật gợi ý / Viết prompt",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật thiết kế và tối ưu câu lệnh để nhận được phản hồi tốt nhất từ AI.",
+    "example": "プロンプトエンジニアリングを工夫することで、AIからより正確な回答を引き出せます。"
+  },
+  {
+    "id": "ai-quantization",
+    "english": "Quantization / Quantizing / Quantized",
+    "japanese": "量子化 / リョウシカ",
+    "kana": "りょうしか",
+    "vietnamese": "Lượng tử hóa mô hình / Nén mô hình",
+    "roles": [
+      "AI Engineer",
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật giảm độ chính xác của trọng số (từ 32-bit xuống 8-bit hoặc 4-bit) để giảm dung lượng và tăng tốc độ suy luận.",
+    "example": "エッジデバイスでLLMを実行するため、モデルの量子化（Quantization）を行います。"
+  },
+  {
+    "id": "ai-rag",
+    "english": "RAG / Retrieval-Augmented Generation",
+    "japanese": "検索拡張生成 / RAG",
+    "kana": "けんさくかくちょうせい",
+    "vietnamese": "Thế hệ tăng cường tìm kiếm / Chạy RAG",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Kết hợp LLM với việc tìm kiếm tài liệu nội bộ để AI không nói linh tinh.",
+    "example": "最新の社内規定に沿った回答をAIに行わせるため、RAG（検索拡張生成）の仕組みを導入しました。"
+  },
+  {
+    "id": "ai-rag-v2",
+    "english": "Retrieval-Augmented Generation / RAG",
+    "japanese": "検索拡張生成 / RAG / ラグ",
+    "kana": "けんさくかくちょうせいせい",
+    "vietnamese": "Tăng cường truy xuất tạo sinh / RAG",
+    "roles": [
+      "AI Engineer",
+      "Architect",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Kết hợp khả năng truy xuất thông tin từ kho kiến thức với mô hình ngôn ngữ lớn để trả lời chính xác.",
+    "example": "社内ドキュメントを活用したチャットボットにRAG（ラグ）を導入しました。"
+  },
+  {
+    "id": "ai-recommendation-engine",
+    "english": "Recommendation Engine",
+    "japanese": "レコメンデーションエンジン",
+    "kana": "れこめんでーしょんえんじん",
+    "vietnamese": "Hệ thống gợi ý",
+    "roles": [
+      "BrSE",
+      "BA",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Gợi ý phim (Netflix), sản phẩm (Amazon) dựa trên sở thích user.",
+    "example": "ユーザーの閲覧履歴に基づき、興味のありそうな商品を提案するレコメンデーション機能を強化します。"
+  },
+  {
+    "id": "ai-reinforcement-learning",
+    "english": "Reinforcement Learning",
+    "japanese": "強化学習",
+    "kana": "きょうかがくしゅう",
+    "vietnamese": "Học tăng cường",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Máy tự học qua thử sai và nhận phần thưởng (thường dùng trong Robot, Game).",
+    "example": "囲碁AIのアルファ碁は、自分自身と対戦を繰り返す強化学習によって世界最強となりました。"
+  },
+  {
+    "id": "ai-reinforcement-learning-1",
+    "english": "Reinforcement Learning / RL",
+    "japanese": "強化学習 / RL",
+    "kana": "きょうかがくしゅう",
+    "vietnamese": "Học tăng cường / RL",
+    "roles": [
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Phương pháp học máy thông qua việc thử sai và nhận phần thưởng/hình phạt.",
+    "example": "強化学習（RL）を用いて、囲碁やチェスのゲームAIを開発します。"
+  },
+  {
+    "id": "ai-reinforcement-learning-human-feedback",
+    "english": "RLHF / Reinforcement Learning from Human Feedback",
+    "japanese": "人間からのフィードバックによる強化学習 / フィードバック",
+    "kana": "じんぜんからのふぃーどばっくによるきょうかがくしゅう",
+    "vietnamese": "Học tăng cường từ phản hồi con người",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cách huấn luyện để ChatGPT nói chuyện 'người' hơn và an toàn hơn.",
+    "example": "LLMの回答を人間がランク付けし、そのフィードバックを元に再学習（RLHF）させることで、より有益で安全なAIへと調整します。"
+  },
+  {
+    "id": "ai-retrieval-augmented-generation",
+    "english": "Retrieval-Augmented Generation / RAG",
+    "japanese": "検索拡張生成 (RAG)",
+    "kana": "けんさくかくちょうせいせい",
+    "vietnamese": "Thế hệ tăng cường tìm kiếm",
+    "roles": [
+      "BrSE",
+      "AI Engineer",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật kết hợp mô hình ngôn ngữ lớn (LLM) với dữ liệu từ bên ngoài để trả lời câu hỏi chính xác và cập nhật hơn.",
+    "example": "RAGを活用して、社内ドキュメントに基づいた正確な回答を生成するチャットボットを開発します。"
+  },
+  {
+    "id": "ai-rlhf",
+    "english": "Reinforcement Learning from Human Feedback / RLHF",
+    "japanese": "人間のフィードバックからの強化学習 / RLHF",
+    "kana": "アールエルエイチエフ",
+    "vietnamese": "Học tăng cường từ phản hồi của con người / RLHF",
+    "roles": [
+      "AI Engineer",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Phương pháp tinh chỉnh AI để kết quả đầu ra phù hợp hơn với ý muốn và đạo đức của con người.",
+    "example": "ChatGPTの安全性と有用性を高めるために、RLHF（アールエルエイチエフ）が採用されています。"
+  },
+  {
+    "id": "ai-semantic-search",
+    "english": "Semantic Search / Semantic Searches / Semantic Searching / Semantic Searched",
+    "japanese": "セマンティック検索",
+    "kana": "せまんてぃっくけんさく",
+    "vietnamese": "Tìm kiếm theo ngữ nghĩa",
+    "roles": [
+      "BrSE",
+      "BA",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Tìm theo ý hiểu chứ không chỉ keyword (VD: 'chỗ ngủ' sẽ ra 'khách sạn').",
+    "example": "キーワードが一致しなくても意図に近い結果を表示できるよう、ベクトル検索を用いたセマンティック検索機能を実装します。"
+  },
+  {
+    "id": "ai-semantic-search-1",
+    "english": "Semantic Search / Semantic Searching",
+    "japanese": "セマンティック検索",
+    "kana": "セマンティックけんさく",
+    "vietnamese": "Tìm kiếm theo ý nghĩa / Tìm kiếm ngữ nghĩa",
+    "roles": [
+      "Architect",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật tìm kiếm dựa trên ý nghĩa thực sự của từ ngữ thay vì chỉ so khớp từ khóa đơn thuần.",
+    "example": "ベクトル空間を利用したセマンティック検索により、より関連性の高い情報を抽出します。"
+  },
+  {
+    "id": "ai-sentiment-analysis",
+    "english": "Sentiment Analysis / Sentiment Analysises",
+    "japanese": "感情分析",
+    "kana": "かんじょうぶんせき",
+    "vietnamese": "Phân tích cảm xúc",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "AI đọc review khách hàng để biết khách đang vui hay giận.",
+    "example": "SNS上の自社ブランドに関する投稿を感情分析し、ネガティブな反応を早期にキャッチアップして改善に繋げます。"
+  },
+  {
+    "id": "ai-speech-to-text",
+    "english": "STT / Speech to Text",
+    "japanese": "音声認識 / 文字起こし",
+    "kana": "おんせいにんしき",
+    "vietnamese": "Chuyển giọng nói thành văn bản",
+    "roles": [
+      "BrSE",
+      "BA",
+      "Comtor"
+    ],
+    "category": "System Design",
+    "note": "Tự động ghi chép biên bản cuộc họp.",
+    "example": "会議の録音データをSTT（音声認識）で自動的に文字起こしし、議事録作成の時間を大幅に短縮しました。"
+  },
+  {
+    "id": "ai-supervised-learning",
+    "english": "Supervised Learning",
+    "japanese": "教師あり学習",
+    "kana": "きょうしありがくしゅう",
+    "vietnamese": "Học có giám sát",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Dạy máy bằng dữ liệu đã có nhãn (input + output chuẩn).",
+    "example": "スパムメール判別機能は、過去の正解データを用いた教師あり学習によって構築されています。"
+  },
+  {
+    "id": "ai-supervised-learning-1",
+    "english": "Supervised Learning / Supervising",
+    "japanese": "教師あり学習",
+    "kana": "きょうしありがくしゅう",
+    "vietnamese": "Học có giám sát",
+    "roles": [
+      "AI Engineer",
+      "Data Scientist"
+    ],
+    "category": "System Design",
+    "note": "Học máy dựa trên tập dữ liệu đã được gán nhãn (labeled data).",
+    "example": "教師あり学習を用いて、スパムメールの自動分類モデルを作成します。"
+  },
+  {
+    "id": "ai-synthetic-data",
+    "english": "Synthetic Data",
+    "japanese": "合成データ",
+    "kana": "ごうせいでーた",
+    "vietnamese": "Dữ liệu tổng hợp (do máy tạo)",
+    "roles": [
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Dữ liệu do chính AI tạo ra để dạy một AI khác, dùng khi thiếu data thật hoặc vấn đề bảo mật.",
+    "example": "プライバシーの懸念から実データが使えないため、統計的な特徴を維持した合成データ（シンセティックデータ）を作成して開発に利用します。"
+  },
+  {
+    "id": "ai-temperature",
+    "english": "Temperature / Randomness",
+    "japanese": "温度パラメータ / テンパラチャー",
+    "kana": "おんどパラメータ",
+    "vietnamese": "Tham số nhiệt độ / Độ ngẫu nhiên",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Tham số điều chỉnh tính sáng tạo hoặc tính nhất quán trong câu trả lời của AI.",
+    "example": "創造的な文章を書かせる場合は、Temperature（温度）の値を高く設定します。"
+  },
+  {
+    "id": "ai-text-to-speech",
+    "english": "TTS / Text to Speech",
+    "japanese": "音声合成",
+    "kana": "おんせいごうせい",
+    "vietnamese": "Chuyển văn bản thành giọng nói",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "AI đọc văn bản cho người dùng nghe.",
+    "example": "ニュース記事をAIが自動で読み上げる音声合成（TTS）機能をアプリに追加しました。"
+  },
+  {
+    "id": "ai-tokenization",
+    "english": "Tokenization / Tokenizing / Token",
+    "japanese": "トークナイゼーション / トークン化",
+    "kana": "トークナイゼーション",
+    "vietnamese": "Mã hóa từ ngữ / Tokenization / Tách từ",
+    "roles": [
+      "AI Engineer",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Quá trình chia văn bản thành các đơn vị nhỏ hơn gọi là token (từ, cụm từ hoặc ký tự).",
+    "example": "NLPの最初の手順として、テキストのトークン化（Tokenization）を行います。"
+  },
+  {
+    "id": "ai-top-p",
+    "english": "Top-p Sampling / Nucleus Sampling",
+    "japanese": "Top-pサンプリング / 核サンプリング",
+    "kana": "トップピー",
+    "vietnamese": "Lấy mẫu xác suất Top-p",
+    "roles": [
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Một kỹ thuật lấy mẫu từ vựng của AI dựa trên tổng xác suất tích lũy.",
+    "example": "Top-pサンプリングを用いることで、より多様で自然なテキストを生成できます。"
+  },
+  {
+    "id": "ai-transfer-learning",
+    "english": "Transfer Learning",
+    "japanese": "転移学習",
+    "kana": "てんいがくしゅう",
+    "vietnamese": "Học chuyển đổi",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Dùng 1 model đã giỏi việc A để dạy cho việc B, giúp tiết kiệm data và thời gian học.",
+    "example": "ゼロから学習させるのではなく、Googleが公開している学習済みモデルに転移学習（ファインチューニング）を施して、特定のドメインに特化させます。"
+  },
+  {
+    "id": "ai-transfer-learning-1",
+    "english": "Transfer Learning / Transferring",
+    "japanese": "転移学習",
+    "kana": "てんいがくしゅう",
+    "vietnamese": "Học chuyển đổi / Transfer Learning",
+    "roles": [
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Sử dụng kiến thức từ một mô hình đã huấn luyện cho một tác vụ để áp dụng vào một tác vụ khác tương tự.",
+    "example": "転移学習（Transfer Learning）を用いることで、少ないデータでも高い精度を実現できます。"
+  },
+  {
+    "id": "ai-transformer",
+    "english": "Transformer / Transformers",
+    "japanese": "トランスフォーマー",
+    "kana": "トランスフォーマー",
+    "vietnamese": "Kiến trúc Transformer / Mô hình Transformer",
+    "roles": [
+      "AI Engineer",
+      "Dev",
+      "Architect",
+      "BrSE",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kiến trúc mạng nơ-ron dựa trên cơ chế 'Attention', là cốt lõi của các mô hình ngôn ngữ như GPT.",
+    "example": "Transformer（トランスフォーマー）アーキテクチャは、自然言語処理に革命をもたらしました。"
+  },
+  {
+    "id": "ai-turing-test",
+    "english": "Turing Test / Turing Testing / Turing Tested",
+    "japanese": "チューリング・テスト / テスト",
+    "kana": "ちゅーりんぐ・てすと",
+    "vietnamese": "Phép thử Turing",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Kiểm tra xem máy tính có trí thông minh như con người không.",
+    "example": "最新のLLMは非常に自然な会話が可能ですが、真の意味でチューリング・テストをパスしたと言えるかは議論が分かれます。"
+  },
+  {
+    "id": "ai-underfitting",
+    "english": "Underfitting / Underfitted",
+    "japanese": "未学習 / アンダーフィッティング",
+    "kana": "みがくしゅう",
+    "vietnamese": "Chưa khớp / Underfitting",
+    "roles": [
+      "AI Engineer",
+      "Data Scientist"
+    ],
+    "category": "System Design",
+    "note": "Hiện tượng mô hình quá đơn giản, không học được quy luật của dữ liệu.",
+    "example": "モデルが単純すぎると未学習（Underfitting）に陥り、精度が出ません。"
+  },
+  {
+    "id": "ai-unsupervised-learning",
+    "english": "Unsupervised Learning",
+    "japanese": "教師なし学習",
+    "kana": "きょうしなしがくしゅう",
+    "vietnamese": "Học không giám sát",
+    "roles": [
+      "AI Engineer",
+      "Data Scientist",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Máy tự tìm quy luật trong dữ liệu chưa được gán nhãn (VD: Phân nhóm khách hàng).",
+    "example": "顧客の購買パターンを分析するため、教師なし学習によるクラスタリングを実施しました。"
+  },
+  {
+    "id": "ai-vector-database",
+    "english": "Vector Database / Vector Databases",
+    "japanese": "ベクトルデータベース / データベース",
+    "kana": "べくとるでーたべーす",
+    "vietnamese": "Cơ sở dữ liệu vector",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Lưu dữ liệu dưới dạng các vector số để tìm kiếm theo ngữ nghĩa cực nhanh (VD: Pinecone).",
+    "example": "大規模な知識ベースから関連情報を瞬時に検索するため、Pineconeなどのベクトルデータベースを活用しています。"
+  },
+  {
+    "id": "ai-weights",
+    "english": "Weights / Parameters",
+    "japanese": "重み / パラメータ",
+    "kana": "おもみ",
+    "vietnamese": "Trọng số / Tham số mô hình",
+    "roles": [
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Các giá trị số điều chỉnh mức độ quan trọng của các kết nối bên trong mạng nơ-ron.",
+    "example": "トレーニングを通じて、ニューラルネットワークの重み（Weights）を最適化します。"
+  },
+  {
+    "id": "ai-xai",
+    "english": "Explainable AI / XAI",
+    "japanese": "説明可能なAI",
+    "kana": "せつめいかのうなえーあい",
+    "vietnamese": "AI có thể giải thích được",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "AI cung cấp lý do cho các quyết định của nó.",
+    "example": "ローンの審査AIがなぜ否決したのかの理由をユーザーに提示するため、XAI（説明可能なAI）技術を導入します。"
+  },
+  {
+    "id": "ai-zero-shot-learning",
+    "english": "Zero-shot Learning",
+    "japanese": "ゼロショット学習",
+    "kana": "ぜろしょっとがくしゅう",
+    "vietnamese": "Học zero-shot (không cần mẫu)",
+    "roles": [
+      "AI Engineer",
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Khả năng của mô hình AI hoàn thành một tác vụ mà không cần bất kỳ ví dụ cụ thể nào trước đó.",
+    "example": "このモデルはゼロショット学習能力が高く、学習データに含まれていない未知のカテゴリに対しても、適切な分類が可能です。"
+  },
+  {
+    "id": "ba-ac",
+    "english": "AC / Acceptance Criteria",
+    "japanese": "受入基準",
+    "kana": "うけいれきじゅん",
+    "vietnamese": "Tiêu chí nghiệm thu / AC / Điều kiện pass",
+    "roles": [
+      "BA",
+      "BrSE",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Các điều kiện mà tính năng phải đáp ứng để được chấp nhận.",
+    "example": "Does this feature meet all the Acceptance Criteria?"
+  },
+  {
+    "id": "ba-activity-diagram",
+    "english": "Activity Diagram / Activity Diagrams",
+    "japanese": "アクティビティ図",
+    "kana": "アクティビティず",
+    "vietnamese": "Sơ đồ hoạt động / Activity Diagram",
+    "roles": [
+      "BA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Một loại sơ đồ UML mô tả luồng công việc của hệ thống.",
+    "example": "An activity diagram is helpful for complex business logic."
+  },
+  {
+    "id": "ba-actor",
+    "english": "Actor / Actors",
+    "japanese": "アクター",
+    "kana": "アクター",
+    "vietnamese": "Tác nhân / Actor",
+    "roles": [
+      "BA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Đối tượng tương tác với hệ thống trong Use Case.",
+    "example": "The 'Admin' is the main actor in this scenario."
+  },
+  {
+    "id": "ba-ambiguity",
+    "english": "Ambiguity / Ambiguous",
+    "japanese": "曖昧さ",
+    "kana": "あいまいさ",
+    "vietnamese": "Sự mơ hồ / Ambiguity",
+    "roles": [
+      "BA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Yêu cầu không rõ ràng, có thể hiểu theo nhiều cách khác nhau.",
+    "example": "We need to remove ambiguity from the specifications."
+  },
+  {
+    "id": "ba-as-is",
+    "english": "AS-IS",
+    "japanese": "現状 / 現行プロセス",
+    "kana": "げんじょう / げんこうプロセス",
+    "vietnamese": "Trạng thái hiện tại / Hiện trạng",
+    "roles": [
+      "BA",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Mô tả quy trình hoặc hệ thống đang hoạt động hiện tại.",
+    "example": "Document the AS-IS process before designing the new one."
+  },
+  {
+    "id": "ba-backlog",
+    "english": "Backlog / Backlogs",
+    "japanese": "バックログ",
+    "kana": "バックログ",
+    "vietnamese": "Danh sách công việc tồn đọng / Backlog",
+    "roles": [
+      "BA",
+      "PO",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Danh sách ưu tiên các công việc cần thực hiện cho sản phẩm.",
+    "example": "Add this feature request to the product backlog."
+  },
+  {
+    "id": "ba-benchmarking",
+    "english": "Benchmarking / Benchmark",
+    "japanese": "ベンチマーキング / 比較評価",
+    "kana": "ベンチマーキング",
+    "vietnamese": "Đối sánh / Benchmarking",
+    "roles": [
+      "BA",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "So sánh sản phẩm/quy trình với các đối thủ cạnh tranh hoặc tiêu chuẩn ngành.",
+    "example": "We did benchmarking against the leading software in the market."
+  },
+  {
+    "id": "ba-brainstorming",
+    "english": "Brainstorming / Brainstorm",
+    "japanese": "ブレインストーミング",
+    "kana": "ブレインストーミング",
+    "vietnamese": "Động não / Brainstorming",
+    "roles": [
+      "Team"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật thảo luận nhóm để tạo ra các ý tưởng mới.",
+    "example": "Let's have a brainstorming session for the UI design."
+  },
+  {
+    "id": "ba-brd",
+    "english": "BRD / Business Requirement Document",
+    "japanese": "ビジネス要件定義書",
+    "kana": "ビジネスようけんていぎしょ",
+    "vietnamese": "Tài liệu đặc tả yêu cầu nghiệp vụ / BRD",
+    "roles": [
+      "BA",
+      "BrSE",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Tài liệu mức cao nhất mô tả mục tiêu kinh doanh và nhu cầu của khách hàng.",
+    "example": "First, we need to finalize the BRD with the stakeholders."
+  },
+  {
+    "id": "ba-business-case",
+    "english": "Business Case",
+    "japanese": "ビジネスケース / 投資対効果検討書",
+    "kana": "ビジネスケース",
+    "vietnamese": "Hồ sơ dự án / Business Case",
+    "roles": [
+      "BA",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Tài liệu giải trình lý do thực hiện dự án và lợi ích mang lại.",
+    "example": "The management approved the project after reviewing the business case."
+  },
+  {
+    "id": "ba-business-process-modeling",
+    "english": "BPM / Business Process Modeling",
+    "japanese": "ビジネスプロセスモデリング",
+    "kana": "ビジネスプロセスモデリング",
+    "vietnamese": "Mô hình hóa quy trình nghiệp vụ / BPM",
+    "roles": [
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Biểu diễn các quy trình kinh doanh dưới dạng sơ đồ.",
+    "example": "BPM is used to optimize internal operations."
+  },
+  {
+    "id": "ba-change-request",
+    "english": "CR / Change Request / Change Requests",
+    "japanese": "変更要求 / CR",
+    "kana": "へんこうようきゅう / CR",
+    "vietnamese": "Yêu cầu thay đổi / CR",
+    "roles": [
+      "BA",
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Yêu cầu sửa đổi các yêu cầu đã được phê duyệt trước đó.",
+    "example": "Client submitted a Change Request for the payment flow."
+  },
+  {
+    "id": "ba-data-flow-diagram",
+    "english": "DFD / Data Flow Diagram",
+    "japanese": "データフロー図 / DFD",
+    "kana": "データフローず / DFD",
+    "vietnamese": "Sơ đồ luồng dữ liệu / DFD",
+    "roles": [
+      "BA",
+      "Dev",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Sơ đồ biểu diễn cách dữ liệu di chuyển trong hệ thống.",
+    "example": "The DFD shows how user data is stored and processed."
+  },
+  {
+    "id": "ba-domain-knowledge",
+    "english": "Domain Knowledge",
+    "japanese": "ドメイン知識 / 業務知識",
+    "kana": "ドメインちしき / ぎょうむちしき",
+    "vietnamese": "Kiến thức nghiệp vụ / Domain knowledge",
+    "roles": [
+      "BA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Hiểu biết chuyên sâu về lĩnh vực cụ thể (ví dụ: Tài chính, Y tế).",
+    "example": "Domain knowledge is crucial for a successful BA."
+  },
+  {
+    "id": "ba-elicitation",
+    "english": "Elicitation / Eliciting",
+    "japanese": "要件引き出し / ヒアリング",
+    "kana": "ようけんひきだし / ヒアリング",
+    "vietnamese": "Khơi gợi yêu cầu / Elicitation / Đi lấy requirement",
+    "roles": [
+      "BA",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Quá trình thu thập yêu cầu từ khách hàng và các bên liên quan.",
+    "example": "Requirement elicitation is the first step of BA work."
+  }
+]

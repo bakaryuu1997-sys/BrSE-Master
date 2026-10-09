@@ -1,0 +1,674 @@
+[
+  {
+    "id": "infra-cgroups",
+    "english": "Cgroups / Control Groups",
+    "japanese": "コントロールグループ / cgroups",
+    "kana": "コントロールグループ",
+    "vietnamese": "Nhóm kiểm soát tài nguyên / Cgroups",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Tính năng của Linux kernel để giới hạn và ưu tiên tài nguyên (CPU, RAM) cho các tiến trình.",
+    "example": "Cgroups prevent a single container from consuming all system memory."
+  },
+  {
+    "id": "infra-chipset",
+    "english": "Chipset",
+    "japanese": "チップセット",
+    "kana": "チップセット",
+    "vietnamese": "Bộ mạch chủ / Chipset",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Tập hợp các chip trên bo mạch chủ quản lý giao tiếp giữa CPU và các thiết bị.",
+    "example": "The chipset determines which CPUs and RAM types are compatible."
+  },
+  {
+    "id": "infra-compiler",
+    "english": "Compiler",
+    "japanese": "コンパイラ",
+    "kana": "コンパイラ",
+    "vietnamese": "Trình biên dịch / Compiler",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Chương trình chuyển đổi mã nguồn ngôn ngữ bậc cao sang mã máy.",
+    "example": "GCC is a famous open-source C/C++ compiler."
+  },
+  {
+    "id": "infra-daemons",
+    "english": "Daemon / Service",
+    "japanese": "デーモン / サービス",
+    "kana": "デーモン",
+    "vietnamese": "Tiến trình chạy nền / Daemon",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Tiến trình chạy ngầm để thực hiện các tác vụ hệ thống (ví dụ: sshd, httpd).",
+    "example": "The web server daemon waits for incoming requests on port 80."
+  },
+  {
+    "id": "infra-driver",
+    "english": "Device Driver",
+    "japanese": "デバイスドライバ",
+    "kana": "デバイスドライバ",
+    "vietnamese": "Trình điều khiển thiết bị / Driver",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Phần mềm cho phép hệ điều hành tương tác với phần cứng.",
+    "example": "Installing the latest graphics driver improves gaming performance."
+  },
+  {
+    "id": "infra-endianness",
+    "english": "Endianness / Big Endian / Little Endian",
+    "japanese": "エンディアン / ビッグエンディアン / リトルエンディアン",
+    "kana": "エンディアン",
+    "vietnamese": "Thứ tự byte / Endianness",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Thứ tự sắp xếp các byte của dữ liệu trong bộ nhớ.",
+    "example": "Network protocols usually use big-endian byte order."
+  },
+  {
+    "id": "infra-environment-variable",
+    "english": "Environment Variable",
+    "japanese": "環境変数",
+    "kana": "かんきょうへんすう",
+    "vietnamese": "Biến môi trường",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Các giá trị động ảnh hưởng đến cách các tiến trình hoạt động trên máy tính.",
+    "example": "The PATH environment variable tells the shell where to find executable files."
+  },
+  {
+    "id": "infra-filesystem",
+    "english": "File System / NTFS / ext4",
+    "japanese": "ファイルシステム",
+    "kana": "ファイルシステム",
+    "vietnamese": "Hệ thống tập tin / File System",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Cách thức tổ chức và lưu trữ dữ liệu trên ổ cứng.",
+    "example": "ext4 is the standard file system for many Linux distributions."
+  },
+  {
+    "id": "infra-firmware",
+    "english": "Firmware",
+    "japanese": "ファームウェア",
+    "kana": "ファームウェア",
+    "vietnamese": "Phần mềm nhúng / Firmware",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Phần mềm được ghi cố định vào các thiết bị phần cứng.",
+    "example": "Updating the router's firmware can fix security vulnerabilities."
+  },
+  {
+    "id": "infra-floating-point",
+    "english": "Floating Point / IEEE 754",
+    "japanese": "浮動小数点",
+    "kana": "ふどうしょうすうてん",
+    "vietnamese": "Số dấu phẩy động / Floating point",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cách biểu diễn số thực trong máy tính.",
+    "example": "Floating point precision issues can lead to calculation errors."
+  },
+  {
+    "id": "infra-garbage-collection",
+    "english": "GC / Garbage Collection",
+    "japanese": "ガベージコレクション",
+    "kana": "ガベージコレクション",
+    "vietnamese": "Thu gom rác bộ nhớ / GC",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Tự động giải phóng bộ nhớ không còn được sử dụng.",
+    "example": "Java and C# rely on garbage collection for memory management."
+  },
+  {
+    "id": "infra-inode",
+    "english": "Inode / Index Node",
+    "japanese": "iノード",
+    "kana": "iノード",
+    "vietnamese": "Nút chỉ mục / Inode",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cấu trúc dữ liệu lưu trữ metadata của một file trong Linux.",
+    "example": "Running out of inodes can prevent creating new files even with disk space."
+  },
+  {
+    "id": "infra-instruction-set",
+    "english": "Instruction Set Architecture / ISA",
+    "japanese": "命令セットアーキテクチャ",
+    "kana": "めいれいセットアーキテクチャ",
+    "vietnamese": "Kiến trúc tập lệnh / ISA",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Tập hợp các lệnh mà CPU có thể hiểu và thực hiện.",
+    "example": "x86 and ARM are two different instruction set architectures."
+  },
+  {
+    "id": "infra-interpreter",
+    "english": "Interpreter",
+    "japanese": "インタプリタ",
+    "kana": "インタプリタ",
+    "vietnamese": "Trình thông dịch / Interpreter",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Thực thi trực tiếp mã nguồn hoặc mã trung gian mà không cần biên dịch trước.",
+    "example": "Python is an interpreted language."
+  },
+  {
+    "id": "infra-interrupt-handler",
+    "english": "Interrupt Handler / ISR",
+    "japanese": "割込みハンドラ",
+    "kana": "わりこみハンドラ",
+    "vietnamese": "Trình xử lý ngắt / ISR",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Hàm callback trong kernel được gọi khi có tín hiệu ngắt phần cứng.",
+    "example": "The keyboard interrupt handler processes key presses in real-time."
+  },
+  {
+    "id": "infra-interrupt-latency",
+    "english": "Interrupt Latency",
+    "japanese": "割込みレイテンシ",
+    "kana": "わりこみレイテンシ",
+    "vietnamese": "Độ trễ xử lý ngắt / Interrupt latency",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Thời gian từ khi có tín hiệu ngắt đến khi trình xử lý ngắt bắt đầu chạy.",
+    "example": "Low interrupt latency is vital for real-time operating systems."
+  },
+  {
+    "id": "infra-interrupt-vector",
+    "english": "Interrupt Vector Table / IVT",
+    "japanese": "割込みベクトルテーブル",
+    "kana": "わりこみベクトルテーブル",
+    "vietnamese": "Bảng vectơ ngắt / IVT",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Bảng chứa địa chỉ các hàm xử lý ngắt.",
+    "example": "The IVT is initialized by the kernel during the boot process."
+  },
+  {
+    "id": "infra-jit",
+    "english": "JIT / Just-In-Time Compilation",
+    "japanese": "実行時コンパイル / JITコンパイル",
+    "kana": "じっこうじコンパイル",
+    "vietnamese": "Biên dịch tại chỗ / JIT",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật biên dịch mã trung gian sang mã máy ngay khi chạy chương trình.",
+    "example": "The V8 engine uses JIT to speed up JavaScript execution."
+  },
+  {
+    "id": "infra-journaling",
+    "english": "Journaling File System",
+    "japanese": "ジャーナリングファイルシステム",
+    "kana": "ジャーナリングファイルシステム",
+    "vietnamese": "Hệ thống tập tin có ghi nhật ký / Journaling",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cơ chế ghi lại thay đổi vào nhật ký để phục hồi sau sự cố mất điện.",
+    "example": "Journaling improves file system reliability after a crash."
+  },
+  {
+    "id": "infra-kernel-space",
+    "english": "Kernel Space",
+    "japanese": "カーネル空間",
+    "kana": "カーネルくうかん",
+    "vietnamese": "Vùng nhân / Kernel Space",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Vùng bộ nhớ dành riêng cho nhân hệ điều hành chạy các tác vụ đặc quyền.",
+    "example": "Device drivers typically run in kernel space."
+  },
+  {
+    "id": "infra-microkernel",
+    "english": "Microkernel",
+    "japanese": "マイクロカーネル",
+    "kana": "マイクロカーネル",
+    "vietnamese": "Nhân tối giản / Microkernel",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Thiết kế kernel chỉ giữ lại các chức năng tối thiểu, các phần khác chạy ở user space.",
+    "example": "Microkernels are more modular and potentially more secure than monolithic ones."
+  },
+  {
+    "id": "infra-mmu",
+    "english": "MMU / Memory Management Unit",
+    "japanese": "メモリ管理装置",
+    "kana": "メモリかんりそうち",
+    "vietnamese": "Đơn vị quản lý bộ nhớ / MMU",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Phần cứng chuyển đổi địa chỉ ảo sang địa chỉ vật lý.",
+    "example": "The MMU provides memory protection between different processes."
+  },
+  {
+    "id": "infra-monolithic-kernel",
+    "english": "Monolithic Kernel",
+    "japanese": "モノリシックカーネル",
+    "kana": "モノリシックカーネル",
+    "vietnamese": "Nhân nguyên khối / Monolithic kernel",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Thiết kế kernel mà toàn bộ các dịch vụ (driver, file system) đều chạy trong kernel space.",
+    "example": "Linux is a classic example of a monolithic kernel."
+  },
+  {
+    "id": "infra-namespace",
+    "english": "Linux Namespace",
+    "japanese": "名前空間",
+    "kana": "なまえくうかん",
+    "vietnamese": "Không gian tên Linux / Namespace",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cơ chế của Linux kernel để cô lập tài nguyên hệ thống (CPU, Network, PID) cho container.",
+    "example": "Network namespaces allow each container to have its own IP address."
+  },
+  {
+    "id": "infra-orphan-process",
+    "english": "Orphan Process",
+    "japanese": "孤児プロセス",
+    "kana": "こじプロセス",
+    "vietnamese": "Tiến trình mồ côi / Orphan process",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Tiến trình mà cha của nó đã kết thúc trước.",
+    "example": "Orphan processes are usually adopted by the 'init' process."
+  },
+  {
+    "id": "infra-page-fault",
+    "english": "Page Fault",
+    "japanese": "ページフォールト",
+    "kana": "ページフォールト",
+    "vietnamese": "Lỗi trang / Page Fault",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Ngắt xảy ra khi chương trình truy cập vào trang bộ nhớ chưa được nạp vào RAM.",
+    "example": "The OS handles a page fault by loading the missing page from disk."
+  },
+  {
+    "id": "infra-peripheral",
+    "english": "Peripheral / Peripheral Device",
+    "japanese": "周辺機器",
+    "kana": "しゅうへんきき",
+    "vietnamese": "Thiết bị ngoại vi / Peripheral",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Các thiết bị kết nối bên ngoài máy tính (chuột, bàn phím, máy in).",
+    "example": "The system automatically detects new USB peripherals."
+  },
+  {
+    "id": "infra-posix",
+    "english": "POSIX / Portable Operating System Interface",
+    "japanese": "POSIX",
+    "kana": "ポジックス",
+    "vietnamese": "Tiêu chuẩn giao diện hệ điều hành di động / POSIX",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Bộ tiêu chuẩn để đảm bảo tính tương thích giữa các hệ điều hành Unix-like.",
+    "example": "Most Unix and Linux systems are POSIX-compliant."
+  },
+  {
+    "id": "infra-post",
+    "english": "POST / Power-On Self-Test",
+    "japanese": "パワーオンセルフテスト",
+    "kana": "パワーオンセルフテスト",
+    "vietnamese": "Tự kiểm tra khi bật nguồn / POST",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Quy trình kiểm tra phần cứng của BIOS/UEFI khi khởi động.",
+    "example": "The computer beeps if it fails the POST."
+  },
+  {
+    "id": "infra-process-control-block",
+    "english": "PCB / Process Control Block",
+    "japanese": "プロセス制御ブロック",
+    "kana": "プロセスせいぎょブロック",
+    "vietnamese": "Khối điều khiển tiến trình / PCB",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cấu trúc dữ liệu trong kernel lưu trữ thông tin về một tiến trình.",
+    "example": "The PCB contains the process state, program counter, and CPU registers."
+  },
+  {
+    "id": "infra-process-priority",
+    "english": "Process Priority / Nice value",
+    "japanese": "プロセスの優先順位",
+    "kana": "プロセスのゆうせんじゅんい",
+    "vietnamese": "Độ ưu tiên tiến trình",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Chỉ số quyết định lượng thời gian CPU mà một tiến trình được nhận.",
+    "example": "Use the 'nice' command to start a process with lower priority."
+  },
+  {
+    "id": "infra-race-condition",
+    "english": "Race Condition",
+    "japanese": "競合状態",
+    "kana": "きょうごうじょうたい",
+    "vietnamese": "Tình trạng tranh chấp / Race condition",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Lỗi xảy ra khi kết quả phụ thuộc vào thứ tự thực thi của các thread.",
+    "example": "Synchronization is required to avoid race conditions."
+  },
+  {
+    "id": "infra-raid-0",
+    "english": "RAID 0 / Striping",
+    "japanese": "RAID 0 / ストライピング",
+    "kana": "レイド 0",
+    "vietnamese": "RAID 0 / Phân mảnh dữ liệu",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Tăng tốc độ bằng cách ghi dữ liệu xen kẽ lên nhiều ổ đĩa, không có dự phòng.",
+    "example": "RAID 0 offers high performance but no data protection."
+  },
+  {
+    "id": "infra-raid-1",
+    "english": "RAID 1 / Mirroring",
+    "japanese": "RAID 1 / ミラーリング",
+    "kana": "レイド 1",
+    "vietnamese": "RAID 1 / Phản chiếu dữ liệu",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Sao chép dữ liệu giống hệt nhau lên hai hoặc nhiều ổ đĩa.",
+    "example": "RAID 1 provides redundancy in case one drive fails."
+  },
+  {
+    "id": "infra-raid-5",
+    "english": "RAID 5 / Parity",
+    "japanese": "RAID 5 / パリティ",
+    "kana": "レイド 5",
+    "vietnamese": "RAID 5 / Kiểm tra chẵn lẻ",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Sử dụng block parity để vừa tăng tốc vừa có dự phòng lỗi 1 ổ đĩa.",
+    "example": "RAID 5 requires at least three hard drives."
+  },
+  {
+    "id": "infra-real-time-os",
+    "english": "RTOS / Real-Time Operating System",
+    "japanese": "リアルタイムオペレーティングシステム",
+    "kana": "リアルタイムオペレーティングシステム",
+    "vietnamese": "Hệ điều hành thời gian thực / RTOS",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Hệ điều hành đảm bảo xử lý các tác vụ trong một khoảng thời gian cực ngắn và chính xác.",
+    "example": "RTOS is used in embedded systems like car braking or medical devices."
+  },
+  {
+    "id": "infra-segmentation",
+    "english": "Segmentation",
+    "japanese": "セグメンテーション",
+    "kana": "セグメンテーション",
+    "vietnamese": "Phân đoạn bộ nhớ / Segmentation",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật quản lý bộ nhớ chia thành các đoạn có kích thước thay đổi.",
+    "example": "Segmentation fault (sigsegv) occurs when a program accesses illegal memory."
+  },
+  {
+    "id": "infra-shell",
+    "english": "Shell / Bash / Zsh",
+    "japanese": "シェル",
+    "kana": "シェル",
+    "vietnamese": "Vỏ hệ điều hành / Trình thông dịch lệnh / Shell",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Giao diện người dùng để tương tác với nhân hệ điều hành qua dòng lệnh.",
+    "example": "Bash is the default shell for many Linux distributions."
+  },
+  {
+    "id": "infra-stack-overflow",
+    "english": "Stack Overflow",
+    "japanese": "スタックオーバーフロー",
+    "kana": "スタックオーバーフロー",
+    "vietnamese": "Tràn ngăn xếp / Stack overflow",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Lỗi khi vùng nhớ stack bị dùng hết, thường do đệ quy vô tận.",
+    "example": "Infinite recursion leads to a stack overflow error."
+  },
+  {
+    "id": "infra-swapping",
+    "english": "Swapping / Swap Space",
+    "japanese": "スワッピング / スワップ領域",
+    "kana": "スワッピング",
+    "vietnamese": "Hoán chuyển bộ nhớ / Vùng Swap",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Di chuyển các tiến trình ít dùng từ RAM sang ổ cứng để giải phóng bộ nhớ.",
+    "example": "Increasing swap space can prevent OOM (Out Of Memory) errors."
+  },
+  {
+    "id": "infra-system-call",
+    "english": "System Call / Syscall",
+    "japanese": "システムコール",
+    "kana": "システムコール",
+    "vietnamese": "Lời gọi hệ thống / System Call",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Giao diện lập trình cho phép ứng dụng user yêu cầu dịch vụ từ kernel.",
+    "example": "Reading a file requires a system call to the operating system."
+  },
+  {
+    "id": "infra-thread-safety",
+    "english": "Thread Safety / Thread-Safe",
+    "japanese": "スレッドセーフ",
+    "kana": "スレッドセーフ",
+    "vietnamese": "An toàn luồng / Thread Safety",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Code hoạt động chính xác khi được thực thi bởi nhiều luồng cùng lúc.",
+    "example": "Always use thread-safe collections in multi-threaded environments."
+  },
+  {
+    "id": "infra-tlb",
+    "english": "TLB / Translation Lookaside Buffer",
+    "japanese": "アドレス変換バッファ",
+    "kana": "アドレスへんかんバッファ",
+    "vietnamese": "Bộ đệm chuyển đổi địa chỉ / TLB",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Bộ nhớ đệm dùng để tăng tốc độ chuyển đổi địa chỉ ảo sang vật lý.",
+    "example": "A TLB miss forces the MMU to walk the page table in RAM."
+  },
+  {
+    "id": "infra-user-space",
+    "english": "User Space",
+    "japanese": "ユーザー空間",
+    "kana": "ユーザーくうかん",
+    "vietnamese": "Vùng người dùng / User Space",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Vùng bộ nhớ nơi các ứng dụng người dùng thông thường chạy.",
+    "example": "Web browsers and text editors operate in user space."
+  },
+  {
+    "id": "infra-zombie-process",
+    "english": "Zombie Process / Defunct Process",
+    "japanese": "ゾンビプロセス",
+    "kana": "ゾンビプロセス",
+    "vietnamese": "Tiến trình thây ma / Zombie process",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Tiến trình đã kết thúc nhưng vẫn còn mục nhập trong bảng tiến trình.",
+    "example": "Zombie processes don't consume resources but can clutter the process table."
+  },
+  {
+    "id": "iot-actuator",
+    "english": "Actuator / Actuators",
+    "japanese": "アクチュエータ",
+    "kana": "あくちゅえーた",
+    "vietnamese": "Cơ cấu chấp hành",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thiết bị thực hiện các lệnh vật lý (động cơ, van).",
+    "example": "アクチュエータの制御ロジックを実装します。"
+  },
+  {
+    "id": "iot-adc",
+    "english": "ADC",
+    "japanese": "A / D変換器 / ADC",
+    "kana": "えーでぃーへんかんき",
+    "vietnamese": "Bộ chuyển đổi tương tự - số",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chuyển tín hiệu liên tục thành dữ liệu rời rạc.",
+    "example": "ADCの分解能は12ビットです。"
+  },
+  {
+    "id": "iot-asic",
+    "english": "ASIC",
+    "japanese": "特定用途向けIC / ASIC",
+    "kana": "えーしっく",
+    "vietnamese": "Vi mạch chuyên dụng",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chip thiết kế riêng cho một ứng dụng.",
+    "example": "ASICで処理を高速化します。"
+  },
+  {
+    "id": "iot-beacon",
+    "english": "Beacon / Beacons",
+    "japanese": "ビーコン",
+    "kana": "びーこん",
+    "vietnamese": "Báo hiệu / Beacon",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thiết bị phát tín hiệu định vị khoảng cách gần.",
+    "example": "ビーコンを活用して位置情報を取得します。"
+  },
+  {
+    "id": "iot-ble",
+    "english": "BLE / Bluetooth Low Energy",
+    "japanese": "BLE通信 / 省電力Bluetooth",
+    "kana": "びーえるいーつうしん",
+    "vietnamese": "Bluetooth năng lượng thấp",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chuẩn Bluetooth tối ưu hóa tiết kiệm pin.",
+    "example": "BLEビーコンを検知しました。"
+  }
+]

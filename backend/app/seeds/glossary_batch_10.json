@@ -1,0 +1,712 @@
+[
+  {
+    "id": "ai-anomaly-detection",
+    "english": "Anomaly Detection",
+    "japanese": "異常検知 / アノマリー検知",
+    "kana": "いじょうけんち",
+    "vietnamese": "Phát hiện bất thường",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tìm ra các điểm dữ liệu khác lạ (VD: server sắp hỏng, thẻ bị trộm).",
+    "example": "サーバーのログをリアルタイムで分析し、通常とは異なるパターンを検知してサイバー攻撃を早期発見する異常検知システムを運用しています。"
+  },
+  {
+    "id": "ai-attention-mechanism",
+    "english": "Attention Mechanism / Self-Attention",
+    "japanese": "アテンション機構 / 自己注意機構",
+    "kana": "アテンションきこう",
+    "vietnamese": "Cơ chế chú ý / Self-Attention",
+    "roles": [
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật giúp mô hình tập trung vào các phần quan trọng nhất của dữ liệu đầu vào.",
+    "example": "自己注意（Self-Attention）により、文脈の中の長距離の依存関係を捉えることが可能です。"
+  },
+  {
+    "id": "ai-autonomous-agents",
+    "english": "Autonomous Agents",
+    "japanese": "自律型エージェント",
+    "kana": "じりつがたえーじぇんと",
+    "vietnamese": "Tác nhân tự trị",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "AI có khả năng tự đặt mục tiêu và thực hiện các bước để hoàn thành mà không cần người chỉ từng bước (VD: AutoGPT).",
+    "example": "自律型エージェントを活用し、ユーザーの要件からコード生成、テスト、デプロイまでを自動で行う実験を進めています。"
+  },
+  {
+    "id": "ai-backpropagation",
+    "english": "Backpropagation / Backpropagating",
+    "japanese": "誤差逆伝播法 / バックプロパゲーション",
+    "kana": "ごさぎゃくでんぱほう",
+    "vietnamese": "Lan truyền ngược / Backprop",
+    "roles": [
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Thuật toán cơ bản để huấn luyện mạng nơ-ron bằng cách tính toán gradient của hàm mất mát.",
+    "example": "バックプロパゲーション（誤差逆伝播法）により、ネットワークの重みを更新します。"
+  },
+  {
+    "id": "ai-bias",
+    "english": "AI Bias / Algorithm Bias",
+    "japanese": "AIのバイアス / 偏見",
+    "kana": "バイアス",
+    "vietnamese": "Định kiến AI / Thiên kiến thuật toán",
+    "roles": [
+      "AI Engineer",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Sự sai lệch mang tính định kiến trong kết quả của AI do dữ liệu huấn luyện không công bằng hoặc không đại diện.",
+    "example": "AIのバイアス（Bias）を排除するため、多様なデータセットで学習させる必要があります。"
+  },
+  {
+    "id": "ai-biometrics",
+    "english": "Biometrics",
+    "japanese": "生体認証",
+    "kana": "せいたいにんしょう",
+    "vietnamese": "Sinh trắc học",
+    "roles": [
+      "BrSE",
+      "BA",
+      "Requirement"
+    ],
+    "category": "System Design",
+    "note": "Dùng vân tay, mống mắt, khuôn mặt để định danh.",
+    "example": "モバイルアプリのログインに指紋や顔認証といった生体認証（ビオメトリクス）を採用し、利便性と安全性を両立させます。"
+  },
+  {
+    "id": "ai-black-box",
+    "english": "Black Box AI",
+    "japanese": "ブラックボックス化",
+    "kana": "ぶらっくぼっくすか",
+    "vietnamese": "AI hộp đen (không giải thích được)",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "AI đưa ra kết quả nhưng con người không hiểu tại sao nó lại chọn thế.",
+    "example": "金融や医療分野では、AIのブラックボックス化を避け、判断根拠を説明できる「説明可能なAI（XAI）」が重視されます。"
+  },
+  {
+    "id": "ai-bottleneck",
+    "english": "Bottleneck / Bottlenecks",
+    "japanese": "ボトルネック / 障害",
+    "kana": "ボトルネック",
+    "vietnamese": "Nút thắt cổ chai / Điểm nghẽn",
+    "roles": [
+      "Architect",
+      "PM",
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Thành phần chậm nhất trong một hệ thống làm ảnh hưởng đến tốc độ chung của toàn bộ quy trình.",
+    "example": "システム全体のパフォーマンスを向上させるため、データベースのボトルネック（Bottleneck）を解消します。"
+  },
+  {
+    "id": "ai-chatbot",
+    "english": "Chatbot",
+    "japanese": "チャットボット",
+    "kana": "ちゃっとぼっと",
+    "vietnamese": "Robot trò chuyện tự động",
+    "roles": [
+      "BrSE",
+      "BA",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Tự động trả lời câu hỏi khách hàng.",
+    "example": "よくある質問への対応をチャットボットに任せることで、オペレーターの負担を3割削減できました。"
+  },
+  {
+    "id": "ai-computer-vision",
+    "english": "Computer Vision",
+    "japanese": "コンピュータビジョン / 画像認識",
+    "kana": "こんぴゅーたびじょん",
+    "vietnamese": "Thị giác máy tính",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Xử lý hình ảnh/video để nhận diện vật thể, khuôn mặt.",
+    "example": "コンピュータビジョン技術を用いて、製造ライン上の製品のキズを自動で検知するシステムを構築します。"
+  },
+  {
+    "id": "ai-computer-vision-1",
+    "english": "Computer Vision / CV",
+    "japanese": "コンピュータビジョン / 画像認識 / CV",
+    "kana": "コンピュータビジョン",
+    "vietnamese": "Thị giác máy tính / Nhận diện hình ảnh",
+    "roles": [
+      "AI Engineer",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Lĩnh vực giúp máy tính có thể 'nhìn' và hiểu được thông tin từ hình ảnh hoặc video.",
+    "example": "コンピュータビジョン（CV）を使用して、不良品の自動検知システムを構築します。"
+  },
+  {
+    "id": "ai-convergence",
+    "english": "Convergence / Converging",
+    "japanese": "収束 / しゅうそく",
+    "kana": "しゅうそく",
+    "vietnamese": "Hội tụ (Học máy)",
+    "roles": [
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Trạng thái khi mô hình đã học đủ và hàm mất mát không giảm thêm đáng kể nữa.",
+    "example": "学習が収束（Convergence）するまで、エポック数を調整しながらトレーニングを続けます。"
+  },
+  {
+    "id": "ai-data-annotation",
+    "english": "Data Annotation / Labeling",
+    "japanese": "データアノテーション / 教師データ作成",
+    "kana": "でーたあのてーしょん",
+    "vietnamese": "Gán nhãn dữ liệu",
+    "roles": [
+      "BrSE",
+      "BA",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Khâu thuê người đánh dấu đâu là mèo, đâu là chó để AI học. Tốn thời gian và tiền bạc.",
+    "example": "画像認識AIの精度を上げるため、数万枚の画像に対して手作業でアノテーションを行う必要があります。"
+  },
+  {
+    "id": "ai-data-augmentation",
+    "english": "Data Augmentation / Augmenting",
+    "japanese": "データ拡張 / データオーグメンテーション",
+    "kana": "データかくちょう",
+    "vietnamese": "Tăng cường dữ liệu",
+    "roles": [
+      "AI Engineer",
+      "Data Scientist"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật tạo thêm dữ liệu mới từ dữ liệu có sẵn (như xoay ảnh, thêm nhiễu) để tăng hiệu quả huấn luyện.",
+    "example": "学習データが少ない場合、データ拡張（Data Augmentation）が非常に有効です。"
+  },
+  {
+    "id": "ai-data-governance",
+    "english": "Data Governance",
+    "japanese": "データガバナンス / ガバナンス",
+    "kana": "でーたがばなんす",
+    "vietnamese": "Quản trị dữ liệu",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Quy tắc quản lý dữ liệu toàn doanh nghiệp để đảm bảo an toàn, bảo mật và chất lượng.",
+    "example": "全社的なデータ活用のための土台として、データガバナンス体制を構築し、データの利用ルールを明確化します。"
+  },
+  {
+    "id": "ai-deep-learning",
+    "english": "Deep Learning / DL",
+    "japanese": "深層学習 / ディープラーニング",
+    "kana": "しんそうがくしゅう",
+    "vietnamese": "Học sâu",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Dùng Neural Networks nhiều lớp để xử lý dữ liệu phức tạp (hình ảnh, tiếng nói).",
+    "example": "画像認識の精度を向上させるため、最新の深層学習（ディープラーニング）アルゴリズムを採用しました。"
+  },
+  {
+    "id": "ai-deep-learning-1",
+    "english": "Deep Learning / DL",
+    "japanese": "深層学習 / ディープラーニング / DL",
+    "kana": "しんそうがくしゅう",
+    "vietnamese": "Học sâu / Deep Learning",
+    "roles": [
+      "AI Engineer",
+      "Data Scientist"
+    ],
+    "category": "System Design",
+    "note": "Một nhánh của Machine Learning dựa trên các mạng nơ-ron nhiều lớp để học từ lượng dữ liệu khổng lồ.",
+    "example": "画像認識の精度を向上させるため、ディープラーニング（Deep Learning）を採用しました。"
+  },
+  {
+    "id": "ai-edge-ai",
+    "english": "Edge AI",
+    "japanese": "エッジAI",
+    "kana": "えっじえーあい",
+    "vietnamese": "AI tại biên",
+    "roles": [
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Chạy mô hình AI ngay trên chip điện thoại/camera mà không cần gửi lên Cloud.",
+    "example": "通信環境がない場所でも動作するよう、エッジAIを搭載したドローンによるインフラ点検システムを開発しています。"
+  },
+  {
+    "id": "ai-embedding",
+    "english": "Embedding / Embeddings / Vectorization",
+    "japanese": "埋め込み / エンベディング / ベクトル化",
+    "kana": "うめこみ",
+    "vietnamese": "Nhúng dữ liệu / Chuyển đổi vector / Embedding",
+    "roles": [
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Quá trình chuyển đổi các từ ngữ hoặc dữ liệu thành các dãy số (vector) trong không gian nhiều chiều.",
+    "example": "単語間の意味の近さを計算するために、ワードエンベディング（Embedding）を利用します。"
+  },
+  {
+    "id": "ai-epoch",
+    "english": "Epoch / Epochs",
+    "japanese": "エポック / 学習回数",
+    "kana": "エポック",
+    "vietnamese": "Vòng lặp huấn luyện / Chu kỳ học",
+    "roles": [
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Một lượt đi qua toàn bộ tập dữ liệu huấn luyện của mạng nơ-ron.",
+    "example": "精度の向上を確認しながら、30エポック（Epochs）の学習を実行しました。"
+  },
+  {
+    "id": "ai-explainability",
+    "english": "Explainable AI / XAI",
+    "japanese": "説明可能なAI / XAI",
+    "kana": "せつめいかのうなエーアイ",
+    "vietnamese": "AI có thể giải thích được",
+    "roles": [
+      "AI Engineer",
+      "BrSE",
+      "QA",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Các phương pháp giúp con người hiểu được lý do tại sao AI lại đưa ra một quyết định cụ thể.",
+    "example": "金融や医療の分野では、AIの意思決定プロセスを可視化するXAI（説明可能なAI）が重要です。"
+  },
+  {
+    "id": "ai-feature-engineering",
+    "english": "Feature Engineering",
+    "japanese": "特徴量エンジニアリング / フィーチャー",
+    "kana": "とくちょうりょうえんじにありんぐ",
+    "vietnamese": "Kỹ thuật trích chọn đặc trưng",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Chọn lọc những thông tin quan trọng nhất để AI học hiệu quả hơn.",
+    "example": "予測精度を向上させるため、ドメイン知識を活かした適切な特徴量エンジニアリングが重要です。"
+  },
+  {
+    "id": "ai-few-shot",
+    "english": "Few-shot Learning / Few-shot",
+    "japanese": "フューショット学習",
+    "kana": "フューショットがくしゅう",
+    "vietnamese": "Học từ ít ví dụ / Few-shot",
+    "roles": [
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật cung cấp một vài ví dụ minh họa trong câu lệnh để AI hiểu và làm theo đúng định dạng mong muốn.",
+    "example": "プロンプトに数例のサンプルを含めるフューショット（Few-shot）により、出力の精度が向上します。"
+  },
+  {
+    "id": "ai-fine-grain",
+    "english": "Fine-grained / Granularity",
+    "japanese": "きめ細かい / 粒度 / ファイングレイン",
+    "kana": "りゅうど",
+    "vietnamese": "Độ chi tiết / Phân tách nhỏ",
+    "roles": [
+      "Architect",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mức độ chi tiết của dữ liệu hoặc sự kiểm soát đối với một quy trình.",
+    "example": "権限管理をより強固にするため、ファイングレイン（Fine-grained）なアクセス制御を導入します。"
+  },
+  {
+    "id": "ai-fine-tuning",
+    "english": "Fine-tuning / Fine-tune / Fine-tuned / Fine-tunes",
+    "japanese": "ファインチューニング / 微調整",
+    "kana": "びちょうせい",
+    "vietnamese": "Tinh chỉnh mô hình / Fine-tune",
+    "roles": [
+      "AI Engineer",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Quá trình huấn luyện thêm một mô hình đã có sẵn với tập dữ liệu nhỏ hơn, chuyên biệt hơn để thực hiện một tác vụ cụ thể.",
+    "example": "専門用語に対応させるため、既存のモデルに対してファインチューニングを行います。"
+  },
+  {
+    "id": "ai-fine-tuning-v2",
+    "english": "Fine-tuning / Fine-tuned / Fine-tune",
+    "japanese": "ファインチューニング / 微調整",
+    "kana": "ファインチューニング",
+    "vietnamese": "Tinh chỉnh mô hình / Fine-tune",
+    "roles": [
+      "AI Engineer",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Huấn luyện bổ sung mô hình đã có với dữ liệu chuyên biệt để cải thiện độ chính xác cho một tác vụ cụ thể.",
+    "example": "医療ドメインに特化させるため、既存モデルにファインチューニングを施します。"
+  },
+  {
+    "id": "ai-gan",
+    "english": "Generative Adversarial Network / GAN",
+    "japanese": "敵対的生成ネットワーク / GAN",
+    "kana": "てきたいてきせいせいネットワーク",
+    "vietnamese": "Mạng đối địch tạo sinh / GAN",
+    "roles": [
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Kiến trúc gồm hai mạng nơ-ron (Generator và Discriminator) đối kháng nhau để tạo ra dữ liệu giả như thật.",
+    "example": "リアルな人の顔を合成するために、GAN（ガン）という手法が使われます。"
+  },
+  {
+    "id": "ai-generative-ai",
+    "english": "Generative AI",
+    "japanese": "生成AI",
+    "kana": "せいせいえーあい",
+    "vietnamese": "AI tạo sinh",
+    "roles": [
+      "BrSE",
+      "PM",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "AI có khả năng tạo nội dung mới (ChatGPT, Midjourney).",
+    "example": "生成AIを活用して、商品の商品説明文を自動生成する機能を管理画面に追加します。"
+  },
+  {
+    "id": "ai-generative-ai-1",
+    "english": "Generative AI / GenAI",
+    "japanese": "生成AI / ジェネレーティブAI",
+    "kana": "せいせいエーアイ",
+    "vietnamese": "AI tạo sinh / Generative AI",
+    "roles": [
+      "PM",
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Loại AI có khả năng tạo ra nội dung mới như văn bản, hình ảnh, hoặc âm thanh.",
+    "example": "生成AI（Generative AI）を活用して、コンテンツ制作の効率化を図ります。"
+  },
+  {
+    "id": "ai-gpu-acceleration",
+    "english": "GPU Acceleration / Graphics Processing Unit / GPU",
+    "japanese": "GPU加速 / グラフィックスプロセッシングユニット / GPU",
+    "kana": "ジーピーユー",
+    "vietnamese": "Tăng tốc bằng card đồ họa / GPU",
+    "roles": [
+      "DevOps",
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Sử dụng sức mạnh tính toán song song của card đồ họa để đẩy nhanh quá trình huấn luyện AI.",
+    "example": "大規模なモデルの学習には、強力なGPU（ジーピーユー）環境が不可欠です。"
+  },
+  {
+    "id": "ai-hallucination",
+    "english": "Hallucination / Hallucinations / Hallucinating",
+    "japanese": "ハルシネーション / 幻覚",
+    "kana": "はるしねーしょん",
+    "vietnamese": "Hiện tượng ảo giác AI / AI bốc phét",
+    "roles": [
+      "BrSE",
+      "QA",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Khi AI nói dối một cách rất tự tin và trôi chảy.",
+    "example": "AIが事実に基づかない情報を生成するハルシネーション（幻覚）のリスクがあるため、必ず人間による最終確認が必要です。"
+  },
+  {
+    "id": "ai-hallucination-1",
+    "english": "Hallucination / Hallucinating / Hallucinations",
+    "japanese": "ハルシネーション / 幻覚",
+    "kana": "ハルシネーション",
+    "vietnamese": "Ảo giác AI / Ảo tưởng AI",
+    "roles": [
+      "AI Engineer",
+      "BrSE",
+      "User"
+    ],
+    "category": "System Design",
+    "note": "Hiện tượng AI tự tạo ra thông tin sai lệch nhưng trình bày như thể đó là sự thật.",
+    "example": "LLMの回答にはハルシネーション（Hallucination）が含まれる可能性があるため、事実確認が必要です。"
+  },
+  {
+    "id": "ai-inference",
+    "english": "Inference",
+    "japanese": "推論 / インフェレンス",
+    "kana": "すいろん",
+    "vietnamese": "Quá trình suy luận của AI",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Khi AI đã học xong và được đem ra sử dụng để dự đoán.",
+    "example": "学習済みのモデルを用いて、リアルタイムに画像内の物体を検知する推論処理を実行します。"
+  },
+  {
+    "id": "ai-inference-1",
+    "english": "Inference / Inferring",
+    "japanese": "推論 / インファレンス",
+    "kana": "すいろん",
+    "vietnamese": "Suy luận (AI) / Chạy mô hình",
+    "roles": [
+      "AI Engineer",
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Quá trình sử dụng một mô hình đã huấn luyện để đưa ra dự đoán trên dữ liệu mới.",
+    "example": "推論（Inference）の速度を上げるため、モデルの量子化（Quantization）を行います。"
+  },
+  {
+    "id": "ai-labeling",
+    "english": "Data Labeling / Annotation",
+    "japanese": "データアノテーション / ラベリング",
+    "kana": "アノテーション",
+    "vietnamese": "Gán nhãn dữ liệu / Làm sạch dữ liệu",
+    "roles": [
+      "Data Engineer",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quá trình xác định và gán nhãn các đối tượng trong dữ liệu để tạo tập huấn luyện cho AI.",
+    "example": "画像認識モデルを開発するため、大量の画像にアノテーション（Labeling）を施します。"
+  },
+  {
+    "id": "ai-large-language-model",
+    "english": "Large Language Model / LLM",
+    "japanese": "大規模言語モデル",
+    "kana": "だいきぼげんごモデル",
+    "vietnamese": "Mô hình ngôn ngữ lớn",
+    "roles": [
+      "PM",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Các mô hình AI được huấn luyện trên lượng dữ liệu văn bản khổng lồ (như GPT-4, Llama) để hiểu và tạo ra văn bản như người thật.",
+    "example": "社内ドキュメントを学習させた独自LLMを構築し、社内専用のAIアシスタントを作成しました。"
+  },
+  {
+    "id": "ai-large-language-model-v2",
+    "english": "Large Language Model / LLM / LLMs",
+    "japanese": "大規模言語モデル / LLM / エルエルエム",
+    "kana": "だいきぼげんごモデル",
+    "vietnamese": "Mô hình ngôn ngữ lớn / LLM",
+    "roles": [
+      "AI Engineer",
+      "Architect",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Mô hình AI được huấn luyện trên quy mô khổng lồ để xử lý các tác vụ ngôn ngữ phức tạp.",
+    "example": "最新のLLM（大規模言語モデル）は、高度な推論能力を備えています。"
+  },
+  {
+    "id": "ai-latent-space",
+    "english": "Latent Space",
+    "japanese": "潜在空間",
+    "kana": "せんざいくうかん",
+    "vietnamese": "Không gian tiềm ẩn / Không gian ẩn",
+    "roles": [
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Không gian nhiều chiều nơi dữ liệu thô được nén lại để biểu thị các đặc trưng quan trọng nhất.",
+    "example": "画像生成AIは、潜在空間（Latent Space）上のベクトルを操作して画像を生成します。"
+  },
+  {
+    "id": "ai-learning-rate",
+    "english": "Learning Rate",
+    "japanese": "学習率",
+    "kana": "がくしゅうりつ",
+    "vietnamese": "Tỷ lệ học",
+    "roles": [
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Tham số điều chỉnh tốc độ thay đổi của trọng số mạng nơ-ron trong quá trình huấn luyện.",
+    "example": "学習率（Learning Rate）が大きすぎると、学習が収束せず不安定になります。"
+  },
+  {
+    "id": "ai-long-context",
+    "english": "Long Context / Context Window",
+    "japanese": "ロングコンテキスト / 文脈ウィンドウ",
+    "kana": "コンテキストウィンドウ",
+    "vietnamese": "Cửa sổ ngữ cảnh dài / Dung lượng bộ nhớ AI",
+    "roles": [
+      "Architect",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Khả năng xử lý lượng lớn thông tin đầu vào trong một lượt trao đổi (ví dụ: đọc cả một cuốn sách).",
+    "example": "最新のLLMは、100万トークン以上のロングコンテキスト（Long Context）に対応しています。"
+  },
+  {
+    "id": "ai-loss-function",
+    "english": "Loss Function / Cost Function",
+    "japanese": "損失関数",
+    "kana": "そんしつかんすう",
+    "vietnamese": "Hàm mất mát",
+    "roles": [
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Công thức đo lường sự khác biệt giữa kết quả dự đoán của AI và kết quả thực tế.",
+    "example": "損失関数（Loss Function）を最小化するように、モデルの学習を進めます。"
+  },
+  {
+    "id": "ai-machine-learning",
+    "english": "Machine Learning / ML",
+    "japanese": "機械学習 / マシンラーニング",
+    "kana": "きかいがくしゅう",
+    "vietnamese": "Học máy",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Máy tính tự học từ dữ liệu mà không cần lập trình cụ thể từng dòng.",
+    "example": "過去の売上データを機械学習モデルに入力し、来月の需要予測を行います。"
+  },
+  {
+    "id": "ai-machine-learning-1",
+    "english": "Machine Learning / ML",
+    "japanese": "機械学習 / マシンラーニング / ML",
+    "kana": "きかいがくしゅう",
+    "vietnamese": "Học máy / ML",
+    "roles": [
+      "AI Engineer",
+      "Data Scientist"
+    ],
+    "category": "System Design",
+    "note": "Lĩnh vực AI tập trung vào việc xây dựng các hệ thống có khả năng học hỏi từ dữ liệu.",
+    "example": "機械学習（ML）アルゴリズムを用いて、ユーザーの行動を予測します。"
+  },
+  {
+    "id": "ai-multimodal",
+    "english": "Multimodal / Multi-modal",
+    "japanese": "マルチモーダル",
+    "kana": "マルチモーダル",
+    "vietnamese": "Đa phương thức / Multimodal",
+    "roles": [
+      "AI Engineer",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống AI có khả năng xử lý đồng thời nhiều loại dữ liệu như văn bản, hình ảnh, âm thanh.",
+    "example": "GPT-4oは、テキスト、音声、画像を統合して処理できるマルチモーダル（Multimodal）モデルです。"
+  },
+  {
+    "id": "ai-natural-language-processing",
+    "english": "NLP / Natural Language Processing",
+    "japanese": "自然言語処理 / NLP",
+    "kana": "しぜんげんごしょり",
+    "vietnamese": "Xử lý ngôn ngữ tự nhiên",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Giúp máy tính hiểu và tạo ra văn bản/tiếng nói con người.",
+    "example": "カスタマーサポートのチャットボットに自然言語処理（NLP）を導入し、自動回答の質を高めます。"
+  },
+  {
+    "id": "ai-natural-language-processing-1",
+    "english": "Natural Language Processing / NLP",
+    "japanese": "自然言語処理 / NLP",
+    "kana": "しぜんげんごしょり",
+    "vietnamese": "Xử lý ngôn ngữ tự nhiên / NLP",
+    "roles": [
+      "AI Engineer",
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Khả năng của máy tính trong việc hiểu, giải thích và tạo ra ngôn ngữ của con người.",
+    "example": "自然言語処理（NLP）技術は、翻訳ツールやチャットボットに欠かせません。"
+  },
+  {
+    "id": "ai-neural-network",
+    "english": "Neural Network",
+    "japanese": "ニューラルネットワーク / ネットワーク",
+    "kana": "にゅーらるねっとわーく",
+    "vietnamese": "Mạng nơ-ron nhân tạo",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Mô phỏng cách hoạt động của não người để xử lý thông tin.",
+    "example": "画像解析エンジンには、多層の畳み込みニューラルネットワーク（CNN）を採用しています。"
+  },
+  {
+    "id": "ai-neural-network-1",
+    "english": "Neural Network / Neural Networks / NN",
+    "japanese": "ニューラルネットワーク / 神経回路網 / NN",
+    "kana": "ニューラルネットワーク",
+    "vietnamese": "Mạng nơ-ron / Mạng thần kinh",
+    "roles": [
+      "AI Engineer",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống tính toán lấy cảm hứng từ cấu trúc não người, là nền tảng của Deep Learning.",
+    "example": "深層学習（Deep Learning）は、多層のニューラルネットワーク（NN）を利用しています。"
+  },
+  {
+    "id": "ai-optimizer",
+    "english": "Optimizer / Optimization",
+    "japanese": "最適化アルゴリズム / オプティマイザ",
+    "kana": "オプティマイザ",
+    "vietnamese": "Thuật toán tối ưu hóa",
+    "roles": [
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Thuật toán dùng để thay đổi trọng số của mạng nơ-ron nhằm giảm thiểu hàm mất mát (như Adam, SGD).",
+    "example": "学習の効率を向上させるため、Adam（アダム）などのオプティマイザを採用します。"
+  },
+  {
+    "id": "ai-overfitting",
+    "english": "Overfitting",
+    "japanese": "過学習",
+    "kana": "かがくしゅう",
+    "vietnamese": "Hiện tượng quá khớp",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "AI học quá thuộc dữ liệu cũ nên khi gặp dữ liệu mới thì đoán sai bét.",
+    "example": "モデルがトレーニングデータに過学習（Overfitting）してしまい、未知のデータに対する精度が上がりません。"
+  }
+]

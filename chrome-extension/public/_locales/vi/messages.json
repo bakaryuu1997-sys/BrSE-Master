@@ -1,0 +1,680 @@
+{
+  "extName": {
+    "message": "Trợ lý BrSE OS"
+  },
+  "extDescription": {
+    "message": "Trợ lý cục bộ hỗ trợ kỹ sư cầu nối (BrSE) soạn thảo Keigo, quản lý Glossary và chèn nhanh nội dung đa tab."
+  },
+  "commandDescription": {
+    "message": "Mở BrSE OS Command Palette"
+  },
+  "chatPlaceholder": {
+    "message": "Nhập tin nhắn..."
+  },
+  "quickAddBtn": {
+    "message": "⚡ Thêm nhanh"
+  },
+  "editBtn": {
+    "message": "✏️ Chỉnh sửa"
+  },
+  "disableHighlight": {
+    "message": "🔕 Tắt highlight"
+  },
+  "retry": {
+    "message": "🔄 Thử lại"
+  },
+  "aiFallback": {
+    "message": "🧠 Dịch bằng AI"
+  },
+  "dashboardTab": {
+    "message": "Dashboard"
+  },
+  "settingsTab": {
+    "message": "Settings"
+  },
+  "urgentFocusTitle": {
+    "message": "Urgent focus"
+  },
+  "hubTitle": {
+    "message": "Thao tác nhanh"
+  },
+  "hubPalette": {
+    "message": "Bảng lệnh"
+  },
+  "hubOcr": {
+    "message": "OCR vùng chọn"
+  },
+  "hubSidepanel": {
+    "message": "Mở Sidepanel"
+  },
+  "hubWebApp": {
+    "message": "Mở Web App"
+  },
+  "hubGlossary": {
+    "message": "Gạch chân thuật ngữ"
+  },
+  "hubKeigo": {
+    "message": "Kiểm tra Keigo"
+  },
+  "hubFurigana": {
+    "message": "Dịch di chuột (Alt+hover)"
+  },
+  "activeModelLabel": {
+    "message": "Active model"
+  },
+  "localBridgeTitle": {
+    "message": "Local bridge"
+  },
+  "secretTokenLabel": {
+    "message": "Secret token"
+  },
+  "secretTokenPlaceholder": {
+    "message": "Required only when BRSE_API_SECRET is set"
+  },
+  "apiUrlLabel": {
+    "message": "API URL"
+  },
+  "furiganaAlwaysOnLabel": {
+    "message": "Luôn hiện furigana (không cần giữ Alt)"
+  },
+  "saveSettingsBtn": {
+    "message": "Save settings"
+  },
+  "glossaryHighlightsLabel": {
+    "message": "Glossary Highlights"
+  },
+  "learnedCountBtn": {
+    "message": "📁 Từ đã ẩn ($1)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "unhideAllBtn": {
+    "message": "🔄 Bỏ ẩn tất cả"
+  },
+  "noUrgentFocus": {
+    "message": "No urgent focus items."
+  },
+  "loadingText": {
+    "message": "Loading..."
+  },
+  "extensionSettingsTitle": {
+    "message": "Extension settings"
+  },
+  "appUrlLabel": {
+    "message": "App URL"
+  },
+  "apiBaseLabel": {
+    "message": "API base"
+  },
+  "defaultProjectLabel": {
+    "message": "Default project"
+  },
+  "defaultProjectPlaceholder": {
+    "message": "Personal project"
+  },
+  "toolbarModeLabel": {
+    "message": "Toolbar Trigger Mode"
+  },
+  "toolbarModeAuto": {
+    "message": "Hiện khi kéo bôi đen hoặc click trái 3 lần"
+  },
+  "toolbarModeAlt": {
+    "message": "Chỉ hiện khi nhấn Alt"
+  },
+  "settingsUsedBy": {
+    "message": "These settings are used by popup, side panel, context actions, and page helpers."
+  },
+  "learnedTermsViewTitle": {
+    "message": "📁 Xem từ đã ẩn ($1)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "meetingDetected": {
+    "message": "Cuộc họp phát hiện:"
+  },
+  "startLiveMemoBtn": {
+    "message": "Start BrSE Live Memo"
+  },
+  "chatTab": {
+    "message": "Chat"
+  },
+  "writeTab": {
+    "message": "Write"
+  },
+  "toolsTab": {
+    "message": "Tools"
+  },
+  "projectTab": {
+    "message": "Project"
+  },
+  "gmailContextDetected": {
+    "message": "Gmail Context Detected"
+  },
+  "gmailContextSubject": {
+    "message": "Subject: $1",
+    "placeholders": {
+      "subject": {
+        "content": "$1",
+        "example": "Meeting request"
+      }
+    }
+  },
+  "useBtn": {
+    "message": "Use"
+  },
+  "clearBtn": {
+    "message": "Clear"
+  },
+  "readyAskPage": {
+    "message": "Ready. Ask about the current web page, selected text, BrSE writing, or project context."
+  },
+  "crossTabBtn": {
+    "message": "🔗 Cross-Tab Context"
+  },
+  "crossTabTitle": {
+    "message": "Liên kết context cục bộ từ các tab khác"
+  },
+  "chooseTabsLink": {
+    "message": "Chọn các tab liên kết context"
+  },
+  "noOtherTabs": {
+    "message": "Không tìm thấy tab khác..."
+  },
+  "askBrsePlaceholder": {
+    "message": "Ask BrSE OS..."
+  },
+  "sendBtn": {
+    "message": "Send"
+  },
+  "stopGeneratingBtn": {
+    "message": "🛑 Stop generating"
+  },
+  "japaneseEmailTemplate": {
+    "message": "Japanese email"
+  },
+  "dailyReportTemplate": {
+    "message": "Daily report"
+  },
+  "specSummaryTemplate": {
+    "message": "Spec summary"
+  },
+  "draftQaTemplate": {
+    "message": "Draft Q&A"
+  },
+  "writeInputPlaceholder": {
+    "message": "Describe what you want to write in Vietnamese or English..."
+  },
+  "writeTonePolite": {
+    "message": "Polite Keigo"
+  },
+  "writeToneCasual": {
+    "message": "Plain internal"
+  },
+  "writeToneExecutive": {
+    "message": "Executive summary"
+  },
+  "generateBtn": {
+    "message": "Generate"
+  },
+  "keigoCheckerTool": {
+    "message": "Keigo Checker"
+  },
+  "keigoCheckerDesc": {
+    "message": "Review and improve Japanese business wording."
+  },
+  "horensoDraftTool": {
+    "message": "Horenso Draft"
+  },
+  "horensoDraftDesc": {
+    "message": "Create a concise report draft for customers or managers."
+  },
+  "contextTranslateTool": {
+    "message": "Context Translation"
+  },
+  "contextTranslateDesc": {
+    "message": "Translate with BrSE-specific context and terminology."
+  },
+  "specAnalyzerTool": {
+    "message": "📄 Spec Heuristic Preview"
+  },
+  "specAnalyzerDesc": {
+    "message": "Xem thử luồng đọc spec bằng local preview. Chưa gọi backend AI, chưa tự đồng bộ dữ liệu giả."
+  },
+  "ocrTranslateTool": {
+    "message": "📸 OCR Translator"
+  },
+  "ocrTranslateDesc": {
+    "message": "Chụp vùng màn hình tiếng Nhật và dịch theo tọa độ ảnh khi Gemini OCR được cấu hình; fallback sẽ được ghi rõ."
+  },
+  "flashcardTool": {
+    "message": "🎴 Flashcard SRS"
+  },
+  "flashcardDesc": {
+    "message": "Ôn thuật ngữ Glossary bằng lặp lại ngắt quãng (SM-2). Tiến độ lưu cục bộ, chạy offline."
+  },
+  "specDropZoneTitle": {
+    "message": "Kéo & thả tài liệu thiết kế"
+  },
+  "specDropZoneSubtitle": {
+    "message": "Local preview cho .xlsx, .pdf. Backend AI analyzer chưa bật."
+  },
+  "selectFileBtn": {
+    "message": "Chọn tệp tin"
+  },
+  "specLoadingText": {
+    "message": "Đang dựng bản local preview. Kết quả bên dưới không phải AI analysis thật."
+  },
+  "specResultsMockNote": {
+    "message": "Local heuristic preview: dữ liệu mẫu để kiểm tra UI. Không xem đây là kết quả AI và không đồng bộ vào Dashboard."
+  },
+  "resultTabGlossary": {
+    "message": "Từ vựng (Glossary)"
+  },
+  "resultTabContradictions": {
+    "message": "Mâu thuẫn (Validation)"
+  },
+  "resultTabTasks": {
+    "message": "Nhiệm vụ (Todo)"
+  },
+  "termHeaderJp": {
+    "message": "Thuật ngữ (JP)"
+  },
+  "meanHeaderVi": {
+    "message": "Ý nghĩa (VI)"
+  },
+  "todoSyncHeader": {
+    "message": "Danh sách việc cần làm"
+  },
+  "syncPreviewDisabledBtn": {
+    "message": "Chưa thể đồng bộ preview"
+  },
+  "ocrInstruction": {
+    "message": "Chụp vùng màn hình có tiếng Nhật để dịch theo tọa độ ảnh. Nếu Gemini OCR chưa cấu hình, kết quả fallback sẽ được ghi rõ là mô phỏng."
+  },
+  "startOcrBtn": {
+    "message": "📷 Chụp vùng màn hình"
+  },
+  "ocrPreparingStatus": {
+    "message": "Đang chuẩn bị công cụ chụp ảnh..."
+  },
+  "savingSettingsStatus": {
+    "message": "Đang lưu settings..."
+  },
+  "modelRejectedStatus": {
+    "message": "Model $1 bị runtime từ chối. Đang thử $2...",
+    "placeholders": {
+      "model": {
+        "content": "$1"
+      },
+      "fallback": {
+        "content": "$2"
+      }
+    }
+  },
+  "settingsSavedSuccess": {
+    "message": "Đã lưu settings. AI OK: $1. $1",
+    "placeholders": {
+      "model": {
+        "content": "$1"
+      },
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "settingsSavedLocalOnly": {
+    "message": "Đã lưu local nhưng AI chưa dùng được: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "settingsSavedError": {
+    "message": "Lưu local xong nhưng chưa đồng bộ runtime: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "backendStatusOnline": {
+    "message": "Backend online"
+  },
+  "backendStatusOffline": {
+    "message": "Offline: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "toastChatworkTextareaNotFound": {
+    "message": "⚠️ Không tìm thấy ô soạn thảo Chatwork (#_chatText)!"
+  },
+  "btnTitleAiCompose": {
+    "message": "BrSE OS: Soạn thảo bằng AI & Chèn thông tin dự án"
+  },
+  "errorCloudFallback": {
+    "message": "❌ Lỗi Cloud Fallback: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorLocalBackend": {
+    "message": "❌ Lỗi kết nối Local Backend ($1): $1. Vui lòng khởi động backend hoặc cấu hình Gemini API Key trong phần Cài đặt để kích hoạt Cloud Fallback.",
+    "placeholders": {
+      "model": {
+        "content": "$1"
+      },
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "qbAssistantWelcome": {
+    "message": "Tôi là trợ lý BrSE. Bạn có muốn hỏi thêm gì về cụm từ \"<b>$1</b>\" không?",
+    "placeholders": {
+      "term": {
+        "content": "$1",
+        "example": "仕様書"
+      }
+    }
+  },
+  "qbExplainAi": {
+    "message": "💡 Giải thích AI"
+  },
+  "qbCheckGrammar": {
+    "message": "✍️ Check Ngữ pháp"
+  },
+  "qbPolishKeigo": {
+    "message": "✨ Làm mượt Keigo"
+  },
+  "qbSummaryJp": {
+    "message": "📄 Tóm tắt trang (Tiếng Nhật)"
+  },
+  "qbSummaryVi": {
+    "message": "📄 Tóm tắt trang (Tiếng Việt)"
+  },
+  "qbTitleAiRequest": {
+    "message": "Yêu cầu AI"
+  },
+  "qbTitleAiRequestPage": {
+    "message": "$1 cho trang này",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "Explain"
+      }
+    }
+  },
+  "qbNote": {
+    "message": "Ghi chú"
+  },
+  "qbDictionary": {
+    "message": "Từ điển"
+  },
+  "qbLoadingDict": {
+    "message": "⏳ Đang lấy dữ liệu từ điển chuyên sâu..."
+  },
+  "qbReferMore": {
+    "message": "Tham khảo thêm"
+  },
+  "qbSyncBadgeTitle": {
+    "message": "Trạng thái đồng bộ offline (Click để thử lại ngay)"
+  },
+  "qbSyncChecking": {
+    "message": "Check..."
+  },
+  "qbSettings": {
+    "message": "Cài đặt"
+  },
+  "qbFeedback": {
+    "message": "Góp ý"
+  },
+  "qbClearChat": {
+    "message": "Xóa toàn bộ hội thoại"
+  },
+  "qbMinimize": {
+    "message": "Thu nhỏ"
+  },
+  "qbTranslateViPill": {
+    "message": "🇻🇳 Dịch Việt chuẩn"
+  },
+  "qbEmailJpPill": {
+    "message": "🇯🇵 Tạo Email Kính ngữ"
+  },
+  "qbKanjiItPill": {
+    "message": "📖 Kanji & IT Terms"
+  },
+  "qbTaskPill": {
+    "message": "📋 Lập Task chi tiết"
+  },
+  "qbBugPill": {
+    "message": "🔍 Giải thích Bug & Log"
+  },
+  "qbPersonaLabel": {
+    "message": "Chọn vai trò AI"
+  },
+  "qbModelLabel": {
+    "message": "Chọn model AI"
+  },
+  "qbInputPlaceholder": {
+    "message": "Hỏi AI thêm về từ/câu này..."
+  },
+  "qbSendBtnTitle": {
+    "message": "Gửi câu hỏi"
+  },
+  "qbDeleteMsgTitle": {
+    "message": "Xóa tin nhắn này"
+  },
+  "jiraDestTodo": {
+    "message": "Dự án Todo mới"
+  },
+  "jiraDestOps": {
+    "message": "Phân hệ Operations"
+  },
+  "destQna": {
+    "message": "Q&A / 確認事項"
+  },
+  "qnaAnalysisPrompt": {
+    "message": "Hãy đọc nội dung sau (ticket Jira hoặc email khách hàng) và soạn 3-5 câu hỏi làm rõ (確認事項) chuyên nghiệp để gửi cho đối tác/khách hàng. Với MỖI câu hỏi, trình bày: (1) câu hỏi bằng tiếng Nhật Keigo, (2) bản dịch tiếng Việt ngắn gọn, (3) lý do/impact nếu chưa làm rõ. Đánh số rõ ràng, văn phong Business Nhật Bản lịch sự."
+  },
+  "jiraSyncSuccess": {
+    "message": "Đồng bộ thành công về:"
+  },
+  "jiraAiAnalyzing": {
+    "message": "Đang bắt đầu AI phân tích và lập kế hoạch hành động..."
+  },
+  "jiraSyncTaskSuccess": {
+    "message": "✓ Tích hợp Tác vụ Thành công"
+  },
+  "jiraAutoImportedCount": {
+    "message": "Đã tự động nạp <b>$1 tác vụ con</b> vào dự án Todo của bạn trên Dashboard!",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "jiraSyncTaskError": {
+    "message": "❌ Lỗi Đồng bộ Tác vụ"
+  },
+  "jiraSyncTaskErrorDetail": {
+    "message": "Không thể nạp tác vụ tự động vào dự án: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "jiraSyncTaskWarning": {
+    "message": "⚠️ Không phân tách được Tác vụ con"
+  },
+  "jiraSyncTaskWarningDetail": {
+    "message": "AI không xuất ra định dạng JSON phù hợp để tự động nạp tác vụ. Bạn vẫn có thể sao chép các tác vụ trên thủ công."
+  },
+  "jiraGmailTemplatePrompt": {
+    "message": "Write a polite business Japanese email to: {to}\nRegarding subject: $1\n\nMain content to draft: ",
+    "placeholders": {
+      "subject": {
+        "content": "$1",
+        "example": "Meeting request"
+      }
+    }
+  },
+  "jiraTicketTemplatePrompt": {
+    "message": "Create a professional report or update regarding Jira ticket [{key}] \"$1\".\n\nProgress/Action items: ",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "Explain"
+      }
+    }
+  },
+  "jiraAnalysisPreparing": {
+    "message": "Đang chuẩn bị phân tích..."
+  },
+  "jiraTodoPrompt": {
+    "message": "Hãy phân tích Jira Ticket này và tự động phân rã nó thành các tác vụ con (sub-tasks) chi tiết cho lập trình viên. Cuối cùng, hãy xuất danh sách tác vụ dưới dạng một JSON Array duy nhất ở cuối câu trả lời của bạn, nằm trong thẻ code JSON ```json [ ... ] ``` (mỗi phần tử có cấu trúc: {\"title\": \"Tên task ngắn gọn bằng tiếng Việt\", \"phase\": \"3. Implementation & Coding\", \"priority\": \"HIGH\" | \"MEDIUM\" | \"LOW\", \"detail\": \"Mô tả ngắn gọn việc cần làm\"}). Hãy chắc chắn rằng JSON hợp lệ để hệ thống có thể tự động parse và nạp trực tiếp vào dự án Todo của bạn."
+  },
+  "jiraOpsPrompt": {
+    "message": "Hãy phân tích nghiệp vụ Jira Ticket này. Hãy đưa ra các phần phân tích chi tiết sau:\n1. Tóm tắt các yêu cầu cốt lõi (Core Business Requirements).\n2. Tìm kiếm và phân tích các mâu thuẫn nghiệp vụ hoặc rủi ro tiềm ẩn (Business/Tech Contradictions and Risks) - tối thiểu 3 điểm.\n3. Đưa ra 3-5 câu hỏi Q&A tinh tế, chuyên nghiệp bằng tiếng Nhật Keigo để gửi cho đối tác/khách hàng làm rõ các mâu thuẫn/rủi ro trên.\n4. Đề xuất ít nhất 5 Action Items chi tiết cho lập trình viên để triển khai tính năng này."
+  },
+  "toastSummaryRestore": {
+    "message": "Khôi phục Bản tóm tắt"
+  },
+  "summaryPageLabel": {
+    "message": "Tóm tắt trang:"
+  },
+  "toastNoSummaryFound": {
+    "message": "⚠️ Không tìm thấy bản tóm tắt nào cho trang này!"
+  },
+  "summaryLoading": {
+    "message": "Loading AI summary..."
+  },
+  "errAiRequestFailed": {
+    "message": "❌ Không gửi được yêu cầu AI: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "📋 Đã copy!"
+  },
+  "toastSyncedHub": {
+    "message": "✅ Đã đẩy vào Project Hub!"
+  },
+  "toastOfflineOutbox": {
+    "message": "🌐 Offline: Đã lưu tạm vào hàng đợi outbox!"
+  },
+  "toastSyncError": {
+    "message": "❌ Lỗi đồng bộ: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "toastSelectTextOrCmd": {
+    "message": "⚠️ Hãy bôi đen văn bản hoặc gõ lệnh!"
+  },
+  "toastInsertedText": {
+    "message": "✍️ Đã chèn câu trả lời vào ô soạn thảo!"
+  },
+  "toastInsertTextFailed": {
+    "message": "⚠️ Không chèn được vào ô soạn thảo!"
+  },
+  "toastSelectFieldFirst": {
+    "message": "⚠️ Vui lòng click chọn một ô soạn thảo trước khi chèn!"
+  },
+  "kcInputJpFirst": {
+    "message": "⚠️ Vui lòng nhập văn bản tiếng Nhật trước khi kiểm tra!"
+  },
+  "kcAiAnalyzing": {
+    "message": "AI đang phân tích và hiệu chỉnh kính ngữ Keigo..."
+  },
+  "kcLocalBackendErr": {
+    "message": "Lỗi kết nối Local Backend AI: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "kcStartBackendPrompt": {
+    "message": "Hãy khởi động local backend để trải nghiệm tính năng Keigo Checker tối cao!"
+  },
+  "kcErrorGeneral": {
+    "message": "Lỗi: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "kcHeaderTitle": {
+    "message": "✦ Vũ khí 3: Keigo Corrector"
+  },
+  "kcChangesDetail": {
+    "message": "Chi tiết các thay đổi"
+  },
+  "kcAlreadyPolite": {
+    "message": "Văn bản đã chuẩn Keigo, không phát hiện lỗi cần điều chỉnh!"
+  },
+  "kcClassification": {
+    "message": "Phân loại: "
+  },
+  "kcOriginalText": {
+    "message": "Văn bản gốc"
+  },
+  "kcProposedEdits": {
+    "message": "Bản sửa đổi đề xuất (Keigo Polish)"
+  },
+  "kcCloseBtn": {
+    "message": "Đóng"
+  },
+  "kcApplyBtn": {
+    "message": "✓ Áp dụng"
+  },
+  "kcApplySuccess": {
+    "message": "✨ Đã áp dụng cải tiến Keigo thành công!"
+  },
+  "tbTranslatePro": {
+    "message": "Dịch Pro"
+  },
+  "tbTranslateBilingual": {
+    "message": "Dịch song ngữ"
+  },
+  "tbSpeakText": {
+    "message": "Đọc văn bản"
+  },
+  "tbGrammarCheck": {
+    "message": "Check Ngữ pháp"
+  },
+  "tbPolishKeigo": {
+    "message": "Làm mượt Keigo"
+  },
+  "tbExplainAi": {
+    "message": "Giải thích AI"
+  },
+  "tbQuickCopy": {
+    "message": "Copy nhanh"
+  },
+  "tbSaveProject": {
+    "message": "Lưu Project"
+  }
+}

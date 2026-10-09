@@ -1,0 +1,709 @@
+[
+  {
+    "id": "qa-uat",
+    "english": "UAT / User Acceptance Testing",
+    "japanese": "ユーザ受入テスト / UAT",
+    "kana": "ユーザうけいれテスト / UAT",
+    "vietnamese": "Kiểm thử chấp nhận bởi người dùng / UAT",
+    "roles": [
+      "Client",
+      "QA",
+      "BrSE"
+    ],
+    "category": "Agile",
+    "note": "Giai đoạn cuối cùng nơi khách hàng kiểm tra xem sản phẩm có đáp ứng nhu cầu của họ không.",
+    "example": "The client is preparing for the UAT next week."
+  },
+  {
+    "id": "qa-unit-testing",
+    "english": "Unit Testing / Unit Test",
+    "japanese": "単体テスト / ユニットテスト",
+    "kana": "たんたいテスト / ユニットテスト",
+    "vietnamese": "Kiểm thử đơn vị / Unit test",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Agile",
+    "note": "Kiểm tra các đơn vị nhỏ nhất của code (hàm, lớp).",
+    "example": "Developers must write unit tests for every new function."
+  },
+  {
+    "id": "qa-usability-testing",
+    "english": "Usability Testing",
+    "japanese": "ユーザビリティテスト / ユーザビリティテスト",
+    "kana": "ユーザビリティテスト / ユーザビリティテスト",
+    "vietnamese": "Kiểm thử độ khả dụng / Usability test",
+    "roles": [
+      "QA",
+      "Designer",
+      "End Users"
+    ],
+    "category": "Agile",
+    "note": "Kiểm tra xem ứng dụng có dễ sử dụng và thân thiện với người dùng không.",
+    "example": "The usability testing revealed that the navigation is confusing."
+  },
+  {
+    "id": "qa-verification-and-validation",
+    "english": "V&V / Verification and Validation",
+    "japanese": "検証と妥当性確認",
+    "kana": "けんしょうとだとうせいかくにん",
+    "vietnamese": "Xác minh và xác nhận / V&V",
+    "roles": [
+      "QA",
+      "Tester"
+    ],
+    "category": "Agile",
+    "note": "Hai khía cạnh của kiểm soát chất lượng (Xây dựng đúng sản phẩm và Xây dựng sản phẩm đúng cách).",
+    "example": "V&V process is the foundation of Software Quality Assurance."
+  },
+  {
+    "id": "qa-white-box-testing",
+    "english": "White-box Testing",
+    "japanese": "ホワイトボックステスト",
+    "kana": "ホワイトボックステスト",
+    "vietnamese": "Kiểm thử hộp trắng / White-box test",
+    "roles": [
+      "Dev",
+      "Tester"
+    ],
+    "category": "Agile",
+    "note": "Kiểm thử dựa trên cấu trúc logic và code bên trong ứng dụng.",
+    "example": "Unit testing is a common white-box testing technique."
+  },
+  {
+    "id": "ss-active-listening",
+    "english": "Active Listening",
+    "japanese": "積極的傾聴",
+    "kana": "せっきょくてきけいちょう",
+    "vietnamese": "Lắng nghe chủ động / Active listening",
+    "roles": [
+      "BrSE",
+      "Manager",
+      "Sales"
+    ],
+    "category": "Agile",
+    "note": "Kỹ thuật lắng nghe tập trung, thấu hiểu và phản hồi lại người nói.",
+    "example": "Active listening is key to understanding client requirements."
+  },
+  {
+    "id": "ss-active-participation",
+    "english": "Active Participation",
+    "japanese": "積極的参加",
+    "kana": "せっきょくてきさんか",
+    "vietnamese": "Sự tham gia tích cực",
+    "roles": [
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Việc đóng góp ý kiến và nỗ lực một cách chủ động trong các hoạt động chung.",
+    "example": "Active participation in meetings leads to better decisions."
+  },
+  {
+    "id": "ss-adaptability",
+    "english": "Adaptability",
+    "japanese": "適応力",
+    "kana": "てきおうりょく",
+    "vietnamese": "Khả năng thích nghi / Adaptability",
+    "roles": [
+      "Team",
+      "BrSE"
+    ],
+    "category": "Agile",
+    "note": "Khả năng thay đổi để phù hợp với môi trường hoặc tình huống mới.",
+    "example": "Adaptability is a crucial trait for working in agile projects."
+  },
+  {
+    "id": "ss-analytical-thinking",
+    "english": "Analytical Thinking",
+    "japanese": "分析的思考",
+    "kana": "ぶんせきてきしこう",
+    "vietnamese": "Tư duy phân tích / Analytical thinking",
+    "roles": [
+      "Team",
+      "BrSE"
+    ],
+    "category": "Agile",
+    "note": "Khả năng phân tích một vấn đề phức tạp thành các phần nhỏ để thấu hiểu và giải quyết.",
+    "example": "Analytical thinking is a core skill for any IT professional."
+  },
+  {
+    "id": "ss-assertiveness",
+    "english": "Assertiveness",
+    "japanese": "自己主張 / アサーティブネス",
+    "kana": "じこしゅちょう / アサーティブネス",
+    "vietnamese": "Sự quyết đoán / Assertiveness",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "Agile",
+    "note": "Khả năng bày tỏ ý kiến và nhu cầu của mình một cách thẳng thắn nhưng vẫn tôn trọng người khác.",
+    "example": "Being assertive helps in setting clear boundaries and expectations."
+  },
+  {
+    "id": "ss-coaching",
+    "english": "Coaching / Coach",
+    "japanese": "コーチング",
+    "kana": "コーチング",
+    "vietnamese": "Khai vấn / Huấn luyện / Coaching",
+    "roles": [
+      "Manager",
+      "Lead"
+    ],
+    "category": "Agile",
+    "note": "Quá trình hỗ trợ một người rèn luyện kỹ năng hoặc đạt được mục tiêu cá nhân thông qua việc đặt câu hỏi.",
+    "example": "Coaching focuses on unlocking a person's potential."
+  },
+  {
+    "id": "ss-collaboration",
+    "english": "Collaboration / Collaborating",
+    "japanese": "協調 / コラボレーション",
+    "kana": "きょうちょう / コラボレーション",
+    "vietnamese": "Sự cộng tác / Collaboration",
+    "roles": [
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Việc nhiều người cùng làm việc với nhau để đạt được một mục tiêu chung.",
+    "example": "Successful collaboration is the key to our project's success."
+  },
+  {
+    "id": "ss-conflict-resolution",
+    "english": "Conflict Resolution",
+    "japanese": "紛争解決 / 衝突の解消",
+    "kana": "ふんそうかいけつ / しょうとつのかいしょう",
+    "vietnamese": "Giải quyết xung đột / Conflict resolution",
+    "roles": [
+      "Manager",
+      "BrSE"
+    ],
+    "category": "Agile",
+    "note": "Quá trình tìm kiếm giải pháp hòa bình cho các bất đồng.",
+    "example": "Effective conflict resolution maintains a positive work environment."
+  },
+  {
+    "id": "ss-creativity",
+    "english": "Creativity",
+    "japanese": "創造性 / クリエイティビティ",
+    "kana": "そうぞうせい / クリエイティビティ",
+    "vietnamese": "Sự sáng tạo / Creativity",
+    "roles": [
+      "Designer",
+      "Dev"
+    ],
+    "category": "Agile",
+    "note": "Khả năng tạo ra các ý tưởng hoặc giải pháp mới mẻ và có giá trị.",
+    "example": "Creativity is needed to design innovative user experiences."
+  },
+  {
+    "id": "ss-critical-thinking",
+    "english": "Critical Thinking",
+    "japanese": "批判的思考 / クリティカルシンキング",
+    "kana": "ひはんてきしこう / クリティカルシンキング",
+    "vietnamese": "Tư duy phản biện / Critical thinking",
+    "roles": [
+      "Team",
+      "Manager"
+    ],
+    "category": "Agile",
+    "note": "Khả năng phân tích thông tin một cách khách quan để đưa ra phán đoán hợp lý.",
+    "example": "Critical thinking helps in evaluating different technical solutions."
+  },
+  {
+    "id": "ss-cultural-intelligence",
+    "english": "CQ / Cultural Intelligence",
+    "japanese": "文化の知能指数 / CQ",
+    "kana": "ぶんかのちのうしすう / CQ",
+    "vietnamese": "Trí tuệ văn hóa / CQ",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "Agile",
+    "note": "Khả năng làm việc hiệu quả trong các môi trường đa văn hóa.",
+    "example": "High CQ is essential for BrSEs working with Japanese clients."
+  },
+  {
+    "id": "ss-curiosity",
+    "english": "Curiosity / Lifelong Learning",
+    "japanese": "好奇心",
+    "kana": "こうきしん",
+    "vietnamese": "Sự tò mò / Ham học hỏi / Curiosity",
+    "roles": [
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Mong muốn tìm hiểu và học hỏi những điều mới.",
+    "example": "Curiosity drives innovation and continuous improvement."
+  },
+  {
+    "id": "ss-decision-making",
+    "english": "Decision Making",
+    "japanese": "意思決定",
+    "kana": "いしけってい",
+    "vietnamese": "Kỹ năng ra quyết định / Decision making",
+    "roles": [
+      "Manager",
+      "Lead"
+    ],
+    "category": "Agile",
+    "note": "Quá trình lựa chọn một phương án hành động tốt nhất trong số nhiều lựa chọn.",
+    "example": "Speed and accuracy are both important in decision making."
+  },
+  {
+    "id": "ss-delegation",
+    "english": "Delegation / Delegating",
+    "japanese": "委譲 / デリゲーション",
+    "kana": "いじょう / デリゲーション",
+    "vietnamese": "Ủy quyền / Giao phó / Delegation",
+    "roles": [
+      "Manager",
+      "Lead"
+    ],
+    "category": "Agile",
+    "note": "Việc giao phó trách nhiệm và quyền hạn thực hiện một công việc cho người khác.",
+    "example": "Effective delegation allows managers to focus on strategic tasks."
+  },
+  {
+    "id": "ss-emotional-intelligence",
+    "english": "EQ / Emotional Intelligence",
+    "japanese": "心の知能指数 / EQ",
+    "kana": "こころのちのうしすう / EQ",
+    "vietnamese": "Trí tuệ cảm xúc / EQ",
+    "roles": [
+      "Manager",
+      "BrSE",
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Khả năng nhận biết, thấu hiểu và quản lý cảm xúc của bản thân và người khác.",
+    "example": "Leaders with high EQ can build stronger and more resilient teams."
+  },
+  {
+    "id": "ss-empathy",
+    "english": "Empathy",
+    "japanese": "共感",
+    "kana": "きょうかん",
+    "vietnamese": "Sự thấu cảm / Empathy",
+    "roles": [
+      "BrSE",
+      "Team",
+      "Manager"
+    ],
+    "category": "Agile",
+    "note": "Khả năng thấu hiểu và chia sẻ cảm xúc của người khác.",
+    "example": "Empathy helps in resolving conflicts within the team."
+  },
+  {
+    "id": "ss-facilitation",
+    "english": "Facilitation / Facilitating",
+    "japanese": "ファシリテーション",
+    "kana": "ファシリテーション",
+    "vietnamese": "Điều phối cuộc họp / Facilitation",
+    "roles": [
+      "Scrum Master",
+      "BrSE",
+      "Manager"
+    ],
+    "category": "Agile",
+    "note": "Kỹ năng điều dẫn thảo luận nhóm để đạt được mục tiêu một cách hiệu quả.",
+    "example": "Good facilitation ensures that every meeting is productive."
+  },
+  {
+    "id": "ss-feedback",
+    "english": "Feedback / Giving Feedback",
+    "japanese": "フィードバック",
+    "kana": "フィードバック",
+    "vietnamese": "Phản hồi / Góp ý / Feedback",
+    "roles": [
+      "Manager",
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Thông tin phản hồi về hiệu quả công việc nhằm mục đích cải tiến.",
+    "example": "Constructive feedback is essential for personal growth."
+  },
+  {
+    "id": "ss-growth-mindset",
+    "english": "Growth Mindset",
+    "japanese": "成長マインドセット",
+    "kana": "せいちょうマインドセット",
+    "vietnamese": "Tư duy phát triển / Growth mindset",
+    "roles": [
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Niềm tin rằng khả năng có thể được phát triển thông qua sự cống hiến và làm việc chăm chỉ.",
+    "example": "Having a growth mindset helps you embrace challenges as opportunities to learn."
+  },
+  {
+    "id": "ss-hou-ren-sou",
+    "english": "Hou-Ren-Sou",
+    "japanese": "報告・連絡・相談",
+    "kana": "ほうこく・れんらく・そうだん",
+    "vietnamese": "Quy tắc báo cáo - liên lạc - thảo luận / Hou-Ren-Sou",
+    "roles": [
+      "Team",
+      "BrSE",
+      "Manager"
+    ],
+    "category": "Agile",
+    "note": "Quy tắc giao tiếp cơ bản trong văn hóa làm việc Nhật Bản.",
+    "example": "Don't forget the Hou-Ren-Sou rule when a problem occurs."
+  },
+  {
+    "id": "ss-houkoku",
+    "english": "Houkoku / Reporting",
+    "japanese": "報告",
+    "kana": "ほうこく",
+    "vietnamese": "Báo cáo kết quả / Houkoku",
+    "roles": [
+      "Team",
+      "BrSE"
+    ],
+    "category": "Agile",
+    "note": "Phần đầu tiên của Hou-Ren-Sou: Báo cáo lại kết quả công việc đã thực hiện.",
+    "example": "Submit your weekly houkoku by Friday afternoon."
+  },
+  {
+    "id": "ss-influence",
+    "english": "Influence / Influencing",
+    "japanese": "影響力",
+    "kana": "えいきょうりょく",
+    "vietnamese": "Khả năng gây ảnh hưởng / Influence",
+    "roles": [
+      "Manager",
+      "BrSE",
+      "Sales"
+    ],
+    "category": "Agile",
+    "note": "Khả năng thay đổi suy nghĩ, cảm xúc hoặc hành động của người khác mà không dùng quyền lực ép buộc.",
+    "example": "Developing influence is key for cross-functional collaboration."
+  },
+  {
+    "id": "ss-integrity",
+    "english": "Integrity",
+    "japanese": "誠実さ / インテグリティ",
+    "kana": "せいじつさ / インテグリティ",
+    "vietnamese": "Sự liêm chính / Tính trung thực / Integrity",
+    "roles": [
+      "All"
+    ],
+    "category": "Agile",
+    "note": "Sự trung thực và tuân thủ các nguyên tắc đạo đức mạnh mẽ.",
+    "example": "Integrity is the foundation of trust in professional relationships."
+  },
+  {
+    "id": "ss-keigo",
+    "english": "Keigo / Honorific Language",
+    "japanese": "敬語",
+    "kana": "けいご",
+    "vietnamese": "Kính ngữ tiếng Nhật / Keigo",
+    "roles": [
+      "BrSE",
+      "Sales"
+    ],
+    "category": "Agile",
+    "note": "Hệ thống ngôn ngữ thể hiện sự tôn trọng trong tiếng Nhật.",
+    "example": "Mastering Keigo is essential for professional communication in Japan."
+  },
+  {
+    "id": "ss-kenjougo",
+    "english": "Kenjougo / Humble Language",
+    "japanese": "謙譲語",
+    "kana": "けんじょうご",
+    "vietnamese": "Khiêm nhường ngữ / Kenjougo",
+    "roles": [
+      "BrSE",
+      "Sales"
+    ],
+    "category": "Agile",
+    "note": "Dạng kính ngữ dùng để hạ thấp hành động của bản thân nhằm thể hiện sự tôn trọng đối phương.",
+    "example": "Use Kenjougo when describing your own actions to a superior."
+  },
+  {
+    "id": "ss-kuuki-wo-yomu",
+    "english": "KY / Kuuki wo Yomu",
+    "japanese": "空気を読む",
+    "kana": "くうきをよむ",
+    "vietnamese": "Đọc tình huống / Hiểu ý tứ / KY",
+    "roles": [
+      "BrSE",
+      "Manager",
+      "Sales"
+    ],
+    "category": "Agile",
+    "note": "Khả năng thấu hiểu bầu không khí và ý nghĩa ẩn sâu trong giao tiếp mà không cần nói ra lời.",
+    "example": "As a BrSE, you need to 'read the air' during client meetings."
+  },
+  {
+    "id": "ss-leadership",
+    "english": "Leadership",
+    "japanese": "リーダーシップ / 統率力",
+    "kana": "リーダーシップ / とうそつりょく",
+    "vietnamese": "Khả năng lãnh đạo / Leadership",
+    "roles": [
+      "Manager",
+      "Lead"
+    ],
+    "category": "Agile",
+    "note": "Khả năng dẫn dắt và truyền cảm hứng cho người khác để đạt được mục tiêu chung.",
+    "example": "Good leadership is about empowering others to succeed."
+  },
+  {
+    "id": "ss-mentoring",
+    "english": "Mentoring / Mentor",
+    "japanese": "メンタリング / メンター制度",
+    "kana": "メンタリング",
+    "vietnamese": "Cố vấn / Mentoring",
+    "roles": [
+      "Senior Dev",
+      "Lead"
+    ],
+    "category": "Agile",
+    "note": "Mối quan hệ chuyên môn nơi người có kinh nghiệm hỗ trợ sự phát triển của người ít kinh nghiệm hơn.",
+    "example": "Mentoring helps junior developers ramp up more quickly."
+  },
+  {
+    "id": "ss-motivation",
+    "english": "Motivation / Motivating",
+    "japanese": "モチベーション / 動機付け",
+    "kana": "モチベーション / どうきづけ",
+    "vietnamese": "Động lực / Motivation",
+    "roles": [
+      "Team",
+      "Manager"
+    ],
+    "category": "Agile",
+    "note": "Yếu tố thúc đẩy một người nỗ lực làm việc để đạt được mục tiêu.",
+    "example": "Team motivation is crucial for high performance."
+  },
+  {
+    "id": "ss-negotiation",
+    "english": "Negotiation / Negotiating / Negotiate",
+    "japanese": "交渉",
+    "kana": "こうしょう",
+    "vietnamese": "Đàm phán / Thương lượng / Negotiation",
+    "roles": [
+      "BrSE",
+      "Manager",
+      "Sales"
+    ],
+    "category": "Agile",
+    "note": "Quá trình thảo luận để đạt được thỏa thuận chung giữa các bên.",
+    "example": "We are in negotiation with the client about the project deadline."
+  },
+  {
+    "id": "ss-nemawashi",
+    "english": "Nemawashi",
+    "japanese": "根回し",
+    "kana": "ねまわし",
+    "vietnamese": "Vận động hành lang / Chuẩn bị trước / Nemawashi",
+    "roles": [
+      "Manager",
+      "BrSE",
+      "Sales"
+    ],
+    "category": "Agile",
+    "note": "Quy trình không chính thức để xây dựng sự đồng thuận trước khi đưa ra quyết định chính thức.",
+    "example": "A successful meeting often requires careful nemawashi beforehand."
+  },
+  {
+    "id": "ss-networking",
+    "english": "Networking",
+    "japanese": "ネットワーク作り / 人脈作り",
+    "kana": "ネットワークづくり / じんみゃくづくり",
+    "vietnamese": "Xây dựng mạng lưới quan hệ / Networking",
+    "roles": [
+      "BrSE",
+      "Manager",
+      "Sales"
+    ],
+    "category": "Agile",
+    "note": "Quá trình xây dựng và duy trì các mối quan hệ có lợi trong công việc.",
+    "example": "Business networking events are great for finding new opportunities."
+  },
+  {
+    "id": "ss-omoiyari",
+    "english": "Omoiyari / Consideration",
+    "japanese": "思いやり",
+    "kana": "おもいやり",
+    "vietnamese": "Sự quan tâm / Chu đáo / Omoiyari",
+    "roles": [
+      "Team",
+      "BrSE"
+    ],
+    "category": "Agile",
+    "note": "Hành động quan tâm và suy nghĩ cho cảm nhận của người khác.",
+    "example": "Showing omoiyari creates a supportive and collaborative team."
+  },
+  {
+    "id": "ss-persuasion",
+    "english": "Persuasion / Persuading",
+    "japanese": "説得 / 説得力",
+    "kana": "せっとく / せっとくりょく",
+    "vietnamese": "Sự thuyết phục / Persuasion",
+    "roles": [
+      "Sales",
+      "BrSE",
+      "Manager"
+    ],
+    "category": "Agile",
+    "note": "Khả năng làm cho người khác tin hoặc làm theo một điều gì đó.",
+    "example": "The sales team used strong persuasion to close the deal."
+  },
+  {
+    "id": "ss-presentation-skills",
+    "english": "Presentation Skills",
+    "japanese": "プレゼンスキル / 発表技術",
+    "kana": "プレゼンスキル / はっぴょうぎじゅつ",
+    "vietnamese": "Kỹ năng thuyết trình / Presentation skills",
+    "roles": [
+      "BrSE",
+      "Manager",
+      "Sales"
+    ],
+    "category": "Agile",
+    "note": "Khả năng trình bày thông tin một cách rõ ràng và thuyết phục.",
+    "example": "Improve your presentation skills to impress the stakeholders."
+  },
+  {
+    "id": "ss-problem-solving",
+    "english": "Problem Solving",
+    "japanese": "問題解決",
+    "kana": "もんだいかいけつ",
+    "vietnamese": "Giải quyết vấn đề / Problem solving",
+    "roles": [
+      "Team",
+      "Manager"
+    ],
+    "category": "Agile",
+    "note": "Quá trình xác định và tìm ra giải pháp cho các vấn đề phức tạp.",
+    "example": "Analytical thinking is essential for effective problem solving."
+  },
+  {
+    "id": "ss-professionalism",
+    "english": "Professionalism",
+    "japanese": "プロフェッショナリズム",
+    "kana": "プロフェッショナリズム",
+    "vietnamese": "Sự chuyên nghiệp / Tác phong chuyên nghiệp / Professionalism",
+    "roles": [
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Các phẩm chất và hành vi phù hợp với một người làm việc chuyên nghiệp.",
+    "example": "Professionalism includes punctuality, reliability, and respect."
+  },
+  {
+    "id": "ss-public-speaking",
+    "english": "Public Speaking",
+    "japanese": "パブリックスピーキング / 公衆演説",
+    "kana": "パブリックスピーキング",
+    "vietnamese": "Nói chuyện trước công chúng / Public speaking",
+    "roles": [
+      "BrSE",
+      "Manager",
+      "Sales"
+    ],
+    "category": "Agile",
+    "note": "Kỹ năng nói một cách hiệu quả trước một nhóm người lớn.",
+    "example": "Practice public speaking to become a more confident presenter."
+  },
+  {
+    "id": "ss-renraku",
+    "english": "Renraku / Contacting",
+    "japanese": "連絡",
+    "kana": "れんらく",
+    "vietnamese": "Liên lạc thông tin / Renraku",
+    "roles": [
+      "Team",
+      "BrSE"
+    ],
+    "category": "Agile",
+    "note": "Phần thứ hai của Hou-Ren-Sou: Thông báo các sự kiện hoặc thông tin mới cho mọi người.",
+    "example": "Frequent renraku prevents small issues from becoming big problems."
+  },
+  {
+    "id": "ss-resilience",
+    "english": "Resilience",
+    "japanese": "回復力 / レジリエンス",
+    "kana": "かいふくりょく / レジリエンス",
+    "vietnamese": "Khả năng phục hồi / Sự kiên cường / Resilience",
+    "roles": [
+      "Team",
+      "BrSE"
+    ],
+    "category": "Agile",
+    "note": "Khả năng vượt qua khó khăn, thất bại và thích nghi với sự thay đổi.",
+    "example": "Resilience helps teams stay focused during high-pressure periods."
+  },
+  {
+    "id": "ss-sonkeigo",
+    "english": "Sonkeigo / Respectful Language",
+    "japanese": "尊敬語",
+    "kana": "そんけいご",
+    "vietnamese": "Tôn kính ngữ / Sonkeigo",
+    "roles": [
+      "BrSE",
+      "Sales"
+    ],
+    "category": "Agile",
+    "note": "Dạng kính ngữ dùng để nâng cao hành động hoặc trạng thái của người khác.",
+    "example": "Use Sonkeigo when talking about the client's actions."
+  },
+  {
+    "id": "ss-soudan",
+    "english": "Soudan / Consulting",
+    "japanese": "相談",
+    "kana": "そうだん",
+    "vietnamese": "Thảo luận / Xin ý kiến / Soudan",
+    "roles": [
+      "Team",
+      "BrSE"
+    ],
+    "category": "Agile",
+    "note": "Phần thứ ba của Hou-Ren-Sou: Thảo luận hoặc xin ý kiến chỉ đạo khi gặp vấn đề.",
+    "example": "When in doubt, always have a soudan with your lead."
+  },
+  {
+    "id": "ss-stress-management",
+    "english": "Stress Management",
+    "japanese": "ストレス管理",
+    "kana": "ストレスかんり",
+    "vietnamese": "Quản lý căng thẳng / Stress management",
+    "roles": [
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Các kỹ thuật nhằm kiểm soát mức độ căng thẳng của một người.",
+    "example": "Effective stress management improves overall well-being and job performance."
+  },
+  {
+    "id": "ss-teamwork",
+    "english": "Teamwork",
+    "japanese": "チームワーク",
+    "kana": "チームワーク",
+    "vietnamese": "Làm việc nhóm / Teamwork",
+    "roles": [
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Khả năng làm việc hiệu quả với những người khác để đạt được kết quả tốt nhất.",
+    "example": "Teamwork makes the dream work."
+  },
+  {
+    "id": "ss-teineigo",
+    "english": "Teineigo / Polite Language",
+    "japanese": "丁寧語",
+    "kana": "ていねいご",
+    "vietnamese": "Lịch sự ngữ / Teineigo",
+    "roles": [
+      "BrSE",
+      "Team",
+      "Sales"
+    ],
+    "category": "Agile",
+    "note": "Dạng kính ngữ cơ bản sử dụng 'desu' và 'masu' để thể hiện sự lịch sự.",
+    "example": "Teineigo is the standard form for most business interactions."
+  }
+]

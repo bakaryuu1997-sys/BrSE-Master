@@ -1,0 +1,729 @@
+[
+  {
+    "id": "cloud-disaster-recovery",
+    "english": "Disaster Recovery / DR / Disaster Recoveries",
+    "japanese": "災害復旧 / ディザスタリカバリ",
+    "kana": "さいがいふっきゅう",
+    "vietnamese": "Phục hồi sau thảm họa / Chạy DR",
+    "roles": [
+      "BrSE",
+      "PM",
+      "Business"
+    ],
+    "category": "System Design",
+    "note": "Kế hoạch khôi phục hệ thống khi có sự cố lớn (động đất, mất data center). BrSE cần làm rõ RPO (Recovery Point Objective) và RTO (Recovery Time Objective).",
+    "example": "本番環境が被災した場合に備えて、別リージョンでの災害復旧（DR）環境を構築します。"
+  },
+  {
+    "id": "cloud-event-driven",
+    "english": "Event-Driven Architecture / EDA",
+    "japanese": "イベント駆動型アーキテクチャ / イベントドリブン / アーキテクチャ",
+    "kana": "いべんとくどうがたあーきてくちゃ",
+    "vietnamese": "Kiến trúc hướng sự kiện",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Các service không gọi API trực tiếp nhau mà đẩy/nghe Event qua Message Queue (Kafka, SQS). Tăng tính decouple.",
+    "example": "サービス間の結合度を下げるため、SQSを用いたイベント駆動型アーキテクチャを採用しています。"
+  },
+  {
+    "id": "cloud-fault-tolerance",
+    "english": "Fault Tolerance / Fault Tolerant",
+    "japanese": "耐障害性 / フォールトトレランス",
+    "kana": "たいしょうがいせい",
+    "vietnamese": "Khả năng chịu lỗi / Fault tolerance",
+    "roles": [
+      "BrSE",
+      "PM",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống vẫn tiếp tục hoạt động (dù có thể chậm hơn) khi có một phần bị lỗi. Mức độ cao hơn của HA.",
+    "example": "一部のサーバーがダウンしてもサービスが停止しないよう、耐障害性を高める設計にしました。"
+  },
+  {
+    "id": "cloud-high-availability",
+    "english": "High Availability / HA",
+    "japanese": "高可用性 / ハイアベイラビリティ",
+    "kana": "こうかようせい",
+    "vietnamese": "Độ sẵn sàng cao / Chạy HA",
+    "roles": [
+      "BrSE",
+      "PM",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Tiêu chuẩn hệ thống ít bị chết. BrSE cần đàm phán SLA (ví dụ: 99.99%) với khách hàng và chi phí tương ứng để đạt được HA.",
+    "example": "金融システムなので、99.99%以上の高可用性が求められています。"
+  },
+  {
+    "id": "cloud-iaas",
+    "english": "IaaS / Infrastructure as a Service",
+    "japanese": "IaaS / イアース",
+    "kana": "いあーす",
+    "vietnamese": "Cơ sở hạ tầng như một dịch vụ / Chạy IaaS",
+    "roles": [
+      "PM",
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cung cấp máy ảo, storage (EC2, S3).",
+    "example": "インフラの柔軟性を確保するため、IaaSを活用して仮想サーバーを構築します。"
+  },
+  {
+    "id": "cloud-idempotency",
+    "english": "Idempotency",
+    "japanese": "冪等性 / アイデムポテンシー",
+    "kana": "べきとうせい",
+    "vietnamese": "Tính lũy đẳng",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Gọi 1 API một lần hay nhiều lần thì kết quả và trạng thái hệ thống vẫn như nhau. Rất quan trọng khi gọi API bị timeout và phải retry.",
+    "example": "決済リクエストが重複して送信されても二重決済にならないよう、APIの冪等性を確保してください。"
+  },
+  {
+    "id": "cloud-infrastructure-as-code",
+    "english": "Infrastructure as Code / IAC / Infrastructure as Coding / Infrastructure as Coded",
+    "japanese": "Infrastructure as Code (IaC) / コードによるインフラ管理 / インフラストラクチャ・アズ・コード / インフラストラクチャ",
+    "kana": "コードによるインフラかんり",
+    "vietnamese": "Quản lý hạ tầng bằng mã nguồn",
+    "roles": [
+      "BrSE",
+      "DevOps",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Sử dụng mã nguồn (như Terraform, CloudFormation) để tự động hóa việc thiết lập và quản lý hạ tầng thay vì thao tác tay trên console.",
+    "example": "IaCを導入することで、本番環境と検証環境の構成の不一致を防ぐことができます。"
+  },
+  {
+    "id": "cloud-latency",
+    "english": "Latency / Latencies",
+    "japanese": "レイテンシ / 遅延",
+    "kana": "れいてんし / ちえん",
+    "vietnamese": "Độ trễ / Lag",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thời gian phản hồi. BrSE cần hỏi khách hàng về giới hạn latency cho phép (VD: < 200ms).",
+    "example": "海外からのアクセス時にレイテンシが大きいため、CDNの導入を検討すべきです。"
+  },
+  {
+    "id": "cloud-managed-service",
+    "english": "Managed Service / Managed Services",
+    "japanese": "マネージドサービス / マネージド",
+    "kana": "まねーじどさーびす",
+    "vietnamese": "Dịch vụ được quản lý",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Dịch vụ Cloud mà nhà cung cấp (AWS/GCP) tự lo việc bảo trì, backup, vá lỗi (như RDS). Giúp team Dev tập trung làm logic.",
+    "example": "DBの運用保守コストを削減するため、AWSのマネージドサービスであるRDSを利用します。"
+  },
+  {
+    "id": "cloud-on-premises",
+    "english": "On-Premises / On-Premise / On-Prem",
+    "japanese": "オンプレミス / オンプレ",
+    "kana": "おんぷれみす / おんぷれ",
+    "vietnamese": "Hệ thống tại chỗ / Chạy On-prem",
+    "roles": [
+      "BrSE",
+      "PM",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Doanh nghiệp tự mua server vật lý để ở công ty. Các hệ thống ngân hàng cũ hay dùng để đảm bảo bảo mật tuyệt đối.",
+    "example": "セキュリティポリシーの制約上、顧客データはオンプレミス環境に保管する必要があります。"
+  },
+  {
+    "id": "cloud-paas",
+    "english": "PaaS / Platform as a Service",
+    "japanese": "PaaS / パース",
+    "kana": "ぱーす",
+    "vietnamese": "Nền tảng như một dịch vụ / Chạy PaaS",
+    "roles": [
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Platform để chạy app (Heroku, AWS Elastic Beanstalk).",
+    "example": "ミドルウェアの管理を省くため、PaaS環境でのアプリケーション実行を検討しましょう。"
+  },
+  {
+    "id": "cloud-provisioning",
+    "english": "Provision / Provisioning / Provisioned / Provisions",
+    "japanese": "プロビジョニング / 供給",
+    "kana": "ぷろびじょにんぐ",
+    "vietnamese": "Cấp phát tài nguyên / Provision hàng",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Quá trình thiết lập server, cài cắm OS và network. Ở môi trường Cloud, việc này diễn ra rất nhanh so với On-Premise.",
+    "example": "検証環境のプロビジョニングは完了しておりますので、いつでもテストを開始できます。"
+  },
+  {
+    "id": "cloud-rate-limiting",
+    "english": "Rate Limiting",
+    "japanese": "レート制限 / レートリミッティング",
+    "kana": "れーとせいげん",
+    "vietnamese": "Giới hạn lưu lượng",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chặn user hoặc API gọi quá nhiều lần trong 1 giây (chống DDoS hoặc quá tải).",
+    "example": "APIの過負荷を防ぐため、1ユーザーあたり毎秒10回までのレート制限を設けています。"
+  },
+  {
+    "id": "cloud-redundancy",
+    "english": "Redundancy / Redundancies / Redundant",
+    "japanese": "冗長化 / リダンダンシー",
+    "kana": "じょうちょうか",
+    "vietnamese": "Dự phòng / Dư thừa / Chạy Redundant",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thiết kế hệ thống có các thành phần dự phòng (Server, DB) để nếu 1 cái chết thì cái khác chạy thay. Khái niệm quan trọng khi review thiết kế hạ tầng.",
+    "example": "データベースを冗長化することで、単一障害点（SPOF）を排除します。"
+  },
+  {
+    "id": "cloud-saas",
+    "english": "SaaS / Software as a Service",
+    "japanese": "SaaS / サース",
+    "kana": "さーす",
+    "vietnamese": "Phần mềm như một dịch vụ / Chạy SaaS",
+    "roles": [
+      "Dev",
+      "BA",
+      "BrSE",
+      "PM",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "App dùng luôn (Slack, Salesforce).",
+    "example": "社内チャットツールとしてSaaS型のSlackを導入し、コミュニケーションの効率化を図ります。"
+  },
+  {
+    "id": "cloud-scalability",
+    "english": "Scalability / Scalabilities / Scaling / Scaled",
+    "japanese": "拡張性 / スケーラビリティ",
+    "kana": "かくちょうせい",
+    "vietnamese": "Khả năng mở rộng / Scale hệ thống",
+    "roles": [
+      "BrSE",
+      "PM",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Dùng để nói về khả năng hệ thống mở rộng khi tải tăng. Cần phân biệt Scale-up (tăng cấu hình - スケールアップ) và Scale-out (tăng số lượng máy chủ - スケールアウト).",
+    "example": "将来のユーザー増を見越して、システムの拡張性を担保するアーキテクチャにする必要があります。"
+  },
+  {
+    "id": "cloud-serverless-computing",
+    "english": "Serverless Computing",
+    "japanese": "サーバーレスコンピューティング / サーバーレス",
+    "kana": "サーバーレスコンピューティング",
+    "vietnamese": "Điện toán không máy chủ",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Mô hình thực thi code (như AWS Lambda) mà người dùng không cần quản lý hay vận hành máy chủ vật lý/ảo.",
+    "example": "サーバーレス構成にすることで、サーバーの管理コストを大幅に削減できます。"
+  },
+  {
+    "id": "cloud-serverless-db",
+    "english": "Serverless Database / Serverless Databases",
+    "japanese": "サーバーレスデータベース / サーバーレス / データベース",
+    "kana": "さーばーれすでーたべーす",
+    "vietnamese": "Cơ sở dữ liệu không máy chủ",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "VD: Aurora Serverless. Tự scale storage và compute, không cần quản lý instance.",
+    "example": "開発環境はコストを抑えるため、Aurora Serverlessを利用することにしました。"
+  },
+  {
+    "id": "cloud-spof",
+    "english": "Single Point of Failure / SPOF",
+    "japanese": "単一障害点",
+    "kana": "たんいつしょうがいてん",
+    "vietnamese": "Điểm lỗi đơn lẻ",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Một component mà nếu nó hỏng, cả hệ thống hỏng. BrSE cần rà soát architecture để loại bỏ các SPOF này.",
+    "example": "現在の構成ではデータベースが単一障害点（SPOF）となっているため、レプリケーションが必要です。"
+  },
+  {
+    "id": "cloud-spot-instance",
+    "english": "Spot Instance / Spot Instances",
+    "japanese": "スポットインスタンス",
+    "kana": "すぽっといんすたんす",
+    "vietnamese": "Instance giá rẻ (dư thừa)",
+    "roles": [
+      "BrSE",
+      "PM",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Instance giá rẻ tới 90% nhưng có thể bị AWS thu hồi bất cứ lúc nào. Hợp cho chạy Batch, không hợp cho Production Web.",
+    "example": "コスト削減のため、中断されても問題ないバッチ処理にはスポットインスタンスを利用します。"
+  },
+  {
+    "id": "cloud-stateful-stateless",
+    "english": "Stateless vs Stateful",
+    "japanese": "ステートレス / ステートフル",
+    "kana": "すてーとれす / すてーとふる",
+    "vietnamese": "Không lưu trạng thái / Có lưu trạng thái",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Stateless (như REST API) không lưu session trên server -> Dễ scale. Stateful (như DB) có lưu -> Khó scale ngang.",
+    "example": "サーバーをスケールアウトしやすくするため、アプリケーション層はステートレスに設計します。"
+  },
+  {
+    "id": "cloud-throttling",
+    "english": "Throttling / Throttle / Throttled / Throttles",
+    "japanese": "スロットリング / 流量制限",
+    "kana": "すろっとりんぐ",
+    "vietnamese": "Điều tiết băng thông / Bóp băng thông / Throttle",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Khác Rate Limiting (chặn hẳn), Throttling sẽ làm chậm response lại khi đạt giới hạn để không gây sập hệ thống.",
+    "example": "大量のバッチ処理がシステム全体に影響を与えないよう、スロットリング制御を入れています。"
+  },
+  {
+    "id": "cloud-throughput",
+    "english": "Throughput / Throughputs",
+    "japanese": "スループット / 処理能力",
+    "kana": "するーぷっと",
+    "vietnamese": "Thông lượng / Throughput",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Số lượng request xử lý được trong 1 đơn vị thời gian (tps - transactions per second).",
+    "example": "ピーク時のスループットを向上させるため、DBの読み取り専用レプリカを追加しました。"
+  },
+  {
+    "id": "cloud-vm",
+    "english": "Virtual Machine / VM",
+    "japanese": "仮想マシン / VM",
+    "kana": "かそうマシン",
+    "vietnamese": "Máy ảo",
+    "roles": [
+      "DevOps",
+      "Architect",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Sự mô phỏng của hệ thống máy tính. VM dựa trên kiến trúc máy tính và cung cấp chức năng của một máy tính vật lý.",
+    "example": "AWS上で新しいVM（仮想マシン）のインスタンスを立ち上げて、テスト環境を構築してください。"
+  },
+  {
+    "id": "cloud-vpc",
+    "english": "Virtual Private Cloud / VPC",
+    "japanese": "仮想プライベートクラウド / VPC",
+    "kana": "ブイピーシー",
+    "vietnamese": "Mạng ảo riêng tư / VPC",
+    "roles": [
+      "DevOps",
+      "Architect",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Mạng riêng ảo được lưu trữ trong public cloud, được cô lập về mặt logic với các mạng ảo khác.",
+    "example": "データベースはVPCのプライベートサブネットに配置し、セキュリティを強化します。"
+  },
+  {
+    "id": "code-diarization",
+    "english": "Speaker Diarization / Diarization",
+    "japanese": "話者分離 / ダイアリゼーション",
+    "kana": "わしゃぶんり",
+    "vietnamese": "Phân tách người nói",
+    "roles": [
+      "Dev",
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Công nghệ nhận diện và phân loại ai là người đang nói trong một đoạn hội thoại nhiều người.",
+    "example": "話者分離（Diarization）技術により、誰が何を発言したかを明確に記録できます。"
+  },
+  {
+    "id": "code-keigo",
+    "english": "Keigo / Honorifics",
+    "japanese": "敬語 / けいご",
+    "kana": "けいご",
+    "vietnamese": "Kính ngữ / Keigo",
+    "roles": [
+      "BrSE",
+      "Comtor"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống ngôn ngữ lịch sự trong tiếng Nhật. Trong dự án, AI giúp kiểm tra và sửa lỗi kính ngữ trong email.",
+    "example": "ビジネスメールを作成する際、適切な敬語（Keigo）を使うことが重要です。"
+  },
+  {
+    "id": "code-knowledge-base",
+    "english": "Knowledge Base / KB / RAG",
+    "japanese": "ナレッジベース / 知見共有",
+    "kana": "ナレッジベース",
+    "vietnamese": "Kho tri thức / Cơ sở dữ liệu tri thức",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống lưu trữ thông tin nghiệp vụ giúp AI tra cứu và trả lời dựa trên dữ liệu riêng của dự án.",
+    "example": "過去のQA情報をナレッジベース（Knowledge Base）に蓄積し, AIが回答できるようにします。"
+  },
+  {
+    "id": "code-minutes",
+    "english": "Meeting Minutes / Minutes / MOM",
+    "japanese": "議事録 / ぎじろく / ミニッツ",
+    "kana": "ぎじろく",
+    "vietnamese": "Biên bản cuộc họp",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Văn bản ghi lại nội dung, quyết định và các đầu việc (action items) sau cuộc họp.",
+    "example": "会議終了後、すぐに議事録（Minutes）を作成してチームに共有します。"
+  },
+  {
+    "id": "code-ocr",
+    "english": "Optical Character Recognition / OCR",
+    "japanese": "光学文字認識 / OCR",
+    "kana": "オーシーアール",
+    "vietnamese": "Nhận diện chữ viết từ ảnh / OCR / Quét ảnh",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Công nghệ chuyển đổi hình ảnh chứa văn bản thành dữ liệu văn bản có thể chỉnh sửa.",
+    "example": "画像内の日本語をOCRで読み取り、自動的に翻訳する機能を開発しました。"
+  },
+  {
+    "id": "code-prompt-profile",
+    "english": "Prompt Profile / AI Prompting",
+    "japanese": "プロンプトプロファイル",
+    "kana": "プロンプトプロファイル",
+    "vietnamese": "Hồ sơ gợi ý AI / Prompt mẫu",
+    "roles": [
+      "BrSE",
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Tập hợp các chỉ thị (Instructions) được thiết lập sẵn để điều khiển cách AI phản hồi cho từng tình huống.",
+    "example": "業務に合わせてプロンプトプロファイルを設定し、回答の精度を最適化します。"
+  },
+  {
+    "id": "code-transcript",
+    "english": "Transcript / Transcribing",
+    "japanese": "文字起こし / トランスクリプト",
+    "kana": "もじおこし",
+    "vietnamese": "Văn bản thô từ giọng nói / Transcript",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Dữ liệu văn bản được chuyển đổi trực tiếp từ âm thanh cuộc họp bằng công nghệ STT (Speech-to-Text).",
+    "example": "録音データから自動的に文字起こし（Transcript）を生成する機能があります。"
+  },
+  {
+    "id": "data-airflow",
+    "english": "Airflow / Apache Airflow",
+    "japanese": "エアフロー / Apache Airflow",
+    "kana": "エアフロー",
+    "vietnamese": "Công cụ lập lịch Airflow",
+    "roles": [
+      "Data Engineer",
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Nền tảng mã nguồn mở để lập lịch và giám sát các luồng công việc (workflows).",
+    "example": "複雑なデータ集計ジョブの管理には、Airflow（エアフロー）が非常に便利です。"
+  },
+  {
+    "id": "data-batch-processing",
+    "english": "Batch Processing / Batches",
+    "japanese": "バッチ処理",
+    "kana": "バッチしょり",
+    "vietnamese": "Xử lý hàng loạt / Chạy batch",
+    "roles": [
+      "Dev",
+      "Data Engineer"
+    ],
+    "category": "System Design",
+    "note": "Xử lý một lượng lớn dữ liệu được thu thập trong một khoảng thời gian tại một thời điểm cụ thể.",
+    "example": "夜間のバッチ処理（Batch Processing）で、一日の売上データを集計します。"
+  },
+  {
+    "id": "data-big-data",
+    "english": "Big Data",
+    "japanese": "ビッグデータ",
+    "kana": "ビッグデータ",
+    "vietnamese": "Dữ liệu lớn / Big Data",
+    "roles": [
+      "Dev",
+      "Architect",
+      "Data Engineer",
+      "BrSE",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tập hợp dữ liệu cực kỳ lớn và phức tạp mà các phần mềm xử lý dữ liệu truyền thống không thể đảm đương được.",
+    "example": "ビッグデータ（Big Data）を解析することで、消費者の行動パターンを把握します。"
+  },
+  {
+    "id": "data-cap-theorem",
+    "english": "CAP Theorem",
+    "japanese": "CAPの定理",
+    "kana": "キャップのていり",
+    "vietnamese": "Định lý CAP",
+    "roles": [
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Định lý chỉ ra rằng một hệ thống phân tán không thể đảm bảo đồng thời cả 3 yếu tố: Consistency, Availability, Partition tolerance.",
+    "example": "分散システムの設計において、CAPの定理（CAP Theorem）に基づいたトレードオフの判断が重要です。"
+  },
+  {
+    "id": "data-data-munging",
+    "english": "Munging / Data Munging",
+    "japanese": "マンジング",
+    "kana": "マンジング",
+    "vietnamese": "Xử lý dữ liệu thô / Munging",
+    "roles": [
+      "Data Scientist",
+      "Data Engineer"
+    ],
+    "category": "System Design",
+    "note": "Thuật ngữ lóng trong giới dữ liệu chỉ việc làm sạch và cấu trúc lại dữ liệu thô (tương đương Wrangling).",
+    "example": "解析の8割はデータマンジング（Munging）に費やされると言われています。"
+  },
+  {
+    "id": "data-descriptive-analytics",
+    "english": "Descriptive Analytics",
+    "japanese": "記述的分析",
+    "kana": "きじゅつてきぶんせき",
+    "vietnamese": "Phân tích mô tả",
+    "roles": [
+      "BA",
+      "Data Scientist"
+    ],
+    "category": "System Design",
+    "note": "Phân tích dữ liệu lịch sử để hiểu điều gì đã xảy ra trong quá khứ.",
+    "example": "まずは記述的分析（Descriptive Analytics）で、過去の売上実績を整理しましょう。"
+  },
+  {
+    "id": "data-diagnostic-analytics",
+    "english": "Diagnostic Analytics",
+    "japanese": "診断的分析",
+    "kana": "しんだんてきぶんせき",
+    "vietnamese": "Phân tích chẩn đoán",
+    "roles": [
+      "Data Scientist",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Phân tích sâu hơn để tìm ra nguyên nhân (tại sao điều đó lại xảy ra?).",
+    "example": "診断的分析（Diagnostic Analytics）によって、突然のアクセス低下の原因を特定しました。"
+  },
+  {
+    "id": "data-distributed-computing",
+    "english": "Distributed Computing / Cluster Computing",
+    "japanese": "分散コンピューティング / クラスターコンピューティング",
+    "kana": "ぶんさんコンピューティング",
+    "vietnamese": "Điện toán phân tán / Tính toán cụm",
+    "roles": [
+      "Architect",
+      "Data Engineer"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống trong đó nhiều máy tính phối hợp với nhau để giải quyết một bài toán chung.",
+    "example": "分散コンピューティング（Distributed Computing）により、計算リソースを効率的に活用します。"
+  },
+  {
+    "id": "data-eda",
+    "english": "Exploratory Data Analysis / EDA",
+    "japanese": "探索的データ解析 / EDA",
+    "kana": "たんさくてきデータかいせき",
+    "vietnamese": "Phân tích dữ liệu khám phá / EDA",
+    "roles": [
+      "Data Scientist",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Cách tiếp cận phân tích các tập dữ liệu để tóm tắt các đặc điểm chính của chúng, thường dùng phương pháp trực quan.",
+    "example": "本格的なモデリングの前に、EDA（探索的データ解析）を行ってデータの傾向を把握します。"
+  },
+  {
+    "id": "data-etl-pipeline",
+    "english": "ETL Pipeline / ETL",
+    "japanese": "ETLパイプライン",
+    "kana": "イーティーエルパイプライン",
+    "vietnamese": "Chuỗi trích xuất biến đổi nạp / ETL",
+    "roles": [
+      "Data Engineer",
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống tự động thực hiện quá trình Extract, Transform, Load dữ liệu.",
+    "example": "データの自動連携のために, 安定したETLパイプライン（ETL Pipeline）を構築する必要があります。"
+  },
+  {
+    "id": "data-fault-tolerance",
+    "english": "Fault Tolerance / Fault-tolerant",
+    "japanese": "耐障害性 / フォールトトレランス",
+    "kana": "たいしょうがいせい",
+    "vietnamese": "Khả năng chịu lỗi",
+    "roles": [
+      "Architect",
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Khả năng hệ thống vẫn tiếp tục hoạt động bình thường ngay cả khi có một hoặc nhiều thành phần bị hỏng.",
+    "example": "ミッションクリティカルなシステムには、高い耐障害性（Fault Tolerance）が求められます。"
+  },
+  {
+    "id": "data-feature-engineering",
+    "english": "Feature Engineering",
+    "japanese": "特徴量エンジニアリング",
+    "kana": "とくちょうりょうエンジニアリング",
+    "vietnamese": "Kỹ thuật trích chọn đặc trưng",
+    "roles": [
+      "AI Engineer",
+      "Data Scientist"
+    ],
+    "category": "System Design",
+    "note": "Sử dụng kiến thức chuyên môn để tạo ra các đặc tính (feature) giúp thuật toán học máy hoạt động tốt hơn.",
+    "example": "予測精度の向上のためには、適切な特徴量エンジニアリング（Feature Engineering）が不可欠です。"
+  },
+  {
+    "id": "data-governance",
+    "english": "Data Governance",
+    "japanese": "データガバナンス / データ統治",
+    "kana": "データガバナンス",
+    "vietnamese": "Quản trị dữ liệu / Quản lý dữ liệu",
+    "roles": [
+      "Architect",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Quá trình quản lý tính khả dụng, khả năng sử dụng, tính toàn vẹn và bảo mật của dữ liệu trong tổ chức.",
+    "example": "企業全体でデータを安全に活用するため、データガバナンス（Data Governance）の体制を整えます。"
+  },
+  {
+    "id": "data-hadoop",
+    "english": "Hadoop / Apache Hadoop",
+    "japanese": "ハドゥープ / Apache Hadoop",
+    "kana": "ハドゥープ",
+    "vietnamese": "Khung làm việc Hadoop",
+    "roles": [
+      "Data Engineer",
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Framework mã nguồn mở cho phép xử lý phân tán các tập dữ liệu lớn trên các cụm máy tính.",
+    "example": "大規模なデータ分散処理基盤として、Hadoop（ハドゥープ）を導入しました。"
+  },
+  {
+    "id": "data-hdfs",
+    "english": "Hadoop Distributed File System / HDFS",
+    "japanese": "HDFS / Hadoop分散ファイルシステム",
+    "kana": "エイチディーエフエス",
+    "vietnamese": "Hệ thống tệp phân tán Hadoop",
+    "roles": [
+      "Data Engineer",
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống tệp có khả năng chịu lỗi cao được thiết kế để chạy trên phần cứng rẻ tiền.",
+    "example": "データレイクの基盤として、HDFS（エイチディーエフエス）上にデータを蓄積します。"
+  },
+  {
+    "id": "data-lakehouse",
+    "english": "Data Lakehouse / Lakehouse",
+    "japanese": "データレイクハウス / レイクハウス",
+    "kana": "データレイクハウス",
+    "vietnamese": "Kiến trúc Data Lakehouse",
+    "roles": [
+      "Architect",
+      "Data Engineer"
+    ],
+    "category": "System Design",
+    "note": "Kiến trúc mới kết hợp ưu điểm của Data Lake (linh hoạt) và Data Warehouse (hiệu năng và cấu trúc).",
+    "example": "最新のデータ基盤として、Data Lakehouse（レイクハウス）への移行を検討しています。"
+  },
+  {
+    "id": "data-lambda-architecture",
+    "english": "Lambda Architecture",
+    "japanese": "ラムダアーキテクチャ",
+    "kana": "ラムダアーキテクチャ",
+    "vietnamese": "Kiến trúc Lambda",
+    "roles": [
+      "Architect",
+      "Data Engineer"
+    ],
+    "category": "System Design",
+    "note": "Kiến trúc xử lý dữ liệu kết hợp cả batch layer và speed layer để xử lý lượng lớn dữ liệu một cách linh hoạt.",
+    "example": "リアルタイム性と完全性の両立を図るため、ラムダアーキテクチャ（Lambda Architecture）を採用します。"
+  },
+  {
+    "id": "data-mapreduce",
+    "english": "MapReduce / MapReducing",
+    "japanese": "マップリデュース / MapReduce",
+    "kana": "マップリデュース",
+    "vietnamese": "Mô hình lập trình MapReduce",
+    "roles": [
+      "Data Engineer",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Mô hình lập trình dùng để xử lý và tạo ra các tập dữ liệu lớn bằng thuật toán phân tán.",
+    "example": "大量のログファイルを解析するために、MapReduce（マップリデュース）の手法を用います。"
+  }
+]

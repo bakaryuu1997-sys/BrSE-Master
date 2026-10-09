@@ -1,0 +1,699 @@
+[
+  {
+    "id": "exam-cache",
+    "english": "Web Cache",
+    "japanese": "ウェブキャッシュ",
+    "kana": "ウェブキャッシュ",
+    "vietnamese": "Bộ nhớ đệm web / Cache",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Dữ liệu web được lưu tạm thời để tăng tốc độ truy cập lần sau.",
+    "example": "Clear your browser cache if the website is not displaying correctly."
+  },
+  {
+    "id": "exam-cookie",
+    "english": "Cookie / HTTP Cookie",
+    "japanese": "クッキー",
+    "kana": "クッキー",
+    "vietnamese": "Tệp lưu trữ thông tin trình duyệt / Cookie",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Dữ liệu nhỏ do web server gửi và lưu trên trình duyệt người dùng.",
+    "example": "Cookies are used to maintain session state for users."
+  },
+  {
+    "id": "exam-dhcp",
+    "english": "DHCP / Dynamic Host Configuration Protocol",
+    "japanese": "動的ホスト構成プロトコル",
+    "kana": "どうてきホストこうせいプロトコル",
+    "vietnamese": "Giao thức cấu hình máy chủ động / DHCP",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Giao thức tự động cấp phát địa chỉ IP cho các thiết bị trong mạng.",
+    "example": "The DHCP server assigns an IP to your laptop when you connect to Wi-Fi."
+  },
+  {
+    "id": "exam-dmz",
+    "english": "DMZ / Demilitarized Zone",
+    "japanese": "非武装地帯 / DMZ",
+    "kana": "ひぶそうちたい / DMZ",
+    "vietnamese": "Vùng phi quân sự (IT) / DMZ",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Vùng mạng trung gian nằm giữa mạng nội bộ và internet.",
+    "example": "Web servers are typically placed in the DMZ for security."
+  },
+  {
+    "id": "exam-dns",
+    "english": "DNS / Domain Name System",
+    "japanese": "ドメイン名システム / DNS",
+    "kana": "ドメインめいシステム / DNS",
+    "vietnamese": "Hệ thống phân giải tên miền / DNS",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Hệ thống chuyển đổi tên miền sang địa chỉ IP.",
+    "example": "DNS translates google.com to its corresponding IP address."
+  },
+  {
+    "id": "exam-failover",
+    "english": "Failover",
+    "japanese": "フェイルオーバー / 系切り替え",
+    "kana": "フェイルオーバー / けいきりかえ",
+    "vietnamese": "Chuyển vùng dự phòng / Failover",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Cơ chế tự động chuyển sang hệ thống dự phòng khi hệ thống chính lỗi.",
+    "example": "Database failover ensures high availability during a crash."
+  },
+  {
+    "id": "exam-ftp",
+    "english": "FTP / File Transfer Protocol",
+    "japanese": "ファイル転送プロトコル",
+    "kana": "ファイルてんそうプロトコル",
+    "vietnamese": "Giao thức truyền tệp tin / FTP",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Giao thức dùng để trao đổi tệp tin qua mạng.",
+    "example": "Use SFTP instead of FTP for secure file transfers."
+  },
+  {
+    "id": "exam-imap",
+    "english": "IMAP / Internet Message Access Protocol",
+    "japanese": "インターネットメッセージアクセスプロトコル",
+    "kana": "インターネットメッセージアクセスプロトコル",
+    "vietnamese": "Giao thức truy cập thông điệp internet / IMAP",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Giao thức dùng để quản lý email trực tiếp trên server.",
+    "example": "IMAP allows syncing email across multiple devices."
+  },
+  {
+    "id": "exam-lan",
+    "english": "LAN / Local Area Network",
+    "japanese": "ローカルエリアネットワーク / LAN",
+    "kana": "ローカルエリアネットワーク / LAN",
+    "vietnamese": "Mạng nội bộ / LAN",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Mạng máy tính trong phạm vi hẹp như văn phòng, tòa nhà.",
+    "example": "The printers are shared across the company LAN."
+  },
+  {
+    "id": "exam-load-balancer",
+    "english": "Load Balancer",
+    "japanese": "負荷分散装置 / ロードバランサ",
+    "kana": "ふかぶんさんそうち / ロードバランサ",
+    "vietnamese": "Bộ cân bằng tải / Load Balancer",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Thiết bị phân phối lưu lượng truy cập đến nhiều server.",
+    "example": "A load balancer ensures that no single server is overwhelmed."
+  },
+  {
+    "id": "exam-osi-model",
+    "english": "OSI Reference Model",
+    "japanese": "OSI参照モデル",
+    "kana": "OSIさんしょうモデル",
+    "vietnamese": "Mô hình tham chiếu OSI (7 lớp)",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Mô hình tiêu chuẩn mô tả các chức năng của hệ thống mạng.",
+    "example": "HTTP operates at the application layer of the OSI model."
+  },
+  {
+    "id": "exam-pop3",
+    "english": "POP3 / Post Office Protocol version 3",
+    "japanese": "ポストオフィスプロトコル",
+    "kana": "ポストオフィスプロトコル",
+    "vietnamese": "Giao thức tải mail về máy / POP3",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Giao thức dùng để tải email từ server về máy cá nhân.",
+    "example": "Unlike IMAP, POP3 typically downloads and removes mail from the server."
+  },
+  {
+    "id": "exam-smtp",
+    "english": "SMTP / Simple Mail Transfer Protocol",
+    "japanese": "簡易メール転送プロトコル",
+    "kana": "かんいメールてんそうプロトコル",
+    "vietnamese": "Giao thức truyền tải thư tín đơn giản / SMTP",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Giao thức dùng để gửi email.",
+    "example": "The application uses an SMTP relay to send notification emails."
+  },
+  {
+    "id": "exam-vpn",
+    "english": "VPN / Virtual Private Network",
+    "japanese": "仮想専用線 / VPN",
+    "kana": "かそうせんようせん / VPN",
+    "vietnamese": "Mạng riêng ảo / VPN",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Kết nối mạng an toàn được thiết lập qua mạng công cộng.",
+    "example": "Employees must use a VPN to access internal resources from home."
+  },
+  {
+    "id": "exam-wan",
+    "english": "WAN / Wide Area Network",
+    "japanese": "広域通信網 / WAN",
+    "kana": "こういきつうしんもう / WAN",
+    "vietnamese": "Mạng diện rộng / WAN",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Mạng máy tính trải dài trên một khu vực địa lý lớn.",
+    "example": "The corporate WAN connects branches across different countries."
+  },
+  {
+    "id": "infra-arp",
+    "english": "ARP / Address Resolution Protocol",
+    "japanese": "アドレス解決プロトコル",
+    "kana": "アドレスかいけつプロトコル",
+    "vietnamese": "Giao thức phân giải địa chỉ / ARP",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Cloud",
+    "note": "Chuyển đổi địa chỉ IP sang địa chỉ vật lý MAC.",
+    "example": "ARP spoofing is a common man-in-the-middle attack technique."
+  },
+  {
+    "id": "infra-bare-metal",
+    "english": "Bare Metal",
+    "japanese": "ベアメタル",
+    "kana": "ベアメタル",
+    "vietnamese": "Máy chủ vật lý trắng / Bare metal",
+    "roles": [
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "Cloud",
+    "note": "Máy chủ vật lý không có lớp ảo hóa, ứng dụng chạy trực tiếp trên phần cứng.",
+    "example": "Bare metal servers offer the highest performance for computation-heavy tasks."
+  },
+  {
+    "id": "infra-block-storage",
+    "english": "Block Storage / EBS",
+    "japanese": "ブロックストレージ",
+    "kana": "ブロックストレージ",
+    "vietnamese": "Lưu trữ khối / Block storage",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Lưu trữ dữ liệu dưới dạng các block, thường dùng làm ổ đĩa cho máy ảo.",
+    "example": "Amazon EBS provides persistent block storage for EC2 instances."
+  },
+  {
+    "id": "infra-cdn",
+    "english": "CDN / Content Delivery Network",
+    "japanese": "コンテンツ配信ネットワーク",
+    "kana": "コンテンツはいしんネットワーク",
+    "vietnamese": "Mạng phân phối nội dung / CDN",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Hệ thống các server đặt ở nhiều nơi để phân phối nội dung nhanh hơn cho người dùng.",
+    "example": "CloudFront is Amazon's CDN service."
+  },
+  {
+    "id": "infra-cold-boot",
+    "english": "Cold Boot",
+    "japanese": "コールドブート",
+    "kana": "コールドブート",
+    "vietnamese": "Khởi động nguội / Cold boot",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Cloud",
+    "note": "Khởi động máy tính từ trạng thái tắt hoàn toàn.",
+    "example": "A cold boot performs a full hardware initialization."
+  },
+  {
+    "id": "infra-cold-storage",
+    "english": "Cold Storage / Glacier",
+    "japanese": "コールドストレージ",
+    "kana": "コールドストレージ",
+    "vietnamese": "Lưu trữ lạnh / Cold storage",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Lưu trữ dữ liệu ít khi truy cập với chi phí thấp nhưng thời gian lấy dữ liệu lâu.",
+    "example": "AWS S3 Glacier is ideal for long-term data archiving."
+  },
+  {
+    "id": "infra-container-runtime",
+    "english": "Container Runtime / containerd",
+    "japanese": "コンテナランタイム",
+    "kana": "コンテナランタイム",
+    "vietnamese": "Trình thực thi container / Container runtime",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Cloud",
+    "note": "Phần mềm chịu trách nhiệm chạy các container (ví dụ: Docker, containerd).",
+    "example": "Kubernetes deprecated Docker in favor of CRI-compatible runtimes."
+  },
+  {
+    "id": "infra-dhcp-lease",
+    "english": "DHCP Lease",
+    "japanese": "DHCPリース期間",
+    "kana": "DHCPリースきかん",
+    "vietnamese": "Thời gian thuê địa chỉ IP / DHCP Lease",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Khoảng thời gian một thiết bị được quyền giữ địa chỉ IP do DHCP cấp.",
+    "example": "Short DHCP lease times are useful for networks with many transient users."
+  },
+  {
+    "id": "infra-direct-connect",
+    "english": "Direct Connect / DX",
+    "japanese": "専用線接続",
+    "kana": "せんようせんせつぞく",
+    "vietnamese": "Kết nối trực tiếp / Direct Connect",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Đường truyền vật lý riêng biệt từ on-premise đến nhà cung cấp cloud.",
+    "example": "Direct Connect provides more consistent network performance than VPN."
+  },
+  {
+    "id": "infra-edge-computing",
+    "english": "Edge Computing",
+    "japanese": "エッジコンピューティング",
+    "kana": "エッジコンピューティング",
+    "vietnamese": "Điện toán biên / Edge computing",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "Cloud",
+    "note": "Xử lý dữ liệu ở gần user nhất (như trên thiết bị IoT hoặc CDN) để giảm latency.",
+    "example": "Edge computing reduces latency for IoT applications."
+  },
+  {
+    "id": "infra-elasticity",
+    "english": "Elasticity",
+    "japanese": "弾力性 / エラスティシティ",
+    "kana": "だんりょくせい",
+    "vietnamese": "Tính đàn hồi (IT) / Elasticity",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "Cloud",
+    "note": "Khả năng hệ thống tự động nở ra hoặc thu lại tức thời tùy theo nhu cầu tải. Cốt lõi của tiết kiệm chi phí trên Cloud.",
+    "example": "Cloud elasticity allows us to handle traffic spikes without manual intervention."
+  },
+  {
+    "id": "infra-full-virtualization",
+    "english": "Full Virtualization",
+    "japanese": "完全仮想化",
+    "kana": "かんぜんかそうか",
+    "vietnamese": "Ảo hóa toàn phần / Full virtualization",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Cloud",
+    "note": "Ảo hóa mà hệ điều hành khách không biết mình đang chạy trên môi trường ảo.",
+    "example": "Full virtualization provides the best isolation between guest OSs."
+  },
+  {
+    "id": "infra-gateway",
+    "english": "Default Gateway",
+    "japanese": "デフォルトゲートウェイ",
+    "kana": "デフォルトゲートウェイ",
+    "vietnamese": "Cổng mặc định / Default Gateway",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Địa chỉ router dùng để gửi các gói tin ra ngoài mạng nội bộ.",
+    "example": "Check your default gateway if you cannot access the internet."
+  },
+  {
+    "id": "infra-hot-storage",
+    "english": "Hot Storage",
+    "japanese": "ホットストレージ",
+    "kana": "ホットストレージ",
+    "vietnamese": "Lưu trữ nóng / Hot storage",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Lưu trữ dữ liệu cần truy cập thường xuyên với tốc độ cao.",
+    "example": "SSD-based storage is typically used for hot storage."
+  },
+  {
+    "id": "infra-hybrid-cloud",
+    "english": "Hybrid Cloud",
+    "japanese": "ハイブリッドクラウド",
+    "kana": "ハイブリッドクラウド",
+    "vietnamese": "Đám mây lai / Hybrid cloud",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "Cloud",
+    "note": "Sự kết hợp giữa cloud công cộng và hạ tầng riêng (on-premise).",
+    "example": "Many enterprises use a hybrid cloud strategy for data sovereignty."
+  },
+  {
+    "id": "infra-icmp",
+    "english": "ICMP / Internet Control Message Protocol",
+    "japanese": "インターネット制御通知プロトコル",
+    "kana": "インターネットせいぎょつうちプロトコル",
+    "vietnamese": "Giao thức điều khiển tin nhắn internet / ICMP",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Giao thức dùng để thông báo lỗi và chẩn đoán mạng (như lệnh ping).",
+    "example": "The ping command uses ICMP echo requests."
+  },
+  {
+    "id": "infra-load-balancing-algorithms",
+    "english": "Load Balancing Algorithms / Round Robin / Least Connections",
+    "japanese": "負荷分散アルゴリズム",
+    "kana": "ふかぶんさんアルゴリズム",
+    "vietnamese": "Thuật toán cân bằng tải",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Các phương pháp để phân phối traffic đến các server phía sau.",
+    "example": "The 'least connections' algorithm is effective for tasks with varying processing times."
+  },
+  {
+    "id": "infra-mtu",
+    "english": "MTU / Maximum Transmission Unit",
+    "japanese": "最大転送単位",
+    "kana": "さいだいてんそうたんい",
+    "vietnamese": "Đơn vị truyền tải tối đa / MTU",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Kích thước gói tin lớn nhất có thể truyền qua một giao diện mạng.",
+    "example": "Mismatching MTU sizes can lead to packet fragmentation issues."
+  },
+  {
+    "id": "infra-multi-cloud",
+    "english": "Multi-cloud",
+    "japanese": "マルチクラウド",
+    "kana": "マルチクラウド",
+    "vietnamese": "Đa đám mây / Multi-cloud",
+    "roles": [
+      "PM",
+      "Manager",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Dùng kết hợp cả AWS và Azure để tránh lock-in hoặc tận dụng thế mạnh từng bên.",
+    "example": "A multi-cloud approach prevents vendor lock-in."
+  },
+  {
+    "id": "infra-multi-tenancy",
+    "english": "Multi-tenancy",
+    "japanese": "マルチテナンシー",
+    "kana": "マルチテナンシー",
+    "vietnamese": "Kiến trúc đa khách thuê / Multi-tenancy",
+    "roles": [
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "Cloud",
+    "note": "Kiến trúc mà một instance của ứng dụng phục vụ nhiều khách hàng khác nhau.",
+    "example": "SaaS applications are typically built using a multi-tenancy model."
+  },
+  {
+    "id": "infra-nas",
+    "english": "NAS / Network Attached Storage",
+    "japanese": "ネットワーク結合ストレージ",
+    "kana": "ネットワークけつごうストレージ",
+    "vietnamese": "Thiết bị lưu trữ gắn mạng / NAS",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Thiết bị lưu trữ dữ liệu cấp tệp tin kết nối vào mạng IP.",
+    "example": "NAS is commonly used for file sharing in offices."
+  },
+  {
+    "id": "infra-nat",
+    "english": "NAT / Network Address Translation",
+    "japanese": "ネットワークアドレス変換",
+    "kana": "ネットワークアドレスへんかん",
+    "vietnamese": "Biên dịch địa chỉ mạng / NAT",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Chuyển đổi địa chỉ IP nội bộ sang địa chỉ IP công cộng.",
+    "example": "NAT allows multiple devices to share a single public IP address."
+  },
+  {
+    "id": "infra-object-storage",
+    "english": "Object Storage / S3",
+    "japanese": "オブジェクトストレージ",
+    "kana": "オブジェクトストレージ",
+    "vietnamese": "Lưu trữ đối tượng / Object storage",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Kiểu lưu trữ dữ liệu dưới dạng các object, không có cấu trúc thư mục phân cấp.",
+    "example": "Object storage is highly scalable and perfect for unstructured data like images."
+  },
+  {
+    "id": "infra-on-premises",
+    "english": "On-premises / On-prem",
+    "japanese": "オンプレミス",
+    "kana": "オンプレミス",
+    "vietnamese": "Hệ thống tại chỗ / On-premise",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "Cloud",
+    "note": "Hệ thống server đặt trực tiếp tại văn phòng hoặc data center riêng của công ty.",
+    "example": "The bank still keeps sensitive data on-premises."
+  },
+  {
+    "id": "infra-overlay-network",
+    "english": "Overlay Network / VXLAN",
+    "japanese": "オーバーレイネットワーク",
+    "kana": "オーバーレイネットワーク",
+    "vietnamese": "Mạng chồng / Overlay network",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Mạng ảo được xây dựng trên nền tảng hạ tầng mạng vật lý có sẵn.",
+    "example": "Docker Swarm uses an overlay network to connect containers across different hosts."
+  },
+  {
+    "id": "infra-packet-switching",
+    "english": "Packet Switching",
+    "japanese": "パケット交換",
+    "kana": "パケットこうかん",
+    "vietnamese": "Chuyển mạch gói / Packet Switching",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Phương pháp truyền dữ liệu chia nhỏ thành các gói tin độc lập.",
+    "example": "The internet is a massive packet-switching network."
+  },
+  {
+    "id": "infra-paravirtualization",
+    "english": "Paravirtualization",
+    "japanese": "準仮想化",
+    "kana": "じゅんかそうか",
+    "vietnamese": "Ảo hóa một phần / Paravirtualization",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Cloud",
+    "note": "Hệ điều hành khách được sửa đổi để tương tác hiệu quả hơn với hypervisor.",
+    "example": "Xen is a hypervisor that popularized paravirtualization."
+  },
+  {
+    "id": "infra-port-forwarding",
+    "english": "Port Forwarding",
+    "japanese": "ポートフォワーディング / ポート開放",
+    "kana": "ポートフォワーディング",
+    "vietnamese": "Chuyển tiếp cổng / Port Forwarding",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Cho phép truy cập từ internet vào một service trong mạng nội bộ.",
+    "example": "Set up port forwarding to host a web server from home."
+  },
+  {
+    "id": "infra-provisioning",
+    "english": "Provisioning / Auto-provisioning",
+    "japanese": "プロビジョニング",
+    "kana": "プロビジョニング",
+    "vietnamese": "Cấp phát tài nguyên / Provisioning",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Quá trình thiết lập và sẵn sàng hạ tầng IT để sử dụng.",
+    "example": "Terraform automates the provisioning of cloud resources."
+  },
+  {
+    "id": "infra-region-vs-az",
+    "english": "Region vs Availability Zone / AZ",
+    "japanese": "リージョンと可用性ゾーン",
+    "kana": "リージョンとアベイラビリティゾーン",
+    "vietnamese": "Vùng địa lý và Vùng sẵn sàng (Cloud)",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Region là khu vực địa lý, AZ là các trung tâm dữ liệu độc lập trong region đó.",
+    "example": "Deploying across multiple AZs protects against data center failures."
+  },
+  {
+    "id": "infra-routing-table",
+    "english": "Routing Table",
+    "japanese": "ルーティングテーブル / 経路制御表",
+    "kana": "ルーティングテーブル",
+    "vietnamese": "Bảng định tuyến / Routing Table",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Bảng chứa danh sách các đường đi đến các mạng khác nhau.",
+    "example": "Routers use a routing table to decide where to send packets."
+  },
+  {
+    "id": "infra-san",
+    "english": "SAN / Storage Area Network",
+    "japanese": "ストレージエリアネットワーク",
+    "kana": "ストレージエリアネットワーク",
+    "vietnamese": "Mạng lưu trữ riêng biệt / SAN",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Mạng chuyên dụng kết nối các thiết bị lưu trữ với server.",
+    "example": "SAN provides block-level network access to storage."
+  },
+  {
+    "id": "infra-sdn",
+    "english": "SDN / Software Defined Networking",
+    "japanese": "ソフトウェア定義ネットワーク",
+    "kana": "ソフトウェアていぎネットワーク",
+    "vietnamese": "Mạng điều khiển bằng phần mềm / SDN",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Cách tiếp cận quản lý mạng cho phép điều khiển tập trung qua phần mềm.",
+    "example": "SDN makes network management more flexible and programmable."
+  },
+  {
+    "id": "infra-shared-responsibility",
+    "english": "Shared Responsibility Model",
+    "japanese": "責任共有モデル",
+    "kana": "せきにんきょうゆうモデル",
+    "vietnamese": "Mô hình chia sẻ trách nhiệm (Cloud)",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "Cloud",
+    "note": "Phân chia trách nhiệm bảo mật giữa nhà cung cấp cloud và khách hàng.",
+    "example": "Under the shared responsibility model, the customer is responsible for data security."
+  },
+  {
+    "id": "infra-socket-programming",
+    "english": "Socket Programming / Berkeley Sockets",
+    "japanese": "ソケット通信 / ソケットプログラミング",
+    "kana": "ソケットつうしん",
+    "vietnamese": "Lập trình mạng qua Socket",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Cloud",
+    "note": "Giao diện lập trình để trao đổi dữ liệu qua mạng giữa các tiến trình.",
+    "example": "Socket programming is the basis for all network communication."
+  }
+]

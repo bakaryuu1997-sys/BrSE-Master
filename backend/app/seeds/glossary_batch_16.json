@@ -1,0 +1,726 @@
+[
+  {
+    "id": "data-mining",
+    "english": "Data Mining / Mining",
+    "japanese": "データマイニング / 情報採掘",
+    "kana": "データマイニング",
+    "vietnamese": "Khai thác dữ liệu / Đào dữ liệu",
+    "roles": [
+      "Data Scientist",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Quá trình khám phá các mẫu (pattern) và tri thức từ lượng lớn dữ liệu.",
+    "example": "データマイニング（Data Mining）を通じて、潜在的な顧客ニーズを発掘します。"
+  },
+  {
+    "id": "data-olap",
+    "english": "Online Analytical Processing / OLAP",
+    "japanese": "オンライン分析処理 / OLAP",
+    "kana": "オーラップ",
+    "vietnamese": "Xử lý phân tích trực tuyến / OLAP",
+    "roles": [
+      "Data Engineer",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống tối ưu cho việc truy vấn và phân tích dữ liệu phức tạp.",
+    "example": "DWH上のデータを多角的に分析するため、OLAP（オーラップ）ツールを活用します。"
+  },
+  {
+    "id": "data-pipeline",
+    "english": "Data Pipeline / Pipelines",
+    "japanese": "データパイプライン",
+    "kana": "データパイプライン",
+    "vietnamese": "Luồng dữ liệu / Chuỗi xử lý dữ liệu",
+    "roles": [
+      "Data Engineer",
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Chuỗi các bước xử lý để di chuyển dữ liệu từ hệ thống nguồn sang hệ thống đích.",
+    "example": "自動化されたデータパイプライン（Data Pipeline）により、分析データの鮮度を保ちます。"
+  },
+  {
+    "id": "data-predictive-modeling",
+    "english": "Predictive Modeling / Modeling",
+    "japanese": "予測モデリング",
+    "kana": "よそくモデリング",
+    "vietnamese": "Xây dựng mô hình dự báo",
+    "roles": [
+      "Data Scientist",
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Sử dụng các phương pháp thống kê để dự đoán các kết quả trong tương lai.",
+    "example": "解約率を低減するため、機械学習による予測モデリング（Modeling）を実施します。"
+  },
+  {
+    "id": "data-prescriptive-analytics",
+    "english": "Prescriptive Analytics",
+    "japanese": "処方的分析",
+    "kana": "しょほうてきぶんせき",
+    "vietnamese": "Phân tích đề xuất / Phân tích hướng dẫn",
+    "roles": [
+      "Data Scientist",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Loại hình phân tích cao nhất, không chỉ dự đoán mà còn đưa ra các giải pháp/hành động tối ưu.",
+    "example": "処方的分析（Prescriptive Analytics）により、最適な在庫管理プランを提案します。"
+  },
+  {
+    "id": "data-real-time-analytics",
+    "english": "Real-time Analytics / Real-time",
+    "japanese": "リアルタイム分析",
+    "kana": "リアルタイムぶんせき",
+    "vietnamese": "Phân tích thời gian thực",
+    "roles": [
+      "BA",
+      "Data Scientist",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Phân tích dữ liệu ngay khi vừa được tạo ra để hỗ trợ các quyết định tức thì.",
+    "example": "ダッシュボードにリアルタイム分析（Real-time Analytics）を導入し、今の売上状況を可視化します。"
+  },
+  {
+    "id": "data-redundancy",
+    "english": "Redundancy / Redundant",
+    "japanese": "冗長性 / じょうちょうせい",
+    "kana": "じょうちょうせい",
+    "vietnamese": "Tính dư thừa / Dự phòng",
+    "roles": [
+      "Architect",
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Việc nhân bản các thành phần hệ thống để đảm bảo luôn có phương án thay thế khi có sự cố.",
+    "example": "ハードウェアの故障に備えて、サーバーの冗長性（Redundancy）を確保します。"
+  },
+  {
+    "id": "data-schema-on-read",
+    "english": "Schema-on-read",
+    "japanese": "スキーマ・オン・リード",
+    "kana": "スキーマオンリード",
+    "vietnamese": "Cấu trúc khi đọc",
+    "roles": [
+      "Data Engineer",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Phương pháp xử lý dữ liệu nơi cấu trúc dữ liệu chỉ được xác định tại thời điểm dữ liệu được đọc ra (phổ biến trong Data Lake).",
+    "example": "Data Lakeでは柔軟性を重視し、Schema-on-read（スキーマ・オン・リード）の方式をとります。"
+  },
+  {
+    "id": "data-science",
+    "english": "Data Science / Science",
+    "japanese": "データサイエンス / データ科学",
+    "kana": "データサイエンス",
+    "vietnamese": "Khoa học dữ liệu",
+    "roles": [
+      "Data Scientist",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Lĩnh vực kết hợp thống kê, toán học và lập trình để trích xuất tri thức từ dữ liệu.",
+    "example": "データサイエンス（Data Science）の力で、ビジネス上の課題を解決します。"
+  },
+  {
+    "id": "data-spark",
+    "english": "Spark / Apache Spark",
+    "japanese": "スパーク / Apache Spark",
+    "kana": "スパーク",
+    "vietnamese": "Công cụ tính toán Spark / Chạy Spark",
+    "roles": [
+      "Data Engineer",
+      "AI Engineer"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống tính toán cụm mã nguồn mở tốc độ cao, hỗ trợ xử lý dữ liệu trong bộ nhớ (in-memory).",
+    "example": "Spark（スパーク）を利用して、リアルタイムなストリームデータ処理を実現します。"
+  },
+  {
+    "id": "data-stream-processing",
+    "english": "Stream Processing / Streaming",
+    "japanese": "ストリーム処理 / ストリーミング",
+    "kana": "ストリームしょり",
+    "vietnamese": "Xử lý luồng dữ liệu / Xử lý streaming",
+    "roles": [
+      "Data Engineer",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Xử lý dữ liệu ngay lập tức khi nó vừa được sinh ra (thời gian thực).",
+    "example": "不正検知システムでは、ストリーム処理（Stream Processing）による即時分析が必要です。"
+  },
+  {
+    "id": "data-tableau",
+    "english": "Tableau / Power BI",
+    "japanese": "タブロー / パワービーアイ",
+    "kana": "タブロー",
+    "vietnamese": "Công cụ BI Tableau / Power BI",
+    "roles": [
+      "BA",
+      "Sales"
+    ],
+    "category": "System Design",
+    "note": "Các công cụ Business Intelligence (BI) phổ biến dùng để phân tích và trực quan hóa dữ liệu.",
+    "example": "経営層向けのレポート作成には、Tableau（タブロー）を利用してダッシュボードを構築します。"
+  },
+  {
+    "id": "data-visualization",
+    "english": "Data Visualization / Visualizing",
+    "japanese": "データの可視化 / データビジュアライゼーション",
+    "kana": "データのかしか",
+    "vietnamese": "Trực quan hóa dữ liệu",
+    "roles": [
+      "BA",
+      "Data Scientist",
+      "UI/UX Designer"
+    ],
+    "category": "System Design",
+    "note": "Biểu diễn dữ liệu bằng các đồ họa trực quan giúp người dùng dễ dàng hiểu thông tin.",
+    "example": "複雑な数値をグラフに変換するデータの可視化（Visualization）により、意思決定を迅速化します。"
+  },
+  {
+    "id": "data-wrangling",
+    "english": "Data Wrangling / Data Munging",
+    "japanese": "データラングリング / データの整理",
+    "kana": "データラングリング",
+    "vietnamese": "Làm sạch và cấu trúc dữ liệu / Wrangling",
+    "roles": [
+      "Data Scientist",
+      "Data Engineer"
+    ],
+    "category": "System Design",
+    "note": "Quá trình chuyển đổi dữ liệu thô sang định dạng khác giúp việc phân tích dễ dàng hơn.",
+    "example": "分析の前準備として、データラングリング（Data Wrangling）に多くの時間を費やします。"
+  },
+  {
+    "id": "dev-orm",
+    "english": "Object-Relational Mapping / ORM",
+    "japanese": "オブジェクト関係マッピング / ORM",
+    "kana": "オーアールエム",
+    "vietnamese": "Ánh xạ quan hệ đối tượng",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật lập trình cho phép chuyển đổi dữ liệu giữa các hệ thống không tương thích bằng cách sử dụng các ngôn ngữ hướng đối tượng.",
+    "example": "SQLを直接書くのではなく、ORMを使用してデータベース操作をオブジェクト指向で行います。"
+  },
+  {
+    "id": "devops-alerting",
+    "english": "Alert / Alerting / Alerted / Alerts",
+    "japanese": "アラート通知 / アラーティング / アラート",
+    "kana": "あらーとつうち",
+    "vietnamese": "Cảnh báo / Bắn alert",
+    "roles": [
+      "BrSE",
+      "PM",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Khi CPU > 90% thì bắn tin nhắn Slack/Email cho team. BrSE cần thỏa thuận quy trình xử lý Alert với khách.",
+    "example": "エラー率が閾値を超えた場合に、担当者へ即座にアラート通知が飛ぶ設定にしています。"
+  },
+  {
+    "id": "devops-artifact",
+    "english": "Artifact / Artifacts",
+    "japanese": "アーティファクト / 成果物",
+    "kana": "あーてぃふぁくと / せいかぶつ",
+    "vietnamese": "Thành phẩm / Artifact / Hàng build",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "Release"
+    ],
+    "category": "System Design",
+    "note": "File jar/war/docker image sinh ra sau CI. Cần quản lý version chặt chẽ.",
+    "example": "ビルドパイプラインで生成されたアーティファクトは、Amazon ECRに保存されます。"
+  },
+  {
+    "id": "devops-blue-green",
+    "english": "Blue-Green Deployment / Blue-Green Deployments",
+    "japanese": "ブルーグリーンデプロイメント / ブルーグリーン",
+    "kana": "ブルーグリーンデプロイメント",
+    "vietnamese": "Triển khai Blue-Green / Chạy Blue-Green",
+    "roles": [
+      "DevOps",
+      "Architect",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật giảm thiểu downtime bằng cách chạy hai môi trường production giống hệt nhau gọi là Blue và Green.",
+    "example": "リリース時のダウンタイムをゼロにするため、ブルーグリーンデプロイメントを採用しています。"
+  },
+  {
+    "id": "devops-canary",
+    "english": "Canary Release / Canary Releases / Canary Releasing / Canary Released",
+    "japanese": "カナリアリリース / カナリア",
+    "kana": "カナリアリリース",
+    "vietnamese": "Phát hành Canary / Release Canary",
+    "roles": [
+      "DevOps",
+      "Architect",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật giảm rủi ro phát hành bằng cách từ từ đưa thay đổi mới cho một tập nhỏ người dùng trước khi phân phối cho mọi người.",
+    "example": "新しいUIデザインは、影響を最小限に抑えるために一部のユーザーからカナリアリリースします。"
+  },
+  {
+    "id": "devops-cd",
+    "english": "Continuous Deployment / CD / Continuous Delivery / Continuous Deployments / Continuous Deliveries",
+    "japanese": "継続的デプロイメント / CD / デプロイメント",
+    "kana": "けいぞくてきデプロイメント",
+    "vietnamese": "Triển khai liên tục",
+    "roles": [
+      "DevOps",
+      "Architect",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Một bước tiến xa hơn của Continuous Delivery. Mọi thay đổi vượt qua các bài kiểm tra tự động sẽ tự động được đưa vào production.",
+    "example": "CI/CDパイプラインを完全自動化し、テスト通過後に自動で本番環境へCD（継続的デプロイ）されるようにします。"
+  },
+  {
+    "id": "devops-ci",
+    "english": "Continuous Integration / CI",
+    "japanese": "継続的インテグレーション / CI / インテグレーション",
+    "kana": "けいぞくてきインテグレーション",
+    "vietnamese": "Tích hợp liên tục",
+    "roles": [
+      "Dev",
+      "DevOps",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Thực tiễn phát triển phần mềm mà các developer thường xuyên merge code thay đổi vào nhánh chính, sau đó chạy test tự động.",
+    "example": "CI環境を構築し、コード変更時に自動テストが走るようにします。"
+  },
+  {
+    "id": "devops-cicd",
+    "english": "CI / CD / Continuous Integration / Continuous Deployment / Continuous Delivery",
+    "japanese": "継続的インテグレーション / 継続的デリバリー / シーアイシーディー",
+    "kana": "しーあいしーでぃーぱいぷらいん",
+    "vietnamese": "Tích hợp và triển khai liên tục / Chạy CI CD",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tự động hóa build, test, deploy. BrSE dùng từ này để thuyết phục khách hàng đầu tư vào tự động hóa giúp giảm lỗi human error.",
+    "example": "手作業によるデプロイミスを防ぐため、CI/CDパイプラインを構築して自動化を図ります。"
+  },
+  {
+    "id": "devops-continuous-delivery",
+    "english": "Continuous Delivery / CD / Continuous Deliveries",
+    "japanese": "継続的デリバリー",
+    "kana": "けいぞくてきデリバリー",
+    "vietnamese": "Chuyển giao liên tục",
+    "roles": [
+      "BrSE",
+      "PM",
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Quy trình đảm bảo phần mềm luôn ở trạng thái sẵn sàng để release sang môi trường staging hoặc production bất cứ lúc nào.",
+    "example": "CDパイプラインを構築し、リリース作業の自動化と高速化を図ります。"
+  },
+  {
+    "id": "devops-distributed-tracing",
+    "english": "Distributed Tracing",
+    "japanese": "分散トレーシング / 分散トレース",
+    "kana": "ぶんさんとれーしんぐ",
+    "vietnamese": "Truy vết phân tán",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật gán 1 Request ID từ frontend qua nhiều backend services để tìm xem service nào chạy chậm hoặc gây lỗi.",
+    "example": "マイクロサービス間の通信遅延を特定するために、分散トレーシングを実装しましょう。"
+  },
+  {
+    "id": "devops-docker",
+    "english": "Containerization / Docker",
+    "japanese": "コンテナ化 / Docker / ドッカー",
+    "kana": "コンテナか",
+    "vietnamese": "Ảo hóa cấp hệ điều hành / Docker",
+    "roles": [
+      "Dev",
+      "DevOps",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Đóng gói mã nguồn phần mềm và tất cả các dependencies của nó để có thể chạy đồng nhất trên bất kỳ cơ sở hạ tầng nào.",
+    "example": "開発環境と本番環境の差異をなくすため、アプリケーションをDockerでコンテナ化します。"
+  },
+  {
+    "id": "devops-hotfix",
+    "english": "Hotfix / Hotfixes / Hotfixing / Hotfixed",
+    "japanese": "ホットフィックス / 緊急修正",
+    "kana": "ほっとふぃっくす / きんきゅうしゅうせい",
+    "vietnamese": "Sửa lỗi khẩn cấp / Fix gấp / Hotfix",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "Release"
+    ],
+    "category": "System Design",
+    "note": "Sửa lỗi trực tiếp trên Production khi có sự cố nghiêm trọng.",
+    "example": "本番環境で致命的なバグが見つかったため、急遽ホットフィックスを適用しました。"
+  },
+  {
+    "id": "devops-immutable-infrastructure",
+    "english": "Immutable Infrastructure",
+    "japanese": "イミュータブルインフラ / イミュータブル / インフラストラクチャ",
+    "kana": "いみゅーたぶるいんふら",
+    "vietnamese": "Hạ tầng bất biến",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Thay vì update code/config trên server đang chạy, ta tạo luôn một server/container mới tinh và thay thế cái cũ. Giảm triệt để lỗi môi trường.",
+    "example": "デプロイごとの環境差異をなくすため、コンテナを活用したイミュータブルインフラを実現します。"
+  },
+  {
+    "id": "devops-infrastructure-drift",
+    "english": "Infrastructure Drift",
+    "japanese": "インフラストラクチャドリフト / インフラストラクチャ",
+    "kana": "いんふらすとらくちゃどりふと",
+    "vietnamese": "Sai lệch cấu hình hạ tầng",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Khi ai đó sửa tay trên Cloud mà không sửa trong code IaC. Gây nguy hiểm khi chạy IaC lần sau.",
+    "example": "手動での設定変更は、インフラストラクチャドリフト（構成の乖離）の原因となるため、必ずコード経由で修正してください。"
+  },
+  {
+    "id": "devops-kubernetes",
+    "english": "Kubernetes / K8S",
+    "japanese": "クーバネティス / K8s",
+    "kana": "クーバネティス",
+    "vietnamese": "Hệ thống quản lý container Kubernetes",
+    "roles": [
+      "DevOps",
+      "Architect",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Nền tảng mã nguồn mở để tự động hóa việc triển khai, mở rộng và quản lý các ứng dụng container.",
+    "example": "本番環境のコンテナオーケストレーションにはKubernetes（K8s）を採用します。"
+  },
+  {
+    "id": "devops-monitoring",
+    "english": "Monitor / Monitoring / Monitored / Monitors",
+    "japanese": "監視 / モニタリング",
+    "kana": "かんし / もにたりんぐ",
+    "vietnamese": "Giám sát / Check log / Monitoring",
+    "roles": [
+      "BrSE",
+      "QA",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Theo dõi CPU, RAM, Error rate liên tục. BrSE cần biết tool gì (CloudWatch, Zabbix).",
+    "example": "24時間365日の安定稼働を実現するため、外部監視ツールを用いてシステムをモニタリングしています。"
+  },
+  {
+    "id": "devops-observability",
+    "english": "Observability",
+    "japanese": "オブザーバビリティ / 可観測性",
+    "kana": "かかんそくせい",
+    "vietnamese": "Khả năng quan sát",
+    "roles": [
+      "SRE",
+      "Dev",
+      "DevOps",
+      "BrSE",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Khả năng hiểu trạng thái bên trong của hệ thống dựa trên các dữ liệu đầu ra như Metrics, Logs, và Traces.",
+    "example": "システムの複雑化に対応するため、オブザーバビリティを強化して障害検知を早めます。"
+  },
+  {
+    "id": "devops-pipeline",
+    "english": "CI / CD Pipeline / Pipeline / Continuous Integration / Pipelines / CD Pipelines",
+    "japanese": "CI / CDパイプライン / パイプライン / インテグレーション",
+    "kana": "パイプライン",
+    "vietnamese": "Chuỗi tự động hóa CI/CD",
+    "roles": [
+      "DevOps",
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Chuỗi các bước xử lý tự động để đưa phần mềm từ khâu commit code đến khi release ra môi trường production.",
+    "example": "GitHub Actionsを使って、ビルドからデプロイまでの自動化パイプラインを構築します。"
+  },
+  {
+    "id": "devops-rollback",
+    "english": "Rollback / Rollbacks / Rolling back / Rolled back",
+    "japanese": "ロールバック / 切り戻し",
+    "kana": "ろーるばっく / きりもどし",
+    "vietnamese": "Quay xe / Rollback / Trở về bản cũ",
+    "roles": [
+      "BrSE",
+      "Release",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Khi release lỗi thì phải quay lại version cũ ngay lập tức.",
+    "example": "デプロイ後に予期せぬ不具合が発生したため、直ちに以前のバージョンへロールバックを行いました。"
+  },
+  {
+    "id": "devops-rolling-update",
+    "english": "Rolling Update / Rolling Updating / Rolling Updated",
+    "japanese": "ローリングアップデート",
+    "kana": "ろーりんぐあっぷでーと",
+    "vietnamese": "Cập nhật cuốn chiếu",
+    "roles": [
+      "BrSE",
+      "Release"
+    ],
+    "category": "System Design",
+    "note": "Update dần từng server/pod một để hệ thống không bị gián đoạn. Trong quá trình này user có thể thấy version cũ và mới đan xen.",
+    "example": "サービスを無停止で更新するため、複数台のサーバーを1台ずつローリングアップデートしていきます。"
+  },
+  {
+    "id": "devops-staging-environment",
+    "english": "Staging Environment",
+    "japanese": "ステージング環境 / 検証環境",
+    "kana": "すてーじんぐかんきょう / けんしょうかんきょう",
+    "vietnamese": "Môi trường Staging (giống thật)",
+    "roles": [
+      "BrSE",
+      "QA",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Môi trường test cuối cùng trước khi lên Prod, phải cấu hình giống hệt Prod.",
+    "example": "本番環境へのデプロイ前に、必ずステージング環境での最終確認を実施してください。"
+  },
+  {
+    "id": "devops-telemetry",
+    "english": "Telemetry",
+    "japanese": "テレメトリ",
+    "kana": "てれめとり",
+    "vietnamese": "Thu thập dữ liệu từ xa",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Ghi nhận logs, metrics, traces để theo dõi sức khỏe hệ thống. BrSE cần đảm bảo có đủ dữ liệu để debug khi có sự cố.",
+    "example": "障害発生時の原因究明を迅速に行うため、適切なテレメトリデータを収集する仕組みを組み込みます。"
+  },
+  {
+    "id": "devops-zdd",
+    "english": "Zero Downtime Deployment / Zero Downtime / Zero Downtime Deployments",
+    "japanese": "ゼロダウンタイムデプロイメント / 無停止リリース / ゼロダウンタイム / デプロイメント",
+    "kana": "むていしリリース",
+    "vietnamese": "Triển khai không có thời gian chết",
+    "roles": [
+      "DevOps",
+      "Architect",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Triển khai thay đổi lên production mà không làm gián đoạn việc cung cấp dịch vụ cho người dùng.",
+    "example": "24時間365日稼働するシステムのため、リリースの際はゼロダウンタイムデプロイメントが必須です。"
+  },
+  {
+    "id": "devops-zero-downtime",
+    "english": "Zero Downtime Deployment / Zero Downtime Deployments",
+    "japanese": "無停止デプロイ / デプロイメント",
+    "kana": "むていしでぷろい",
+    "vietnamese": "Triển khai không thời gian chết",
+    "roles": [
+      "BrSE",
+      "Release",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Nâng cấp hệ thống mà user vẫn dùng bình thường, không có màn hình 'Đang bảo trì'. Đòi hỏi quy trình DB migration phức tạp.",
+    "example": "24時間稼働が求められるシステムなので、DBのスキーマ変更も含めて無停止デプロイを計画します。"
+  },
+  {
+    "id": "do-argo-cd",
+    "english": "Argo CD / ArgoCD",
+    "japanese": "アルゴCD / Argo CD",
+    "kana": "アルゴシーディー",
+    "vietnamese": "Công cụ CD ArgoCD / GitOps",
+    "roles": [
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Công cụ Continuous Delivery theo nguyên tắc GitOps chuyên dụng cho Kubernetes.",
+    "example": "GitOpsの原則に従い、Kubernetesへの継続的デプロイメントにはArgo CD（アルゴCD）を使用します。"
+  },
+  {
+    "id": "do-blue-green-deployment",
+    "english": "Blue-Green Deployment / Blue-Green",
+    "japanese": "ブルーグリーンデプロイメント / ブルーグリーン",
+    "kana": "ブルーグリーンデプロイメント",
+    "vietnamese": "Triển khai Xanh-Lục / Blue-Green",
+    "roles": [
+      "DevOps",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Duy trì hai môi trường giống hệt nhau (Blue và Green) để giảm thiểu downtime và rủi ro khi release.",
+    "example": "切り戻し（ロールバック）を瞬時に行えるよう、ブルーグリーンデプロイメントを採用しています。"
+  },
+  {
+    "id": "do-canary-deployment",
+    "english": "Canary Deployment / Canary Release",
+    "japanese": "カナリアデプロイメント / カナリアリリース",
+    "kana": "カナリアデプロイメント",
+    "vietnamese": "Triển khai Canary / Phát hành Canary",
+    "roles": [
+      "DevOps",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Phát hành phiên bản mới cho một tỷ lệ nhỏ người dùng (vd 5%) để thử nghiệm trước khi triển khai toàn bộ.",
+    "example": "新しいアルゴリズムは、影響範囲を限定するためにカナリアリリース（Canary Release）で段階的に展開します。"
+  },
+  {
+    "id": "do-chaos-engineering",
+    "english": "Chaos Engineering",
+    "japanese": "カオスエンジニアリング",
+    "kana": "カオスエンジニアリング",
+    "vietnamese": "Kỹ thuật hỗn loạn / Chaos Engineering",
+    "roles": [
+      "DevOps",
+      "Dev",
+      "BrSE",
+      "SRE"
+    ],
+    "category": "System Design",
+    "note": "Phương pháp chủ động tạo ra các sự cố ngẫu nhiên (như tắt server đột ngột) để kiểm tra sức chịu đựng của hệ thống.",
+    "example": "Netflix developed Chaos Monkey to pioneer chaos engineering."
+  },
+  {
+    "id": "do-dark-launch",
+    "english": "Dark Launch / Dark Launching",
+    "japanese": "ダークローンチ / ダークロンチ",
+    "kana": "ダークローンチ",
+    "vietnamese": "Phát hành ngầm / Dark Launch",
+    "roles": [
+      "DevOps",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Triển khai tính năng mới lên production nhưng giấu khỏi giao diện người dùng (ẩn qua Feature Flag) để test tải ngầm.",
+    "example": "新機能のバックエンド処理だけをダークローンチ（Dark Launch）し、本番の負荷テストを実施します。"
+  },
+  {
+    "id": "do-elk",
+    "english": "Elasticsearch, Logstash, Kibana / ELK Stack / ELK",
+    "japanese": "ELKスタック",
+    "kana": "エルクスタック",
+    "vietnamese": "Bộ công cụ quản lý log ELK",
+    "roles": [
+      "DevOps",
+      "Data Engineer"
+    ],
+    "category": "System Design",
+    "note": "Bộ ba phần mềm mã nguồn mở mạnh mẽ nhất dùng để thu thập, tìm kiếm và phân tích log tập trung.",
+    "example": "アプリケーションのログを中央集権的に管理・検索するため、ELKスタックを構築します。"
+  },
+  {
+    "id": "do-error-budget",
+    "english": "Error Budget",
+    "japanese": "エラーバジェット",
+    "kana": "エラーバジェット",
+    "vietnamese": "Ngân sách rủi ro / Error Budget",
+    "roles": [
+      "SRE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Khoảng thời gian tối đa hệ thống được phép ngừng hoạt động hoặc có lỗi (100% - SLO). Hết ngân sách thì ngừng ra tính năng mới.",
+    "example": "エラーバジェット（Error Budget）を使い果たしたため、新機能のリリースを一時停止し、安定性向上に注力します。"
+  },
+  {
+    "id": "do-gitops",
+    "english": "GitOps",
+    "japanese": "ギットオプス / GitOps",
+    "kana": "ギットオプス",
+    "vietnamese": "Vận hành qua Git / GitOps",
+    "roles": [
+      "DevOps",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Mô hình vận hành sử dụng Git làm nguồn chân lý duy nhất (Single Source of Truth) cho cả mã nguồn và cấu hình hạ tầng.",
+    "example": "インフラの変更履歴をバージョン管理するため、GitOps（ギットオプス）のアプローチを取り入れます。"
+  },
+  {
+    "id": "do-grafana",
+    "english": "Grafana",
+    "japanese": "グラファナ / Grafana",
+    "kana": "グラファナ",
+    "vietnamese": "Công cụ trực quan hóa Grafana",
+    "roles": [
+      "DevOps",
+      "SRE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Công cụ trực quan hóa dữ liệu và xây dựng dashboard giám sát, thường kết hợp với Prometheus.",
+    "example": "Prometheusで収集したメトリクスを、Grafana（グラファナ）のダッシュボードで可視化します。"
+  },
+  {
+    "id": "do-helm",
+    "english": "Helm / Helm Charts",
+    "japanese": "ヘルム / Helmチャート",
+    "kana": "ヘルム",
+    "vietnamese": "Công cụ quản lý gói Kubernetes / Helm",
+    "roles": [
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Được ví như 'trình quản lý gói' (Package Manager) cho Kubernetes, giúp cài đặt và quản lý ứng dụng K8s dễ dàng hơn.",
+    "example": "Kubernetes上へのアプリケーションのデプロイを簡略化するため、Helm（ヘルム）を活用します。"
+  },
+  {
+    "id": "do-immutable-infrastructure",
+    "english": "Immutable Infrastructure / Immutable",
+    "japanese": "イミュータブルインフラストラクチャ / 不変のインフラ",
+    "kana": "イミュータブルインフラストラクチャ",
+    "vietnamese": "Hạ tầng bất biến / Hạ tầng không thể thay đổi",
+    "roles": [
+      "Architect",
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Mô hình quản lý hạ tầng mà server một khi đã deploy thì sẽ không bị sửa đổi. Nếu cần update, server mới sẽ được tạo thay thế.",
+    "example": "設定の不整合を防ぐため、コンテナを用いたイミュータブルインフラストラクチャ（Immutable Infrastructure）を実現します。"
+  },
+  {
+    "id": "do-infrastructure-drift",
+    "english": "Infrastructure Drift / Configuration Drift",
+    "japanese": "インフラストラクチャのドリフト / 設定の乖離",
+    "kana": "ドリフト",
+    "vietnamese": "Sai lệch cấu hình hạ tầng",
+    "roles": [
+      "DevOps",
+      "SRE"
+    ],
+    "category": "System Design",
+    "note": "Tình trạng cấu hình hạ tầng thực tế trên Cloud bị lệch so với cấu hình được định nghĩa trong code (IaC).",
+    "example": "コンソールでの手動変更により、Terraformのコードと実際の状態にドリフト（Drift）が発生しています。"
+  }
+]

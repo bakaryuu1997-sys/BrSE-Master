@@ -1,0 +1,722 @@
+[
+  {
+    "id": "do-istio",
+    "english": "Istio",
+    "japanese": "イスティオ / Istio",
+    "kana": "イスティオ",
+    "vietnamese": "Nền tảng Service Mesh Istio",
+    "roles": [
+      "DevOps",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Một nền tảng Service Mesh mã nguồn mở rất phổ biến, thường chạy trên Kubernetes.",
+    "example": "トラフィック管理やセキュリティ強化の目的で、Istio（イスティオ）を導入しています。"
+  },
+  {
+    "id": "do-metrics",
+    "english": "Metrics / Metric",
+    "japanese": "メトリクス / 指標",
+    "kana": "メトリクス",
+    "vietnamese": "Số liệu đo lường / Số liệu thống kê",
+    "roles": [
+      "SRE",
+      "DevOps",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Các phép đo định lượng được theo dõi và đánh giá về trạng thái của một quy trình cụ thể (như CPU Usage, Request Rate).",
+    "example": "ダッシュボード上で、CPU使用率やメモリ消費量などのメトリクス（Metrics）を常時監視しています。"
+  },
+  {
+    "id": "do-observability",
+    "english": "Observability / O11y",
+    "japanese": "オブザーバビリティ / 可観測性",
+    "kana": "オブザーバビリティ",
+    "vietnamese": "Khả năng quan sát / Tính có thể quan sát",
+    "roles": [
+      "SRE",
+      "DevOps",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Đo lường mức độ bạn có thể hiểu trạng thái bên trong của một hệ thống từ dữ liệu đầu ra của nó (Metrics, Logs, Traces).",
+    "example": "マイクロサービス環境では、障害原因を特定するために高いオブザーバビリティ（Observability）が必要です。"
+  },
+  {
+    "id": "do-prometheus",
+    "english": "Prometheus",
+    "japanese": "プロメテウス / Prometheus",
+    "kana": "プロメテウス",
+    "vietnamese": "Hệ thống giám sát Prometheus",
+    "roles": [
+      "DevOps",
+      "SRE"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống giám sát và cảnh báo mã nguồn mở rất mạnh mẽ, thường được dùng để thu thập metrics trong Kubernetes.",
+    "example": "システムのリソース使用状況を監視するために、Prometheus（プロメテウス）をセットアップします。"
+  },
+  {
+    "id": "do-serverless",
+    "english": "Serverless / Serverless Computing",
+    "japanese": "サーバーレス / サーバーレスコンピューティング",
+    "kana": "サーバーレス",
+    "vietnamese": "Điện toán phi máy chủ / Serverless",
+    "roles": [
+      "Architect",
+      "DevOps",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Mô hình thực thi đám mây trong đó nhà cung cấp đám mây tự động phân bổ tài nguyên, nhà phát triển không cần quản lý server (như AWS Lambda).",
+    "example": "バックグラウンドジョブの実行環境として、AWS Lambdaによるサーバーレス（Serverless）構成を採用しました。"
+  },
+  {
+    "id": "do-service-mesh",
+    "english": "Service Mesh",
+    "japanese": "サービスメッシュ",
+    "kana": "サービスメッシュ",
+    "vietnamese": "Lưới dịch vụ / Service Mesh",
+    "roles": [
+      "Architect",
+      "Dev",
+      "BrSE",
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Lớp cơ sở hạ tầng chuyên dụng để quản lý, bảo mật và quan sát giao tiếp giữa các Microservices (như Istio).",
+    "example": "マイクロサービス間の通信の可視化と制御のため、サービスメッシュ（Service Mesh）を利用します。"
+  },
+  {
+    "id": "do-sli",
+    "english": "Service Level Indicator / SLI / SLIs",
+    "japanese": "サービスレベル指標 / SLI",
+    "kana": "エスエルアイ",
+    "vietnamese": "Chỉ số cấp độ dịch vụ / SLI",
+    "roles": [
+      "SRE",
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Thước đo định lượng để kiểm tra xem hệ thống có đang đạt được SLO hay không (ví dụ: tỷ lệ lỗi HTTP 500).",
+    "example": "レイテンシやエラー率などのSLI（サービスレベル指標）を測定し、ダッシュボードに表示します。"
+  },
+  {
+    "id": "do-slo",
+    "english": "Service Level Objective / SLO / SLOs",
+    "japanese": "サービスレベル目標 / SLO",
+    "kana": "エスエルオー",
+    "vietnamese": "Mục tiêu cấp độ dịch vụ / SLO",
+    "roles": [
+      "SRE",
+      "PM",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Mục tiêu cụ thể, đo lường được về mức độ tin cậy của dịch vụ (ví dụ: Hệ thống phải online 99.9% thời gian).",
+    "example": "SREチームは、設定されたSLO（サービスレベル目標）を下回らないよう監視を続けます。"
+  },
+  {
+    "id": "do-sre",
+    "english": "Site Reliability Engineering / SRE",
+    "japanese": "サイト信頼性エンジニアリング / SRE",
+    "kana": "エスアールイー",
+    "vietnamese": "Kỹ sư độ tin cậy trang web / SRE",
+    "roles": [
+      "DevOps",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Phương pháp do Google khởi xướng, áp dụng các kỹ thuật phần mềm vào việc quản lý vận hành hạ tầng IT.",
+    "example": "システムの安定稼働を保つため、SRE（サイト信頼性エンジニアリング）のプラクティスを導入します。"
+  },
+  {
+    "id": "do-telemetry",
+    "english": "Telemetry / Telemetry Data",
+    "japanese": "テレメトリ / 遠隔情報収集",
+    "kana": "テレメトリ",
+    "vietnamese": "Dữ liệu đo lường từ xa",
+    "roles": [
+      "SRE",
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Quá trình tự động ghi lại và truyền tải dữ liệu về hiệu suất và tình trạng của các thiết bị máy tính từ xa.",
+    "example": "OpenTelemetryを活用して、分散トレースやログなどのテレメトリ（Telemetry）データを収集します。"
+  },
+  {
+    "id": "do-terraform",
+    "english": "Terraform / IaC",
+    "japanese": "テラフォーム / Terraform",
+    "kana": "テラフォーム",
+    "vietnamese": "Công cụ quản lý hạ tầng Terraform",
+    "roles": [
+      "DevOps",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Công cụ Infrastructure as Code (IaC) phổ biến của HashiCorp, giúp quản lý hạ tầng Cloud bằng code.",
+    "example": "マルチクラウド環境のリソース管理には、Terraform（テラフォーム）を使用しています。"
+  },
+  {
+    "id": "do-trace",
+    "english": "Distributed Tracing / Trace / Traces",
+    "japanese": "分散トレーシング / トレース",
+    "kana": "トレース",
+    "vietnamese": "Theo dõi phân tán / Vết",
+    "roles": [
+      "SRE",
+      "Dev",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Phương pháp dùng để theo dõi (profiling) và giám sát các ứng dụng, đặc biệt là ứng dụng xây dựng trên kiến trúc microservice.",
+    "example": "リクエストがどのサービスを通過したかを追跡するため、分散トレーシング（Distributed Tracing）を実装します。"
+  },
+  {
+    "id": "ec-abandoned-cart",
+    "english": "Abandoned Cart",
+    "japanese": "カゴ落ち",
+    "kana": "かごおち",
+    "vietnamese": "Bỏ rơi giỏ hàng",
+    "roles": [
+      "BrSE",
+      "BA",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Khách cho đồ vào giỏ rồi thoát web mà không mua.",
+    "example": "カゴ落ち率を下げるため、決済完了までのステップを簡略化する必要があります。"
+  },
+  {
+    "id": "ec-affiliate-marketing",
+    "english": "Affiliate Marketing",
+    "japanese": "アフィリエイト広告",
+    "kana": "あふぃりえいとこうこく",
+    "vietnamese": "Tiếp thị liên kết",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Trả hoa hồng cho người giới thiệu sản phẩm.",
+    "example": "インフルエンサーを通じたアフィリエイト広告を展開し、新規顧客の獲得を加速させます。"
+  },
+  {
+    "id": "ec-api-integration",
+    "english": "API Integration",
+    "japanese": "API連携 / インテグレーション",
+    "kana": "えーぴーあいれんけい",
+    "vietnamese": "Tích hợp hệ thống qua API",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Kết nối web EC với CRM, WMS, hoặc Shipping carrier.",
+    "example": "受注データを外部の物流センターへ自動送信するため、Web APIを用いたリアルタイム連携を実装します。"
+  },
+  {
+    "id": "ec-average-order-value",
+    "english": "AOV / Average Order Value",
+    "japanese": "客単価",
+    "kana": "きゃくたんか",
+    "vietnamese": "Giá trị trung bình mỗi đơn hàng",
+    "roles": [
+      "BrSE",
+      "BA",
+      "Business"
+    ],
+    "category": "System Design",
+    "note": "Tổng doanh thu / tổng đơn hàng.",
+    "example": "合わせ買いを促すレコメンド機能を強化し、AOV（客単価）の向上を図ります。"
+  },
+  {
+    "id": "ec-bundle-sales",
+    "english": "Bundle Sales",
+    "japanese": "セット販売 / バンドル販売",
+    "kana": "せっとはんばい",
+    "vietnamese": "Bán theo combo",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Mua nhiều món cùng lúc được giảm giá.",
+    "example": "関連商品をまとめて購入すると10%割引になる、セット販売（バンドル販売）キャンペーンを実施します。"
+  },
+  {
+    "id": "ec-call-to-action",
+    "english": "CTA / Call to Action",
+    "japanese": "行動喚起 / CTA",
+    "kana": "こうどうかんき",
+    "vietnamese": "Nút kêu gọi hành động",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Các nút như 'Mua ngay', 'Đăng ký ngay'. Cần nổi bật và thu hút.",
+    "example": "購入率を上げるため、CTAボタン（今すぐ購入）の色をより目立つオレンジ色に変更しました。"
+  },
+  {
+    "id": "ec-cart-recovery",
+    "english": "Cart Recovery Email",
+    "japanese": "カゴ落ちメール",
+    "kana": "かごおちめーる",
+    "vietnamese": "Email nhắc nhở giỏ hàng",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Gửi email cho khách quên hàng trong giỏ.",
+    "example": "商品をカートに入れたまま購入していないユーザーに対し、24時間後にカゴ落ちメールを自動配信します。"
+  },
+  {
+    "id": "ec-checkout",
+    "english": "Checkout Process / Checkout / Checkouts / Checking out / Checked out",
+    "japanese": "決済手続き / チェックアウト",
+    "kana": "けっさいてつづき",
+    "vietnamese": "Thanh toán / Checkout",
+    "roles": [
+      "BrSE",
+      "BA",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Từ giỏ hàng đến khi trả tiền xong. Cần tối ưu để giảm drop-off rate.",
+    "example": "カゴ落ちを防ぐため、チェックアウト画面の入力を最小限にし、導線を改善しました。"
+  },
+  {
+    "id": "ec-cold-chain",
+    "english": "Cold Chain",
+    "japanese": "コールドチェーン / 低温物流",
+    "kana": "こーるどちぇーん",
+    "vietnamese": "Chuỗi cung ứng lạnh",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Vận chuyển thực phẩm/thuốc cần giữ nhiệt độ thấp suốt hành trình.",
+    "example": "生鮮食品の品質を維持するため、全工程で温度管理を徹底するコールドチェーンを構築しています。"
+  },
+  {
+    "id": "ec-conversion-rate",
+    "english": "Conversion Rate / CVR",
+    "japanese": "コンバージョン率 / 成約率 / コンバージョンレート",
+    "kana": "こんばーじょんりつ",
+    "vietnamese": "Tỷ lệ chuyển đổi",
+    "roles": [
+      "BrSE",
+      "PM",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Tỷ lệ khách vào xem web rồi thực sự mua hàng. Chỉ số quan trọng nhất của EC.",
+    "example": "商品ページの読み込み速度を1秒改善したことで、CVR（コンバージョン率）が15%向上しました。"
+  },
+  {
+    "id": "ec-cross-border-ec",
+    "english": "Cross-border E-commerce",
+    "japanese": "越境EC",
+    "kana": "えっきょういーしー",
+    "vietnamese": "Thương mại điện tử xuyên biên giới",
+    "roles": [
+      "BrSE",
+      "PM",
+      "Business"
+    ],
+    "category": "System Design",
+    "note": "Bán hàng ra nước ngoài. Cần giải quyết vấn đề ngôn ngữ, tiền tệ, thuế quan.",
+    "example": "越境ECを成功させるには、現地の決済手段や関税計算の自動化が欠かせません。"
+  },
+  {
+    "id": "ec-cross-docking",
+    "english": "Cross-docking",
+    "japanese": "クロスドッキング",
+    "kana": "くろすどっきんぐ",
+    "vietnamese": "Kỹ thuật phân phối không lưu kho",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Hàng về kho cái là phân loại rồi bốc lên xe giao ngay, không cất vào giá kệ.",
+    "example": "在庫回転率を極限まで高めるため、入庫から即座に出荷を行うクロスドッキングを導入しました。"
+  },
+  {
+    "id": "ec-customer-acquisition-cost",
+    "english": "CAC / Customer Acquisition Cost / Customer Acquisition Costs",
+    "japanese": "顧客獲得単価 / カスタマー / コスト",
+    "kana": "こきゃくかくとくたんか",
+    "vietnamese": "Chi phí để có một khách hàng mới",
+    "roles": [
+      "BrSE",
+      "PM",
+      "Business"
+    ],
+    "category": "System Design",
+    "note": "Tổng phí marketing / số khách mới.",
+    "example": "広告の効率が悪化しており、CAC（顧客獲得コスト）が許容範囲を超えています。"
+  },
+  {
+    "id": "ec-customer-lifetime-value",
+    "english": "LTV / Customer Lifetime Value",
+    "japanese": "顧客生涯価値 / カスタマー",
+    "kana": "こきゃくしょうがいかち",
+    "vietnamese": "Giá trị trọn đời của khách hàng",
+    "roles": [
+      "BrSE",
+      "PM",
+      "Business"
+    ],
+    "category": "System Design",
+    "note": "Tổng số tiền khách đóng góp cho shop trong suốt cuộc đời.",
+    "example": "目先の利益だけでなく、CRM施策を通じて長期的なLTVの最大化を目指します。"
+  },
+  {
+    "id": "ec-dead-stock",
+    "english": "Dead Stock / Dead Stocks",
+    "japanese": "不動在庫 / デッドストック",
+    "kana": "ふどうざいこ",
+    "vietnamese": "Hàng tồn kho lâu ngày / Hàng chết",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Hàng nằm trong kho quá lâu không bán được, gây tốn phí lưu kho.",
+    "example": "長期間動いていないデッドストックを一掃するため、期間限定のセールを実施します。"
+  },
+  {
+    "id": "ec-dropshipping",
+    "english": "Dropshipping",
+    "japanese": "ドロップシッピング / 直送",
+    "kana": "どろっぷしっぴんぐ",
+    "vietnamese": "Bán hàng bỏ qua khâu vận chuyển",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Người bán không giữ hàng trong kho, khi có khách mua thì order từ nhà cung cấp giao thẳng cho khách.",
+    "example": "在庫リスクをゼロにするため、海外のサプライヤーから直接配送するドロップシッピングモデルを採用します。"
+  },
+  {
+    "id": "ec-dynamic-pricing",
+    "english": "Dynamic Pricing",
+    "japanese": "ダイナミックプライシング / 変動料金制",
+    "kana": "だいなみっくぷらいしんぐ",
+    "vietnamese": "Định giá động",
+    "roles": [
+      "BrSE",
+      "BA",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Giá thay đổi theo nhu cầu (giống Grab hoặc vé máy bay).",
+    "example": "需給バランスに合わせて自動的に商品価格を最適化する、ダイナミックプライシング機能を導入します。"
+  },
+  {
+    "id": "ec-fulfillment",
+    "english": "Fulfillment",
+    "japanese": "フルフィルメント",
+    "kana": "ふるふぃるめんと",
+    "vietnamese": "Hoàn tất đơn hàng",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Toàn bộ quy trình từ lưu kho, đóng gói đến giao hàng và hậu mãi.",
+    "example": "AmazonのFBA（Fulfillment by Amazon）を利用することで、配送とカスタマーサポートをアウトソーシングします。"
+  },
+  {
+    "id": "ec-gross-merchandise-value",
+    "english": "GMV / Gross Merchandise Value",
+    "japanese": "流通取引総額",
+    "kana": "りゅうつうとりひきそうがく",
+    "vietnamese": "Tổng giá trị giao dịch hàng hóa",
+    "roles": [
+      "BrSE",
+      "PM",
+      "Business"
+    ],
+    "category": "System Design",
+    "note": "Tổng số tiền bán được trên sàn (chưa trừ phí). Chỉ số sức mạnh của sàn EC.",
+    "example": "今年の目標は、プラットフォーム全体のGMVを昨年度比で20%成長させることです。"
+  },
+  {
+    "id": "ec-inventory-management",
+    "english": "Inventory Management System / IMS",
+    "japanese": "在庫管理システム / IMS / マネジメント",
+    "kana": "ざいこかんりしすてむ",
+    "vietnamese": "Hệ thống quản lý kho / tồn kho",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Theo dõi số lượng hàng còn trong kho, cảnh báo khi sắp hết hàng.",
+    "example": "欠品による販売機会の損失を防ぐため、在庫管理システムの精度向上が求められています。"
+  },
+  {
+    "id": "ec-just-in-time",
+    "english": "Just-In-Time / JIT",
+    "japanese": "ジャストインタイム",
+    "kana": "じゃすといんたいむ",
+    "vietnamese": "Đúng lúc, đúng lượng (Hệ thống Toyota)",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Chỉ sản xuất/nhập hàng đúng lúc cần, không để thừa kho.",
+    "example": "在庫コストを最小限に抑えるため、生産計画に合わせたジャストインタイムでの部品納入を徹底しています。"
+  },
+  {
+    "id": "ec-landing-page",
+    "english": "Landing Page / LP",
+    "japanese": "ランディングページ",
+    "kana": "らんでぃんぐぺーじ",
+    "vietnamese": "Trang đích (chuyên để bán 1 món)",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Trang web dài, tập trung thuyết phục khách mua 1 sản phẩm cụ thể.",
+    "example": "広告からの流入をCV（成約）に繋げるため、訴求力の高い専用のランディングページ（LP）を制作します。"
+  },
+  {
+    "id": "ec-last-mile-delivery",
+    "english": "Last Mile Delivery / Last Mile Deliveries",
+    "japanese": "ラストワンマイル配送",
+    "kana": "らすとわんまいるはいそう",
+    "vietnamese": "Giao hàng chặng cuối",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Chặng đường từ kho hàng đến tay người tiêu dùng cuối cùng. Đắt nhất và khó quản lý nhất.",
+    "example": "物流コスト削減のため、ラストワンマイルの配送効率化に向けたルート最適化AIを導入します。"
+  },
+  {
+    "id": "ec-loyalty-program",
+    "english": "Loyalty Program",
+    "japanese": "ロイヤリティプログラム / ポイント制度",
+    "kana": "ろいやりてぃぷろぐらむ",
+    "vietnamese": "Chương trình khách hàng thân thiết",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Tích điểm, thăng hạng thành viên để giữ chân khách.",
+    "example": "購入金額に応じたランクアップ制度を設け、リピート率を高めるロイヤリティプログラムを導入します。"
+  },
+  {
+    "id": "ec-marketplace",
+    "english": "Marketplace",
+    "japanese": "マーケットプレイス",
+    "kana": "まーけっとぷれいす",
+    "vietnamese": "Sàn thương mại điện tử",
+    "roles": [
+      "BrSE",
+      "PM",
+      "Business"
+    ],
+    "category": "System Design",
+    "note": "Nơi nhiều người bán cùng đăng hàng (như Amazon, Rakuten).",
+    "example": "自社サイトだけでなく、楽天やAmazonなどの大手マーケットプレイスとも在庫連携を行う仕様です。"
+  },
+  {
+    "id": "ec-merchant-center",
+    "english": "Merchant Center",
+    "japanese": "マーチャントセンター",
+    "kana": "まーちゃんとせんたー",
+    "vietnamese": "Trung tâm quản lý người bán",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "VD: Google Merchant Center để chạy quảng cáo Google Shopping.",
+    "example": "商品データをGoogleマーチャントセンターへフィードし、検索結果に商品広告を表示させます。"
+  },
+  {
+    "id": "ec-omnichannel",
+    "english": "Omnichannel",
+    "japanese": "オムニチャネル",
+    "kana": "おむにちゃねる",
+    "vietnamese": "Bán hàng đa kênh hợp nhất",
+    "roles": [
+      "BrSE",
+      "PM",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Kết nối trải nghiệm mua sắm ở cửa hàng, app mobile, web thành một hệ thống duy nhất.",
+    "example": "オムニチャネル戦略の一環として、オンラインで注文した商品を店舗で受け取れるサービスを開始しました。"
+  },
+  {
+    "id": "ec-order-management",
+    "english": "Order Management System / OMS",
+    "japanese": "受注管理システム / OMS / マネジメント",
+    "kana": "じゅちゅうかんりしすてむ",
+    "vietnamese": "Hệ thống quản lý đơn hàng",
+    "roles": [
+      "BrSE",
+      "BA",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Quản lý vòng đời đơn hàng từ lúc đặt đến khi giao.",
+    "example": "ECサイトからの注文データは、API経由で受注管理システム（OMS）にリアルタイムで連携されます。"
+  },
+  {
+    "id": "ec-payment-reconciliation",
+    "english": "Payment Reconciliation",
+    "japanese": "入金消込",
+    "kana": "にゅうきんけしこみ",
+    "vietnamese": "Đối soát khoản thanh toán",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "So khớp tiền thực nhận trong bank với đơn hàng trên web.",
+    "example": "銀行振込で支払われた注文に対し、入金確認後に自動でステータスを更新する入金消込機能を開発しました。"
+  },
+  {
+    "id": "ec-payment-service-provider",
+    "english": "PSP / Payment Service Provider / Payment Service Providers",
+    "japanese": "決済代行会社",
+    "kana": "けっさいだいこうがいしゃ",
+    "vietnamese": "Đơn vị trung gian thanh toán",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Công ty cung cấp dịch vụ thanh toán (như GMO, Stripe).",
+    "example": "海外展開に向けて、現地の主要な決済手段を網羅しているPSPと提携します。"
+  },
+  {
+    "id": "ec-point-of-sale",
+    "english": "Point of Sale / POS",
+    "japanese": "POSシステム / 販売時点情報管理",
+    "kana": "ぽすしすてむ",
+    "vietnamese": "Hệ thống máy tính tiền / Điểm bán hàng",
+    "roles": [
+      "BrSE",
+      "BA",
+      "Project"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống dùng ở cửa hàng vật lý. Cần đồng bộ data với EC site.",
+    "example": "実店舗のPOSレジとECサイトの在庫データをリアルタイムで同期させるオムニチャネル化を推進します。"
+  },
+  {
+    "id": "ec-price-comparison",
+    "english": "Price Comparison",
+    "japanese": "価格比較",
+    "kana": "かかくひかく",
+    "vietnamese": "So sánh giá",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Tính năng hiển thị giá của các đối thủ.",
+    "example": "他社サイトの価格を自動でスクレイピングし、自社の販売価格に反映させる価格比較ツールを開発しました。"
+  },
+  {
+    "id": "ec-product-information-management",
+    "english": "PIM / Product Information Management",
+    "japanese": "商品情報管理 / マネジメント",
+    "kana": "しょうひんじょうほうかんり",
+    "vietnamese": "Hệ thống quản lý thông tin sản phẩm",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Quản lý tập trung mô tả, hình ảnh, thông số của hàng nghìn sản phẩm.",
+    "example": "複数のマーケットプレイスへ出品するため、PIMを導入して商品データの一元管理を行います。"
+  },
+  {
+    "id": "ec-return-merchandise-authorization",
+    "english": "RMA / Return Merchandise Authorization",
+    "japanese": "返品保証 / 返品承認 / オーソライゼーション",
+    "kana": "へんぴんほしょう",
+    "vietnamese": "Quy trình đổi trả hàng",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Quản lý việc khách trả lại hàng lỗi và hoàn tiền/đổi hàng.",
+    "example": "不具合品が発生した場合は、マイページからRMA番号を発行し、着払いで返送していただく流れになります。"
+  },
+  {
+    "id": "ec-reverse-logistics",
+    "english": "Reverse Logistics",
+    "japanese": "静脈物流 / 返品物流",
+    "kana": "じょうみゃくぶつりゅう / へんぴんぶつりゅう",
+    "vietnamese": "Logistics ngược (Xử lý hàng trả lại)",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Quy trình thu hồi hàng lỗi/hàng hỏng về kho.",
+    "example": "返品率が高いアパレルECにおいて、リバースロジスティクスの効率化は利益率改善の鍵となります。"
+  },
+  {
+    "id": "ec-shinkansen-logistics",
+    "english": "Logistics Efficiency",
+    "japanese": "物流効率化 / エフィシエンシー",
+    "kana": "ぶつりゅうこうりつか",
+    "vietnamese": "Tối ưu hóa hậu cần",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Sử dụng công nghệ để giảm chi phí vận chuyển.",
+    "example": "AIによるルート最適化を行い、配送車両の稼働率を高めて物流効率化を実現します。"
+  },
+  {
+    "id": "ec-shipping-carrier",
+    "english": "Shipping Carrier / Shipping Carriers",
+    "japanese": "配送業者",
+    "kana": "はいそうぎょしゃ",
+    "vietnamese": "Đơn vị vận chuyển (Yamato, Sagawa, VNPost)",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Các công ty thực hiện việc giao hàng.",
+    "example": "システムの出荷指示データは、各配送業者のEDI（電子データ交換）システムへ自動送信されます。"
+  },
+  {
+    "id": "ec-shopping-cart",
+    "english": "Shopping Cart / Cart / Carts",
+    "japanese": "ショッピングカート / 買い物かご",
+    "kana": "しょっぴんぐかーと",
+    "vietnamese": "Giỏ hàng / Thêm giỏ",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Nơi lưu tạm hàng user định mua. Cần xử lý session tốt.",
+    "example": "ユーザーがカートに商品を入れたまま離脱した場合に、リマインドメールを送る機能を実装します。"
+  }
+]

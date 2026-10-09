@@ -1,0 +1,707 @@
+[
+  {
+    "id": "agile-adaptation",
+    "english": "Adaptation / Adapting",
+    "japanese": "適応",
+    "kana": "てきおう",
+    "vietnamese": "Sự thích nghi / Adaptation",
+    "roles": [
+      "Team",
+      "PO",
+      "Scrum Master"
+    ],
+    "category": "Agile",
+    "note": "Điều chỉnh quy trình hoặc sản phẩm ngay khi thấy có sai lệch.",
+    "example": "Agile teams must embrace adaptation to changing requirements."
+  },
+  {
+    "id": "agile-art",
+    "english": "ART / Agile Release Train",
+    "japanese": "アジャイルリリース・トレイン",
+    "kana": "アジャイルリリース・トレイン",
+    "vietnamese": "Đoàn tàu giải phóng Agile / ART (trong SAFe)",
+    "roles": [
+      "Manager",
+      "Scrum Master"
+    ],
+    "category": "Agile",
+    "note": "Một nhóm các team Agile làm việc cùng nhau hướng tới một giải pháp chung trong mô hình SAFe.",
+    "example": "The ART consists of about 10 teams working in sync."
+  },
+  {
+    "id": "agile-burndown-chart",
+    "english": "Burndown Chart / Burndown Charts",
+    "japanese": "バーンダウンチャート",
+    "kana": "バーンダウンチャート",
+    "vietnamese": "Biểu đồ hoàn thành công việc / Burndown Chart",
+    "roles": [
+      "Scrum Master",
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Biểu đồ thể hiện lượng công việc còn lại so với thời gian trong một sprint hoặc release.",
+    "example": "Check the burndown chart to see if we are on track."
+  },
+  {
+    "id": "agile-burnup-chart",
+    "english": "Burnup Chart / Burnup Charts",
+    "japanese": "バーンアップチャート",
+    "kana": "バーンアップチャート",
+    "vietnamese": "Biểu đồ tiến độ tích lũy / Burnup Chart",
+    "roles": [
+      "PO",
+      "PM"
+    ],
+    "category": "Agile",
+    "note": "Biểu đồ thể hiện tổng công việc đã hoàn thành so với tổng scope của dự án.",
+    "example": "The burnup chart shows the total scope growth over time."
+  },
+  {
+    "id": "agile-continuous-deployment",
+    "english": "CD / Continuous Deployment",
+    "japanese": "継続的デプロイ / CD",
+    "kana": "けいぞくてきデプロイ / CD",
+    "vietnamese": "Triển khai liên tục / CD",
+    "roles": [
+      "Dev",
+      "DevOps"
+    ],
+    "category": "Agile",
+    "note": "Mọi thay đổi vượt qua các bước test tự động đều được tự động deploy lên production.",
+    "example": "CD enables us to deliver value to customers multiple times a day."
+  },
+  {
+    "id": "agile-continuous-integration",
+    "english": "CI / Continuous Integration",
+    "japanese": "継続的インテグレーション / CI",
+    "kana": "けいぞくてきインテグレーション / CI",
+    "vietnamese": "Tích hợp liên tục / CI",
+    "roles": [
+      "Dev",
+      "DevOps"
+    ],
+    "category": "Agile",
+    "note": "Thực hành merge code của dev vào nhánh chính thường xuyên và chạy test tự động.",
+    "example": "The CI server runs our test suite on every pull request."
+  },
+  {
+    "id": "agile-cross-functional",
+    "english": "Cross-functional Team",
+    "japanese": "機能横断的チーム / クロスファンクショナルチーム",
+    "kana": "きのうおうだんてきチーム",
+    "vietnamese": "Đội ngũ đa chức năng / Cross-functional team",
+    "roles": [
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Team có đầy đủ các kỹ năng cần thiết để hoàn thành công việc (Dev, QA, Designer...).",
+    "example": "Our cross-functional team can handle the project end-to-end."
+  },
+  {
+    "id": "agile-cycle-time",
+    "english": "Cycle Time",
+    "japanese": "サイクルタイム",
+    "kana": "サイクルタイム",
+    "vietnamese": "Thời gian thực hiện một công việc / Cycle time",
+    "roles": [
+      "Team",
+      "PM"
+    ],
+    "category": "Agile",
+    "note": "Thời gian kể từ khi team bắt đầu làm một task cho đến khi nó hoàn thành.",
+    "example": "Our average cycle time for a user story is 3 days."
+  },
+  {
+    "id": "agile-cynefin-framework",
+    "english": "Cynefin Framework",
+    "japanese": "クネビンフレームワーク",
+    "kana": "クネビンフレームワーク",
+    "vietnamese": "Mô hình Cynefin (quyết định trong môi trường phức tạp)",
+    "roles": [
+      "Manager",
+      "Scrum Master"
+    ],
+    "category": "Agile",
+    "note": "Khung làm việc giúp hiểu ngữ cảnh và đưa ra quyết định phù hợp (Obvious, Complicated, Complex, Chaotic).",
+    "example": "The Cynefin framework helps leaders adapt their style to the situation."
+  },
+  {
+    "id": "agile-definition-of-done",
+    "english": "DoD / Definition of Done",
+    "japanese": "完成の定義 / DoD",
+    "kana": "かんせいのていぎ / DoD",
+    "vietnamese": "Định nghĩa hoàn thành / DoD",
+    "roles": [
+      "Team",
+      "QA",
+      "PO"
+    ],
+    "category": "Agile",
+    "note": "Danh sách các tiêu chuẩn mà một công việc phải đạt được để được coi là hoàn thành.",
+    "example": "Unit testing and code review are part of our DoD."
+  },
+  {
+    "id": "agile-definition-of-ready",
+    "english": "DoR / Definition of Ready",
+    "japanese": "準備完了の定義 / DoR",
+    "kana": "じゅんびかんりょうのていぎ / DoR",
+    "vietnamese": "Định nghĩa sẵn sàng / DoR",
+    "roles": [
+      "Team",
+      "PO",
+      "BA"
+    ],
+    "category": "Agile",
+    "note": "Các tiêu chuẩn để một user story có thể được đưa vào sprint (ví dụ: đủ thông tin, có AC).",
+    "example": "This story is not ready yet according to our DoR."
+  },
+  {
+    "id": "agile-empirical-process",
+    "english": "Empiricism / Empirical Process Control",
+    "japanese": "経験主義 / 経験的プロセス制御",
+    "kana": "けいけんしゅぎ / けいけんてきプロセスせいぎょ",
+    "vietnamese": "Chủ nghĩa kinh nghiệm / Kiểm soát quy trình thực nghiệm",
+    "roles": [
+      "Scrum Master"
+    ],
+    "category": "Agile",
+    "note": "Dựa trên 3 trụ cột: minh bạch (transparency), kiểm tra (inspection) và thích nghi (adaptation).",
+    "example": "Scrum is based on empirical process control."
+  },
+  {
+    "id": "agile-epic",
+    "english": "Epic / Epics",
+    "japanese": "エピック",
+    "kana": "エピック",
+    "vietnamese": "Yêu cầu lớn / Epic",
+    "roles": [
+      "PO",
+      "BA"
+    ],
+    "category": "Agile",
+    "note": "Một yêu cầu lớn không thể hoàn thành trong một sprint và cần được chia nhỏ thành các user story.",
+    "example": "The 'User Profile' epic was broken down into five user stories."
+  },
+  {
+    "id": "agile-feature-flag",
+    "english": "Feature Flag / Feature Toggle",
+    "japanese": "機能フラグ / フィーチャートグル",
+    "kana": "きのうフラグ / フィーチャートグル",
+    "vietnamese": "Cờ tính năng / Bật tắt tính năng / Feature flag",
+    "roles": [
+      "Dev",
+      "PO"
+    ],
+    "category": "Agile",
+    "note": "Kỹ thuật cho phép bật hoặc tắt một tính năng mà không cần deploy lại code.",
+    "example": "We used a feature flag to release the new UI to only 5% of users."
+  },
+  {
+    "id": "agile-fibonacci-sequence",
+    "english": "Fibonacci Sequence",
+    "japanese": "フィボナッチ数列",
+    "kana": "フィボナッチすうれつ",
+    "vietnamese": "Dãy số Fibonacci (sử dụng trong ước lượng)",
+    "roles": [
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Dãy số (1, 2, 3, 5, 8, 13...) thường dùng trong Poker Planning.",
+    "example": "We use the Fibonacci sequence for more accurate estimation."
+  },
+  {
+    "id": "agile-impediment",
+    "english": "Impediment / Impediments",
+    "japanese": "障害 / インピーディメント",
+    "kana": "しょうがい / インピーディメント",
+    "vietnamese": "Rào cản / Trở ngại / Impediment",
+    "roles": [
+      "Scrum Master",
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Bất kỳ vấn đề nào cản trở team hoàn thành công việc.",
+    "example": "The Scrum Master's job is to remove impediments for the team."
+  },
+  {
+    "id": "agile-information-radiator",
+    "english": "Information Radiator",
+    "japanese": "情報発信源",
+    "kana": "じょうほうはっしんげん",
+    "vietnamese": "Nguồn thông tin trực quan / Information radiator",
+    "roles": [
+      "Scrum Master",
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Công cụ hiển thị thông tin dự án một cách trực quan và dễ thấy (ví dụ: màn hình TV hiển thị dashboard).",
+    "example": "The big monitor showing the build status is our information radiator."
+  },
+  {
+    "id": "agile-inspection",
+    "english": "Inspection / Inspecting",
+    "japanese": "検査",
+    "kana": "けんさ",
+    "vietnamese": "Kiểm tra / Inspection",
+    "roles": [
+      "Team",
+      "PO",
+      "Scrum Master"
+    ],
+    "category": "Agile",
+    "note": "Thường xuyên kiểm tra các artifact và tiến độ hướng tới mục tiêu.",
+    "example": "Daily inspection of progress happens at the stand-up."
+  },
+  {
+    "id": "agile-kanban-board",
+    "english": "Kanban Board",
+    "japanese": "カンバンボード",
+    "kana": "カンバンボード",
+    "vietnamese": "Bảng Kanban",
+    "roles": [
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Công cụ trực quan hóa luồng công việc và giới hạn WIP.",
+    "example": "Move your task cards on the Kanban board during the stand-up."
+  },
+  {
+    "id": "agile-mob-programming",
+    "english": "Mob Programming",
+    "japanese": "モブプログラミング",
+    "kana": "モブプログラミング",
+    "vietnamese": "Lập trình theo nhóm / Mob programming",
+    "roles": [
+      "Team",
+      "Dev"
+    ],
+    "category": "Agile",
+    "note": "Cả team cùng làm việc trên cùng một máy tính, tại cùng một thời điểm cho cùng một task.",
+    "example": "Mob programming is great for knowledge sharing in the team."
+  },
+  {
+    "id": "agile-mvp",
+    "english": "MVP / Minimum Viable Product",
+    "japanese": "実用最小限の製品 / MVP",
+    "kana": "じつようさいしょうげんのせいひん / MVP",
+    "vietnamese": "Sản phẩm khả thi tối thiểu / MVP",
+    "roles": [
+      "PO",
+      "BrSE",
+      "Startup"
+    ],
+    "category": "Agile",
+    "note": "Phiên bản sản phẩm có đủ các tính năng cơ bản để thu thập phản hồi từ người dùng sớm nhất.",
+    "example": "Focus on the MVP features for the first release."
+  },
+  {
+    "id": "agile-pmo",
+    "english": "PMO / Project Management Office",
+    "japanese": "プロジェクトマネジメントオフィス / PMO",
+    "kana": "プロジェクトマネジメントオフィス / PMO",
+    "vietnamese": "Văn phòng quản lý dự án / PMO",
+    "roles": [
+      "Manager",
+      "PM"
+    ],
+    "category": "Agile",
+    "note": "Bộ phận thiết lập và duy trì các tiêu chuẩn quản lý dự án trong tổ chức.",
+    "example": "The PMO provides support and resources for all project teams."
+  },
+  {
+    "id": "agile-poker-planning",
+    "english": "Poker Planning / Planning Poker",
+    "japanese": "プランニングポーカー",
+    "kana": "プランニングポーカー",
+    "vietnamese": "Chơi Poker lập kế hoạch / Poker Planning",
+    "roles": [
+      "Team",
+      "Scrum Master"
+    ],
+    "category": "Agile",
+    "note": "Kỹ thuật ước lượng dựa trên sự đồng thuận, sử dụng các thẻ bài.",
+    "example": "We used poker planning to estimate the new user stories."
+  },
+  {
+    "id": "agile-product-goal",
+    "english": "Product Goal",
+    "japanese": "プロダクトのゴール",
+    "kana": "プロダクトのゴール",
+    "vietnamese": "Mục tiêu sản phẩm / Product Goal",
+    "roles": [
+      "PO",
+      "Stakeholders"
+    ],
+    "category": "Agile",
+    "note": "Trạng thái tương lai của sản phẩm mà team Scrum hướng tới.",
+    "example": "The Product Goal should be long-term and inspiring."
+  },
+  {
+    "id": "agile-product-increment",
+    "english": "Increment / Product Increment",
+    "japanese": "インクリメント / 完成増分",
+    "kana": "インクリメント / かんせいぞうぶん",
+    "vietnamese": "Phần tăng trưởng sản phẩm / Increment",
+    "roles": [
+      "Team",
+      "PO"
+    ],
+    "category": "Agile",
+    "note": "Phần sản phẩm hoàn chỉnh, có thể bàn giao được sau mỗi sprint.",
+    "example": "Each sprint must result in a usable product increment."
+  },
+  {
+    "id": "agile-refactoring",
+    "english": "Refactoring / Refactor / Refactored",
+    "japanese": "リファクタリング",
+    "kana": "リファクタリング",
+    "vietnamese": "Tối ưu hóa cấu trúc code / Refactoring",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Agile",
+    "note": "Cải thiện cấu trúc nội bộ của code mà không thay đổi hành vi bên ngoài.",
+    "example": "Refactoring the legacy code made it much easier to add new features."
+  },
+  {
+    "id": "agile-refinement",
+    "english": "Refinement / Backlog Refinement / Grooming",
+    "japanese": "リファインメント / バックログの整理",
+    "kana": "リファインメント / バックログのせいり",
+    "vietnamese": "Làm mịn Backlog / Grooming",
+    "roles": [
+      "PO",
+      "Team",
+      "BA"
+    ],
+    "category": "Agile",
+    "note": "Quá trình làm rõ, chi tiết hóa và ước lượng lại các mục trong backlog.",
+    "example": "We have a backlog refinement session every Wednesday."
+  },
+  {
+    "id": "agile-retrospective",
+    "english": "Retrospective / Retro / Sprints Retrospective",
+    "japanese": "レトロスペクティブ / ふりかえり",
+    "kana": "レトロスペクティブ / ふりかえり",
+    "vietnamese": "Họp cải tiến / Retro",
+    "roles": [
+      "Team",
+      "Scrum Master"
+    ],
+    "category": "Agile",
+    "note": "Buổi họp cuối sprint để team nhìn lại và cải tiến quy trình làm việc.",
+    "example": "During the retro, we identified several ways to improve our communication."
+  },
+  {
+    "id": "agile-safe",
+    "english": "SAFe / Scaled Agile Framework",
+    "japanese": "Scaled Agile Framework / SAFe",
+    "kana": "Scaled Agile Framework / SAFe",
+    "vietnamese": "Mô hình Agile quy mô lớn / SAFe",
+    "roles": [
+      "Manager",
+      "Architect",
+      "PM"
+    ],
+    "category": "Agile",
+    "note": "Khung làm việc để triển khai Agile ở cấp độ tập đoàn lớn.",
+    "example": "Our company is adopting SAFe to coordinate multiple agile trains."
+  },
+  {
+    "id": "agile-scrum-guide",
+    "english": "Scrum Guide",
+    "japanese": "スクラムガイド",
+    "kana": "スクラムガイド",
+    "vietnamese": "Hướng dẫn Scrum chính thức",
+    "roles": [
+      "Scrum Master",
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Tài liệu chính thống định nghĩa về Scrum, được viết bởi Ken Schwaber và Jeff Sutherland.",
+    "example": "Always refer to the latest Scrum Guide for the official rules."
+  },
+  {
+    "id": "agile-scrum-of-scrums",
+    "english": "Scrum of Scrums / SoS",
+    "japanese": "スクラム・オブ・スクラム",
+    "kana": "スクラム・オブ・スクラム",
+    "vietnamese": "Scrum của các Scrum / Mô hình Scrum quy mô lớn",
+    "roles": [
+      "Scrum Master",
+      "PM"
+    ],
+    "category": "Agile",
+    "note": "Kỹ thuật điều phối khi có nhiều team cùng làm việc trên một dự án lớn.",
+    "example": "The Scrum of Scrums meeting is held every Tuesday."
+  },
+  {
+    "id": "agile-self-organizing",
+    "english": "Self-organizing Team / Self-organization",
+    "japanese": "自己組織化チーム",
+    "kana": "じこそしきかチーム",
+    "vietnamese": "Đội ngũ tự tổ chức / Self-organizing team",
+    "roles": [
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Team tự quyết định cách tốt nhất để hoàn thành công việc của mình.",
+    "example": "Self-organizing teams are more motivated and productive."
+  },
+  {
+    "id": "agile-servant-leader",
+    "english": "Servant Leader / Servant Leadership",
+    "japanese": "サーバントリーダー",
+    "kana": "サーバントリーダー",
+    "vietnamese": "Người lãnh đạo phục vụ / Servant leader",
+    "roles": [
+      "Scrum Master"
+    ],
+    "category": "Agile",
+    "note": "Triết lý lãnh đạo tập trung vào việc hỗ trợ và trao quyền cho team.",
+    "example": "A Scrum Master acts as a servant leader for the team."
+  },
+  {
+    "id": "agile-spikes",
+    "english": "Spike / Spikes",
+    "japanese": "スパイク",
+    "kana": "スパイク",
+    "vietnamese": "Nghiên cứu kỹ thuật / Spike",
+    "roles": [
+      "Dev",
+      "Architect"
+    ],
+    "category": "Agile",
+    "note": "Một task nghiên cứu hoặc thử nghiệm để giảm thiểu rủi ro kỹ thuật.",
+    "example": "Let's create a spike to evaluate the new database performance."
+  },
+  {
+    "id": "agile-sprint-backlog",
+    "english": "Sprint Backlog",
+    "japanese": "スプリントバックログ",
+    "kana": "スプリントバックログ",
+    "vietnamese": "Danh sách công việc của sprint / Sprint Backlog",
+    "roles": [
+      "Team",
+      "Scrum Master"
+    ],
+    "category": "Agile",
+    "note": "Các công việc được chọn để thực hiện trong sprint hiện tại.",
+    "example": "The items in the sprint backlog are pulled from the product backlog."
+  },
+  {
+    "id": "agile-sprint-goal",
+    "english": "Sprint Goal",
+    "japanese": "スプリントのゴール",
+    "kana": "スプリントのゴール",
+    "vietnamese": "Mục tiêu của sprint / Sprint Goal",
+    "roles": [
+      "Team",
+      "PO"
+    ],
+    "category": "Agile",
+    "note": "Mục đích duy nhất của sprint mà team cam kết đạt được.",
+    "example": "The sprint goal is to complete the payment integration."
+  },
+  {
+    "id": "agile-sprint-review",
+    "english": "Sprint Review / Demo",
+    "japanese": "スプリントレビュー / デモ",
+    "kana": "スプリントレビュー / デモ",
+    "vietnamese": "Họp review sprint / Demo sản phẩm",
+    "roles": [
+      "Team",
+      "PO",
+      "Stakeholders"
+    ],
+    "category": "Agile",
+    "note": "Buổi họp cuối sprint để trình diễn phần việc đã hoàn thành và nhận phản hồi.",
+    "example": "The client was very happy with the features shown in the sprint review."
+  },
+  {
+    "id": "agile-stacy-matrix",
+    "english": "Stacy Matrix",
+    "japanese": "ステイシーマトリクス",
+    "kana": "ステイシーマトリクス",
+    "vietnamese": "Ma trận Stacy (phân loại độ phức tạp)",
+    "roles": [
+      "PM",
+      "Scrum Master"
+    ],
+    "category": "Agile",
+    "note": "Mô hình giúp xác định phương pháp quản lý dựa trên độ không chắc chắn của yêu cầu và công nghệ.",
+    "example": "According to the Stacy Matrix, this project is in the 'complex' zone."
+  },
+  {
+    "id": "agile-story-point",
+    "english": "Story Point / Story Points",
+    "japanese": "ストーリーポイント",
+    "kana": "ストーリーポイント",
+    "vietnamese": "Điểm công việc / Story point",
+    "roles": [
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Đơn vị đo lường tương đối về độ lớn, độ khó và rủi ro của một user story.",
+    "example": "This feature is estimated at 5 story points."
+  },
+  {
+    "id": "agile-sustainable-pace",
+    "english": "Sustainable Pace",
+    "japanese": "持続可能なペース",
+    "kana": "じぞくかのうなペース",
+    "vietnamese": "Tốc độ bền vững / Sustainable pace",
+    "roles": [
+      "Scrum Master",
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Tốc độ làm việc mà team có thể duy trì lâu dài mà không bị burn-out.",
+    "example": "Maintaining a sustainable pace is vital for long-term productivity."
+  },
+  {
+    "id": "agile-swarming",
+    "english": "Swarming / Team Swarming",
+    "japanese": "スウォーミング",
+    "kana": "スウォーミング",
+    "vietnamese": "Cả team tập trung xử lý một task / Swarming",
+    "roles": [
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Kỹ thuật nhiều thành viên trong team cùng tập trung giải quyết một story quan trọng.",
+    "example": "Let's swarm on the remaining critical bug to finish the sprint."
+  },
+  {
+    "id": "agile-t-shaped-skills",
+    "english": "T-shaped Skills",
+    "japanese": "T型スキル",
+    "kana": "Tがたスキル",
+    "vietnamese": "Kỹ năng chữ T / Nhân sự đa năng",
+    "roles": [
+      "Team",
+      "Dev",
+      "QA"
+    ],
+    "category": "Agile",
+    "note": "Người có chuyên môn sâu trong một lĩnh vực (thanh dọc) và kiến thức rộng trong nhiều lĩnh vực khác (thanh ngang).",
+    "example": "Agile teams prefer members with T-shaped skills."
+  },
+  {
+    "id": "agile-technical-debt",
+    "english": "Technical Debt / Tech Debt",
+    "japanese": "技術的負債",
+    "kana": "ぎじゅつてきふさい",
+    "vietnamese": "Nợ kỹ thuật / Tech debt",
+    "roles": [
+      "Dev",
+      "PO",
+      "Architect"
+    ],
+    "category": "Agile",
+    "note": "Hệ quả của việc chọn giải pháp nhanh thay vì giải pháp tốt nhất, gây khó khăn cho việc bảo trì sau này.",
+    "example": "We need to allocate time in the next sprint to pay down tech debt."
+  },
+  {
+    "id": "agile-theme",
+    "english": "Theme / Themes",
+    "japanese": "テーマ",
+    "kana": "テーマ",
+    "vietnamese": "Chủ đề lớn / Theme",
+    "roles": [
+      "PO",
+      "Manager"
+    ],
+    "category": "Agile",
+    "note": "Mức cao nhất của phân loại yêu cầu, nhóm các Epic có liên quan lại với nhau.",
+    "example": "The strategic theme for this year is 'Mobile First'."
+  },
+  {
+    "id": "agile-timebox",
+    "english": "Timebox / Timeboxing / Timeboxed",
+    "japanese": "タイムボックス / 期間固定",
+    "kana": "タイムボックス / きかんこてい",
+    "vietnamese": "Giới hạn thời gian / Timebox",
+    "roles": [
+      "Scrum Master",
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Một khoảng thời gian cố định dành cho một sự kiện hoặc công việc.",
+    "example": "The daily stand-up is timeboxed to 15 minutes."
+  },
+  {
+    "id": "agile-transparency",
+    "english": "Transparency",
+    "japanese": "透明性",
+    "kana": "とうめいせい",
+    "vietnamese": "Sự minh bạch / Transparency",
+    "roles": [
+      "Team",
+      "PO",
+      "Scrum Master"
+    ],
+    "category": "Agile",
+    "note": "Thông tin quan trọng phải được công khai cho tất cả mọi người liên quan.",
+    "example": "Transparency in communication reduces misunderstandings."
+  },
+  {
+    "id": "agile-user-story-mapping",
+    "english": "User Story Mapping",
+    "japanese": "ユーザーストーリーマッピング",
+    "kana": "ユーザーストーリーマッピング",
+    "vietnamese": "Lập bản đồ câu chuyện người dùng / User Story Mapping",
+    "roles": [
+      "PO",
+      "BA",
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Kỹ thuật trực quan hóa backlog để hiểu hành trình người dùng và lập kế hoạch release.",
+    "example": "User story mapping helps us see the big picture of the product."
+  },
+  {
+    "id": "agile-velocity",
+    "english": "Velocity",
+    "japanese": "ベロシティ",
+    "kana": "ベロシティ",
+    "vietnamese": "Tốc độ đội ngũ / Velocity",
+    "roles": [
+      "Scrum Master",
+      "PO",
+      "Team"
+    ],
+    "category": "Agile",
+    "note": "Số lượng công việc (thường tính bằng story points) mà team hoàn thành trong một sprint.",
+    "example": "The team's average velocity is 40 points per sprint."
+  },
+  {
+    "id": "agile-wip-limit",
+    "english": "WIP Limit / Work in Progress Limit",
+    "japanese": "WIP制限 / 仕掛品制限",
+    "kana": "WIPせいげん",
+    "vietnamese": "Giới hạn công việc đang làm / WIP limit",
+    "roles": [
+      "Team",
+      "Scrum Master"
+    ],
+    "category": "Agile",
+    "note": "Giới hạn số lượng task có thể nằm trong một cột (ví dụ: In Progress) cùng lúc.",
+    "example": "Setting a WIP limit helps improve team throughput."
+  },
+  {
+    "id": "pm-burn-down-chart",
+    "english": "Burndown Chart",
+    "japanese": "バーンダウンチャート",
+    "kana": "バーンダウンチャート",
+    "vietnamese": "Biểu đồ Burndown / Biểu đồ đốt cháy công việc",
+    "roles": [
+      "SM",
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Agile",
+    "note": "Biểu đồ hiển thị lượng công việc còn lại theo thời gian trong một sprint.",
+    "example": "The burndown chart shows we are slightly behind schedule this sprint."
+  }
+]

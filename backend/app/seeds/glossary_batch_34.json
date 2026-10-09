@@ -1,0 +1,733 @@
+[
+  {
+    "id": "sec-encryption-in-transit-1",
+    "english": "Encryption in Transit",
+    "japanese": "通信経路の暗号化 / エンクリプション",
+    "kana": "つうしんけいろのあんごうか",
+    "vietnamese": "Mã hóa dữ liệu khi truyền tải",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Dùng SSL/TLS để bảo vệ dữ liệu đang chạy trên dây mạng.",
+    "example": "通信経路上での盗聴を防ぐため、すべてのAPIリクエストにはTLS 1.2以上を用いたEncryption in Transitを必須とします。"
+  },
+  {
+    "id": "sec-endpoint",
+    "english": "Endpoint / Endpoints",
+    "japanese": "エンドポイント / 端末",
+    "kana": "エンドポイント",
+    "vietnamese": "Điểm cuối / Thiết bị đầu cuối",
+    "roles": [
+      "IT Support",
+      "Security"
+    ],
+    "category": "System Design",
+    "note": "Các thiết bị kết nối vào mạng như laptop, smartphone, server.",
+    "example": "エンドポイント（Endpoint）セキュリティを強化し、各PCの監視体制を整えます。"
+  },
+  {
+    "id": "sec-endpoint-security",
+    "english": "Endpoint Security",
+    "japanese": "エンドポイントセキュリティ / セキュリティ",
+    "kana": "えんどぽいんとせきゅりてぃ",
+    "vietnamese": "Bảo mật điểm cuối",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Bảo vệ laptop nhân viên, mobile device. BrSE cần giải thích về việc cài phần mềm diệt virus/EDR cho khách.",
+    "example": "テレワークの普及に伴い、社員用PCのエンドポイントセキュリティ対策を強化しました。"
+  },
+  {
+    "id": "sec-forensics",
+    "english": "Digital Forensics",
+    "japanese": "デジタルフォレンジック",
+    "kana": "でじたるふぉれんじっく",
+    "vietnamese": "Điều tra kỹ thuật số",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Thu thập bằng chứng sau khi bị hack để kiện tụng hoặc tìm nguyên nhân.",
+    "example": "情報漏洩事件が発生した際、原因究明のためにデジタルフォレンジック調査を実施しました。"
+  },
+  {
+    "id": "sec-honeypot",
+    "english": "Honeypot",
+    "japanese": "ハニーポット",
+    "kana": "はにーぽっと",
+    "vietnamese": "Hệ thống bẫy hacker",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Server giả chứa đầy lỗ hổng để dụ hacker tấn công, từ đó nghiên cứu hành vi của chúng.",
+    "example": "攻撃者の手法を分析するため、ネットワーク内にハニーポットを設置して監視を行います。"
+  },
+  {
+    "id": "sec-ids-ips",
+    "english": "IDS / IPS / Intrusion Detection System / Intrusion Prevention System",
+    "japanese": "侵入検知 / 侵入防止システム / イントルージョンディテクションシステム / イントルージョンプレベンションシステム",
+    "kana": "しんにゅうけんち / しんにゅうぼうししすてむ",
+    "vietnamese": "Hệ thống phát hiện/ngăn chặn xâm nhập",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "IDS chỉ cảnh báo khi thấy traffic lạ, IPS thì tự động block luôn. Nằm sâu hơn Firewall.",
+    "example": "ネットワークへの不正なトラフィックを監視するため、IDSおよびIPSの導入を検討すべきです。"
+  },
+  {
+    "id": "sec-integrity",
+    "english": "Data Integrity / Integrity",
+    "japanese": "データの整合性 / インテグリティ",
+    "kana": "せいごうせい",
+    "vietnamese": "Tính toàn vẹn dữ liệu",
+    "roles": [
+      "Security",
+      "DBA"
+    ],
+    "category": "System Design",
+    "note": "Đảm bảo dữ liệu chính xác và không bị thay đổi trái phép trong suốt vòng đời.",
+    "example": "データの整合性（Integrity）を保つため、トランザクション処理を適切に行います。"
+  },
+  {
+    "id": "sec-least-privilege-1",
+    "english": "Principle of Least Privilege",
+    "japanese": "最小権限の原則 / 最小特権 / プリンシプルオブリーストプリビレッジ",
+    "kana": "さいしょうけんげんのげんそく",
+    "vietnamese": "Nguyên tắc đặc quyền tối thiểu",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chỉ cấp quyền vừa đủ để làm việc. Không dùng quyền Admin bừa bãi. Giảm thiểu rủi ro khi bị hack.",
+    "example": "システム設計においては「最小権限の原則」を徹底し、不要な管理者権限は付与しないようにします。"
+  },
+  {
+    "id": "sec-least-privilege-access",
+    "english": "Least Privilege Access",
+    "japanese": "最小権限の原則 / 最小特権 / プリビレッジ",
+    "kana": "さいしょうけんげんのげんそく",
+    "vietnamese": "Nguyên tắc quyền hạn tối thiểu",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Nguyên tắc vàng trong bảo mật: Chỉ cho phép cái gì cần thiết nhất.",
+    "example": "セキュリティを最大化するため、DBユーザーにはSELECT権限のみを与えるなど、最小権限の原則を徹底してください。"
+  },
+  {
+    "id": "sec-mitm",
+    "english": "Man-in-the-Middle Attack / MitM / Man-in-the-Middle Attacks",
+    "japanese": "中間者攻撃 / MITM",
+    "kana": "ちゅうかんしゃこうげき",
+    "vietnamese": "Tấn công trung gian / Tấn công MitM",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Hacker đứng giữa User và Server để nghe lén gói tin. Chống lại bằng cách bắt buộc dùng HTTPS (SSL/TLS).",
+    "example": "公衆Wi-Fiなどでの中間者攻撃を防ぐため、すべての通信経路をHTTPSで暗号化します。"
+  },
+  {
+    "id": "sec-patch-management",
+    "english": "Patch Management",
+    "japanese": "パッチ管理 / マネジメント",
+    "kana": "ぱっちかんり",
+    "vietnamese": "Quản lý bản vá lỗi",
+    "roles": [
+      "BrSE",
+      "PM",
+      "Project"
+    ],
+    "category": "System Design",
+    "note": "Lên lịch cập nhật các bản vá bảo mật cho Server/OS/Thư viện định kỳ.",
+    "example": "OSやミドルウェアの深刻な脆弱性が発表された場合、計画的かつ迅速にパッチ適用（パッチ管理）を行う運用フローを整備します。"
+  },
+  {
+    "id": "sec-penetration-testing-1",
+    "english": "Penetration Testing / Penetration Test / Pen Test / Pen Testing / Pen Tested",
+    "japanese": "ペネトレーションテスト / 侵入テスト",
+    "kana": "ぺねとれーしょんてすと",
+    "vietnamese": "Kiểm thử xâm nhập / Pen test",
+    "roles": [
+      "BrSE",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Khác với dò quét lỗ hổng tự động, Pen Test là thuê Hacker mũ trắng tấn công giả lập vào hệ thống xem có thủng thật không.",
+    "example": "高度な標的型攻撃に耐えられるか確認するため、ペネトレーションテスト（ペンテスト）を依頼します。"
+  },
+  {
+    "id": "sec-phishing-1",
+    "english": "Phishing",
+    "japanese": "フィッシング詐欺",
+    "kana": "ふぃっしんぐさぎ",
+    "vietnamese": "Lừa đảo qua mạng (Phishing)",
+    "roles": [
+      "BrSE",
+      "Comtor",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Lừa người dùng nhập mật khẩu vào trang web giả mạo. Cần tư vấn khách hàng dùng MFA để chống lại.",
+    "example": "ユーザーがフィッシング詐欺に引っかかっても被害を防げるよう、多要素認証（MFA）を必須とします。"
+  },
+  {
+    "id": "sec-pki-1",
+    "english": "Public Key Infrastructure / PKI",
+    "japanese": "公開鍵基盤 / パブリックキーインフラストラクチャ",
+    "kana": "こうかいかぎきばん",
+    "vietnamese": "Hạ tầng khóa công khai",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống dùng Cặp khóa công khai/bí mật và Chứng chỉ số (Certificate Authority) để xác thực (VD: HTTPS, SSH).",
+    "example": "システム間連携の認証をよりセキュアにするため、PKI（公開鍵基盤）に基づくクライアント証明書認証を導入します。"
+  },
+  {
+    "id": "sec-proxy",
+    "english": "Proxy Server / Proxy",
+    "japanese": "プロキシサーバー / プロキシ",
+    "kana": "プロキシ",
+    "vietnamese": "Máy chủ ủy nhiệm / Proxy",
+    "roles": [
+      "Networking",
+      "Security"
+    ],
+    "category": "System Design",
+    "note": "Máy chủ trung gian giữa người dùng và Internet giúp tăng bảo mật và lọc nội dung.",
+    "example": "プロキシ（Proxy）サーバーを経由することで、社内ネットワークを匿名化できます。"
+  },
+  {
+    "id": "sec-salt-hash",
+    "english": "Salted Hash / Salted Hashing / Salted Hashed",
+    "japanese": "ソルト付きハッシュ",
+    "kana": "そるとつきはっしゅ",
+    "vietnamese": "Băm mật khẩu kèm Salt",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cộng thêm chuỗi ngẫu nhiên (Salt) vào mật khẩu trước khi băm (Hash) để chống tấn công Rainbow Table.",
+    "example": "パスワードをデータベースに保存する際は、平文ではなく必ずソルト付きハッシュ化（例: bcrypt）を行ってください。"
+  },
+  {
+    "id": "sec-security-hardening",
+    "english": "Hardening",
+    "japanese": "ハードニング / 要塞化",
+    "kana": "はーどにんぐ",
+    "vietnamese": "Gia cố bảo mật",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Tắt hết các service, port không dùng, đổi pass mặc định để làm server an toàn hơn.",
+    "example": "本番公開前に、不要なポートの閉鎖やOSのパッチ適用など、サーバーの要塞化（ハードニング）を実施します。"
+  },
+  {
+    "id": "sec-session",
+    "english": "Session / Sessions",
+    "japanese": "セッション",
+    "kana": "セッション",
+    "vietnamese": "Phiên làm việc / Session",
+    "roles": [
+      "Dev",
+      "User"
+    ],
+    "category": "System Design",
+    "note": "Khoảng thời gian người dùng tương tác với hệ thống sau khi đăng nhập.",
+    "example": "一定時間操作がない場合、セキュリティ保護のためセッション（Session）を終了します。"
+  },
+  {
+    "id": "sec-session-hijacking",
+    "english": "Session Hijacking",
+    "japanese": "セッションハイジャック",
+    "kana": "せっしょんはいじゃっく",
+    "vietnamese": "Đánh cắp phiên đăng nhập",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Trộm Session ID (cookie) để giả mạo người dùng đang đăng nhập. Chống bằng HttpOnly và Secure flag cho cookie.",
+    "example": "セッションハイジャックを防止するため、セッションCookieには必ずHttpOnlyとSecure属性を付与してください。"
+  },
+  {
+    "id": "sec-siem",
+    "english": "SIEM / Security Information and Event Management",
+    "japanese": "SIEM（シーム） / セキュリティ / マネジメント",
+    "kana": "しーむ",
+    "vietnamese": "Quản lý sự kiện và thông tin bảo mật",
+    "roles": [
+      "BrSE",
+      "Project"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống gom log từ Firewall, OS, App vào 1 chỗ để AI phân tích và cảnh báo có Hacker hay không.",
+    "example": "各種ログを統合的に分析し、不審な挙動を早期発見するためにSIEMツールの導入を提案します。"
+  },
+  {
+    "id": "sec-social-engineering",
+    "english": "Social Engineering",
+    "japanese": "ソーシャルエンジニアリング",
+    "kana": "そーしゃるえんじにありんぐ",
+    "vietnamese": "Kỹ nghệ xã hội",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Hack qua con người (lừa đảo qua điện thoại, giả mạo sếp) chứ không dùng kỹ thuật máy tính.",
+    "example": "システムをどれだけ堅牢にしても、ソーシャルエンジニアリングによる人為的ミス（パスワードの教示など）は防げません。社員教育が重要です。"
+  },
+  {
+    "id": "sec-sql-sanitization",
+    "english": "Sanitization",
+    "japanese": "サニタイズ / 無害化",
+    "kana": "さにたいず / むがいか",
+    "vietnamese": "Làm sạch dữ liệu đầu vào",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Xóa/thay thế các ký tự nguy hiểm (<, >, ') trước khi lưu DB hoặc render ra HTML.",
+    "example": "ユーザーからの入力を受け取った直後にサニタイズ処理を行い、不正なスクリプトの実行を防止します。"
+  },
+  {
+    "id": "sec-threat-modeling",
+    "english": "Threat Modeling",
+    "japanese": "脅威モデリング / スレットモデリング",
+    "kana": "きょういもでりんぐ",
+    "vietnamese": "Mô hình hóa mối đe dọa",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Ngồi vẽ lại architecture và suy đoán xem Hacker có thể tấn công từ những điểm nào trước khi viết code.",
+    "example": "要件定義の段階で脅威モデリングを実施し、潜在的なセキュリティリスクとその対策を洗い出します。"
+  },
+  {
+    "id": "sec-vpn",
+    "english": "Virtual Private Network / VPN",
+    "japanese": "仮想プライベートネットワーク / VPN",
+    "kana": "かそうぷらいべーとねっとわーく",
+    "vietnamese": "Mạng riêng ảo / Bật VPN",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Tạo đường hầm bảo mật qua Internet để truy cập mạng nội bộ công ty. Cần thiết khi remote work.",
+    "example": "開発環境へのアクセスは、セキュリティを考慮して社内VPN経由のみに制限させていただきます。"
+  },
+  {
+    "id": "sec-vpn-1",
+    "english": "Virtual Private Network / VPN",
+    "japanese": "仮想プライベートネットワーク / VPN / ブイピーエヌ",
+    "kana": "ブイピーエヌ",
+    "vietnamese": "Mạng riêng ảo / VPN",
+    "roles": [
+      "Security",
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Tạo kết nối an toàn và mã hóa qua Internet giữa thiết bị và mạng.",
+    "example": "社内リソースにアクセスする際は、VPN（ブイピーエヌ）経由での接続が必須です。"
+  },
+  {
+    "id": "sec-vulnerability-assessment",
+    "english": "Vulnerability Assessment / Vulnerability Assessments",
+    "japanese": "脆弱性診断 / 脆弱性アセスメント",
+    "kana": "ぜいじゃくせいしんだん",
+    "vietnamese": "Đánh giá lỗ hổng / Scan lỗi",
+    "roles": [
+      "BrSE",
+      "QA",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "BrSE thường phải đề xuất khách hàng làm khâu này trước khi release. Có thể dùng tool tự động (như OWASP ZAP).",
+    "example": "本番リリースの前に、外部の専門機関による脆弱性診断を実施することを強くお勧めします。"
+  },
+  {
+    "id": "sec-xss-1",
+    "english": "Cross-Site Scripting / XSS",
+    "japanese": "クロスサイトスクリプティング / XSS",
+    "kana": "くろすさいとすくりぷてぃんぐ",
+    "vietnamese": "Lỗi bảo mật XSS / Lỗi XSS",
+    "roles": [
+      "Security",
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Kẻ tấn công chèn mã script độc hại (như JavaScript) vào trang web để chạy trên trình duyệt của người dùng khác.",
+    "example": "ユーザー入力値をそのまま画面に表示するとXSSの危険があるため、必ずサニタイズ（エスケープ）処理を実装します。"
+  },
+  {
+    "id": "sec-zero-day",
+    "english": "Zero-Day Exploit / Zero-Day Exploits",
+    "japanese": "ゼロデイ攻撃 / ゼロデイエクスプロイト / エクスプロイト",
+    "kana": "ぜろでいこうげき",
+    "vietnamese": "Tấn công Zero-Day",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Tấn công vào lỗi bảo mật mà chính nhà sản xuất (như Apple, Microsoft) còn chưa biết hoặc chưa có bản vá.",
+    "example": "未知の脆弱性を狙うゼロデイ攻撃を防ぐのは難しいため、多層防御の仕組みが必要です。"
+  },
+  {
+    "id": "sys-api",
+    "english": "Application Programming Interface / API / REST API",
+    "japanese": "アプリケーションプログラミングインターフェース / API / REST API / アプリケーション / インターフェース",
+    "kana": "エーピーアイ",
+    "vietnamese": "Giao diện lập trình ứng dụng",
+    "roles": [
+      "Dev",
+      "BrSE",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Bộ quy tắc và cơ chế theo đó ứng dụng hoặc thành phần tương tác với ứng dụng khác.",
+    "example": "フロントエンドとバックエンドの連携はREST APIを通じて行います。"
+  },
+  {
+    "id": "sys-disaster-recovery",
+    "english": "Disaster Recovery / DR / Disaster Recoveries",
+    "japanese": "ディザスタリカバリ / 災害復旧 / DR",
+    "kana": "ディザスタリカバリ",
+    "vietnamese": "Khôi phục sau thảm họa",
+    "roles": [
+      "Architect",
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Tập hợp các chính sách, quy trình chuẩn bị cho việc phục hồi hoặc duy trì hạ tầng công nghệ thiết yếu sau thảm họa.",
+    "example": "万が一のシステム障害に備えて、別リージョンでのDR環境を構築する必要があります。"
+  },
+  {
+    "id": "sys-eda",
+    "english": "Event-Driven Architecture / EDA",
+    "japanese": "イベント駆動型アーキテクチャ / EDA / イベントドリブン / アーキテクチャ",
+    "kana": "イベントくどうがたアーキテクチャ",
+    "vietnamese": "Kiến trúc hướng sự kiện",
+    "roles": [
+      "Architect",
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Kiến trúc phần mềm thúc đẩy việc sản xuất, phát hiện, tiêu thụ và phản ứng với các sự kiện.",
+    "example": "システムの結合度を下げるため、イベント駆動型アーキテクチャ（EDA）を採用しています。"
+  },
+  {
+    "id": "sys-load-balancer",
+    "english": "Load Balancing / Load Balancer / LB",
+    "japanese": "ロードバランシング / ロードバランサ / LB / ロードバランサー",
+    "kana": "ロードバランサ",
+    "vietnamese": "Cân bằng tải",
+    "roles": [
+      "Architect",
+      "DevOps",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Phân phối lưu lượng mạng hiệu quả trên nhiều máy chủ để đảm bảo không máy chủ nào bị quá tải.",
+    "example": "アクセス集中によるサーバーダウンを防ぐため、ロードバランサ（LB）で負荷を分散します。"
+  },
+  {
+    "id": "sys-message-broker",
+    "english": "Message Broker / Message Queue / Kafka / Message Queues",
+    "japanese": "メッセージブローカー / メッセージキュー / Kafka",
+    "kana": "メッセージブローカー",
+    "vietnamese": "Trạm trung chuyển tin nhắn / Hàng đợi",
+    "roles": [
+      "Architect",
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Phần mềm trung gian cho phép các ứng dụng, hệ thống và dịch vụ giao tiếp với nhau và trao đổi thông tin (ví dụ: RabbitMQ, Apache Kafka).",
+    "example": "非同期処理を実現するため、マイクロサービス間にメッセージキューを導入します。"
+  },
+  {
+    "id": "sys-microservices-architecture",
+    "english": "Microservices Architecture",
+    "japanese": "マイクロサービスアーキテクチャ / マイクロサービス / アーキテクチャ",
+    "kana": "マイクロサービスアーキテクチャ",
+    "vietnamese": "Kiến trúc vi dịch vụ",
+    "roles": [
+      "Architect",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Phong cách thiết kế hệ thống bằng cách chia nhỏ ứng dụng thành các dịch vụ độc lập, giao tiếp với nhau qua API.",
+    "example": "スケーラビリティを確保するため、モノリスからマイクロサービスへの刷新を計画しています。"
+  },
+  {
+    "id": "sys-rate-limit",
+    "english": "Rate Limiting / Rate Limit",
+    "japanese": "レート制限 / レートリミット / レートリミッティング",
+    "kana": "レートリミット",
+    "vietnamese": "Giới hạn tốc độ",
+    "roles": [
+      "Architect",
+      "Security",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Chiến lược kiểm soát lưu lượng mạng để xác định tần suất một ai đó có thể lặp lại một hành động trong một khoảng thời gian cụ thể.",
+    "example": "DDoS攻撃やAPIの過剰利用を防ぐため、レートリミットを設定してください。"
+  },
+  {
+    "id": "web3-51%-attack",
+    "english": "51% Attack",
+    "japanese": "51%攻撃",
+    "kana": "ごじゅういちはーせんとこうげき",
+    "vietnamese": "Tấn công 51%",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Khi một nhóm chiếm hơn nửa sức mạnh mạng.",
+    "example": "51%攻撃を防ぐためのセキュリティ。"
+  },
+  {
+    "id": "web3-address",
+    "english": "Address / Addresses",
+    "japanese": "アドレス",
+    "kana": "あどれす",
+    "vietnamese": "Địa chỉ ví",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chuỗi ký tự đại diện cho đích đến của giao dịch.",
+    "example": "送金先のアドレスを間違えないで。"
+  },
+  {
+    "id": "web3-airdrop",
+    "english": "Airdrop",
+    "japanese": "エアドロップ / 無料配布",
+    "kana": "えあどろっぷ",
+    "vietnamese": "Tặng coin miễn phí / Airdrop",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Phân phối token miễn phí cho người dùng.",
+    "example": "エアドロップの受け取り条件。"
+  },
+  {
+    "id": "web3-atomic-swap",
+    "english": "Atomic Swap",
+    "japanese": "アトミックスワップ",
+    "kana": "あとみっくすわっぷ",
+    "vietnamese": "Hoán đổi nguyên tử",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Trao đổi tiền ảo giữa các chuỗi mà không cần trung gian.",
+    "example": "アトミックスワップで直接取引。"
+  },
+  {
+    "id": "web3-bear-market",
+    "english": "Bear Market",
+    "japanese": "弱気市場 / ベアマーケット",
+    "kana": "べあまーけっと",
+    "vietnamese": "Thị trường giảm giá / Bear Market",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giai đoạn giá tiền ảo giảm sâu.",
+    "example": "ベアマーケットでの生き残り戦略。"
+  },
+  {
+    "id": "web3-bitcoin",
+    "english": "Bitcoin",
+    "japanese": "ビットコイン / Bitcoin",
+    "kana": "びっとこいん",
+    "vietnamese": "Đồng Bitcoin",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Đồng tiền kỹ thuật số đầu tiên dựa trên blockchain.",
+    "example": "ビットコインを決済に導入します。"
+  },
+  {
+    "id": "web3-block-reward",
+    "english": "Block Reward",
+    "japanese": "ブロック報酬",
+    "kana": "ぶろっくほうしゅう",
+    "vietnamese": "Phần thưởng khối",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Số coin nhận được khi đào thành công một khối.",
+    "example": "半減期でブロック報酬が減ります。"
+  },
+  {
+    "id": "web3-blockchain",
+    "english": "Blockchain",
+    "japanese": "ブロックチェーン / 分散型台帳",
+    "kana": "ぶろっくちぇーん",
+    "vietnamese": "Chuỗi khối / Blockchain",
+    "roles": [
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Công nghệ lưu trữ dữ liệu không thể sửa xóa, dùng cho tiền số hoặc truy xuất nguồn gốc.",
+    "example": "取引の透明性と改ざん防止を実現するため、サプライチェーン管理にブロックチェーンを導入します。"
+  },
+  {
+    "id": "web3-bridge",
+    "english": "Bridge / Bridges",
+    "japanese": "ブリッジ",
+    "kana": "ぶりっじ",
+    "vietnamese": "Cầu nối / Bridge",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Công cụ chuyển tài sản giữa các blockchain khác nhau.",
+    "example": "イーサリアムから別チェーンへブリッジ。"
+  },
+  {
+    "id": "web3-bull-market",
+    "english": "Bull Market",
+    "japanese": "強気市場 / ブルマーケット",
+    "kana": "ぶるまーけっと",
+    "vietnamese": "Thị trường tăng giá / Bull Market",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giai đoạn giá tiền ảo tăng mạnh.",
+    "example": "ブルマーケットが続いています。"
+  },
+  {
+    "id": "web3-burning",
+    "english": "Burning / Token Burn",
+    "japanese": "バーン / 焼却",
+    "kana": "ばーん",
+    "vietnamese": "Đốt Token",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hủy bỏ token vĩnh viễn để giảm nguồn cung.",
+    "example": "供給量調整のためにトークンをバーン。"
+  },
+  {
+    "id": "web3-byzantine-fault-tolerance",
+    "english": "Byzantine Fault Tolerance / BFT",
+    "japanese": "ビザンチン障害耐性 / BFT",
+    "kana": "びざんちんしょうがいたいせい",
+    "vietnamese": "Khả năng chịu lỗi Byzantine",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Khả năng mạng vẫn chạy dù có nút gian lận.",
+    "example": "BFTアルゴリズムの実装。"
+  },
+  {
+    "id": "web3-cex",
+    "english": "CEX / Centralized Exchange",
+    "japanese": "中央集権型取引所 / CEX",
+    "kana": "しーいーえっくす",
+    "vietnamese": "Sàn giao dịch tập trung / CEX",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Sàn giao dịch do một công ty quản lý.",
+    "example": "CEXからウォレットへ出金。"
+  },
+  {
+    "id": "web3-cliff",
+    "english": "Cliff",
+    "japanese": "クリフ / 猶予期間",
+    "kana": "くりふ",
+    "vietnamese": "Thời gian chờ / Cliff",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thời gian tối thiểu trước khi bắt đầu vesting.",
+    "example": "1年のクリフ期間を設ける。"
+  },
+  {
+    "id": "web3-cold-storage",
+    "english": "Cold Storage",
+    "japanese": "コールドストレージ",
+    "kana": "こーるどすとれーじ",
+    "vietnamese": "Lưu trữ lạnh",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Phương pháp giữ khóa bí mật hoàn toàn ngoại tuyến.",
+    "example": "企業の資産はコールドストレージへ。"
+  }
+]

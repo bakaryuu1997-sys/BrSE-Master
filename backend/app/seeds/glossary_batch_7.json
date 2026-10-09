@@ -1,0 +1,690 @@
+[
+  {
+    "id": "se-acid-vs-base",
+    "english": "ACID vs BASE",
+    "japanese": "ACIDとBASE",
+    "kana": "ACIDとBASE",
+    "vietnamese": "Mô hình ACID và BASE (Database)",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Database",
+    "note": "Hai mô hình đảm bảo tính nhất quán khác nhau cho hệ thống DB.",
+    "example": "Relational DBs follow ACID, while many NoSQL DBs follow BASE."
+  },
+  {
+    "id": "code-hmr",
+    "english": "Hot Module Replacement / HMR",
+    "japanese": "ホットモジュールリプレイスメント / HMR",
+    "kana": "ホットモジュールリプレイスメント",
+    "vietnamese": "Thay đổi module nóng / Cập nhật code tức thì",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Frontend",
+    "note": "Tính năng tự động cập nhật thay đổi trong mã nguồn lên trình duyệt mà không cần tải lại toàn bộ trang.",
+    "example": "HMRが有効になっているため、コードを保存すると即座に画面に反映されます。"
+  },
+  {
+    "id": "code-mutation-observer",
+    "english": "Mutation Observer / DOM Monitoring",
+    "japanese": "Mutation Observer / 変更監視",
+    "kana": "ミューテーションオブザーバー",
+    "vietnamese": "Theo dõi thay đổi DOM",
+    "roles": [
+      "Frontend Dev"
+    ],
+    "category": "Frontend",
+    "note": "API trình duyệt dùng để phát hiện các thay đổi trong cấu trúc web (thêm phần tử mới) để tự động gạch chân từ vựng.",
+    "example": "Mutation Observerを使用して、SPAサイトの画面遷移時にも用語のハイライトを維持します。"
+  },
+  {
+    "id": "code-shadow-dom",
+    "english": "Shadow DOM",
+    "japanese": "Shadow DOM / シャドウドム",
+    "kana": "シャドウドム",
+    "vietnamese": "DOM ẩn / Shadow DOM",
+    "roles": [
+      "Frontend Dev",
+      "Dev"
+    ],
+    "category": "Frontend",
+    "note": "Kỹ thuật bọc mã HTML/CSS để tránh xung đột với trang web gốc. Dự án dùng Shadow DOM cho Chrome Extension.",
+    "example": "Chrome拡張機能のUIが元のサイトのCSSに干渉されないよう、Shadow DOMを利用しています。"
+  },
+  {
+    "id": "fe-accessibility",
+    "english": "Accessibility / A11y",
+    "japanese": "アクセシビリティ / A11y",
+    "kana": "アクセシビリティ",
+    "vietnamese": "Khả năng tiếp cận / A11y",
+    "roles": [
+      "Frontend Dev",
+      "UI/UX Designer",
+      "QA"
+    ],
+    "category": "Frontend",
+    "note": "Thực tiễn thiết kế web để mọi người, kể cả người khuyết tật (thị giác, thính giác), đều có thể sử dụng dễ dàng.",
+    "example": "公的機関のサイトであるため、高いアクセシビリティ（Accessibility）基準を満たす必要があります。"
+  },
+  {
+    "id": "fe-atomic-design",
+    "english": "Atomic Design",
+    "japanese": "アトミックデザイン",
+    "kana": "アトミックデザイン",
+    "vietnamese": "Thiết kế nguyên tử / Atomic Design",
+    "roles": [
+      "UI/UX Designer",
+      "Frontend Dev"
+    ],
+    "category": "Frontend",
+    "note": "Phương pháp luận thiết kế chia giao diện thành các thành phần nhỏ nhất (nguyên tử) rồi kết hợp lại thành phân tử, sinh vật.",
+    "example": "UIの一貫性を保つため、コンポーネント設計にアトミックデザイン（Atomic Design）を導入します。"
+  },
+  {
+    "id": "fe-bundler",
+    "english": "Bundler / Module Bundler / Webpack / Vite",
+    "japanese": "バンドラー / モジュールバンドラー",
+    "kana": "バンドラー",
+    "vietnamese": "Công cụ đóng gói mã nguồn / Bundler",
+    "roles": [
+      "Frontend Dev"
+    ],
+    "category": "Frontend",
+    "note": "Công cụ (như Webpack, Vite) gom tất cả các file JS, CSS, ảnh thành một vài file nhỏ gọn để trình duyệt tải nhanh hơn.",
+    "example": "開発体験（DX）を向上させるため、バンドラー（Bundler）としてViteを採用します。"
+  },
+  {
+    "id": "fe-css-in-js",
+    "english": "CSS-in-JS",
+    "japanese": "CSS-in-JS",
+    "kana": "シーエスエスインジェイエス",
+    "vietnamese": "Viết CSS trong JavaScript / CSS-in-JS",
+    "roles": [
+      "Frontend Dev"
+    ],
+    "category": "Frontend",
+    "note": "Kỹ thuật viết CSS trực tiếp bên trong các file JavaScript (ví dụ: Styled Components, Emotion).",
+    "example": "コンポーネントのスコープを限定するため、CSS-in-JSの手法を利用します。"
+  },
+  {
+    "id": "fe-debounce",
+    "english": "Debounce / Debouncing",
+    "japanese": "デバウンス",
+    "kana": "デバウンス",
+    "vietnamese": "Trì hoãn thực thi / Debounce",
+    "roles": [
+      "Frontend Dev"
+    ],
+    "category": "Frontend",
+    "note": "Kỹ thuật gộp nhiều lần gọi hàm liên tiếp thành một lần duy nhất sau một khoảng thời gian chờ (thường dùng cho ô search).",
+    "example": "検索APIへの過剰なリクエストを防ぐため、入力欄にデバウンス（Debounce）処理を追加します。"
+  },
+  {
+    "id": "fe-dom",
+    "english": "Document Object Model / DOM",
+    "japanese": "ドキュメントオブジェクトモデル / DOM / ドム",
+    "kana": "ドム",
+    "vietnamese": "Mô hình đối tượng tài liệu / DOM",
+    "roles": [
+      "Frontend Dev"
+    ],
+    "category": "Frontend",
+    "note": "Cấu trúc dạng cây biểu diễn các thành phần của một trang web HTML, cho phép JavaScript can thiệp và thay đổi.",
+    "example": "頻繁なDOM（ドム）操作はパフォーマンス低下を招くため、仮想DOM（Virtual DOM）を利用します。"
+  },
+  {
+    "id": "fe-hydration",
+    "english": "Hydration / Hydrating",
+    "japanese": "ハイドレーション",
+    "kana": "ハイドレーション",
+    "vietnamese": "Thủy hợp (Frontend) / Khởi tạo JS / Hydration",
+    "roles": [
+      "Frontend Dev",
+      "Architect"
+    ],
+    "category": "Frontend",
+    "note": "Quá trình React (hoặc framework tương tự) gắn các event listener vào HTML tĩnh được render từ server.",
+    "example": "サーバーサイドレンダリング後、クライアント側でハイドレーション（Hydration）が行われます。"
+  },
+  {
+    "id": "fe-micro-frontends",
+    "english": "Micro-frontends / Micro-frontend",
+    "japanese": "マイクロフロントエンド",
+    "kana": "マイクロフロントエンド",
+    "vietnamese": "Vi kiến trúc giao diện / Micro-frontends",
+    "roles": [
+      "Architect",
+      "Frontend Dev"
+    ],
+    "category": "Frontend",
+    "note": "Kiến trúc chia nhỏ ứng dụng web lớn thành các phần nhỏ hơn, độc lập và có thể được phát triển bởi các team khác nhau.",
+    "example": "大規模なウェブアプリの開発効率を上げるため、マイクロフロントエンド（Micro-frontends）アーキテクチャを採用します。"
+  },
+  {
+    "id": "fe-polyfill",
+    "english": "Polyfill / Polyfills",
+    "japanese": "ポリフィル",
+    "kana": "ポリフィル",
+    "vietnamese": "Đoạn mã vá trình duyệt / Polyfill",
+    "roles": [
+      "Frontend Dev"
+    ],
+    "category": "Frontend",
+    "note": "Đoạn mã cung cấp các tính năng web hiện đại cho các trình duyệt cũ không hỗ trợ tính năng đó.",
+    "example": "古いブラウザ（IEなど）でも動作するように、必要なポリフィル（Polyfill）を読み込みます。"
+  },
+  {
+    "id": "fe-prototype",
+    "english": "Prototype / Prototypes / Prototyping",
+    "japanese": "プロトタイプ / 試作品",
+    "kana": "プロトタイプ",
+    "vietnamese": "Bản mẫu tương tác / Prototype",
+    "roles": [
+      "UI/UX Designer",
+      "PM"
+    ],
+    "category": "Frontend",
+    "note": "Bản mô phỏng có thể click và tương tác được, dùng để kiểm tra luồng người dùng (user flow) trước khi code.",
+    "example": "Figmaで作成したプロトタイプ（Prototype）を使って、ユーザーテストを実施します。"
+  },
+  {
+    "id": "fe-pwa",
+    "english": "Progressive Web App / PWA",
+    "japanese": "プログレッシブウェブアプリ / PWA",
+    "kana": "ピーダブリューエー",
+    "vietnamese": "Ứng dụng web lũy tiến / PWA",
+    "roles": [
+      "Frontend Dev",
+      "Architect"
+    ],
+    "category": "Frontend",
+    "note": "Trang web được thiết kế để có trải nghiệm giống như ứng dụng di động (có thể cài đặt, chạy offline).",
+    "example": "ユーザーエンゲージメント向上のため、ウェブサイトをPWA（プログレッシブウェブアプリ）化します。"
+  },
+  {
+    "id": "fe-redux",
+    "english": "Redux",
+    "japanese": "リダックス / Redux",
+    "kana": "リダックス",
+    "vietnamese": "Thư viện quản lý state Redux",
+    "roles": [
+      "Frontend Dev"
+    ],
+    "category": "Frontend",
+    "note": "Thư viện quản lý trạng thái tập trung rất phổ biến, thường đi kèm với React trong các dự án lớn.",
+    "example": "大規模なデータフローを管理するため、Redux（リダックス）を導入しています。"
+  },
+  {
+    "id": "fe-responsive-design",
+    "english": "Responsive Web Design / Responsive Design / RWD",
+    "japanese": "レスポンシブデザイン / レスポンシブWebデザイン",
+    "kana": "レスポンシブデザイン",
+    "vietnamese": "Thiết kế web đáp ứng / Responsive",
+    "roles": [
+      "UI/UX Designer",
+      "Frontend Dev"
+    ],
+    "category": "Frontend",
+    "note": "Cách tiếp cận thiết kế web giúp trang hiển thị tốt trên mọi kích thước màn hình (từ điện thoại đến desktop).",
+    "example": "スマートフォンからのアクセスが多いため、レスポンシブデザイン（Responsive Design）は必須です。"
+  },
+  {
+    "id": "fe-seo",
+    "english": "Search Engine Optimization / SEO",
+    "japanese": "検索エンジン最適化 / SEO",
+    "kana": "エスイーオー",
+    "vietnamese": "Tối ưu hóa công cụ tìm kiếm / SEO",
+    "roles": [
+      "Frontend Dev",
+      "Marketing",
+      "BA"
+    ],
+    "category": "Frontend",
+    "note": "Kỹ thuật tối ưu trang web để có thứ hạng cao trên các công cụ tìm kiếm như Google.",
+    "example": "SEO（検索エンジン最適化）を考慮し、メタタグ（Meta tags）を適切に設定します。"
+  },
+  {
+    "id": "fe-service-worker",
+    "english": "Service Worker / Service Workers",
+    "japanese": "サービスワーカー",
+    "kana": "サービスワーカー",
+    "vietnamese": "Trình nền dịch vụ / Service Worker",
+    "roles": [
+      "Frontend Dev"
+    ],
+    "category": "Frontend",
+    "note": "Script chạy ngầm dưới trình duyệt, không phụ thuộc vào trang web, hỗ trợ tính năng offline, push notification.",
+    "example": "PWAのオフライン対応を実現するために、サービスワーカー（Service Worker）を登録します。"
+  },
+  {
+    "id": "fe-spa",
+    "english": "Single Page Application / SPA",
+    "japanese": "シングルページアプリケーション / SPA",
+    "kana": "エスピーエー",
+    "vietnamese": "Ứng dụng trang đơn / SPA",
+    "roles": [
+      "Frontend Dev",
+      "Architect"
+    ],
+    "category": "Frontend",
+    "note": "Ứng dụng web tải toàn bộ nội dung trong một lần duy nhất và chỉ cập nhật các phần cần thiết khi chuyển trang.",
+    "example": "ネイティブアプリのような操作感を提供するため、フロントエンドをSPA（シングルページアプリケーション）で構築します。"
+  },
+  {
+    "id": "fe-state-management",
+    "english": "State Management / State",
+    "japanese": "状態管理 / ステート管理",
+    "kana": "じょうたいかんり",
+    "vietnamese": "Quản lý trạng thái / State Management",
+    "roles": [
+      "Frontend Dev",
+      "Architect"
+    ],
+    "category": "Frontend",
+    "note": "Cách thức lưu trữ, cập nhật và đồng bộ hóa dữ liệu trên giao diện người dùng (ví dụ: dùng Redux, Zustand).",
+    "example": "複雑なアプリケーションでは、グローバルな状態管理（State Management）が不可欠です。"
+  },
+  {
+    "id": "fe-storybook",
+    "english": "Storybook",
+    "japanese": "ストーリーブック / Storybook",
+    "kana": "ストーリーブック",
+    "vietnamese": "Công cụ Storybook / UI Catalog",
+    "roles": [
+      "Frontend Dev",
+      "QA"
+    ],
+    "category": "Frontend",
+    "note": "Môi trường phát triển UI component tách biệt, giúp Dev và Designer dễ dàng xem và kiểm thử từng thành phần.",
+    "example": "UIコンポーネントのカタログとしてStorybook（ストーリーブック）を導入し、デザインの一貫性をチェックします。"
+  },
+  {
+    "id": "fe-throttle",
+    "english": "Throttle / Throttling",
+    "japanese": "スロットル",
+    "kana": "スロットル",
+    "vietnamese": "Giới hạn tần suất / Throttle",
+    "roles": [
+      "Frontend Dev"
+    ],
+    "category": "Frontend",
+    "note": "Kỹ thuật đảm bảo một hàm chỉ được gọi tối đa một lần trong một khoảng thời gian nhất định (thường dùng cho sự kiện scroll).",
+    "example": "スクロールイベントの処理が重いため、スロットル（Throttle）をかけて発火頻度を抑えます。"
+  },
+  {
+    "id": "fe-ui-ux",
+    "english": "User Interface / User Experience / UI / UX",
+    "japanese": "ユーザーインターフェース / ユーザー体験 / UI / UX",
+    "kana": "ユーアイ ユーエックス",
+    "vietnamese": "Giao diện người dùng / Trải nghiệm người dùng / UI/UX",
+    "roles": [
+      "UI/UX Designer",
+      "Frontend Dev",
+      "BrSE"
+    ],
+    "category": "Frontend",
+    "note": "UI là những gì người dùng nhìn thấy (màu sắc, nút bấm), UX là cảm nhận và sự dễ dàng khi sử dụng sản phẩm.",
+    "example": "競合との差別化を図るため、UI/UXの改善に力を入れます。"
+  },
+  {
+    "id": "fe-virtual-dom",
+    "english": "Virtual DOM / VDOM",
+    "japanese": "仮想DOM / バーチャルDOM",
+    "kana": "かそうドム",
+    "vietnamese": "DOM ảo / Virtual DOM",
+    "roles": [
+      "Frontend Dev"
+    ],
+    "category": "Frontend",
+    "note": "Bản sao nhẹ của DOM thực, được React sử dụng để tính toán sự thay đổi tối ưu nhất trước khi cập nhật lên DOM thật.",
+    "example": "Reactは仮想DOM（Virtual DOM）を採用することで、高速なレンダリングを実現しています。"
+  },
+  {
+    "id": "fe-wireframe",
+    "english": "Wireframe / Wireframes",
+    "japanese": "ワイヤーフレーム",
+    "kana": "ワイヤーフレーム",
+    "vietnamese": "Bản vẽ khung giao diện / Wireframe",
+    "roles": [
+      "UI/UX Designer",
+      "BA"
+    ],
+    "category": "Frontend",
+    "note": "Bản phác thảo cơ bản (thường chỉ có 2 màu đen trắng) thể hiện cấu trúc và bố cục của trang web.",
+    "example": "デザインの詳細を詰める前に、まずはワイヤーフレーム（Wireframe）で構成を確認しましょう。"
+  },
+  {
+    "id": "fe-zustand",
+    "english": "Zustand",
+    "japanese": "Zustand / ツースタンド",
+    "kana": "ツースタンド",
+    "vietnamese": "Thư viện quản lý state Zustand",
+    "roles": [
+      "Frontend Dev"
+    ],
+    "category": "Frontend",
+    "note": "Thư viện quản lý trạng thái nhỏ gọn, nhanh chóng và dễ sử dụng cho React, thay thế nhẹ nhàng cho Redux.",
+    "example": "Reduxの代わりに、より軽量なZustand（ツースタンド）を使って状態を管理します。"
+  },
+  {
+    "id": "lib-nextjs-ssr",
+    "english": "Server-Side Rendering / SSR",
+    "japanese": "サーバーサイドレンダリング / SSR",
+    "kana": "サーバーサイドレンダリング",
+    "vietnamese": "Kết xuất phía máy chủ / Server-Side Rendering",
+    "roles": [
+      "Frontend Dev",
+      "Architect"
+    ],
+    "category": "Frontend",
+    "note": "Kỹ thuật tạo HTML của trang web ngay trên server mỗi khi có request, giúp SEO tốt hơn và tăng tốc độ hiển thị ban đầu.",
+    "example": "Next.jsのSSR機能を活用して、SEOに最適化された動的なページを配信します。"
+  },
+  {
+    "id": "lib-react-hooks",
+    "english": "React Hooks / Hook / useState / useEffect",
+    "japanese": "リアクトフック / フック / Hooks",
+    "kana": "フック",
+    "vietnamese": "Móc nối React / React Hooks",
+    "roles": [
+      "Frontend Dev"
+    ],
+    "category": "Frontend",
+    "note": "Các hàm đặc biệt của React cho phép sử dụng state và các tính năng khác mà không cần viết class (ví dụ: useState, useEffect).",
+    "example": "useStateフックを使用して、コンポーネント内での状態管理（State Management）を行います。"
+  },
+  {
+    "id": "lib-tailwind-utility",
+    "english": "Utility-First CSS / Tailwind CSS",
+    "japanese": "ユーティリティファーストCSS / テイルウィンド",
+    "kana": "ユーティリティファースト",
+    "vietnamese": "CSS ưu tiên tiện ích / Tailwind CSS",
+    "roles": [
+      "Frontend Dev",
+      "UI/UX Designer"
+    ],
+    "category": "Frontend",
+    "note": "Cách tiếp cận thiết kế giao diện bằng cách sử dụng các class nhỏ có sẵn (như flex, pt-4, text-center) thay vì viết CSS tùy chỉnh.",
+    "example": "Tailwind CSSのユーティリティクラス（Utility Classes）を組み合わせて, スピーディーにUIを構築します。"
+  },
+  {
+    "id": "sec-cookie",
+    "english": "Cookie / Cookies",
+    "japanese": "クッキー / Cookie",
+    "kana": "クッキー",
+    "vietnamese": "Tệp lưu trữ tạm / Cookie",
+    "roles": [
+      "Frontend Dev",
+      "User"
+    ],
+    "category": "Frontend",
+    "note": "Mẩu dữ liệu nhỏ được lưu trữ trên trình duyệt của người dùng để duy trì trạng thái đăng nhập hoặc ghi nhớ tùy chọn.",
+    "example": "ログイン状態を保持するため、ブラウザのCookie（クッキー）を利用しています。"
+  },
+  {
+    "id": "exam-archives",
+    "english": "Archive / Archiving",
+    "japanese": "アーカイブ",
+    "kana": "アーカイブ",
+    "vietnamese": "Lưu trữ dữ liệu lịch sử / Archive",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Security",
+    "note": "Việc lưu giữ dữ liệu lâu dài cho mục đích tra cứu sau này.",
+    "example": "Logs older than one year are moved to cold storage for archiving."
+  },
+  {
+    "id": "exam-backup",
+    "english": "Backup / Full Backup / Incremental Backup",
+    "japanese": "バックアップ / フルバックアップ / 増分バックアップ",
+    "kana": "バックアップ",
+    "vietnamese": "Sao lưu dữ liệu / Backup",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Security",
+    "note": "Việc sao chép dữ liệu để phòng ngừa mất mát.",
+    "example": "We perform a full backup every weekend and incremental backups daily."
+  },
+  {
+    "id": "exam-biometrics",
+    "english": "Biometrics / Biometric Authentication",
+    "japanese": "生体認証 / バイオメトリクス",
+    "kana": "せいたいにんしょう / バイオメトリクス",
+    "vietnamese": "Xác thực sinh trắc học / Biometrics",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Security",
+    "note": "Sử dụng đặc điểm cơ thể (vân tay, khuôn mặt) để xác thực.",
+    "example": "The data center requires biometric authentication for entry."
+  },
+  {
+    "id": "exam-cross-site-scripting",
+    "english": "XSS / Cross-Site Scripting",
+    "japanese": "クロスサイトスクリプティング",
+    "kana": "クロスサイトスクリプティング",
+    "vietnamese": "Tấn công kịch bản chéo trang / XSS",
+    "roles": [
+      "Dev",
+      "QA",
+      "BrSE"
+    ],
+    "category": "Security",
+    "note": "Lỗ hổng cho phép chèn script độc hại vào trang web người dùng khác xem.",
+    "example": "Sanitizing user input is critical to avoid XSS vulnerabilities."
+  },
+  {
+    "id": "exam-digital-signature",
+    "english": "Digital Signature",
+    "japanese": "デジタル署名",
+    "kana": "デジタルしょめい",
+    "vietnamese": "Chữ ký số / Digital Signature",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Security",
+    "note": "Cơ chế xác thực tính toàn vẹn và nguồn gốc của tài liệu điện tử.",
+    "example": "Digital signatures ensure that the message was not altered in transit."
+  },
+  {
+    "id": "exam-encryption",
+    "english": "Encryption",
+    "japanese": "暗号化",
+    "kana": "あんごうか",
+    "vietnamese": "Mã hóa dữ liệu / Encryption",
+    "roles": [
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "Security",
+    "note": "Chuyển đổi thông tin sang dạng không thể đọc được nếu không có khóa.",
+    "example": "SSL/TLS provides encryption for data transmitted over the internet."
+  },
+  {
+    "id": "exam-firewall",
+    "english": "Firewall",
+    "japanese": "ファイアウォール / 防火壁",
+    "kana": "ファイアウォール / ぼうかへき",
+    "vietnamese": "Tường lửa / Firewall",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Security",
+    "note": "Hệ thống bảo vệ ngăn chặn truy cập trái phép vào mạng.",
+    "example": "The firewall rules block all incoming traffic except on port 80 and 443."
+  },
+  {
+    "id": "exam-ids",
+    "english": "IDS / Intrusion Detection System",
+    "japanese": "侵入検知システム / IDS",
+    "kana": "しんにゅうけんちシステム / IDS",
+    "vietnamese": "Hệ thống phát hiện xâm nhập / IDS",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Security",
+    "note": "Hệ thống theo dõi và cảnh báo các hành vi xâm nhập trái phép.",
+    "example": "An IDS alerts the admin when a potential attack is detected."
+  },
+  {
+    "id": "exam-ips",
+    "english": "IPS / Intrusion Prevention System",
+    "japanese": "侵入防止システム / IPS",
+    "kana": "しんにゅうぼうしシステム / IPS",
+    "vietnamese": "Hệ thống ngăn ngừa xâm nhập / IPS",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Security",
+    "note": "Hệ thống tự động ngăn chặn các hành vi xâm nhập trái phép.",
+    "example": "IPS not only detects but also blocks malicious network traffic."
+  },
+  {
+    "id": "exam-isms",
+    "english": "ISMS / Information Security Management System",
+    "japanese": "情報セキュリティマネジメントシステム / ISMS",
+    "kana": "じょうほうセキュリティマネジメントシステム / ISMS",
+    "vietnamese": "Hệ thống quản lý an toàn thông tin / ISMS",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "Security",
+    "note": "Bộ quy tắc quản lý an toàn thông tin theo chuẩn (thường là ISO 27001).",
+    "example": "Our company is ISO 27001 certified for its ISMS."
+  },
+  {
+    "id": "exam-otp",
+    "english": "OTP / One-Time Password",
+    "japanese": "ワンタイムパスワード / OTP",
+    "kana": "ワンタイムパスワード / OTP",
+    "vietnamese": "Mật khẩu dùng một lần / OTP",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Security",
+    "note": "Mật khẩu chỉ có hiệu lực cho một lần đăng nhập duy nhất.",
+    "example": "Enter the OTP sent to your phone to complete the transaction."
+  },
+  {
+    "id": "exam-pki",
+    "english": "PKI / Public Key Infrastructure",
+    "japanese": "公開鍵基盤",
+    "kana": "こうかいかぎきばん",
+    "vietnamese": "Hạ tầng khóa công khai / PKI",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Security",
+    "note": "Hệ thống quản lý chứng chỉ số và cặp khóa công khai/bí mật.",
+    "example": "PKI is the foundation for secure electronic transactions."
+  },
+  {
+    "id": "exam-sql-injection",
+    "english": "SQL Injection",
+    "japanese": "SQLインジェクション",
+    "kana": "SQLインジェクション",
+    "vietnamese": "Tấn công tiêm mã SQL / SQL Injection",
+    "roles": [
+      "Dev",
+      "QA",
+      "BrSE"
+    ],
+    "category": "Security",
+    "note": "Kỹ thuật tấn công chèn các câu lệnh SQL độc hại vào input.",
+    "example": "Prepared statements are used to prevent SQL injection."
+  },
+  {
+    "id": "exam-two-factor",
+    "english": "2FA / Two-Factor Authentication",
+    "japanese": "二要素認証 / 2FA",
+    "kana": "によそにんしょう / 2FA",
+    "vietnamese": "Xác thực 2 yếu tố / 2FA",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Security",
+    "note": "Sử dụng hai phương thức khác nhau để xác minh danh tính.",
+    "example": "Enabling 2FA adds an extra layer of security to your account."
+  },
+  {
+    "id": "infra-buffer-overflow",
+    "english": "Buffer Overflow",
+    "japanese": "バッファオーバーフロー",
+    "kana": "バッファオーバーフロー",
+    "vietnamese": "Tràn bộ đệm / Buffer overflow",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Security",
+    "note": "Lỗ hổng xảy ra khi dữ liệu ghi vượt quá dung lượng bộ đệm.",
+    "example": "Buffer overflow is a common target for cybersecurity attacks."
+  },
+  {
+    "id": "se-auth-n",
+    "english": "AuthN / Authentication",
+    "japanese": "認証",
+    "kana": "にんしょう",
+    "vietnamese": "Xác thực danh tính / Authentication",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Security",
+    "note": "Quá trình xác minh xem người dùng có đúng là người họ khai báo hay không.",
+    "example": "Authentication usually involves a username and password."
+  },
+  {
+    "id": "se-auth-z",
+    "english": "AuthZ / Authorization",
+    "japanese": "認可",
+    "kana": "にんか",
+    "vietnamese": "Phân quyền / Ủy quyền / Authorization",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Security",
+    "note": "Quá trình xác định người dùng có quyền thực hiện hành động gì.",
+    "example": "Authorization ensures that only admins can delete records."
+  },
+  {
+    "id": "se-jwt",
+    "english": "JWT / JSON Web Token",
+    "japanese": "JSONウェブトークン",
+    "kana": "JSONウェブトークン",
+    "vietnamese": "Token định danh JSON / JWT",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Security",
+    "note": "Một phương thức an toàn để truyền thông tin giữa các bên dưới dạng đối tượng JSON.",
+    "example": "JWT is commonly used for stateless authentication in modern web apps."
+  },
+  {
+    "id": "se-oauth2",
+    "english": "OAuth2 / OAuth 2.0",
+    "japanese": "オーオース2.0",
+    "kana": "オーオース2.0",
+    "vietnamese": "Giao thức ủy quyền OAuth2",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Security",
+    "note": "Tiêu chuẩn mở cho phép ủy quyền truy cập mà không cần chia sẻ mật khẩu.",
+    "example": "Google Sign-In uses OAuth2 for third-party authorization."
+  }
+]

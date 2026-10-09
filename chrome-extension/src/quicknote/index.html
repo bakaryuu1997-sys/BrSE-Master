@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BrSE Quick Memo</title>
+    <link rel="stylesheet" href="../../shared/tokens.css" />
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: var(--brse-bg-canvas);
+        overflow: hidden;
+      }
+      /* Make the floating Quick Memo panel fill this dedicated window. */
+      #brse-quick-note-root {
+        position: fixed !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        max-height: none !important;
+        border-radius: 0 !important;
+      }
+    </style>
+  </head>
+  <body class="tokyo-night">
+    <script type="module" src="./window.js"></script>
+  </body>
+</html>

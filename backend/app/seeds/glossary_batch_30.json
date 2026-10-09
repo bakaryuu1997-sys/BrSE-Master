@@ -1,0 +1,709 @@
+[
+  {
+    "id": "net-bandwidth-throttling",
+    "english": "Bandwidth Throttling",
+    "japanese": "帯域制限 / スロットリング",
+    "kana": "たいいきせいげん",
+    "vietnamese": "Bóp băng thông",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Cố tình làm chậm tốc độ mạng của 1 user nhất định khi họ dùng quá nhiều.",
+    "example": "公平なリソース利用を促すため、一定のデータ通信量を超えたユーザーに対して帯域制限を実施します。"
+  },
+  {
+    "id": "net-default-gateway",
+    "english": "Default Gateway",
+    "japanese": "デフォルトゲートウェイ / ゲートウェイ",
+    "kana": "でふぉるとげーとうぇい",
+    "vietnamese": "Cổng mặc định",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Nơi các gói tin đi đến khi không biết đích đến ở đâu trong mạng nội bộ.",
+    "example": "外部ネットワークへ通信ができない場合は、デフォルトゲートウェイの設定が正しいか調査が必要です。"
+  },
+  {
+    "id": "net-dns",
+    "english": "Domain Name System / DNS",
+    "japanese": "ドメインネームシステム / DNS / ディーエヌエス",
+    "kana": "ディーエヌエス",
+    "vietnamese": "Hệ thống phân giải tên miền / DNS",
+    "roles": [
+      "DevOps",
+      "Networking",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Dịch vụ chuyển đổi tên miền (như google.com) sang địa chỉ IP.",
+    "example": "DNSサーバーの設定に誤りがあるため、ドメインの名前解決ができません。"
+  },
+  {
+    "id": "net-dns-resolution",
+    "english": "DNS Resolution",
+    "japanese": "DNS名前解決",
+    "kana": "でぃーえぬえすなまえかいけつ",
+    "vietnamese": "Phân giải tên miền DNS",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "Release"
+    ],
+    "category": "System Design",
+    "note": "Đổi từ tên miền (google.com) ra IP. BrSE thường gặp khi set up môi trường, báo khách 'chưa phân giải xong DNS'.",
+    "example": "ドメインを移行しましたが、まだDNSの名前解決が浸透（プロパゲーション）していないため、一部で旧サーバーにアクセスされる可能性があります。"
+  },
+  {
+    "id": "net-handshake",
+    "english": "Handshake / Handshaking",
+    "japanese": "ハンドシェイク / 握手",
+    "kana": "ハンドシェイク",
+    "vietnamese": "Bắt tay (Giao thức)",
+    "roles": [
+      "Dev",
+      "Networking"
+    ],
+    "category": "System Design",
+    "note": "Quá trình thiết lập kết nối giữa hai thiết bị trước khi truyền dữ liệu.",
+    "example": "SSLのハンドシェイク（Handshake）プロセスでエラーが発生しています。"
+  },
+  {
+    "id": "net-ip-address",
+    "english": "IP Address / IP",
+    "japanese": "IPアドレス / アイピー",
+    "kana": "アイピーアドレス",
+    "vietnamese": "Địa chỉ IP",
+    "roles": [
+      "Networking",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Địa chỉ định danh duy nhất của mỗi thiết bị trong mạng.",
+    "example": "サーバーのIPアドレス（IP）を固定に設定し、外部からの接続を安定させます。"
+  },
+  {
+    "id": "net-latency-jitter",
+    "english": "Jitter",
+    "japanese": "ジッター",
+    "kana": "じったー",
+    "vietnamese": "Sự biến động độ trễ",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Sự thay đổi không ổn định của latency. Gây lag khi gọi voice/video.",
+    "example": "音声通話の品質が安定しない原因は、ネットワークのジッター（遅延の揺らぎ）が大きいことにあるようです。"
+  },
+  {
+    "id": "net-nat",
+    "english": "Network Address Translation / NAT",
+    "japanese": "NAT (ネットワークアドレス変換) / ネットワーク",
+    "kana": "なっと",
+    "vietnamese": "Dịch địa chỉ mạng",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Chuyển đổi IP Private nội bộ thành IP Public để ra Internet (hoặc ngược lại).",
+    "example": "プライベートサブネットにあるDBサーバーがインターネットの更新パッチを取得できるよう、NATゲートウェイを設定します。"
+  },
+  {
+    "id": "net-packet",
+    "english": "Packet / Packets",
+    "japanese": "パケット / 通信データ",
+    "kana": "パケット",
+    "vietnamese": "Gói tin / Packet",
+    "roles": [
+      "Networking",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Một phần nhỏ của dữ liệu được truyền qua mạng.",
+    "example": "ネットワーク遅延の原因を調査するため、パケット（Packet）のキャプチャ分析を行います。"
+  },
+  {
+    "id": "net-port",
+    "english": "Port / Ports",
+    "japanese": "ポート",
+    "kana": "ポート",
+    "vietnamese": "Cổng giao tiếp / Port",
+    "roles": [
+      "Dev",
+      "Security"
+    ],
+    "category": "System Design",
+    "note": "Điểm kết nối ảo trong hệ điều hành để xác định dịch vụ mạng cụ thể (ví dụ: Port 80 cho HTTP).",
+    "example": "セキュリティ上、不要なポート（Port）は全て閉じておくべきです。"
+  },
+  {
+    "id": "net-port-forwarding",
+    "english": "Port Forwarding",
+    "japanese": "ポートフォワーディング",
+    "kana": "ぽーとふぉわーでぃんぐ",
+    "vietnamese": "Chuyển tiếp cổng",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Chuyển request từ 1 port Public vào 1 IP/Port Private nội bộ. Dùng nhiều khi debug hoặc NAT.",
+    "example": "踏み台サーバー経由でローカルからDBに接続するため、SSHポートフォワーディング（トンネリング）を使用します。"
+  },
+  {
+    "id": "net-protocol",
+    "english": "Protocol / Protocols",
+    "japanese": "プロトコル / 通信規約",
+    "kana": "プロトコル",
+    "vietnamese": "Giao thức",
+    "roles": [
+      "Dev",
+      "Networking"
+    ],
+    "category": "System Design",
+    "note": "Bộ quy tắc quy định cách thức truyền dữ liệu giữa các thiết bị.",
+    "example": "データの転送には、標準的な通信プロトコル（Protocol）を使用します。"
+  },
+  {
+    "id": "net-reverse-proxy",
+    "english": "Reverse Proxy",
+    "japanese": "リバースプロキシ / プロキシ",
+    "kana": "りばーすぷろきし",
+    "vietnamese": "Proxy ngược (VD: Nginx)",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Đứng trước backend, nhận request từ client rồi chia cho backend. Giấu IP thật của backend, dùng để Load Balance hoặc cài SSL.",
+    "example": "フロントエンドとバックエンドの間にNginxをリバースプロキシとして配置し、SSL終端と負荷分散を行います。"
+  },
+  {
+    "id": "net-router",
+    "english": "Router / Routers",
+    "japanese": "ルーター",
+    "kana": "ルーター",
+    "vietnamese": "Bộ định tuyến / Router",
+    "roles": [
+      "Networking",
+      "IT Support"
+    ],
+    "category": "System Design",
+    "note": "Thiết bị chuyển tiếp các gói dữ liệu giữa các mạng máy tính.",
+    "example": "ルーター（Router）の設定を見直し、ネットワークの混雑を解消します。"
+  },
+  {
+    "id": "net-socket",
+    "english": "Socket / Sockets",
+    "japanese": "ソケット",
+    "kana": "ソケット",
+    "vietnamese": "Ổ cắm mạng / Socket",
+    "roles": [
+      "Dev",
+      "Networking"
+    ],
+    "category": "System Design",
+    "note": "Điểm cuối của luồng giao tiếp hai chiều giữa hai chương trình chạy trên mạng.",
+    "example": "WebSocket（ウェブソケット）を使用して、リアルタイムな双方向通信を実装します。"
+  },
+  {
+    "id": "net-subnet-mask",
+    "english": "Subnet Mask / Subnet Masking / Subnet Masked",
+    "japanese": "サブネットマスク",
+    "kana": "さぶねっとますく",
+    "vietnamese": "Mặt nạ mạng con",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Xác định phần nào là Network ID, phần nào là Host ID trong IP.",
+    "example": "ネットワーク設計書に基づき、各サブネットの範囲を指定するサブネットマスクの設定を確認してください。"
+  },
+  {
+    "id": "net-switch",
+    "english": "Network Switch / Switch",
+    "japanese": "ネットワークスイッチ / スイッチ / ハブ",
+    "kana": "スイッチ",
+    "vietnamese": "Bộ chuyển mạch / Switch",
+    "roles": [
+      "Networking"
+    ],
+    "category": "System Design",
+    "note": "Thiết bị dùng để kết nối các thiết bị trong cùng một mạng nội bộ (LAN).",
+    "example": "高速な通信を実現するため、最新のネットワークスイッチ（Switch）を導入しました。"
+  },
+  {
+    "id": "net-tcp-udp",
+    "english": "TCP / UDP",
+    "japanese": "TCP / UDP",
+    "kana": "ティーシーピー",
+    "vietnamese": "Giao thức truyền tải TCP/UDP",
+    "roles": [
+      "Dev",
+      "Networking"
+    ],
+    "category": "System Design",
+    "note": "Hai giao thức chính ở tầng Transport của bộ giao thức Internet.",
+    "example": "信頼性が必要な通信にはTCP、速度重視の通信にはUDP（ユーディーピー）を採用します。"
+  },
+  {
+    "id": "pm-acceptance-criteria",
+    "english": "AC / Acceptance Criteria",
+    "japanese": "受け入れ条件 / AC / 採択基準",
+    "kana": "うけいれじょうけん",
+    "vietnamese": "Tiêu chí chấp nhận / AC",
+    "roles": [
+      "BA",
+      "QA",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Các điều kiện mà một sản phẩm phải đáp ứng để được khách hàng chấp nhận.",
+    "example": "Each user story must have clearly defined acceptance criteria."
+  },
+  {
+    "id": "pm-accountability",
+    "english": "Accountability",
+    "japanese": "説明責任 / アカウンタビリティ",
+    "kana": "せつめいせきにん",
+    "vietnamese": "Trách nhiệm giải trình",
+    "roles": [
+      "PM",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Nghĩa vụ của cá nhân hoặc tổ chức trong việc giải trình về các hoạt động của mình và chấp nhận trách nhiệm về kết quả.",
+    "example": "Clear accountability ensures that project issues are addressed promptly."
+  },
+  {
+    "id": "pm-action-item",
+    "english": "Action Item",
+    "japanese": "アクションアイテム / 実施事項",
+    "kana": "アクションアイテム",
+    "vietnamese": "Đầu việc cần thực hiện / Action item",
+    "roles": [
+      "Dev",
+      "QA",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Một nhiệm vụ cụ thể phát sinh từ cuộc họp cần được hoàn thành.",
+    "example": "All action items must be tracked in the project management tool."
+  },
+  {
+    "id": "pm-analogous-estimation",
+    "english": "Analogous Estimation",
+    "japanese": "類推見積もり / アナロジー見積もり",
+    "kana": "るいすいみつもり",
+    "vietnamese": "Ước lượng tương tự",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Ước lượng dựa trên dữ liệu của các dự án tương tự đã thực hiện trước đó.",
+    "example": "Since we did a similar app last year, we can use analogous estimation."
+  },
+  {
+    "id": "pm-as-is",
+    "english": "AS-IS / Current State",
+    "japanese": "現行状態 / As-is / 現状",
+    "kana": "げんこうじょうたい",
+    "vietnamese": "Trạng thái hiện tại / Hiện trạng",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Mô tả quy trình hoặc hệ thống đang hoạt động ở thời điểm hiện tại.",
+    "example": "First, we must document the AS-IS process before designing the new one."
+  },
+  {
+    "id": "pm-baseline",
+    "english": "Baseline",
+    "japanese": "ベースライン / 基準線",
+    "kana": "ベースライン",
+    "vietnamese": "Đường cơ sở / Baseline",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Phiên bản được phê duyệt của lịch trình hoặc ngân sách dùng để so sánh tiến độ thực tế.",
+    "example": "We compare current performance against the original project baseline."
+  },
+  {
+    "id": "pm-bottom-up",
+    "english": "Bottom-up Estimation",
+    "japanese": "ボトムアップ見積もり / 積み上げ方式",
+    "kana": "ボトムアップみつもり",
+    "vietnamese": "Ước lượng từ dưới lên / Bottom-up",
+    "roles": [
+      "PM",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Ước lượng chi tiết từng tác vụ nhỏ rồi cộng dồn lại thành tổng thể.",
+    "example": "Bottom-up estimation provides higher accuracy but takes more time to prepare."
+  },
+  {
+    "id": "pm-bpo",
+    "english": "BPO / Business Process Outsourcing",
+    "japanese": "ビジネスプロセスアウトソーシング / BPO",
+    "kana": "ビジネスプロセスアウトソーシング",
+    "vietnamese": "Thuê ngoài quy trình kinh doanh / BPO",
+    "roles": [
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Thuê bên thứ ba quản lý toàn bộ một quy trình kinh doanh (ví dụ: CS, kế toán).",
+    "example": "Many companies use BPO for their customer support operations."
+  },
+  {
+    "id": "pm-break-even-point",
+    "english": "BEP / Break-even Point",
+    "japanese": "損益分岐点 / ブレイクイーブンポイント",
+    "kana": "そんえきぶんきてん",
+    "vietnamese": "Điểm hòa vốn / BEP",
+    "roles": [
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Thời điểm mà tổng doanh thu bằng với tổng chi phí.",
+    "example": "We expect to reach the break-even point in the second quarter."
+  },
+  {
+    "id": "pm-buffer",
+    "english": "Buffer / Contingency Buffer",
+    "japanese": "バッファ / 余裕 / 予備",
+    "kana": "バッファ",
+    "vietnamese": "Thời gian dự phòng / Buffer",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Thời gian hoặc chi phí dự phòng để xử lý các vấn đề phát sinh không lường trước.",
+    "example": "We added a 20% buffer to the schedule to mitigate unforeseen risks."
+  },
+  {
+    "id": "pm-change-control-board",
+    "english": "CCB / Change Control Board",
+    "japanese": "変更制御委員会 / CCB",
+    "kana": "へんこうせいぎょいいんかい",
+    "vietnamese": "Hội đồng kiểm soát thay đổi / CCB",
+    "roles": [
+      "Manager",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Nhóm người chịu trách nhiệm xem xét, đánh giá và phê duyệt các yêu cầu thay đổi.",
+    "example": "The CCB meets every Thursday to review pending change requests."
+  },
+  {
+    "id": "pm-change-log",
+    "english": "Change Log",
+    "japanese": "変更履歴 / チェンジログ",
+    "kana": "へんこうりれき",
+    "vietnamese": "Nhật ký thay đổi / Change log",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Tài liệu ghi lại tất cả các thay đổi đã được thực hiện trong dự án.",
+    "example": "Check the change log to see when the API endpoint was updated."
+  },
+  {
+    "id": "pm-change-management",
+    "english": "Change Management",
+    "japanese": "変更管理 / チェンジマネジメント",
+    "kana": "へんこうかんり",
+    "vietnamese": "Quản lý thay đổi / Change management",
+    "roles": [
+      "PM",
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Quy trình kiểm soát các thay đổi đối với phạm vi, lịch trình hoặc ngân sách dự án.",
+    "example": "Proper change management is essential to prevent scope creep."
+  },
+  {
+    "id": "pm-change-request",
+    "english": "CR / Change Request",
+    "japanese": "変更要求 / 変更依頼 / CR",
+    "kana": "へんこうようきゅう",
+    "vietnamese": "Yêu cầu thay đổi / CR",
+    "roles": [
+      "BrSE",
+      "BA",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Đề xuất chính thức để thay đổi một phần nào đó của dự án (thường là tính năng mới).",
+    "example": "The client submitted a CR to add a new payment method."
+  },
+  {
+    "id": "pm-client-communication",
+    "english": "Client Communication",
+    "japanese": "顧客対応 / クライアントコミュニケーション",
+    "kana": "こきゃくたいおう",
+    "vietnamese": "Giao tiếp với khách hàng",
+    "roles": [
+      "BrSE",
+      "PM",
+      "Sales"
+    ],
+    "category": "System Design",
+    "note": "Tương tác trao đổi thông tin với phía đối tác hoặc khách hàng.",
+    "example": "The BrSE plays a vital role in client communication for offshore projects."
+  },
+  {
+    "id": "pm-communication-plan",
+    "english": "Communication Plan",
+    "japanese": "コミュニケーション計画書",
+    "kana": "コミュニケーションけいかくしょ",
+    "vietnamese": "Kế hoạch truyền thông",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Xác định ai cần thông tin gì, khi nào và qua kênh nào.",
+    "example": "Our communication plan includes a weekly sync with the offshore team."
+  },
+  {
+    "id": "pm-conflict-resolution",
+    "english": "Conflict Resolution",
+    "japanese": "紛争解決 / コンフリクト解消",
+    "kana": "ふんそうかいけつ",
+    "vietnamese": "Giải quyết xung đột",
+    "roles": [
+      "PM",
+      "SM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Các phương pháp để giải quyết bất đồng giữa các thành viên hoặc các bên.",
+    "example": "Effective conflict resolution is key to maintaining team morale."
+  },
+  {
+    "id": "pm-contingency-reserve",
+    "english": "Contingency Reserve",
+    "japanese": "コンティンジェンシー予備 / 既知の未知への備え",
+    "kana": "コンティンジェンシーよび",
+    "vietnamese": "Dự phòng rủi ro (đã biết)",
+    "roles": [
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Ngân sách dự phòng cho các rủi ro đã được xác định (known-unknowns).",
+    "example": "The contingency reserve is managed by the project manager."
+  },
+  {
+    "id": "pm-control-account",
+    "english": "Control Account",
+    "japanese": "コントロールアカウント / 管理勘定",
+    "kana": "コントロールアカウント",
+    "vietnamese": "Tài khoản kiểm soát",
+    "roles": [
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Điểm quản lý nơi phạm vi, ngân sách và lịch trình được tích hợp để đo lường hiệu suất.",
+    "example": "The project is divided into several control accounts for financial tracking."
+  },
+  {
+    "id": "pm-cost-benefit-analysis",
+    "english": "CBA / Cost-benefit Analysis",
+    "japanese": "費用便益分析 / コスト利益分析",
+    "kana": "ひようべんえきぶんせき",
+    "vietnamese": "Phân tích chi phí - lợi ích / CBA",
+    "roles": [
+      "Manager",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "So sánh tổng chi phí dự kiến với tổng lợi ích dự kiến để đưa ra quyết định đầu tư.",
+    "example": "A CBA was conducted to justify the move to a cloud-native infrastructure."
+  },
+  {
+    "id": "pm-critical-path",
+    "english": "Critical Path",
+    "japanese": "クリティカルパス / 最長経路",
+    "kana": "クリティカルパス",
+    "vietnamese": "Đường găng / Đường tới hạn",
+    "roles": [
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Chuỗi các công việc quyết định thời gian ngắn nhất để hoàn thành dự án.",
+    "example": "Any delay in a task on the critical path will delay the whole project."
+  },
+  {
+    "id": "pm-deliverable",
+    "english": "Deliverable",
+    "japanese": "成果物 / 納品物",
+    "kana": "せいかぶつ",
+    "vietnamese": "Sản phẩm bàn giao / Deliverable",
+    "roles": [
+      "Dev",
+      "QA",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Bất kỳ sản phẩm, kết quả hoặc khả năng cung cấp dịch vụ nào phải được tạo ra.",
+    "example": "The source code and technical manual are key deliverables."
+  },
+  {
+    "id": "pm-escalation-path",
+    "english": "Escalation Path",
+    "japanese": "エスカレーションパス / 報告ルート",
+    "kana": "エスカレーションパス",
+    "vietnamese": "Quy trình leo thang / Escalation path",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Chuỗi các cấp bậc để báo cáo khi có vấn đề nghiêm trọng không tự giải quyết được.",
+    "example": "The escalation path is defined in the project charter."
+  },
+  {
+    "id": "pm-estimation",
+    "english": "Estimation / Estimating",
+    "japanese": "見積もり / 推定",
+    "kana": "みつもり",
+    "vietnamese": "Ước lượng / Estimate",
+    "roles": [
+      "PM",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Dự đoán về thời gian, công sức hoặc chi phí cần thiết để hoàn thành công việc.",
+    "example": "Please provide an estimation for the backend development tasks."
+  },
+  {
+    "id": "pm-expectation-management",
+    "english": "Expectation Management",
+    "japanese": "期待値管理 / エクスペクテーションマネジメント",
+    "kana": "きたいちかんり",
+    "vietnamese": "Quản lý kỳ vọng",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Đảm bảo khách hàng và các bên liên quan có cái nhìn thực tế về kết quả dự án.",
+    "example": "The BrSE must handle expectation management when delays occur."
+  },
+  {
+    "id": "pm-feasibility-study",
+    "english": "Feasibility Study",
+    "japanese": "実現可能性調査 / フィージビリティスタディ",
+    "kana": "じつげんかのうせいちょうさ",
+    "vietnamese": "Nghiên cứu tính khả thi",
+    "roles": [
+      "PM",
+      "Architect",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Đánh giá khả năng thực hiện thành công một dự án về mặt kỹ thuật, kinh tế và pháp lý.",
+    "example": "The feasibility study confirmed that the proposed architecture is viable."
+  },
+  {
+    "id": "pm-fit-gap",
+    "english": "Fit-gap Analysis",
+    "japanese": "適合性分析 / フィット＆ギャップ分析",
+    "kana": "フィットギャップぶんせき",
+    "vietnamese": "Phân tích độ phù hợp và khoảng cách / Fit-gap",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Đánh giá mức độ đáp ứng của một giải pháp (thường là ERP/Package) đối với yêu cầu nghiệp vụ.",
+    "example": "The fit-gap analysis showed that 80% of requirements are met by the standard features."
+  },
+  {
+    "id": "pm-float-slack",
+    "english": "Float / Slack",
+    "japanese": "フロート / スラック / 余裕期間",
+    "kana": "フロート",
+    "vietnamese": "Thời gian dự phòng của tác vụ / Float",
+    "roles": [
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Khoảng thời gian một tác vụ có thể bị chậm trễ mà không ảnh hưởng đến ngày kết thúc dự án.",
+    "example": "Non-critical tasks usually have some float available."
+  },
+  {
+    "id": "pm-follow-up",
+    "english": "Follow-up",
+    "japanese": "フォローアップ / 追跡調査",
+    "kana": "フォローアップ",
+    "vietnamese": "Theo sát / Theo dõi tiến độ / Follow-up",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Hành động kiểm tra lại kết quả của các công việc đã giao.",
+    "example": "I will do a follow-up with the developer to ensure the fix is ready."
+  },
+  {
+    "id": "pm-gap-analysis",
+    "english": "Gap Analysis",
+    "japanese": "ギャップ分析 / 差異分析",
+    "kana": "ギャップぶんせき",
+    "vietnamese": "Phân tích khoảng cách / Gap analysis",
+    "roles": [
+      "BrSE",
+      "PM",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "So sánh giữa trạng thái hiện tại và trạng thái mong muốn để xác định các phần còn thiếu.",
+    "example": "We need to perform a gap analysis between the existing system and the new requirements."
+  },
+  {
+    "id": "pm-impact-analysis",
+    "english": "Impact Analysis / Change Impact Analysis",
+    "japanese": "影響分析 / インパクト分析",
+    "kana": "えいきょうぶんせき",
+    "vietnamese": "Phân tích tác động / Impact analysis",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Đánh giá các hệ quả của một thay đổi đối với các thành phần khác trong hệ thống.",
+    "example": "Perform a thorough impact analysis before merging this database schema change."
+  },
+  {
+    "id": "pm-internal-rate-of-return",
+    "english": "IRR / Internal Rate of Return",
+    "japanese": "内部収益率 / IRR",
+    "kana": "ないぶしゅうえきりつ",
+    "vietnamese": "Tỷ suất hoàn vốn nội bộ / IRR",
+    "roles": [
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Tỷ lệ chiết khấu làm cho NPV của một dự án bằng 0.",
+    "example": "We compare the IRR of different projects to prioritize investment."
+  }
+]

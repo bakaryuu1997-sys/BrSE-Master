@@ -1,0 +1,717 @@
+[
+  {
+    "id": "exam-saas",
+    "english": "SaaS / Software as a Service",
+    "japanese": "サービスとしてのソフトウェア / SaaS",
+    "kana": "サービスとしてのソフトウェア / SaaS",
+    "vietnamese": "Phần mềm dưới dạng dịch vụ / SaaS",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Mô hình cung cấp phần mềm qua internet qua hình thức thuê bao.",
+    "example": "Slack and Microsoft 365 are examples of SaaS."
+  },
+  {
+    "id": "exam-scrum",
+    "english": "Scrum",
+    "japanese": "スクラム",
+    "kana": "スクラム",
+    "vietnamese": "Khung làm việc Scrum",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Một framework phổ biến trong Agile để quản lý các công việc phức tạp.",
+    "example": "The Scrum Master facilitates the daily stand-up meetings."
+  },
+  {
+    "id": "exam-semaphore",
+    "english": "Semaphore",
+    "japanese": "セマフォ",
+    "kana": "セマフォ",
+    "vietnamese": "Biến hiệu / Semaphore",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Cơ chế đồng bộ hóa tiến trình sử dụng biến đếm.",
+    "example": "A counting semaphore limits the number of concurrent connections."
+  },
+  {
+    "id": "exam-sla",
+    "english": "SLA / Service Level Agreement",
+    "japanese": "サービス品質保証 / サービスレベル合意",
+    "kana": "サービスひんしつほしょう / サービスレベルごうい",
+    "vietnamese": "Thỏa thuận mức độ dịch vụ / Cam kết dịch vụ / SLA",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Cam kết giữa nhà cung cấp dịch vụ và khách hàng về chất lượng.",
+    "example": "Our cloud provider guarantees 99.9% availability in the SLA."
+  },
+  {
+    "id": "exam-soa",
+    "english": "SOA / Service Oriented Architecture",
+    "japanese": "サービス指向アーキテクチャ",
+    "kana": "サービスしこうアーキテクチャ",
+    "vietnamese": "Kiến trúc hướng dịch vụ / SOA",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Phong cách thiết kế phần mềm dựa trên các dịch vụ độc lập.",
+    "example": "SOA enables reusability of business components across different applications."
+  },
+  {
+    "id": "exam-stack",
+    "english": "Stack / Stack Memory",
+    "japanese": "スタック",
+    "kana": "スタック",
+    "vietnamese": "Ngăn xếp / Vùng nhớ Stack",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Cấu trúc dữ liệu LIFO dùng để quản lý biến cục bộ và hàm.",
+    "example": "Local variables are typically stored in the stack."
+  },
+  {
+    "id": "exam-swot",
+    "english": "SWOT Analysis",
+    "japanese": "SWOT分析",
+    "kana": "SWOTぶんせき",
+    "vietnamese": "Phân tích SWOT (Strengths, Weaknesses, Opportunities, Threats)",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Công cụ phân tích điểm mạnh, điểm yếu, cơ hội, thách thức.",
+    "example": "Conducting a SWOT analysis helps in defining the project strategy."
+  },
+  {
+    "id": "exam-system-test",
+    "english": "System Test / ST",
+    "japanese": "システムテスト",
+    "kana": "システムテスト",
+    "vietnamese": "Kiểm thử hệ thống / ST",
+    "roles": [
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kiểm tra toàn bộ hệ thống sau khi đã tích hợp đầy đủ.",
+    "example": "The system test phase focuses on end-to-end business flows."
+  },
+  {
+    "id": "exam-tco",
+    "english": "TCO / Total Cost of Ownership",
+    "japanese": "総所有コスト / TCO",
+    "kana": "そうしょゆうコスト / TCO",
+    "vietnamese": "Tổng chi phí sở hữu / TCO",
+    "roles": [
+      "Architect",
+      "Manager",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Tổng tất cả các chi phí liên quan đến việc mua, vận hành và bảo trì một tài sản trong suốt vòng đời của nó.",
+    "example": "When choosing a database, consider the TCO including licensing and support."
+  },
+  {
+    "id": "exam-thrashing",
+    "english": "Thrashing",
+    "japanese": "スラッシング",
+    "kana": "スラッシング",
+    "vietnamese": "Hiện tượng quá tải bộ nhớ gây treo máy / Thrashing",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Trạng thái hệ thống tốn quá nhiều thời gian swap RAM-HDD mà không xử lý được gì.",
+    "example": "Too many open applications led to system thrashing."
+  },
+  {
+    "id": "exam-unit-test",
+    "english": "Unit Test / UT",
+    "japanese": "単体テスト / ユニットテスト",
+    "kana": "たんたいテスト / ユニットテスト",
+    "vietnamese": "Kiểm thử đơn vị / UT / Unit test",
+    "roles": [
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kiểm tra các đơn vị nhỏ nhất của mã nguồn (hàm, lớp).",
+    "example": "Ensure all unit tests pass before pushing code to the repository."
+  },
+  {
+    "id": "exam-ups",
+    "english": "UPS / Uninterruptible Power Supply",
+    "japanese": "無停電電源装置 / UPS",
+    "kana": "むていでんでんげんそうち / UPS",
+    "vietnamese": "Bộ lưu điện / UPS",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Thiết bị duy trì nguồn điện khi có sự cố mất điện lưới.",
+    "example": "The server room is equipped with a large capacity UPS."
+  },
+  {
+    "id": "exam-virtual-memory",
+    "english": "Virtual Memory / Paging",
+    "japanese": "仮想記憶 / 仮想メモリ",
+    "kana": "かそうきおく / かそうメモリ",
+    "vietnamese": "Bộ nhớ ảo / Virtual Memory",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật sử dụng ổ cứng để mở rộng dung lượng bộ nhớ RAM.",
+    "example": "Virtual memory allows running programs larger than the physical RAM."
+  },
+  {
+    "id": "exam-waterfall",
+    "english": "Waterfall Model",
+    "japanese": "ウォーターフォールモデル",
+    "kana": "ウォーターフォールモデル",
+    "vietnamese": "Mô hình thác nước / Waterfall",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Mô hình phát triển phần mềm tuần tự theo từng giai đoạn.",
+    "example": "The waterfall model is suitable for projects with stable requirements."
+  },
+  {
+    "id": "exam-white-box",
+    "english": "White Box Testing",
+    "japanese": "ホワイトボックステスト",
+    "kana": "ホワイトボックステスト",
+    "vietnamese": "Kiểm thử hộp trắng",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Kiểm thử dựa trên cấu trúc logic và đường chạy của mã nguồn.",
+    "example": "White box testing requires knowledge of the internal code implementation."
+  },
+  {
+    "id": "exam-xp",
+    "english": "XP / Extreme Programming",
+    "japanese": "エクストリームプログラミング / XP",
+    "kana": "エクストリームプログラミング / XP",
+    "vietnamese": "Lập trình cực hạn / XP",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Phương pháp Agile tập trung vào chất lượng code và phản hồi liên tục.",
+    "example": "Pair programming is a core practice of Extreme Programming."
+  },
+  {
+    "id": "fe-cors",
+    "english": "Cross-Origin Resource Sharing / CORS",
+    "japanese": "オリジン間リソース共有 / CORS",
+    "kana": "コルス",
+    "vietnamese": "Chia sẻ tài nguyên chéo nguồn gốc / Lỗi CORS",
+    "roles": [
+      "Frontend Dev",
+      "Backend Dev"
+    ],
+    "category": "System Design",
+    "note": "Cơ chế bảo mật trình duyệt chặn các request API từ một domain khác trừ khi server cho phép.",
+    "example": "フロントエンドの開発中にCORS（コルス）エラーが発生したため、バックエンドの設定を修正します。"
+  },
+  {
+    "id": "fe-feature-flag",
+    "english": "Feature Flag / Feature Toggles / Feature Toggling",
+    "japanese": "フィーチャーフラグ / 機能トグル",
+    "kana": "フィーチャーフラグ",
+    "vietnamese": "Cờ tính năng / Bật tắt tính năng",
+    "roles": [
+      "Dev",
+      "PM",
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật lập trình cho phép bật/tắt một tính năng cụ thể mà không cần phải thay đổi code hay deploy lại.",
+    "example": "不具合が発見された場合は、フィーチャーフラグ（Feature Flag）をOFFにして即座に機能を無効化します。"
+  },
+  {
+    "id": "fe-linter",
+    "english": "Linter / Linting / Lint",
+    "japanese": "リンター / 静的コード解析",
+    "kana": "リンター",
+    "vietnamese": "Công cụ kiểm tra lỗi cú pháp / Linter / ESLint",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Công cụ phân tích mã nguồn tĩnh (như ESLint) để tìm ra các lỗi cú pháp, lỗi logic hoặc vi phạm style guide.",
+    "example": "コードの品質を保つため、コミット前にLinter（リンター）を実行するルールにしています。"
+  },
+  {
+    "id": "fin-3d-secure",
+    "english": "3D Secure",
+    "japanese": "3Dセキュア",
+    "kana": "すりーでぃーせきゅあ",
+    "vietnamese": "Xác thực 3D Secure",
+    "roles": [
+      "BrSE",
+      "BA",
+      "Requirement"
+    ],
+    "category": "System Design",
+    "note": "Lớp bảo mật yêu cầu nhập OTP khi thanh toán thẻ online để chống gian lận.",
+    "example": "不正利用対策の一環として、本人認証サービスである3Dセキュア 2.0の導入を必須要件とします。"
+  },
+  {
+    "id": "fin-acquirer",
+    "english": "Acquiring Bank / Acquirer",
+    "japanese": "アクワイアラ / 決済代行業者",
+    "kana": "あくわいあら",
+    "vietnamese": "Ngân hàng thanh toán / Bên chấp nhận thanh toán",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Bên đứng về phía cửa hàng để thu tiền từ các ngân hàng phát hành thẻ.",
+    "example": "当社のシステムは、複数のアクワイアラと接続し、最適な決済ルートを自動選択する機能を備えています。"
+  },
+  {
+    "id": "fin-aml",
+    "english": "Anti-Money Laundering / AML",
+    "japanese": "マネーロンダリング対策",
+    "kana": "まねーろんだりんぐたいさく",
+    "vietnamese": "Chống rửa tiền",
+    "roles": [
+      "BrSE",
+      "BA",
+      "Requirement"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống phát hiện giao dịch bất thường (chuyển lượng tiền lớn ra nước ngoài đột ngột) để report cho chính phủ.",
+    "example": "金融庁のガイドラインに従い、異常な高額送金を検知してブロックするマネーロンダリング対策（AML）機能を組み込みます。"
+  },
+  {
+    "id": "fin-amortization",
+    "english": "Amortization",
+    "japanese": "減価償却 / 割賦償却",
+    "kana": "げんかしょうきゃく / かっぷしょうきゃく",
+    "vietnamese": "Khấu hao / Trả góp từng kỳ",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Trong kế toán là khấu hao tài sản. Trong tài chính là trả góp nợ (gồm cả gốc + lãi) theo bảng lịch trình.",
+    "example": "住宅ローン管理システムにおいて、毎月の元本と利息の返済内訳を示す償却予定表（アモチゼーションスケジュール）をPDFで出力します。"
+  },
+  {
+    "id": "fin-api-banking",
+    "english": "API Banking / Open Banking",
+    "japanese": "APIバンキング / オープンバンキング",
+    "kana": "えーぴーあいばんきんぐ",
+    "vietnamese": "Hệ thống ngân hàng mở",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Cho phép app bên thứ 3 kết nối vào ngân hàng (lấy số dư, chuyển tiền) qua API.",
+    "example": "APIバンキングを活用して、家計簿アプリから各銀行の口座残高を自動取得する機能を開発します。"
+  },
+  {
+    "id": "fin-asset-allocation",
+    "english": "Asset Allocation",
+    "japanese": "アセットアロケーション / 資産配分",
+    "kana": "あせっとあろけーしょん",
+    "vietnamese": "Phân bổ tài sản",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Chia vốn ra các kênh đầu tư khác nhau để giảm rủi ro.",
+    "example": "市場の変動に合わせて、自動でリバランスを行うアセットアロケーション機能を実装しましょう。"
+  },
+  {
+    "id": "fin-audit-trail",
+    "english": "Audit Trail",
+    "japanese": "監査証跡 / オーディット",
+    "kana": "かんさしょうせき",
+    "vietnamese": "Dấu vết kiểm toán",
+    "roles": [
+      "BrSE",
+      "BA",
+      "Requirement"
+    ],
+    "category": "System Design",
+    "note": "Log chi tiết giao dịch tài chính để kiểm toán viên kiểm tra (ai sửa, giá trị cũ/mới). Bắt buộc ở dự án Finance.",
+    "example": "金融庁の監査に耐えられるよう、DBの金額フィールドが更新された際は、変更前・変更後・変更者の全履歴を監査証跡として保存する要件があります。"
+  },
+  {
+    "id": "fin-audit-trail-financial",
+    "english": "Audit Trail / Financial",
+    "japanese": "監査証跡 / オーディット",
+    "kana": "かんさしょうせき",
+    "vietnamese": "Nhật ký kiểm toán tài chính",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Lưu lịch sử mọi thay đổi về số dư tài khoản.",
+    "example": "不正送金の調査に備えて、送金処理の全ステップを監査証跡として保存しておく必要があります。"
+  },
+  {
+    "id": "fin-bad-debt",
+    "english": "Bad Debt / Default",
+    "japanese": "不良債権 / 債務不履行",
+    "kana": "ふりょうさいけん / さいむふりこう",
+    "vietnamese": "Nợ xấu / Vỡ nợ",
+    "roles": [
+      "BrSE",
+      "BA",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Khoản vay không thể thu hồi được. App cho vay (Lending) phải có quy trình nhắc nợ (Collection) cho những case này.",
+    "example": "債務不履行（デフォルト）となったユーザーのリストを日次で抽出し、債権回収（コレクション）部門のシステムへ自動連携する機能が必要です。"
+  },
+  {
+    "id": "fin-capital-adequacy-ratio",
+    "english": "Capital Adequacy Ratio / CAR",
+    "japanese": "自己資本比率",
+    "kana": "じこしほんひりつ",
+    "vietnamese": "Tỷ lệ an toàn vốn",
+    "roles": [
+      "BrSE",
+      "BA",
+      "Business"
+    ],
+    "category": "System Design",
+    "note": "Chỉ số đo lường sức mạnh tài chính của ngân hàng, đảm bảo có đủ vốn để chịu rủi ro.",
+    "example": "銀行システムの経営指標ダッシュボードに、リアルタイムの自己資本比率を表示する機能を追加します。"
+  },
+  {
+    "id": "fin-chargeback",
+    "english": "Chargeback",
+    "japanese": "チャージバック",
+    "kana": "ちゃーじばっく",
+    "vietnamese": "Hoàn trả tiền (do tranh chấp)",
+    "roles": [
+      "BrSE",
+      "PM",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Chủ thẻ khiếu nại ngân hàng là bị trừ tiền oan, ngân hàng sẽ ép công ty thanh toán phải trả lại tiền (bị phạt). Rất sợ trong E-commerce.",
+    "example": "クレジットカードの不正利用によるチャージバック（売上取消）のリスクを減らすため、3Dセキュアを導入しましょう。"
+  },
+  {
+    "id": "fin-claim-processing",
+    "english": "Claim Processing",
+    "japanese": "保険金請求処理",
+    "kana": "ほけんきんせいきゅうしょり",
+    "vietnamese": "Xử lý yêu cầu bồi thường bảo hiểm",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Khi khách hàng gặp sự cố và đòi tiền bảo hiểm.",
+    "example": "事故発生から保険金支払いまでのリードタイムを短縮するため、請求処理のワークフローをデジタル化しました。"
+  },
+  {
+    "id": "fin-clearing-house",
+    "english": "Clearing House",
+    "japanese": "手形交換所 / 清算機関",
+    "kana": "てがたこうかんじょ / せいさんきかん",
+    "vietnamese": "Trung tâm thanh toán bù trừ",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Tổ chức đứng giữa các ngân hàng để tính toán bù trừ số tiền các ngân hàng nợ nhau cuối ngày.",
+    "example": "銀行間の資金決済は、最終的に全銀協のシステム（清算機関）を通じてバッチ処理で実行されます。"
+  },
+  {
+    "id": "fin-compliance-pci-dss",
+    "english": "PCI-DSS",
+    "japanese": "ピーシーアイディーエスエス",
+    "kana": "ぴーしーあいでぃーえすえす",
+    "vietnamese": "Chuẩn bảo mật dữ liệu thẻ thanh toán",
+    "roles": [
+      "BrSE",
+      "PM",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Tiêu chuẩn quốc tế bắt buộc nếu hệ thống có lưu hoặc truyền số thẻ tín dụng.",
+    "example": "本システムはクレジットカード情報を扱うため、PCI-DSS準拠のインフラ構成が求められます。"
+  },
+  {
+    "id": "fin-core-banking",
+    "english": "Core Banking System",
+    "japanese": "勘定系システム / コアバンキング",
+    "kana": "かんじょうけいしすてむ",
+    "vietnamese": "Hệ thống ngân hàng lõi",
+    "roles": [
+      "BrSE",
+      "PM",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Trái tim của ngân hàng, quản lý tiền, tài khoản, giao dịch. Hệ thống này không bao giờ được phép sai sót hay downtime.",
+    "example": "本プロジェクトは、銀行の勘定系システムとAPIで連携して残高照会を行う機能の開発となります。"
+  },
+  {
+    "id": "fin-credit-score",
+    "english": "Credit Score",
+    "japanese": "クレジットスコア / 信用スコア",
+    "kana": "くれじっとすこあ / しんようすこあ",
+    "vietnamese": "Điểm tín dụng",
+    "roles": [
+      "BrSE",
+      "BA",
+      "Requirement"
+    ],
+    "category": "System Design",
+    "note": "Chấm điểm dựa trên lịch sử trả nợ. Nếu điểm thấp sẽ không vay được tiền hoặc bị tính lãi cao.",
+    "example": "AIの機械学習モデルを用いて、ユーザーの取引履歴や属性データから信用スコア（クレジットスコア）を算出し、融資の可否を即時判定します。"
+  },
+  {
+    "id": "fin-derivative",
+    "english": "Derivative",
+    "japanese": "デリバティブ / 金融派生商品",
+    "kana": "でりばてぃぶ / きんゆうはせいしょうひん",
+    "vietnamese": "Chứng khoán phái sinh",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Sản phẩm tài chính có giá trị dựa trên tài sản khác (Ví dụ: Hợp đồng tương lai Bitcoin, Quyền chọn). Logic rất phức tạp.",
+    "example": "このシステムは株式の現物取引だけでなく、先物やオプションなどのデリバティブ（派生商品）取引にも対応する予定です。"
+  },
+  {
+    "id": "fin-digital-wallet",
+    "english": "Digital Wallet / Digital Wallets",
+    "japanese": "デジタルウォレット / 電子マネー",
+    "kana": "でじたるうぉれっと",
+    "vietnamese": "Ví điện tử",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "VD: Momo, VNPay, PayPay. Nơi lưu trữ tiền số/thông tin thẻ để thanh toán nhanh.",
+    "example": "QRコード決済に対応するため、既存のモバイルアプリにデジタルウォレット機能を追加します。"
+  },
+  {
+    "id": "fin-direct-debit",
+    "english": "Direct Debit",
+    "japanese": "口座振替 / 自動引き落とし",
+    "kana": "こうざふりかえ / じどうひきおとし",
+    "vietnamese": "Thanh toán ghi nợ trực tiếp",
+    "roles": [
+      "BrSE",
+      "BA",
+      "Requirement"
+    ],
+    "category": "System Design",
+    "note": "Tự động trừ tiền từ tài khoản ngân hàng của khách hàng hàng tháng (trả tiền điện, nước, gym).",
+    "example": "サブスクリプションの月額料金の支払い方法として、クレジットカードだけでなく銀行の口座振替（自動引き落とし）もサポートします。"
+  },
+  {
+    "id": "fin-double-entry",
+    "english": "Double-entry Bookkeeping",
+    "japanese": "複式簿記 / ダブルエントリ",
+    "kana": "ふくしきぼき",
+    "vietnamese": "Ghi sổ kép",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Nguyên tắc kế toán: Mọi giao dịch phải ghi cả Nợ (Debit) và Có (Credit), tổng 2 bên phải bằng nhau.",
+    "example": "会計システムの基本として、すべての仕訳データは借方（Debit）と貸方（Credit）が一致する複式簿記の原則に従います。"
+  },
+  {
+    "id": "fin-escrow",
+    "english": "Escrow",
+    "japanese": "エスクローサービス",
+    "kana": "えすくろーさーびす",
+    "vietnamese": "Dịch vụ giữ tiền trung gian",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Bên thứ 3 giữ tiền của người mua, khi nào người mua xác nhận nhận được hàng thì mới trả tiền cho người bán (VD: Shopee, Mercari).",
+    "example": "CtoCのフリマアプリにおいて、取引の安全性を担保するためエスクロー（預かり金）決済モデルを採用します。"
+  },
+  {
+    "id": "fin-fintech",
+    "english": "Fintech",
+    "japanese": "フィンテック",
+    "kana": "ふぃんてっく",
+    "vietnamese": "Công nghệ tài chính",
+    "roles": [
+      "BrSE",
+      "PM",
+      "Business"
+    ],
+    "category": "System Design",
+    "note": "Lĩnh vực kết hợp Tài chính và Công nghệ.",
+    "example": "伝統的な金融サービスをITの力で革新するフィンテック（Fintech）市場が急拡大しています。"
+  },
+  {
+    "id": "fin-fraud-detection",
+    "english": "Fraud Detection",
+    "japanese": "不正検知",
+    "kana": "ふせいけんち",
+    "vietnamese": "Phát hiện gian lận",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Dùng AI để chặn các giao dịch quẹt thẻ ở nước ngoài bất thường hoặc số tiền quá lớn.",
+    "example": "深夜の海外からの連続した高額決済を、不正検知システムが自動でブロックしました。"
+  },
+  {
+    "id": "fin-fx",
+    "english": "Foreign Exchange / FX",
+    "japanese": "外国為替 / フォレックス",
+    "kana": "がいこくかわせ",
+    "vietnamese": "Ngoại hối",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Giao dịch đổi tiền tệ. Cần lưu ý việc lấy tỷ giá hối đoái (Exchange Rate) realtime hay theo ngày từ API nào.",
+    "example": "海外向けのECサイトなので、外国為替（FX）レートのAPIを1時間ごとに叩いて、現地通貨での価格を動的に再計算します。"
+  },
+  {
+    "id": "fin-hedge",
+    "english": "Hedge / Hedging",
+    "japanese": "ヘッジ / リスクヘッジ",
+    "kana": "へっじ",
+    "vietnamese": "Phòng vệ rủi ro",
+    "roles": [
+      "BrSE",
+      "BA",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Thực hiện các giao dịch đối ứng để giảm thiểu rủi ro thua lỗ do biến động giá/tỷ giá.",
+    "example": "円安による輸入コスト増を防ぐため、為替予約によるヘッジ取引を行っています。"
+  },
+  {
+    "id": "fin-iban",
+    "english": "IBAN / International Bank Account Number",
+    "japanese": "アイバン / 国際銀行口座番号",
+    "kana": "あいばん",
+    "vietnamese": "Mã số tài khoản ngân hàng quốc tế",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Chuẩn số tài khoản dùng ở Châu Âu để chuyển tiền quốc tế thuận lợi.",
+    "example": "欧州への送金機能を実装する際は、SWIFTコードだけでなくIBANコードのバリデーションも必須です。"
+  },
+  {
+    "id": "fin-interest-rate",
+    "english": "Interest Rate / Yield",
+    "japanese": "金利 / 利回り / イールド",
+    "kana": "きんり / りまわり",
+    "vietnamese": "Lãi suất / Tỷ suất lợi nhuận",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Lãi suất là tiền phải trả khi vay (hoặc nhận khi gửi). BrSE cần nắm rõ các công thức tính lãi đơn, lãi kép.",
+    "example": "ローンのシミュレーション画面で、入力された金利（年利）と借入期間に基づく複利計算を行い、毎月の返済額を表示します。"
+  },
+  {
+    "id": "fin-issuer",
+    "english": "Issuing Bank / Issuer",
+    "japanese": "イシュア / カード発行会社",
+    "kana": "いしゅあ",
+    "vietnamese": "Ngân hàng phát hành thẻ",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Ngân hàng cấp thẻ cho người tiêu dùng.",
+    "example": "決済承認リクエストは、ネットワークを通じてカードのイシュア（発行会社）へ送られ、有効性が確認されます。"
+  },
+  {
+    "id": "fin-kyc",
+    "english": "Know Your Customer / KYC / Know Your Customers",
+    "japanese": "顧客本人確認 / カスタマー",
+    "kana": "こきゃくほんにんかくにん",
+    "vietnamese": "Xác minh danh tính khách hàng",
+    "roles": [
+      "BrSE",
+      "BA",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Quy trình chụp CMND/Passport và Selfie để mở tài khoản (eKYC). Rất phổ biến trong ứng dụng Fintech.",
+    "example": "オンラインでの口座開設を可能にするため、AIを用いたeKYC（電子的な本人確認）プロセスを導入します。"
+  },
+  {
+    "id": "fin-merchant-acquiring",
+    "english": "Acquiring Bank / Merchant",
+    "japanese": "アクワイアラ（決済代行） / 加盟店",
+    "kana": "あくわいあら / かめいてん",
+    "vietnamese": "Ngân hàng thanh toán / Đơn vị chấp nhận thẻ",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Trong thanh toán thẻ: Issuer (nhà phát hành thẻ như Vietcombank) và Acquirer (nơi cấp máy POS cho quán cafe).",
+    "example": "クレジットカード決済のフローにおいて、ユーザーのイシュア（発行会社）から当社のアクワイアラ（決済代行会社）へ売上が入金されるまでの日数を考慮してください。"
+  },
+  {
+    "id": "fin-mutual-fund",
+    "english": "Mutual Fund",
+    "japanese": "投資信託",
+    "kana": "とうししんたく",
+    "vietnamese": "Quỹ tương hỗ / Quỹ đầu tư",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Gom tiền của nhiều người để chuyên gia đi đầu tư. Hệ thống Wealth Management thường xoay quanh cái này.",
+    "example": "ユーザーの資産運用ポートフォリオ画面に、現在保有している投資信託の評価額と運用益をグラフで表示します。"
+  }
+]

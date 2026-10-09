@@ -1,0 +1,742 @@
+[
+  {
+    "id": "future-low-code",
+    "english": "Low-code / No-code",
+    "japanese": "ローコード / ノーコード",
+    "kana": "ろーこーど / のーこーど",
+    "vietnamese": "Lập trình ít code / Không code",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Phát triển ứng dụng mà ít cần viết mã tay.",
+    "example": "ノーコードツールでプロトタイプを爆速で作る。"
+  },
+  {
+    "id": "future-machine-learning",
+    "english": "Machine Learning / ML",
+    "japanese": "機械学習 / ML",
+    "kana": "きかいがくしゅう",
+    "vietnamese": "Máy học / ML",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Khả năng máy tính tự học từ dữ liệu.",
+    "example": "機械学習アルゴリズムの選定。"
+  },
+  {
+    "id": "future-mixed-reality",
+    "english": "Mixed Reality / MR",
+    "japanese": "複合現実 / MR",
+    "kana": "えむあーる",
+    "vietnamese": "Thực tế hỗn hợp / MR",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Sự kết hợp giữa VR và AR.",
+    "example": "MRデバイスで遠隔手術。"
+  },
+  {
+    "id": "future-multi-agent-system",
+    "english": "Multi-agent System / MAS",
+    "japanese": "マルチエージェントシステム / MAS",
+    "kana": "まるちえーじぇんと・しすてむ",
+    "vietnamese": "Hệ thống đa tác nhân",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống gồm nhiều AI tương tác với nhau.",
+    "example": "マルチエージェントシステムによる複雑なシミュレーション。"
+  },
+  {
+    "id": "future-multi-modal-ai",
+    "english": "Multi-modal AI / Multimodal",
+    "japanese": "マルチモーダルAI",
+    "kana": "まるちもーだるえーあい",
+    "vietnamese": "AI đa phương thức",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "AI có thể xử lý nhiều loại dữ liệu (văn bản, ảnh, âm thanh).",
+    "example": "マルチモーダルAIが画像と音声を理解します。"
+  },
+  {
+    "id": "future-nanotechnology",
+    "english": "Nanotechnology",
+    "japanese": "ナノテクノロジー",
+    "kana": "なのてくのろじー",
+    "vietnamese": "Công nghệ nano",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Công nghệ ở quy mô phân tử và nguyên tử.",
+    "example": "ナノテクノロジーで新素材を開発。"
+  },
+  {
+    "id": "future-neural-network",
+    "english": "Neural Network / Neural Networks",
+    "japanese": "ニューラルネットワーク",
+    "kana": "にゅーらるねっとわーく",
+    "vietnamese": "Mạng thần kinh",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mô hình máy học dựa trên cấu trúc não bộ.",
+    "example": "ディープなニューラルネットワーク。"
+  },
+  {
+    "id": "future-neuromorphic-computing",
+    "english": "Neuromorphic Computing",
+    "japanese": "ニューロモーフィック・コンピューティング",
+    "kana": "にゅーろもーふぃっく",
+    "vietnamese": "Điện toán phỏng não",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thiết kế chip mô phỏng cách hoạt động của não bộ.",
+    "example": "低電力なニューロモーフィックチップ。"
+  },
+  {
+    "id": "future-no-ops",
+    "english": "No-Ops",
+    "japanese": "No-Ops / ノーオプス",
+    "kana": "のーおぷす",
+    "vietnamese": "Hệ thống tự vận hành / No-Ops",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Môi trường tự động hóa đến mức không cần đội vận hành.",
+    "example": "No-Ops環境を目指す。"
+  },
+  {
+    "id": "future-ontology",
+    "english": "Ontology",
+    "japanese": "オントロジー",
+    "kana": "おんとろじー",
+    "vietnamese": "Hệ tư tưởng dữ liệu / Ontology",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Định nghĩa về các khái niệm và mối quan hệ trong một lĩnh vực.",
+    "example": "ドメインごとのオントロジー。"
+  },
+  {
+    "id": "future-open-source-ai",
+    "english": "Open Source AI",
+    "japanese": "オープンソースAI",
+    "kana": "おーぷんそーすえーあい",
+    "vietnamese": "AI mã nguồn mở",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mô hình AI mà cộng đồng có thể tự do sử dụng và sửa đổi.",
+    "example": "オープンソースAIのコミュニティ。"
+  },
+  {
+    "id": "future-post-human",
+    "english": "Post-human",
+    "japanese": "ポストヒューマン",
+    "kana": "ぽすとひゅーまん",
+    "vietnamese": "Hậu nhân loại",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giai đoạn tiến hóa tiếp theo của loài người nhờ công nghệ.",
+    "example": "ポストヒューマン時代の社会。"
+  },
+  {
+    "id": "future-predictive-maintenance",
+    "english": "Predictive Maintenance",
+    "japanese": "予兆保全 / 予測保守",
+    "kana": "よちょうほぜん",
+    "vietnamese": "Bảo trì dự đoán",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Dùng AI để đoán trước khi nào thiết bị sẽ hỏng.",
+    "example": "センサーデータで予兆保全。"
+  },
+  {
+    "id": "future-privacy-by-design",
+    "english": "Privacy by Design",
+    "japanese": "プライバシー・バイ・デザイン",
+    "kana": "ぷらいばしーばいでざいん",
+    "vietnamese": "Thiết kế bảo mật riêng tư",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tích hợp quyền riêng tư vào ngay từ khi thiết kế hệ thống.",
+    "example": "プライバシー・バイ・デザインを遵守。"
+  },
+  {
+    "id": "future-proprietary-ai",
+    "english": "Proprietary AI",
+    "japanese": "プロプライエタリAI / 独自AI",
+    "kana": "ぷろぷらいえたりえーあい",
+    "vietnamese": "AI độc quyền",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mô hình AI do công ty sở hữu và bảo mật mã nguồn.",
+    "example": "GAFAが提供するプロプライエタリAI。"
+  },
+  {
+    "id": "future-quantum-computing",
+    "english": "Quantum Computing",
+    "japanese": "量子コンピュータ / 量子コンピューティング",
+    "kana": "りょうしこんぴゅーた",
+    "vietnamese": "Điện toán lượng tử",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Máy tính dựa trên nguyên lý cơ học lượng tử.",
+    "example": "量子コンピュータは暗号技術に革命を起こす。"
+  },
+  {
+    "id": "future-quantum-safe",
+    "english": "Quantum-Safe / Post-Quantum",
+    "japanese": "量子耐性 / 耐量子計算機暗号",
+    "kana": "りょうしたいせい",
+    "vietnamese": "An toàn lượng tử",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Các thuật toán mã hóa an toàn trước máy tính lượng tử.",
+    "example": "耐量子計算機暗号への移行。"
+  },
+  {
+    "id": "future-quantum-supremacy",
+    "english": "Quantum Supremacy",
+    "japanese": "量子超越性",
+    "kana": "りょうしちょうえつせい",
+    "vietnamese": "Ưu thế lượng tử",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Khi máy tính lượng tử giải được bài toán mà máy thường không thể.",
+    "example": "Googleが量子超越性を達成。"
+  },
+  {
+    "id": "future-rag",
+    "english": "RAG / Retrieval-Augmented Generation",
+    "japanese": "RAG / 検索拡張生成",
+    "kana": "らぐ",
+    "vietnamese": "Thế hệ tăng cường tìm kiếm / RAG",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kết hợp tìm kiếm thông tin và tạo văn bản AI.",
+    "example": "自社ドキュメントをRAGで検索可能にする。"
+  },
+  {
+    "id": "future-reinforcement-learning",
+    "english": "Reinforcement Learning / RL",
+    "japanese": "強化学習",
+    "kana": "きょうかがくしゅう",
+    "vietnamese": "Học tăng cường / RL",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "AI học thông qua thử sai và nhận phần thưởng.",
+    "example": "RLHFでAIの回答を人間らしくする。"
+  },
+  {
+    "id": "future-reinforcement-learning-from-human-feedback",
+    "english": "Reinforcement Learning from Human Feedback / RLHF",
+    "japanese": "人間からのフィードバックによる強化学習 / RLHF",
+    "kana": "あーるえるえっちえふ",
+    "vietnamese": "Học tăng cường từ phản hồi của con người / RLHF",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Phương pháp huấn luyện AI theo mong muốn của con người.",
+    "example": "ChatGPTはRLHFで調整されている。"
+  },
+  {
+    "id": "future-remote-collaboration",
+    "english": "Remote Collaboration",
+    "japanese": "リモートコラボレーション",
+    "kana": "りもーとこらぼれーしょん",
+    "vietnamese": "Hợp tác từ xa",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Làm việc cùng nhau từ nhiều địa điểm khác nhau.",
+    "example": "メタバースでリモートコラボレーション。"
+  },
+  {
+    "id": "future-reskilling",
+    "english": "Reskilling",
+    "japanese": "リスキリング / 学び直し",
+    "kana": "りすきりんぐ",
+    "vietnamese": "Đào tạo lại kỹ năng / Reskilling",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Học kỹ năng mới để phù hợp với sự thay đổi của công việc.",
+    "example": "AI時代を生き抜くためのリスキリング。"
+  },
+  {
+    "id": "future-robotic-process-automation",
+    "english": "Robotic Process Automation / RPA",
+    "japanese": "ロボティック・プロセス・オートメーション / RPA",
+    "kana": "あーるぴーえー",
+    "vietnamese": "Tự động hóa quy trình bằng robot / RPA",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Dùng robot phần mềm để bắt chước thao tác người dùng.",
+    "example": "RPAで事務作業を自動化。"
+  },
+  {
+    "id": "future-semantic-web",
+    "english": "Semantic Web",
+    "japanese": "セマンティックウェブ",
+    "kana": "せまんてぃっくうえぶ",
+    "vietnamese": "Web ngữ nghĩa",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thế hệ web nơi máy tính hiểu được ý nghĩa của dữ liệu.",
+    "example": "セマンティックウェブの概念。"
+  },
+  {
+    "id": "future-serverless",
+    "english": "Serverless",
+    "japanese": "サーバーレス",
+    "kana": "さーばーれす",
+    "vietnamese": "Không máy chủ / Serverless",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mô hình chạy code mà không cần quản lý hạ tầng server.",
+    "example": "サーバーレスアーキテクチャを採用。"
+  },
+  {
+    "id": "future-shadow-it",
+    "english": "Shadow IT",
+    "japanese": "シャドーIT",
+    "kana": "しゃどーあいてぃー",
+    "vietnamese": "IT bóng tối / Shadow IT",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Việc sử dụng phần mềm/thiết bị không được công ty quản lý.",
+    "example": "シャドーITのリスクを管理。"
+  },
+  {
+    "id": "future-singularity",
+    "english": "Singularity",
+    "japanese": "シンギュラリティ / 技術的特異点",
+    "kana": "しんぎゅらりてぃ",
+    "vietnamese": "Điểm kỳ dị công nghệ",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thời điểm AI vượt qua trí tuệ con người.",
+    "example": "シンギュラリティはいつ来るのか。"
+  },
+  {
+    "id": "future-smart-contract-audit",
+    "english": "Smart Contract Audit",
+    "japanese": "スマートコントラクト監査",
+    "kana": "すまーとこんとらくとかんさ",
+    "vietnamese": "Kiểm toán hợp đồng thông minh",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kiểm tra bảo mật cho mã nguồn blockchain.",
+    "example": "リリース前にスマートコントラクト監査。"
+  },
+  {
+    "id": "future-smart-contract-vulnerability",
+    "english": "Smart Contract Vulnerability",
+    "japanese": "スマートコントラクトの脆弱性",
+    "kana": "ぜいじゃくせい",
+    "vietnamese": "Lỗ hổng hợp đồng thông minh",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Lỗi mã nguồn có thể bị lợi dụng để đánh cắp tiền ảo.",
+    "example": "脆弱性診断でバグを発見。"
+  },
+  {
+    "id": "future-space-exploration",
+    "english": "Space Exploration",
+    "japanese": "宇宙探査",
+    "kana": "うちゅうたんさ",
+    "vietnamese": "Khám phá vũ trụ",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Việc tìm hiểu không gian bên ngoài trái đất.",
+    "example": "火星探査の最新技術。"
+  },
+  {
+    "id": "future-spacetech",
+    "english": "SpaceTech",
+    "japanese": "スペーステック / 宇宙技術",
+    "kana": "すぺーすてっく",
+    "vietnamese": "Công nghệ vũ trụ / SpaceTech",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Ứng dụng công nghệ vào khám phá vũ trụ.",
+    "example": "SpaceTechスタートアップが急増。"
+  },
+  {
+    "id": "future-superintelligence",
+    "english": "Superintelligence",
+    "japanese": "超知能",
+    "kana": "ちょうちのう",
+    "vietnamese": "Siêu trí tuệ",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "AI có khả năng vượt xa mọi lĩnh vực trí tuệ con người.",
+    "example": "超知能の出現に備える。"
+  },
+  {
+    "id": "future-sustainable-it",
+    "english": "Sustainable IT",
+    "japanese": "サステナブルIT",
+    "kana": "さすてなぶるあいてぃー",
+    "vietnamese": "CNTT bền vững",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giảm tác động môi trường của các hoạt động IT.",
+    "example": "サステナブルITを推進。"
+  },
+  {
+    "id": "future-technological-unemployment",
+    "english": "Technological Unemployment",
+    "japanese": "技術的失業",
+    "kana": "ぎじゅつてきしつぎょう",
+    "vietnamese": "Thất nghiệp do công nghệ",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Sự mất việc làm do robot và AI thay thế.",
+    "example": "AI導入による技術的失業への対策。"
+  },
+  {
+    "id": "future-token",
+    "english": "Token / Tokens",
+    "japanese": "トークン",
+    "kana": "とーくん",
+    "vietnamese": "Đơn vị Token",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Đơn vị xử lý nhỏ nhất của mô hình ngôn ngữ.",
+    "example": "入力のトークン数を節約する。"
+  },
+  {
+    "id": "future-transhumanism",
+    "english": "Transhumanism",
+    "japanese": "トランスヒューマニズム",
+    "kana": "とらんすひゅーまにずむ",
+    "vietnamese": "Chủ nghĩa siêu nhân",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Sử dụng công nghệ để nâng cấp cơ thể và trí tuệ con người.",
+    "example": "トランスヒューマニズムの倫理的課題。"
+  },
+  {
+    "id": "future-trustworthy-ai",
+    "english": "Trustworthy AI",
+    "japanese": "信頼できるAI",
+    "kana": "しんらいできるえーあい",
+    "vietnamese": "AI đáng tin cậy",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "AI an toàn, minh bạch và không thiên kiến.",
+    "example": "信頼できるAIの開発指針。"
+  },
+  {
+    "id": "future-universal-basic-income",
+    "english": "Universal Basic Income / UBI",
+    "japanese": "ユニバーサルベーシックインカム / UBI",
+    "kana": "ゆにばーさるべーしっくいんかむ",
+    "vietnamese": "Thu nhập cơ bản vô điều kiện / UBI",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chính sách cấp tiền định kỳ cho mọi người dân.",
+    "example": "AI時代のUBI議論。"
+  },
+  {
+    "id": "future-upskilling",
+    "english": "Upskilling",
+    "japanese": "アップスキリング",
+    "kana": "あっぷすきりんぐ",
+    "vietnamese": "Nâng cao kỹ năng / Upskilling",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Nâng cao trình độ kỹ năng hiện có.",
+    "example": "最新技術のアップスキリング。"
+  },
+  {
+    "id": "future-virtual-reality",
+    "english": "Virtual Reality / VR",
+    "japanese": "仮想現実 / VR",
+    "kana": "ぶいあーる",
+    "vietnamese": "Thực tế ảo / VR",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Môi trường giả lập hoàn toàn qua kính chuyên dụng.",
+    "example": "VRで没入感のある教育研修。"
+  },
+  {
+    "id": "future-web-4.0",
+    "english": "Web 4.0 / Web4",
+    "japanese": "Web 4.0",
+    "kana": "ウェブよんてんぜろ",
+    "vietnamese": "Web 4.0",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thế hệ web thông minh cộng sinh với con người.",
+    "example": "Web 4.0のコンセプト。"
+  },
+  {
+    "id": "future-zero-code",
+    "english": "Zero-code / No-code",
+    "japanese": "ノーコード",
+    "kana": "のーこーど",
+    "vietnamese": "Không code / Zero-code",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Công cụ cho phép xây dựng app mà không cần code.",
+    "example": "ノーコードで業務ツールを自作。"
+  },
+  {
+    "id": "future-zero-knowledge-proof",
+    "english": "Zero Knowledge Proof / ZKP",
+    "japanese": "ゼロ知識証明",
+    "kana": "ぜろちしきしょうめい",
+    "vietnamese": "Bằng chứng không tri thức / ZKP",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chứng minh một điều đúng mà không tiết lộ thông tin bí mật.",
+    "example": "ZKPでプライバシーを保護した送金。"
+  },
+  {
+    "id": "infra-assembly-language",
+    "english": "Assembly Language",
+    "japanese": "アセンブリ言語",
+    "kana": "アセンブリげんごょ",
+    "vietnamese": "Ngôn ngữ hợp ngữ / Assembly",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Ngôn ngữ lập trình cấp thấp gần với mã máy.",
+    "example": "Critical system parts are sometimes written in assembly for performance."
+  },
+  {
+    "id": "infra-atomic-operation",
+    "english": "Atomic Operation",
+    "japanese": "アトミック操作 / 原子操作",
+    "kana": "アトミックそうさ",
+    "vietnamese": "Thao tác nguyên tử / Atomic operation",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Thao tác thực hiện trọn vẹn, không thể bị ngắt quãng giữa chừng.",
+    "example": "Atomic increments are used for thread-safe counters."
+  },
+  {
+    "id": "infra-bios-uefi",
+    "english": "BIOS / UEFI",
+    "japanese": "バイオス / UEFI",
+    "kana": "バイオス / UEFI",
+    "vietnamese": "Hệ thống xuất nhập cơ bản / BIOS / UEFI",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Phần mềm firmware khởi tạo phần cứng khi bật máy.",
+    "example": "Modern PCs use UEFI instead of the legacy BIOS."
+  },
+  {
+    "id": "infra-bit-mask",
+    "english": "Bitmask / Bitwise Operation",
+    "japanese": "ビットマスク / ビット演算",
+    "kana": "ビットマスク",
+    "vietnamese": "Mặt nạ bit / Phép toán bitwise",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Sử dụng các bit để lưu trữ và xử lý nhiều trạng thái boolean.",
+    "example": "Bitmasks are efficient for storing permission flags."
+  },
+  {
+    "id": "infra-bootloader",
+    "english": "Bootloader / GRUB",
+    "japanese": "ブートローダ",
+    "kana": "ブートローダ",
+    "vietnamese": "Trình nạp khởi động / Bootloader",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Chương trình nhỏ nạp hệ điều hành vào RAM khi máy tính khởi động.",
+    "example": "GRUB is a popular bootloader for Linux systems."
+  },
+  {
+    "id": "infra-bus",
+    "english": "Bus / System Bus",
+    "japanese": "バス",
+    "kana": "バス",
+    "vietnamese": "Đường truyền dữ liệu / Bus",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống truyền dẫn dữ liệu giữa các thành phần bên trong máy tính.",
+    "example": "A wider bus width allows more data to be transferred simultaneously."
+  }
+]

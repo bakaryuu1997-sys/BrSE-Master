@@ -1,0 +1,756 @@
+[
+  {
+    "id": "iot-bom",
+    "english": "BOM / Bill of Materials",
+    "japanese": "部品表 / BOM",
+    "kana": "ぶひんひょう / ぼむ",
+    "vietnamese": "Danh sách linh kiện",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Danh sách vật liệu cần để sản xuất.",
+    "example": "BOMリストを作成して部品を発注します。"
+  },
+  {
+    "id": "iot-bootloader",
+    "english": "Bootloader / Bootloaders",
+    "japanese": "ブートローダ",
+    "kana": "ぶーとろーだ",
+    "vietnamese": "Chương trình khởi động",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Đoạn code chạy đầu tiên để nạp hệ điều hành/firmware.",
+    "example": "ブートローダを書き込みます。"
+  },
+  {
+    "id": "iot-breadboard",
+    "english": "Breadboard",
+    "japanese": "ブレッドボード",
+    "kana": "ぶれっどぼーど",
+    "vietnamese": "Bảng test mạch",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Bảng cắm dây thử nghiệm mạch nhanh.",
+    "example": "まずはブレッドボードで回路を試作します。"
+  },
+  {
+    "id": "iot-brownout-reset",
+    "english": "Brownout Reset / BOR",
+    "japanese": "ブラウンアウトリセット / 電圧低下リセット",
+    "kana": "ぶらうんあうとりせっと",
+    "vietnamese": "Khởi động lại do sụt áp",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tính năng bảo vệ khi điện áp cung cấp giảm.",
+    "example": "BOR機能でデータ破損を防ぎます。"
+  },
+  {
+    "id": "iot-bsp",
+    "english": "BSP / Board Support Package",
+    "japanese": "ボードサポートパッケージ / BSP",
+    "kana": "びーえすぴー",
+    "vietnamese": "Gói hỗ trợ bo mạch",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Phần mềm hỗ trợ khởi động hệ điều hành trên board mạch.",
+    "example": "新しいボード用のBSPを作成します。"
+  },
+  {
+    "id": "iot-can-bus",
+    "english": "CAN Bus / CAN",
+    "japanese": "CANバス / CAN通信",
+    "kana": "きゃんばす / きゃんつうしん",
+    "vietnamese": "Mạng CAN",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống truyền thông tiêu chuẩn trong ô tô và công nghiệp.",
+    "example": "CAN通信のノイズ対策が必要です。"
+  },
+  {
+    "id": "iot-ce-marking",
+    "english": "CE Marking",
+    "japanese": "CEマーク",
+    "kana": "しーいーまーく",
+    "vietnamese": "Chứng nhận CE",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tiêu chuẩn an toàn xuất khẩu vào châu Âu.",
+    "example": "製品にCEマークを取得します。"
+  },
+  {
+    "id": "iot-clock-speed",
+    "english": "Clock Speed",
+    "japanese": "クロック周波数",
+    "kana": "くろっくしゅうはすう",
+    "vietnamese": "Tốc độ xung nhịp",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tốc độ hoạt động của bộ vi xử lý.",
+    "example": "マイコンのクロック周波数を変更します。"
+  },
+  {
+    "id": "iot-compliance",
+    "english": "Compliance",
+    "japanese": "コンプライアンス / 規格適合",
+    "kana": "こんぷらいあんす",
+    "vietnamese": "Tuân thủ tiêu chuẩn",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tuân thủ các quy định, tiêu chuẩn quốc tế.",
+    "example": "RoHS指令のコンプライアンスを満たします。"
+  },
+  {
+    "id": "iot-context-switch",
+    "english": "Context Switch",
+    "japanese": "コンテキストスイッチ",
+    "kana": "こんてきすとすいっち",
+    "vietnamese": "Chuyển đổi ngữ cảnh",
+    "roles": [
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Quá trình lưu và khôi phục trạng thái CPU khi chuyển đổi giữa các tiến trình.",
+    "example": "Frequent context switching can lead to high CPU overhead."
+  },
+  {
+    "id": "iot-cross-compiler",
+    "english": "Cross Compiler",
+    "japanese": "クロスコンパイラ",
+    "kana": "くろすこんぱいら",
+    "vietnamese": "Trình biên dịch chéo",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Trình biên dịch trên hệ điều hành này cho phần cứng khác.",
+    "example": "クロスコンパイラ環境を構築します。"
+  },
+  {
+    "id": "iot-dac",
+    "english": "DAC",
+    "japanese": "D / A変換器 / DAC",
+    "kana": "でぃーえーへんかんき",
+    "vietnamese": "Bộ chuyển đổi số - tương tự",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chuyển dữ liệu kỹ thuật số thành tín hiệu liên tục.",
+    "example": "DACで音声信号を生成します。"
+  },
+  {
+    "id": "iot-data-logger",
+    "english": "Data Logger",
+    "japanese": "データロガー",
+    "kana": "でーたろがー",
+    "vietnamese": "Bộ ghi dữ liệu",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thiết bị lưu trữ dữ liệu cảm biến.",
+    "example": "温湿度をデータロガーで記録します。"
+  },
+  {
+    "id": "iot-dcs",
+    "english": "DCS",
+    "japanese": "分散制御システム / DCS",
+    "kana": "でぃーしーえす",
+    "vietnamese": "Hệ thống điều khiển phân tán",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống điều khiển mà các bộ điều khiển nằm phân tán.",
+    "example": "DCSのネットワーク設計を行います。"
+  },
+  {
+    "id": "iot-deadlock",
+    "english": "Deadlock / Deadlocks",
+    "japanese": "デッドロック",
+    "kana": "でっどろっく",
+    "vietnamese": "Tình trạng bế tắc",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Trạng thái các tiến trình chờ nhau mãi mãi.",
+    "example": "デッドロックを回避する設計が必要です。"
+  },
+  {
+    "id": "iot-deep-sleep",
+    "english": "Deep Sleep",
+    "japanese": "ディープスリープ",
+    "kana": "でぃーぷすりーぷ",
+    "vietnamese": "Chế độ ngủ sâu",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chế độ ngắt hầu hết nguồn điện để tiết kiệm pin.",
+    "example": "ディープスリープからの復帰処理を実装します。"
+  },
+  {
+    "id": "iot-device-driver",
+    "english": "Device Driver / Drivers",
+    "japanese": "デバイスドライバ",
+    "kana": "でばいすどらいば",
+    "vietnamese": "Trình điều khiển thiết bị",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Phần mềm giao tiếp với phần cứng cụ体.",
+    "example": "センサーのデバイスドライバを実装します。"
+  },
+  {
+    "id": "iot-device-twin",
+    "english": "Device Twin / Shadow",
+    "japanese": "デバイストゥイン / デバイスシャドウ",
+    "kana": "でばいすとぅいん / でばいすしゃどう",
+    "vietnamese": "Bản sao thiết bị / Device Twin",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Bản đại diện kỹ thuật số của thiết bị trên cloud.",
+    "example": "デバイストゥインの状態を同期します。"
+  },
+  {
+    "id": "iot-digital-twin",
+    "english": "Digital Twin",
+    "japanese": "デジタルツイン",
+    "kana": "でじたるついん",
+    "vietnamese": "Bản sao kỹ thuật số",
+    "roles": [
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Bản sao ảo của một vật thể hay hệ thống thực.",
+    "example": "デジタルツインでシミュレーションを行います。"
+  },
+  {
+    "id": "iot-dma",
+    "english": "DMA / Direct Memory Access",
+    "japanese": "DMA / 直接メモリアクセス",
+    "kana": "でぃーえむえー",
+    "vietnamese": "Truy cập bộ nhớ trực tiếp",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật truyền dữ liệu không qua CPU.",
+    "example": "DMAを使って効率的に通信します。"
+  },
+  {
+    "id": "iot-dram",
+    "english": "DRAM",
+    "japanese": "DRAM",
+    "kana": "でぃーらむ",
+    "vietnamese": "RAM động",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Loại RAM cần làm mới liên tục.",
+    "example": "大容量の外部DRAMを接続します。"
+  },
+  {
+    "id": "iot-edge-computing",
+    "english": "Edge Computing",
+    "japanese": "エッジコンピューティング / エッジ",
+    "kana": "えっじこんぴゅーてぃんぐ / えっじ",
+    "vietnamese": "Điện toán biên",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Xử lý dữ liệu ngay tại rìa mạng, gần thiết bị.",
+    "example": "エッジコンピューティングで遅延を減らします。"
+  },
+  {
+    "id": "iot-eeprom",
+    "english": "EEPROM",
+    "japanese": "EEPROM",
+    "kana": "いーいーぴーろむ",
+    "vietnamese": "Bộ nhớ EEPROM",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Bộ nhớ chỉ đọc có thể xóa bằng điện.",
+    "example": "設定パラメータをEEPROMに保存します。"
+  },
+  {
+    "id": "iot-emc",
+    "english": "EMC / Electromagnetic Compatibility",
+    "japanese": "電磁両立性 / EMC",
+    "kana": "いーえむしー",
+    "vietnamese": "Tương thích điện từ",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Khả năng hoạt động không gây/bị nhiễu sóng.",
+    "example": "EMC試験をクリアする必要があります。"
+  },
+  {
+    "id": "iot-emi",
+    "english": "EMI / Electromagnetic Interference",
+    "japanese": "電磁干渉 / EMI / 電磁ノイズ",
+    "kana": "いーえむあい",
+    "vietnamese": "Nhiễu điện từ",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Nhiễu do sóng điện từ gây ra.",
+    "example": "EMI対策としてシールドを追加します。"
+  },
+  {
+    "id": "iot-esd",
+    "english": "ESD / Electrostatic Discharge",
+    "japanese": "静電気放電 / ESD",
+    "kana": "いーえすでぃー",
+    "vietnamese": "Phóng tĩnh điện",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hiện tượng phóng điện do tĩnh điện.",
+    "example": "ESDによる基板の破損を防ぎます。"
+  },
+  {
+    "id": "iot-fcc",
+    "english": "FCC",
+    "japanese": "FCC認証",
+    "kana": "えふしーしーにんしょう",
+    "vietnamese": "Chứng nhận FCC",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chứng nhận cho thiết bị vô tuyến tại Mỹ.",
+    "example": "米国向けにFCC認証が必要です。"
+  },
+  {
+    "id": "iot-firmware",
+    "english": "Firmware",
+    "japanese": "ファームウェア / ファーム",
+    "kana": "ふぁーむうぇあ / ふぁーむ",
+    "vietnamese": "Phần mềm hệ thống / Firmware",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Phần mềm nhúng điều khiển thiết bị phần cứng.",
+    "example": "ファームウェアのアップデートが必要です。"
+  },
+  {
+    "id": "iot-flash-memory",
+    "english": "Flash Memory",
+    "japanese": "フラッシュメモリ",
+    "kana": "ふらっしゅめもり",
+    "vietnamese": "Bộ nhớ Flash",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Loại bộ nhớ EEPROM tốc độ cao.",
+    "example": "フラッシュメモリの書き換え寿命に注意します。"
+  },
+  {
+    "id": "iot-fota",
+    "english": "FOTA",
+    "japanese": "ファームウェアOTA / FOTA",
+    "kana": "ふぉた",
+    "vietnamese": "Cập nhật Firmware qua mạng",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Việc nâng cấp firmware từ xa.",
+    "example": "FOTA機能を実装してメンテナンスを容易にします。"
+  },
+  {
+    "id": "iot-fpga",
+    "english": "FPGA",
+    "japanese": "FPGA",
+    "kana": "えふぴーじーえー",
+    "vietnamese": "Mảng cổng logic lập trình được",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Vi mạch có thể thay đổi cấu trúc phần cứng.",
+    "example": "FPGAで専用のハードウェアロジックを組みます。"
+  },
+  {
+    "id": "iot-gateway",
+    "english": "Gateway / Gateways",
+    "japanese": "ゲートウェイ",
+    "kana": "げーとうぇい",
+    "vietnamese": "Cổng kết nối / Gateway",
+    "roles": [
+      "DevOps",
+      "Dev",
+      "BrSE",
+      "Networking",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thiết bị đóng vai trò là cửa ngõ giao tiếp giữa hai mạng khác nhau.",
+    "example": "外部ネットワークへの通信は、デフォルトゲートウェイ（Gateway）を経由して行われます。"
+  },
+  {
+    "id": "iot-gerber-file",
+    "english": "Gerber File",
+    "japanese": "ガーバーデータ",
+    "kana": "がーばーでーた",
+    "vietnamese": "Tệp Gerber",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Định dạng file tiêu chuẩn cho sản xuất PCB.",
+    "example": "基板メーカーにガーバーデータを送ります。"
+  },
+  {
+    "id": "iot-gpio",
+    "english": "GPIO",
+    "japanese": "汎用入出力 / GPIO",
+    "kana": "はんようにゅうしゅつりょく / じーぴーあいおー",
+    "vietnamese": "Cổng vào/ra đa dụng",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chân cắm kỹ thuật số để giao tiếp với thiết bị ngoại vi.",
+    "example": "GPIOピンの割り当てを確認します。"
+  },
+  {
+    "id": "iot-hal",
+    "english": "HAL / Hardware Abstraction Layer",
+    "japanese": "ハードウェア抽象化レイヤー / HAL",
+    "kana": "はる",
+    "vietnamese": "Lớp trừu tượng phần cứng",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Lớp phần mềm che giấu chi tiết phần cứng.",
+    "example": "HAL関数を利用して周辺機器を制御します。"
+  },
+  {
+    "id": "iot-heap",
+    "english": "Heap / Heap Memory",
+    "japanese": "ヒープ領域 / ヒープメモリ",
+    "kana": "ひーぷりょういき",
+    "vietnamese": "Bộ nhớ Heap",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Bộ nhớ cấp phát động.",
+    "example": "ヒープのメモリリークを調査します。"
+  },
+  {
+    "id": "iot-hmi",
+    "english": "HMI / Human Machine Interface",
+    "japanese": "HMI / ヒューマンマシンインターフェース",
+    "kana": "えいちえむあい",
+    "vietnamese": "Giao diện người - máy",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Màn hình điều khiển công nghiệp.",
+    "example": "HMIの画面デザインを更新します。"
+  },
+  {
+    "id": "iot-i2c",
+    "english": "I2C",
+    "japanese": "I2C通信 / I2C",
+    "kana": "あいつーしーつうしん",
+    "vietnamese": "Giao thức I2C",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giao tiếp nối tiếp hai dây cho IC.",
+    "example": "I2Cでセンサーと通信します。"
+  },
+  {
+    "id": "iot-industrial-iot",
+    "english": "Industrial IoT / IIoT",
+    "japanese": "産業用IoT / IIoT",
+    "kana": "さんぎょうようあいおーてぃー",
+    "vietnamese": "IoT Công nghiệp",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Ứng dụng IoT trong sản xuất công nghiệp.",
+    "example": "IIoT化で生産効率を上げます。"
+  },
+  {
+    "id": "iot-interrupt",
+    "english": "Interrupt / Interrupts",
+    "japanese": "割り込み",
+    "kana": "わりこみ",
+    "vietnamese": "Ngắt",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tín hiệu tạm dừng luồng chương trình chính.",
+    "example": "ハードウェア割り込みの優先度を設定します。"
+  },
+  {
+    "id": "iot-ip-core",
+    "english": "IP Core",
+    "japanese": "IPコア",
+    "kana": "あいぴーこあ",
+    "vietnamese": "Lõi IP",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Khối mạch logic có thể tái sử dụng.",
+    "example": "他社製のIPコアをライセンス購入します。"
+  },
+  {
+    "id": "iot-jtag",
+    "english": "JTAG",
+    "japanese": "JTAG / デバッグインターフェース",
+    "kana": "じぇいたっぐ",
+    "vietnamese": "Giao diện JTAG",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chuẩn giao tiếp gỡ lỗi phần cứng.",
+    "example": "JTAG経由でプログラムを書き込みます。"
+  },
+  {
+    "id": "iot-latency",
+    "english": "Latency",
+    "japanese": "レイテンシ / 遅延",
+    "kana": "れいてんし / ちえん",
+    "vietnamese": "Độ trễ",
+    "roles": [
+      "Backend Dev",
+      "DevOps",
+      "Dev",
+      "BrSE",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thời gian trôi qua từ khi gửi một yêu cầu cho đến khi nhận được phản hồi.",
+    "example": "Low latency is critical for real-time trading applications."
+  },
+  {
+    "id": "iot-lora",
+    "english": "LoRa / LoRaWAN",
+    "japanese": "LoRa / LoRaWAN",
+    "kana": "ろら / ろらわん",
+    "vietnamese": "Mạng LoRa",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mạng diện rộng năng lượng thấp.",
+    "example": "LoRaWANで広範囲をカバーします。"
+  },
+  {
+    "id": "iot-lpwan",
+    "english": "LPWAN",
+    "japanese": "省電力広域ネットワーク / LPWAN",
+    "kana": "しょうでんりょくこういきねっとわーく",
+    "vietnamese": "Mạng diện rộng năng lượng thấp",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Các chuẩn mạng kết nối khoảng cách xa tốn ít pin.",
+    "example": "LPWANはIoTに最適です。"
+  },
+  {
+    "id": "iot-memory-leak",
+    "english": "Memory Leak",
+    "japanese": "メモリリーク",
+    "kana": "めもりりーく",
+    "vietnamese": "Rò rỉ bộ nhớ",
+    "roles": [
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Hiện tượng ứng dụng không giải phóng bộ nhớ sau khi dùng xong.",
+    "example": "Memory leaks can eventually crash the entire system."
+  },
+  {
+    "id": "iot-microcontroller",
+    "english": "Microcontroller / Microcontrollers / MCU",
+    "japanese": "マイクロコントローラ / マイコン",
+    "kana": "まいくろこんとろーら / まいこん",
+    "vietnamese": "Vi điều khiển / Chip / MCU",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Bộ vi điều khiển trung tâm trong các hệ thống nhúng.",
+    "example": "このマイコンは省電力です。"
+  },
+  {
+    "id": "iot-modbus",
+    "english": "Modbus",
+    "japanese": "Modbus通信",
+    "kana": "もどばすつうしん",
+    "vietnamese": "Giao thức Modbus",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giao thức truyền thông nối tiếp công nghiệp.",
+    "example": "Modbus RTUで接続します。"
+  },
+  {
+    "id": "iot-mqtt",
+    "english": "MQTT",
+    "japanese": "MQTT",
+    "kana": "えむきゅーてぃーてぃー",
+    "vietnamese": "Giao thức MQTT",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giao thức truyền tin gọn nhẹ dùng cho IoT.",
+    "example": "MQTTブローカーを構築します。"
+  },
+  {
+    "id": "iot-mtbf",
+    "english": "MTBF",
+    "japanese": "平均故障間隔 / MTBF",
+    "kana": "えむてぃーびーえふ",
+    "vietnamese": "Thời gian hoạt động trung bình",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Độ tin cậy của thiết bị.",
+    "example": "システムのMTBFを計算します。"
+  }
+]

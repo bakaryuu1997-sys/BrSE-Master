@@ -1,0 +1,680 @@
+{
+  "extName": {
+    "message": "BrSE OS Assistant"
+  },
+  "extDescription": {
+    "message": "Local cockpit helper for Bridge Software Engineers (BrSE) to draft Keigo, manage glossary terms, and inject content."
+  },
+  "commandDescription": {
+    "message": "Open BrSE OS Command Palette"
+  },
+  "chatPlaceholder": {
+    "message": "Type a message..."
+  },
+  "quickAddBtn": {
+    "message": "⚡ Quick add"
+  },
+  "editBtn": {
+    "message": "✏️ Edit"
+  },
+  "disableHighlight": {
+    "message": "🔕 Disable highlights"
+  },
+  "retry": {
+    "message": "🔄 Retry"
+  },
+  "aiFallback": {
+    "message": "🧠 AI Translate"
+  },
+  "dashboardTab": {
+    "message": "Dashboard"
+  },
+  "settingsTab": {
+    "message": "Settings"
+  },
+  "urgentFocusTitle": {
+    "message": "Urgent focus"
+  },
+  "hubTitle": {
+    "message": "Quick actions"
+  },
+  "hubPalette": {
+    "message": "Command palette"
+  },
+  "hubOcr": {
+    "message": "Region OCR"
+  },
+  "hubSidepanel": {
+    "message": "Open sidepanel"
+  },
+  "hubWebApp": {
+    "message": "Open web app"
+  },
+  "hubGlossary": {
+    "message": "Glossary highlight"
+  },
+  "hubKeigo": {
+    "message": "Keigo check"
+  },
+  "hubFurigana": {
+    "message": "Hover translate (Alt+hover)"
+  },
+  "activeModelLabel": {
+    "message": "Active model"
+  },
+  "localBridgeTitle": {
+    "message": "Local bridge"
+  },
+  "secretTokenLabel": {
+    "message": "Secret token"
+  },
+  "secretTokenPlaceholder": {
+    "message": "Required only when BRSE_API_SECRET is set"
+  },
+  "apiUrlLabel": {
+    "message": "API URL"
+  },
+  "furiganaAlwaysOnLabel": {
+    "message": "Always show furigana (no Alt needed)"
+  },
+  "saveSettingsBtn": {
+    "message": "Save settings"
+  },
+  "glossaryHighlightsLabel": {
+    "message": "Glossary Highlights"
+  },
+  "learnedCountBtn": {
+    "message": "📁 Hidden words ($1)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "unhideAllBtn": {
+    "message": "🔄 Unhide all"
+  },
+  "noUrgentFocus": {
+    "message": "No urgent focus items."
+  },
+  "loadingText": {
+    "message": "Loading..."
+  },
+  "extensionSettingsTitle": {
+    "message": "Extension settings"
+  },
+  "appUrlLabel": {
+    "message": "App URL"
+  },
+  "apiBaseLabel": {
+    "message": "API base"
+  },
+  "defaultProjectLabel": {
+    "message": "Default project"
+  },
+  "defaultProjectPlaceholder": {
+    "message": "Personal project"
+  },
+  "toolbarModeLabel": {
+    "message": "Toolbar Trigger Mode"
+  },
+  "toolbarModeAuto": {
+    "message": "Show on selection or triple click"
+  },
+  "toolbarModeAlt": {
+    "message": "Show only when Alt is pressed"
+  },
+  "settingsUsedBy": {
+    "message": "These settings are used by popup, side panel, context actions, and page helpers."
+  },
+  "learnedTermsViewTitle": {
+    "message": "📁 View hidden words ($1)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "meetingDetected": {
+    "message": "Meeting detected:"
+  },
+  "startLiveMemoBtn": {
+    "message": "Start BrSE Live Memo"
+  },
+  "chatTab": {
+    "message": "Chat"
+  },
+  "writeTab": {
+    "message": "Write"
+  },
+  "toolsTab": {
+    "message": "Tools"
+  },
+  "projectTab": {
+    "message": "Project"
+  },
+  "gmailContextDetected": {
+    "message": "Gmail Context Detected"
+  },
+  "gmailContextSubject": {
+    "message": "Subject: $1",
+    "placeholders": {
+      "subject": {
+        "content": "$1",
+        "example": "Meeting request"
+      }
+    }
+  },
+  "useBtn": {
+    "message": "Use"
+  },
+  "clearBtn": {
+    "message": "Clear"
+  },
+  "readyAskPage": {
+    "message": "Ready. Ask about the current web page, selected text, BrSE writing, or project context."
+  },
+  "crossTabBtn": {
+    "message": "🔗 Cross-Tab Context"
+  },
+  "crossTabTitle": {
+    "message": "Link local context from other tabs"
+  },
+  "chooseTabsLink": {
+    "message": "Select tabs to link context"
+  },
+  "noOtherTabs": {
+    "message": "No other tabs found..."
+  },
+  "askBrsePlaceholder": {
+    "message": "Ask BrSE OS..."
+  },
+  "sendBtn": {
+    "message": "Send"
+  },
+  "stopGeneratingBtn": {
+    "message": "🛑 Stop generating"
+  },
+  "japaneseEmailTemplate": {
+    "message": "Japanese email"
+  },
+  "dailyReportTemplate": {
+    "message": "Daily report"
+  },
+  "specSummaryTemplate": {
+    "message": "Spec summary"
+  },
+  "draftQaTemplate": {
+    "message": "Draft Q&A"
+  },
+  "writeInputPlaceholder": {
+    "message": "Describe what you want to write in Vietnamese or English..."
+  },
+  "writeTonePolite": {
+    "message": "Polite Keigo"
+  },
+  "writeToneCasual": {
+    "message": "Plain internal"
+  },
+  "writeToneExecutive": {
+    "message": "Executive summary"
+  },
+  "generateBtn": {
+    "message": "Generate"
+  },
+  "keigoCheckerTool": {
+    "message": "Keigo Checker"
+  },
+  "keigoCheckerDesc": {
+    "message": "Review and improve Japanese business wording."
+  },
+  "horensoDraftTool": {
+    "message": "Horenso Draft"
+  },
+  "horensoDraftDesc": {
+    "message": "Create a concise report draft for customers or managers."
+  },
+  "contextTranslateTool": {
+    "message": "Context Translation"
+  },
+  "contextTranslateDesc": {
+    "message": "Translate with BrSE-specific context and terminology."
+  },
+  "specAnalyzerTool": {
+    "message": "📄 Spec Heuristic Preview"
+  },
+  "specAnalyzerDesc": {
+    "message": "Preview spec parsing with local preview. AI backend not active, static mock data."
+  },
+  "ocrTranslateTool": {
+    "message": "📸 OCR Translator"
+  },
+  "ocrTranslateDesc": {
+    "message": "Capture Japanese screen regions and translate them by coordinates when Gemini OCR is configured."
+  },
+  "flashcardTool": {
+    "message": "🎴 Flashcard SRS"
+  },
+  "flashcardDesc": {
+    "message": "Review glossary terms with spaced repetition (SM-2). Progress stored locally, works offline."
+  },
+  "specDropZoneTitle": {
+    "message": "Drag & drop design document"
+  },
+  "specDropZoneSubtitle": {
+    "message": "Local preview for .xlsx, .pdf. AI analysis backend not enabled."
+  },
+  "selectFileBtn": {
+    "message": "Select file"
+  },
+  "specLoadingText": {
+    "message": "Generating local preview. Results below are mock, not real AI analysis."
+  },
+  "specResultsMockNote": {
+    "message": "Local heuristic preview: mock data for UI testing. Do not treat as real AI results; will not sync to Dashboard."
+  },
+  "resultTabGlossary": {
+    "message": "Glossary"
+  },
+  "resultTabContradictions": {
+    "message": "Validation"
+  },
+  "resultTabTasks": {
+    "message": "Tasks"
+  },
+  "termHeaderJp": {
+    "message": "Term (JP)"
+  },
+  "meanHeaderVi": {
+    "message": "Meaning (VI)"
+  },
+  "todoSyncHeader": {
+    "message": "Task Checklist"
+  },
+  "syncPreviewDisabledBtn": {
+    "message": "Sync preview disabled"
+  },
+  "ocrInstruction": {
+    "message": "Capture a Japanese screen area to translate by image coordinates. Mock fallback will be specified if Gemini OCR is unconfigured."
+  },
+  "startOcrBtn": {
+    "message": "📷 Capture screen area"
+  },
+  "ocrPreparingStatus": {
+    "message": "Preparing screen capture tool..."
+  },
+  "savingSettingsStatus": {
+    "message": "Saving settings..."
+  },
+  "modelRejectedStatus": {
+    "message": "Model $1 rejected by runtime. Trying $2...",
+    "placeholders": {
+      "model": {
+        "content": "$1"
+      },
+      "fallback": {
+        "content": "$2"
+      }
+    }
+  },
+  "settingsSavedSuccess": {
+    "message": "Settings saved. AI OK: $1. $1",
+    "placeholders": {
+      "model": {
+        "content": "$1"
+      },
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "settingsSavedLocalOnly": {
+    "message": "Saved locally but AI is unavailable: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "settingsSavedError": {
+    "message": "Saved locally but synced to runtime failed: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "backendStatusOnline": {
+    "message": "Backend online"
+  },
+  "backendStatusOffline": {
+    "message": "Offline: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "toastChatworkTextareaNotFound": {
+    "message": "⚠️ Chatwork compose textarea not found (#_chatText)!"
+  },
+  "btnTitleAiCompose": {
+    "message": "BrSE OS: AI Compose & Insert project info"
+  },
+  "errorCloudFallback": {
+    "message": "❌ Cloud Fallback error: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorLocalBackend": {
+    "message": "❌ Local Backend connection error ($1): $1. Please start backend or configure Gemini API Key in Settings to activate Cloud Fallback.",
+    "placeholders": {
+      "model": {
+        "content": "$1"
+      },
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "qbAssistantWelcome": {
+    "message": "I am the BrSE Assistant. Do you have any questions about \"<b>$1</b>\"?",
+    "placeholders": {
+      "term": {
+        "content": "$1",
+        "example": "仕様書"
+      }
+    }
+  },
+  "qbExplainAi": {
+    "message": "💡 AI Explain"
+  },
+  "qbCheckGrammar": {
+    "message": "✍️ Grammar Check"
+  },
+  "qbPolishKeigo": {
+    "message": "✨ Polish Keigo"
+  },
+  "qbSummaryJp": {
+    "message": "📄 Summary (JP)"
+  },
+  "qbSummaryVi": {
+    "message": "📄 Summary (VI)"
+  },
+  "qbTitleAiRequest": {
+    "message": "AI Request"
+  },
+  "qbTitleAiRequestPage": {
+    "message": "$1 for this page",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "Explain"
+      }
+    }
+  },
+  "qbNote": {
+    "message": "Notes"
+  },
+  "qbDictionary": {
+    "message": "Dictionary"
+  },
+  "qbLoadingDict": {
+    "message": "⏳ Fetching deep dictionary data..."
+  },
+  "qbReferMore": {
+    "message": "Refer more"
+  },
+  "qbSyncBadgeTitle": {
+    "message": "Offline sync status (Click to retry now)"
+  },
+  "qbSyncChecking": {
+    "message": "Checking..."
+  },
+  "qbSettings": {
+    "message": "Settings"
+  },
+  "qbFeedback": {
+    "message": "Feedback"
+  },
+  "qbClearChat": {
+    "message": "Clear chat history"
+  },
+  "qbMinimize": {
+    "message": "Minimize"
+  },
+  "qbTranslateViPill": {
+    "message": "🇻🇳 Translate to VI"
+  },
+  "qbEmailJpPill": {
+    "message": "🇯🇵 Create Keigo Email"
+  },
+  "qbKanjiItPill": {
+    "message": "📖 Kanji & IT Terms"
+  },
+  "qbTaskPill": {
+    "message": "📋 Detailed tasks"
+  },
+  "qbBugPill": {
+    "message": "🔍 Explain bug & log"
+  },
+  "qbPersonaLabel": {
+    "message": "Select AI role"
+  },
+  "qbModelLabel": {
+    "message": "Select AI model"
+  },
+  "qbInputPlaceholder": {
+    "message": "Ask AI more about this word/sentence..."
+  },
+  "qbSendBtnTitle": {
+    "message": "Send question"
+  },
+  "qbDeleteMsgTitle": {
+    "message": "Delete this message"
+  },
+  "jiraDestTodo": {
+    "message": "New Todo Project"
+  },
+  "jiraDestOps": {
+    "message": "Operations Module"
+  },
+  "destQna": {
+    "message": "Q&A / 確認事項"
+  },
+  "qnaAnalysisPrompt": {
+    "message": "Read the following content (Jira ticket or customer email) and draft 3-5 professional clarification questions (確認事項) to send to the partner/customer. For EACH question, present: (1) the question in polite Japanese Keigo, (2) a short translation, (3) the reason/impact if left unclarified. Number them clearly in a polite Japanese business tone."
+  },
+  "jiraSyncSuccess": {
+    "message": "Successfully synced to:"
+  },
+  "jiraAiAnalyzing": {
+    "message": "AI analysis and action planning starting..."
+  },
+  "jiraSyncTaskSuccess": {
+    "message": "✓ Task Integration Successful"
+  },
+  "jiraAutoImportedCount": {
+    "message": "Automatically imported <b>$1 sub-tasks</b> into your Todo project on the Dashboard!",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "jiraSyncTaskError": {
+    "message": "❌ Task Sync Error"
+  },
+  "jiraSyncTaskErrorDetail": {
+    "message": "Cannot import tasks automatically to project: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "jiraSyncTaskWarning": {
+    "message": "⚠️ Failed to Parse Sub-tasks"
+  },
+  "jiraSyncTaskWarningDetail": {
+    "message": "AI did not output the appropriate JSON format to auto-import tasks. You can still copy tasks manually."
+  },
+  "jiraGmailTemplatePrompt": {
+    "message": "Write a polite business Japanese email to: {to}\nRegarding subject: $1\n\nMain content to draft: ",
+    "placeholders": {
+      "subject": {
+        "content": "$1",
+        "example": "Meeting request"
+      }
+    }
+  },
+  "jiraTicketTemplatePrompt": {
+    "message": "Create a professional report or update regarding Jira ticket [{key}] \"$1\".\n\nProgress/Action items: ",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "Explain"
+      }
+    }
+  },
+  "jiraAnalysisPreparing": {
+    "message": "Preparing analysis..."
+  },
+  "jiraTodoPrompt": {
+    "message": "Analyze this Jira Ticket and automatically break it down into detailed sub-tasks for developers. Finally, export the task list as a single JSON Array at the end of your response, wrapped inside a ```json [ ... ] ``` code block (each element has structure: {\"title\": \"Short task name in English\", \"phase\": \"3. Implementation & Coding\", \"priority\": \"HIGH\" | \"MEDIUM\" | \"LOW\", \"detail\": \"Short description of what to do\"}). Make sure the JSON is valid so the system can parse and inject it directly into your Todo project."
+  },
+  "jiraOpsPrompt": {
+    "message": "Analyze this Jira Ticket's requirements. Provide the following detailed sections:\n1. Summarize Core Business Requirements.\n2. Identify and analyze business/tech contradictions or potential risks - minimum 3 points.\n3. Provide 3-5 elegant, professional Q&A questions in polite Japanese Keigo to send to the client/partners to clarify the above contradictions/risks.\n4. Suggest at least 5 detailed Action Items for developers to implement this feature."
+  },
+  "toastSummaryRestore": {
+    "message": "Restore Summary"
+  },
+  "summaryPageLabel": {
+    "message": "Page summary:"
+  },
+  "toastNoSummaryFound": {
+    "message": "⚠️ No summary found for this page!"
+  },
+  "summaryLoading": {
+    "message": "Loading AI summary..."
+  },
+  "errAiRequestFailed": {
+    "message": "❌ AI request failed: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "📋 Copied!"
+  },
+  "toastSyncedHub": {
+    "message": "✅ Pushed to Project Hub!"
+  },
+  "toastOfflineOutbox": {
+    "message": "🌐 Offline: Temporarily saved to outbox queue!"
+  },
+  "toastSyncError": {
+    "message": "❌ Sync error: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "toastSelectTextOrCmd": {
+    "message": "⚠️ Please select text or type command!"
+  },
+  "toastInsertedText": {
+    "message": "✍️ Inserted response into compose field!"
+  },
+  "toastInsertTextFailed": {
+    "message": "⚠️ Failed to insert into compose field!"
+  },
+  "toastSelectFieldFirst": {
+    "message": "⚠️ Please select a compose field first before inserting!"
+  },
+  "kcInputJpFirst": {
+    "message": "⚠️ Please enter Japanese text before checking!"
+  },
+  "kcAiAnalyzing": {
+    "message": "AI is analyzing and refining Keigo..."
+  },
+  "kcLocalBackendErr": {
+    "message": "Local Backend AI connection error: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "kcStartBackendPrompt": {
+    "message": "Please start the local backend to experience the supreme Keigo Checker feature!"
+  },
+  "kcErrorGeneral": {
+    "message": "Error: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "kcHeaderTitle": {
+    "message": "✦ Weapon 3: Keigo Corrector"
+  },
+  "kcChangesDetail": {
+    "message": "Change Details"
+  },
+  "kcAlreadyPolite": {
+    "message": "Text is already Keigo-compliant, no issues found!"
+  },
+  "kcClassification": {
+    "message": "Classification: "
+  },
+  "kcOriginalText": {
+    "message": "Original text"
+  },
+  "kcProposedEdits": {
+    "message": "Proposed edits (Keigo Polish)"
+  },
+  "kcCloseBtn": {
+    "message": "Close"
+  },
+  "kcApplyBtn": {
+    "message": "✓ Apply"
+  },
+  "kcApplySuccess": {
+    "message": "✨ Keigo improvements applied successfully!"
+  },
+  "tbTranslatePro": {
+    "message": "Pro Translate"
+  },
+  "tbTranslateBilingual": {
+    "message": "Bilingual Translate"
+  },
+  "tbSpeakText": {
+    "message": "Speak Text"
+  },
+  "tbGrammarCheck": {
+    "message": "Grammar Check"
+  },
+  "tbPolishKeigo": {
+    "message": "Polish Keigo"
+  },
+  "tbExplainAi": {
+    "message": "AI Explain"
+  },
+  "tbQuickCopy": {
+    "message": "Quick Copy"
+  },
+  "tbSaveProject": {
+    "message": "Save Project"
+  }
+}

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="BrSE OS Assistant">
+  <defs>
+    <linearGradient id="bg" x1="16" y1="10" x2="112" y2="118" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#06111f"/>
+      <stop offset="0.52" stop-color="#10264a"/>
+      <stop offset="1" stop-color="#1d1238"/>
+    </linearGradient>
+    <linearGradient id="core" x1="30" y1="24" x2="101" y2="102" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5eead4"/>
+      <stop offset="0.5" stop-color="#7aa2f7"/>
+      <stop offset="1" stop-color="#f0abfc"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.37 0 0 0 0 0.92 0 0 0 0 0.83 0 0 0 0.55 0"/>
+      <feBlend in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="128" height="128" rx="30" fill="url(#bg)"/>
+  <path d="M18 92c22-6 35-24 44-53 7 27 22 46 48 57" fill="none" stroke="#5eead4" stroke-width="4" stroke-linecap="round" opacity=".28"/>
+  <path d="M34 32h35c20 0 32 9 32 25 0 9-4 16-12 20 9 4 15 12 15 23 0 18-14 28-36 28H34V32Z" fill="url(#core)" filter="url(#glow)" transform="scale(.84) translate(10 5)"/>
+  <path d="M48 50h21c7 0 11 4 11 10s-4 10-11 10H48V50Zm0 31h24c8 0 12 5 12 11 0 7-5 12-13 12H48V81Z" fill="#06111f" opacity=".92"/>
+  <circle cx="96" cy="34" r="12" fill="#86efac"/>
+  <circle cx="96" cy="34" r="5" fill="#06111f"/>
+  <path d="M27 23h18M23 27v18M101 104h-18M105 100V82" stroke="#f0abfc" stroke-width="4" stroke-linecap="round" opacity=".72"/>
+</svg>

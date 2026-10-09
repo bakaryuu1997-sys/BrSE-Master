@@ -1,0 +1,11 @@
+uploads/
+frontend/node_modules/
+frontend/.next/
+backend/venv/
+.run/
+.git/
+*.mp4
+*.wav
+*.webm
+*.mkv
+*.tsbuildinfo

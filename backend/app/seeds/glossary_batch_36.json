@@ -1,0 +1,527 @@
+[
+  {
+    "id": "web3-permissioned",
+    "english": "Permissioned",
+    "japanese": "許可型 / プライベート",
+    "kana": "きょかがた",
+    "vietnamese": "Cần cấp phép",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chỉ các nút được cấp quyền mới tham gia được.",
+    "example": "企業用は許可型チェーンが好まれる。"
+  },
+  {
+    "id": "web3-permissionless",
+    "english": "Permissionless",
+    "japanese": "許可不要 / パブリック",
+    "kana": "きょかふよう",
+    "vietnamese": "Không cần cấp phép",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Ai cũng có thể tham gia vào mạng lưới.",
+    "example": "パブリックチェーンは許可不要。"
+  },
+  {
+    "id": "web3-pos",
+    "english": "PoS / Proof of Stake",
+    "japanese": "プルーフ・オブ・ステーク",
+    "kana": "ぷるーふおぶすてーく",
+    "vietnamese": "Bằng chứng cổ phần / PoS",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Cơ chế đồng thuận dựa trên số lượng coin nắm giữ.",
+    "example": "イーサリアムはPoSへ移行しました。"
+  },
+  {
+    "id": "web3-pow",
+    "english": "PoW / Proof of Work",
+    "japanese": "プルーフ・オブ・ワーク",
+    "kana": "ぷるーふおぶわーく",
+    "vietnamese": "Bằng chứng công việc / PoW",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Cơ chế đồng thuận yêu cầu giải toán khó.",
+    "example": "PoWは消費電力が課題です。"
+  },
+  {
+    "id": "web3-private-key",
+    "english": "Private Key",
+    "japanese": "秘密鍵",
+    "kana": "ひみつかぎ",
+    "vietnamese": "Khóa bí mật",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mã dùng để ký giao dịch, cần giữ bảo mật tuyệt đối.",
+    "example": "秘密鍵を紛失すると資産を取り出せません。"
+  },
+  {
+    "id": "web3-public-key",
+    "english": "Public Key",
+    "japanese": "公開鍵",
+    "kana": "こうかいかぎ",
+    "vietnamese": "Khóa công khai",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mã dùng để nhận tiền hoặc xác thực chữ ký.",
+    "example": "公開鍵を共有してください。"
+  },
+  {
+    "id": "web3-roadmap",
+    "english": "Roadmap",
+    "japanese": "ロードマップ / 開発計画",
+    "kana": "ろーどまっぷ",
+    "vietnamese": "Lộ trình phát triển",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kế hoạch các mốc thời gian của dự án.",
+    "example": "プロジェクトの最新ロードマップ。"
+  },
+  {
+    "id": "web3-rollup",
+    "english": "Rollup / Rollups",
+    "japanese": "ロールアップ",
+    "kana": "ろーるあっぷ",
+    "vietnamese": "Gói giao dịch / Rollup",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tổng hợp nhiều giao dịch thành một để xử lý lớp 2.",
+    "example": "Optimistic Rollupを採用しています。"
+  },
+  {
+    "id": "web3-rug-pull",
+    "english": "Rug Pull",
+    "japanese": "ラグプル / 出口詐欺",
+    "kana": "らぐぷる",
+    "vietnamese": "Lừa đảo Rug Pull",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Dự án bị rút sạch thanh khoản bởi đội ngũ phát triển.",
+    "example": "ラグプルの被害に遭わないよう注意。"
+  },
+  {
+    "id": "web3-satoshi-nakamoto",
+    "english": "Satoshi Nakamoto",
+    "japanese": "サトシ・ナカモト",
+    "kana": "さとし なかもと",
+    "vietnamese": "Satoshi Nakamoto",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Bí danh của người tạo ra Bitcoin.",
+    "example": "サトシ・ナカモトの正体は不明。"
+  },
+  {
+    "id": "web3-seed-phrase",
+    "english": "Seed Phrase / Mnemonic",
+    "japanese": "シードフレーズ / ニーモニック",
+    "kana": "しーどふれーず",
+    "vietnamese": "Cụm từ khôi phục / Seed Phrase",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chuỗi từ dùng để khôi phục ví.",
+    "example": "シードフレーズをオフラインで記録します。"
+  },
+  {
+    "id": "web3-sharding",
+    "english": "Sharding",
+    "japanese": "シャーディング / 分割",
+    "kana": "しゃーでぃんぐ",
+    "vietnamese": "Phân mảnh / Sharding",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật chia nhỏ dữ liệu để tăng tốc xử lý.",
+    "example": "シャーディングでスケーラビリティを改善。"
+  },
+  {
+    "id": "web3-sidechain",
+    "english": "Sidechain",
+    "japanese": "サイドチェーン",
+    "kana": "さいどちぇーん",
+    "vietnamese": "Chuỗi bên / Sidechain",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chuỗi độc lập kết nối với chuỗi chính.",
+    "example": "サイドチェーンとのブリッジ機能。"
+  },
+  {
+    "id": "web3-signature",
+    "english": "Signature",
+    "japanese": "署名 / デジタル署名",
+    "kana": "しょめい",
+    "vietnamese": "Chữ ký số",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Xác nhận giao dịch bằng khóa bí mật.",
+    "example": "トランザクションに署名する。"
+  },
+  {
+    "id": "web3-slashing",
+    "english": "Slashing",
+    "japanese": "スラッシング",
+    "kana": "すらっしんぐ",
+    "vietnamese": "Phạt vi phạm / Slashing",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Cơ chế phạt validator nếu có hành vi gian lận.",
+    "example": "不適切な行動で資産がスラッシング。"
+  },
+  {
+    "id": "web3-smart-contract",
+    "english": "Smart Contract / Smart Contracts",
+    "japanese": "スマートコントラクト",
+    "kana": "すまーとこんとらくと",
+    "vietnamese": "Hợp đồng thông minh",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hợp đồng tự thực thi được mã hóa trên blockchain.",
+    "example": "スマートコントラクトで契約を自動化。"
+  },
+  {
+    "id": "web3-soft-fork",
+    "english": "Soft Fork",
+    "japanese": "ソフトフォーク",
+    "kana": "そふとふぉーく",
+    "vietnamese": "Phân tách mềm / Soft Fork",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Sự thay đổi tương thích ngược.",
+    "example": "ソフトフォークによるルールの追加。"
+  },
+  {
+    "id": "web3-solidity",
+    "english": "Solidity",
+    "japanese": "Solidity / ソリディティ",
+    "kana": "そりでぃてぃ",
+    "vietnamese": "Ngôn ngữ Solidity",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Ngôn ngữ lập trình chính cho Smart Contracts trên ETH.",
+    "example": "Solidityでコントラクトを記述。"
+  },
+  {
+    "id": "web3-stable-swap",
+    "english": "Stable Swap",
+    "japanese": "ステーブルスワップ",
+    "kana": "すてーぶるすわっぷ",
+    "vietnamese": "Hoán đổi ổn định",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giao dịch giữa các đồng Stablecoin với độ trượt giá thấp.",
+    "example": "ステーブルスワップに特化したDEX。"
+  },
+  {
+    "id": "web3-stablecoin",
+    "english": "Stablecoin",
+    "japanese": "ステーブルコイン",
+    "kana": "すてーぶるこいん",
+    "vietnamese": "Đồng tiền ổn định / Stablecoin",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Đồng tiền ảo có giá trị gắn với tài sản thật (USD, Vàng).",
+    "example": "USDTなどのステーブルコインを利用。"
+  },
+  {
+    "id": "web3-staking",
+    "english": "Staking",
+    "japanese": "ステーキング",
+    "kana": "すてーきんぐ",
+    "vietnamese": "Đặt cọc / Staking",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giữ tiền ảo để hỗ trợ hoạt động của mạng (PoS).",
+    "example": "ステーキングで利息を得ます。"
+  },
+  {
+    "id": "web3-staking-rewards",
+    "english": "Staking Rewards",
+    "japanese": "ステーキング報酬",
+    "kana": "すてーきんぐほうしゅう",
+    "vietnamese": "Phần thưởng Staking",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Lợi nhuận nhận được từ việc staking.",
+    "example": "ステーキング報酬を受け取りました。"
+  },
+  {
+    "id": "web3-testnet",
+    "english": "Testnet",
+    "japanese": "テストネット",
+    "kana": "てすとねっと",
+    "vietnamese": "Mạng thử nghiệm / Testnet",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mạng dùng để chạy thử mà không tốn tiền thật.",
+    "example": "テストネットでバグを確認します。"
+  },
+  {
+    "id": "web3-tokenomics",
+    "english": "Tokenomics",
+    "japanese": "トークノミクス / トークン経済学",
+    "kana": "とーくんのみくす",
+    "vietnamese": "Kinh tế học Token",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mô hình kinh tế và phân bổ token của dự án.",
+    "example": "トークノミクスを評価します。"
+  },
+  {
+    "id": "web3-validator",
+    "english": "Validator / Validators",
+    "japanese": "バリデーター / 検証者",
+    "kana": "ばりでーたー",
+    "vietnamese": "Người xác thực / Validator",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Người chịu trách nhiệm xác minh giao dịch.",
+    "example": "バリデーターの報酬を確認します。"
+  },
+  {
+    "id": "web3-vesting",
+    "english": "Vesting",
+    "japanese": "ベスティング / 割当",
+    "kana": "べすてぃんぐ",
+    "vietnamese": "Mở khóa dần / Vesting",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quá trình giải phóng token theo thời gian.",
+    "example": "運営のトークンはベスティングされる。"
+  },
+  {
+    "id": "web3-vitalik-buterin",
+    "english": "Vitalik Buterin",
+    "japanese": "ヴィタリック・ブテリン",
+    "kana": "びたりっく ぶてりん",
+    "vietnamese": "Vitalik Buterin",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Người sáng lập Ethereum.",
+    "example": "ヴィタリック氏の発言に注目。"
+  },
+  {
+    "id": "web3-wallet",
+    "english": "Wallet / Wallets",
+    "japanese": "ウォレット / 財布",
+    "kana": "うぉれっと",
+    "vietnamese": "Ví tiền ảo",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Công cụ quản lý khóa và tài sản kỹ thuật số.",
+    "example": "ハードウェアウォレットを使用します。"
+  },
+  {
+    "id": "web3-wallet-connect",
+    "english": "Wallet Connect",
+    "japanese": "ウォレット接続",
+    "kana": "うぉれっとせつぞく",
+    "vietnamese": "Kết nối ví",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giao thức kết nối ví với ứng dụng DApp.",
+    "example": "サイトにウォレットを接続。"
+  },
+  {
+    "id": "web3-web3",
+    "english": "Web3 / Web 3.0",
+    "japanese": "Web3",
+    "kana": "ウェブスリー",
+    "vietnamese": "Web 3.0",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thế hệ web dựa trên blockchain và sở hữu người dùng.",
+    "example": "Web3の時代がやってきました。"
+  },
+  {
+    "id": "web3-whale",
+    "english": "Whale / Whales",
+    "japanese": "クジラ / 大口投資家",
+    "kana": "くじら",
+    "vietnamese": "Cá mập / Cá voi",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Người nắm giữ một lượng lớn tiền ảo.",
+    "example": "クジラの動きで価格が変動。"
+  },
+  {
+    "id": "web3-whitepaper",
+    "english": "Whitepaper",
+    "japanese": "ホワイトペーパー / 白書",
+    "kana": "ほわいとぺーぱー",
+    "vietnamese": "Sách trắng / Whitepaper",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tài liệu kỹ thuật chi tiết về dự án blockchain.",
+    "example": "投資前にホワイトペーパーを精読。"
+  },
+  {
+    "id": "web3-wrapped-token",
+    "english": "Wrapped Token",
+    "japanese": "ラップドトークン",
+    "kana": "らっぷどとーくん",
+    "vietnamese": "Token bọc / Wrapped Token",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Token đại diện cho một đồng khác trên chuỗi mới.",
+    "example": "WBTC（ラップドビットコイン）。"
+  },
+  {
+    "id": "web3-yield-farming",
+    "english": "Yield Farming",
+    "japanese": "イールドファーミング",
+    "kana": "いーるどふぁーみんぐ",
+    "vietnamese": "Khai thác lợi nhuận / Yield Farming",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Cung cấp thanh khoản để nhận phần thưởng.",
+    "example": "イールドファーミングで高い報酬を狙う。"
+  },
+  {
+    "id": "web3-zero-knowledge-proof",
+    "english": "Zero-Knowledge Proof / ZKP",
+    "japanese": "ゼロ知識証明",
+    "kana": "ぜろちしきしょうめい",
+    "vietnamese": "Bằng chứng không tri thức / ZKP",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chứng minh một điều gì đó đúng mà không tiết lộ thông tin.",
+    "example": "ゼロ知識証明でプライバシーを保護。"
+  }
+]

@@ -1,0 +1,686 @@
+[
+  {
+    "id": "mobile-activity",
+    "english": "Activity / Activities",
+    "japanese": "アクティビティ",
+    "kana": "アクティビティ",
+    "vietnamese": "Màn hình ứng dụng (Android) / Activity",
+    "roles": [
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Thành phần đại diện cho một màn hình duy nhất với giao diện người dùng trong Android.",
+    "example": "Main Activity is the entry point of the application."
+  },
+  {
+    "id": "mobile-apk",
+    "english": "APK / Android Package",
+    "japanese": "APKファイル",
+    "kana": "APKファイル",
+    "vietnamese": "File cài đặt ứng dụng Android / APK",
+    "roles": [
+      "Mobile Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Định dạng file dùng để phân phối và cài đặt ứng dụng trên Android.",
+    "example": "Send the APK to the QA team for testing."
+  },
+  {
+    "id": "mobile-app-bundle",
+    "english": "AAB / Android App Bundle",
+    "japanese": "Android App Bundle / AAB",
+    "kana": "Android App Bundle / AAB",
+    "vietnamese": "Định dạng xuất bản ứng dụng Android mới / AAB",
+    "roles": [
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Định dạng xuất bản mới của Google giúp giảm kích thước ứng dụng tải về.",
+    "example": "Google Play now requires AAB instead of APK for new apps."
+  },
+  {
+    "id": "mobile-app-indexing",
+    "english": "App Indexing",
+    "japanese": "アプリインデックス",
+    "kana": "アプリインデックス",
+    "vietnamese": "Lập chỉ mục ứng dụng / App Indexing",
+    "roles": [
+      "Marketing",
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Cho phép Google lập chỉ mục nội dung bên trong ứng dụng để hiển thị trên kết quả tìm kiếm web.",
+    "example": "App indexing helps users discover your app through Google search."
+  },
+  {
+    "id": "mobile-app-links",
+    "english": "App Links",
+    "japanese": "App Links / Android App Links",
+    "kana": "App Links",
+    "vietnamese": "Liên kết ứng dụng (Android) / App Links",
+    "roles": [
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Deep link trên Android sử dụng HTTP/HTTPS chuẩn.",
+    "example": "Android App Links ensure that only your app can handle the links."
+  },
+  {
+    "id": "mobile-app-permission",
+    "english": "App Permission / Permissions",
+    "japanese": "アプリの権限 / パーミッション",
+    "kana": "アプリのけんげん / パーミッション",
+    "vietnamese": "Quyền truy cập của ứng dụng / Permission",
+    "roles": [
+      "Mobile Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Các quyền mà ứng dụng cần người dùng cho phép (ví dụ: Camera, Location).",
+    "example": "The app needs camera permission to scan QR codes."
+  },
+  {
+    "id": "mobile-app-store-connect",
+    "english": "App Store Connect",
+    "japanese": "App Store Connect",
+    "kana": "アップストアコネクト",
+    "vietnamese": "Cổng quản lý ứng dụng trên App Store",
+    "roles": [
+      "Mobile Dev",
+      "PO"
+    ],
+    "category": "System Design",
+    "note": "Công cụ của Apple để quản lý ứng dụng, xem báo cáo và gửi ứng dụng lên store.",
+    "example": "Upload the screenshots to App Store Connect."
+  },
+  {
+    "id": "mobile-app-store-guidelines",
+    "english": "App Store Guidelines",
+    "japanese": "App Storeガイドライン",
+    "kana": "App Storeガイドライン",
+    "vietnamese": "Quy định của App Store / Store guidelines",
+    "roles": [
+      "Mobile Dev",
+      "PO"
+    ],
+    "category": "System Design",
+    "note": "Các quy tắc mà Apple đặt ra để các ứng dụng được phép phát hành trên store.",
+    "example": "Violating App Store guidelines can lead to app rejection."
+  },
+  {
+    "id": "mobile-aso",
+    "english": "ASO / App Store Optimization",
+    "japanese": "アプリストア最適化 / ASO",
+    "kana": "アプリストアさいてきか / ASO",
+    "vietnamese": "Tối ưu hóa kho ứng dụng / ASO",
+    "roles": [
+      "Marketing",
+      "PO"
+    ],
+    "category": "System Design",
+    "note": "Quá trình cải thiện khả năng hiển thị của ứng dụng trên App Store và Google Play.",
+    "example": "Good ASO increases the number of organic downloads."
+  },
+  {
+    "id": "mobile-autolayout",
+    "english": "Auto Layout",
+    "japanese": "Auto Layout / オートレイアウト",
+    "kana": "オートレイアウト",
+    "vietnamese": "Tự động sắp xếp bố cục (iOS) / Auto Layout",
+    "roles": [
+      "Mobile Dev",
+      "Designer"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống dựa trên ràng buộc (constraints) để thiết kế giao diện linh hoạt trong iOS.",
+    "example": "Auto Layout ensures the UI looks good on all iPhone sizes."
+  },
+  {
+    "id": "mobile-background-fetch",
+    "english": "Background Fetch / Background Task",
+    "japanese": "バックグラウンド更新",
+    "kana": "バックグラウンドこうしん",
+    "vietnamese": "Tải dữ liệu ngầm / Background fetch",
+    "roles": [
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Khả năng ứng dụng cập nhật dữ liệu khi đang chạy ngầm.",
+    "example": "Background fetch is used to keep the weather data up-to-date."
+  },
+  {
+    "id": "mobile-beta-testing",
+    "english": "Beta Testing / External Testing",
+    "japanese": "ベータテスト",
+    "kana": "ベータテスト",
+    "vietnamese": "Kiểm thử Beta / Beta testing",
+    "roles": [
+      "QA",
+      "End Users"
+    ],
+    "category": "System Design",
+    "note": "Giai đoạn thử nghiệm ứng dụng với một nhóm người dùng thực tế trước khi phát hành chính thức.",
+    "example": "We are looking for 100 users for our beta testing program."
+  },
+  {
+    "id": "mobile-build-number",
+    "english": "Build Number",
+    "japanese": "ビルド番号",
+    "kana": "ビルドばんごう",
+    "vietnamese": "Số hiệu bản build / Build number",
+    "roles": [
+      "Mobile Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Số hiệu định danh duy nhất cho mỗi lần build ứng dụng (thường là số nguyên tăng dần).",
+    "example": "The fix is included in build number 105."
+  },
+  {
+    "id": "mobile-cocoapods",
+    "english": "CocoaPods",
+    "japanese": "CocoaPods",
+    "kana": "ココアポッズ",
+    "vietnamese": "Trình quản lý thư viện cho iOS / CocoaPods",
+    "roles": [
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Trình quản lý các thư viện bên thứ ba phổ biến cho các dự án Swift và Objective-C.",
+    "example": "Run 'pod install' to update the libraries."
+  },
+  {
+    "id": "mobile-crashlytics",
+    "english": "Crashlytics / Firebase Crashlytics",
+    "japanese": "Crashlytics",
+    "kana": "クラッシュリティクス",
+    "vietnamese": "Công cụ theo dõi crash / Crashlytics",
+    "roles": [
+      "Mobile Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Dịch vụ của Google giúp theo dõi và phân tích các vụ crash của ứng dụng.",
+    "example": "Crashlytics reported a high number of crashes on Android 12."
+  },
+  {
+    "id": "mobile-cross-platform",
+    "english": "Cross-platform / Multi-platform",
+    "japanese": "クロスプラットフォーム / マルチプラットフォーム",
+    "kana": "クロスプラットフォーム",
+    "vietnamese": "Đa nền tảng / Cross-platform",
+    "roles": [
+      "Architect",
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Phát triển một ứng dụng có thể chạy trên cả iOS và Android từ một bộ code duy nhất.",
+    "example": "Cross-platform development saves time and resources."
+  },
+  {
+    "id": "mobile-dark-mode",
+    "english": "Dark Mode",
+    "japanese": "ダークモード",
+    "kana": "ダークモード",
+    "vietnamese": "Chế độ tối / Dark mode",
+    "roles": [
+      "Designer",
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Giao diện sử dụng tông màu tối để giảm mỏi mắt và tiết kiệm pin.",
+    "example": "Many users prefer dark mode for reading at night."
+  },
+  {
+    "id": "mobile-deep-link",
+    "english": "Deep Link / Deep Linking",
+    "japanese": "ディープリンク",
+    "kana": "ディープリンク",
+    "vietnamese": "Liên kết sâu / Deep link",
+    "roles": [
+      "Mobile Dev",
+      "Marketing"
+    ],
+    "category": "System Design",
+    "note": "URL dẫn trực tiếp người dùng đến một nội dung cụ thể bên trong ứng dụng mobile.",
+    "example": "Clicking the ad opens the product page via a deep link."
+  },
+  {
+    "id": "mobile-deeplink-schema",
+    "english": "Custom URL Scheme",
+    "japanese": "カスタムURLスキーム",
+    "kana": "カスタムURLスキーム",
+    "vietnamese": "Giao thức URL tùy chỉnh / Custom URL Scheme",
+    "roles": [
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Cách thức cũ để thực hiện deep linking (ví dụ: myapp://).",
+    "example": "We defined a custom URL scheme for the app."
+  },
+  {
+    "id": "mobile-emulator",
+    "english": "Emulator / Emulators",
+    "japanese": "エミュレータ",
+    "kana": "エミュレータ",
+    "vietnamese": "Trình giả lập / Emulator (thường dùng cho Android)",
+    "roles": [
+      "Mobile Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Phần mềm mô phỏng phần cứng và phần mềm của một thiết bị trên máy tính.",
+    "example": "Running the app on the Android emulator is slower than a real device."
+  },
+  {
+    "id": "mobile-flutter",
+    "english": "Flutter",
+    "japanese": "Flutter",
+    "kana": "フラッター",
+    "vietnamese": "Flutter / Framework phát triển mobile đa nền tảng của Google",
+    "roles": [
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "UI toolkit của Google để xây dựng các ứng dụng được biên dịch nguyên bản.",
+    "example": "Flutter uses the Dart programming language."
+  },
+  {
+    "id": "mobile-fragment",
+    "english": "Fragment / Fragments",
+    "japanese": "フラグメント",
+    "kana": "フラグメント",
+    "vietnamese": "Mảnh giao diện (Android) / Fragment",
+    "roles": [
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Một phần của giao diện người dùng hoặc hành vi trong một Activity, có thể tái sử dụng.",
+    "example": "Fragments allow for more flexible UI designs on tablets."
+  },
+  {
+    "id": "mobile-gesture",
+    "english": "Gesture / Gestures",
+    "japanese": "ジェスチャー",
+    "kana": "ジェスチャー",
+    "vietnamese": "Thao tác cử chỉ (vuốt, chạm...) / Gesture",
+    "roles": [
+      "Mobile Dev",
+      "Designer"
+    ],
+    "category": "System Design",
+    "note": "Các hành động của người dùng trên màn hình cảm ứng (swipe, pinch, double tap).",
+    "example": "The swipe gesture is used to delete items from the list."
+  },
+  {
+    "id": "mobile-google-play-console",
+    "english": "Google Play Console",
+    "japanese": "Google Play Console",
+    "kana": "グーグルプレイコンソール",
+    "vietnamese": "Cổng quản lý ứng dụng trên Google Play",
+    "roles": [
+      "Mobile Dev",
+      "PO"
+    ],
+    "category": "System Design",
+    "note": "Công cụ của Google để quản lý và phân tích ứng dụng Android.",
+    "example": "Check the crash reports on the Google Play Console."
+  },
+  {
+    "id": "mobile-gradle",
+    "english": "Gradle",
+    "japanese": "Gradle",
+    "kana": "グレイドル",
+    "vietnamese": "Công cụ quản lý build cho Android / Gradle",
+    "roles": [
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống quản lý build tự động thường dùng cho các dự án Android.",
+    "example": "The Gradle sync failed due to a missing dependency."
+  },
+  {
+    "id": "mobile-hot-reload",
+    "english": "Hot Reload / Hot Reloading",
+    "japanese": "ホットリロード",
+    "kana": "ホットリロード",
+    "vietnamese": "Tải lại nhanh / Hot reload",
+    "roles": [
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Tính năng cho phép thấy ngay thay đổi code trên thiết bị mà không cần khởi động lại ứng dụng.",
+    "example": "Hot reload makes the development process much faster."
+  },
+  {
+    "id": "mobile-hybrid-app",
+    "english": "Hybrid App / Hybrid Apps",
+    "japanese": "ハイブリッドアプリ",
+    "kana": "ハイブリッドアプリ",
+    "vietnamese": "Ứng dụng lai / Hybrid app",
+    "roles": [
+      "Mobile Dev",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Ứng dụng kết hợp giữa web và native, thường chạy trong một webview.",
+    "example": "Ionic is a popular framework for building hybrid apps."
+  },
+  {
+    "id": "mobile-in-app-purchase",
+    "english": "IAP / In-App Purchase",
+    "japanese": "アプリ内課金 / IAP",
+    "kana": "アプリないかきん / IAP",
+    "vietnamese": "Mua hàng trong ứng dụng / IAP",
+    "roles": [
+      "Mobile Dev",
+      "PO"
+    ],
+    "category": "System Design",
+    "note": "Tính năng cho phép người dùng mua nội dung hoặc dịch vụ bên trong ứng dụng.",
+    "example": "The game uses in-app purchases for virtual currency."
+  },
+  {
+    "id": "mobile-intent",
+    "english": "Intent / Intents",
+    "japanese": "インテント",
+    "kana": "インテント",
+    "vietnamese": "Thông điệp yêu cầu thực thi (Android) / Intent",
+    "roles": [
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Cơ chế giao tiếp để yêu cầu một hành động từ thành phần ứng dụng khác trong Android.",
+    "example": "Use an Intent to start a new Activity."
+  },
+  {
+    "id": "mobile-ipa",
+    "english": "IPA / iOS App Store Package",
+    "japanese": "IPAファイル",
+    "kana": "IPAファイル",
+    "vietnamese": "File cài đặt ứng dụng iOS / IPA",
+    "roles": [
+      "Mobile Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Định dạng file dùng để phân phối và cài đặt ứng dụng trên iOS.",
+    "example": "The IPA file needs to be signed before installation."
+  },
+  {
+    "id": "mobile-jailbreak",
+    "english": "Jailbreak / Jailbreaking",
+    "japanese": "脱獄 / ジェイルブレイク",
+    "kana": "だつごく / ジェイルブレイク",
+    "vietnamese": "Bẻ khóa hệ điều hành (iOS) / Jailbreak",
+    "roles": [
+      "Security Engineer",
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Quá trình loại bỏ các hạn chế phần mềm của Apple trên thiết bị iOS.",
+    "example": "The app detects if the device has been jailbroken for security reasons."
+  },
+  {
+    "id": "mobile-local-storage",
+    "english": "Local Storage / SQLite / Core Data",
+    "japanese": "ローカルストレージ",
+    "kana": "ローカルストレージ",
+    "vietnamese": "Lưu trữ dữ liệu cục bộ / Local storage",
+    "roles": [
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Lưu trữ dữ liệu trực tiếp trên thiết bị (ví dụ: SharedPreferences trên Android, UserDefaults trên iOS).",
+    "example": "We use SQLite for local storage of complex data."
+  },
+  {
+    "id": "mobile-native-app",
+    "english": "Native App / Native Apps",
+    "japanese": "ネイティブアプリ",
+    "kana": "ネイティブアプリ",
+    "vietnamese": "Ứng dụng thuần bản địa / Native app",
+    "roles": [
+      "Mobile Dev",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Ứng dụng được viết riêng cho một hệ điều hành cụ thể (ví dụ: Swift cho iOS, Kotlin cho Android).",
+    "example": "Native apps usually have the best performance and UX."
+  },
+  {
+    "id": "mobile-obfuscation",
+    "english": "Obfuscation / Code Obfuscation",
+    "japanese": "難読化",
+    "kana": "なんどくか",
+    "vietnamese": "Làm rối mã nguồn / Obfuscation",
+    "roles": [
+      "Mobile Dev",
+      "Security Engineer"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật biến đổi code để khó bị dịch ngược (reverse engineering) nhưng vẫn giữ nguyên chức năng.",
+    "example": "We use ProGuard for code obfuscation in Android."
+  },
+  {
+    "id": "mobile-offline-mode",
+    "english": "Offline Mode / Offline Capability",
+    "japanese": "オフラインモード",
+    "kana": "オフラインモード",
+    "vietnamese": "Chế độ ngoại tuyến / Offline mode",
+    "roles": [
+      "Mobile Dev",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Khả năng ứng dụng vẫn hoạt động được khi không có kết nối internet.",
+    "example": "The app should support offline mode for reading saved articles."
+  },
+  {
+    "id": "mobile-provisioning-profile",
+    "english": "Provisioning Profile",
+    "japanese": "プロビジョニングプロファイル",
+    "kana": "プロビジョニングプロファイル",
+    "vietnamese": "Hồ sơ cấp quyền / Provisioning profile (iOS)",
+    "roles": [
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Tài liệu kết hợp certificate, App ID và thiết bị để cho phép chạy ứng dụng trên iOS.",
+    "example": "Update the provisioning profile to include the new test device."
+  },
+  {
+    "id": "mobile-push-notification",
+    "english": "Push Notification / Push Notifications",
+    "japanese": "プッシュ通知",
+    "kana": "プッシュつうち",
+    "vietnamese": "Thông báo đẩy / Push notification",
+    "roles": [
+      "Mobile Dev",
+      "PO"
+    ],
+    "category": "System Design",
+    "note": "Tin nhắn được gửi từ server đến thiết bị người dùng ngay cả khi ứng dụng không mở.",
+    "example": "Send a push notification to remind users of the sale."
+  },
+  {
+    "id": "mobile-pwa",
+    "english": "PWA / Progressive Web App",
+    "japanese": "プログレッシブウェブアプリ / PWA",
+    "kana": "プログレッシブウェブアプリ / PWA",
+    "vietnamese": "Ứng dụng web lũy tiến / PWA",
+    "roles": [
+      "Frontend Dev",
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Website có các tính năng giống như ứng dụng mobile (offline, push notification).",
+    "example": "PWAs can be installed on the home screen without an app store."
+  },
+  {
+    "id": "mobile-react-native",
+    "english": "React Native",
+    "japanese": "React Native",
+    "kana": "リアクトネイティブ",
+    "vietnamese": "React Native / Framework phát triển mobile đa nền tảng của Facebook",
+    "roles": [
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Framework cho phép viết ứng dụng mobile bằng JavaScript và React.",
+    "example": "React Native allows us to share code between iOS and Android."
+  },
+  {
+    "id": "mobile-rejection",
+    "english": "Rejection / App Rejection",
+    "japanese": "却下 / リジェクション",
+    "kana": "きゃっか / リジェクション",
+    "vietnamese": "Bị từ chối (bởi store) / Rejection",
+    "roles": [
+      "Mobile Dev",
+      "PO"
+    ],
+    "category": "System Design",
+    "note": "Tình trạng ứng dụng bị store từ chối không cho phát hành do vi phạm quy định.",
+    "example": "We got a rejection due to a missing privacy policy."
+  },
+  {
+    "id": "mobile-responsive-design",
+    "english": "Responsive Design / Adaptive Layout",
+    "japanese": "レスポンシブデザイン / アダプティブレイアウト",
+    "kana": "レスポンシブデザイン",
+    "vietnamese": "Thiết kế đáp ứng / Responsive design",
+    "roles": [
+      "Designer",
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Thiết kế tự động điều chỉnh bố cục để phù hợp với các kích thước màn hình khác nhau.",
+    "example": "The app uses a responsive design to work well on both phones and tablets."
+  },
+  {
+    "id": "mobile-root",
+    "english": "Root / Rooting",
+    "japanese": "ルート化",
+    "kana": "ルートか",
+    "vietnamese": "Chiếm quyền điều khiển cao nhất (Android) / Rooting",
+    "roles": [
+      "Security Engineer",
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Quá trình chiếm quyền quản trị cao nhất trên thiết bị Android.",
+    "example": "Banking apps often don't work on rooted devices."
+  },
+  {
+    "id": "mobile-sdk",
+    "english": "SDK / Software Development Kit",
+    "japanese": "ソフトウェア開発キット / SDK",
+    "kana": "ソフトウェアかいはつキット / SDK",
+    "vietnamese": "Bộ công cụ phát triển phần mềm / SDK",
+    "roles": [
+      "Mobile Dev",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Tập hợp các công cụ và thư viện để xây dựng ứng dụng cho một nền tảng cụ thể.",
+    "example": "We integrated the Facebook SDK for user login."
+  },
+  {
+    "id": "mobile-simulator",
+    "english": "Simulator / Simulators",
+    "japanese": "シミュレータ",
+    "kana": "シミュレータ",
+    "vietnamese": "Trình mô phỏng / Simulator (thường dùng cho iOS)",
+    "roles": [
+      "Mobile Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Phần mềm mô phỏng hành vi của một thiết bị nhưng không mô phỏng phần cứng (thường dùng cho iOS).",
+    "example": "Xcode comes with a built-in iOS simulator."
+  },
+  {
+    "id": "mobile-splash-screen",
+    "english": "Splash Screen / Launch Screen",
+    "japanese": "スプラッシュ画面",
+    "kana": "スプラッシュがめん",
+    "vietnamese": "Màn hình chào / Splash screen",
+    "roles": [
+      "Designer",
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Màn hình hiển thị đầu tiên khi ứng dụng đang được khởi tạo.",
+    "example": "The splash screen shows the company logo."
+  },
+  {
+    "id": "mobile-testflight",
+    "english": "TestFlight",
+    "japanese": "TestFlight",
+    "kana": "テストフライト",
+    "vietnamese": "Nền tảng beta test cho iOS / TestFlight",
+    "roles": [
+      "QA",
+      "Client",
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Ứng dụng của Apple giúp mời người dùng thử nghiệm các bản beta của ứng dụng.",
+    "example": "The latest build is available on TestFlight for testing."
+  },
+  {
+    "id": "mobile-universal-links",
+    "english": "Universal Links",
+    "japanese": "ユニバーサルリンク",
+    "kana": "ユニバーサルリンク",
+    "vietnamese": "Liên kết vạn năng (iOS) / Universal Links",
+    "roles": [
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Deep link trên iOS sử dụng HTTP/HTTPS chuẩn, bảo mật và trải nghiệm tốt hơn.",
+    "example": "Universal links provide a seamless transition from web to app."
+  },
+  {
+    "id": "mobile-version-name",
+    "english": "Version Name / Version Number",
+    "japanese": "バージョン名 / バージョン番号",
+    "kana": "バージョンめい / バージョンばんごう",
+    "vietnamese": "Tên phiên bản / Version name",
+    "roles": [
+      "Mobile Dev",
+      "PO"
+    ],
+    "category": "System Design",
+    "note": "Tên phiên bản hiển thị cho người dùng (ví dụ: 1.0.2).",
+    "example": "The new release will be version name 2.0.0."
+  },
+  {
+    "id": "mobile-view-controller",
+    "english": "View Controller",
+    "japanese": "ビューコントローラ",
+    "kana": "ビューコントローラ",
+    "vietnamese": "Bộ điều khiển khung nhìn (iOS) / View Controller",
+    "roles": [
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Thành phần quản lý giao diện và logic của một màn hình trong iOS.",
+    "example": "The UIViewController is the base class for all view controllers."
+  },
+  {
+    "id": "mobile-webview",
+    "english": "WebView / WebViews",
+    "japanese": "WebView",
+    "kana": "ウェブビュー",
+    "vietnamese": "Trình xem web trong ứng dụng / WebView",
+    "roles": [
+      "Mobile Dev"
+    ],
+    "category": "System Design",
+    "note": "Thành phần hệ thống cho phép hiển thị nội dung web bên trong một ứng dụng native.",
+    "example": "We use a WebView to show the Terms and Conditions page."
+  }
+]

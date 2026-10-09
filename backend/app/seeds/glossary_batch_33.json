@@ -1,0 +1,692 @@
+[
+  {
+    "id": "se-idempotency",
+    "english": "Idempotency / Idempotent",
+    "japanese": "べき等性 / イデムポテント",
+    "kana": "べきとうせい",
+    "vietnamese": "Tính bù trừ / Tính lũy đẳng / Idempotency",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Tính chất mà việc thực hiện một thao tác nhiều lần vẫn cho ra cùng một kết quả như thực hiện một lần.",
+    "example": "GET and PUT requests in HTTP are designed to be idempotent."
+  },
+  {
+    "id": "se-idempotent-api",
+    "english": "Idempotent API",
+    "japanese": "べき等なAPI",
+    "kana": "べきとうなAPI",
+    "vietnamese": "API có tính bù trừ / Idempotent API",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "API mà khi gọi nhiều lần với cùng tham số vẫn trả về cùng một trạng thái hệ thống.",
+    "example": "Payment APIs must be idempotent to prevent duplicate charges."
+  },
+  {
+    "id": "se-ioc",
+    "english": "IoC / Inversion of Control",
+    "japanese": "制御の反転",
+    "kana": "せいぎょのはんてん",
+    "vietnamese": "Đảo ngược điều khiển / IoC",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Nguyên lý mà luồng điều khiển của chương trình bị đảo ngược so với lập trình truyền thống.",
+    "example": "IoC is often achieved through frameworks and dependency injection."
+  },
+  {
+    "id": "se-isp",
+    "english": "ISP / Interface Segregation Principle",
+    "japanese": "インターフェース分離の原則",
+    "kana": "インターフェースぶんりのげんそく",
+    "vietnamese": "Nguyên lý phân tách giao diện / ISP",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Nhiều client-specific interface tốt hơn là một general-purpose interface.",
+    "example": "ISP suggests we should split large interfaces into smaller, more specific ones."
+  },
+  {
+    "id": "se-iterator",
+    "english": "Iterator Pattern",
+    "japanese": "イテレーターパターン / 反復子",
+    "kana": "イテレーターパターン / はんぷくし",
+    "vietnamese": "Mẫu Iterator / Bộ lặp",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Truy cập các phần tử của một collection mà không lộ cấu trúc bên trong.",
+    "example": "All standard collections in C# provide an iterator."
+  },
+  {
+    "id": "se-kiss",
+    "english": "KISS / Keep It Simple, Stupid",
+    "japanese": "KISSの原則 / シンプルに保つ",
+    "kana": "KISSのげんそく",
+    "vietnamese": "Nguyên lý KISS / Giữ mọi thứ đơn giản",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Ưu tiên sự đơn giản thay vì các giải pháp phức tạp không cần thiết.",
+    "example": "Avoid over-engineering by sticking to the KISS principle."
+  },
+  {
+    "id": "se-load-testing",
+    "english": "Load Testing",
+    "japanese": "負荷テスト",
+    "kana": "ふかテスト",
+    "vietnamese": "Kiểm thử tải / Load testing",
+    "roles": [
+      "QA",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Kiểm tra hành vi hệ thống dưới lượng tải dự kiến.",
+    "example": "Load testing helps identify bottlenecks before the sales season."
+  },
+  {
+    "id": "se-lsp",
+    "english": "LSP / Liskov Substitution Principle",
+    "japanese": "リスコフの置換原則",
+    "kana": "リスコフのちかんげんそく",
+    "vietnamese": "Nguyên lý thay thế Liskov / LSP",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Các đối tượng của lớp con phải có thể thay thế lớp cha mà không làm hỏng chương trình.",
+    "example": "The square-rectangle problem is a classic example of LSP violation."
+  },
+  {
+    "id": "se-mediator",
+    "english": "Mediator Pattern",
+    "japanese": "メディエーターパターン / 仲介者",
+    "kana": "メディエーターパターン / ちゅうかいしゃ",
+    "vietnamese": "Mẫu Mediator / Người trung gian",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Giảm sự phụ thuộc lẫn nhau giữa các object bằng cách giao tiếp qua trung gian.",
+    "example": "The Air Traffic Control acts as a mediator for multiple airplanes."
+  },
+  {
+    "id": "se-memento",
+    "english": "Memento Pattern",
+    "japanese": "メメントパターン",
+    "kana": "メメントパターン",
+    "vietnamese": "Mẫu Memento / Lưu niệm",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cho phép lưu lại và khôi phục trạng thái cũ của một đối tượng.",
+    "example": "Save points in games can be implemented with the memento pattern."
+  },
+  {
+    "id": "se-microservices",
+    "english": "Microservices Architecture",
+    "japanese": "マイクロサービスアーキテクチャ",
+    "kana": "マイクロサービスアーキテクチャ",
+    "vietnamese": "Kiến trúc vi dịch vụ / Microservices",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Phát triển ứng dụng thành một tập hợp các dịch vụ nhỏ và độc lập.",
+    "example": "Adopting microservices improved the scalability of our platform."
+  },
+  {
+    "id": "se-middleware",
+    "english": "Middleware",
+    "japanese": "ミドルウェア",
+    "kana": "ミドルウェア",
+    "vietnamese": "Phần mềm trung gian / Middleware",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Phần mềm kết nối các thành phần hoặc ứng dụng khác nhau.",
+    "example": "Redux middleware can intercept actions for logging purposes."
+  },
+  {
+    "id": "se-observer",
+    "english": "Observer Pattern / Pub-Sub",
+    "japanese": "オブザーバーパターン / 観察者",
+    "kana": "オブザーバーパターン / かんさつしゃ",
+    "vietnamese": "Mẫu Observer / Người quan sát",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Một đối tượng thay đổi trạng thái sẽ thông báo cho các đối tượng khác.",
+    "example": "Event listeners in JavaScript are a type of observer pattern."
+  },
+  {
+    "id": "se-ocp",
+    "english": "OCP / Open-Closed Principle",
+    "japanese": "開放閉鎖の原則",
+    "kana": "かいほうへいさのげんそく",
+    "vietnamese": "Nguyên lý Đóng/Mở / OCP",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Phần mềm nên mở cho việc mở rộng nhưng đóng cho việc sửa đổi.",
+    "example": "Using interfaces allows us to extend functionality without violating OCP."
+  },
+  {
+    "id": "se-parallelism",
+    "english": "Parallelism / Parallel Processing",
+    "japanese": "並列性",
+    "kana": "へいれつせい",
+    "vietnamese": "Tính song song / Xử lý song song",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Thực hiện đồng thời nhiều tác vụ trên nhiều core CPU.",
+    "example": "Parallelism requires multi-core processors to execute tasks simultaneously."
+  },
+  {
+    "id": "se-prototype",
+    "english": "Prototype Pattern",
+    "japanese": "プロトタイプパターン",
+    "kana": "プロトタイプパターン",
+    "vietnamese": "Mẫu Prototype / Nguyên mẫu",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Tạo đối tượng mới bằng cách sao chép một đối tượng đã có.",
+    "example": "Prototype pattern avoids the cost of creating a new instance from scratch."
+  },
+  {
+    "id": "se-proxy",
+    "english": "Proxy Pattern",
+    "japanese": "プロキシパターン",
+    "kana": "プロキシパターン",
+    "vietnamese": "Mẫu Proxy / Người ủy quyền",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cung cấp đối tượng thay thế để kiểm soát truy cập đối tượng gốc.",
+    "example": "A virtual proxy can delay the loading of heavy image resources."
+  },
+  {
+    "id": "se-rate-limiting",
+    "english": "Rate Limiting / Throttling",
+    "japanese": "レート制限 / スロットリング",
+    "kana": "レートせいげん / スロットリング",
+    "vietnamese": "Giới hạn tốc độ gọi API / Rate limiting",
+    "roles": [
+      "DevOps",
+      "Backend Dev",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cơ chế kiểm soát số lượng yêu cầu mà một người dùng có thể gửi đến API trong một khoảng thời gian.",
+    "example": "Rate limiting protects our API from abuse and DDoS attacks."
+  },
+  {
+    "id": "se-refactoring",
+    "english": "Refactoring",
+    "japanese": "リファクタリング",
+    "kana": "リファクタリング",
+    "vietnamese": "Tái cấu trúc code / Refactoring",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Cải thiện cấu trúc code mà không làm thay đổi hành vi bên ngoài.",
+    "example": "We should schedule time for refactoring technical debt."
+  },
+  {
+    "id": "se-repository-pattern",
+    "english": "Repository Pattern",
+    "japanese": "リポジトリパターン",
+    "kana": "リポジトリパターン",
+    "vietnamese": "Mẫu Repository / Kho lưu trữ",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Tách biệt logic truy cập dữ liệu khỏi business logic.",
+    "example": "Repository pattern allows mocking the database during testing."
+  },
+  {
+    "id": "se-scalability",
+    "english": "Scalability / Horizontal Scaling / Vertical Scaling",
+    "japanese": "スケーラビリティ / 拡張性",
+    "kana": "スケーラビリティ / かくちょうせい",
+    "vietnamese": "Khả năng mở rộng / Scalability",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Khả năng xử lý lượng tải tăng lên bằng cách thêm tài nguyên.",
+    "example": "Cloud platforms make it easy to achieve horizontal scalability."
+  },
+  {
+    "id": "se-separation-of-concerns",
+    "english": "SoC / Separation of Concerns",
+    "japanese": "関心の分離",
+    "kana": "かんしんのぶんり",
+    "vietnamese": "Phân tách các mối quan tâm / SoC",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Chia nhỏ chương trình thành các phần ít chồng chéo chức năng nhất.",
+    "example": "Separation of concerns is fundamental to layered architecture."
+  },
+  {
+    "id": "se-service-mesh",
+    "english": "Service Mesh / Istio",
+    "japanese": "サービスメッシュ",
+    "kana": "サービスメッシュ",
+    "vietnamese": "Lưới dịch vụ / Service Mesh",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Lớp hạ tầng chuyên dụng để quản lý giao tiếp giữa các service.",
+    "example": "Istio is a popular implementation of the service mesh pattern."
+  },
+  {
+    "id": "se-sidecar-pattern",
+    "english": "Sidecar Pattern",
+    "japanese": "サイドカーパターン",
+    "kana": "サイドカーパターン",
+    "vietnamese": "Mẫu Sidecar / Xe thùng phụ",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Triển khai các thành phần hỗ trợ (logging, monitoring) trong một container riêng chạy cạnh container chính.",
+    "example": "The sidecar pattern allows adding functionality without modifying the main app code."
+  },
+  {
+    "id": "se-singleton",
+    "english": "Singleton Pattern",
+    "japanese": "シングルトンパターン",
+    "kana": "シングルトンパターン",
+    "vietnamese": "Mẫu Singleton / Độc bản",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Đảm bảo một class chỉ có một instance duy nhất toàn cục.",
+    "example": "The database connection pool is often implemented as a singleton."
+  },
+  {
+    "id": "se-solid",
+    "english": "SOLID Principles",
+    "japanese": "SOLID原則",
+    "kana": "SOLIDげんそく",
+    "vietnamese": "Nguyên lý thiết kế SOLID",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "5 nguyên tắc thiết kế hướng đối tượng giúp code dễ bảo trì và mở rộng.",
+    "example": "Following SOLID principles leads to more robust software design."
+  },
+  {
+    "id": "se-srp",
+    "english": "SRP / Single Responsibility Principle",
+    "japanese": "単一責任の原則",
+    "kana": "たんいつせきにんのげんそく",
+    "vietnamese": "Nguyên lý đơn trách nhiệm / SRP",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Mỗi class chỉ nên có một lý do duy nhất để thay đổi.",
+    "example": "Refactoring this god class into several smaller ones satisfies SRP."
+  },
+  {
+    "id": "se-state",
+    "english": "State Pattern",
+    "japanese": "ステートパターン / 状態",
+    "kana": "ステートパターン / じょうたい",
+    "vietnamese": "Mẫu State / Trạng thái",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cho phép đối tượng thay đổi hành vi khi trạng thái nội bộ thay đổi.",
+    "example": "A shopping cart uses the state pattern to handle transitions between steps."
+  },
+  {
+    "id": "se-stateful",
+    "english": "Stateful",
+    "japanese": "ステートフル",
+    "kana": "ステートフル",
+    "vietnamese": "Có lưu trạng thái / Stateful",
+    "roles": [
+      "Architect",
+      "Backend Dev",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Thiết kế nơi hệ thống ghi nhớ thông tin từ các tương tác trước đó (ví dụ: database).",
+    "example": "Managing stateful services in Kubernetes requires Careful planning."
+  },
+  {
+    "id": "se-stateless",
+    "english": "Stateless / Statelessness",
+    "japanese": "ステートレス",
+    "kana": "ステートレス",
+    "vietnamese": "Không lưu trạng thái / Stateless",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Thiết kế mà mỗi request từ client đều chứa đủ thông tin để xử lý, không phụ thuộc session trên server.",
+    "example": "REST APIs should ideally be stateless for better scalability."
+  },
+  {
+    "id": "se-strategy",
+    "english": "Strategy Pattern",
+    "japanese": "ストラテジーパターン / 戦略",
+    "kana": "ストラテジーパターン / せんりゃく",
+    "vietnamese": "Mẫu Strategy / Chiến lược",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Đóng gói các thuật toán khác nhau và có thể thay đổi chúng linh hoạt.",
+    "example": "The payment system uses strategy pattern to switch between credit card and PayPal."
+  },
+  {
+    "id": "se-tdd",
+    "english": "TDD / Test-Driven Development",
+    "japanese": "テスト駆動開発",
+    "kana": "テストくどうかいはつ",
+    "vietnamese": "Phát triển hướng kiểm thử / TDD",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Quy trình viết test trước khi viết code chức năng.",
+    "example": "TDD leads to better code design and higher test coverage."
+  },
+  {
+    "id": "se-technical-debt",
+    "english": "Technical Debt",
+    "japanese": "技術的負債",
+    "kana": "ぎじゅつてきふさい",
+    "vietnamese": "Nợ kỹ thuật / Tech debt",
+    "roles": [
+      "Dev",
+      "BrSE",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Chi phí phát sinh trong tương lai do chọn giải pháp nhanh nhưng không tối ưu.",
+    "example": "Ignoring tech debt will slow down development in the long run."
+  },
+  {
+    "id": "se-template-method",
+    "english": "Template Method Pattern",
+    "japanese": "テンプレートメソッドパターン",
+    "kana": "テンプレートメソッドパターン",
+    "vietnamese": "Mẫu Template Method / Phương thức khuôn mẫu",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Định nghĩa khung của một thuật toán, cho phép lớp con định nghĩa lại một số bước.",
+    "example": "Base classes in frameworks often use template methods for initialization."
+  },
+  {
+    "id": "se-unit-of-work",
+    "english": "Unit of Work Pattern",
+    "japanese": "Unit of Workパターン",
+    "kana": "Unit of Workパターン",
+    "vietnamese": "Mẫu Unit of Work / Đơn vị công việc",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Quản lý danh sách các thay đổi trong một transaction duy nhất.",
+    "example": "Entity Framework uses the Unit of Work pattern internally."
+  },
+  {
+    "id": "se-visitor",
+    "english": "Visitor Pattern",
+    "japanese": "ビジターパターン / 訪問者",
+    "kana": "ビジターパターン / ほうもんしゃ",
+    "vietnamese": "Mẫu Visitor / Người truy cập",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Tách biệt thuật toán khỏi cấu trúc đối tượng mà nó làm việc.",
+    "example": "Visitor pattern is useful for operations on complex tree structures."
+  },
+  {
+    "id": "se-yagni",
+    "english": "YAGNI / You Ain't Gonna Need It",
+    "japanese": "YAGNI原則 / 今必要なことだけ",
+    "kana": "YAGNIげんそく",
+    "vietnamese": "Nguyên lý YAGNI / Đừng làm những gì chưa cần",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Chỉ thực hiện các tính năng thực sự cần thiết ở hiện tại.",
+    "example": "Don't add features based on future assumptions; follow YAGNI."
+  },
+  {
+    "id": "sec-air-gapped",
+    "english": "Air-gapped Network",
+    "japanese": "エアギャップ環境 / ネットワーク",
+    "kana": "えあぎゃっぷかんきょう",
+    "vietnamese": "Mạng cách ly vật lý",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Mạng hoàn toàn không kết nối Internet. Cực kỳ bảo mật cho dữ liệu nhạy cảm.",
+    "example": "核施設や基幹インフラの管理システムは、外部攻撃を遮断するためエアギャップ環境で運用されています。"
+  },
+  {
+    "id": "sec-audit-log-1",
+    "english": "Audit Log / Audit Logs / Auditing / Audited",
+    "japanese": "監査ログ / オーディットログ",
+    "kana": "かんさろぐ",
+    "vietnamese": "Nhật ký kiểm toán / Audit log",
+    "roles": [
+      "BrSE",
+      "Requirement"
+    ],
+    "category": "System Design",
+    "note": "Ghi lại 'Ai làm gì, khi nào' phục vụ điều tra nếu có sai phạm. Bắt buộc đối với hệ thống tài chính/nhà nước.",
+    "example": "システム管理者の操作はすべて監査ログ（Audit Log）として記録し、改ざんできない領域に最低5年間保存する要件があります。"
+  },
+  {
+    "id": "sec-availability",
+    "english": "Availability / Availabilities",
+    "japanese": "可用性 / アベイラビリティ",
+    "kana": "かようせい",
+    "vietnamese": "Tính sẵn sàng / Availability",
+    "roles": [
+      "Architect",
+      "DevOps"
+    ],
+    "category": "System Design",
+    "note": "Đảm bảo hệ thống và dữ liệu luôn có thể truy cập được khi cần thiết.",
+    "example": "高可用性（High Availability）を実現するため、システムの冗長化を行います。"
+  },
+  {
+    "id": "sec-brute-force-1",
+    "english": "Brute Force Attack / Brute Force Attacks",
+    "japanese": "ブルートフォース攻撃",
+    "kana": "ぶるーとふぉーすこうげき",
+    "vietnamese": "Tấn công dò mật khẩu (vét cạn)",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thử mọi mật khẩu có thể cho đến khi đúng. Chống lại bằng cách Account Lockout (khóa sau 5 lần sai).",
+    "example": "ブルートフォース攻撃への対策として、パスワードを5回連続で間違えた場合はアカウントをロックする仕様とします。"
+  },
+  {
+    "id": "sec-brute-force-lockout",
+    "english": "Account Lockout",
+    "japanese": "アカウントロック / ロックアウト",
+    "kana": "あかうんとろっく",
+    "vietnamese": "Khóa tài khoản",
+    "roles": [
+      "BrSE",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tự động khóa tài khoản sau n lần sai password. BrSE cần thảo luận: Khóa bao lâu? Có cần Admin mở không?",
+    "example": "ブルートフォース攻撃対策として、ログインを5回連続で失敗した場合はアカウントロックをかける仕様です。"
+  },
+  {
+    "id": "sec-captcha",
+    "english": "CAPTCHA",
+    "japanese": "キャプチャ",
+    "kana": "きゃぷちゃ",
+    "vietnamese": "Mã xác thực người dùng (Captcha)",
+    "roles": [
+      "BrSE",
+      "QA",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Phân biệt người và máy. BrSE cần tư vấn dùng reCAPTCHA v3 để không làm phiền user.",
+    "example": "ボットによる大量のアカウント登録を防ぐため、登録フォームにGoogle reCAPTCHAを導入します。"
+  },
+  {
+    "id": "sec-certificate-authority",
+    "english": "Certificate Authority / CA",
+    "japanese": "認証局",
+    "kana": "にんしょうきょく",
+    "vietnamese": "Cơ quan chứng thực số",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Tổ chức uy tín cấp chứng chỉ SSL (như Let's Encrypt, DigiCert).",
+    "example": "信頼できる認証局（CA）から発行されたSSL証明書を導入し、Webサイトの信頼性を確保します。"
+  },
+  {
+    "id": "sec-cross-site-request-forgery",
+    "english": "CSRF / Cross-Site Request Forgery",
+    "japanese": "クロスサイトリクエストフォージェリ",
+    "kana": "くろすさいとりくえすとふぉーじぇり",
+    "vietnamese": "Tấn công giả mạo yêu cầu chéo",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Lợi dụng session của user để thực hiện các action trái phép (VD: đổi pass). Chống bằng CSRF Token.",
+    "example": "セキュリティ対策として、POSTリクエストを送信するすべてのフォームにCSRFトークンを埋め込みます。"
+  },
+  {
+    "id": "sec-data-masking",
+    "english": "Data Masking",
+    "japanese": "データマスキング",
+    "kana": "でーたますきんぐ",
+    "vietnamese": "Che giấu dữ liệu",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Thay thế data thật bằng data giả (nhưng vẫn đúng format) để cho dev/test dùng mà không lộ info khách.",
+    "example": "本番データを使って検証を行う際は、個人情報を特定できないようデータマスキングを施したコピーを使用します。"
+  },
+  {
+    "id": "sec-ddos-mitigation",
+    "english": "DDoS Mitigation",
+    "japanese": "DDoS対策",
+    "kana": "でぃーどすたいさく",
+    "vietnamese": "Giảm thiểu tấn công DDoS",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Dùng CDN hoặc WAF để lọc traffic ảo khổng lồ.",
+    "example": "AWS Shieldを導入し、大規模なDDoS攻撃からシステムを保護する対策を講じています。"
+  },
+  {
+    "id": "sec-dlp",
+    "english": "Data Loss Prevention / DLP",
+    "japanese": "データ損失防止 / データロスプレベンション",
+    "kana": "でーたそんしつぼうし",
+    "vietnamese": "Phòng chống thất thoát dữ liệu",
+    "roles": [
+      "BrSE",
+      "PM",
+      "Business"
+    ],
+    "category": "System Design",
+    "note": "Công cụ chặn nhân viên copy data nội bộ ra USB, gửi email cá nhân hoặc upload lên Cloud.",
+    "example": "顧客情報の漏洩を防ぐため、社内PCにはDLPソフトウェアを導入し、USB書き出しを禁止しています。"
+  },
+  {
+    "id": "sec-encryption-at-rest-1",
+    "english": "Encryption at Rest",
+    "japanese": "静止データの暗号化 / エンクリプション",
+    "kana": "せいしでーたのあんごうか",
+    "vietnamese": "Mã hóa dữ liệu khi lưu trữ",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Mã hóa dữ liệu nằm trong ổ cứng/DB. Dù hacker trộm được ổ cứng cũng không đọc được.",
+    "example": "セキュリティ要件に基づき、S3に保存されるすべてのファイルに対してEncryption at Rest（常時暗号化）を適用します。"
+  },
+  {
+    "id": "sec-encryption-decryption",
+    "english": "Encryption / Decryption / Encrypting / Decrypting / Encrypted / Decrypted",
+    "japanese": "暗号化 / 復号 / エンクリプション / デクリプション",
+    "kana": "あんごうか / ふくごう",
+    "vietnamese": "Mã hóa / Giải mã / Encrypt / Decrypt",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Mã hóa Data at Rest (lưu trong DB) và Data in Transit (khi truyền mạng).",
+    "example": "個人情報を含むカラムはデータベースに保存する前に暗号化し、参照時のみ復号する仕様とします。"
+  }
+]

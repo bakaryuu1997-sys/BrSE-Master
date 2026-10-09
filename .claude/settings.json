@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rg:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git branch:*)",
+      "Bash(git show:*)",
+      "Bash(npm run typecheck:*)",
+      "Bash(npx eslint:*)",
+      "Bash(node --check:*)",
+      "Bash(node scripts/check-api-contract.cjs:*)",
+      "Bash(curl -fsS http://127.0.0.1:3010/api/*)"
+    ]
+  }
+}

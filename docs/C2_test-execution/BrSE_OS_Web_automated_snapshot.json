@@ -1,0 +1,212 @@
+{
+  "testSuite": "BrSE OS Web Application E2E & i18n Automated Test Execution",
+  "executedAt": "2026-10-09T06:59:24.422Z",
+  "durationMs": 24159,
+  "environment": {
+    "platform": "linux",
+    "browser": "Chromium (Headless Playwright)",
+    "frontendUrl": "http://127.0.0.1:3010/app",
+    "backendUrl": "http://127.0.0.1:8000",
+    "aiRuntime": "9router (Port 20128) & Ollama (Port 11434)"
+  },
+  "metrics": {
+    "total": 19,
+    "passed": 19,
+    "failed": 0,
+    "blocked": 0,
+    "passRate": "100.0%",
+    "qualityGateStatus": "PASSED"
+  },
+  "testResults": [
+    {
+      "testId": "DASH-UI-001",
+      "feature": "Dashboard Page Load",
+      "type": "SMK",
+      "priority": "P1-Critical",
+      "status": "PASS",
+      "details": "HTTP 200 OK received in 2220ms",
+      "evidence": "",
+      "timestamp": "2026-10-09T06:59:03.591Z"
+    },
+    {
+      "testId": "I18N-LANG-001",
+      "feature": "i18n Language Switcher Detection",
+      "type": "UI",
+      "priority": "P1-Critical",
+      "status": "PASS",
+      "details": "Language selector detected",
+      "evidence": "",
+      "timestamp": "2026-10-09T06:59:05.684Z"
+    },
+    {
+      "testId": "I18N-LANG-002",
+      "feature": "i18n Switch to Japanese (ja)",
+      "type": "E2E",
+      "priority": "P1-Critical",
+      "status": "PASS",
+      "details": "HTML lang is 'ja' and Japanese characters detected in UI.",
+      "evidence": "",
+      "timestamp": "2026-10-09T06:59:08.304Z"
+    },
+    {
+      "testId": "I18N-LANG-003",
+      "feature": "i18n Switch to English (en)",
+      "type": "E2E",
+      "priority": "P1-Critical",
+      "status": "PASS",
+      "details": "HTML lang successfully switched to 'en'",
+      "evidence": "",
+      "timestamp": "2026-10-09T06:59:10.240Z"
+    },
+    {
+      "testId": "I18N-LANG-004",
+      "feature": "i18n Switch to Vietnamese (vi)",
+      "type": "E2E",
+      "priority": "P1-Critical",
+      "status": "PASS",
+      "details": "HTML lang is 'vi' and Vietnamese diacritics rendered correctly.",
+      "evidence": "",
+      "timestamp": "2026-10-09T06:59:12.569Z"
+    },
+    {
+      "testId": "I18N-PERSIST-005",
+      "feature": "i18n LocalStorage Persistence",
+      "type": "UI",
+      "priority": "P2-High",
+      "status": "PASS",
+      "details": "Key 'brse.ui-language.v1' retained value: 'vi'",
+      "evidence": "",
+      "timestamp": "2026-10-09T06:59:12.574Z"
+    },
+    {
+      "testId": "TODO-UI-001",
+      "feature": "BrSE Todo Page Load",
+      "type": "E2E",
+      "priority": "P1-Critical",
+      "status": "PASS",
+      "details": "Page loaded (HTTP 200), found 8 inputs, 57 buttons",
+      "evidence": "",
+      "timestamp": "2026-10-09T06:59:12.642Z"
+    },
+    {
+      "testId": "TODO-VAL-005",
+      "feature": "Todo Empty Title Validation",
+      "type": "VAL",
+      "priority": "P2-High",
+      "status": "PASS",
+      "details": "Action buttons validated, form requires title",
+      "evidence": "",
+      "timestamp": "2026-10-09T06:59:12.655Z"
+    },
+    {
+      "testId": "GLS-SRCH-004",
+      "feature": "Glossary Search Interaction",
+      "type": "SRCH",
+      "priority": "P1-Critical",
+      "status": "PASS",
+      "details": "Glossary page loaded with terminology search",
+      "evidence": "",
+      "timestamp": "2026-10-09T06:59:15.476Z"
+    },
+    {
+      "testId": "MEET-UI-001",
+      "feature": "Meeting Note AI Page Load",
+      "type": "SMK",
+      "priority": "P1-Critical",
+      "status": "PASS",
+      "details": "Meeting Note AI interface loaded (HTTP 200)",
+      "evidence": "",
+      "timestamp": "2026-10-09T06:59:17.990Z"
+    },
+    {
+      "testId": "PWR-UI-001",
+      "feature": "Power Tools Page Load",
+      "type": "SMK",
+      "priority": "P1-Critical",
+      "status": "PASS",
+      "details": "Power Tools loaded (DOCX-to-PDF & OCR modules)",
+      "evidence": "",
+      "timestamp": "2026-10-09T06:59:20.098Z"
+    },
+    {
+      "testId": "KEI-UI-001",
+      "feature": "Keigo Assistant Page Load",
+      "type": "SMK",
+      "priority": "P1-Critical",
+      "status": "PASS",
+      "details": "Keigo Assistant loaded (Kenjougo/Sonkeigo evaluator)",
+      "evidence": "",
+      "timestamp": "2026-10-09T06:59:22.344Z"
+    },
+    {
+      "testId": "OPS-UI-001",
+      "feature": "Operations & Risk Register Page Load",
+      "type": "SMK",
+      "priority": "P1-Critical",
+      "status": "PASS",
+      "details": "Operations loaded with Risk Register & Notes",
+      "evidence": "",
+      "timestamp": "2026-10-09T06:59:24.052Z"
+    },
+    {
+      "testId": "API-HLTH-001",
+      "feature": "Backend Health API Check",
+      "type": "API",
+      "priority": "P1-Critical",
+      "status": "PASS",
+      "details": "Status: ok, Service: brse-assistant-api",
+      "evidence": "",
+      "timestamp": "2026-10-09T06:59:24.130Z"
+    },
+    {
+      "testId": "API-STAT-002",
+      "feature": "AI Gateway & Runtime Status",
+      "type": "API",
+      "priority": "P1-Critical",
+      "status": "PASS",
+      "details": "Runtime reachable: true",
+      "evidence": "",
+      "timestamp": "2026-10-09T06:59:24.154Z"
+    },
+    {
+      "testId": "API-TODO-003",
+      "feature": "Todo API Endpoint Check",
+      "type": "API",
+      "priority": "P1-Critical",
+      "status": "PASS",
+      "details": "Returned 1 todo projects",
+      "evidence": "",
+      "timestamp": "2026-10-09T06:59:24.179Z"
+    },
+    {
+      "testId": "API-GLS-004",
+      "feature": "Glossary Search Endpoint Check",
+      "type": "API",
+      "priority": "P1-Critical",
+      "status": "PASS",
+      "details": "Matched 10 terms for query 'テスト'",
+      "evidence": "",
+      "timestamp": "2026-10-09T06:59:24.307Z"
+    },
+    {
+      "testId": "SEC-XSS-001",
+      "feature": "Client-side XSS Sanitization Check",
+      "type": "SEC",
+      "priority": "P1-Critical",
+      "status": "PASS",
+      "details": "Verified DOMPurify XSS neutralization in web render pipeline",
+      "evidence": "",
+      "timestamp": "2026-10-09T06:59:24.318Z"
+    },
+    {
+      "testId": "PERF-LAT-001",
+      "feature": "Web API Latency SLA Benchmark",
+      "type": "PERF",
+      "priority": "P2-High",
+      "status": "PASS",
+      "details": "Status responded in 13ms (Target SLA < 500ms)",
+      "evidence": "",
+      "timestamp": "2026-10-09T06:59:24.331Z"
+    }
+  ]
+}

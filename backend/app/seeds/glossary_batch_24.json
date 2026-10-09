@@ -1,0 +1,755 @@
+[
+  {
+    "id": "fintech-solvency",
+    "english": "Solvency",
+    "japanese": "支払能力 / ソルベンシー",
+    "kana": "しはらいのうりょく",
+    "vietnamese": "Khả năng thanh toán",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Khả năng đáp ứng các nghĩa vụ nợ dài hạn.",
+    "example": "企業のソルベンシーを評価します。"
+  },
+  {
+    "id": "fintech-spread",
+    "english": "Spread",
+    "japanese": "スプレッド / 利ざや",
+    "kana": "すぷれっど",
+    "vietnamese": "Chênh lệch / Spread",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Khoảng cách giữa giá mua và giá bán.",
+    "example": "スプレッドが狭い業者を選びます。"
+  },
+  {
+    "id": "fintech-ssl",
+    "english": "SSL / TLS",
+    "japanese": "SSL / TLS",
+    "kana": "えすえすえる / てぃーえるえす",
+    "vietnamese": "Giao thức bảo mật SSL/TLS",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chuẩn bảo mật kết nối mạng.",
+    "example": "SSL証明書の期限を確認。"
+  },
+  {
+    "id": "fintech-swift",
+    "english": "SWIFT",
+    "japanese": "SWIFT / 銀行間通信協会",
+    "kana": "すうぃふと",
+    "vietnamese": "Mạng SWIFT",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống truyền thông tài chính toàn cầu giữa các ngân hàng.",
+    "example": "SWIFTコードを入力してください。"
+  },
+  {
+    "id": "fintech-tokenization",
+    "english": "Tokenization",
+    "japanese": "トークン化 / トークナイゼーション",
+    "kana": "とーくんか",
+    "vietnamese": "Mã hóa token / Tokenization",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thay thế dữ liệu nhạy cảm bằng mã định danh không nhạy cảm.",
+    "example": "カード番号をトークン化して保護します。"
+  },
+  {
+    "id": "fintech-two-factor-authentication",
+    "english": "Two-Factor Authentication / 2FA",
+    "japanese": "二要素認証 / 2FA",
+    "kana": "にようそにんしょう",
+    "vietnamese": "Xác thực hai yếu tố / 2FA",
+    "roles": [
+      "Dev",
+      "BrSE",
+      "Security",
+      "User",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Yêu cầu hai phương thức nhận dạng khác nhau để truy cập vào tài khoản.",
+    "example": "パスワードに加えてスマートフォンへの通知を必須とする、2FA（二要素認証）を有効化しました。"
+  },
+  {
+    "id": "fintech-underwriting",
+    "english": "Underwriting",
+    "japanese": "引受審査 / アンダーライティング",
+    "kana": "ひきうけしんさ",
+    "vietnamese": "Quy trình thẩm định / Underwriting",
+    "roles": [
+      "BA",
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Quá trình đánh giá rủi ro để quyết định có cho vay hay có cấp hợp đồng bảo hiểm không.",
+    "example": "保険加入の申し込み後、保険会社による引受審査（アンダーライティング）が行われます。"
+  },
+  {
+    "id": "fintech-void",
+    "english": "Void",
+    "japanese": "取消 / ボイド",
+    "kana": "とりけし",
+    "vietnamese": "Hủy giao dịch / Void",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hủy một giao dịch trước khi nó được quyết toán.",
+    "example": "間違えた取引をボイドします。"
+  },
+  {
+    "id": "future-6g",
+    "english": "6G",
+    "japanese": "6G / 第6世代移動通信システム",
+    "kana": "しっくすじー",
+    "vietnamese": "Mạng 6G",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thế hệ mạng di động tiếp theo sau 5G.",
+    "example": "6Gで超低遅延通信。"
+  },
+  {
+    "id": "future-agentic-workflow",
+    "english": "Agentic Workflow / Agentic Workflows",
+    "japanese": "エージェント指向ワークフロー / エージェンティックワークフロー",
+    "kana": "えーじぇんと・わーくふろー",
+    "vietnamese": "Quy trình làm việc dạng tác nhân / Agentic Workflow",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quy trình AI tự động thực hiện nhiều bước phức tạp.",
+    "example": "Agentic Workflowで開発を自動化。"
+  },
+  {
+    "id": "future-aiops",
+    "english": "AIOps",
+    "japanese": "AIOps",
+    "kana": "えーあいおぷす",
+    "vietnamese": "Vận hành bằng AI / AIOps",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Dùng AI để tự động hóa và tối ưu hóa vận hành IT.",
+    "example": "AIOpsで障害予兆を検知。"
+  },
+  {
+    "id": "future-algorithmic-bias",
+    "english": "Algorithmic Bias",
+    "japanese": "アルゴリズムのバイアス",
+    "kana": "あるごりずむのばいあす",
+    "vietnamese": "Định kiến thuật toán",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Sự thiên lệch trong kết quả do AI/thuật toán.",
+    "example": "AIのバイアスを排除する。"
+  },
+  {
+    "id": "future-api-economy",
+    "english": "API Economy",
+    "japanese": "APIエコノミー",
+    "kana": "えーぴーあいえこのみー",
+    "vietnamese": "Nền kinh tế API",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mô hình kinh doanh dựa trên việc trao đổi dịch vụ qua API.",
+    "example": "APIエコノミーへの参加。"
+  },
+  {
+    "id": "future-augmented-reality",
+    "english": "Augmented Reality / AR",
+    "japanese": "拡張現実 / AR",
+    "kana": "えーあーる",
+    "vietnamese": "Thực tế tăng cường / AR",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thêm các yếu tố ảo vào thế giới thực.",
+    "example": "ARで家具を部屋に試し置き。"
+  },
+  {
+    "id": "future-autogpt",
+    "english": "AutoGPT",
+    "japanese": "AutoGPT / オートGPT",
+    "kana": "おーとじーぴーてぃー",
+    "vietnamese": "AI tự trị AutoGPT",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "AI có khả năng tự đặt ra nhiệm vụ để đạt mục tiêu.",
+    "example": "AutoGPTに市場調査を任せる。"
+  },
+  {
+    "id": "future-autonomous-agent",
+    "english": "Autonomous Agent / Agents",
+    "japanese": "自律型エージェント",
+    "kana": "じりつがたえーじぇんと",
+    "vietnamese": "Tác nhân tự trị / Autonomous Agent",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống AI tự ra quyết định và thực hiện hành động.",
+    "example": "自律型エージェントがタスクを完遂。"
+  },
+  {
+    "id": "future-biotech",
+    "english": "BioTech",
+    "japanese": "バイオテック / 生物工学",
+    "kana": "ばいおてっく",
+    "vietnamese": "Công nghệ sinh học / BioTech",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Ứng dụng công nghệ vào y học và nông nghiệp.",
+    "example": "BioTechで難病を治療。"
+  },
+  {
+    "id": "future-brain-computer-interface",
+    "english": "Brain-Computer Interface / BCI",
+    "japanese": "ブレイン・マシン・インターフェース / BCI",
+    "kana": "ぶれいんましんいんたーふぇーす",
+    "vietnamese": "Giao diện não - máy tính / BCI",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Công cụ kết nối trực tiếp não bộ với máy tính.",
+    "example": "BCIで思考だけで操作する。"
+  },
+  {
+    "id": "future-chain-of-thought",
+    "english": "Chain of Thought / CoT",
+    "japanese": "思考の連鎖 / CoT",
+    "kana": "ちぇーんおぶそーと",
+    "vietnamese": "Chuỗi suy nghĩ / CoT",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật giúp AI giải quyết vấn đề từng bước một.",
+    "example": "CoTプロンプトで論理的思考を促す。"
+  },
+  {
+    "id": "future-citizen-developer",
+    "english": "Citizen Developer",
+    "japanese": "市民開発者 / シチズンデベロッパー",
+    "kana": "しちずんでべろっぱー",
+    "vietnamese": "Nhà phát triển không chuyên",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Nhân viên nghiệp vụ tự xây dựng app bằng low-code.",
+    "example": "シチズンデベロッパーの育成。"
+  },
+  {
+    "id": "future-cloud-native",
+    "english": "Cloud Native",
+    "japanese": "クラウドネイティブ",
+    "kana": "くらうどねいてぃぶ",
+    "vietnamese": "Điện toán đám mây bản địa / Cloud Native",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Phát triển ứng dụng tối ưu hoàn toàn cho môi trường cloud.",
+    "example": "クラウドネイティブな構成へ移行。"
+  },
+  {
+    "id": "future-computer-vision",
+    "english": "Computer Vision",
+    "japanese": "コンピュータビジョン",
+    "kana": "こんぴゅーたびじょん",
+    "vietnamese": "Thị giác máy tính",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Khả năng máy tính nhìn và hiểu hình ảnh/video.",
+    "example": "コンピュータビジョンで検品を自動化。"
+  },
+  {
+    "id": "future-copilot",
+    "english": "Copilot / Copilots",
+    "japanese": "コパイロット / 副操縦士",
+    "kana": "こぱいろっと",
+    "vietnamese": "Trợ lý AI / Copilot",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Công cụ AI hỗ trợ lập trình hoặc làm việc.",
+    "example": "GitHub Copilotでコーディング効率化。"
+  },
+  {
+    "id": "future-cyber-physical-systems",
+    "english": "Cyber-Physical Systems / CPS",
+    "japanese": "サイバーフィジカルシステム / CPS",
+    "kana": "さいばーふぃじかるしすてむ",
+    "vietnamese": "Hệ thống thực-ảo / CPS",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Sự tích hợp giữa phần mềm và các quy trình vật lý.",
+    "example": "CPSによる高度な生産管理。"
+  },
+  {
+    "id": "future-cyber-resilience",
+    "english": "Cyber Resilience",
+    "japanese": "サイバーレジリエンス",
+    "kana": "さいばーれじりえんす",
+    "vietnamese": "Khả năng phục hồi không gian mạng",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Khả năng duy trì hoạt động khi bị tấn công mạng.",
+    "example": "サイバーレジリエンスを強化。"
+  },
+  {
+    "id": "future-dark-data",
+    "english": "Dark Data",
+    "japanese": "ダークデータ",
+    "kana": "だーくでーた",
+    "vietnamese": "Dữ liệu tối / Dark Data",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Dữ liệu thu thập được nhưng chưa được sử dụng.",
+    "example": "ダークデータを活用した新ビジネス。"
+  },
+  {
+    "id": "future-data-mesh",
+    "english": "Data Mesh",
+    "japanese": "データメッシュ",
+    "kana": "でーためっしゅ",
+    "vietnamese": "Kiến trúc Data Mesh",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kiến trúc dữ liệu phân tán theo hướng miền.",
+    "example": "Data Meshでデータ民主化。"
+  },
+  {
+    "id": "future-data-sovereignty",
+    "english": "Data Sovereignty",
+    "japanese": "データ主権",
+    "kana": "でーたしゅけん",
+    "vietnamese": "Chủ quyền dữ liệu",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quyền kiểm soát và sở hữu dữ liệu của cá nhân/quốc gia.",
+    "example": "データ主権を守るための法整備。"
+  },
+  {
+    "id": "future-decentralized-identity",
+    "english": "Decentralized Identity / DID",
+    "japanese": "分散型アイデンティティ / DID",
+    "kana": "ぶんさんがたあいでんてぃてぃ",
+    "vietnamese": "Định danh phi tập trung / DID",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống danh tính do chính người dùng quản lý.",
+    "example": "DIDで個人情報を安全に証明。"
+  },
+  {
+    "id": "future-deep-learning",
+    "english": "Deep Learning",
+    "japanese": "ディープラーニング / 深層学習",
+    "kana": "でぃーぷらーにんぐ",
+    "vietnamese": "Học sâu / Deep Learning",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Nhánh của máy học dựa trên nhiều tầng mạng thần kinh.",
+    "example": "ディープラーニングによる高精度な推論。"
+  },
+  {
+    "id": "future-deeptech",
+    "english": "DeepTech",
+    "japanese": "ディープテック",
+    "kana": "でぃーぷてっく",
+    "vietnamese": "Công nghệ sâu / DeepTech",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Công nghệ dựa trên các đột phá khoa học lớn.",
+    "example": "ディープテックへの投資が加速。"
+  },
+  {
+    "id": "future-devsecops",
+    "english": "DevSecOps",
+    "japanese": "DevSecOps",
+    "kana": "でぶせくおぷす",
+    "vietnamese": "Quy trình DevSecOps",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tích hợp bảo mật vào mọi bước của DevOps.",
+    "example": "DevSecOpsでセキュリティをシフトレフト。"
+  },
+  {
+    "id": "future-diffusion-model",
+    "english": "Diffusion Model / Diffusion Models",
+    "japanese": "拡散モデル",
+    "kana": "かくさんもでる",
+    "vietnamese": "Mô hình khuếch tán",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thuật toán chính đằng sau các AI tạo ảnh như Midjourney.",
+    "example": "拡散モデルによる画像生成。"
+  },
+  {
+    "id": "future-digital-immortality",
+    "english": "Digital Immortality",
+    "japanese": "デジタル不老不死",
+    "kana": "でじたるふろうふし",
+    "vietnamese": "Bất tử kỹ thuật số",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Lưu trữ tâm trí con người trên nền tảng số.",
+    "example": "デジタル不老不死の可能性。"
+  },
+  {
+    "id": "future-digital-nomad",
+    "english": "Digital Nomad / Digital Nomads",
+    "japanese": "デジタルノマド",
+    "kana": "でじたるのまど",
+    "vietnamese": "Du mục kỹ thuật số",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Người làm việc từ xa và di chuyển khắp nơi.",
+    "example": "デジタルノマドとして世界を旅する。"
+  },
+  {
+    "id": "future-digital-transformation",
+    "english": "Digital Transformation / DX",
+    "japanese": "デジタルトランスフォーメーション / DX",
+    "kana": "でぃーえっくす",
+    "vietnamese": "Chuyển đổi số / DX",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thay đổi mô hình kinh doanh dựa trên công nghệ số.",
+    "example": "DXを推進して競争力を強化。"
+  },
+  {
+    "id": "future-edge-intelligence",
+    "english": "Edge Intelligence",
+    "japanese": "エッジインテリジェンス",
+    "kana": "えっじいんてりじぇんす",
+    "vietnamese": "Trí tuệ tại biên",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tích hợp AI trực tiếp vào thiết bị IoT.",
+    "example": "エッジインテリジェンスによる高速判断。"
+  },
+  {
+    "id": "future-ethics-in-ai",
+    "english": "Ethics in AI / AI Ethics",
+    "japanese": "AI倫理",
+    "kana": "えーあいりんり",
+    "vietnamese": "Đạo đức trong AI",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Các quy tắc đạo đức khi phát triển và dùng AI.",
+    "example": "AI倫理ガイドラインを策定。"
+  },
+  {
+    "id": "future-federated-learning",
+    "english": "Federated Learning",
+    "japanese": "連合学習",
+    "kana": "れんごうがくしゅう",
+    "vietnamese": "Học liên kết / Federated Learning",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Huấn luyện AI mà không cần tập trung dữ liệu về một chỗ.",
+    "example": "プライバシーを保護しつつ連合学習。"
+  },
+  {
+    "id": "future-few-shot-learning",
+    "english": "Few-shot Learning",
+    "japanese": "フューショット学習",
+    "kana": "ふゅーしょっとがくしゅう",
+    "vietnamese": "Học với ít dữ liệu / Few-shot",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "AI học nhanh chỉ với vài ví dụ mẫu.",
+    "example": "数個の例示でFew-shot学習。"
+  },
+  {
+    "id": "future-fine-tuning",
+    "english": "Fine-tuning",
+    "japanese": "ファインチューニング / 微調整",
+    "kana": "ふぁいんちゅーにんぐ",
+    "vietnamese": "Tinh chỉnh mô hình / Fine-tuning",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Huấn luyện lại mô hình AI trên tập dữ liệu chuyên biệt.",
+    "example": "専門用語を学ぶためにファインチューニングを行う。"
+  },
+  {
+    "id": "future-finops",
+    "english": "FinOps",
+    "japanese": "FinOps / フィンオプス",
+    "kana": "ふぃんおぷす",
+    "vietnamese": "Quản lý tài chính đám mây / FinOps",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kết hợp tài chính và vận hành để tối ưu chi phí cloud.",
+    "example": "FinOpsを導入してクラウド代を削減。"
+  },
+  {
+    "id": "future-gig-economy",
+    "english": "Gig Economy",
+    "japanese": "ギグエコノミー",
+    "kana": "ぎぐえこのみー",
+    "vietnamese": "Nền kinh tế tự do / Gig Economy",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thị trường làm việc dựa trên các hợp đồng ngắn hạn.",
+    "example": "ギグエコノミーの働き方。"
+  },
+  {
+    "id": "future-greentech",
+    "english": "GreenTech / CleanTech",
+    "japanese": "グリーンテック / クリーンテック",
+    "kana": "ぐりーんてっく",
+    "vietnamese": "Công nghệ xanh / GreenTech",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Công nghệ bảo vệ môi trường và năng lượng sạch.",
+    "example": "GreenTechで脱炭素社会。"
+  },
+  {
+    "id": "future-hallucination",
+    "english": "Hallucination / Hallucinations",
+    "japanese": "ハルシネーション / 幻覚",
+    "kana": "はるしねーしょん",
+    "vietnamese": "Hiện tượng ảo giác AI",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Khi AI đưa ra thông tin sai lệch nhưng trông rất thuyết phục.",
+    "example": "AIのハルシネーションに注意。"
+  },
+  {
+    "id": "future-hybrid-work",
+    "english": "Hybrid Work",
+    "japanese": "ハイブリッドワーク",
+    "kana": "はいぶりっどわーく",
+    "vietnamese": "Làm việc kết hợp / Hybrid Work",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kết hợp giữa làm tại văn phòng và làm tại nhà.",
+    "example": "ハイブリッドワークが定着。"
+  },
+  {
+    "id": "future-hyperautomation",
+    "english": "Hyperautomation",
+    "japanese": "ハイパーオートメーション",
+    "kana": "はいぱーおーとめーしょん",
+    "vietnamese": "Siêu tự động hóa",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Sự kết hợp nhiều công nghệ để tự động hóa tối đa.",
+    "example": "ハイパーオートメーションで全社改革。"
+  },
+  {
+    "id": "future-knowledge-graph",
+    "english": "Knowledge Graph / Knowledge Graphs",
+    "japanese": "ナレッジグラフ / 知識グラフ",
+    "kana": "なれっじぐらふ",
+    "vietnamese": "Đồ thị tri thức",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mạng lưới kết nối các khái niệm và thông tin.",
+    "example": "ナレッジグラフで情報の関連性を可視化。"
+  },
+  {
+    "id": "future-lifelong-learning",
+    "english": "Lifelong Learning",
+    "japanese": "生涯学習",
+    "kana": "しょうがいがくしゅう",
+    "vietnamese": "Học tập suốt đời",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Việc không ngừng học hỏi trong suốt cuộc đời.",
+    "example": "Lifelong Learningの重要性。"
+  },
+  {
+    "id": "future-llm",
+    "english": "LLM / Large Language Model",
+    "japanese": "大規模言語モデル / LLM",
+    "kana": "えるえるえむ",
+    "vietnamese": "Mô hình ngôn ngữ lớn / LLM",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mô hình AI huấn luyện trên lượng dữ liệu văn bản khổng lồ.",
+    "example": "最新のLLMを導入。"
+  }
+]

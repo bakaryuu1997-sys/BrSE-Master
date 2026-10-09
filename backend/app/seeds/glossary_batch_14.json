@@ -1,0 +1,688 @@
+[
+  {
+    "id": "bjt-kyouka",
+    "english": "Kyouka / Strengthening / Reinforcement",
+    "japanese": "強化",
+    "kana": "きょうか",
+    "vietnamese": "Tăng cường / Củng cố",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Làm cho mạnh hơn hoặc chặt chẽ hơn.",
+    "example": "セキュリティ体制を強化しました。"
+  },
+  {
+    "id": "bjt-kyouyuu",
+    "english": "Kyouyuu / Share / Sharing",
+    "japanese": "共有",
+    "kana": "きょうゆう",
+    "vietnamese": "Chia sẻ thông tin",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Làm cho mọi người cùng nắm được thông tin.",
+    "example": "重要な情報をチーム全体で共有します。"
+  },
+  {
+    "id": "bjt-mairu",
+    "english": "Mairu / To go / To come (Humble)",
+    "japanese": "参る",
+    "kana": "まいる",
+    "vietnamese": "Đi / Đến (Khiêm nhường ngữ)",
+    "roles": [
+      "BrSE",
+      "Sales",
+      "Team"
+    ],
+    "category": "System Design",
+    "note": "Dùng khi mình di chuyển đến chỗ đối phương.",
+    "example": "ただいま参ります。"
+  },
+  {
+    "id": "bjt-moushi-wake-gozaimasen",
+    "english": "Moushi-wake-gozaimasen / I am very sorry (Deep Apology)",
+    "japanese": "申し訳ございません",
+    "kana": "もうしわけございません",
+    "vietnamese": "Tôi vô cùng xin lỗi (Trang trọng)",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Câu xin lỗi tiêu chuẩn trong kinh doanh.",
+    "example": "返信が遅れ、大変申し訳ございません。"
+  },
+  {
+    "id": "bjt-moushiageru",
+    "english": "Moushiageru / To say (Humble)",
+    "japanese": "申し上げる",
+    "kana": "もうしあげる",
+    "vietnamese": "Nói / Trình bày (Khiêm nhường ngữ trang trọng)",
+    "roles": [
+      "BrSE",
+      "Sales",
+      "Team"
+    ],
+    "category": "System Design",
+    "note": "Dùng khi mình trình bày điều gì đó với đối phương.",
+    "example": "お礼を申し上げたく、ご連絡いたしました。"
+  },
+  {
+    "id": "bjt-nanyoto",
+    "english": "Nanyoto / By all means / Please (Very Formal)",
+    "japanese": "何卒",
+    "kana": "なにとぞ",
+    "vietnamese": "Rất mong / Xin hãy (Trang trọng)",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Nhấn mạnh sự mong đợi trong văn viết.",
+    "example": "何卒ご検討のほど、よろしくお願いいたします。"
+  },
+  {
+    "id": "bjt-nasaru",
+    "english": "Nasaru / To do (Respectful)",
+    "japanese": "なさる",
+    "kana": "なさる",
+    "vietnamese": "Làm (Tôn kính ngữ)",
+    "roles": [
+      "BrSE",
+      "Sales"
+    ],
+    "category": "System Design",
+    "note": "Dùng cho hành động của đối phương.",
+    "example": "休日はどのように過ごされますか？ (nasaru variation)"
+  },
+  {
+    "id": "bjt-nobu",
+    "english": "Nobu / To state / To mention (Formal)",
+    "japanese": "述べる",
+    "kana": "のべる",
+    "vietnamese": "Trình bày / Nêu ý kiến (Trang trọng)",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Dùng trong văn viết hoặc phát biểu chính thức.",
+    "example": "以上の理由により、本案を推薦すると述べました。"
+  },
+  {
+    "id": "bjt-o-isogashii-tokoro",
+    "english": "O-isogashii-tokoro / Despite your busy schedule",
+    "japanese": "お忙しいところ",
+    "kana": "おいそがしいところ",
+    "vietnamese": "Trong lúc quý khách đang bận rộn (Câu đệm)",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Dùng để bày tỏ sự cảm thông khi làm phiền khách hàng lúc họ bận.",
+    "example": "お忙しいところ恐縮ですが、ご確認をお願いします。"
+  },
+  {
+    "id": "bjt-o-me-ni-kakaru",
+    "english": "O-me-ni-kakaru / To meet (Humble)",
+    "japanese": "お目にかかる",
+    "kana": "おめにかかる",
+    "vietnamese": "Được gặp gỡ (Khiêm nhường ngữ)",
+    "roles": [
+      "BrSE",
+      "Sales"
+    ],
+    "category": "System Design",
+    "note": "Khiêm nhường ngữ của Au (gặp).",
+    "example": "直接お目にかかってお話ししたいです。"
+  },
+  {
+    "id": "bjt-o-meshi-ni-naru",
+    "english": "O-meshi-ni-naru / To eat / To drink (Respectful)",
+    "japanese": "お召し上がりになる",
+    "kana": "おめしあがりになる",
+    "vietnamese": "Dùng (món ăn/thức uống) / Tôn kính ngữ của Taberu/Nomu",
+    "roles": [
+      "BrSE",
+      "Sales"
+    ],
+    "category": "System Design",
+    "note": "Sử dụng khi mời khách hàng hoặc cấp trên dùng bữa.",
+    "example": "こちらのお菓子をお召し上がりになりますか？"
+  },
+  {
+    "id": "bjt-o-negai-moushiageru",
+    "english": "O-negai-moushiage-masu / We humbly request",
+    "japanese": "お願い申し上げます",
+    "kana": "おねがいもうしあげます",
+    "vietnamese": "Rất mong nhận được sự giúp đỡ/chấp thuận",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Cách nhờ vả trang trọng nhất ở cuối email.",
+    "example": "何卒よろしくお願い申し上げます。"
+  },
+  {
+    "id": "bjt-o-saki-ni",
+    "english": "O-saki-ni-shitsurei-shimasu / I'm leaving now (Before others)",
+    "japanese": "お先に失礼します",
+    "kana": "おさきにしつれいします",
+    "vietnamese": "Tôi xin phép về trước ạ",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Câu chào khi bạn rời văn phòng trước đồng nghiệp.",
+    "example": "お疲れ様です。お先に失礼します。"
+  },
+  {
+    "id": "bjt-o-tesuu",
+    "english": "O-tesuu / Trouble / Burden (Formal)",
+    "japanese": "お手数",
+    "kana": "おてすう",
+    "vietnamese": "Sự làm phiền / Tốn công sức",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Dùng khi cảm ơn hoặc xin lỗi vì đã làm phiền khách.",
+    "example": "お手数をおかけしますが、よろしくお願いします。"
+  },
+  {
+    "id": "bjt-o-tsukare-sama",
+    "english": "O-tsukare-sama-desu / Thank you for your hard work",
+    "japanese": "お疲れ様です",
+    "kana": "おつかれさまです",
+    "vietnamese": "Anh/chị đã vất vả rồi (Dùng cho đồng nghiệp/cấp trên)",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Câu chào phổ biến nhất trong công ty Nhật.",
+    "example": "皆さん、お疲れ様でした。"
+  },
+  {
+    "id": "bjt-o-ukebamari",
+    "english": "O-uketamawari / To accept / To receive (Formal)",
+    "japanese": "お承り",
+    "kana": "おうけたまわり",
+    "vietnamese": "Tiếp nhận yêu cầu (Trang trọng)",
+    "roles": [
+      "BrSE",
+      "Sales"
+    ],
+    "category": "System Design",
+    "note": "Khiêm nhường ngữ của Ukeru (nhận).",
+    "example": "ご予約をお承りいたしました。"
+  },
+  {
+    "id": "bjt-on-sha",
+    "english": "On-sha / Your company (Respectful - Spoken)",
+    "japanese": "御社",
+    "kana": "おんしゃ",
+    "vietnamese": "Quý công ty (Dùng trong văn nói)",
+    "roles": [
+      "BrSE",
+      "Sales"
+    ],
+    "category": "System Design",
+    "note": "Dùng khi hội thoại trực tiếp hoặc qua điện thoại.",
+    "example": "御社のビジネスモデルについて詳しく伺いたいです。"
+  },
+  {
+    "id": "bjt-osewa-ni-naru",
+    "english": "O-sewa-ni-natte-orimasu / Thank you for your continued support",
+    "japanese": "お世話になっております",
+    "kana": "おせわになっております",
+    "vietnamese": "Cảm ơn vì sự hỗ trợ/hợp tác của quý khách (Câu chào kinh điển)",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Câu chào đầu tiên trong email hoặc điện thoại kinh doanh.",
+    "example": "いつも大変お世話になっております。"
+  },
+  {
+    "id": "bjt-osore-irimasu",
+    "english": "Osore-irimasu / I'm sorry to trouble you / Thank you (Polite)",
+    "japanese": "恐れ入ります",
+    "kana": "おそれいります",
+    "vietnamese": "Xin lỗi vì đã làm phiền / Rất cảm kích",
+    "roles": [
+      "BrSE",
+      "Sales"
+    ],
+    "category": "System Design",
+    "note": "Dùng để mở đầu khi nhờ vả hoặc cảm ơn một cách khiêm tốn.",
+    "example": "恐れ入りますが、もう一度ご説明いただけますか？"
+  },
+  {
+    "id": "bjt-ossharu",
+    "english": "Ossharu / To say (Respectful)",
+    "japanese": "おっしゃる",
+    "kana": "おっしゃる",
+    "vietnamese": "Nói (Tôn kính ngữ)",
+    "roles": [
+      "BrSE",
+      "Sales"
+    ],
+    "category": "System Design",
+    "note": "Dùng cho lời nói của đối phương.",
+    "example": "部長がおっしゃった通り、修正が必要です。"
+  },
+  {
+    "id": "bjt-ryoushou-itasu",
+    "english": "Ryoushou-itasu / To acknowledge / To approve (Formal)",
+    "japanese": "了承いたしました",
+    "kana": "りょうしょういたしました",
+    "vietnamese": "Tôi đã thấu hiểu và chấp thuận / Ryoushou",
+    "roles": [
+      "BrSE",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Thường dùng khi xác nhận một sự thay đổi hoặc yêu cầu đặc biệt.",
+    "example": "スケジュールの変更について、了承いたしました。"
+  },
+  {
+    "id": "bjt-sakugen",
+    "english": "Sakugen / Reduction / Cutting",
+    "japanese": "削減",
+    "kana": "さくげん",
+    "vietnamese": "Cắt giảm (chi phí, thời gian)",
+    "roles": [
+      "Manager",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Làm giảm bớt lượng hoặc số lượng.",
+    "example": "無駄な会議を削減しました。"
+  },
+  {
+    "id": "bjt-sakujo",
+    "english": "Sakujo / Deletion",
+    "japanese": "削除",
+    "kana": "さくじょ",
+    "vietnamese": "Xóa bỏ",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Loại bỏ thứ không cần thiết.",
+    "example": "不要なデータを削除しました。"
+  },
+  {
+    "id": "bjt-sasete-itadaku",
+    "english": "Sasete-itadaku / To be allowed to do (Humble)",
+    "japanese": "させていただきます",
+    "kana": "させていただきます",
+    "vietnamese": "Cho phép tôi được làm... (Khiêm nhường)",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Cấu trúc khiêm nhường rất phổ biến để nói về hành động của mình.",
+    "example": "本日は発表をさせていただきます。"
+  },
+  {
+    "id": "bjt-sashitsukae",
+    "english": "Sashitsukae / Inconvenience / Obstacle (Polite)",
+    "japanese": "差し支え",
+    "kana": "さしつかえ",
+    "vietnamese": "Sự phiền hà / Cản trở",
+    "roles": [
+      "BrSE",
+      "Sales"
+    ],
+    "category": "System Design",
+    "note": "Dùng trong câu hỏi nhờ vả một cách lịch sự.",
+    "example": "もし差し支えなければ、理由を教えていただけますか？"
+  },
+  {
+    "id": "bjt-shimesu",
+    "english": "Shimesu / To show / To indicate (Formal)",
+    "japanese": "示す",
+    "kana": "しめす",
+    "vietnamese": "Chỉ ra / Cho thấy (Trang trọng)",
+    "roles": [
+      "BrSE",
+      "Team"
+    ],
+    "category": "System Design",
+    "note": "Thường dùng trong báo cáo để trình bày dữ liệu.",
+    "example": "図1は売上の推移を示しています。"
+  },
+  {
+    "id": "bjt-shiten",
+    "english": "Shiten / Point of view",
+    "japanese": "視点",
+    "kana": "してん",
+    "vietnamese": "Điểm nhìn / Cách nhìn",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Tương tự Kanten nhưng thường dùng trong văn nói hơn.",
+    "example": "ユーザーの視点に立って開発します。"
+  },
+  {
+    "id": "bjt-shitsurei-itashimasu",
+    "english": "Shitsurei-itashimasu / Excuse me (Formal)",
+    "japanese": "失礼いたします",
+    "kana": "しつれいいたします",
+    "vietnamese": "Tôi xin phép / Xin thất lễ",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Dùng khi vào phòng, cúp máy điện thoại hoặc kết thúc email.",
+    "example": "それでは、失礼いたします。"
+  },
+  {
+    "id": "bjt-shouchi-itasu",
+    "english": "Shouchi-itasu / To understand / To accept (Formal)",
+    "japanese": "承知いたしました",
+    "kana": "しょうちいたしました",
+    "vietnamese": "Tôi đã hiểu rõ / Tiếp nhận thông tin (Trang trọng)",
+    "roles": [
+      "BrSE",
+      "Team"
+    ],
+    "category": "System Design",
+    "note": "Cụm từ tiêu chuẩn để xác nhận đã hiểu yêu cầu của khách hàng.",
+    "example": "件の件、承知いたしました。"
+  },
+  {
+    "id": "bjt-shounin",
+    "english": "Shounin / Approval",
+    "japanese": "承認",
+    "kana": "しょうにん",
+    "vietnamese": "Phê duyệt / Chấp thuận",
+    "roles": [
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Sự đồng ý chính thức từ cấp có thẩm quyền.",
+    "example": "プロジェクト予算の承認を得ました。"
+  },
+  {
+    "id": "bjt-shounin-machi",
+    "english": "Shounin-machi / Pending approval",
+    "japanese": "承認待ち",
+    "kana": "しょうにんまち",
+    "vietnamese": "Đang chờ duyệt",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Trạng thái chờ cấp trên đồng ý.",
+    "example": "現在のステータスは承認待ちです。"
+  },
+  {
+    "id": "bjt-shousai",
+    "english": "Shousai / Details",
+    "japanese": "詳細 / 細目",
+    "kana": "しょうさい / さいもく",
+    "vietnamese": "Chi tiết / Các tiểu mục",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Thông tin cụ thể về một vấn đề.",
+    "example": "詳細は別紙をご参照ください。"
+  },
+  {
+    "id": "bjt-shuchu",
+    "english": "Shuchu / Concentration / Focus",
+    "japanese": "集中",
+    "kana": "しゅうちゅう",
+    "vietnamese": "Tập trung",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Dồn hết sức lực vào một việc.",
+    "example": "テスト作業に集中してください。"
+  },
+  {
+    "id": "bjt-shukusho",
+    "english": "Shukusho / Reduction / Downsizing",
+    "japanese": "縮小",
+    "kana": "しゅくしょう",
+    "vietnamese": "Thu hẹp / Thu nhỏ",
+    "roles": [
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Ngược lại với Kakudai.",
+    "example": "不採算事業を縮小することにしました。"
+  },
+  {
+    "id": "bjt-shusei",
+    "english": "Shusei / Correction / Fix",
+    "japanese": "修正",
+    "kana": "しゅうせい",
+    "vietnamese": "Sửa lỗi / Điều chỉnh",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Làm cho đúng lại khi có sai sót.",
+    "example": "バグを修正して再デプロイしました。"
+  },
+  {
+    "id": "bjt-suishin",
+    "english": "Suishin / Promotion / Driving forward",
+    "japanese": "推進",
+    "kana": "すいしん",
+    "vietnamese": "Thúc đẩy / Đẩy mạnh (dự án)",
+    "roles": [
+      "Manager",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Làm cho dự án hoặc hoạt động tiến triển.",
+    "example": "全社を挙げてDXを推進しています。"
+  },
+  {
+    "id": "bjt-taisaku",
+    "english": "Taisaku / Countermeasure",
+    "japanese": "対策",
+    "kana": "たいさく",
+    "vietnamese": "Biện pháp đối phó / Giải pháp",
+    "roles": [
+      "BrSE",
+      "Team"
+    ],
+    "category": "System Design",
+    "note": "Hành động thực hiện để giải quyết vấn đề (Kadai).",
+    "example": "再発防止のための対策を講じました。"
+  },
+  {
+    "id": "bjt-teichaku",
+    "english": "Teichaku / Taking root / Establishing",
+    "japanese": "定着",
+    "kana": "ていちゃく",
+    "vietnamese": "Định hình / Trở nên phổ biến",
+    "roles": [
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Khi một quy trình mới trở thành thói quen.",
+    "example": "新しい開発手法がチームに定着してきました。"
+  },
+  {
+    "id": "bjt-teikei",
+    "english": "Teikei / Partnership / Alliance",
+    "japanese": "提携",
+    "kana": "ていけい",
+    "vietnamese": "Hợp tác / Liên minh kinh doanh",
+    "roles": [
+      "Manager",
+      "Sales"
+    ],
+    "category": "System Design",
+    "note": "Việc hai công ty cùng hợp tác để thực hiện mục tiêu chung.",
+    "example": "他社との業務提携を検討しています。"
+  },
+  {
+    "id": "bjt-teiketsu",
+    "english": "Teiketsu / Conclusion (of a contract)",
+    "japanese": "締結",
+    "kana": "ていけつ",
+    "vietnamese": "Ký kết (hợp đồng)",
+    "roles": [
+      "Manager",
+      "Sales"
+    ],
+    "category": "System Design",
+    "note": "Hành động chính thức ký kết và có hiệu lực cho hợp đồng.",
+    "example": "来週、正式に契約を締結する予定です。"
+  },
+  {
+    "id": "bjt-tsuika",
+    "english": "Tsuika / Addition",
+    "japanese": "追加",
+    "kana": "ついか",
+    "vietnamese": "Thêm vào",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Bổ sung thêm vào thứ đã có.",
+    "example": "新しい項目を追加してください。"
+  },
+  {
+    "id": "bjt-ukagau",
+    "english": "Ukagau / To visit / To ask (Humble)",
+    "japanese": "伺う",
+    "kana": "うかがう",
+    "vietnamese": "Đến thăm / Hỏi (Khiêm nhường ngữ)",
+    "roles": [
+      "BrSE",
+      "Sales",
+      "Team"
+    ],
+    "category": "System Design",
+    "note": "Dùng khi mình đến văn phòng khách hoặc hỏi ý kiến họ.",
+    "example": "明日、貴社に伺ってもよろしいでしょうか？"
+  },
+  {
+    "id": "bjt-yosoku",
+    "english": "Yosoku / Prediction / Forecast",
+    "japanese": "予測",
+    "kana": "よそく",
+    "vietnamese": "Dự đoán / Tiên lượng",
+    "roles": [
+      "Manager",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Ước tính về sự việc sẽ xảy ra trong tương lai.",
+    "example": "来期の需要を予測しています。"
+  },
+  {
+    "id": "bjt-yotei-do-ri",
+    "english": "Yotei-do-ri / As scheduled / On track",
+    "japanese": "予定通り",
+    "kana": "よていどおり",
+    "vietnamese": "Đúng như kế hoạch",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Tiến triển không có sai lệch so với lịch trình.",
+    "example": "プロジェクトは予定通り進んでいます。"
+  },
+  {
+    "id": "bjt-zonjiru",
+    "english": "Zonjiru / To know / To think (Humble)",
+    "japanese": "存じる",
+    "kana": "ぞんじる",
+    "vietnamese": "Biết / Nghĩ (Khiêm nhường ngữ)",
+    "roles": [
+      "BrSE",
+      "Sales",
+      "Team"
+    ],
+    "category": "System Design",
+    "note": "Dùng khi mình biết hoặc nghĩ về điều gì đó.",
+    "example": "承知いたしております。"
+  },
+  {
+    "id": "cloud-auto-scaling",
+    "english": "Auto Scaling",
+    "japanese": "オートスケーリング",
+    "kana": "おーとすけーりんぐ",
+    "vietnamese": "Tự động mở rộng",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Tự động tăng giảm số lượng server theo tải (CPU, Memory). Tránh lãng phí tiền khi ít user và không sập khi đông user.",
+    "example": "アクセス集中時のサーバーダウンを防ぐため、CPU使用率に応じたオートスケーリングを設定します。"
+  },
+  {
+    "id": "cloud-autoscaling-group",
+    "english": "Auto Scaling Group / Auto Scaling Grouping / Auto Scaling Grouped",
+    "japanese": "オートスケーリンググループ / スケーリング",
+    "kana": "おーとすけーりんぐぐるーぷ",
+    "vietnamese": "Nhóm tự động mở rộng",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Quản lý một tập hợp các instance có cùng cấu hình để scale cùng nhau.",
+    "example": "アクセス負荷の変動に対応するため、Webサーバーをオートスケーリンググループに配置します。"
+  },
+  {
+    "id": "cloud-cdn",
+    "english": "Content Delivery Network / CDN",
+    "japanese": "コンテンツ配信ネットワーク / CDN / ネットワーク",
+    "kana": "シーディーエヌ",
+    "vietnamese": "Mạng phân phối nội dung",
+    "roles": [
+      "Architect",
+      "DevOps",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống các máy chủ được phân bổ theo khu vực địa lý hoạt động cùng nhau để cung cấp việc phân phối nội dung Internet nhanh chóng.",
+    "example": "海外ユーザーの表示速度を改善するため、画像や動画の配信にCDNを利用します。"
+  },
+  {
+    "id": "cloud-cold-start",
+    "english": "Cold Start",
+    "japanese": "コールドスタート",
+    "kana": "こーるどすたーと",
+    "vietnamese": "Khởi động lạnh",
+    "roles": [
+      "Architect",
+      "Backend Dev",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Độ trễ khi một hàm serverless được gọi sau một thời gian không hoạt động và cần khởi tạo lại tài nguyên.",
+    "example": "サーバーレス構成ではコールドスタートによる遅延が懸念されるため、プロビジョニング済みインスタンスの利用を検討します。"
+  },
+  {
+    "id": "cloud-container-orchestration",
+    "english": "Container Orchestration",
+    "japanese": "コンテナオーケストレーション / オーケストレーション",
+    "kana": "こんてなおーけすとれーしょん",
+    "vietnamese": "Điều phối Container",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Quản lý vòng đời của hàng nghìn container (Kubernetes/EKS). Dùng từ này khi trao đổi về việc tự động hóa scale và quản lý Docker.",
+    "example": "複数コンテナの運用管理を自動化するため、Kubernetesによるコンテナオーケストレーションを導入します。"
+  }
+]

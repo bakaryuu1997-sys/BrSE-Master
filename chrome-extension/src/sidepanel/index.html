@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BrSE OS Side Panel</title>
+    <link rel="stylesheet" href="../../shared/tokens.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="tokyo-night">
+    <header>
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path d="M12 2a10 10 0 1 0 10 10H12V2z" />
+          <path d="M12 2a10 10 0 0 1 10 10h-7.5L12 2z" />
+        </svg>
+        <h1 data-i18n="extName">BrSE OS Assistant</h1>
+      </div>
+      <div class="header-actions">
+        <span id="backend-status" class="status-dot offline" data-i18n-title="apiUrlLabel" title="Backend Status"></span>
+        <button id="btn-config" data-i18n-title="settingsTab" title="Open settings">Set</button>
+      </div>
+    </header>
+
+    <div id="meeting-quick-actions" class="meeting-bar hidden">
+      <span data-i18n="meetingDetected">Cuộc họp phát hiện:</span>
+      <button id="btn-start-memo" class="mini-btn pulse" data-i18n="startLiveMemoBtn">Start BrSE Live Memo</button>
+    </div>
+
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="chat" data-i18n="chatTab">Chat</button>
+      <button class="tab-btn" data-tab="write" data-i18n="writeTab">Write</button>
+      <button class="tab-btn" data-tab="tools" data-i18n="toolsTab">Tools</button>
+      <button class="tab-btn" data-tab="project" data-i18n="projectTab">Project</button>
+    </nav>
+
+    <main>
+      <div id="context-banner" class="context-banner hidden">
+        <div class="context-icon" id="context-icon">📬</div>
+        <div class="context-info">
+          <span class="context-title" id="context-title" data-i18n="gmailContextDetected">Gmail Context Detected</span>
+          <span class="context-desc" id="context-desc">Subject: Hello</span>
+        </div>
+        <div class="context-actions">
+          <button id="btn-use-context" class="action-btn" data-i18n="useBtn">Use</button>
+          <button id="btn-clear-context" class="clear-btn" data-i18n-title="clearBtn">✕</button>
+        </div>
+      </div>
+
+      <section id="tab-chat" class="tab-content active">
+        <div id="chat-messages" class="scroll-area">
+          <div class="message ai" data-i18n="readyAskPage">
+            Ready. Ask about the current web page, selected text, BrSE writing, or project context.
+          </div>
+        </div>
+        
+        <!-- Cross-Tab Context Dropdown -->
+        <div class="cross-tab-container">
+          <button id="btn-cross-tab" class="cross-tab-btn" data-i18n-title="crossTabTitle">
+            <span>🔗</span> <span data-i18n="crossTabBtn">Cross-Tab Context</span>
+            <span class="count-badge hidden" id="cross-tab-count">0</span>
+          </button>
+          <div id="cross-tab-dropdown" class="cross-tab-dropdown hidden">
+            <div class="dropdown-header" data-i18n="chooseTabsLink">Chọn các tab liên kết context</div>
+            <div class="dropdown-list" id="cross-tab-list">
+              <div class="dropdown-empty" data-i18n="noOtherTabs">Không tìm thấy tab khác...</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="input-area">
+          <select id="sidepanel-model-select" class="model-select" data-i18n-title="activeModelLabel" title="Chọn model AI">
+            <!-- Populated at runtime from shared/modelConfig.js (single source of truth). -->
+            <option value="openrouter/nvidia/nemotron-3-super-120b-a12b:free">🤖 Nemotron 3 Super Free</option>
+          </select>
+          <textarea id="chat-input" data-i18n-placeholder="askBrsePlaceholder" placeholder="Ask BrSE OS..." rows="1"></textarea>
+          <button id="btn-send" data-i18n-title="sendBtn" title="Send">&gt;</button>
+          <button id="btn-stop" data-i18n-title="stopGeneratingBtn" title="Dừng sinh chữ">🛑</button>
+        </div>
+      </section>
+
+      <section id="tab-write" class="tab-content">
+        <div class="write-container">
+          <div class="template-grid">
+            <button class="tmpl-btn" data-type="email" data-i18n="japaneseEmailTemplate">Japanese email</button>
+            <button class="tmpl-btn" data-type="report" data-i18n="dailyReportTemplate">Daily report</button>
+            <button class="tmpl-btn" data-type="spec" data-i18n="specSummaryTemplate">Spec summary</button>
+            <button class="tmpl-btn" data-type="qa" data-i18n="draftQaTemplate">Draft Q&amp;A</button>
+          </div>
+          <textarea id="write-input" data-i18n-placeholder="writeInputPlaceholder" placeholder="Describe what you want to write in Vietnamese or English..." rows="4"></textarea>
+          <div class="write-actions">
+            <select id="write-tone">
+              <option value="polite" data-i18n="writeTonePolite">Polite Keigo</option>
+              <option value="casual" data-i18n="writeToneCasual">Plain internal</option>
+              <option value="executive" data-i18n="writeToneExecutive">Executive summary</option>
+            </select>
+            <button id="btn-generate-write" class="primary-btn" data-i18n="generateBtn">Generate</button>
+          </div>
+          <div id="write-result" class="result-area hidden"></div>
+        </div>
+      </section>
+
+      <section id="tab-tools" class="tab-content">
+        <div class="tools-list" id="tools-menu-list">
+          <div class="tool-card" id="tool-keigo">
+            <h3 data-i18n="keigoCheckerTool">Keigo Checker</h3>
+            <p data-i18n="keigoCheckerDesc">Review and improve Japanese business wording.</p>
+          </div>
+          <div class="tool-card" id="tool-horenso">
+            <h3 data-i18n="horensoDraftTool">Horenso Draft</h3>
+            <p data-i18n="horensoDraftDesc">Create a concise report draft for customers or managers.</p>
+          </div>
+          <div class="tool-card" id="tool-translate">
+            <h3 data-i18n="contextTranslateTool">Context Translation</h3>
+            <p data-i18n="contextTranslateDesc">Translate with BrSE-specific context and terminology.</p>
+          </div>
+          <div class="tool-card" id="tool-spec-analyzer">
+            <h3 data-i18n="specAnalyzerTool">📄 Spec Heuristic Preview</h3>
+            <p data-i18n="specAnalyzerDesc">Xem thử luồng đọc spec bằng local preview. Chưa gọi backend AI, chưa tự đồng bộ dữ liệu giả.</p>
+          </div>
+          <div class="tool-card" id="tool-ocr-translate">
+            <h3 data-i18n="ocrTranslateTool">📸 OCR Translator</h3>
+            <p data-i18n="ocrTranslateDesc">Chụp vùng màn hình tiếng Nhật và dịch theo tọa độ ảnh khi Gemini OCR được cấu hình; fallback sẽ được ghi rõ.</p>
+          </div>
+          <div class="tool-card" id="tool-flashcard">
+            <h3 data-i18n="flashcardTool">🎴 Flashcard SRS</h3>
+            <p data-i18n="flashcardDesc">Ôn thuật ngữ Glossary bằng lặp lại ngắt quãng (SM-2). Tiến độ lưu cục bộ, chạy offline.</p>
+          </div>
+          <div class="tool-card" id="tool-recorder">
+            <h3>🎙️ Ghi âm cuộc họp & Mở thư mục</h3>
+            <p>Tự động ghi âm trên Google Meet, Zoom, Teams. Click để mở trực tiếp thư mục lưu file (Downloads/BrSE_Meetings).</p>
+          </div>
+          <div class="tool-card" id="tool-docx-pdf">
+            <h3>📄 Chuyển đổi DOCX sang PDF</h3>
+            <p>Chuyển tài liệu Word (Thiết kế cơ bản, SOW, Biên bản họp) sang PDF chuẩn in ấn A4 trên BrSE OS.</p>
+          </div>
+          <div class="tool-card" id="tool-open-dashboard">
+            <h3>🚀 Mở BrSE OS Dashboard</h3>
+            <p>Truy cập toàn bộ công cụ Power Tools, quản lý dự án, biên bản họp và lịch biểu BrSE trên trình duyệt.</p>
+          </div>
+        </div>
+
+        <!-- Spec Heuristic Preview Dedicated Sub-View -->
+        <div id="spec-analyzer-view" class="tool-view hidden">
+          <div class="tool-view-header">
+            <button class="back-btn" id="btn-spec-back">← Tools</button>
+            <h3>Spec Heuristic Preview</h3>
+          </div>
+          
+          <div class="tool-view-content">
+            <div id="spec-drop-zone" class="drop-zone">
+              <div class="drop-icon">📄</div>
+              <p class="drop-title" data-i18n="specDropZoneTitle">Kéo & thả tài liệu thiết kế</p>
+              <p class="drop-subtitle" data-i18n="specDropZoneSubtitle">Local preview cho .xlsx, .pdf. Backend AI analyzer chưa bật.</p>
+              <input type="file" id="spec-file-input" accept=".xlsx,.pdf" class="hidden" />
+              <button class="select-file-btn" id="btn-select-spec-file" data-i18n="selectFileBtn">Chọn tệp tin</button>
+            </div>
+            
+            <div id="spec-loading" class="analysis-loading hidden">
+              <div class="spinner"></div>
+              <p data-i18n="specLoadingText">Đang dựng bản local preview. Kết quả bên dưới không phải AI analysis thật.</p>
+              <div class="progress-bar-container">
+                <div class="progress-bar" id="spec-progress-bar"></div>
+              </div>
+            </div>
+            
+            <div id="spec-results" class="analysis-results hidden">
+              <div class="analysis-truth-note" data-i18n="specResultsMockNote">
+                Local heuristic preview: dữ liệu mẫu để kiểm tra UI. Không xem đây là kết quả AI và không đồng bộ vào Dashboard.
+              </div>
+              <div class="results-tabs">
+                <button class="result-tab-btn active" data-subtab="glossary" data-i18n="resultTabGlossary">Từ vựng (Glossary)</button>
+                <button class="result-tab-btn" data-subtab="contradictions" data-i18n="resultTabContradictions">Mâu thuẫn (Validation)</button>
+                <button class="result-tab-btn" data-subtab="tasks" data-i18n="resultTabTasks">Nhiệm vụ (Todo)</button>
+              </div>
+              
+              <div class="results-content-area">
+                <!-- Subtab 1: Glossary -->
+                <div id="result-subtab-glossary" class="result-subtab-content">
+                  <table class="premium-table">
+                    <thead>
+                      <tr><th data-i18n="termHeaderJp">Thuật ngữ (JP)</th><th data-i18n="meanHeaderVi">Ý nghĩa (VI)</th></tr>
+                    </thead>
+                    <tbody id="glossary-tbody">
+                      <!-- Dynamic contents -->
+                    </tbody>
+                  </table>
+                </div>
+                
+                <!-- Subtab 2: Contradictions -->
+                <div id="result-subtab-contradictions" class="result-subtab-content hidden">
+                  <ul class="contradiction-list" id="contradiction-list">
+                    <!-- Dynamic contents -->
+                  </ul>
+                </div>
+                
+                <!-- Subtab 3: Tasks -->
+                <div id="result-subtab-tasks" class="result-subtab-content hidden">
+                  <div class="todo-sync-header">
+                    <span data-i18n="todoSyncHeader">Danh sách việc cần làm</span>
+                  </div>
+                  <ul class="task-checklist" id="task-checklist">
+                    <!-- Dynamic contents -->
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="results-actions">
+                <button id="btn-sync-to-dashboard" class="primary-btn sync-btn" disabled data-i18n="syncPreviewDisabledBtn">Chưa thể đồng bộ preview</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OCR Translate Dedicated Sub-View -->
+        <div id="ocr-translate-view" class="tool-view hidden">
+          <div class="tool-view-header">
+            <button class="back-btn" id="btn-ocr-back">← Tools</button>
+            <h3>OCR Translator</h3>
+          </div>
+          
+          <div class="tool-view-content" id="ocr-paste-zone">
+            <div class="ocr-source-row">
+              <button id="btn-start-ocr" class="primary-btn capture-btn">
+                <span class="icon">📷</span> <span data-i18n="startOcrBtn">Chụp vùng</span>
+              </button>
+              <button id="btn-ocr-upload" class="ocr-ghost-btn" type="button">🖼️ <span data-i18n="ocrUploadBtn">Tải ảnh</span></button>
+              <input type="file" id="ocr-file-input" accept="image/*" class="hidden" />
+            </div>
+            <div class="ocr-link-row">
+              <input id="ocr-url-input" type="url" data-i18n-placeholder="ocrUrlPlaceholder" placeholder="Dán link ảnh (https://...)" />
+              <button id="btn-ocr-url" class="ocr-ghost-btn" type="button" title="OCR link ảnh">→</button>
+            </div>
+            <div class="ocr-hint" data-i18n="ocrPasteHint">Mẹo: bấm vào vùng này rồi Ctrl+V để dán ảnh.</div>
+
+            <div id="ocr-status-message" class="ocr-status-card hidden">
+              <div class="pulse-dot"></div>
+              <span id="ocr-status-text" data-i18n="ocrPreparingStatus">Đang chuẩn bị công cụ chụp ảnh...</span>
+            </div>
+
+            <div id="ocr-result" class="ocr-result hidden">
+              <div class="ocr-result-head">
+                <span id="ocr-engine-badge" class="ocr-badge">Gemini</span>
+                <div class="ocr-lang-tabs" id="ocr-lang-tabs">
+                  <button class="ocr-lang-tab active" data-lang="original">Gốc</button>
+                  <button class="ocr-lang-tab" data-lang="ja">JA</button>
+                  <button class="ocr-lang-tab" data-lang="vi">VI</button>
+                  <button class="ocr-lang-tab" data-lang="en">EN</button>
+                </div>
+                <button id="btn-ocr-retranslate" class="ocr-ghost-btn" type="button" title="Dịch lại bằng AI backend">🤖</button>
+                <button id="btn-ocr-glossary" class="ocr-ghost-btn" type="button" title="Lưu thuật ngữ JP vào Glossary">📚</button>
+                <button id="btn-ocr-ask" class="ocr-ghost-btn" type="button" title="Hỏi AI về nội dung">💬</button>
+                <button id="btn-ocr-copy" class="ocr-ghost-btn" type="button" title="Sao chép">📋</button>
+              </div>
+              <pre id="ocr-result-text" class="ocr-result-text"></pre>
+            </div>
+
+            <div id="ocr-history" class="ocr-history hidden">
+              <div class="ocr-history-title" data-i18n="ocrHistoryTitle">Lịch sử OCR gần đây</div>
+              <div id="ocr-history-list" class="ocr-history-list"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flashcard SRS Dedicated Sub-View -->
+        <div id="flashcard-view" class="tool-view hidden">
+          <div class="tool-view-header">
+            <button class="back-btn" id="btn-flashcard-back">← Tools</button>
+            <h3>Flashcard SRS</h3>
+          </div>
+
+          <div class="tool-view-content">
+            <div class="fc-stats">
+              <span class="fc-stat"><strong id="fc-due-count">0</strong> đến hạn</span>
+              <span class="fc-stat-sep">·</span>
+              <span class="fc-stat"><strong id="fc-total-count">0</strong> thẻ</span>
+            </div>
+
+            <div id="fc-empty" class="fc-message hidden">
+              Chưa có thuật ngữ nào trong Glossary. Hãy thêm thuật ngữ (nút 📚 ở OCR hoặc trang Glossary) rồi quay lại.
+            </div>
+            <div id="fc-done" class="fc-message hidden">
+              🎉 Đã ôn hết thẻ đến hạn! Quay lại sau nhé.
+            </div>
+
+            <div id="fc-card" class="fc-card hidden">
+              <div class="fc-front" id="fc-front"></div>
+              <div class="fc-reading hidden" id="fc-reading"></div>
+              <div class="fc-divider"></div>
+              <div class="fc-back hidden" id="fc-back"></div>
+              <button id="fc-flip" class="primary-btn fc-flip">Lật thẻ</button>
+              <div id="fc-grade" class="fc-grade hidden">
+                <button type="button" data-grade="again" class="fc-grade-btn fc-again">Lại</button>
+                <button type="button" data-grade="hard" class="fc-grade-btn fc-hard">Khó</button>
+                <button type="button" data-grade="good" class="fc-grade-btn fc-good">Được</button>
+                <button type="button" data-grade="easy" class="fc-grade-btn fc-easy">Dễ</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tab-project" class="tab-content">
+        <div id="project-status">
+          <div class="loader">Loading project context...</div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./sidepanel.js"></script>
+  </body>
+</html>

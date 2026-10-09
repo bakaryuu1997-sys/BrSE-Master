@@ -1,0 +1,680 @@
+{
+  "extName": {
+    "message": "BrSE OS アシスタント"
+  },
+  "extDescription": {
+    "message": "ブリッジシステムエンジニア（BrSE）向けローカルコックピット。敬語作成、用語管理、コンテンツ挿入を支援。"
+  },
+  "commandDescription": {
+    "message": "BrSE OS コマンドパレットを開く"
+  },
+  "chatPlaceholder": {
+    "message": "メッセージを入力..."
+  },
+  "quickAddBtn": {
+    "message": "⚡ クイック追加"
+  },
+  "editBtn": {
+    "message": "✏️ 編集"
+  },
+  "disableHighlight": {
+    "message": "🔕 ハイライト無効"
+  },
+  "retry": {
+    "message": "🔄 再試行"
+  },
+  "aiFallback": {
+    "message": "🧠 AI翻訳"
+  },
+  "dashboardTab": {
+    "message": "ダッシュボード"
+  },
+  "settingsTab": {
+    "message": "設定"
+  },
+  "urgentFocusTitle": {
+    "message": "緊急フォーカス"
+  },
+  "hubTitle": {
+    "message": "クイック操作"
+  },
+  "hubPalette": {
+    "message": "コマンドパレット"
+  },
+  "hubOcr": {
+    "message": "範囲OCR"
+  },
+  "hubSidepanel": {
+    "message": "サイドパネル"
+  },
+  "hubWebApp": {
+    "message": "Webアプリ"
+  },
+  "hubGlossary": {
+    "message": "用語ハイライト"
+  },
+  "hubKeigo": {
+    "message": "敬語チェック"
+  },
+  "hubFurigana": {
+    "message": "ホバー翻訳 (Alt+hover)"
+  },
+  "activeModelLabel": {
+    "message": "有効なモデル"
+  },
+  "localBridgeTitle": {
+    "message": "ローカルブリッジ"
+  },
+  "secretTokenLabel": {
+    "message": "シークレットトークン"
+  },
+  "secretTokenPlaceholder": {
+    "message": "BRSE_API_SECRETが設定されている場合のみ必要"
+  },
+  "apiUrlLabel": {
+    "message": "API URL"
+  },
+  "furiganaAlwaysOnLabel": {
+    "message": "ふりがなを常に表示（Alt不要）"
+  },
+  "saveSettingsBtn": {
+    "message": "設定を保存"
+  },
+  "glossaryHighlightsLabel": {
+    "message": "用語集 of ハイライト"
+  },
+  "learnedCountBtn": {
+    "message": "📁 非表示中の用語 ($1)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "unhideAllBtn": {
+    "message": "🔄 すべて表示に戻す"
+  },
+  "noUrgentFocus": {
+    "message": "緊急のフォーカス項目はありません。"
+  },
+  "loadingText": {
+    "message": "読み込み中..."
+  },
+  "extensionSettingsTitle": {
+    "message": "拡張機能設定"
+  },
+  "appUrlLabel": {
+    "message": "アプリURL"
+  },
+  "apiBaseLabel": {
+    "message": "APIベース"
+  },
+  "defaultProjectLabel": {
+    "message": "デフォルトプロジェクト"
+  },
+  "defaultProjectPlaceholder": {
+    "message": "個人プロジェクト"
+  },
+  "toolbarModeLabel": {
+    "message": "ツールバー起動モード"
+  },
+  "toolbarModeAuto": {
+    "message": "選択範囲의 反転 hoặc 3回クリックで表示"
+  },
+  "toolbarModeAlt": {
+    "message": "Altキー押下時のみ表示"
+  },
+  "settingsUsedBy": {
+    "message": "これらの設定はポップアップ、サイドパネル、コンテキストアクション、ページヘルパーで使用されます。"
+  },
+  "learnedTermsViewTitle": {
+    "message": "📁 非表示中の用語を表示 ($1)",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "meetingDetected": {
+    "message": "会議を検出しました："
+  },
+  "startLiveMemoBtn": {
+    "message": "BrSE ライブメモを開始"
+  },
+  "chatTab": {
+    "message": "チャット"
+  },
+  "writeTab": {
+    "message": "ライト"
+  },
+  "toolsTab": {
+    "message": "ツール"
+  },
+  "projectTab": {
+    "message": "プロジェクト"
+  },
+  "gmailContextDetected": {
+    "message": "Gmailのコンテキスト検出"
+  },
+  "gmailContextSubject": {
+    "message": "件名: $1",
+    "placeholders": {
+      "subject": {
+        "content": "$1",
+        "example": "Meeting request"
+      }
+    }
+  },
+  "useBtn": {
+    "message": "使用"
+  },
+  "clearBtn": {
+    "message": "クリア"
+  },
+  "readyAskPage": {
+    "message": "準備完了。現在のウェブページ、選択したテキスト、BrSE業務のライティング、またはプロジェクトのコンテキストについて質問してください。"
+  },
+  "crossTabBtn": {
+    "message": "🔗 クロスタブコンテキスト"
+  },
+  "crossTabTitle": {
+    "message": "他のタブからローカルコンテキストをリンクする"
+  },
+  "chooseTabsLink": {
+    "message": "リンクするコンテキストタブの選択"
+  },
+  "noOtherTabs": {
+    "message": "他のタブが見つかりません..."
+  },
+  "askBrsePlaceholder": {
+    "message": "BrSE OSに尋ねる..."
+  },
+  "sendBtn": {
+    "message": "送信"
+  },
+  "stopGeneratingBtn": {
+    "message": "🛑 生成を停止"
+  },
+  "japaneseEmailTemplate": {
+    "message": "日本語メール"
+  },
+  "dailyReportTemplate": {
+    "message": "日報"
+  },
+  "specSummaryTemplate": {
+    "message": "仕様の要約"
+  },
+  "draftQaTemplate": {
+    "message": "Q&Aドラフト"
+  },
+  "writeInputPlaceholder": {
+    "message": "作成したい内容をベトナム語または英語で記述してください..."
+  },
+  "writeTonePolite": {
+    "message": "丁寧な敬語"
+  },
+  "writeToneCasual": {
+    "message": "社内向け・常体"
+  },
+  "writeToneExecutive": {
+    "message": "エグゼクティブサマリー"
+  },
+  "generateBtn": {
+    "message": "生成"
+  },
+  "keigoCheckerTool": {
+    "message": "敬語チェッカー"
+  },
+  "keigoCheckerDesc": {
+    "message": "日本語ビジネス表現 của レビューと改善。"
+  },
+  "horensoDraftTool": {
+    "message": "報連相ドラフト"
+  },
+  "horensoDraftDesc": {
+    "message": "顧客やマネージャー向けの簡潔なレポートドラフト作成。"
+  },
+  "contextTranslateTool": {
+    "message": "コンテキスト翻訳"
+  },
+  "contextTranslateDesc": {
+    "message": "BrSE専用の文脈と用語による翻訳。"
+  },
+  "specAnalyzerTool": {
+    "message": "📄 仕様書の簡易プレビュー"
+  },
+  "specAnalyzerDesc": {
+    "message": "ローカルプレビューで仕様書の読み込みフローを試します。AIバックエンド未接続、モックデータ。"
+  },
+  "ocrTranslateTool": {
+    "message": "📸 OCR翻訳"
+  },
+  "ocrTranslateDesc": {
+    "message": "日本語の画面領域をキャプチャし、画像座標に基づいて翻訳します（Gemini OCRの設定時）。"
+  },
+  "flashcardTool": {
+    "message": "🎴 Flashcard SRS"
+  },
+  "flashcardDesc": {
+    "message": "用語集をSM-2の間隔反復で復習。進捗はローカル保存、オフライン対応。"
+  },
+  "specDropZoneTitle": {
+    "message": "設計書をドラッグ＆ドロップしてください"
+  },
+  "specDropZoneSubtitle": {
+    "message": ".xlsx, .pdfのローカルプレビュー。AI解析バックエンドは未有効。"
+  },
+  "selectFileBtn": {
+    "message": "ファイルを選択"
+  },
+  "specLoadingText": {
+    "message": "ローカルプレビューを作成中。以下の結果はAI分析ではありません。"
+  },
+  "specResultsMockNote": {
+    "message": "ローカルプレビュー：UIテスト用のモックデータ。実際のAI結果として扱わず、ダッシュボードにも同期されません。"
+  },
+  "resultTabGlossary": {
+    "message": "用語集"
+  },
+  "resultTabContradictions": {
+    "message": "矛盾点検出"
+  },
+  "resultTabTasks": {
+    "message": "タスク"
+  },
+  "termHeaderJp": {
+    "message": "用語 (JP)"
+  },
+  "meanHeaderVi": {
+    "message": "意味 (VI)"
+  },
+  "todoSyncHeader": {
+    "message": "To-Doリスト"
+  },
+  "syncPreviewDisabledBtn": {
+    "message": "プレビューの同期不可"
+  },
+  "ocrInstruction": {
+    "message": "日本語の画面領域をキャプチャして画像座標で翻訳します。Gemini OCRが未設定の場合、モックのフォールバックが指定されます。"
+  },
+  "startOcrBtn": {
+    "message": "📷 画面領域をキャプチャ"
+  },
+  "ocrPreparingStatus": {
+    "message": "キャプチャツールの準備中..."
+  },
+  "savingSettingsStatus": {
+    "message": "設定を保存中..."
+  },
+  "modelRejectedStatus": {
+    "message": "モデル $1 はランタイムに拒否されました。 $2 を試行中...",
+    "placeholders": {
+      "model": {
+        "content": "$1"
+      },
+      "fallback": {
+        "content": "$2"
+      }
+    }
+  },
+  "settingsSavedSuccess": {
+    "message": "設定が保存されました。AI OK: $1。$1",
+    "placeholders": {
+      "model": {
+        "content": "$1"
+      },
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "settingsSavedLocalOnly": {
+    "message": "ローカルに保存されましたが、AIは利用できません: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "settingsSavedError": {
+    "message": "ローカル保存完了、ランタイム同期失敗: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "backendStatusOnline": {
+    "message": "バックエンドオンライン"
+  },
+  "backendStatusOffline": {
+    "message": "オフライン: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "toastChatworkTextareaNotFound": {
+    "message": "⚠️ Chatwork入力エリアが見つかりません (#_chatText) !"
+  },
+  "btnTitleAiCompose": {
+    "message": "BrSE OS: AI文章作成 & プロジェクト情報挿入"
+  },
+  "errorCloudFallback": {
+    "message": "❌ クラウドフォールバックエラー: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorLocalBackend": {
+    "message": "❌ ローカルバックエンド接続エラー ($1): $1。クラウドフォールバックを有効にするには、バックエンドを起動するか、設定でGemini APIキーを設定してください。",
+    "placeholders": {
+      "model": {
+        "content": "$1"
+      },
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "qbAssistantWelcome": {
+    "message": "BrSEアシスタントです。「<b>$1</b>」について何か質問はありますか？",
+    "placeholders": {
+      "term": {
+        "content": "$1",
+        "example": "仕様書"
+      }
+    }
+  },
+  "qbExplainAi": {
+    "message": "💡 AI解説"
+  },
+  "qbCheckGrammar": {
+    "message": "✍️ 文法チェック"
+  },
+  "qbPolishKeigo": {
+    "message": "✨ 敬語調整"
+  },
+  "qbSummaryJp": {
+    "message": "📄 ページ要約 (日本語)"
+  },
+  "qbSummaryVi": {
+    "message": "📄 ページ要約 (ベトナム語)"
+  },
+  "qbTitleAiRequest": {
+    "message": "AIリクエスト"
+  },
+  "qbTitleAiRequestPage": {
+    "message": "このページの$1",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "Explain"
+      }
+    }
+  },
+  "qbNote": {
+    "message": "ノート"
+  },
+  "qbDictionary": {
+    "message": "辞書"
+  },
+  "qbLoadingDict": {
+    "message": "⏳ 詳細な辞書データを取得中..."
+  },
+  "qbReferMore": {
+    "message": "追加参照"
+  },
+  "qbSyncBadgeTitle": {
+    "message": "オフライン同期ステータス (クリックして再試行)"
+  },
+  "qbSyncChecking": {
+    "message": "確認中..."
+  },
+  "qbSettings": {
+    "message": "設定"
+  },
+  "qbFeedback": {
+    "message": "フィードバック"
+  },
+  "qbClearChat": {
+    "message": "チャット履歴をクリア"
+  },
+  "qbMinimize": {
+    "message": "最小化"
+  },
+  "qbTranslateViPill": {
+    "message": "🇻🇳 ベトナム語翻訳"
+  },
+  "qbEmailJpPill": {
+    "message": "🇯🇵 敬語メール作成"
+  },
+  "qbKanjiItPill": {
+    "message": "📖 漢字とIT用語"
+  },
+  "qbTaskPill": {
+    "message": "📋 詳細タスク作成"
+  },
+  "qbBugPill": {
+    "message": "🔍 バグとログの解説"
+  },
+  "qbPersonaLabel": {
+    "message": "AI役割を選択"
+  },
+  "qbModelLabel": {
+    "message": "AIモデルを選択"
+  },
+  "qbInputPlaceholder": {
+    "message": "この単語・文についてさらにAIに質問..."
+  },
+  "qbSendBtnTitle": {
+    "message": "質問を送信"
+  },
+  "qbDeleteMsgTitle": {
+    "message": "このメッセージを削除"
+  },
+  "jiraDestTodo": {
+    "message": "新規To-Doプロジェクト"
+  },
+  "jiraDestOps": {
+    "message": "運用モジュール"
+  },
+  "destQna": {
+    "message": "Q&A / 確認事項"
+  },
+  "qnaAnalysisPrompt": {
+    "message": "以下の内容（Jiraチケットまたは顧客メール）を読み、取引先・顧客に送る確認事項を3〜5件、丁寧なビジネス敬語で作成してください。各項目について、(1) 日本語の敬語による質問文、(2) ベトナム語の簡潔な訳、(3) 確認が必要な理由・影響、を番号付きで明確に提示してください。"
+  },
+  "jiraSyncSuccess": {
+    "message": "同期が成功しました："
+  },
+  "jiraAiAnalyzing": {
+    "message": "AIによる分析とアクションプランの作成を開始しています..."
+  },
+  "jiraSyncTaskSuccess": {
+    "message": "✓ タスク連携成功"
+  },
+  "jiraAutoImportedCount": {
+    "message": "ダッシュボード上のTo-Doプロジェクトに <b>$1個のサブタスク</b> が自動的にインポートされました！",
+    "placeholders": {
+      "count": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "jiraSyncTaskError": {
+    "message": "❌ タスク同期エラー"
+  },
+  "jiraSyncTaskErrorDetail": {
+    "message": "プロジェクトにタスクを自動連携できませんでした: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "jiraSyncTaskWarning": {
+    "message": "⚠️ サブタスクの解析に失敗しました"
+  },
+  "jiraSyncTaskWarningDetail": {
+    "message": "AIが自動連携用の適切なJSON形式を出力しませんでした。手動でタスクをコピーすることは可能です。"
+  },
+  "jiraGmailTemplatePrompt": {
+    "message": "宛先: {to}\n件名: $1\n\n作成する本文: ",
+    "placeholders": {
+      "subject": {
+        "content": "$1",
+        "example": "Meeting request"
+      }
+    }
+  },
+  "jiraTicketTemplatePrompt": {
+    "message": "Jiraチケット [{key}] 「$1」に関するプロフェッショナルな報告書またはアップデートを作成します。\n\n進捗・アクションアイテム: ",
+    "placeholders": {
+      "title": {
+        "content": "$1",
+        "example": "Explain"
+      }
+    }
+  },
+  "jiraAnalysisPreparing": {
+    "message": "分析準備中..."
+  },
+  "jiraTodoPrompt": {
+    "message": "このJiraチケットを分析し、開発者向けの詳細なサブタスクに自動的に分解してください。最後に、回答の最後に ```json [ ... ] ``` コードブロックで囲まれた単一のJSON配列としてタスクリストを出力してください（各要素の構造：{\"title\": \"日本語または英語の短いタスク名\", \"phase\": \"3. Implementation & Coding\", \"priority\": \"HIGH\" | \"MEDIUM\" | \"LOW\", \"detail\": \"行うべき作業の簡単な説明\"}）。システムが自動的に解析してTo-Doプロジェクトに直接インポートできるよう、JSONが有効であることを確認してください。"
+  },
+  "jiraOpsPrompt": {
+    "message": "このJiraチケットのビジネス要件を分析し、以下の詳細なセクションを提供してください：\n1. コアビジネス要件の要約 (Core Business Requirements)。\n2. ビジネス/技術的な矛盾や潜在的なリスクの特定と分析 (Business/Tech Contradictions and Risks) - 最低3項目。\n3. 上記の矛盾/リスクを明確にするために顧客/パートナーに送信する、丁寧な日本語敬語による3〜5個のエレガントでプロフェッショナルなQ&A質問。\n4. この機能を実装するための開発者向けの少なくとも5個の詳細なアクションアイテム (Action Items)。"
+  },
+  "toastSummaryRestore": {
+    "message": "要約の復元"
+  },
+  "summaryPageLabel": {
+    "message": "ページ要約："
+  },
+  "toastNoSummaryFound": {
+    "message": "⚠️ このページの要約が見つかりません！"
+  },
+  "summaryLoading": {
+    "message": "AI要約の作成中..."
+  },
+  "errAiRequestFailed": {
+    "message": "❌ AIリクエスト失敗: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "toastCopied": {
+    "message": "📋 コピーしました！"
+  },
+  "toastSyncedHub": {
+    "message": "✅ プロジェクトハブに送信しました！"
+  },
+  "toastOfflineOutbox": {
+    "message": "🌐 オフライン: 一時的にアウトボックスキューに保存しました！"
+  },
+  "toastSyncError": {
+    "message": "❌ 同期エラー: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "toastSelectTextOrCmd": {
+    "message": "⚠️ テキストを選択するか、コマンドを入力してください！"
+  },
+  "toastInsertedText": {
+    "message": "✍️ 入力エリアに回答を挿入しました！"
+  },
+  "toastInsertTextFailed": {
+    "message": "⚠️ 入力エリアに挿入できませんでした！"
+  },
+  "toastSelectFieldFirst": {
+    "message": "⚠️ 挿入する前に入力エリアをクリックして選択してください！"
+  },
+  "kcInputJpFirst": {
+    "message": "⚠️ チェックする前に日本語を入力してください！"
+  },
+  "kcAiAnalyzing": {
+    "message": "AIが敬語を分析・修正しています..."
+  },
+  "kcLocalBackendErr": {
+    "message": "ローカルバックエンドAIの接続エラー: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "kcStartBackendPrompt": {
+    "message": "極上の敬語チェッカー機能を利用するには、ローカルバックエンドを起動してください！"
+  },
+  "kcErrorGeneral": {
+    "message": "エラー: $1",
+    "placeholders": {
+      "msg": {
+        "content": "$1"
+      }
+    }
+  },
+  "kcHeaderTitle": {
+    "message": "✦ 武器 3：敬語コレクター"
+  },
+  "kcChangesDetail": {
+    "message": "変更の詳細"
+  },
+  "kcAlreadyPolite": {
+    "message": "テキストはすでに適切な敬語です。修正点は見つかりませんでした！"
+  },
+  "kcClassification": {
+    "message": "分類："
+  },
+  "kcOriginalText": {
+    "message": "原文"
+  },
+  "kcProposedEdits": {
+    "message": "修正案（敬語調整）"
+  },
+  "kcCloseBtn": {
+    "message": "閉じる"
+  },
+  "kcApplyBtn": {
+    "message": "✓ 適用"
+  },
+  "kcApplySuccess": {
+    "message": "✨ 敬語の改善が適用されました！"
+  },
+  "tbTranslatePro": {
+    "message": "Pro翻訳"
+  },
+  "tbTranslateBilingual": {
+    "message": "バイリンガル翻訳"
+  },
+  "tbSpeakText": {
+    "message": "テキスト読み上げ"
+  },
+  "tbGrammarCheck": {
+    "message": "文法チェック"
+  },
+  "tbPolishKeigo": {
+    "message": "敬語調整"
+  },
+  "tbExplainAi": {
+    "message": "AI解説"
+  },
+  "tbQuickCopy": {
+    "message": "クイックコピー"
+  },
+  "tbSaveProject": {
+    "message": "プロジェクト保存"
+  }
+}

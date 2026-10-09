@@ -1,0 +1,101 @@
+/* Scoped tokens for BrSE OS Extension to prevent layout bleeding.
+   Single premium palette ("Graphite & Coral" — matches the frontend app).
+   Keep in sync with src/shared/theme.js and src/sidepanel/style.css.
+   NOTE: public/shared/tokens.css and shared/tokens.css are kept byte-identical
+   so the extension renders the same whether the bundler serves the root copy
+   (manifest/html references) or the static public copy (dist). theme.js remains
+   the single source of truth for the values. */
+
+:root {
+  /* Surfaces */
+  --brse-bg-canvas: #121316;
+  --brse-bg-panel: #161719;
+  --brse-surface: #1d1e22;
+  --brse-surface-2: #232529;
+  --brse-bg-elevated: rgba(255, 255, 255, 0.045);
+
+  /* Text */
+  --brse-text: #ededf0;
+  --brse-text-strong: #f3f3f5;
+  --brse-text-muted: #a2a3aa;
+  --brse-text-dim: #6e7079;
+
+  /* Accents */
+  --brse-primary: #ff6b5e;
+  --brse-primary-bright: #ff8266;
+  --brse-primary-strong: #e85a4d;
+  --brse-secondary: #ff8a7d;
+  --brse-accent: #ffb454;
+  --brse-accent-cyan: #4ec9a5;
+  --brse-green: #4ec9a5;
+  --brse-yellow: #ffb454;
+  --brse-red: #ff5d6c;
+  /* Semantic aliases — keep in sync with src/shared/theme.js so var(--brse-success|warning|error)
+     resolves on chrome pages (popup/options/sidepanel) the same as inside shadow roots. */
+  --brse-success: #4ec9a5;
+  --brse-warning: #ffb454;
+  --brse-error: #ff5d6c;
+
+  /* Lines + elevation */
+  --brse-border: rgba(255, 255, 255, 0.08);
+  --brse-border-strong: rgba(255, 107, 94, 0.35);
+  --brse-shadow: 0 16px 40px rgba(0, 0, 0, 0.50), 0 0 28px rgba(255, 107, 94, 0.12);
+  --brse-shadow-md: 0 6px 18px rgba(0, 0, 0, 0.40);
+  --brse-glow-primary: 0 0 0 1px rgba(255, 107, 94, 0.20), 0 6px 22px rgba(255, 107, 94, 0.28);
+
+  /* Radius */
+  --brse-radius-sm: 8px;
+  --brse-radius-md: 10px;
+  --brse-radius-lg: 16px;
+
+  --brse-z-index: 2147483647;
+}
+
+/*
+  Scope generic variables to our theme container, extension popup, sidepanel,
+  and options pages to prevent layout breaking on external websites.
+*/
+.brse-theme-container,
+:host,
+.tokyo-night,
+.brse-popup,
+.brse-options {
+  color-scheme: dark;
+
+  --bg-primary: var(--brse-bg-canvas);
+  --bg-secondary: var(--brse-surface-2);
+  --bg-tertiary: var(--brse-surface);
+  --text-primary: var(--brse-text);
+  --text-muted: var(--brse-text-muted);
+  --accent-primary: var(--brse-primary);
+  --accent-secondary: var(--brse-secondary);
+  --success: var(--brse-green);
+  --error: var(--brse-red);
+  --border: var(--brse-border);
+
+  --primary: var(--brse-primary);
+  --primary-dark: var(--brse-primary-strong);
+  --accent: var(--brse-accent);
+  --bg: var(--brse-bg-canvas);
+  --bg-lighter: var(--brse-surface-2);
+  --text: var(--brse-text);
+  --ai-msg-bg: rgba(255, 107, 94, 0.12);
+  --user-msg-bg: rgba(255, 107, 94, 0.20);
+}
+
+.brse-card {
+  border: 1px solid var(--brse-border);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(255, 107, 94, 0.14), transparent 32%),
+    radial-gradient(circle at 92% 0%, rgba(255, 138, 125, 0.12), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.060), rgba(255, 255, 255, 0.028));
+  box-shadow: var(--brse-shadow);
+}
+
+.brse-tab-active {
+  border: 1px solid var(--brse-border-strong);
+  background:
+    linear-gradient(135deg, var(--brse-primary-strong), var(--brse-primary)),
+    rgba(255, 255, 255, 0.06);
+  color: var(--brse-text-strong);
+}

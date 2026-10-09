@@ -1,0 +1,738 @@
+[
+  {
+    "id": "ba-entity-relationship-diagram",
+    "english": "ERD / Entity Relationship Diagram",
+    "japanese": "ER図 / 実体関連図",
+    "kana": "ERず / じったいかんれんず",
+    "vietnamese": "Sơ đồ quan hệ thực thể / ERD",
+    "roles": [
+      "BA",
+      "Dev",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Sơ đồ biểu diễn cấu trúc dữ liệu và mối quan hệ giữa các thực thể.",
+    "example": "The ERD is used to design the database schema."
+  },
+  {
+    "id": "ba-feasibility-study",
+    "english": "Feasibility Study",
+    "japanese": "実現可能性調査 / フィジビリティスタディ",
+    "kana": "じつげんかのうせいちょうさ / フィジビリティスタディ",
+    "vietnamese": "Nghiên cứu khả thi / Feasibility Study",
+    "roles": [
+      "BA",
+      "PM",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Đánh giá khả năng thực hiện dự án về mặt kỹ thuật, kinh tế, thời gian.",
+    "example": "The feasibility study confirmed that the project is viable."
+  },
+  {
+    "id": "ba-flowchart",
+    "english": "Flowchart / Flowcharts",
+    "japanese": "フローチャート / 流れ図",
+    "kana": "フローチャート / ながれず",
+    "vietnamese": "Sơ đồ luồng / Flowchart",
+    "roles": [
+      "BA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Sơ đồ biểu diễn các bước trong một quy trình hoặc thuật toán.",
+    "example": "The flowchart illustrates the approval process."
+  },
+  {
+    "id": "ba-fr",
+    "english": "FR / Functional Requirement / Functional Requirements",
+    "japanese": "機能要件",
+    "kana": "きのうようけん",
+    "vietnamese": "Yêu cầu chức năng / FR",
+    "roles": [
+      "BA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Mô tả các tính năng mà hệ thống phải thực hiện.",
+    "example": "We have 20 Functional Requirements for this phase."
+  },
+  {
+    "id": "ba-functional-decomposition",
+    "english": "Functional Decomposition",
+    "japanese": "機能分解",
+    "kana": "きのうぶんかい",
+    "vietnamese": "Phân rã chức năng / Functional Decomposition",
+    "roles": [
+      "BA",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Chia nhỏ một hệ thống phức tạp thành các phần nhỏ, dễ quản lý hơn.",
+    "example": "Functional decomposition helps in estimating the project size."
+  },
+  {
+    "id": "ba-gap-analysis",
+    "english": "Gap Analysis",
+    "japanese": "ギャップ分析",
+    "kana": "ギャップぶんせき",
+    "vietnamese": "Phân tích khoảng cách / Gap Analysis",
+    "roles": [
+      "BA",
+      "BrSE",
+      "Consultant"
+    ],
+    "category": "System Design",
+    "note": "So sánh giữa trạng thái hiện tại (AS-IS) và trạng thái mong muốn (TO-BE).",
+    "example": "The gap analysis shows what we need to improve."
+  },
+  {
+    "id": "ba-glossary",
+    "english": "Glossary / Glossaries",
+    "japanese": "用語集",
+    "kana": "ようごしゅう",
+    "vietnamese": "Từ điển thuật ngữ / Glossary",
+    "roles": [
+      "BA",
+      "BrSE",
+      "Team"
+    ],
+    "category": "System Design",
+    "note": "Danh sách các thuật ngữ và định nghĩa được sử dụng trong dự án.",
+    "example": "Check the project glossary for unfamiliar terms."
+  },
+  {
+    "id": "ba-impact-analysis",
+    "english": "Impact Analysis",
+    "japanese": "影響調査 / インパクト分析",
+    "kana": "えいきょうちょうさ / インパクトぶんせき",
+    "vietnamese": "Phân tích tác động / Impact Analysis",
+    "roles": [
+      "BA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Đánh giá ảnh hưởng của một thay đổi đối với các phần khác của hệ thống.",
+    "example": "Perform an impact analysis before accepting the CR."
+  },
+  {
+    "id": "ba-interview",
+    "english": "Interview / Interviews / Interviewing",
+    "japanese": "インタビュー / 面談",
+    "kana": "インタビュー / めんだん",
+    "vietnamese": "Phỏng vấn / Interview",
+    "roles": [
+      "BA",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Gặp gỡ trực tiếp để thu thập thông tin từ cá nhân.",
+    "example": "I will interview the end users to understand their pain points."
+  },
+  {
+    "id": "ba-moscow",
+    "english": "MoSCoW",
+    "japanese": "MoSCoW分析",
+    "kana": "MoSCoWぶんせき",
+    "vietnamese": "Kỹ thuật ưu tiên MoSCoW (Must, Should, Could, Won't)",
+    "roles": [
+      "BA",
+      "PO",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Phương pháp phân loại yêu cầu theo mức độ cần thiết.",
+    "example": "Use MoSCoW to categorize these new features."
+  },
+  {
+    "id": "ba-nfr",
+    "english": "NFR / Non-Functional Requirement / Non-Functional Requirements",
+    "japanese": "非機能要件",
+    "kana": "ひきのうようけん",
+    "vietnamese": "Yêu cầu phi chức năng / NFR",
+    "roles": [
+      "BA",
+      "BrSE",
+      "Dev",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Các yêu cầu về hiệu năng, bảo mật, khả năng mở rộng.",
+    "example": "Performance is a critical Non-Functional Requirement."
+  },
+  {
+    "id": "ba-observation",
+    "english": "Observation / Observing",
+    "japanese": "観察 / オブザベーション",
+    "kana": "かんさつ / オブザベーション",
+    "vietnamese": "Quan sát / Observation",
+    "roles": [
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Theo dõi người dùng làm việc thực tế để hiểu quy trình.",
+    "example": "Observation helped us find inefficiencies in their workflow."
+  },
+  {
+    "id": "ba-persona",
+    "english": "Persona / Personas",
+    "japanese": "ペルソナ",
+    "kana": "ペルソナ",
+    "vietnamese": "Chân dung người dùng / Persona",
+    "roles": [
+      "BA",
+      "Designer"
+    ],
+    "category": "System Design",
+    "note": "Nhân vật hư cấu đại diện cho một nhóm người dùng mục tiêu.",
+    "example": "Create personas to better understand our target audience."
+  },
+  {
+    "id": "ba-prioritization",
+    "english": "Prioritization / Prioritizing / Prioritize",
+    "japanese": "優先順位付け",
+    "kana": "ゆうせんじゅんいつけ",
+    "vietnamese": "Ưu tiên hóa / Sắp xếp độ ưu tiên",
+    "roles": [
+      "BA",
+      "PO",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Quá trình xác định thứ tự thực hiện các yêu cầu.",
+    "example": "Backlog prioritization is a key responsibility of the PO."
+  },
+  {
+    "id": "ba-prototype",
+    "english": "Prototype / Prototypes / Prototyping",
+    "japanese": "プロトタイプ",
+    "kana": "プロトタイプ",
+    "vietnamese": "Bản mẫu / Prototype",
+    "roles": [
+      "BA",
+      "BrSE",
+      "Designer",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Mô hình mô phỏng hoạt động của hệ thống để demo hoặc thử nghiệm.",
+    "example": "We need a functional prototype for the client meeting."
+  },
+  {
+    "id": "ba-prototype-high-fi",
+    "english": "High-fidelity Prototype / High-fi Prototype",
+    "japanese": "高忠実度プロトタイプ / ハイファイプロトタイプ",
+    "kana": "ハイファイプロトタイプ",
+    "vietnamese": "Bản mẫu độ phân giải cao / High-fi Prototype",
+    "roles": [
+      "Designer",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Bản mẫu chi tiết, gần giống với sản phẩm cuối cùng.",
+    "example": "We used Figma to create a high-fidelity prototype."
+  },
+  {
+    "id": "ba-prototype-low-fi",
+    "english": "Low-fidelity Prototype / Low-fi Prototype",
+    "japanese": "低忠実度プロトタイプ / ローファイプロトタイプ",
+    "kana": "ローファイプロトタイプ",
+    "vietnamese": "Bản mẫu độ phân giải thấp / Low-fi Prototype",
+    "roles": [
+      "BA",
+      "Designer"
+    ],
+    "category": "System Design",
+    "note": "Bản mẫu thô sơ, tập trung vào cấu trúc hơn là chi tiết hình ảnh.",
+    "example": "A paper sketch is a common low-fidelity prototype."
+  },
+  {
+    "id": "ba-requirement-churn",
+    "english": "Requirement Churn",
+    "japanese": "要件の変動",
+    "kana": "ようけんのへんどう",
+    "vietnamese": "Sự biến động yêu cầu / Requirement churn",
+    "roles": [
+      "BA",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Tình trạng yêu cầu thay đổi liên tục trong quá trình phát triển.",
+    "example": "High requirement churn can delay the project delivery."
+  },
+  {
+    "id": "ba-scope-creep",
+    "english": "Scope Creep",
+    "japanese": "スコープクリープ / 範囲の肥大化",
+    "kana": "スコープクリープ",
+    "vietnamese": "Bể scope / Phình scope / Scope creep",
+    "roles": [
+      "BA",
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Việc mở rộng yêu cầu dự án ngoài tầm kiểm soát và không có kế hoạch.",
+    "example": "We must avoid scope creep to finish the project on time."
+  },
+  {
+    "id": "ba-sequence-diagram",
+    "english": "Sequence Diagram / Sequence Diagrams",
+    "japanese": "シーケンス図",
+    "kana": "シーケンスず",
+    "vietnamese": "Sơ đồ trình tự / Sequence Diagram",
+    "roles": [
+      "BA",
+      "Dev",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Sơ đồ UML mô tả sự tương tác giữa các đối tượng theo trình tự thời gian.",
+    "example": "The sequence diagram shows the interaction between the client and server."
+  },
+  {
+    "id": "ba-sign-off",
+    "english": "Sign-off / Sign off / Signing off",
+    "japanese": "承認 / サインオフ",
+    "kana": "しょうにん / サインオフ",
+    "vietnamese": "Phê duyệt chính thức / Sign-off",
+    "roles": [
+      "BA",
+      "Stakeholders",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Sự chấp thuận chính thức cho một tài liệu hoặc giai đoạn dự án.",
+    "example": "We are waiting for the client's sign-off on the SRS."
+  },
+  {
+    "id": "ba-srs",
+    "english": "SRS / Software Requirement Specification",
+    "japanese": "ソフトウェア要件定義書",
+    "kana": "ソフトウェアようけんていぎしょ",
+    "vietnamese": "Tài liệu đặc tả yêu cầu phần mềm / SRS",
+    "roles": [
+      "BA",
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tài liệu chi tiết mô tả các tính năng và ràng buộc của hệ thống.",
+    "example": "The developers are reviewing the SRS for the new module."
+  },
+  {
+    "id": "ba-stakeholder",
+    "english": "Stakeholder / Stakeholders",
+    "japanese": "ステークホルダー / 利害関係者",
+    "kana": "ステークホルダー",
+    "vietnamese": "Bên liên quan / Stakeholder",
+    "roles": [
+      "BA",
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Những người có quyền lợi hoặc bị ảnh hưởng bởi dự án.",
+    "example": "Identify all key stakeholders before the project starts."
+  },
+  {
+    "id": "ba-state-machine-diagram",
+    "english": "State Machine Diagram / State Diagram",
+    "japanese": "状態遷移図",
+    "kana": "じょうたいせんいず",
+    "vietnamese": "Sơ đồ trạng thái / State Machine Diagram",
+    "roles": [
+      "BA",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Sơ đồ mô tả các trạng thái khác nhau của một đối tượng và các sự kiện gây ra chuyển đổi.",
+    "example": "The state machine diagram defines the order status flow."
+  },
+  {
+    "id": "ba-swot",
+    "english": "SWOT / SWOT Analysis",
+    "japanese": "SWOT分析",
+    "kana": "SWOTぶんせき",
+    "vietnamese": "Phân tích SWOT (Strengths, Weaknesses, Opportunities, Threats)",
+    "roles": [
+      "BA",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Phân tích điểm mạnh, điểm yếu, cơ hội và thách thức.",
+    "example": "The SWOT analysis helped us identify our market position."
+  },
+  {
+    "id": "ba-to-be",
+    "english": "TO-BE",
+    "japanese": "将来像 / 目指すべき姿",
+    "kana": "しょうらいぞう / めざすべきすがた",
+    "vietnamese": "Trạng thái mong muốn / Tương lai",
+    "roles": [
+      "BA",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Mô tả quy trình hoặc hệ thống sau khi được cải tiến.",
+    "example": "The TO-BE model includes the new automated features."
+  },
+  {
+    "id": "ba-traceability-matrix",
+    "english": "Traceability Matrix / RTM",
+    "japanese": "トレーサビリティ・マトリクス",
+    "kana": "トレーサビリティ・マトリクス",
+    "vietnamese": "Ma trận truy xuất nguồn gốc / RTM",
+    "roles": [
+      "BA",
+      "BrSE",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Bảng đối chiếu để theo dõi mối liên hệ giữa yêu cầu và các sản phẩm bàn giao (code, test case).",
+    "example": "The RTM ensures every requirement is tested."
+  },
+  {
+    "id": "ba-uml",
+    "english": "UML / Unified Modeling Language",
+    "japanese": "統一モデリング言語",
+    "kana": "とういつモデリングげんご",
+    "vietnamese": "Ngôn ngữ mô hình hóa thống nhất / UML",
+    "roles": [
+      "BA",
+      "BrSE",
+      "Dev",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Ngôn ngữ tiêu chuẩn để mô hình hóa thiết kế hệ thống.",
+    "example": "Use UML diagrams to illustrate the system flow."
+  },
+  {
+    "id": "ba-use-case",
+    "english": "Use Case / Use Cases",
+    "japanese": "ユースケース",
+    "kana": "ユースケース",
+    "vietnamese": "Kịch bản sử dụng / Use Case",
+    "roles": [
+      "BA",
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mô tả các tương tác giữa người dùng (actor) và hệ thống.",
+    "example": "The Use Case diagram shows the login flow."
+  },
+  {
+    "id": "ba-user-journey-map",
+    "english": "User Journey Map / Customer Journey Map",
+    "japanese": "ユーザージャーニーマップ",
+    "kana": "ユーザージャーニーマップ",
+    "vietnamese": "Bản đồ hành trình người dùng / User Journey Map",
+    "roles": [
+      "BA",
+      "Designer"
+    ],
+    "category": "System Design",
+    "note": "Sơ đồ mô tả trải nghiệm của người dùng khi tương tác với sản phẩm.",
+    "example": "The user journey map identifies pain points in the current app."
+  },
+  {
+    "id": "ba-user-story",
+    "english": "User Story / User Stories",
+    "japanese": "ユーザーストーリー",
+    "kana": "ユーザーストーリー",
+    "vietnamese": "Câu chuyện người dùng / User Story",
+    "roles": [
+      "BA",
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mô tả ngắn gọn tính năng từ góc nhìn của người dùng.",
+    "example": "Each User Story must have clear acceptance criteria."
+  },
+  {
+    "id": "ba-validation",
+    "english": "Validation / Validating",
+    "japanese": "妥当性確認 / バリデーション",
+    "kana": "だとうせいかくにん / バリデーション",
+    "vietnamese": "Xác nhận tính đúng đắn / Validation",
+    "roles": [
+      "BA",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kiểm tra xem yêu cầu có đáp ứng đúng nhu cầu của khách hàng không.",
+    "example": "Requirement validation ensures we are building the right product."
+  },
+  {
+    "id": "ba-verification",
+    "english": "Verification / Verifying",
+    "japanese": "検証 / ベリフィケーション",
+    "kana": "けんしょう / ベリフィケーション",
+    "vietnamese": "Xác minh / Verification",
+    "roles": [
+      "BA",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kiểm tra xem yêu cầu có tuân thủ các tiêu chuẩn và quy định không.",
+    "example": "Requirement verification checks for consistency and completeness."
+  },
+  {
+    "id": "ba-wireframe",
+    "english": "Wireframe / Wireframes / Wireframing",
+    "japanese": "ワイヤーフレーム",
+    "kana": "ワイヤーフレーム",
+    "vietnamese": "Bản phác thảo giao diện / Wireframe",
+    "roles": [
+      "BA",
+      "BrSE",
+      "Designer"
+    ],
+    "category": "System Design",
+    "note": "Bản vẽ thô mô tả bố cục của trang web hoặc ứng dụng.",
+    "example": "I'll create a wireframe to show the basic layout."
+  },
+  {
+    "id": "ba-workshop",
+    "english": "Workshop / Workshops",
+    "japanese": "ワークショップ",
+    "kana": "ワークショップ",
+    "vietnamese": "Buổi thảo luận chuyên sâu / Workshop",
+    "roles": [
+      "BA",
+      "Stakeholders"
+    ],
+    "category": "System Design",
+    "note": "Cuộc họp tập trung để giải quyết vấn đề hoặc thu thập yêu cầu.",
+    "example": "The requirement workshop was very productive."
+  },
+  {
+    "id": "bigdata-business-intelligence",
+    "english": "Business Intelligence / BI",
+    "japanese": "ビジネスインテリジェンス",
+    "kana": "びじねすいんてりじぇんす",
+    "vietnamese": "Phân tích nghiệp vụ thông minh",
+    "roles": [
+      "BrSE",
+      "BA",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Dùng tool như Tableau/PowerBI để vẽ dashboard cho sếp xem.",
+    "example": "BIツールを導入し、散らばっていた売上データを可視化することで、迅速な意思決定を支援します。"
+  },
+  {
+    "id": "bigdata-data-lake",
+    "english": "Data Lake",
+    "japanese": "データレイク",
+    "kana": "でーたれいく",
+    "vietnamese": "Hồ dữ liệu",
+    "roles": [
+      "Data Engineer",
+      "Architect",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Kho lưu trữ tập trung cho phép lưu trữ tất cả dữ liệu có cấu trúc và không có cấu trúc ở bất kỳ quy mô nào.",
+    "example": "社内のあらゆるシステムからログを収集し、分析前の生データをデータレイクに蓄積しています。"
+  },
+  {
+    "id": "bigdata-data-mining",
+    "english": "Data Mining",
+    "japanese": "データマイニング",
+    "kana": "でーたまいにんぐ",
+    "vietnamese": "Khai phá dữ liệu",
+    "roles": [
+      "BrSE",
+      "BA",
+      "Business"
+    ],
+    "category": "System Design",
+    "note": "Tìm kiếm các mẫu hình (pattern) ẩn giấu trong một khối lượng dữ liệu khổng lồ.",
+    "example": "膨大なPOSデータに対してデータマイニングを行い、意外な商品の組み合わせによる併売傾向を発見しました。"
+  },
+  {
+    "id": "bigdata-data-pipeline",
+    "english": "Data Pipeline / Data Pipelines",
+    "japanese": "データパイプライン / パイプライン",
+    "kana": "でーたぱいぷらいん",
+    "vietnamese": "Đường ống dữ liệu",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Luồng di chuyển tự động của data từ nguồn đến đích.",
+    "example": "安定した分析環境を構築するため、ログ収集からDWHへの格納までを自動化するデータパイプラインを整備します。"
+  },
+  {
+    "id": "bigdata-data-science",
+    "english": "Data Science",
+    "japanese": "データサイエンス",
+    "kana": "でーたさいえんす",
+    "vietnamese": "Khoa học dữ liệu",
+    "roles": [
+      "Dev",
+      "BA",
+      "BrSE",
+      "Business",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Lĩnh vực dùng toán, thống kê và code để lấy được kiến thức từ data.",
+    "example": "データサイエンスの手法を駆使して、数百万人のユーザー行動から将来のトレンドを予測します。"
+  },
+  {
+    "id": "bigdata-data-visualization",
+    "english": "Data Visualization",
+    "japanese": "データの可視化 / ビジュアライゼーション",
+    "kana": "でーたのかしか",
+    "vietnamese": "Trực quan hóa dữ liệu",
+    "roles": [
+      "BrSE",
+      "BA",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Vẽ biểu đồ, đồ thị để sếp dễ hiểu ý nghĩa của con số.",
+    "example": "複雑な統計データを経営層が直感的に理解できるよう、データの可視化（ダッシュボード化）を徹底します。"
+  },
+  {
+    "id": "bigdata-data-warehouse",
+    "english": "Data Warehouse / DWH / Data Warehouses",
+    "japanese": "データウェアハウス",
+    "kana": "でーたうえあはうす",
+    "vietnamese": "Kho dữ liệu (đã cấu trúc)",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Nơi lưu dữ liệu đã được làm sạch và cấu trúc hóa để phục vụ báo cáo/BI.",
+    "example": "データレイクの情報を加工し、分析しやすい形式でデータウェアハウス（DWH）に格納します。"
+  },
+  {
+    "id": "bigdata-etl",
+    "english": "ETL / Extract, Transform, Load",
+    "japanese": "ETL処理",
+    "kana": "いーてぃーえるしょり",
+    "vietnamese": "Quy trình Trích xuất, Biến đổi, Nạp dữ liệu",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Quy trình đưa data từ nhiều nguồn về 1 chỗ.",
+    "example": "各拠点から送られてくる形式の異なるデータを、ETL処理によって共通フォーマットに統合します。"
+  },
+  {
+    "id": "bigdata-predictive-analytics",
+    "english": "Predictive Analytics",
+    "japanese": "予測分析",
+    "kana": "よそくぶんせき",
+    "vietnamese": "Phân tích dự báo",
+    "roles": [
+      "Business",
+      "Data Scientist",
+      "BA",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Sử dụng dữ liệu lịch sử và thuật toán để dự đoán các xu hướng trong tương lai.",
+    "example": "将来の市場動向を予測するために、予測分析（Predictive Analytics）を活用します。"
+  },
+  {
+    "id": "bigdata-real-time-analytics",
+    "english": "Real-time Analytics",
+    "japanese": "リアルタイム分析",
+    "kana": "りあるたいむぶんせき",
+    "vietnamese": "Phân tích thời gian thực",
+    "roles": [
+      "BrSE",
+      "BA",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Phân tích dữ liệu ngay khi nó vừa sinh ra (VD: chặn giao dịch thẻ lừa đảo ngay lập tức).",
+    "example": "不正アクセスを即座に検知するため、ストリーミングデータを用いたリアルタイム分析基盤を構築しました。"
+  },
+  {
+    "id": "bjt-bunseki",
+    "english": "Bunseki / Analysis",
+    "japanese": "分析",
+    "kana": "ぶんせき",
+    "vietnamese": "Phân tích",
+    "roles": [
+      "BrSE",
+      "Team"
+    ],
+    "category": "System Design",
+    "note": "Nghiên cứu kỹ lưỡng các thành phần để hiểu vấn đề.",
+    "example": "競合他社の製品を分析しました。"
+  },
+  {
+    "id": "bjt-dakkyou",
+    "english": "Dakkyou / Compromise",
+    "japanese": "妥協",
+    "kana": "だきょう",
+    "vietnamese": "Thỏa hiệp",
+    "roles": [
+      "Manager",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Việc mỗi bên nhường một ít để đạt được thỏa thuận.",
+    "example": "妥協点を見出す必要があります。"
+  },
+  {
+    "id": "bjt-dounyu",
+    "english": "Dounyu / Introduction / Implementation",
+    "japanese": "導入",
+    "kana": "どうにゅう",
+    "vietnamese": "Áp dụng / Đưa vào sử dụng",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Bắt đầu sử dụng một công nghệ hoặc hệ thống mới.",
+    "example": "最新のAIツールを導入する予定です。"
+  },
+  {
+    "id": "bjt-go-ben-tatsu",
+    "english": "Go-ben-tatsu / Your encouragement (Formal)",
+    "japanese": "ご鞭撻",
+    "kana": "ごべんたつ",
+    "vietnamese": "Sự khuyến khích / Thúc đẩy",
+    "roles": [
+      "BrSE",
+      "Sales"
+    ],
+    "category": "System Design",
+    "note": "Thường đi kèm với Go-shidou.",
+    "example": "ご指導ご鞭撻のほどお願い申し上げます。"
+  },
+  {
+    "id": "bjt-go-busata",
+    "english": "Go-busata-shite-orimasu / It has been a long time (Formal)",
+    "japanese": "ご無沙汰しております",
+    "kana": "ごぶさたしております",
+    "vietnamese": "Đã lâu không liên lạc với quý khách (Trang trọng)",
+    "roles": [
+      "All"
+    ],
+    "category": "System Design",
+    "note": "Dùng khi liên lạc lại với khách hàng sau một thời gian dài.",
+    "example": "大変ご無沙汰しておりますが、いかがお過ごしでしょうか。"
+  }
+]

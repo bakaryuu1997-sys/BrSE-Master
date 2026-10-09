@@ -1,0 +1,753 @@
+[
+  {
+    "id": "erp-just-in-time",
+    "english": "Just-In-Time / JIT",
+    "japanese": "ジャストインタイム / JIT",
+    "kana": "じゃすといんたいむ",
+    "vietnamese": "Đúng lúc / JIT",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quy trình sản xuất giảm tồn kho tối đa.",
+    "example": "JIT方式で在庫を削減。"
+  },
+  {
+    "id": "erp-knowledge-transfer",
+    "english": "Knowledge Transfer / KT",
+    "japanese": "ナレッジトランスファー / KT",
+    "kana": "なれっじとらんすふぁー",
+    "vietnamese": "Chuyển giao kiến thức",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quá trình bàn giao thông tin và kỹ năng.",
+    "example": "運用チームへのKT。"
+  },
+  {
+    "id": "erp-lead-to-cash",
+    "english": "Lead-to-Cash",
+    "japanese": "Lead-to-Cash / L2C",
+    "kana": "りーどとぅーきゃっしゅ",
+    "vietnamese": "Quy trình từ tiềm năng đến tiền mặt",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Toàn bộ quy trình bán hàng từ lúc tìm khách đến khi thu tiền.",
+    "example": "L2Cプロセスの可視化。"
+  },
+  {
+    "id": "erp-legacy-system",
+    "english": "Legacy System",
+    "japanese": "レガシーシステム",
+    "kana": "れがしーしすてむ",
+    "vietnamese": "Hệ thống cũ / Legacy System",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống công nghệ lỗi thời vẫn đang sử dụng.",
+    "example": "レガシーシステムからのデータ移行。"
+  },
+  {
+    "id": "erp-license-fee",
+    "english": "License Fee",
+    "japanese": "ライセンス料",
+    "kana": "らいせんすりょう",
+    "vietnamese": "Phí bản quyền / License",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Phí trả để được quyền sử dụng phần mềm.",
+    "example": "ユーザー数に応じたライセンス料。"
+  },
+  {
+    "id": "erp-localization",
+    "english": "Localization",
+    "japanese": "ローカライズ / 現地化",
+    "kana": "ろーからいず",
+    "vietnamese": "Địa phương hóa",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Điều chỉnh phần mềm theo luật lệ và ngôn ngữ bản địa.",
+    "example": "ベトナム会計基準へのローカライズ。"
+  },
+  {
+    "id": "erp-maintenance-and-support",
+    "english": "Maintenance and Support / M&S",
+    "japanese": "保守・サポート / M&S",
+    "kana": "ほしゅさぽーと",
+    "vietnamese": "Bảo trì và hỗ trợ",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Duy trì hệ thống ổn định lâu dài.",
+    "example": "保守契約の内容を更新。"
+  },
+  {
+    "id": "erp-master-data",
+    "english": "Master Data",
+    "japanese": "マスタデータ",
+    "kana": "ますたでーた",
+    "vietnamese": "Dữ liệu gốc / Master Data",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Dữ liệu cốt lõi dùng chung cho toàn doanh nghiệp.",
+    "example": "マスタデータのクリーニングを実施。"
+  },
+  {
+    "id": "erp-master-data-management",
+    "english": "Master Data Management / MDM",
+    "japanese": "マスタデータ管理 / MDM",
+    "kana": "ますたでーたかんり",
+    "vietnamese": "Quản lý dữ liệu gốc / MDM",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quy trình đảm bảo tính nhất quán của Master Data.",
+    "example": "MDMでマスタ品質を維持。"
+  },
+  {
+    "id": "erp-module-integration",
+    "english": "Module Integration",
+    "japanese": "モジュール統合 / 連携",
+    "kana": "もじゅーるとうごう",
+    "vietnamese": "Tích hợp mô-đun",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kết nối các thành phần chức năng trong hệ thống ERP.",
+    "example": "会計と在庫モジュールの統合。"
+  },
+  {
+    "id": "erp-mrp",
+    "english": "MRP / Material Requirements Planning",
+    "japanese": "資材所要量計画 / MRP",
+    "kana": "えむあーるぴー",
+    "vietnamese": "Hoạch định nhu cầu nguyên vật liệu",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tính toán số lượng vật liệu cần thiết.",
+    "example": "MRPを実行して不足分を特定。"
+  },
+  {
+    "id": "erp-odoo",
+    "english": "Odoo",
+    "japanese": "Odoo / オドゥー",
+    "kana": "おどぅー",
+    "vietnamese": "Phần mềm Odoo",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Nền tảng ERP mã nguồn mở phổ biến.",
+    "example": "Odooのモジュールをカスタマイズ。"
+  },
+  {
+    "id": "erp-on-premise",
+    "english": "On-Premise",
+    "japanese": "オンプレミス",
+    "kana": "おんぷれみす",
+    "vietnamese": "Cài đặt tại chỗ / On-Premise",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống tự vận hành trên máy chủ của doanh nghiệp.",
+    "example": "セキュリティ重視でオンプレミスを選択。"
+  },
+  {
+    "id": "erp-operational-excellence",
+    "english": "Operational Excellence",
+    "japanese": "業務の卓越性",
+    "kana": "ぎょうむのたくえつせい",
+    "vietnamese": "Vận hành ưu tú",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tối ưu hóa hoạt động để đạt hiệu quả cao nhất.",
+    "example": "ERPでOperational Excellenceを実現。"
+  },
+  {
+    "id": "erp-order-to-cash",
+    "english": "Order-to-Cash / O2C",
+    "japanese": "Order-to-Cash / O2C",
+    "kana": "おーだーとぅーきゃっしゅ",
+    "vietnamese": "Quy trình từ đơn hàng đến tiền mặt",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quy trình xử lý đơn hàng và thu tiền khách hàng.",
+    "example": "O2Cの自動化。"
+  },
+  {
+    "id": "erp-plan-to-produce",
+    "english": "Plan-to-Produce",
+    "japanese": "Plan-to-Produce",
+    "kana": "ぷらんとぅーぷろでゅーす",
+    "vietnamese": "Quy trình từ kế hoạch đến sản xuất",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quy trình lập kế hoạch và thực hiện sản xuất.",
+    "example": "Plan-to-ProduceをERPで管理。"
+  },
+  {
+    "id": "erp-post-implementation-support",
+    "english": "Post-implementation Support",
+    "japanese": "本稼働後サポート",
+    "kana": "ほんかどうごさぽーと",
+    "vietnamese": "Hỗ trợ sau triển khai",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Dịch vụ hỗ trợ người dùng sau khi Go-live.",
+    "example": "本稼働後サポート期間。"
+  },
+  {
+    "id": "erp-procure-to-pay",
+    "english": "Procure-to-Pay / P2P",
+    "japanese": "Procure-to-Pay / P2P",
+    "kana": "ぷろきゅあとぅーぺい",
+    "vietnamese": "Quy trình từ thu mua đến thanh toán",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quy trình từ lúc cần hàng đến khi trả tiền nhà cung cấp.",
+    "example": "P2P業務の効率化。"
+  },
+  {
+    "id": "erp-procurement",
+    "english": "Procurement",
+    "japanese": "調達管理 / 購買",
+    "kana": "ちょうたつかんり",
+    "vietnamese": "Quản lý mua sắm",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quy trình mua nguyên vật liệu và dịch vụ.",
+    "example": "調達管理フローを定義。"
+  },
+  {
+    "id": "erp-production-planning",
+    "english": "Production Planning / PP",
+    "japanese": "生産計画 / PP",
+    "kana": "せいさんけいかく",
+    "vietnamese": "Lập kế hoạch sản xuất",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Lập lịch trình và quản lý quy trình sản xuất.",
+    "example": "来月の生産計画を策定。"
+  },
+  {
+    "id": "erp-profit-center",
+    "english": "Profit Center",
+    "japanese": "利益センター / プロフィットセンター",
+    "kana": "りえきせんたー",
+    "vietnamese": "Trung tâm lợi nhuận",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Bộ phận chịu trách nhiệm tạo ra lợi nhuận.",
+    "example": "プロフィットセンターの収益性。"
+  },
+  {
+    "id": "erp-project-manager",
+    "english": "Project Manager / PM",
+    "japanese": "プロジェクトマネージャー / PM",
+    "kana": "ぴーえむ",
+    "vietnamese": "Quản trị dự án",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Người chịu trách nhiệm điều hành toàn bộ dự án.",
+    "example": "PMがスケジュールを管理。"
+  },
+  {
+    "id": "erp-purchase-order",
+    "english": "Purchase Order / PO",
+    "japanese": "購買発注書 / PO",
+    "kana": "こうばいはっちゅうしょ",
+    "vietnamese": "Đơn mua hàng / PO",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Lệnh mua hàng gửi đến nhà cung cấp.",
+    "example": "システムからPOを送信。"
+  },
+  {
+    "id": "erp-quality-management",
+    "english": "Quality Management / QM",
+    "japanese": "品質管理 / QM",
+    "kana": "ひんしつかんり",
+    "vietnamese": "Quản lý chất lượng",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kiểm tra và đảm bảo chất lượng sản phẩm.",
+    "example": "品質管理基準を設定。"
+  },
+  {
+    "id": "erp-quotation",
+    "english": "Quotation",
+    "japanese": "見積 / クォーテーション",
+    "kana": "みつもり",
+    "vietnamese": "Báo giá",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Bản chào giá sản phẩm dịch vụ cho khách hàng.",
+    "example": "見積書を発行します。"
+  },
+  {
+    "id": "erp-real-time-integration",
+    "english": "Real-time Integration",
+    "japanese": "リアルタイム連携",
+    "kana": "りあるたいむれんけい",
+    "vietnamese": "Tích hợp thời gian thực",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Đồng bộ dữ liệu ngay lập tức giữa các hệ thống.",
+    "example": "在庫情報をリアルタイム連携。"
+  },
+  {
+    "id": "erp-requirement-definition",
+    "english": "Requirement Definition",
+    "japanese": "要件定義",
+    "kana": "ようけんていぎ",
+    "vietnamese": "Định nghĩa yêu cầu",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Xác định rõ ràng những gì hệ thống cần làm.",
+    "example": "要件定義フェーズを完了。"
+  },
+  {
+    "id": "erp-roi",
+    "english": "ROI / Return on Investment",
+    "japanese": "投資収益率 / ROI",
+    "kana": "あーるおーあい",
+    "vietnamese": "Tỷ suất hoàn vốn",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hiệu quả của một khoản đầu tư.",
+    "example": "ERP導入のROIを試算。"
+  },
+  {
+    "id": "erp-rollout",
+    "english": "Rollout / Rollouts",
+    "japanese": "ロールアウト / 展開",
+    "kana": "ろーるあうと",
+    "vietnamese": "Triển khai nhân rộng / Rollout",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Áp dụng hệ thống đã chạy tốt cho các chi nhánh khác.",
+    "example": "海外拠点へのロールアウト。"
+  },
+  {
+    "id": "erp-saas-erp",
+    "english": "SaaS ERP",
+    "japanese": "SaaS型ERP",
+    "kana": "さーすがたいーあーるぴー",
+    "vietnamese": "ERP dạng dịch vụ SaaS",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "ERP cung cấp dưới dạng thuê bao phần mềm.",
+    "example": "中小企業向けのSaaS ERP。"
+  },
+  {
+    "id": "erp-sales-and-distribution",
+    "english": "Sales and Distribution / SD",
+    "japanese": "販売管理 / SD",
+    "kana": "はんばいかんり",
+    "vietnamese": "Quản lý bán hàng và phân phối",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quản lý đơn hàng, giao hàng và thanh toán.",
+    "example": "SDモジュールの受注処理。"
+  },
+  {
+    "id": "erp-sap",
+    "english": "SAP",
+    "japanese": "SAP / サップ",
+    "kana": "さっぷ",
+    "vietnamese": "Phần mềm SAP",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hãng phần mềm ERP lớn nhất thế giới.",
+    "example": "SAPの導入コンサルティング。"
+  },
+  {
+    "id": "erp-scalability",
+    "english": "Scalability",
+    "japanese": "拡張性 / スケーラビリティ",
+    "kana": "かくちょうせい",
+    "vietnamese": "Khả năng mở rộng",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Khả năng hệ thống đáp ứng được sự tăng trưởng.",
+    "example": "将来の拠点増を見越したスケーラビリティ。"
+  },
+  {
+    "id": "erp-scm",
+    "english": "SCM / Supply Chain Management",
+    "japanese": "サプライチェーン管理 / SCM",
+    "kana": "えすしーえむ",
+    "vietnamese": "Quản lý chuỗi cung ứng",
+    "roles": [
+      "Manager",
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống quản lý luồng hàng hóa và dịch vụ từ nguồn đến tay người dùng.",
+    "example": "SCM optimization can significantly reduce inventory costs."
+  },
+  {
+    "id": "erp-shared-service-center",
+    "english": "Shared Service Center / SSC",
+    "japanese": "シェアードサービスセンター",
+    "kana": "しぇあーどさーびすせんたー",
+    "vietnamese": "Trung tâm dịch vụ dùng chung",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tập trung các nghiệp vụ hỗ trợ vào một trung tâm.",
+    "example": "経理業務をSSCに集約。"
+  },
+  {
+    "id": "erp-single-source-of-truth",
+    "english": "Single Source of Truth / SSOT",
+    "japanese": "信頼できる唯一の情報源 / SSOT",
+    "kana": "えすえすおーてぃー",
+    "vietnamese": "Nguồn dữ liệu tin cậy duy nhất",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Đảm bảo mọi người dùng chung một dữ liệu chính xác.",
+    "example": "ERPをSSOTとして定義。"
+  },
+  {
+    "id": "erp-sla",
+    "english": "SLA / Service Level Agreement",
+    "japanese": "サービスレベル合意 / SLA",
+    "kana": "えすえるえー",
+    "vietnamese": "Thỏa thuận mức độ dịch vụ",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Cam kết về chất lượng dịch vụ giữa nhà cung cấp và khách hàng.",
+    "example": "SLAの目標値を設定。"
+  },
+  {
+    "id": "erp-sponsor",
+    "english": "Sponsor / Executive Sponsor",
+    "japanese": "スポンサー / 実行責任者",
+    "kana": "すぽんさー",
+    "vietnamese": "Người bảo trợ dự án",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Lãnh đạo cấp cao ủng hộ và cung cấp nguồn lực cho dự án.",
+    "example": "経営層のスポンサーシップ。"
+  },
+  {
+    "id": "erp-standardization",
+    "english": "Standardization",
+    "japanese": "標準化",
+    "kana": "ひょうじゅんか",
+    "vietnamese": "Tiêu chuẩn hóa",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thống nhất các quy trình và quy tắc.",
+    "example": "業務プロセスの標準化を進めます。"
+  },
+  {
+    "id": "erp-steering-committee",
+    "english": "Steering Committee / SteerCo",
+    "japanese": "運営委員会 / ステコミ",
+    "kana": "すてこみ",
+    "vietnamese": "Ban chỉ đạo dự án",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Nhóm lãnh đạo ra các quyết định quan trọng nhất.",
+    "example": "月に一度のステコミ。"
+  },
+  {
+    "id": "erp-subscription",
+    "english": "Subscription",
+    "japanese": "サブスクリプション",
+    "kana": "さぶすくりぷしょん",
+    "vietnamese": "Thuê bao / Đăng ký định kỳ",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Mô hình trả phí theo thời gian sử dụng.",
+    "example": "サブスクリプション方式のライセンス。"
+  },
+  {
+    "id": "erp-subsidiary",
+    "english": "Subsidiary / Subsidiaries",
+    "japanese": "子会社 / グループ会社",
+    "kana": "こがいしゃ",
+    "vietnamese": "Công ty con",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Các công ty thuộc quyền sở hữu của công ty mẹ.",
+    "example": "海外子会社の財務諸表。"
+  },
+  {
+    "id": "erp-super-user",
+    "english": "Super User / Key User",
+    "japanese": "キーユーザー / スーパーユーザー",
+    "kana": "きーゆーざー",
+    "vietnamese": "Người dùng nòng cốt",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Người am hiểu nghiệp vụ và hệ thống nhất.",
+    "example": "キーユーザーへの教育。"
+  },
+  {
+    "id": "erp-total-cost-of-ownership",
+    "english": "Total Cost of Ownership / TCO",
+    "japanese": "総所有コスト / TCO",
+    "kana": "てぃーしーおー",
+    "vietnamese": "Tổng chi phí sở hữu",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Toàn bộ chi phí mua và vận hành hệ thống lâu dài.",
+    "example": "クラウド化でTCOを抑える。"
+  },
+  {
+    "id": "erp-transaction-data",
+    "english": "Transaction Data",
+    "japanese": "トランザクションデータ / 取引データ",
+    "kana": "とらんざくしょんでーた",
+    "vietnamese": "Dữ liệu giao dịch",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Dữ liệu phát sinh từ các hoạt động hàng ngày.",
+    "example": "日々の売上をトランザクションデータとして記録。"
+  },
+  {
+    "id": "erp-turnover",
+    "english": "Turnover",
+    "japanese": "売上高 / 離職率 / 回転率",
+    "kana": "たーんおーばー",
+    "vietnamese": "Doanh thu / Tỷ lệ xoay vòng",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chỉ số về luân chuyển (tiền, hàng, người).",
+    "example": "在庫回転率を分析。"
+  },
+  {
+    "id": "erp-unit-test",
+    "english": "Unit Test / UT",
+    "japanese": "単体テスト / UT",
+    "kana": "たんたいてすと",
+    "vietnamese": "Kiểm thử đơn vị",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kiểm tra từng tính năng nhỏ độc lập.",
+    "example": "開発後にUTを実施。"
+  },
+  {
+    "id": "erp-user-acceptance-test",
+    "english": "User Acceptance Test / UAT",
+    "japanese": "ユーザー受け入れテスト / UAT",
+    "kana": "ゆーざーうけいれてすと",
+    "vietnamese": "Kiểm thử chấp nhận người dùng",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kiểm tra cuối cùng bởi người dùng thực tế.",
+    "example": "UATでサインオフを得る。"
+  },
+  {
+    "id": "erp-user-manual",
+    "english": "User Manual / User Guides",
+    "japanese": "ユーザーマニュアル / 操作説明書",
+    "kana": "ゆーざーまにゅある",
+    "vietnamese": "Hướng dẫn sử dụng",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tài liệu hướng dẫn người dùng thao tác.",
+    "example": "マニュアルを全社員に配布。"
+  },
+  {
+    "id": "erp-variance-analysis",
+    "english": "Variance Analysis",
+    "japanese": "差異分析",
+    "kana": "さいぶんせき",
+    "vietnamese": "Phân tích biến động",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "So sánh giữa số liệu thực tế và kế hoạch.",
+    "example": "予算と実績の差異分析。"
+  }
+]

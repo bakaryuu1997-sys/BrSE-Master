@@ -1,0 +1,756 @@
+[
+  {
+    "id": "fintech-disaster-recovery",
+    "english": "Disaster Recovery / DR",
+    "japanese": "災害復旧 / DR",
+    "kana": "さいがいふっきゅう",
+    "vietnamese": "Phục hồi sau thảm họa / DR",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kế hoạch khôi phục hệ thống khi gặp sự cố lớn.",
+    "example": "DRサイトへの切り替え訓練。"
+  },
+  {
+    "id": "fintech-e-wallet",
+    "english": "E-Wallet / Digital Wallet",
+    "japanese": "電子マネー / eウォレット",
+    "kana": "でんしまねー",
+    "vietnamese": "Ví điện tử",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Ứng dụng lưu trữ giá trị tiền tệ kỹ thuật số.",
+    "example": "eウォレットでQRコード決済をします。"
+  },
+  {
+    "id": "fintech-escrow",
+    "english": "Escrow",
+    "japanese": "エスクロー / 第三者寄託",
+    "kana": "えすくろー",
+    "vietnamese": "Dịch vụ ký quỹ / Escrow",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Bên thứ ba giữ tiền trong quá trình giao dịch.",
+    "example": "エスクローサービスを利用して安全に取引します。"
+  },
+  {
+    "id": "fintech-exchange-rate",
+    "english": "Exchange Rate",
+    "japanese": "為替レート",
+    "kana": "かわせれーと",
+    "vietnamese": "Tỷ giá hối đoái",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giá trị của một loại tiền tệ so với loại khác.",
+    "example": "為替レートの変動を確認します。"
+  },
+  {
+    "id": "fintech-expiry-date",
+    "english": "Expiry Date",
+    "japanese": "有効期限",
+    "kana": "ゆうこうきげん",
+    "vietnamese": "Ngày hết hạn",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thời hạn sử dụng của thẻ hoặc hợp đồng.",
+    "example": "カードの有効期限を確認します。"
+  },
+  {
+    "id": "fintech-financing",
+    "english": "Financing",
+    "japanese": "資金調達 / ファイナンス",
+    "kana": "しきんちょうたつ",
+    "vietnamese": "Cấp vốn / Tài trợ",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quá trình cung cấp nguồn vốn.",
+    "example": "新たなファイナンスの形態を模索します。"
+  },
+  {
+    "id": "fintech-firewall",
+    "english": "Firewall",
+    "japanese": "ファイアウォール",
+    "kana": "ふぁいあうぉーる",
+    "vietnamese": "Tường lửa",
+    "roles": [
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Chặn hoặc cho phép các kết nối mạng dựa trên IP và Port. Lớp phòng thủ cơ bản nhất.",
+    "example": "特定の固定IPアドレスからのみAPIにアクセスできるよう、ファイアウォール（WAF）で制限をかけます。"
+  },
+  {
+    "id": "fintech-fiscal-year",
+    "english": "Fiscal Year",
+    "japanese": "会計年度",
+    "kana": "かいけいねんど",
+    "vietnamese": "Năm tài chính",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chu kỳ 12 tháng dùng cho báo cáo tài chính.",
+    "example": "次回の会計年度の予算案。"
+  },
+  {
+    "id": "fintech-fixed-deposit",
+    "english": "Fixed Deposit",
+    "japanese": "定期預金",
+    "kana": "ていきよきん",
+    "vietnamese": "Tiền gửi có kỳ hạn",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tiền gửi ngân hàng trong một thời gian cố định.",
+    "example": "定期預金の満期が来ました。"
+  },
+  {
+    "id": "fintech-foreign-exchange",
+    "english": "Foreign Exchange / FX",
+    "japanese": "外国為替 / FX",
+    "kana": "がいこくかわせ",
+    "vietnamese": "Ngoại hối / FX",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giao dịch mua bán các loại tiền tệ.",
+    "example": "FX市場は24時間動いています。"
+  },
+  {
+    "id": "fintech-fraud-detection",
+    "english": "Fraud Detection",
+    "japanese": "不正検知 / 不正検出",
+    "kana": "ふせいけんち",
+    "vietnamese": "Phát hiện gian lận",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống xác định các hoạt động đáng ngờ.",
+    "example": "不正検知システムが作動しました。"
+  },
+  {
+    "id": "fintech-general-ledger",
+    "english": "General Ledger",
+    "japanese": "総勘定元帳",
+    "kana": "そうかんじょうもとちょう",
+    "vietnamese": "Sổ cái tổng hợp",
+    "roles": [
+      "BA",
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Nơi ghi chép tất cả các giao dịch tài chính cuối cùng.",
+    "example": "各支店の取引データは日次で集計され、本部の総勘定元帳（レジャー）へ自動反映されます。"
+  },
+  {
+    "id": "fintech-hashing",
+    "english": "Hashing",
+    "japanese": "ハッシュ化",
+    "kana": "はっしゅか",
+    "vietnamese": "Băm dữ liệu / Hashing",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chuyển dữ liệu thành chuỗi ký tự cố định.",
+    "example": "パスワードはハッシュ化して保存。"
+  },
+  {
+    "id": "fintech-hedge-fund",
+    "english": "Hedge Fund / Hedge Funds",
+    "japanese": "ヘッジファンド",
+    "kana": "へっじふぁんど",
+    "vietnamese": "Quỹ đầu cơ",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quỹ đầu tư sử dụng các chiến lược phức tạp.",
+    "example": "ヘッジファンドが市場をリードしています。"
+  },
+  {
+    "id": "fintech-high-availability",
+    "english": "High Availability / HA",
+    "japanese": "高可用性 / HA",
+    "kana": "こうかようせい",
+    "vietnamese": "Tính sẵn sàng cao / HA",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Đảm bảo hệ thống luôn hoạt động.",
+    "example": "HA構成のサーバー群。"
+  },
+  {
+    "id": "fintech-host-to-host",
+    "english": "Host-to-Host / H2H",
+    "japanese": "ホスト間連携 / H2H",
+    "kana": "ほすとかんれんけい",
+    "vietnamese": "Kết nối máy chủ - máy chủ / H2H",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kết nối trực tiếp giữa máy chủ doanh nghiệp và ngân hàng.",
+    "example": "H2Hによる送金指示。"
+  },
+  {
+    "id": "fintech-insurtech",
+    "english": "Insurtech",
+    "japanese": "インシュアテック",
+    "kana": "いんしゅあてっく",
+    "vietnamese": "Công nghệ bảo hiểm / Insurtech",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Ứng dụng công nghệ vào ngành bảo hiểm.",
+    "example": "インシュアテックで保険手続きを簡素化。"
+  },
+  {
+    "id": "fintech-interest-rate",
+    "english": "Interest Rate",
+    "japanese": "金利 / 利息",
+    "kana": "きんり / りそく",
+    "vietnamese": "Lãi suất",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tỷ lệ phần trăm tính trên số tiền gốc.",
+    "example": "金利の計算ロジックを確認。"
+  },
+  {
+    "id": "fintech-ipo",
+    "english": "IPO / Initial Public Offering",
+    "japanese": "新規公開株 / IPO",
+    "kana": "あいぴーおー",
+    "vietnamese": "Chào bán lần đầu ra công chúng / IPO",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Việc niêm yết cổ phiếu công ty lên sàn chứng khoán.",
+    "example": "来年のIPOを目指しています。"
+  },
+  {
+    "id": "fintech-issuer",
+    "english": "Issuer / Issuers",
+    "japanese": "イシュア / カード発行会社",
+    "kana": "いしゅあ",
+    "vietnamese": "Ngân hàng phát hành / Issuer",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Cơ quan phát hành thẻ thanh toán.",
+    "example": "イシュアからの承認が降りませんでした。"
+  },
+  {
+    "id": "fintech-kyc",
+    "english": "KYC / Know Your Customer",
+    "japanese": "本人確認 / KYC",
+    "kana": "けーわいしー",
+    "vietnamese": "Định danh khách hàng / KYC",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quy trình xác minh danh tính khách hàng.",
+    "example": "口座開設にはKYCが必要です。"
+  },
+  {
+    "id": "fintech-ledger",
+    "english": "Ledger / Ledgers",
+    "japanese": "総勘定元帳 / 台帳 / レジャー",
+    "kana": "そうかんじょうもとちょう / だいちょう",
+    "vietnamese": "Sổ cái",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hồ sơ ghi chép mọi giao dịch tài chính.",
+    "example": "分散型台帳技術を検討します。"
+  },
+  {
+    "id": "fintech-liquidity",
+    "english": "Liquidity",
+    "japanese": "流動性 / リクイディティ",
+    "kana": "りゅうどうせい",
+    "vietnamese": "Tính thanh khoản",
+    "roles": [
+      "Dev",
+      "BA",
+      "BrSE",
+      "Business",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Khả năng chuyển đổi tài sản thành tiền mặt nhanh chóng mà không bị mất giá. Trong sàn giao dịch (Exchange), tính thanh khoản cực kỳ quan trọng.",
+    "example": "暗号資産の取引所システムにおいて、常にユーザーが売買を成立させられるよう、流動性（リクイディティ）の確保が課題です。"
+  },
+  {
+    "id": "fintech-load-balancer",
+    "english": "Load Balancer",
+    "japanese": "ロードバランサ / 負荷分散",
+    "kana": "ろーどばらんさ",
+    "vietnamese": "Bộ cân bằng tải",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Phân phối lưu lượng truy cập qua nhiều máy chủ.",
+    "example": "ロードバランサの設定を最適化。"
+  },
+  {
+    "id": "fintech-loan-origination",
+    "english": "Loan Origination",
+    "japanese": "ローン実行 / ローンオリジネーション",
+    "kana": "ろーんおりじねーしょん",
+    "vietnamese": "Khởi tạo khoản vay",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quá trình nộp đơn và cấp khoản vay.",
+    "example": "ローンオリジネーションシステムの開発。"
+  },
+  {
+    "id": "fintech-merchant",
+    "english": "Merchant / Merchants",
+    "japanese": "加盟店 / マーチャント",
+    "kana": "かめいてん / まーちゃんと",
+    "vietnamese": "Đơn vị chấp nhận thẻ / Merchant",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Người bán hàng nhận thanh toán qua thẻ.",
+    "example": "マーチャント向けの手数料率。"
+  },
+  {
+    "id": "fintech-microfinance",
+    "english": "Microfinance",
+    "japanese": "マイクロファイナンス",
+    "kana": "まいくろふぁいなんす",
+    "vietnamese": "Tài chính vi mô",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Dịch vụ tài chính cho người thu nhập thấp.",
+    "example": "マイクロファイナンスで自立を支援します。"
+  },
+  {
+    "id": "fintech-microservices",
+    "english": "Microservices",
+    "japanese": "マイクロサービス",
+    "kana": "まいくろさーびす",
+    "vietnamese": "Kiến trúc vi dịch vụ",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kiến trúc phần mềm chia nhỏ thành các dịch vụ độc lập.",
+    "example": "マイクロサービスアーキテクチャを採用。"
+  },
+  {
+    "id": "fintech-mobile-payment",
+    "english": "Mobile Payment",
+    "japanese": "モバイル決済",
+    "kana": "もばいるけっさい",
+    "vietnamese": "Thanh toán di động",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thanh toán thông qua điện thoại di động.",
+    "example": "モバイル決済の導入店舗が増えています。"
+  },
+  {
+    "id": "fintech-mortgage",
+    "english": "Mortgage / Mortgages",
+    "japanese": "住宅ローン / モーゲージ",
+    "kana": "じゅうたくろーん",
+    "vietnamese": "Thế chấp / Khoản vay mua nhà",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Vay tiền có tài sản đảm bảo là bất động sản.",
+    "example": "モーゲージの金利が上昇しました。"
+  },
+  {
+    "id": "fintech-neobank",
+    "english": "Neobank",
+    "japanese": "ネオバンク / チャレンジャーバンク",
+    "kana": "ねおばんく",
+    "vietnamese": "Ngân hàng số / Neobank",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Ngân hàng hoạt động hoàn toàn trực tuyến.",
+    "example": "ネオバンクの利用者が急増しています。"
+  },
+  {
+    "id": "fintech-open-banking",
+    "english": "Open Banking",
+    "japanese": "オープンバンキング",
+    "kana": "おーぷんばんきんぐ",
+    "vietnamese": "Ngân hàng mở",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống chia sẻ dữ liệu ngân hàng qua API.",
+    "example": "オープンバンキングAPIを公開します。"
+  },
+  {
+    "id": "fintech-overdraft",
+    "english": "Overdraft",
+    "japanese": "当座貸越 / オーバードラフト",
+    "kana": "とうざかしこし",
+    "vietnamese": "Thấu chi",
+    "roles": [
+      "BA",
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cho phép rút tiền vượt quá số dư hiện có trong tài khoản (ngân hàng cho vay tạm thời).",
+    "example": "残高不足の場合でも、事前に設定された限度額までなら当座貸越（オーバードラフト）として支払いが可能です。"
+  },
+  {
+    "id": "fintech-p2p-lending",
+    "english": "P2P Lending",
+    "japanese": "P2P融資 / ソーシャルレンディング",
+    "kana": "ぴーつーぴーゆうし",
+    "vietnamese": "Cho vay ngang hàng / P2P Lending",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kết nối trực tiếp người vay và người cho vay.",
+    "example": "P2P融資のリスクを評価します。"
+  },
+  {
+    "id": "fintech-payment-gateway",
+    "english": "Payment Gateway",
+    "japanese": "決済ゲートウェイ",
+    "kana": "けっさいげーとうぇい",
+    "vietnamese": "Cổng thanh toán",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Dịch vụ trung gian thanh toán trực tuyến.",
+    "example": "決済ゲートウェイを統合します。"
+  },
+  {
+    "id": "fintech-pci-dss",
+    "english": "PCI DSS",
+    "japanese": "PCI DSS",
+    "kana": "ぴーしーあい でぃーえすえす",
+    "vietnamese": "Chuẩn bảo mật thẻ PCI DSS",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tiêu chuẩn bảo mật dữ liệu thẻ thanh toán.",
+    "example": "PCI DSSの認証を取得しています。"
+  },
+  {
+    "id": "fintech-penetration-testing",
+    "english": "Penetration Testing / Pen Test",
+    "japanese": "侵入テスト / ペネトレーションテスト",
+    "kana": "ぺねとれーしょんてすと",
+    "vietnamese": "Kiểm thử xâm nhập / Pen Test",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Đánh giá bảo mật bằng cách thử tấn công.",
+    "example": "脆弱性診断（ペネトレーションテスト）を実施。"
+  },
+  {
+    "id": "fintech-pos",
+    "english": "POS / Point of Sale",
+    "japanese": "販売時点情報管理 / POS",
+    "kana": "ぴーおーえす",
+    "vietnamese": "Điểm bán hàng / POS",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống thanh toán tại quầy hàng.",
+    "example": "POSレジと連携します。"
+  },
+  {
+    "id": "fintech-prepaid-card",
+    "english": "Prepaid Card",
+    "japanese": "プリペイドカード",
+    "kana": "ぷりぺいどかーど",
+    "vietnamese": "Thẻ trả trước",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thẻ nạp tiền trước khi sử dụng.",
+    "example": "プリペイドカードに残高を追加します。"
+  },
+  {
+    "id": "fintech-profit-and-loss",
+    "english": "Profit and Loss / P&L",
+    "japanese": "損益計算書 / PL",
+    "kana": "そんえきけいさんしょ",
+    "vietnamese": "Báo cáo kết quả kinh doanh / P&L",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tóm tắt doanh thu và chi phí.",
+    "example": "今期のPLを報告します。"
+  },
+  {
+    "id": "fintech-psd2",
+    "english": "PSD2 / Payment Services Directive 2",
+    "japanese": "PSD2",
+    "kana": "ぴーえすでぃーつー",
+    "vietnamese": "Chỉ thị thanh toán PSD2",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quy định về dịch vụ thanh toán của EU.",
+    "example": "PSD2準拠のセキュアな通信。"
+  },
+  {
+    "id": "fintech-real-time-processing",
+    "english": "Real-Time Processing",
+    "japanese": "リアルタイム処理",
+    "kana": "りあるたいむしょり",
+    "vietnamese": "Xử lý thời gian thực",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Xử lý giao dịch ngay lập tức.",
+    "example": "リアルタイム決済を実現します。"
+  },
+  {
+    "id": "fintech-reconciliation",
+    "english": "Reconciliation",
+    "japanese": "照合 / 消込",
+    "kana": "しょうごう / けしこみ",
+    "vietnamese": "Đối soát / Reconciliation",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kiểm tra tính khớp nhau giữa các bản ghi tài chính.",
+    "example": "毎日の取引を自動で消込します。"
+  },
+  {
+    "id": "fintech-refund",
+    "english": "Refund",
+    "japanese": "返金 / リファンド",
+    "kana": "へんきん / りふぁんど",
+    "vietnamese": "Hoàn tiền",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Trả lại tiền cho khách hàng.",
+    "example": "全額リファンドを行いました。"
+  },
+  {
+    "id": "fintech-regtech",
+    "english": "Regtech",
+    "japanese": "レグテック",
+    "kana": "れぐてっく",
+    "vietnamese": "Công nghệ quản lý / Regtech",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Công nghệ giúp tuân thủ các quy định tài chính.",
+    "example": "レグテックでコンプライアンスを強化。"
+  },
+  {
+    "id": "fintech-remittance",
+    "english": "Remittance / Remittances",
+    "japanese": "送金 / 海外送金",
+    "kana": "そうきん / かいがいそうきん",
+    "vietnamese": "Chuyển tiền",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Việc chuyển tiền đến một nơi khác.",
+    "example": "海外送金の手数料を比較します。"
+  },
+  {
+    "id": "fintech-savings-account",
+    "english": "Savings Account",
+    "japanese": "普通預金口座",
+    "kana": "ふつうよきんこうざ",
+    "vietnamese": "Tài khoản tiết kiệm",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tài khoản ngân hàng tích lũy tiền.",
+    "example": "普通預金口座を開設します。"
+  },
+  {
+    "id": "fintech-securities",
+    "english": "Securities",
+    "japanese": "有価証券 / 証券",
+    "kana": "ゆうかしょうけん",
+    "vietnamese": "Chứng khoán",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Các loại cổ phiếu, trái phiếu.",
+    "example": "証券取引のプラットフォームを開発。"
+  },
+  {
+    "id": "fintech-settlement",
+    "english": "Settlement / Settlements",
+    "japanese": "決済 / 清算",
+    "kana": "けっさい / せいさん",
+    "vietnamese": "Quyết toán / Thanh toán",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hoàn thành một giao dịch tài chính.",
+    "example": "決済処理が完了しました。"
+  },
+  {
+    "id": "fintech-sftp",
+    "english": "SFTP / Secure FTP",
+    "japanese": "セキュアFTP",
+    "kana": "せきゅあえふてぃーぴー",
+    "vietnamese": "Giao thức truyền file an toàn SFTP",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Truyền dữ liệu tài chính qua kênh mã hóa.",
+    "example": "SFTPで取引データを取り込みます。"
+  }
+]

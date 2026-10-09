@@ -1,0 +1,696 @@
+[
+  {
+    "id": "pm-stakeholder-register",
+    "english": "Stakeholder Register",
+    "japanese": "ステークホルダー登録簿",
+    "kana": "ステークホルダーとうろくぼ",
+    "vietnamese": "Danh sách các bên liên quan",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Danh sách ghi lại thông tin liên lạc và vai trò của các bên liên quan.",
+    "example": "Keep the stakeholder register up to date when there are organizational changes."
+  },
+  {
+    "id": "pm-status-report",
+    "english": "Status Report",
+    "japanese": "進捗報告書 / ステータスレポート",
+    "kana": "しんちょくほうこくしょ",
+    "vietnamese": "Báo cáo trạng thái / Status report",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Báo cáo định kỳ về tình hình hiện tại của dự án.",
+    "example": "The monthly status report is presented to the steering committee."
+  },
+  {
+    "id": "pm-steering-committee",
+    "english": "Steering Committee",
+    "japanese": "ステアリングコミッティー / 運営委員会",
+    "kana": "ステアリングコミッティー",
+    "vietnamese": "Ban điều hành / Ban chỉ đạo dự án",
+    "roles": [
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Nhóm lãnh đạo cấp cao đưa ra các quyết định chiến lược cho dự án.",
+    "example": "The steering committee approved the extension of the project timeline."
+  },
+  {
+    "id": "pm-swot-analysis",
+    "english": "SWOT Analysis / SWOT",
+    "japanese": "SWOT分析",
+    "kana": "スウォットぶんせき",
+    "vietnamese": "Phân tích SWOT",
+    "roles": [
+      "Manager",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Phân tích Điểm mạnh, Điểm yếu, Cơ hội và Thách thức.",
+    "example": "Conduct a SWOT analysis to evaluate our competitive position in the offshore market."
+  },
+  {
+    "id": "pm-tech-debt",
+    "english": "Technical Debt / Tech Debt",
+    "japanese": "技術的負債 / テックデット",
+    "kana": "ぎじゅつてきふさい",
+    "vietnamese": "Nợ kỹ thuật",
+    "roles": [
+      "PM",
+      "Architect",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Chi phí ẩn của việc phải làm lại trong tương lai khi chọn giải pháp dễ/nhanh thay vì giải pháp tốt hơn nhưng mất nhiều thời gian hơn.",
+    "example": "リリースを優先して仮実装した部分が技術的負債となっているため、次のスプリントでリファクタリングします。"
+  },
+  {
+    "id": "pm-three-point-estimation",
+    "english": "Three-point Estimation / PERT Estimation",
+    "japanese": "三点見積もり / PERT見積もり",
+    "kana": "さんてんみつもり",
+    "vietnamese": "Ước lượng ba điểm",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Sử dụng ba giá trị (Lạc quan, Bi quan, Khả thi nhất) để tính toán giá trị trung bình.",
+    "example": "Three-point estimation helps account for uncertainty in complex tasks."
+  },
+  {
+    "id": "pm-to-be",
+    "english": "TO-BE / Future State",
+    "japanese": "理想状態 / To-be / 次期状態",
+    "kana": "りそうじょうたい",
+    "vietnamese": "Trạng thái mong muốn / Tương lai",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Mô tả quy trình hoặc hệ thống sau khi đã được cải tiến hoặc xây dựng mới.",
+    "example": "The TO-BE model reflects the optimized workflow for the client."
+  },
+  {
+    "id": "pm-top-down",
+    "english": "Top-down Estimation",
+    "japanese": "トップダウン見積もり / 類推見積もり",
+    "kana": "トップダウンみつもり",
+    "vietnamese": "Ước lượng từ trên xuống / Top-down",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Ước lượng tổng quát dựa trên quy mô dự án rồi chia nhỏ cho các thành phần.",
+    "example": "The management team provided a top-down estimation during the sales phase."
+  },
+  {
+    "id": "pm-transparency",
+    "english": "Transparency",
+    "japanese": "透明性 / トランスペアレンシー",
+    "kana": "とうめいせい",
+    "vietnamese": "Tính minh bạch",
+    "roles": [
+      "PM",
+      "BrSE",
+      "SM"
+    ],
+    "category": "System Design",
+    "note": "Chia sẻ thông tin một cách cởi mở và trung thực giữa các bên.",
+    "example": "Transparency about project delays helps build trust with the client."
+  },
+  {
+    "id": "pm-trigger-condition",
+    "english": "Trigger Condition / Risk Trigger",
+    "japanese": "トリガー条件 / リスクの引き金",
+    "kana": "トリガーじょうけん",
+    "vietnamese": "Điều kiện kích hoạt rủi ro",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Dấu hiệu hoặc sự kiện cho thấy một rủi ro sắp hoặc đã xảy ra.",
+    "example": "Missing two consecutive milestones is the trigger condition for our escalation plan."
+  },
+  {
+    "id": "pm-ttm",
+    "english": "Time to Market / TTM",
+    "japanese": "タイムトゥマーケット / TTM",
+    "kana": "タイムトゥマーケット",
+    "vietnamese": "Thời gian đưa ra thị trường",
+    "roles": [
+      "PM",
+      "PO",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Khoảng thời gian từ khi ý tưởng sản phẩm ra đời cho đến khi sản phẩm có mặt trên thị trường.",
+    "example": "競合他社より早く提供するため、TTM（タイムトゥマーケット）の短縮が最大の課題です。"
+  },
+  {
+    "id": "pm-wbs",
+    "english": "WBS / Work Breakdown Structure",
+    "japanese": "作業分解構成図 / WBS",
+    "kana": "さぎょうぶんかいこうせいず",
+    "vietnamese": "Cấu trúc phân chia công việc / WBS",
+    "roles": [
+      "PM",
+      "Manager",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Công cụ phân chia dự án thành các phần việc nhỏ có thể quản lý.",
+    "example": "Creating a detailed WBS is the first step in project scheduling."
+  },
+  {
+    "id": "pm-wbs-dictionary",
+    "english": "WBS Dictionary",
+    "japanese": "WBS辞書",
+    "kana": "ダブリュービーエスじしょ",
+    "vietnamese": "Từ điển WBS",
+    "roles": [
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Tài liệu cung cấp thông tin chi tiết về từng thành phần trong WBS.",
+    "example": "Refer to the WBS dictionary for technical specifications of each task."
+  },
+  {
+    "id": "pm-weekly-report",
+    "english": "Weekly Report",
+    "japanese": "週報 / ウィークリーレポート",
+    "kana": "しゅうほう",
+    "vietnamese": "Báo cáo tuần",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Báo cáo tóm tắt các công việc đã làm và kế hoạch cho tuần tới.",
+    "example": "Please submit your weekly report by 5 PM every Friday."
+  },
+  {
+    "id": "pm-wideband-delphi",
+    "english": "Wideband Delphi",
+    "japanese": "ワイドバンド・デルファイ法",
+    "kana": "ワイドバンドデルファイほう",
+    "vietnamese": "Phương pháp Wideband Delphi",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật ước lượng dựa trên sự đồng thuận của một nhóm chuyên gia.",
+    "example": "We used Wideband Delphi to reach a consensus on the project timeline."
+  },
+  {
+    "id": "pm-work-package",
+    "english": "Work Package",
+    "japanese": "ワークパッケージ / 作業パッケージ",
+    "kana": "ワークパッケージ",
+    "vietnamese": "Gói công việc / Work package",
+    "roles": [
+      "PM",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cấp độ thấp nhất của WBS, nơi công việc được ước lượng và quản lý.",
+    "example": "Each work package should have a clear owner and deadline."
+  },
+  {
+    "id": "qa-uat-1",
+    "english": "User Acceptance Testing / UAT / User Acceptance Testings",
+    "japanese": "受け入れテスト / ユーザー受け入れテスト / UAT / ユーザー",
+    "kana": "うけいれテスト",
+    "vietnamese": "Kiểm thử chấp nhận của người dùng",
+    "roles": [
+      "QA",
+      "BA",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Giai đoạn kiểm thử cuối cùng trước khi đưa vào sản xuất, do khách hàng hoặc người dùng cuối thực hiện.",
+    "example": "来週からクライアントによるUAT（受け入れテスト）が開始されるため、バグ修正を急ぎましょう。"
+  },
+  {
+    "id": "se-abstract-factory",
+    "english": "Abstract Factory Pattern",
+    "japanese": "抽象工場パターン / アブストラクトファクトリー",
+    "kana": "ちゅうしょうこうじょうパターン / アブストラクトファクトリー",
+    "vietnamese": "Mẫu xưởng trừu tượng / Abstract Factory",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Tạo ra các họ đối tượng liên quan mà không chỉ định lớp cụ thể.",
+    "example": "The UI toolkit uses an abstract factory to create OS-specific components."
+  },
+  {
+    "id": "se-adapter",
+    "english": "Adapter Pattern",
+    "japanese": "アダプターパターン",
+    "kana": "アダプターパターン",
+    "vietnamese": "Mẫu Adapter / Bộ điều hợp",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cho phép các interface không tương thích làm việc với nhau.",
+    "example": "We used an adapter to integrate the new payment gateway with old code."
+  },
+  {
+    "id": "se-atdd",
+    "english": "ATDD / Acceptance Test-Driven Development",
+    "japanese": "受け入れテスト駆動開発",
+    "kana": "うけいれテストくどうかいはつ",
+    "vietnamese": "Phát triển hướng kiểm thử chấp nhận / ATDD",
+    "roles": [
+      "BrSE",
+      "QA",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Sự hợp tác giữa khách hàng, dev và QA để xác định yêu cầu qua test case.",
+    "example": "ATDD ensures that the development team builds the right features."
+  },
+  {
+    "id": "se-bdd",
+    "english": "BDD / Behavior-Driven Development",
+    "japanese": "振る舞い駆動開発",
+    "kana": "ふるまいくどうかいはつ",
+    "vietnamese": "Phát triển hướng hành vi / BDD",
+    "roles": [
+      "Dev",
+      "QA",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Mở rộng từ TDD, tập trung vào hành vi nghiệp vụ của hệ thống.",
+    "example": "BDD uses natural language like Gherkin (Given-When-Then) to define tests."
+  },
+  {
+    "id": "se-bridge",
+    "english": "Bridge Pattern",
+    "japanese": "ブリッジパターン",
+    "kana": "ブリッジパターン",
+    "vietnamese": "Mẫu Bridge / Cầu nối",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Tách biệt tính trừu tượng khỏi việc thực thi.",
+    "example": "Bridge pattern allows varying both abstraction and implementation independently."
+  },
+  {
+    "id": "se-builder",
+    "english": "Builder Pattern",
+    "japanese": "ビルダーパターン",
+    "kana": "ビルダーパターン",
+    "vietnamese": "Mẫu Builder / Người xây dựng",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Tách biệt việc xây dựng một đối tượng phức tạp khỏi biểu diễn của nó.",
+    "example": "A builder pattern is useful for creating complex API request objects."
+  },
+  {
+    "id": "se-cap-theorem",
+    "english": "CAP Theorem",
+    "japanese": "CAP定理",
+    "kana": "CAPていり",
+    "vietnamese": "Định lý CAP (Consistency, Availability, Partition Tolerance)",
+    "roles": [
+      "Architect",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Định lý về sự đánh đổi giữa Consistency, Availability và Partition Tolerance trong hệ thống phân tán.",
+    "example": "The CAP theorem helps engineers make trade-offs in distributed system design."
+  },
+  {
+    "id": "se-chain-of-responsibility",
+    "english": "Chain of Responsibility Pattern",
+    "japanese": "責任の鎖パターン",
+    "kana": "せきにんのくさりパターン",
+    "vietnamese": "Mẫu Chuỗi trách nhiệm",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Chuyển yêu cầu dọc theo một chuỗi các handler.",
+    "example": "Middleware in web frameworks follows the chain of responsibility pattern."
+  },
+  {
+    "id": "se-circuit-breaker",
+    "english": "Circuit Breaker Pattern",
+    "japanese": "サーキットブレーカーパターン",
+    "kana": "サーキットブレーカーパターン",
+    "vietnamese": "Mẫu ngắt mạch / Circuit Breaker",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Ngăn chặn việc gọi một dịch vụ đang gặp lỗi liên tục để tránh làm sập toàn hệ thống.",
+    "example": "Implementing a circuit breaker prevents cascading failures in microservices."
+  },
+  {
+    "id": "se-clean-architecture",
+    "english": "Clean Architecture",
+    "japanese": "クリーンアーキテクチャ",
+    "kana": "クリーンアーキテクチャ",
+    "vietnamese": "Kiến trúc sạch / Clean Architecture",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Kiến trúc tách biệt business logic khỏi framework và UI.",
+    "example": "Clean architecture makes the application easier to test and maintain."
+  },
+  {
+    "id": "se-code-smell",
+    "english": "Code Smell",
+    "japanese": "コードの不吉な臭い",
+    "kana": "コードのふきつなにおい",
+    "vietnamese": "Dấu hiệu code xấu / Code smell",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Bất kỳ triệu chứng nào trong mã nguồn cho thấy có vấn đề thiết kế sâu hơn.",
+    "example": "Long methods and duplicate code are common code smells."
+  },
+  {
+    "id": "se-cohesion",
+    "english": "Cohesion / High Cohesion",
+    "japanese": "内聚度 / 強結合 / 高い内聚性",
+    "kana": "ないしゅうど / こういないしゅうせい",
+    "vietnamese": "Độ kết dính / Tính gắn kết cao",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Mức độ liên quan của các chức năng trong cùng một module.",
+    "example": "High cohesion and loose coupling are signs of good design."
+  },
+  {
+    "id": "se-command",
+    "english": "Command Pattern",
+    "japanese": "コマンドパターン",
+    "kana": "コマンドパターン",
+    "vietnamese": "Mẫu Command / Lệnh",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Đóng gói một yêu cầu thành một đối tượng riêng biệt.",
+    "example": "Undo/Redo functionality is typically implemented using the command pattern."
+  },
+  {
+    "id": "se-composite",
+    "english": "Composite Pattern",
+    "japanese": "コンポジットパターン",
+    "kana": "コンポジットパターン",
+    "vietnamese": "Mẫu Composite / Hợp phần",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Sắp xếp các đối tượng theo cấu trúc cây để biểu diễn quan hệ part-whole.",
+    "example": "File systems are a classic application of the composite pattern."
+  },
+  {
+    "id": "se-concurrency",
+    "english": "Concurrency / Concurrent Processing",
+    "japanese": "並行性",
+    "kana": "へいこうせい",
+    "vietnamese": "Tính đồng thời / Xử lý đồng thời",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Khả năng xử lý nhiều tác vụ cùng một lúc trong một khoảng thời gian.",
+    "example": "Handling concurrency correctly is crucial for high-performance servers."
+  },
+  {
+    "id": "se-coupling",
+    "english": "Coupling / Loose Coupling / Tight Coupling",
+    "japanese": "結合度 / 疎結合 / 密結合",
+    "kana": "けつごうど / そけつごう / みつけつごう",
+    "vietnamese": "Độ phụ thuộc / Liên kết lỏng lẻo / Liên kết chặt chẽ",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Mức độ phụ thuộc lẫn nhau giữa các module.",
+    "example": "Loose coupling makes the system more flexible and easier to change."
+  },
+  {
+    "id": "se-cqrs",
+    "english": "CQRS / Command Query Responsibility Segregation",
+    "japanese": "コマンドクエリ責任分離 / CQRS",
+    "kana": "コマンドクエリせきにんぶんり / CQRS",
+    "vietnamese": "Phân tách trách nhiệm lệnh và truy vấn / CQRS",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Tách biệt việc đọc và viết dữ liệu thành các mô hình khác nhau.",
+    "example": "CQRS can significantly improve the read performance of complex applications."
+  },
+  {
+    "id": "se-data-consistency",
+    "english": "Data Consistency / Strong Consistency / Eventual Consistency",
+    "japanese": "データ整合性 / 強い整合性 / 結果整合性",
+    "kana": "データせいごうせい",
+    "vietnamese": "Tính nhất quán dữ liệu",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Đảm bảo dữ liệu chính xác và đồng bộ trên toàn hệ thống.",
+    "example": "NoSQL databases often provide eventual consistency for better performance."
+  },
+  {
+    "id": "se-ddd",
+    "english": "DDD / Domain-Driven Design",
+    "japanese": "ドメイン駆動設計 / DDD",
+    "kana": "ドメインくどうせっけい / DDD",
+    "vietnamese": "Thiết kế hướng tên miền / DDD",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Cách tiếp cận thiết kế phần mềm dựa trên mô hình nghiệp vụ thực tế.",
+    "example": "Ubiquitous language is a key concept in Domain-Driven Design."
+  },
+  {
+    "id": "se-decorator",
+    "english": "Decorator Pattern",
+    "japanese": "デコレーターパターン",
+    "kana": "デコレーターパターン",
+    "vietnamese": "Mẫu Decorator / Trang trí",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Bổ sung hành vi cho đối tượng mà không làm thay đổi cấu trúc của nó.",
+    "example": "Java I/O streams use the decorator pattern extensively."
+  },
+  {
+    "id": "se-di",
+    "english": "DI / Dependency Injection",
+    "japanese": "依存性の注入",
+    "kana": "いぞんせいのちゅうにゅう",
+    "vietnamese": "Tiêm phụ thuộc / Dependency Injection",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cung cấp các phụ thuộc cho một đối tượng thay vì để nó tự tạo.",
+    "example": "Spring Framework is well-known for its DI container."
+  },
+  {
+    "id": "se-dip",
+    "english": "DIP / Dependency Inversion Principle",
+    "japanese": "依存性逆転の原則",
+    "kana": "いぞんせいぎゃくてんのげんそく",
+    "vietnamese": "Nguyên lý đảo ngược phụ thuộc / DIP",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Module cấp cao không nên phụ thuộc module cấp thấp, cả hai nên phụ thuộc vào abstraction.",
+    "example": "Dependency injection is a common way to implement DIP."
+  },
+  {
+    "id": "se-disaster-recovery",
+    "english": "DR / Disaster Recovery",
+    "japanese": "災害復旧",
+    "kana": "さいがいふっきゅう",
+    "vietnamese": "Khôi phục sau thảm họa / DR",
+    "roles": [
+      "Dev",
+      "BrSE",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Tập hợp các chính sách và quy trình để khôi phục hạ tầng IT sau thảm họa.",
+    "example": "Our DR plan includes real-time data replication to a secondary region."
+  },
+  {
+    "id": "se-dry",
+    "english": "DRY / Don't Repeat Yourself",
+    "japanese": "DRY原則 / 繰り返さない",
+    "kana": "DRYげんそく",
+    "vietnamese": "Nguyên lý DRY / Đừng lặp lại chính mình",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Hạn chế tối đa việc lặp lại code trong hệ thống.",
+    "example": "Extending logic into a shared utility function follows DRY."
+  },
+  {
+    "id": "se-event-driven",
+    "english": "Event-Driven Architecture / EDA",
+    "japanese": "イベント駆動型アーキテクチャ",
+    "kana": "イベントくどうがたアーキテクチャ",
+    "vietnamese": "Kiến trúc hướng sự kiện / EDA",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Kiến trúc dựa trên việc tạo, phát hiện và phản hồi các sự kiện.",
+    "example": "EDA is ideal for building highly decoupled systems."
+  },
+  {
+    "id": "se-event-sourcing",
+    "english": "Event Sourcing",
+    "japanese": "イベントソーシング",
+    "kana": "イベントソーシング",
+    "vietnamese": "Lưu trữ theo sự kiện / Event Sourcing",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Lưu trữ toàn bộ lịch sử thay đổi của ứng dụng dưới dạng các sự kiện.",
+    "example": "Event sourcing provides a perfect audit trail of all data changes."
+  },
+  {
+    "id": "se-facade",
+    "english": "Facade Pattern",
+    "japanese": "ファサードパターン",
+    "kana": "ファサードパターン",
+    "vietnamese": "Mẫu Facade / Mặt tiền",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cung cấp một interface đơn giản cho một hệ thống con phức tạp.",
+    "example": "The API Gateway acts as a facade for multiple microservices."
+  },
+  {
+    "id": "se-factory-method",
+    "english": "Factory Method Pattern",
+    "japanese": "工場メソッドパターン / ファクトリーメソッド",
+    "kana": "こうじょうメソッドパターン / ファクトリーメソッド",
+    "vietnamese": "Mẫu Factory Method / Nhà máy",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Cung cấp một interface để tạo các đối tượng trong lớp cha.",
+    "example": "Use a factory method to create different types of document processors."
+  },
+  {
+    "id": "se-fault-tolerance",
+    "english": "Fault Tolerance",
+    "japanese": "障害耐性",
+    "kana": "しょうがいたいせい",
+    "vietnamese": "Khả năng chịu lỗi / Fault tolerance",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Khả năng hệ thống vẫn tiếp tục hoạt động ngay cả khi một số thành phần bị lỗi.",
+    "example": "A fault-tolerant system has no single point of failure."
+  },
+  {
+    "id": "se-flyweight",
+    "english": "Flyweight Pattern",
+    "japanese": "フライウェイトパターン",
+    "kana": "フライウェイトパターン",
+    "vietnamese": "Mẫu Flyweight / Chia sẻ tài nguyên",
+    "roles": [
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Giảm bộ nhớ bằng cách chia sẻ các phần chung giữa nhiều đối tượng.",
+    "example": "The text editor uses flyweight for character rendering styles."
+  },
+  {
+    "id": "se-gof",
+    "english": "GoF / Gang of Four Design Patterns",
+    "japanese": "GoFデザインパターン",
+    "kana": "GoFデザインパターン",
+    "vietnamese": "23 mẫu thiết kế GoF",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Các giải pháp mẫu cho các vấn đề thiết kế phần mềm phổ biến.",
+    "example": "Studying GoF patterns helps in identifying common architectural problems."
+  },
+  {
+    "id": "se-hexagonal-architecture",
+    "english": "Hexagonal Architecture / Ports and Adapters",
+    "japanese": "ヘキサゴナルアーキテクチャ",
+    "kana": "ヘキサゴナルアーキテクチャ",
+    "vietnamese": "Kiến trúc lục giác / Ports and Adapters",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Tương tự Clean Architecture, tập trung vào việc tách biệt lõi ứng dụng.",
+    "example": "Hexagonal architecture allows swapping databases without touching business logic."
+  },
+  {
+    "id": "se-high-availability",
+    "english": "HA / High Availability",
+    "japanese": "高可用性",
+    "kana": "こうかようせい",
+    "vietnamese": "Độ sẵn sàng cao / HA",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống được thiết kế để hoạt động liên tục mà không có sự cố gián đoạn.",
+    "example": "We deployed our application in multiple zones for high availability."
+  }
+]

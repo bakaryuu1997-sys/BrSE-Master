@@ -1,0 +1,710 @@
+[
+  {
+    "id": "pm-burn-up-chart",
+    "english": "Burnup Chart",
+    "japanese": "バーンアップチャート",
+    "kana": "バーンアップチャート",
+    "vietnamese": "Biểu đồ Burnup / Biểu đồ tích lũy công việc",
+    "roles": [
+      "PO",
+      "PM",
+      "BrSE"
+    ],
+    "category": "Agile",
+    "note": "Biểu đồ hiển thị tổng lượng công việc đã hoàn thành so với tổng phạm vi dự án.",
+    "example": "A burnup chart is useful for tracking scope creep over several releases."
+  },
+  {
+    "id": "pm-daily-standup",
+    "english": "Daily Standup / Daily Scrum",
+    "japanese": "デイリースタンドアップ / 朝礼 / デイリースクラム",
+    "kana": "デイリースタンドアップ",
+    "vietnamese": "Họp nhanh hàng ngày / Standup",
+    "roles": [
+      "Dev",
+      "BrSE",
+      "SM"
+    ],
+    "category": "Agile",
+    "note": "Cuộc họp ngắn 15 phút hàng ngày để cập nhật tiến độ và rào cản.",
+    "example": "The daily standup is at 9:30 AM in the meeting room."
+  },
+  {
+    "id": "pm-feedback-loop",
+    "english": "Feedback Loop",
+    "japanese": "フィードバックループ / フィードバックの輪",
+    "kana": "フィードバックループ",
+    "vietnamese": "Vòng lặp phản hồi",
+    "roles": [
+      "Dev",
+      "QA",
+      "BrSE"
+    ],
+    "category": "Agile",
+    "note": "Quy trình liên tục thu thập phản hồi để cải tiến sản phẩm và quy trình.",
+    "example": "Short sprints create a fast feedback loop with the users."
+  },
+  {
+    "id": "pm-planning-poker",
+    "english": "Planning Poker",
+    "japanese": "プランニングポーカー",
+    "kana": "プランニングポーカー",
+    "vietnamese": "Planning Poker / Chơi poker ước lượng",
+    "roles": [
+      "Dev",
+      "BrSE",
+      "SM"
+    ],
+    "category": "Agile",
+    "note": "Một biến thể của Wideband Delphi dùng trong Agile để ước lượng story points.",
+    "example": "During sprint planning, the team uses Planning Poker to estimate stories."
+  },
+  {
+    "id": "pm-story-points",
+    "english": "SP / Story Points",
+    "japanese": "ストーリーポイント",
+    "kana": "ストーリーポイント",
+    "vietnamese": "Điểm câu chuyện / Story points",
+    "roles": [
+      "Dev",
+      "BrSE",
+      "SM"
+    ],
+    "category": "Agile",
+    "note": "Đơn vị đo độ phức tạp tương đối của một user story.",
+    "example": "The team agreed that this ticket is 5 SP."
+  },
+  {
+    "id": "qa-ad-hoc-testing",
+    "english": "Ad-hoc Testing",
+    "japanese": "アドホックテスト",
+    "kana": "アドホックテスト",
+    "vietnamese": "Kiểm thử ngẫu hứng / Ad-hoc test",
+    "roles": [
+      "QA",
+      "Tester"
+    ],
+    "category": "Agile",
+    "note": "Kiểm thử tùy hứng, không có tài liệu hay kế hoạch cụ thể.",
+    "example": "Ad-hoc testing is often done when time is limited."
+  },
+  {
+    "id": "qa-alpha-testing",
+    "english": "Alpha Testing",
+    "japanese": "アルファテスト",
+    "kana": "アルファテスト",
+    "vietnamese": "Kiểm thử Alpha / Alpha test",
+    "roles": [
+      "Internal QA"
+    ],
+    "category": "Agile",
+    "note": "Kiểm thử nội bộ trước khi phát hành cho người dùng bên ngoài.",
+    "example": "We are currently in the alpha testing phase."
+  },
+  {
+    "id": "qa-beta-testing",
+    "english": "Beta Testing",
+    "japanese": "ベータテスト",
+    "kana": "ベータテスト",
+    "vietnamese": "Kiểm thử Beta / Beta test",
+    "roles": [
+      "End Users"
+    ],
+    "category": "Agile",
+    "note": "Phát hành bản thử nghiệm cho một nhóm người dùng thực tế.",
+    "example": "Beta testing helps us gather feedback from the market."
+  },
+  {
+    "id": "qa-black-box-testing",
+    "english": "Black-box Testing",
+    "japanese": "ブラックボックステスト",
+    "kana": "ブラックボックステスト",
+    "vietnamese": "Kiểm thử hộp đen / Black-box test",
+    "roles": [
+      "QA",
+      "Tester"
+    ],
+    "category": "Agile",
+    "note": "Kiểm thử dựa trên yêu cầu mà không cần biết cấu trúc code bên trong.",
+    "example": "Functional testing is typically a form of black-box testing."
+  },
+  {
+    "id": "qa-boundary-value-analysis",
+    "english": "BVA / Boundary Value Analysis",
+    "japanese": "境界値分析 / BVA",
+    "kana": "きょうかいちぶんせき / BVA",
+    "vietnamese": "Phân tích giá trị biên / BVA",
+    "roles": [
+      "QA",
+      "Tester"
+    ],
+    "category": "Agile",
+    "note": "Kỹ thuật kiểm thử tập trung vào các giá trị tại biên của các dải dữ liệu.",
+    "example": "BVA is a very effective technique for finding bugs in input fields."
+  },
+  {
+    "id": "qa-bug-life-cycle",
+    "english": "Bug Life Cycle / Defect Life Cycle",
+    "japanese": "バグのライフサイクル",
+    "kana": "バグのライフサイクル",
+    "vietnamese": "Vòng đời của lỗi / Bug life cycle",
+    "roles": [
+      "QA",
+      "Dev",
+      "PM"
+    ],
+    "category": "Agile",
+    "note": "Các trạng thái của một lỗi từ khi phát hiện đến khi đóng (New, Assigned, Open, Fixed, Retest, Closed).",
+    "example": "Understanding the bug life cycle is essential for project coordination."
+  },
+  {
+    "id": "qa-bug-report",
+    "english": "Bug Report / Defect Report",
+    "japanese": "バグ報告書 / 不具合報告書",
+    "kana": "バグほうこくしょ / ふぐあいほうこくしょ",
+    "vietnamese": "Báo cáo lỗi / Bug report",
+    "roles": [
+      "QA",
+      "Tester"
+    ],
+    "category": "Agile",
+    "note": "Tài liệu chi tiết về một lỗi được tìm thấy (các bước tái hiện, kết quả, ảnh chụp).",
+    "example": "Always include screenshots in your bug report."
+  },
+  {
+    "id": "qa-compatibility-testing",
+    "english": "Compatibility Testing",
+    "japanese": "互換性テスト",
+    "kana": "ごかんせいテスト",
+    "vietnamese": "Kiểm thử độ tương thích / Compatibility test",
+    "roles": [
+      "QA",
+      "Tester"
+    ],
+    "category": "Agile",
+    "note": "Kiểm tra ứng dụng hoạt động trên các trình duyệt, OS và thiết bị khác nhau.",
+    "example": "The compatibility testing found a bug on IE11."
+  },
+  {
+    "id": "qa-defect-priority",
+    "english": "Priority",
+    "japanese": "優先度",
+    "kana": "ゆうせんど",
+    "vietnamese": "Độ ưu tiên sửa lỗi / Priority",
+    "roles": [
+      "PM",
+      "Dev",
+      "QA"
+    ],
+    "category": "Agile",
+    "note": "Thứ tự mà lỗi cần được sửa (High, Medium, Low).",
+    "example": "A minor UI glitch might have low priority."
+  },
+  {
+    "id": "qa-defect-severity",
+    "english": "Severity",
+    "japanese": "重要度 / 重大度",
+    "kana": "じゅうようど / じゅうだいど",
+    "vietnamese": "Mức độ nghiêm trọng của lỗi / Severity",
+    "roles": [
+      "QA",
+      "Tester",
+      "Dev"
+    ],
+    "category": "Agile",
+    "note": "Đánh giá tác động kỹ thuật của lỗi đối với hệ thống (Blocker, Critical, Major, Minor).",
+    "example": "This bug is a blocker because the app crashes on startup."
+  },
+  {
+    "id": "qa-driver",
+    "english": "Driver / Drivers",
+    "japanese": "ドライバー",
+    "kana": "ドライバー",
+    "vietnamese": "Module mô phỏng (gọi module đang test) / Driver",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Agile",
+    "note": "Một module giả lập dùng để gọi các module mức thấp hơn trong kiểm thử tích hợp (bottom-up).",
+    "example": "The test driver invokes the function with various parameters."
+  },
+  {
+    "id": "qa-dynamic-testing",
+    "english": "Dynamic Testing",
+    "japanese": "動的テスト",
+    "kana": "どうてきテスト",
+    "vietnamese": "Kiểm thử động / Dynamic testing",
+    "roles": [
+      "QA",
+      "Tester"
+    ],
+    "category": "Agile",
+    "note": "Kiểm thử bằng cách chạy chương trình thực tế.",
+    "example": "All functional testing is dynamic testing."
+  },
+  {
+    "id": "qa-entry-criteria",
+    "english": "Entry Criteria",
+    "japanese": "開始基準 / エントリクライテリア",
+    "kana": "かいしきじゅん / エントリクライテリア",
+    "vietnamese": "Điều kiện bắt đầu kiểm thử / Entry criteria",
+    "roles": [
+      "QA Lead"
+    ],
+    "category": "Agile",
+    "note": "Các điều kiện cần thiết để bắt đầu một hoạt động kiểm thử.",
+    "example": "Code deployment to Staging is one of our entry criteria for testing."
+  },
+  {
+    "id": "qa-equivalence-partitioning",
+    "english": "Equivalence Partitioning",
+    "japanese": "同等分割",
+    "kana": "どうとうぶんかつ",
+    "vietnamese": "Phân vùng tương đương / Equivalence partitioning",
+    "roles": [
+      "QA",
+      "Tester"
+    ],
+    "category": "Agile",
+    "note": "Chia dữ liệu đầu vào thành các nhóm tương đương để giảm số lượng test case.",
+    "example": "Use equivalence partitioning to select representative test data."
+  },
+  {
+    "id": "qa-error-guessing",
+    "english": "Error Guessing",
+    "japanese": "エラー推測",
+    "kana": "エラーすいそく",
+    "vietnamese": "Dự đoán lỗi / Error guessing",
+    "roles": [
+      "QA",
+      "Tester"
+    ],
+    "category": "Agile",
+    "note": "Tester dựa trên kinh nghiệm để dự đoán những nơi dễ phát sinh lỗi.",
+    "example": "Error guessing is a subjective but powerful testing technique."
+  },
+  {
+    "id": "qa-exit-criteria",
+    "english": "Exit Criteria",
+    "japanese": "終了基準 / エグジットクライテリア",
+    "kana": "しゅうりょうきじゅん / エグジットクライテリア",
+    "vietnamese": "Điều kiện kết thúc kiểm thử / Exit criteria",
+    "roles": [
+      "QA Lead"
+    ],
+    "category": "Agile",
+    "note": "Các điều kiện cần thiết để kết thúc một hoạt động kiểm thử.",
+    "example": "Running all test cases and fixing all critical bugs are typical exit criteria."
+  },
+  {
+    "id": "qa-exploratory-testing",
+    "english": "Exploratory Testing",
+    "japanese": "探索的テスト",
+    "kana": "たんさくてきテスト",
+    "vietnamese": "Kiểm thử khám phá / Exploratory testing",
+    "roles": [
+      "QA",
+      "Tester"
+    ],
+    "category": "Agile",
+    "note": "Kiểm thử không theo kịch bản trước, dựa trên kinh nghiệm và sự tò mò của tester.",
+    "example": "Exploratory testing is great for finding edge case bugs."
+  },
+  {
+    "id": "qa-grey-box-testing",
+    "english": "Grey-box Testing",
+    "japanese": "グレーボックステスト",
+    "kana": "グレーボックステスト",
+    "vietnamese": "Kiểm thử hộp xám / Grey-box test",
+    "roles": [
+      "QA",
+      "Dev"
+    ],
+    "category": "Agile",
+    "note": "Sự kết hợp giữa black-box và white-box, kiểm thử với hiểu biết một phần về hệ thống.",
+    "example": "Grey-box testing is effective for web applications."
+  },
+  {
+    "id": "qa-integration-testing",
+    "english": "Integration Testing / Integration Test",
+    "japanese": "結合テスト / インテグレーションテスト",
+    "kana": "けつごうテスト / インテグレーションテスト",
+    "vietnamese": "Kiểm thử tích hợp / Integration test",
+    "roles": [
+      "QA",
+      "Dev"
+    ],
+    "category": "Agile",
+    "note": "Kiểm tra sự tương tác giữa các module khác nhau.",
+    "example": "The integration test caught an issue with the API connection."
+  },
+  {
+    "id": "qa-load-testing",
+    "english": "Load Testing",
+    "japanese": "負荷テスト / ロードテスト",
+    "kana": "ふかテスト / ロードテスト",
+    "vietnamese": "Kiểm thử tải / Load test",
+    "roles": [
+      "QA",
+      "DevOps"
+    ],
+    "category": "Agile",
+    "note": "Kiểm tra hệ thống dưới mức tải dự kiến.",
+    "example": "Load testing simulates 1000 concurrent users."
+  },
+  {
+    "id": "qa-localization-testing",
+    "english": "Localization Testing / L10n Testing",
+    "japanese": "ローカライズテスト / L10nテスト",
+    "kana": "ローカライズテスト / L10nテスト",
+    "vietnamese": "Kiểm thử bản địa hóa / Localization test",
+    "roles": [
+      "QA",
+      "BrSE"
+    ],
+    "category": "Agile",
+    "note": "Kiểm tra ứng dụng cho một ngôn ngữ hoặc vùng cụ thể.",
+    "example": "The localization testing ensures the Japanese translation is natural."
+  },
+  {
+    "id": "qa-manual-testing",
+    "english": "Manual Testing",
+    "japanese": "手動テスト",
+    "kana": "しゅどうテスト",
+    "vietnamese": "Kiểm thử thủ công / Manual test",
+    "roles": [
+      "QA",
+      "Tester"
+    ],
+    "category": "Agile",
+    "note": "Con người trực tiếp thực hiện các thao tác kiểm thử.",
+    "example": "Manual testing is still necessary for complex UX flows."
+  },
+  {
+    "id": "qa-negative-testing",
+    "english": "Negative Testing",
+    "japanese": "ネガティブテスト / 異常系テスト",
+    "kana": "ネガティブテスト / いじょうけいテスト",
+    "vietnamese": "Kiểm thử trường hợp sai / Negative testing",
+    "roles": [
+      "QA",
+      "Tester"
+    ],
+    "category": "Agile",
+    "note": "Kiểm tra xem hệ thống xử lý thế nào khi nhận dữ liệu đầu vào không hợp lệ.",
+    "example": "Negative testing ensures the app doesn't crash with bad input."
+  },
+  {
+    "id": "qa-performance-testing",
+    "english": "Performance Testing",
+    "japanese": "パフォーマンステスト / 性能テスト",
+    "kana": "パフォーマンステスト / せいのうテスト",
+    "vietnamese": "Kiểm thử hiệu năng / Performance test",
+    "roles": [
+      "QA",
+      "Dev",
+      "DevOps"
+    ],
+    "category": "Agile",
+    "note": "Kiểm tra tốc độ, khả năng phản hồi và tính ổn định dưới các mức tải khác nhau.",
+    "example": "The app's performance testing showed a slow response time for large data."
+  },
+  {
+    "id": "qa-positive-testing",
+    "english": "Positive Testing",
+    "japanese": "ポジティブテスト / 正常系テスト",
+    "kana": "ポジティブテスト / せいじょうけいテスト",
+    "vietnamese": "Kiểm thử trường hợp đúng / Positive testing",
+    "roles": [
+      "QA",
+      "Tester"
+    ],
+    "category": "Agile",
+    "note": "Kiểm tra xem hệ thống hoạt động đúng như mong đợi với dữ liệu hợp lệ.",
+    "example": "Positive testing verifies the basic functionality."
+  },
+  {
+    "id": "qa-regression-testing",
+    "english": "Regression Testing / Regression",
+    "japanese": "回帰テスト / リグレッションテスト",
+    "kana": "かいきテスト / リグレッションテスト",
+    "vietnamese": "Kiểm thử hồi quy / Regression test",
+    "roles": [
+      "QA",
+      "Tester",
+      "Dev"
+    ],
+    "category": "Agile",
+    "note": "Kiểm tra lại các tính năng cũ để đảm bảo code mới không làm hỏng chúng.",
+    "example": "We need to run a full regression test before the release."
+  },
+  {
+    "id": "qa-sanity-testing",
+    "english": "Sanity Testing / Sanity Test",
+    "japanese": "サニティテスト",
+    "kana": "サニティテスト",
+    "vietnamese": "Kiểm thử tính hợp lý / Sanity test",
+    "roles": [
+      "QA",
+      "Tester"
+    ],
+    "category": "Agile",
+    "note": "Kiểm tra hẹp và sâu vào một tính năng cụ thể vừa được sửa lỗi.",
+    "example": "Sanity testing is performed after receiving a bug fix."
+  },
+  {
+    "id": "qa-scalability-testing",
+    "english": "Scalability Testing",
+    "japanese": "スケーラビリティテスト / 拡張性テスト",
+    "kana": "スケーラビリティテスト / かくちょうせいテスト",
+    "vietnamese": "Kiểm thử khả năng mở rộng / Scalability test",
+    "roles": [
+      "Architect",
+      "DevOps"
+    ],
+    "category": "Agile",
+    "note": "Kiểm tra khả năng mở rộng tài nguyên để đáp ứng tải tăng thêm.",
+    "example": "Scalability testing ensures the system can grow with our business."
+  },
+  {
+    "id": "qa-security-testing",
+    "english": "Security Testing",
+    "japanese": "セキュリティテスト",
+    "kana": "セキュリティテスト",
+    "vietnamese": "Kiểm thử bảo mật / Security test",
+    "roles": [
+      "Security Engineer",
+      "QA"
+    ],
+    "category": "Agile",
+    "note": "Kiểm tra các lỗ hổng bảo mật và khả năng bảo vệ dữ liệu.",
+    "example": "Security testing is mandatory for applications handling personal data."
+  },
+  {
+    "id": "qa-smoke-testing",
+    "english": "Smoke Testing / Smoke Test",
+    "japanese": "スモークテスト",
+    "kana": "スモークテスト",
+    "vietnamese": "Kiểm thử khói / Smoke test / Test nhanh",
+    "roles": [
+      "QA",
+      "Tester",
+      "Dev"
+    ],
+    "category": "Agile",
+    "note": "Kiểm tra các tính năng cơ bản nhất của hệ thống sau khi build mới.",
+    "example": "If the smoke test fails, the build is rejected immediately."
+  },
+  {
+    "id": "qa-static-testing",
+    "english": "Static Testing",
+    "japanese": "静的テスト",
+    "kana": "せいてきテスト",
+    "vietnamese": "Kiểm thử tĩnh / Static testing",
+    "roles": [
+      "QA",
+      "Dev"
+    ],
+    "category": "Agile",
+    "note": "Kiểm thử tài liệu hoặc code mà không cần chạy chương trình (ví dụ: Review).",
+    "example": "Code review is a form of static testing."
+  },
+  {
+    "id": "qa-stress-testing",
+    "english": "Stress Testing",
+    "japanese": "ストレステスト",
+    "kana": "ストレステスト",
+    "vietnamese": "Kiểm thử áp lực / Stress test",
+    "roles": [
+      "Dev",
+      "QA",
+      "DevOps"
+    ],
+    "category": "Agile",
+    "note": "Kiểm tra giới hạn chịu đựng của hệ thống bằng cách đẩy tải lên cực cao.",
+    "example": "Stress testing determines the breaking point of our application."
+  },
+  {
+    "id": "qa-stub",
+    "english": "Stub / Stubs",
+    "japanese": "スタブ",
+    "kana": "スタブ",
+    "vietnamese": "Module mô phỏng (gọi từ module đang test) / Stub",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Agile",
+    "note": "Một module giả lập dùng trong kiểm thử tích hợp (top-down).",
+    "example": "Use a stub to simulate the database response."
+  },
+  {
+    "id": "qa-system-testing",
+    "english": "System Testing / System Test",
+    "japanese": "システムテスト",
+    "kana": "システムテスト",
+    "vietnamese": "Kiểm thử hệ thống / System test",
+    "roles": [
+      "QA"
+    ],
+    "category": "Agile",
+    "note": "Kiểm tra toàn bộ hệ thống đã hoàn chỉnh.",
+    "example": "System testing validates the end-to-end business flow."
+  },
+  {
+    "id": "qa-test-automation",
+    "english": "Test Automation / Automated Testing",
+    "japanese": "テスト自動化",
+    "kana": "テストじどうか",
+    "vietnamese": "Kiểm thử tự động / Automation test",
+    "roles": [
+      "QA Automation Engineer",
+      "Dev"
+    ],
+    "category": "Agile",
+    "note": "Sử dụng các công cụ phần mềm để thực hiện kiểm thử thay vì thủ công.",
+    "example": "Automation testing saves time for repetitive regression tests."
+  },
+  {
+    "id": "qa-test-case",
+    "english": "Test Case / Test Cases",
+    "japanese": "テストケース",
+    "kana": "テストケース",
+    "vietnamese": "Trường hợp kiểm thử / Test case",
+    "roles": [
+      "QA",
+      "Tester"
+    ],
+    "category": "Agile",
+    "note": "Tài liệu mô tả các bước, dữ liệu đầu vào và kết quả mong đợi để kiểm tra một tính năng.",
+    "example": "We have created 50 test cases for the login module."
+  },
+  {
+    "id": "qa-test-data",
+    "english": "Test Data",
+    "japanese": "テストデータ",
+    "kana": "テストデータ",
+    "vietnamese": "Dữ liệu kiểm thử / Test data",
+    "roles": [
+      "QA",
+      "Tester",
+      "Dev"
+    ],
+    "category": "Agile",
+    "note": "Dữ liệu được chuẩn bị sẵn để thực hiện các test case.",
+    "example": "Make sure the test data covers all edge cases."
+  },
+  {
+    "id": "qa-test-environment",
+    "english": "Test Environment / Staging Environment",
+    "japanese": "テスト環境 / ステージング環境",
+    "kana": "テストかんきょう / ステージングかんきょう",
+    "vietnamese": "Môi trường kiểm thử / Test env",
+    "roles": [
+      "QA",
+      "DevOps",
+      "Dev"
+    ],
+    "category": "Agile",
+    "note": "Hệ thống phần cứng và phần mềm được thiết lập riêng để phục vụ việc kiểm thử.",
+    "example": "Deploy the latest build to the test environment."
+  },
+  {
+    "id": "qa-test-execution",
+    "english": "Test Execution / Running Tests",
+    "japanese": "テスト実施 / テスト実行",
+    "kana": "テストじっし / テストじっこう",
+    "vietnamese": "Thực hiện kiểm thử / Test execution",
+    "roles": [
+      "QA",
+      "Tester"
+    ],
+    "category": "Agile",
+    "note": "Quá trình chạy các test case và so sánh kết quả thực tế với kết quả mong đợi.",
+    "example": "Test execution is currently at 80%."
+  },
+  {
+    "id": "qa-test-harness",
+    "english": "Test Harness",
+    "japanese": "テストハーネス",
+    "kana": "テストハーネス",
+    "vietnamese": "Công cụ hỗ trợ kiểm thử / Test harness",
+    "roles": [
+      "QA Automation Engineer",
+      "Dev"
+    ],
+    "category": "Agile",
+    "note": "Tập hợp các phần mềm và dữ liệu cần thiết để chạy các bài kiểm thử tự động.",
+    "example": "The test harness includes the framework and test drivers."
+  },
+  {
+    "id": "qa-test-plan",
+    "english": "Test Plan",
+    "japanese": "テスト計画書",
+    "kana": "テストけいかくしょ",
+    "vietnamese": "Kế hoạch kiểm thử / Test plan",
+    "roles": [
+      "QA Manager",
+      "QA Lead"
+    ],
+    "category": "Agile",
+    "note": "Tài liệu mô tả chiến lược, phạm vi, nguồn lực và lịch trình kiểm thử.",
+    "example": "The test plan was approved by the project manager."
+  },
+  {
+    "id": "qa-test-report",
+    "english": "Test Report / Test Result Report",
+    "japanese": "テスト報告書",
+    "kana": "テストほうこくしょ",
+    "vietnamese": "Báo cáo kết quả kiểm thử / Test report",
+    "roles": [
+      "QA",
+      "Lead",
+      "Manager"
+    ],
+    "category": "Agile",
+    "note": "Tài liệu tổng hợp kết quả của một đợt kiểm thử.",
+    "example": "The final test report shows zero critical bugs."
+  },
+  {
+    "id": "qa-test-scenario",
+    "english": "Test Scenario / Test Scenarios",
+    "japanese": "テストシナリオ",
+    "kana": "テストシナリオ",
+    "vietnamese": "Kịch bản kiểm thử / Test scenario",
+    "roles": [
+      "QA",
+      "Tester"
+    ],
+    "category": "Agile",
+    "note": "Mô tả mức cao về một luồng chức năng cần được kiểm tra.",
+    "example": "One test scenario covers the entire checkout process."
+  },
+  {
+    "id": "qa-test-suite",
+    "english": "Test Suite / Test Suites",
+    "japanese": "テストスイート",
+    "kana": "テストスイート",
+    "vietnamese": "Bộ kiểm thử / Test suite",
+    "roles": [
+      "QA",
+      "Tester"
+    ],
+    "category": "Agile",
+    "note": "Một tập hợp các test case có liên quan với nhau.",
+    "example": "The regression test suite takes 4 hours to complete."
+  },
+  {
+    "id": "qa-traceability",
+    "english": "Traceability",
+    "japanese": "トレーサビリティ",
+    "kana": "トレーサビリティ",
+    "vietnamese": "Khả năng truy xuất nguồn gốc / Traceability",
+    "roles": [
+      "QA",
+      "BA"
+    ],
+    "category": "Agile",
+    "note": "Khả năng theo dõi mối liên hệ giữa các yêu cầu và các test case tương ứng.",
+    "example": "Requirement traceability ensures that every feature is tested."
+  }
+]

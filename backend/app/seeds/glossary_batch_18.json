@@ -1,0 +1,750 @@
+[
+  {
+    "id": "ec-shopping-mall",
+    "english": "E-commerce Mall",
+    "japanese": "ECモール",
+    "kana": "いーしーもーる",
+    "vietnamese": "Trung tâm thương mại điện tử",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Nơi tập hợp nhiều shop (Rakuten, Amazon JP).",
+    "example": "自社ECサイトだけでなく、集客力の強い大手ECモールへの出店も並行して進めています。"
+  },
+  {
+    "id": "ec-sku",
+    "english": "SKU / Stock Keeping Unit",
+    "japanese": "SKU（最小管理単位）",
+    "kana": "えすけーゆー",
+    "vietnamese": "Mã quản lý hàng hóa",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Mã định danh cho từng loại sản phẩm (VD: Áo thun đỏ size L là 1 SKU).",
+    "example": "同じ商品でも、色やサイズが異なる場合は別のSKUとして登録し、在庫を個別に管理します。"
+  },
+  {
+    "id": "ec-subscription-commerce",
+    "english": "Subscription Commerce",
+    "japanese": "サブスクリプション / 定期購入",
+    "kana": "さぶすくりぷしょん / ていきこうにゅう",
+    "vietnamese": "Thương mại định kỳ (Sub)",
+    "roles": [
+      "BrSE",
+      "BA",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Giao hàng định kỳ hàng tháng (VD: sữa, thực phẩm chức năng).",
+    "example": "消耗品を定期的に自動でお届けする、定期購入（サブスクリプション）機能を実装します。"
+  },
+  {
+    "id": "ec-supply-chain-management",
+    "english": "SCM / Supply Chain Management",
+    "japanese": "サプライチェーンマネジメント / マネジメント",
+    "kana": "さぷらいちぇーんまねじめんと",
+    "vietnamese": "Quản trị chuỗi cung ứng",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Quản lý từ nguyên liệu đầu vào đến khi ra sản phẩm và giao khách.",
+    "example": "物流混乱のリスクを最小限にするため、SCMシステムを導入してサプライヤーとの連携を強化します。"
+  },
+  {
+    "id": "ec-third-party-logistics",
+    "english": "3PL / Third Party Logistics",
+    "japanese": "サードパーティロジスティクス",
+    "kana": "さーどぱーてぃろじすてぃくす",
+    "vietnamese": "Dịch vụ logistics bên thứ ba",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Thuê ngoài toàn bộ khâu kho bãi, vận chuyển cho chuyên gia.",
+    "example": "自社での物流網構築はコストがかかるため、信頼できる3PL業者にアウトソーシングします。"
+  },
+  {
+    "id": "ec-tracking-number",
+    "english": "Tracking Number / Tracking Numbers",
+    "japanese": "送り状番号 / 追跡番号",
+    "kana": "おくりじょうばんごう / ついせきばんごう",
+    "vietnamese": "Mã vận đơn / Track đơn / Tracking number",
+    "roles": [
+      "BrSE",
+      "BA",
+      "Requirement"
+    ],
+    "category": "System Design",
+    "note": "Mã để khách kiểm tra hàng đang ở đâu.",
+    "example": "出荷完了メールには、配送状況を確認するための追跡番号（送り状番号）を必ず記載してください。"
+  },
+  {
+    "id": "ec-upselling",
+    "english": "Upselling",
+    "japanese": "アップセル",
+    "kana": "あっぷせる",
+    "vietnamese": "Bán thêm (gợi ý món đắt hơn)",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Gợi ý khách mua bản Pro thay vì bản Basic.",
+    "example": "購入手続き中に、上位モデルへの変更を提案するアップセル施策によって、客単価の向上を目指します。"
+  },
+  {
+    "id": "ec-warehouse-management",
+    "english": "Warehouse Management System / WMS",
+    "japanese": "倉庫管理システム / マネジメント",
+    "kana": "そうこかんりしすてむ",
+    "vietnamese": "Hệ thống quản lý nhà kho",
+    "roles": [
+      "BrSE",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Quản lý việc nhập hàng, xếp hàng, lấy hàng trong kho vật lý.",
+    "example": "WMSの導入により、倉庫内でのピッキング作業の正確性とスピードが大幅に向上しました。"
+  },
+  {
+    "id": "erp-accounting-module",
+    "english": "Accounting Module",
+    "japanese": "会計モジュール",
+    "kana": "かいけいもじゅーる",
+    "vietnamese": "Mô-đun kế toán",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thành phần quản lý tài chính kế toán.",
+    "example": "会計モジュールの導入設定。"
+  },
+  {
+    "id": "erp-accounts-payable",
+    "english": "Accounts Payable / AP",
+    "japanese": "買掛金管理 / AP",
+    "kana": "かいかけきんかんり",
+    "vietnamese": "Quản lý khoản phải trả",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quản lý nợ phải trả cho nhà cung cấp.",
+    "example": "APの支払い期日を確認。"
+  },
+  {
+    "id": "erp-accounts-receivable",
+    "english": "Accounts Receivable / AR",
+    "japanese": "売掛金管理 / AR",
+    "kana": "うりかけきんかんり",
+    "vietnamese": "Quản lý khoản phải thu",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quản lý nợ khách hàng chưa trả.",
+    "example": "ARの回収状況を追跡。"
+  },
+  {
+    "id": "erp-add-on",
+    "english": "Add-on / Add-ons",
+    "japanese": "アドオン / 追加機能",
+    "kana": "あどおん",
+    "vietnamese": "Phần bổ trợ / Add-on",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chức năng viết thêm vào hệ thống chuẩn.",
+    "example": "標準機能不足分をアドオンで補う。"
+  },
+  {
+    "id": "erp-api-first",
+    "english": "API First",
+    "japanese": "APIファースト",
+    "kana": "えーぴーあいふぁーすと",
+    "vietnamese": "Ưu tiên API",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chiến lược thiết kế API trước khi phát triển UI.",
+    "example": "APIファーストで外部連携を容易に。"
+  },
+  {
+    "id": "erp-approval",
+    "english": "Approval",
+    "japanese": "承認 / 決裁",
+    "kana": "しょうにん / けっさい",
+    "vietnamese": "Phê duyệt",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hành động đồng ý với một yêu cầu/đề xuất.",
+    "example": "上長の承認が必要です。"
+  },
+  {
+    "id": "erp-audit",
+    "english": "Audit / Audits",
+    "japanese": "監査",
+    "kana": "かんさ",
+    "vietnamese": "Kiểm toán / Thanh tra",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kiểm tra sự tuân thủ các quy tắc và luật lệ.",
+    "example": "内部監査を実施します。"
+  },
+  {
+    "id": "erp-batch-interface",
+    "english": "Batch Interface",
+    "japanese": "バッチ連携",
+    "kana": "ばっちれんけい",
+    "vietnamese": "Kết nối hàng loạt / Batch",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Trao đổi dữ liệu theo định kỳ.",
+    "example": "夜間にバッチ連携を行います。"
+  },
+  {
+    "id": "erp-best-practice",
+    "english": "Best Practice / Best Practices",
+    "japanese": "ベストプラクティス / 模範事例",
+    "kana": "べすとぷらくてぃす",
+    "vietnamese": "Thực tiễn tốt nhất / Best Practice",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Các quy trình đã được chứng minh hiệu quả nhất.",
+    "example": "業界のベストプラクティスを採用。"
+  },
+  {
+    "id": "erp-blueprint",
+    "english": "Blueprint",
+    "japanese": "業務設計書 / ブループリント",
+    "kana": "ぶるーぷりんと",
+    "vietnamese": "Bản thiết kế hệ thống",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tài liệu thiết kế chi tiết các quy trình ERP.",
+    "example": "ブループリントの内容に合意。"
+  },
+  {
+    "id": "erp-bpr",
+    "english": "BPR / Business Process Reengineering",
+    "japanese": "業務プロセス再設計 / BPR",
+    "kana": "びーぴーあーる",
+    "vietnamese": "Tái thiết kế quy trình nghiệp vụ",
+    "roles": [
+      "Manager",
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Việc thiết kế lại hoàn toàn các quy trình kinh doanh để đạt hiệu quả cao.",
+    "example": "The IT system migration was part of a larger BPR initiative."
+  },
+  {
+    "id": "erp-business-intelligence",
+    "english": "Business Intelligence / BI",
+    "japanese": "ビジネスインテリジェンス / BI",
+    "kana": "びじねすいんてりじぇんす",
+    "vietnamese": "Trí tuệ doanh nghiệp / BI",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Công cụ phân tích dữ liệu hỗ trợ ra quyết định.",
+    "example": "BIツールで売上分析。"
+  },
+  {
+    "id": "erp-business-unit",
+    "english": "Business Unit / BU",
+    "japanese": "事業部門 / BU",
+    "kana": "じぎょうぶもん",
+    "vietnamese": "Đơn vị kinh doanh / BU",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Một bộ phận kinh doanh cụ thể trong công ty.",
+    "example": "各BUの要望を集計。"
+  },
+  {
+    "id": "erp-cloud-erp",
+    "english": "Cloud ERP",
+    "japanese": "クラウドERP",
+    "kana": "くらうどいーあーるぴー",
+    "vietnamese": "ERP đám mây",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống ERP chạy trên nền tảng Cloud.",
+    "example": "クラウドERPで保守コストを削減。"
+  },
+  {
+    "id": "erp-compliance",
+    "english": "Compliance",
+    "japanese": "コンプライアンス / 法令遵守",
+    "kana": "こんぷらいあんす",
+    "vietnamese": "Tuân thủ pháp luật",
+    "roles": [
+      "Dev",
+      "BA",
+      "BrSE",
+      "PM",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Đảm bảo phần mềm tuân thủ các chuẩn như GDPR, HIPAA, PCI-DSS.",
+    "example": "クレジットカード情報を扱うため、PCI-DSSのコンプライアンス要件を満たすシステム設計が必須となります。"
+  },
+  {
+    "id": "erp-configuration",
+    "english": "Configuration / Config",
+    "japanese": "設定 / コンフィギュレーション",
+    "kana": "せってい / こんふぃぐ",
+    "vietnamese": "Cấu hình / Config",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Điều chỉnh các tham số có sẵn trong phần mềm.",
+    "example": "税率の設定（コンフィギュ）を変更。"
+  },
+  {
+    "id": "erp-consolidation",
+    "english": "Consolidation",
+    "japanese": "連結会計 / コンソリデーション",
+    "kana": "れんけつかいけい",
+    "vietnamese": "Hợp nhất báo cáo",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tổng hợp báo cáo tài chính của tập đoàn.",
+    "example": "連結決算の処理を行います。"
+  },
+  {
+    "id": "erp-consultant",
+    "english": "Consultant / Consultants",
+    "japanese": "コンサルタント",
+    "kana": "こんさるたんと",
+    "vietnamese": "Tư vấn viên",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chuyên gia hỗ trợ thiết kế và triển khai giải pháp.",
+    "example": "SAPコンサルタントをアサイン。"
+  },
+  {
+    "id": "erp-cost-center",
+    "english": "Cost Center",
+    "japanese": "原価センター / コストセンター",
+    "kana": "げんかせんたー",
+    "vietnamese": "Trung tâm chi phí",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Bộ phận trong công ty phát sinh chi phí.",
+    "example": "コストセンターごとに予算を配分。"
+  },
+  {
+    "id": "erp-cost-reduction",
+    "english": "Cost Reduction",
+    "japanese": "コスト削減",
+    "kana": "こすとさくげん",
+    "vietnamese": "Cắt giảm chi phí",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giảm thiểu các khoản chi phí không cần thiết.",
+    "example": "業務の自動化によりコスト削減。"
+  },
+  {
+    "id": "erp-crm",
+    "english": "CRM / Customer Relationship Management",
+    "japanese": "顧客関係管理 / CRM",
+    "kana": "しーあーるえむ",
+    "vietnamese": "Quản lý quan hệ khách hàng",
+    "roles": [
+      "Manager",
+      "QA",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống quản lý thông tin và tương tác với khách hàng.",
+    "example": "Salesforce is one of the most popular CRM platforms."
+  },
+  {
+    "id": "erp-customization",
+    "english": "Customization",
+    "japanese": "カスタマイズ",
+    "kana": "かすたまいず",
+    "vietnamese": "Tùy chỉnh / Customize",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chỉnh sửa phần mềm để phù hợp riêng với doanh nghiệp.",
+    "example": "要件に合わせてカスタマイズ開発。"
+  },
+  {
+    "id": "erp-cutover",
+    "english": "Cutover",
+    "japanese": "切り替え / カットオーバー",
+    "kana": "かっとおーばー",
+    "vietnamese": "Giai đoạn chuyển đổi",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quá trình chuyển từ hệ thống cũ sang mới.",
+    "example": "カットオーバー計画書を作成。"
+  },
+  {
+    "id": "erp-dashboard",
+    "english": "Dashboard / Dashboards",
+    "japanese": "ダッシュボード",
+    "kana": "だっしゅぼーど",
+    "vietnamese": "Bảng điều khiển / Dashboard",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giao diện hiển thị các chỉ số KPI quan trọng.",
+    "example": "経営者用ダッシュボードを構築。"
+  },
+  {
+    "id": "erp-data-migration",
+    "english": "Data Migration",
+    "japanese": "データ移行 / データコンバージョン",
+    "kana": "でーたいこう",
+    "vietnamese": "Di trú dữ liệu / Data Migration",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chuyển dữ liệu từ hệ thống cũ sang mới.",
+    "example": "移行データの整合性チェック。"
+  },
+  {
+    "id": "erp-demand-forecasting",
+    "english": "Demand Forecasting",
+    "japanese": "需要予測",
+    "kana": "じゅようよそく",
+    "vietnamese": "Dự báo nhu cầu",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Dự đoán nhu cầu thị trường để lập kế hoạch.",
+    "example": "需要予測に基づき発注。"
+  },
+  {
+    "id": "erp-depreciation",
+    "english": "Depreciation",
+    "japanese": "減価償却",
+    "kana": "げんかしょうきゃく",
+    "vietnamese": "Khấu hao",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Phân bổ chi phí tài sản theo thời gian sử dụng.",
+    "example": "減価償却費を計算。"
+  },
+  {
+    "id": "erp-e-commerce-integration",
+    "english": "E-Commerce Integration",
+    "japanese": "EC連携",
+    "kana": "いーしーれんけい",
+    "vietnamese": "Tích hợp thương mại điện tử",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kết nối ERP với các sàn bán hàng online.",
+    "example": "ECサイトとの在庫同期。"
+  },
+  {
+    "id": "erp-edi",
+    "english": "EDI / Electronic Data Interchange",
+    "japanese": "電子データ交換 / EDI",
+    "kana": "いーでぃーあい",
+    "vietnamese": "Trao đổi dữ liệu điện tử",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Chuẩn truyền dữ liệu giữa các doanh nghiệp.",
+    "example": "EDIで注文データを受信。"
+  },
+  {
+    "id": "erp-end-user",
+    "english": "End User / End Users",
+    "japanese": "エンドユーザー",
+    "kana": "えんどゆーざー",
+    "vietnamese": "Người dùng cuối",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Người trực tiếp thao tác hàng ngày trên hệ thống.",
+    "example": "エンドユーザーマニュアルを作成。"
+  },
+  {
+    "id": "erp-fit-and-gap-analysis",
+    "english": "Fit and Gap Analysis",
+    "japanese": "フィット＆ギャップ分析",
+    "kana": "ふぃっとあんどぎゃっぷぶんせき",
+    "vietnamese": "Phân tích Fit/Gap",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "So sánh nhu cầu và tính năng sẵn có của phần mềm.",
+    "example": "導入前にフィット＆ギャップ分析を行う。"
+  },
+  {
+    "id": "erp-fixed-asset",
+    "english": "Fixed Asset / Fixed Assets",
+    "japanese": "固定資産",
+    "kana": "こていしさん",
+    "vietnamese": "Tài sản cố định",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Tài sản dùng lâu dài như máy móc, thiết bị.",
+    "example": "固定資産台帳を作成。"
+  },
+  {
+    "id": "erp-global-template",
+    "english": "Global Template",
+    "japanese": "グローバルテンプレート",
+    "kana": "ぐろーばるてんぷれーと",
+    "vietnamese": "Bản mẫu chuẩn toàn cầu",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quy trình chuẩn dùng chung cho tất cả chi nhánh.",
+    "example": "グローバルテンプレートを適用。"
+  },
+  {
+    "id": "erp-go-live",
+    "english": "Go-Live",
+    "japanese": "本稼働 / ゴーライブ",
+    "kana": "ごーらいぶ",
+    "vietnamese": "Bắt đầu vận hành chính thức",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Thời điểm hệ thống mới chính thức hoạt động.",
+    "example": "ゴーライブ当日のサポート体制。"
+  },
+  {
+    "id": "erp-hrm",
+    "english": "HRM / Human Resource Management",
+    "japanese": "人事管理 / HRM",
+    "kana": "えいちあーるえむ",
+    "vietnamese": "Quản lý nguồn nhân lực",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Quản lý hồ sơ nhân viên, lương, bảo hiểm.",
+    "example": "HRMシステムで勤怠を管理。"
+  },
+  {
+    "id": "erp-hypercare",
+    "english": "Hypercare",
+    "japanese": "ハイパーケア",
+    "kana": "はいぱーけあ",
+    "vietnamese": "Giai đoạn chăm sóc đặc biệt",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Giai đoạn ngay sau Go-live cần hỗ trợ tối đa.",
+    "example": "2週間のハイパーケア期間。"
+  },
+  {
+    "id": "erp-implementation-partner",
+    "english": "Implementation Partner",
+    "japanese": "導入パートナー",
+    "kana": "どうにゅうぱーとなー",
+    "vietnamese": "Đối tác triển khai",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Công ty tư vấn giúp doanh nghiệp cài đặt ERP.",
+    "example": "経験豊富な導入パートナーを選定。"
+  },
+  {
+    "id": "erp-inquiry",
+    "english": "Inquiry",
+    "japanese": "照会 / 問い合わせ",
+    "kana": "しょうかい",
+    "vietnamese": "Truy vấn / Yêu cầu báo giá",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Xem thông tin hoặc yêu cầu ban đầu từ khách hàng.",
+    "example": "見積照会（インクワイアリー）。"
+  },
+  {
+    "id": "erp-integration-test",
+    "english": "Integration Test / IT",
+    "japanese": "結合テスト / IT",
+    "kana": "けつごうてすと",
+    "vietnamese": "Kiểm thử tích hợp",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Kiểm tra sự liên kết giữa các mô-đun.",
+    "example": "ITフェーズで不具合を解消。"
+  },
+  {
+    "id": "erp-interface",
+    "english": "Interface / Interfaces",
+    "japanese": "インターフェース",
+    "kana": "いんたーふぇーす",
+    "vietnamese": "Giao diện kết nối",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Điểm kết nối giữa các hệ thống khác nhau.",
+    "example": "周辺システムとのインターフェース。"
+  },
+  {
+    "id": "erp-internal-control",
+    "english": "Internal Control",
+    "japanese": "内部統制",
+    "kana": "ないぶとうせい",
+    "vietnamese": "Kiểm soát nội bộ",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Hệ thống quản lý rủi ro trong doanh nghiệp.",
+    "example": "内部統制の強化を図ります。"
+  },
+  {
+    "id": "erp-inventory-management",
+    "english": "Inventory Management",
+    "japanese": "在庫管理",
+    "kana": "ざいこかんり",
+    "vietnamese": "Quản lý kho",
+    "roles": [
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Theo dõi số lượng hàng tồn kho.",
+    "example": "在庫管理の精度を向上させます。"
+  }
+]

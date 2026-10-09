@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BrSE OS Options</title>
+    <link rel="stylesheet" href="../../shared/tokens.css" />
+    <link rel="stylesheet" href="../popup/style.css" />
+  </head>
+  <body class="brse-options">
+    <main class="content-area">
+      <p class="section-title" data-i18n="localBridgeTitle">BrSE OS Local Bridge</p>
+      <h1 style="font-size: 18px; letter-spacing: 0;" data-i18n="extensionSettingsTitle">Extension settings</h1>
+      <div class="form-group">
+        <label data-i18n="appUrlLabel">App URL</label>
+        <input id="appBaseUrl" placeholder="http://192.168.157.120:3010" />
+      </div>
+      <div class="form-group">
+        <label data-i18n="apiBaseLabel">API base</label>
+        <input id="apiBaseUrl" placeholder="http://192.168.157.120:3010/api" />
+      </div>
+      <div class="form-group">
+        <label data-i18n="defaultProjectLabel">Default project</label>
+        <input id="defaultProjectName" data-i18n-placeholder="defaultProjectPlaceholder" placeholder="Personal project" />
+      </div>
+      <div class="form-group">
+        <label data-i18n="secretTokenLabel">Secret Token (Local)</label>
+        <input id="secretToken" type="password" data-i18n-placeholder="secretTokenPlaceholder" placeholder="Required only when BRSE_API_SECRET is set" />
+      </div>
+      <div class="form-group">
+        <label data-i18n="activeModelLabel">AI Model</label>
+        <select id="aiModel">
+          <!-- Populated at runtime from shared/modelConfig.js (single source of truth). -->
+          <option value="openrouter/nvidia/nemotron-3-super-120b-a12b:free">🤖 Nemotron 3 Super Free</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label data-i18n="toolbarModeLabel">Toolbar Trigger Mode</label>
+        <select id="toolbarMode">
+          <option value="auto" data-i18n="toolbarModeAuto">Hiện khi kéo bôi đen hoặc click trái 3 lần</option>
+          <option value="alt" data-i18n="toolbarModeAlt">Chỉ hiện khi nhấn Alt</option>
+        </select>
+      </div>
+
+      
+      <!-- ===== datalists (preset options for AI inputs) ===== -->
+      <datalist id="dl-gemini-model">
+        <option value="gemini/gemini-3.1-flash-lite-preview">Flash Lite Preview (OCR, nhanh, rẻ)</option>
+        <option value="gemini/gemini-1.5-flash">Gemini 1.5 Flash</option>
+        <option value="gemini/gemini-1.5-pro">Gemini 1.5 Pro</option>
+        <option value="gemini/gemini-2.0-flash">Gemini 2.0 Flash</option>
+      </datalist>
+      <datalist id="dl-9router-url">
+        <option value="http://127.0.0.1:20128/v1">Localhost (WSL/native)</option>
+        <option value="http://host.docker.internal:20128/v1">Docker host</option>
+        <option value="http://192.168.157.120:20128/v1">WSL bridge IP</option>
+      </datalist>
+      <datalist id="dl-openai-url">
+        <option value="http://127.0.0.1:20128/v1">9Router local</option>
+        <option value="http://host.docker.internal:20128/v1">9Router (Docker host)</option>
+        <option value="https://api.openai.com/v1">OpenAI official</option>
+        <option value="https://generativelanguage.googleapis.com/v1beta">Google Gemini</option>
+        <option value="https://api.anthropic.com/v1">Anthropic</option>
+      </datalist>
+      <datalist id="dl-ollama-url">
+        <option value="http://127.0.0.1:11434">Localhost</option>
+        <option value="http://host.docker.internal:11434">Docker host</option>
+        <option value="http://192.168.157.120:11434">WSL bridge IP</option>
+      </datalist>
+      <datalist id="dl-ollama-model">
+        <option value="qwen2.5-coder:7b-instruct">qwen2.5-coder:7b-instruct (mặc định BrSE)</option>
+        <option value="qwen2.5:7b">qwen2.5:7b</option>
+        <option value="qwen3:8b">qwen3:8b</option>
+        <option value="llama3.2:3b">llama3.2:3b (nhẹ)</option>
+        <option value="llama3:8b">llama3:8b</option>
+        <option value="llama3.1:8b">llama3.1:8b</option>
+        <option value="mistral:7b">mistral:7b</option>
+        <option value="deepseek-r1:8b">deepseek-r1:8b</option>
+        <option value="phi3:mini">phi3:mini (cực nhẹ)</option>
+        <option value="gemma3:9b">gemma3:9b</option>
+      </datalist>
+      <!-- ===== AI Provider Settings ===== -->
+      <div style="margin-top:24px;border-top:1px dashed rgba(110, 112, 121,0.4);padding-top:20px;">
+        <p class="section-title" style="margin-bottom:6px;">⚙️ AI Provider &amp; API Keys</p>
+        <p style="font-size:11px;color:var(--brse-text-dim);margin-bottom:14px;">Click vào ô để chọn nhanh · Bạn vẫn có thể nhập tay giá trị tuỳ chỉnh.</p>
+
+        <!-- Gemini -->
+        <details style="margin-bottom:12px;">
+          <summary style="cursor:pointer;font-size:12px;font-weight:700;color:var(--brse-text-muted);padding:6px 0;list-style:none;">
+            🔮 Google Gemini (OCR / Vision)
+          </summary>
+          <div class="form-group" style="margin-top:8px;">
+            <label>Gemini API Key <span style="font-size:10px;color:var(--brse-text-dim);">— lấy tại <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color:var(--brse-primary);">aistudio.google.com</a></span></label>
+            <input id="ai-gemini-key" type="password" placeholder="AIzaSy..." autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label>Gemini Model</label>
+            <input id="ai-gemini-model" list="dl-gemini-model" placeholder="Chọn hoặc nhập model..." autocomplete="off" />
+          </div>
+        </details>
+
+        <!-- 9Router -->
+        <details style="margin-bottom:12px;">
+          <summary style="cursor:pointer;font-size:12px;font-weight:700;color:var(--brse-text-muted);padding:6px 0;list-style:none;">
+            🚀 9Router (Cloud AI proxy)
+          </summary>
+          <div class="form-group" style="margin-top:8px;">
+            <label>9Router Base URL</label>
+            <input id="ai-9router-url" list="dl-9router-url" placeholder="Chọn hoặc nhập URL..." autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label>9Router API Key</label>
+            <input id="ai-9router-key" type="password" placeholder="sk-..." autocomplete="off" />
+          </div>
+        </details>
+
+        <!-- OpenAI-compatible -->
+        <details style="margin-bottom:12px;">
+          <summary style="cursor:pointer;font-size:12px;font-weight:700;color:var(--brse-text-muted);padding:6px 0;list-style:none;">
+            🤖 OpenAI / Custom endpoint
+          </summary>
+          <div class="form-group" style="margin-top:8px;">
+            <label>Base URL</label>
+            <input id="ai-openai-url" list="dl-openai-url" placeholder="Chọn hoặc nhập URL..." autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label>API Key</label>
+            <input id="ai-openai-key" type="password" placeholder="sk-..." autocomplete="off" />
+          </div>
+        </details>
+
+        <!-- Ollama -->
+        <details style="margin-bottom:12px;">
+          <summary style="cursor:pointer;font-size:12px;font-weight:700;color:var(--brse-text-muted);padding:6px 0;list-style:none;">
+            🦙 Ollama (Local models)
+          </summary>
+          <div class="form-group" style="margin-top:8px;">
+            <label>Ollama Base URL</label>
+            <input id="ai-ollama-url" list="dl-ollama-url" placeholder="Chọn hoặc nhập URL..." autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label>Model <span style="font-size:10px;color:var(--brse-text-dim);">— xem model đã cài: <code>ollama list</code></span></label>
+            <input id="ai-ollama-model" list="dl-ollama-model" placeholder="Chọn hoặc nhập tên model..." autocomplete="off" />
+          </div>
+        </details>
+
+        <button class="btn-primary" id="btn-save-ai" style="margin-top:4px;">💾 Lưu cấu hình AI</button>
+        <p id="ai-save-status" class="status-msg status-inline" role="status" aria-live="polite" style="margin-top:8px;"></p>
+      </div>
+      <!-- ===== end AI Provider Settings ===== -->
+
+      <div class="form-group" style="margin-top: 20px; border-top: 1px dashed rgba(110, 112, 121, 0.4); padding-top: 20px;">
+        <label data-i18n="glossaryHighlightsLabel">Glossary Highlightings</label>
+        <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+          <button type="button" class="btn-primary" id="btn-show-learned" style="
+            background: rgba(255, 107, 94, 0.15);
+            border: 1px solid rgba(255, 107, 94, 0.3);
+            color: var(--brse-primary);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            width: auto;
+            flex: 1;
+          " data-i18n="learnedTermsViewTitle">📁 Xem từ đã ẩn (<span id="learned-count">0</span>)</button>
+          <button type="button" class="btn-primary" id="btn-reset-learned" style="
+            background: rgba(255, 93, 108, 0.15);
+            border: 1px solid rgba(255, 93, 108, 0.3);
+            color: var(--brse-error);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: bold;
+            cursor: pointer;
+            width: auto;
+            display: none;
+            flex: 1;
+          " data-i18n="unhideAllBtn">🔄 Bỏ ẩn tất cả</button>
+        </div>
+        <div id="learned-list-container" style="
+          display: none;
+          background: rgba(0, 0, 0, 0.25);
+          border: 1px solid rgba(110, 112, 121, 0.3);
+          border-radius: 8px;
+          padding: 10px;
+          max-height: 180px;
+          overflow-y: auto;
+          margin-top: 10px;
+        ">
+          <div id="learned-list" style="display: grid; gap: 8px;"></div>
+        </div>
+      </div>
+      
+      <button id="save" class="btn-primary" style="margin-top: 10px;" data-i18n="saveSettingsBtn">Save settings</button>
+      <p id="status" class="status-msg" data-i18n="settingsUsedBy">
+        These settings are used by popup, side panel, context actions, and page helpers.
+      </p>
+    </main>
+    <script type="module" src="./options.js"></script>
+  </body>
+</html>

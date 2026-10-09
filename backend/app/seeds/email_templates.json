@@ -1,0 +1,436 @@
+[
+  {
+    "id": "qna-ask-clarification",
+    "slug": "qna-ask-clarification",
+    "category": "qna",
+    "title_vi": "Hỏi rõ Q&A / xác nhận仕様",
+    "title_ja": "仕様確認・Q&A送付",
+    "subject_template": "【ご確認】{{topic}}について",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n{{topic}}について、認識合わせのため下記を確認させてください。\n\n【確認事項】\n1. {{question_1}}\n2. {{question_2}}\n\n【背景】\n{{background}}\n\n【希望回答期限】\n{{due_date}}\n\nお忙しいところ恐れ入りますが、ご確認のほどよろしくお願いいたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "topic", "label": "Chủ đề", "required": true, "default": "", "input_type": "text" },
+      { "key": "question_1", "label": "Câu hỏi 1", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "question_2", "label": "Câu hỏi 2", "required": false, "default": "なし", "input_type": "textarea" },
+      { "key": "background", "label": "Bối cảnh / lý do hỏi", "required": false, "default": "実装方針を確定するため。", "input_type": "textarea" },
+      { "key": "due_date", "label": "Hạn mong muốn trả lời", "required": false, "default": "可能であれば〇月〇日中", "input_type": "text" }
+    ],
+    "keigo_level": "formal"
+  },
+  {
+    "id": "qna-answer-customer",
+    "slug": "qna-answer-customer",
+    "category": "qna",
+    "title_vi": "Trả lời Q&A cho khách",
+    "title_ja": "Q&A回答共有",
+    "subject_template": "【回答】{{topic}}について",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\nお問い合わせいただいた{{topic}}について、下記の通り回答いたします。\n\n【回答】\n{{answer}}\n\n【補足】\n{{supplement}}\n\n【影響範囲】\n{{impact}}\n\n上記の認識で進める予定です。認識に相違がございましたら、ご指摘いただけますと幸いです。\n何卒よろしくお願いいたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "topic", "label": "Chủ đề", "required": true, "default": "", "input_type": "text" },
+      { "key": "answer", "label": "Nội dung trả lời", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "supplement", "label": "Bổ sung", "required": false, "default": "なし", "input_type": "textarea" },
+      { "key": "impact", "label": "Ảnh hưởng", "required": false, "default": "現時点では大きな影響はありません。", "input_type": "textarea" }
+    ],
+    "keigo_level": "formal"
+  },
+  {
+    "id": "requirement-change-confirm",
+    "slug": "requirement-change-confirm",
+    "category": "confirmation",
+    "title_vi": "Xác nhận requirement / change request",
+    "title_ja": "要件・変更内容の確認",
+    "subject_template": "【ご確認】{{feature_name}}の要件変更について",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n{{feature_name}}について、変更内容を下記の通り認識しております。\n\n【変更前】\n{{before}}\n\n【変更後】\n{{after}}\n\n【影響範囲】\n{{impact}}\n\n【対応予定】\n{{plan}}\n\n上記の内容で問題ないか、ご確認いただけますでしょうか。\nよろしくお願いいたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "feature_name", "label": "Tên chức năng", "required": true, "default": "", "input_type": "text" },
+      { "key": "before", "label": "Trước thay đổi", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "after", "label": "Sau thay đổi", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "impact", "label": "Ảnh hưởng", "required": false, "default": "", "input_type": "textarea" },
+      { "key": "plan", "label": "Kế hoạch xử lý", "required": false, "default": "", "input_type": "textarea" }
+    ],
+    "keigo_level": "formal"
+  },
+  {
+    "id": "daily-progress-report",
+    "slug": "daily-progress-report",
+    "category": "report",
+    "title_vi": "Daily report chuẩn BrSE",
+    "title_ja": "日次進捗報告",
+    "subject_template": "【日次報告】{{project_name}}（{{report_date}}）",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n本日の進捗について、下記の通りご報告いたします。\n\n【本日完了】\n{{done}}\n\n【作業中】\n{{doing}}\n\n【明日の予定】\n{{next_plan}}\n\n【課題・確認事項】\n{{issues}}\n\n【リスク】\n{{risks}}\n\n以上です。よろしくお願いいたします。",
+    "variables": [
+      { "key": "project_name", "label": "Tên project", "required": true, "default": "", "input_type": "text" },
+      { "key": "report_date", "label": "Ngày báo cáo", "required": true, "default": "", "input_type": "text" },
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "done", "label": "Đã hoàn thành", "required": true, "default": "・", "input_type": "textarea" },
+      { "key": "doing", "label": "Đang xử lý", "required": false, "default": "・なし", "input_type": "textarea" },
+      { "key": "next_plan", "label": "Kế hoạch tiếp theo", "required": false, "default": "・", "input_type": "textarea" },
+      { "key": "issues", "label": "Issue / Q&A", "required": false, "default": "・なし", "input_type": "textarea" },
+      { "key": "risks", "label": "Risk", "required": false, "default": "・なし", "input_type": "textarea" }
+    ],
+    "keigo_level": "formal"
+  },
+  {
+    "id": "weekly-business-report",
+    "slug": "weekly-business-report",
+    "category": "report",
+    "title_vi": "Weekly report cho khách",
+    "title_ja": "週次報告",
+    "subject_template": "【週次報告】{{project_name}}（{{week_range}}）",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n{{week_range}}の週次状況をご報告いたします。\n\n【全体状況】\n{{overall_status}}\n\n【完了】\n{{completed}}\n\n【進行中】\n{{in_progress}}\n\n【遅延・リスク】\n{{risks}}\n\n【お客様への確認事項】\n{{customer_actions}}\n\n【来週の予定】\n{{next_week}}\n\nご確認のほどよろしくお願いいたします。",
+    "variables": [
+      { "key": "project_name", "label": "Tên project", "required": true, "default": "", "input_type": "text" },
+      { "key": "week_range", "label": "Khoảng tuần", "required": true, "default": "", "input_type": "text" },
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "overall_status", "label": "Tình trạng tổng thể", "required": true, "default": "概ね計画通りです。", "input_type": "textarea" },
+      { "key": "completed", "label": "Hoàn thành", "required": false, "default": "・", "input_type": "textarea" },
+      { "key": "in_progress", "label": "Đang làm", "required": false, "default": "・", "input_type": "textarea" },
+      { "key": "risks", "label": "Rủi ro / chậm", "required": false, "default": "・なし", "input_type": "textarea" },
+      { "key": "customer_actions", "label": "Việc cần khách phản hồi", "required": false, "default": "・なし", "input_type": "textarea" },
+      { "key": "next_week", "label": "Tuần sau", "required": false, "default": "・", "input_type": "textarea" }
+    ],
+    "keigo_level": "formal"
+  },
+  {
+    "id": "delay-risk-escalation",
+    "slug": "delay-risk-escalation",
+    "category": "escalation",
+    "title_vi": "Báo chậm / escalate risk",
+    "title_ja": "遅延・リスク報告",
+    "subject_template": "【ご相談】{{topic}}の遅延リスクについて",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n{{topic}}について、遅延リスクが発生しているためご報告いたします。\n\n【状況】\n{{current_status}}\n\n【原因】\n{{reason}}\n\n【影響】\n{{impact}}\n\n【対応案】\n{{countermeasure}}\n\n【ご相談事項】\n{{request}}\n\nご迷惑をおかけして申し訳ございません。影響を最小化できるよう優先して対応いたします。\nよろしくお願いいたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "topic", "label": "Chủ đề", "required": true, "default": "", "input_type": "text" },
+      { "key": "current_status", "label": "Tình trạng hiện tại", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "reason", "label": "Nguyên nhân", "required": false, "default": "調査中です。", "input_type": "textarea" },
+      { "key": "impact", "label": "Ảnh hưởng", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "countermeasure", "label": "Phương án", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "request", "label": "Điều cần xin ý kiến", "required": false, "default": "対応方針についてご確認いただけますでしょうか。", "input_type": "textarea" }
+    ],
+    "keigo_level": "very_formal"
+  },
+  {
+    "id": "bug-incident-report",
+    "slug": "bug-incident-report",
+    "category": "incident",
+    "title_vi": "Bug / incident report",
+    "title_ja": "不具合・障害報告",
+    "subject_template": "【不具合報告】{{issue_title}}について",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n{{issue_title}}について、不具合を確認しましたのでご報告いたします。\n\n【発生事象】\n{{phenomenon}}\n\n【発生条件】\n{{condition}}\n\n【影響範囲】\n{{impact}}\n\n【原因】\n{{root_cause}}\n\n【暫定対応】\n{{workaround}}\n\n【恒久対応・予定】\n{{permanent_action}}\n\nご迷惑をおかけしており、誠に申し訳ございません。\n進捗があり次第、改めてご報告いたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "issue_title", "label": "Tiêu đề bug", "required": true, "default": "", "input_type": "text" },
+      { "key": "phenomenon", "label": "Hiện tượng", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "condition", "label": "Điều kiện phát sinh", "required": false, "default": "確認中です。", "input_type": "textarea" },
+      { "key": "impact", "label": "Ảnh hưởng", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "root_cause", "label": "Nguyên nhân", "required": false, "default": "調査中です。", "input_type": "textarea" },
+      { "key": "workaround", "label": "Tạm thời", "required": false, "default": "なし", "input_type": "textarea" },
+      { "key": "permanent_action", "label": "Khắc phục chính thức", "required": false, "default": "", "input_type": "textarea" }
+    ],
+    "keigo_level": "very_formal"
+  },
+  {
+    "id": "review-request",
+    "slug": "review-request",
+    "category": "request",
+    "title_vi": "Nhờ review tài liệu / màn hình",
+    "title_ja": "レビュー依頼",
+    "subject_template": "【レビュー依頼】{{target}}について",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n{{target}}について、レビューをお願いいたします。\n\n【レビュー対象】\n{{target_detail}}\n\n【確認していただきたい点】\n{{review_points}}\n\n【希望期限】\n{{due_date}}\n\n【補足】\n{{note}}\n\nお忙しいところ恐れ入りますが、ご確認のほどよろしくお願いいたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "target", "label": "Đối tượng review", "required": true, "default": "", "input_type": "text" },
+      { "key": "target_detail", "label": "Chi tiết/link", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "review_points", "label": "Điểm cần review", "required": true, "default": "・仕様認識\n・文言\n・画面遷移", "input_type": "textarea" },
+      { "key": "due_date", "label": "Hạn review", "required": false, "default": "可能であれば〇月〇日中", "input_type": "text" },
+      { "key": "note", "label": "Ghi chú", "required": false, "default": "なし", "input_type": "textarea" }
+    ],
+    "keigo_level": "formal"
+  },
+  {
+    "id": "meeting-invite-reschedule",
+    "slug": "meeting-invite-reschedule",
+    "category": "meeting",
+    "title_vi": "Mời họp / đổi lịch họp",
+    "title_ja": "打ち合わせ設定・日程変更",
+    "subject_template": "【日程調整】{{meeting_topic}}について",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n{{meeting_topic}}について、認識合わせのためお打ち合わせを設定させていただけますでしょうか。\n\n【候補日時】\n・{{candidate_1}}\n・{{candidate_2}}\n・{{candidate_3}}\n\n【目的】\n{{purpose}}\n\n【参加者】\n{{attendees}}\n\nご都合のよい日時をご教示いただけますと幸いです。\nよろしくお願いいたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "meeting_topic", "label": "Chủ đề họp", "required": true, "default": "", "input_type": "text" },
+      { "key": "candidate_1", "label": "Lịch 1", "required": true, "default": "", "input_type": "text" },
+      { "key": "candidate_2", "label": "Lịch 2", "required": false, "default": "", "input_type": "text" },
+      { "key": "candidate_3", "label": "Lịch 3", "required": false, "default": "", "input_type": "text" },
+      { "key": "purpose", "label": "Mục đích", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "attendees", "label": "Người tham gia", "required": false, "default": "", "input_type": "textarea" }
+    ],
+    "keigo_level": "formal"
+  },
+  {
+    "id": "minutes-share",
+    "slug": "minutes-share",
+    "category": "meeting",
+    "title_vi": "Gửi meeting minutes",
+    "title_ja": "議事録共有",
+    "subject_template": "【議事録共有】{{meeting_topic}}（{{meeting_date}}）",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n本日の{{meeting_topic}}について、議事録を共有いたします。\n\n【決定事項】\n{{decisions}}\n\n【宿題事項】\n{{actions}}\n\n【確認事項】\n{{questions}}\n\n【次回予定】\n{{next_meeting}}\n\n認識に相違がございましたら、ご指摘いただけますと幸いです。\nよろしくお願いいたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "meeting_topic", "label": "Chủ đề họp", "required": true, "default": "", "input_type": "text" },
+      { "key": "meeting_date", "label": "Ngày họp", "required": true, "default": "", "input_type": "text" },
+      { "key": "decisions", "label": "Decision", "required": false, "default": "・なし", "input_type": "textarea" },
+      { "key": "actions", "label": "Action item", "required": false, "default": "・なし", "input_type": "textarea" },
+      { "key": "questions", "label": "Q&A / confirm", "required": false, "default": "・なし", "input_type": "textarea" },
+      { "key": "next_meeting", "label": "Lịch tiếp theo", "required": false, "default": "未定", "input_type": "text" }
+    ],
+    "keigo_level": "formal"
+  },
+  {
+    "id": "uat-release-readiness",
+    "slug": "uat-release-readiness",
+    "category": "release",
+    "title_vi": "UAT / release readiness",
+    "title_ja": "UAT・リリース準備状況",
+    "subject_template": "【ご報告】{{release_name}}のUAT・リリース準備状況",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n{{release_name}}のUAT・リリース準備状況をご報告いたします。\n\n【対象範囲】\n{{scope}}\n\n【テスト状況】\n{{test_status}}\n\n【未解決課題】\n{{open_issues}}\n\n【リリース可否】\n{{release_decision}}\n\n【お客様への確認事項】\n{{customer_check}}\n\nご確認のほどよろしくお願いいたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "release_name", "label": "Tên release", "required": true, "default": "", "input_type": "text" },
+      { "key": "scope", "label": "Phạm vi", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "test_status", "label": "Test status", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "open_issues", "label": "Issue còn mở", "required": false, "default": "なし", "input_type": "textarea" },
+      { "key": "release_decision", "label": "Có thể release không", "required": true, "default": "リリース可能と判断しております。", "input_type": "textarea" },
+      { "key": "customer_check", "label": "Điều cần khách xác nhận", "required": false, "default": "なし", "input_type": "textarea" }
+    ],
+    "keigo_level": "formal"
+  },
+  {
+    "id": "access-environment-request",
+    "slug": "access-environment-request",
+    "category": "request",
+    "title_vi": "Xin quyền / môi trường test",
+    "title_ja": "権限・環境依頼",
+    "subject_template": "【ご依頼】{{request_target}}について",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n作業を進めるにあたり、{{request_target}}をご依頼させてください。\n\n【依頼内容】\n{{request_detail}}\n\n【利用目的】\n{{purpose}}\n\n【希望期限】\n{{due_date}}\n\n【補足】\n{{note}}\n\nお手数をおかけいたしますが、ご対応いただけますと幸いです。\nよろしくお願いいたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "request_target", "label": "Quyền/môi trường cần xin", "required": true, "default": "", "input_type": "text" },
+      { "key": "request_detail", "label": "Chi tiết request", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "purpose", "label": "Mục đích sử dụng", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "due_date", "label": "Hạn mong muốn", "required": false, "default": "可能であれば〇月〇日中", "input_type": "text" },
+      { "key": "note", "label": "Ghi chú", "required": false, "default": "なし", "input_type": "textarea" }
+    ],
+    "keigo_level": "formal"
+  },
+  {
+    "id": "handover-release-note",
+    "slug": "handover-release-note",
+    "category": "handover",
+    "title_vi": "Handover / release note nội bộ",
+    "title_ja": "引き継ぎ・リリースノート",
+    "subject_template": "【共有】{{topic}}の引き継ぎ事項",
+    "body_template": "お疲れ様です。{{brse_name}}です。\n\n{{topic}}について、引き継ぎ事項を共有します。\n\n【対応済み】\n{{done}}\n\n【未対応・注意点】\n{{remaining}}\n\n【確認すべき資料・リンク】\n{{links}}\n\n【次アクション】\n{{next_actions}}\n\n不明点があればご連絡ください。よろしくお願いいたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "topic", "label": "Chủ đề handover", "required": true, "default": "", "input_type": "text" },
+      { "key": "done", "label": "Đã xử lý", "required": true, "default": "・", "input_type": "textarea" },
+      { "key": "remaining", "label": "Còn lại / lưu ý", "required": false, "default": "・なし", "input_type": "textarea" },
+      { "key": "links", "label": "Link tài liệu", "required": false, "default": "・", "input_type": "textarea" },
+      { "key": "next_actions", "label": "Next action", "required": false, "default": "・", "input_type": "textarea" }
+    ],
+    "keigo_level": "internal_formal"
+  },
+  {
+    "id": "confirmation-search-condition",
+    "slug": "confirmation-search-condition",
+    "category": "confirmation",
+    "title_vi": "Xác nhận điều kiện search/filter",
+    "title_ja": "検索条件・表示条件の確認",
+    "subject_template": "【ご確認】{{screen_name}}の検索条件について",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n{{screen_name}}の検索条件について、下記の認識で進めてよいか確認させてください。\n\n【確認事項1】\n{{confirmation_item_1}}\n\n【確認事項2】\n{{confirmation_item_2}}\n\n【補足】\n{{note}}\n\n認識に相違がございましたら、ご指摘いただけますと幸いです。\nよろしくお願いいたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "screen_name", "label": "Tên màn hình", "required": true, "default": "", "input_type": "text" },
+      { "key": "confirmation_item_1", "label": "Điều kiện cần xác nhận 1", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "confirmation_item_2", "label": "Điều kiện cần xác nhận 2", "required": false, "default": "なし", "input_type": "textarea" },
+      { "key": "note", "label": "Ghi chú", "required": false, "default": "なし", "input_type": "textarea" }
+    ],
+    "keigo_level": "formal"
+  },
+  {
+    "id": "requirement-change-confirmation",
+    "slug": "requirement-change-confirmation",
+    "category": "confirmation",
+    "title_vi": "Xác nhận CR/requirement đã chốt",
+    "title_ja": "要件変更の最終確認",
+    "subject_template": "【最終確認】{{feature_name}}の変更内容について",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n{{feature_name}}の変更内容について、最終確認をお願いいたします。\n\n【変更内容】\n{{change_detail}}\n\n【影響範囲】\n{{impact}}\n\n【見積・スケジュール】\n{{schedule}}\n\n上記内容で問題なければ、こちらの方針で進めさせていただきます。\nよろしくお願いいたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "feature_name", "label": "Chức năng", "required": true, "default": "", "input_type": "text" },
+      { "key": "change_detail", "label": "Nội dung thay đổi", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "impact", "label": "Ảnh hưởng", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "schedule", "label": "Estimate/schedule", "required": false, "default": "調整中です。", "input_type": "textarea" }
+    ],
+    "keigo_level": "formal"
+  },
+  {
+    "id": "meeting-minutes-send",
+    "slug": "meeting-minutes-send",
+    "category": "meeting",
+    "title_vi": "Gửi biên bản họp chính thức",
+    "title_ja": "議事録正式送付",
+    "subject_template": "【議事録】{{meeting_topic}}（{{meeting_date}}）",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n{{meeting_date}}に実施した{{meeting_topic}}の議事録を送付いたします。\n\n【決定事項】\n{{decisions}}\n\n【ToDo】\n{{actions}}\n\n【未決事項】\n{{open_points}}\n\n内容に相違がございましたら、{{reply_due}}までにご連絡いただけますと幸いです。\nよろしくお願いいたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "meeting_topic", "label": "Chủ đề họp", "required": true, "default": "", "input_type": "text" },
+      { "key": "meeting_date", "label": "Ngày họp", "required": true, "default": "", "input_type": "text" },
+      { "key": "decisions", "label": "Quyết định", "required": false, "default": "・なし", "input_type": "textarea" },
+      { "key": "actions", "label": "Action items", "required": false, "default": "・なし", "input_type": "textarea" },
+      { "key": "open_points", "label": "Chưa chốt", "required": false, "default": "・なし", "input_type": "textarea" },
+      { "key": "reply_due", "label": "Hạn phản hồi", "required": false, "default": "本日中", "input_type": "text" }
+    ],
+    "keigo_level": "formal"
+  },
+  {
+    "id": "sla-reminder-qna",
+    "slug": "sla-reminder-qna",
+    "category": "qna",
+    "title_vi": "Nhắc Q&A quá SLA",
+    "title_ja": "Q&A回答リマインド",
+    "subject_template": "【リマインド】{{topic}}のご回答について",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n先日確認させていただいた{{topic}}について、念のためリマインドいたします。\n\n【確認事項】\n{{question}}\n\n【影響】\n{{impact}}\n\nお忙しいところ恐れ入りますが、{{due_date}}までにご確認いただけますでしょうか。\nよろしくお願いいたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "topic", "label": "Chủ đề", "required": true, "default": "", "input_type": "text" },
+      { "key": "question", "label": "Câu hỏi", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "impact", "label": "Ảnh hưởng nếu chậm", "required": false, "default": "仕様確定および実装スケジュールに影響する可能性があります。", "input_type": "textarea" },
+      { "key": "due_date", "label": "Hạn mong muốn", "required": false, "default": "可能であれば本日中", "input_type": "text" }
+    ],
+    "keigo_level": "very_formal"
+  },
+  {
+    "id": "release-freeze-notice",
+    "slug": "release-freeze-notice",
+    "category": "release",
+    "title_vi": "Thông báo freeze release",
+    "title_ja": "リリース凍結・変更停止連絡",
+    "subject_template": "【ご連絡】{{release_name}}の変更凍結について",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n{{release_name}}について、リリース品質確保のため下記期間は変更を凍結いたします。\n\n【凍結期間】\n{{freeze_window}}\n\n【対象範囲】\n{{scope}}\n\n【例外対応】\n{{exception_rule}}\n\nご理解とご協力のほどよろしくお願いいたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "release_name", "label": "Release", "required": true, "default": "", "input_type": "text" },
+      { "key": "freeze_window", "label": "Khoảng freeze", "required": true, "default": "", "input_type": "text" },
+      { "key": "scope", "label": "Phạm vi", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "exception_rule", "label": "Ngoại lệ", "required": false, "default": "緊急不具合のみ個別相談とさせてください。", "input_type": "textarea" }
+    ],
+    "keigo_level": "formal"
+  },
+  {
+    "id": "uat-result-share",
+    "slug": "uat-result-share",
+    "category": "release",
+    "title_vi": "Chia sẻ kết quả UAT",
+    "title_ja": "UAT結果共有",
+    "subject_template": "【UAT結果】{{release_name}}について",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n{{release_name}}のUAT結果を共有いたします。\n\n【実施範囲】\n{{scope}}\n\n【結果】\n{{result}}\n\n【残課題】\n{{open_issues}}\n\n【判断】\n{{decision}}\n\nご確認のほどよろしくお願いいたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "release_name", "label": "Release", "required": true, "default": "", "input_type": "text" },
+      { "key": "scope", "label": "Scope", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "result", "label": "Kết quả", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "open_issues", "label": "Issue còn lại", "required": false, "default": "なし", "input_type": "textarea" },
+      { "key": "decision", "label": "判断", "required": false, "default": "リリース可能と判断しております。", "input_type": "textarea" }
+    ],
+    "keigo_level": "formal"
+  },
+  {
+    "id": "incident-first-response",
+    "slug": "incident-first-response",
+    "category": "incident",
+    "title_vi": "Phản hồi đầu khi có sự cố",
+    "title_ja": "障害一次報告",
+    "subject_template": "【一次報告】{{issue_title}}について",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n{{issue_title}}について、現時点の状況を一次報告いたします。\n\n【発生時刻】\n{{detected_at}}\n\n【影響】\n{{impact}}\n\n【暫定対応】\n{{workaround}}\n\n【次回報告予定】\n{{next_update}}\n\n詳細が分かり次第、改めてご報告いたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "issue_title", "label": "Sự cố", "required": true, "default": "", "input_type": "text" },
+      { "key": "detected_at", "label": "Thời điểm phát hiện", "required": false, "default": "", "input_type": "text" },
+      { "key": "impact", "label": "Ảnh hưởng", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "workaround", "label": "Tạm xử lý", "required": false, "default": "確認中です。", "input_type": "textarea" },
+      { "key": "next_update", "label": "Lần update sau", "required": false, "default": "1時間後を目安に再度ご報告します。", "input_type": "text" }
+    ],
+    "keigo_level": "very_formal"
+  },
+  {
+    "id": "estimate-assumption-confirm",
+    "slug": "estimate-assumption-confirm",
+    "category": "estimate",
+    "title_vi": "Xác nhận assumption estimate",
+    "title_ja": "見積前提条件の確認",
+    "subject_template": "【ご確認】{{topic}}の見積前提について",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n{{topic}}の見積にあたり、下記前提で問題ないか確認させてください。\n\n【前提条件】\n{{assumptions}}\n\n【対象外】\n{{out_of_scope}}\n\n【確認事項】\n{{questions}}\n\n上記前提が変わる場合、見積・スケジュールに影響する可能性があります。\nよろしくお願いいたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "topic", "label": "Chủ đề estimate", "required": true, "default": "", "input_type": "text" },
+      { "key": "assumptions", "label": "Assumption", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "out_of_scope", "label": "Ngoài scope", "required": false, "default": "なし", "input_type": "textarea" },
+      { "key": "questions", "label": "Cần xác nhận", "required": false, "default": "なし", "input_type": "textarea" }
+    ],
+    "keigo_level": "formal"
+  },
+  {
+    "id": "decision-confirmation",
+    "slug": "decision-confirmation",
+    "category": "confirmation",
+    "title_vi": "Xác nhận decision đã thống nhất",
+    "title_ja": "決定事項の確認",
+    "subject_template": "【決定事項確認】{{topic}}について",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n{{topic}}について、本日の認識を下記の通り整理いたしました。\n\n【決定事項】\n{{decision}}\n\n【背景】\n{{background}}\n\n【次アクション】\n{{next_action}}\n\n上記の認識で進めます。相違がございましたらご指摘ください。\nよろしくお願いいたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "topic", "label": "Chủ đề", "required": true, "default": "", "input_type": "text" },
+      { "key": "decision", "label": "Decision", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "background", "label": "Bối cảnh", "required": false, "default": "なし", "input_type": "textarea" },
+      { "key": "next_action", "label": "Next action", "required": false, "default": "なし", "input_type": "textarea" }
+    ],
+    "keigo_level": "formal"
+  },
+  {
+    "id": "spec-gap-notice",
+    "slug": "spec-gap-notice",
+    "category": "qna",
+    "title_vi": "Báo gap specification",
+    "title_ja": "仕様差分・認識齟齬の共有",
+    "subject_template": "【ご相談】{{feature_name}}の仕様差分について",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n{{feature_name}}について、現行資料と実装想定の間に差分がある可能性を確認しました。\n\n【差分内容】\n{{gap_detail}}\n\n【影響】\n{{impact}}\n\n【確認したいこと】\n{{question}}\n\n誤認を防ぐため、対応方針についてご確認いただけますでしょうか。\nよろしくお願いいたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "feature_name", "label": "Chức năng", "required": true, "default": "", "input_type": "text" },
+      { "key": "gap_detail", "label": "Gap", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "impact", "label": "Ảnh hưởng", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "question", "label": "Cần khách xác nhận", "required": true, "default": "", "input_type": "textarea" }
+    ],
+    "keigo_level": "formal"
+  },
+  {
+    "id": "customer-thanks-close",
+    "slug": "customer-thanks-close",
+    "category": "closing",
+    "title_vi": "Cảm ơn / close issue",
+    "title_ja": "対応完了・お礼",
+    "subject_template": "【完了報告】{{topic}}について",
+    "body_template": "お世話になっております。{{brse_name}}です。\n\n{{topic}}について、対応が完了しましたのでご報告いたします。\n\n【対応内容】\n{{done_detail}}\n\n【確認方法】\n{{verification}}\n\nご確認・ご協力いただきありがとうございました。\n引き続きよろしくお願いいたします。",
+    "variables": [
+      { "key": "brse_name", "label": "Tên BrSE", "required": true, "default": "", "input_type": "text" },
+      { "key": "topic", "label": "Chủ đề", "required": true, "default": "", "input_type": "text" },
+      { "key": "done_detail", "label": "Nội dung đã làm", "required": true, "default": "", "input_type": "textarea" },
+      { "key": "verification", "label": "Cách xác nhận", "required": false, "default": "画面上でご確認いただけます。", "input_type": "textarea" }
+    ],
+    "keigo_level": "formal"
+  }
+]

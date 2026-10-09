@@ -1,0 +1,708 @@
+[
+  {
+    "id": "infra-subnet-mask",
+    "english": "Subnet Mask",
+    "japanese": "サブネットマスク",
+    "kana": "サブネットマスク",
+    "vietnamese": "Mặt nạ mạng con / Subnet Mask",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Số bit dùng để phân biệt phần mạng và phần host trong địa chỉ IP.",
+    "example": "255.255.255.0 is a common subnet mask."
+  },
+  {
+    "id": "infra-tcp-ip-stack",
+    "english": "TCP / IP Stack",
+    "japanese": "TCP / IPプロトコルスタック",
+    "kana": "TCP/IPプロトコルスタック",
+    "vietnamese": "Chồng giao thức TCP/IP",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Tập hợp các tầng giao thức cho mạng internet.",
+    "example": "The OS kernel manages the TCP/IP stack for all applications."
+  },
+  {
+    "id": "infra-ttl",
+    "english": "TTL / Time To Live",
+    "japanese": "生存時間 / タイムトゥライブ",
+    "kana": "せいぞんじかん / タイムトゥライブ",
+    "vietnamese": "Thời gian tồn tại của gói tin / TTL",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Số trạm (hop) tối đa mà một gói tin có thể đi qua trước khi bị hủy.",
+    "example": "TTL prevents packets from looping infinitely in the network."
+  },
+  {
+    "id": "infra-vendor-lock-in",
+    "english": "Vendor Lock-in",
+    "japanese": "ベンダーロックイン",
+    "kana": "ベンダーロックイン",
+    "vietnamese": "Sự lệ thuộc vào nhà cung cấp / Vendor lock-in",
+    "roles": [
+      "PM",
+      "Manager",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "Cloud",
+    "note": "Rủi ro khi dùng quá nhiều dịch vụ độc quyền của AWS/Azure khiến việc chuyển sang Cloud khác tốn nhiều chi phí. BrSE có thể tư vấn dùng Container/K8s để giảm rủi ro này.",
+    "example": "AWSの独自サービスに依存しすぎるとベンダーロックインのリスクが高まるため、コンテナ化を検討しましょう。"
+  },
+  {
+    "id": "infra-virtualization",
+    "english": "Virtualization / Hypervisor",
+    "japanese": "仮想化 / ハイパーバイザ",
+    "kana": "かそうか / ハイパーバイザ",
+    "vietnamese": "Ảo hóa / Trình quản lý máy ảo / Hypervisor",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Công nghệ tạo ra phiên bản ảo của tài nguyên phần cứng.",
+    "example": "VMware and KVM are common hypervisors used for virtualization."
+  },
+  {
+    "id": "infra-vpc",
+    "english": "VPC / Virtual Private Cloud",
+    "japanese": "仮想プライベートクラウド",
+    "kana": "かそうプライベートクラウド",
+    "vietnamese": "Mạng riêng ảo trên đám mây / VPC",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Một mạng logic cô lập trong môi trường cloud công cộng.",
+    "example": "We set up a VPC to secure our cloud resources from public access."
+  },
+  {
+    "id": "infra-warm-boot",
+    "english": "Warm Boot / Soft Boot",
+    "japanese": "ウォームブート / ソフトブート",
+    "kana": "ウォームブート",
+    "vietnamese": "Khởi động nóng / Soft boot",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Cloud",
+    "note": "Khởi động lại máy tính mà không ngắt nguồn điện.",
+    "example": "A warm boot is faster than a cold boot as it skips some POST steps."
+  },
+  {
+    "id": "se-blue-green",
+    "english": "Blue-Green Deployment",
+    "japanese": "ブルーグリーンデプロイメント",
+    "kana": "ブルーグリーンデプロイメント",
+    "vietnamese": "Triển khai kiểu Blue-Green",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Kỹ thuật giảm downtime bằng cách chạy hai môi trường production song song.",
+    "example": "Blue-green deployment allows for near-zero downtime and easy rollbacks."
+  },
+  {
+    "id": "se-canary",
+    "english": "Canary Release / Canary Deployment",
+    "japanese": "カナリアリリース",
+    "kana": "カナリアリリース",
+    "vietnamese": "Phát hành kiểu Canary",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Triển khai tính năng mới cho một nhóm nhỏ người dùng trước khi tung ra toàn bộ.",
+    "example": "Canary releases help detect issues in production with minimal impact."
+  },
+  {
+    "id": "se-cd",
+    "english": "CD / Continuous Delivery / Deployment",
+    "japanese": "継続的デリバリー / 継続的デプロイ",
+    "kana": "けいぞくてきデリバリー",
+    "vietnamese": "Chuyển giao liên tục / Triển khai liên tục / CD",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Tự động hóa quy trình đưa code lên các môi trường staging hoặc production.",
+    "example": "A robust CD pipeline ensures fast and reliable releases."
+  },
+  {
+    "id": "se-ci",
+    "english": "CI / Continuous Integration",
+    "japanese": "継続的インテグレーション",
+    "kana": "けいぞくてきインテグレーション",
+    "vietnamese": "Tích hợp liên tục / CI",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Tự động tích hợp code của các dev vào repository chung thường xuyên.",
+    "example": "CI helps catch integration bugs early in the development cycle."
+  },
+  {
+    "id": "se-containerization",
+    "english": "Containerization / Docker",
+    "japanese": "コンテナ化",
+    "kana": "コンテナか",
+    "vietnamese": "Đóng gói container / Containerization",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Đóng gói ứng dụng cùng các thư viện đi kèm vào một unit duy nhất.",
+    "example": "Docker is the industry standard for containerization."
+  },
+  {
+    "id": "se-devops",
+    "english": "DevOps",
+    "japanese": "デブオプス",
+    "kana": "デブオプス",
+    "vietnamese": "Văn hóa kết hợp Phát triển và Vận hành / DevOps",
+    "roles": [
+      "Dev",
+      "BrSE",
+      "Manager"
+    ],
+    "category": "Cloud",
+    "note": "Sự kết hợp giữa phát triển phần mềm (Dev) và vận hành hệ thống (Ops).",
+    "example": "DevOps culture emphasizes collaboration and automation."
+  },
+  {
+    "id": "se-distributed-tracing",
+    "english": "Distributed Tracing / Jaeger / Zipkin",
+    "japanese": "分散トレーシング",
+    "kana": "ぶんさんトレーシング",
+    "vietnamese": "Truy vết phân tán / Distributed tracing",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Theo dõi luồng yêu cầu đi qua nhiều dịch vụ khác nhau trong hệ thống phân tán.",
+    "example": "Distributed tracing is essential for debugging performance issues in microservices."
+  },
+  {
+    "id": "se-iac",
+    "english": "IaC / Infrastructure as Code",
+    "japanese": "コードとしてのインフラ構成",
+    "kana": "コードとしてのインフラこうせい",
+    "vietnamese": "Hạ tầng dưới dạng mã / IaC",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Quản lý và cấp phát hạ tầng thông qua các file định nghĩa thay vì thao tác tay.",
+    "example": "Terraform and CloudFormation are popular IaC tools."
+  },
+  {
+    "id": "se-immutable-infrastructure",
+    "english": "Immutable Infrastructure",
+    "japanese": "不変のインフラ",
+    "kana": "ふへんのインフラ",
+    "vietnamese": "Hạ tầng bất biến / Immutable Infrastructure",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Hạ tầng mà khi thay đổi sẽ thay thế hoàn toàn bằng instance mới thay vì sửa đổi instance cũ.",
+    "example": "Immutable infrastructure prevents configuration drift over time."
+  },
+  {
+    "id": "se-log-aggregation",
+    "english": "Log Aggregation / ELK Stack",
+    "japanese": "ログ集約",
+    "kana": "ログしゅうやく",
+    "vietnamese": "Gom nhật ký tập trung / Log aggregation",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Thu thập nhật ký từ nhiều nguồn khác nhau về một nơi tập trung để tìm kiếm và phân tích.",
+    "example": "ELK stack (Elasticsearch, Logstash, Kibana) is widely used for log aggregation."
+  },
+  {
+    "id": "se-observability",
+    "english": "Observability / Monitoring / Logging / Tracing",
+    "japanese": "オブザーバビリティ / 可観測性",
+    "kana": "オブザーバビリティ / かかんそくせい",
+    "vietnamese": "Khả năng quan sát hệ thống / Observability",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Khả năng thấu hiểu trạng thái nội bộ của hệ thống từ các dữ liệu đầu ra.",
+    "example": "The three pillars of observability are metrics, logs, and traces."
+  },
+  {
+    "id": "se-orchestration",
+    "english": "Orchestration / Kubernetes / K8s",
+    "japanese": "オーケストレーション",
+    "kana": "オーケストレーション",
+    "vietnamese": "Điều phối container / Orchestration",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Cloud",
+    "note": "Tự động hóa việc triển khai, quản lý và scale các container.",
+    "example": "Kubernetes provides powerful orchestration for microservices."
+  },
+  {
+    "id": "se-serverless",
+    "english": "Serverless / FaaS",
+    "japanese": "サーバーレス / FaaS",
+    "kana": "サーバーレス",
+    "vietnamese": "Kiến trúc không máy chủ / Serverless",
+    "roles": [
+      "DevOps",
+      "Architect",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "Cloud",
+    "note": "Mô hình điện toán đám mây nơi nhà cung cấp tự quản lý hạ tầng và tài nguyên máy chủ.",
+    "example": "AWS Lambda is a popular serverless computing service."
+  },
+  {
+    "id": "ai-vector-database-1",
+    "english": "Vector Database / Vector DB",
+    "japanese": "ベクトルデータベース / ベクトルDB",
+    "kana": "ベクトルデータベース",
+    "vietnamese": "Cơ sở dữ liệu Vector",
+    "roles": [
+      "Architect",
+      "AI Engineer"
+    ],
+    "category": "Database",
+    "note": "Loại cơ sở dữ liệu chuyên dụng để lưu trữ và tìm kiếm dữ liệu vector một cách nhanh chóng (phục vụ RAG).",
+    "example": "セマンティック検索を実現するため、Pineconeなどのベクトルデータベースを採用します。"
+  },
+  {
+    "id": "data-acid",
+    "english": "ACID Properties / ACID",
+    "japanese": "ACID特性",
+    "kana": "アシッドとくせい",
+    "vietnamese": "Tính chất ACID (CSDL)",
+    "roles": [
+      "DBA",
+      "Architect"
+    ],
+    "category": "Database",
+    "note": "Bốn thuộc tính đảm bảo tính tin cậy của giao dịch: Atomicity, Consistency, Isolation, Durability.",
+    "example": "銀行のトランザクションシステムでは、ACID特性（ACID）が厳格に守られる必要があります。"
+  },
+  {
+    "id": "data-aggregation",
+    "english": "Aggregation / Aggregating / Aggregate",
+    "japanese": "集計 / アグリゲーション",
+    "kana": "しゅうけい",
+    "vietnamese": "Tổng hợp dữ liệu / Gom nhóm",
+    "roles": [
+      "Dev",
+      "Data Engineer"
+    ],
+    "category": "Database",
+    "note": "Quá trình thu thập và trình bày dữ liệu dưới dạng tóm tắt (ví dụ: tính tổng, trung bình).",
+    "example": "大量の明細データから、月ごとの売上を集計（Aggregation）します。"
+  },
+  {
+    "id": "data-bucketing",
+    "english": "Bucketing",
+    "japanese": "バケッティング",
+    "kana": "バケッティング",
+    "vietnamese": "Phân nhóm dữ liệu (Bucket)",
+    "roles": [
+      "Data Engineer"
+    ],
+    "category": "Database",
+    "note": "Kỹ thuật phân chia dữ liệu thành các phần nhỏ hơn (bucket) dựa trên giá trị băm của một cột để tăng tốc độ xử lý.",
+    "example": "Hiveにおいて、ジョイン処理の効率化のためにバケッティング（Bucketing）を設定します。"
+  },
+  {
+    "id": "data-cassandra",
+    "english": "Apache Cassandra / Cassandra",
+    "japanese": "カサンドラ / Apache Cassandra",
+    "kana": "カサンドラ",
+    "vietnamese": "Hệ quản trị CSDL Cassandra",
+    "roles": [
+      "Data Engineer",
+      "DBA"
+    ],
+    "category": "Database",
+    "note": "Hệ quản trị CSDL phân tán mã nguồn mở được thiết kế để xử lý lượng lớn dữ liệu trên nhiều máy chủ.",
+    "example": "高い可用性と拡張性が求められるシステムに、Cassandra（カサンドラ）を導入しました。"
+  },
+  {
+    "id": "data-denormalization",
+    "english": "Denormalization / Denormalizing",
+    "japanese": "非正規化 / ひせいきか",
+    "kana": "ひせいきか",
+    "vietnamese": "Phi chuẩn hóa dữ liệu",
+    "roles": [
+      "DBA",
+      "Architect"
+    ],
+    "category": "Database",
+    "note": "Quá trình cố ý thêm dữ liệu dư thừa để cải thiện hiệu năng truy vấn trong một số trường hợp.",
+    "example": "読み取り速度を優先するため、一部の集計テーブルでは非正規化（Denormalization）を行います。"
+  },
+  {
+    "id": "data-etl",
+    "english": "Extract, Transform, Load / ETL",
+    "japanese": "ETL / データ抽出・変換・書き出し",
+    "kana": "イーティーエル",
+    "vietnamese": "Trích xuất, Biến đổi, Tải",
+    "roles": [
+      "Data Engineer",
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Database",
+    "note": "Quy trình ba bước trong đó dữ liệu được trích xuất (Extract), chuyển đổi (Transform) và tải vào đích (Load).",
+    "example": "夜間バッチで基幹システムからデータをETLツールを使って抽出し、DWHへ転送します。"
+  },
+  {
+    "id": "data-fact-table",
+    "english": "Fact Table / Fact",
+    "japanese": "ファクトテーブル / 事実テーブル",
+    "kana": "ファクトテーブル",
+    "vietnamese": "Bảng sự kiện / Bảng dữ kiện",
+    "roles": [
+      "Data Engineer",
+      "DBA"
+    ],
+    "category": "Database",
+    "note": "Bảng trung tâm trong mô hình hình sao, chứa các con số định lượng của quy trình nghiệp vụ.",
+    "example": "ファクトテーブル（Fact Table）には, 日々の取引金額などの数値データが格納されます。"
+  },
+  {
+    "id": "data-mongodb",
+    "english": "MongoDB / Mongo",
+    "japanese": "モンゴディービー / MongoDB",
+    "kana": "モンゴディービー",
+    "vietnamese": "Cơ sở dữ liệu tài liệu MongoDB",
+    "roles": [
+      "Dev",
+      "Architect"
+    ],
+    "category": "Database",
+    "note": "Hệ quản trị CSDL NoSQL hướng tài liệu phổ biến, sử dụng JSON-like document.",
+    "example": "柔軟なスキーマが必要なプロジェクトでは、MongoDB（モンゴディービー）が適しています。"
+  },
+  {
+    "id": "data-normalization",
+    "english": "Normalization / Normalizing",
+    "japanese": "正規化 / せいきか",
+    "kana": "せいきか",
+    "vietnamese": "Chuẩn hóa cơ sở dữ liệu",
+    "roles": [
+      "DBA",
+      "Dev"
+    ],
+    "category": "Database",
+    "note": "Quá trình tổ chức dữ liệu để giảm thiểu dư thừa và đảm bảo tính nhất quán.",
+    "example": "データベース設計の基本として、第3正規化（Normalization）まで実施します。"
+  },
+  {
+    "id": "data-nosql",
+    "english": "NoSQL / Non-relational Database",
+    "japanese": "NoSQL / ノースケール",
+    "kana": "ノーエスキューエル",
+    "vietnamese": "Cơ sở dữ liệu phi quan hệ / NoSQL",
+    "roles": [
+      "Dev",
+      "Architect"
+    ],
+    "category": "Database",
+    "note": "Các cơ sở dữ liệu cung cấp cơ chế lưu trữ và truy xuất dữ liệu khác với các bảng quan hệ truyền thống.",
+    "example": "非構造化データを高速に処理するため、NoSQL（ノーエスキューエル）データベースを採用します。"
+  },
+  {
+    "id": "data-oltp",
+    "english": "Online Transaction Processing / OLTP",
+    "japanese": "オンライン事務処理 / OLTP",
+    "kana": "オーエルティーピー",
+    "vietnamese": "Xử lý giao dịch trực tuyến / OLTP",
+    "roles": [
+      "Dev",
+      "DBA"
+    ],
+    "category": "Database",
+    "note": "Hệ thống tối ưu cho việc thực hiện số lượng lớn các giao dịch ngắn và nhanh.",
+    "example": "銀行の振込システムなどは、典型的なOLTP（オンライン事務処理）システムです。"
+  },
+  {
+    "id": "data-partitioning",
+    "english": "Partitioning / Partitioned / Partitions",
+    "japanese": "パーティショニング / 分割",
+    "kana": "パーティショニング",
+    "vietnamese": "Phân vùng dữ liệu",
+    "roles": [
+      "DBA",
+      "Data Engineer"
+    ],
+    "category": "Database",
+    "note": "Chia nhỏ một bảng hoặc chỉ mục lớn thành các phần nhỏ hơn để quản lý và truy vấn hiệu quả.",
+    "example": "日付単位でテーブルをパーティショニング（Partitioning）することで、検索速度を改善します。"
+  },
+  {
+    "id": "data-redis",
+    "english": "Redis / Remote Dictionary Server",
+    "japanese": "レディス / Redis",
+    "kana": "レディス",
+    "vietnamese": "Hệ thống lưu trữ trong bộ nhớ Redis",
+    "roles": [
+      "Dev",
+      "Architect"
+    ],
+    "category": "Database",
+    "note": "Hệ thống lưu trữ cấu trúc dữ liệu trong bộ nhớ (in-memory), thường dùng để làm cache.",
+    "example": "セッション情報の管理やキャッシュとして、Redis（レディス）を利用しています。"
+  },
+  {
+    "id": "data-schema-on-write",
+    "english": "Schema-on-write",
+    "japanese": "スキーマ・オン・ライト",
+    "kana": "スキーマオンライト",
+    "vietnamese": "Cấu trúc khi ghi",
+    "roles": [
+      "DBA",
+      "Dev"
+    ],
+    "category": "Database",
+    "note": "Phương pháp yêu cầu dữ liệu phải tuân thủ một cấu trúc nghiêm ngặt trước khi được lưu vào hệ thống (phổ biến trong RDBMS).",
+    "example": "伝統的なRDBMSはSchema-on-write（スキーマ・オン・ライト）であり、データの整合性が保証されます。"
+  },
+  {
+    "id": "data-snowflake-schema",
+    "english": "Snowflake Schema",
+    "japanese": "スノーフレーク形式 / スノーフレークスキーマ",
+    "kana": "スノーフレークスキーマ",
+    "vietnamese": "Sơ đồ bông tuyết",
+    "roles": [
+      "Data Engineer",
+      "DBA"
+    ],
+    "category": "Database",
+    "note": "Biến thể của sơ đồ hình sao, nơi các bảng chiều được chuẩn hóa hơn.",
+    "example": "データの冗長性を排除するため、複雑な属性を持つ次元はスノーフレークスキーマで構成します。"
+  },
+  {
+    "id": "data-sql-query",
+    "english": "Structured Query Language / SQL / Query / Queries",
+    "japanese": "SQL / 問い合わせ言語 / クエリ",
+    "kana": "エスキューエル",
+    "vietnamese": "Ngôn ngữ truy vấn có cấu trúc / Câu lệnh SQL / Query",
+    "roles": [
+      "Dev",
+      "DBA",
+      "BA"
+    ],
+    "category": "Database",
+    "note": "Ngôn ngữ tiêu chuẩn để tương tác với cơ sở dữ liệu quan hệ.",
+    "example": "効率的なデータ抽出のために、複雑なSQLクエリ（Query）を最適化する必要があります。"
+  },
+  {
+    "id": "data-star-schema",
+    "english": "Star Schema",
+    "japanese": "スター形式 / スターキーマ",
+    "kana": "スターキーマ",
+    "vietnamese": "Sơ đồ hình sao",
+    "roles": [
+      "Data Engineer",
+      "DBA"
+    ],
+    "category": "Database",
+    "note": "Mô hình dữ liệu đơn giản nhất trong DWH, gồm một bảng sự kiện (fact table) và các bảng chiều (dimension tables).",
+    "example": "クエリのパフォーマンスを向上させるため、DWHの設計にスターキーマ（Star Schema）を採用します。"
+  },
+  {
+    "id": "data-star-schema-v2",
+    "english": "Dimension Table / Dimension",
+    "japanese": "ディメンションテーブル / 次元テーブル",
+    "kana": "ディメンションテーブル",
+    "vietnamese": "Bảng chiều / Bảng kích thước",
+    "roles": [
+      "Data Engineer",
+      "DBA"
+    ],
+    "category": "Database",
+    "note": "Bảng chứa các thông tin mô tả để phân tích dữ liệu (như Thời gian, Địa điểm, Sản phẩm).",
+    "example": "売上分析のために, 商品の属性を管理するディメンションテーブル（Dimension Table）を作成します。"
+  },
+  {
+    "id": "data-warehouse",
+    "english": "Data Warehouse / DWH / Data Warehouses",
+    "japanese": "データウェアハウス / DWH",
+    "kana": "データウェアハウス",
+    "vietnamese": "Kho dữ liệu",
+    "roles": [
+      "Data Engineer",
+      "Architect",
+      "BrSE"
+    ],
+    "category": "Database",
+    "note": "Hệ thống quản lý dữ liệu được thiết kế để kích hoạt và hỗ trợ các hoạt động BI, đặc biệt là phân tích.",
+    "example": "各システムのデータをDWH（データウェアハウス）に統合し、横断的な分析を可能にします。"
+  },
+  {
+    "id": "db-replica",
+    "english": "Read Replica / Database Replica",
+    "japanese": "リードリプリカ / データベースレプリカ / データベース",
+    "kana": "リードリプリカ",
+    "vietnamese": "Bản sao đọc (CSDL)",
+    "roles": [
+      "DBA",
+      "Architect",
+      "BrSE"
+    ],
+    "category": "Database",
+    "note": "Một bản sao của CSDL chính, phục vụ riêng cho các truy vấn chỉ đọc để giảm tải cho máy chủ chính.",
+    "example": "検索などの参照系クエリの負荷を軽減するため、リードリプリカを追加して読み取りを分散します。"
+  },
+  {
+    "id": "db-sharding",
+    "english": "Shard / Sharding / Database Sharding / Sharded",
+    "japanese": "シャーディング / データベースシャーディング / データベース",
+    "kana": "シャーディング",
+    "vietnamese": "Phân mảnh cơ sở dữ liệu",
+    "roles": [
+      "Architect",
+      "DBA",
+      "Dev"
+    ],
+    "category": "Database",
+    "note": "Kỹ thuật chia nhỏ một cơ sở dữ liệu lớn thành nhiều phần nhỏ hơn (shard) lưu trữ trên nhiều máy chủ khác nhau để tăng hiệu suất.",
+    "example": "トラフィックの増加に対応するため、データベースのシャーディングを実施します。"
+  },
+  {
+    "id": "exam-acid",
+    "english": "ACID Properties",
+    "japanese": "ACID特性",
+    "kana": "ACIDとくせい",
+    "vietnamese": "Các tính chất ACID (Atomicity, Consistency, Isolation, Durability)",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Database",
+    "note": "Bốn tính chất quan trọng để đảm bảo độ tin cậy của giao dịch DB.",
+    "example": "Relational databases guarantee ACID properties."
+  },
+  {
+    "id": "exam-normalization",
+    "english": "Database Normalization",
+    "japanese": "正規化",
+    "kana": "せいきか",
+    "vietnamese": "Chuẩn hóa cơ sở dữ liệu / Normalization",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Database",
+    "note": "Quá trình tổ chức dữ liệu để giảm dư thừa và tăng tính nhất quán.",
+    "example": "Third Normal Form (3NF) is a common goal for database design."
+  },
+  {
+    "id": "exam-transaction",
+    "english": "Transaction",
+    "japanese": "トランザクション",
+    "kana": "トランザクション",
+    "vietnamese": "Giao dịch / Transaction",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Database",
+    "note": "Một đơn vị công việc trong DB phải đảm bảo tính ACID.",
+    "example": "Bank transfers must be handled as a single atomic transaction."
+  },
+  {
+    "id": "infra-concurrency-control",
+    "english": "Concurrency Control / Locking",
+    "japanese": "並行性制御",
+    "kana": "へいこうせいせいぎょ",
+    "vietnamese": "Kiểm soát đồng thời",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Database",
+    "note": "Cơ chế đảm bảo dữ liệu nhất quán khi có nhiều giao dịch cùng truy cập.",
+    "example": "Optimistic concurrency control avoids locking and uses versioning instead."
+  },
+  {
+    "id": "infra-indexing",
+    "english": "Database Indexing / B-Tree Index",
+    "japanese": "インデックス作成 / 索引",
+    "kana": "インデックスさくせい",
+    "vietnamese": "Đánh chỉ mục cơ sở dữ liệu / Indexing",
+    "roles": [
+      "Dev"
+    ],
+    "category": "Database",
+    "note": "Cấu trúc dữ liệu giúp tăng tốc độ tìm kiếm bản ghi trong DB.",
+    "example": "Adding an index on frequently searched columns significantly reduces query time."
+  },
+  {
+    "id": "infra-replication",
+    "english": "Database Replication / Master-Slave",
+    "japanese": "レプリケーション / 複製",
+    "kana": "レプリケーション",
+    "vietnamese": "Sao chép dữ liệu / Replication",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Database",
+    "note": "Tự động sao chép dữ liệu từ database chính sang các database dự phòng.",
+    "example": "Master-slave replication improves read performance and fault tolerance."
+  },
+  {
+    "id": "infra-sharding",
+    "english": "Database Sharding",
+    "japanese": "シャーディング / データベース分割",
+    "kana": "シャーディング",
+    "vietnamese": "Phân mảnh cơ sở dữ liệu / Sharding",
+    "roles": [
+      "Dev",
+      "BrSE"
+    ],
+    "category": "Database",
+    "note": "Kỹ thuật chia một database lớn thành các phần nhỏ hơn nằm trên nhiều server.",
+    "example": "Sharding is essential for scaling write-heavy applications."
+  },
+  {
+    "id": "lib-alembic-migration",
+    "english": "Database Migration / Alembic / Migrating",
+    "japanese": "データベースマイグレーション / アレンビック",
+    "kana": "マイグレーション",
+    "vietnamese": "Di cư dữ liệu / Cập nhật cấu trúc DB",
+    "roles": [
+      "Backend Dev",
+      "DevOps"
+    ],
+    "category": "Database",
+    "note": "Quá trình quản lý và cập nhật các thay đổi trong cấu trúc database (schema) theo thời gian mà không làm mất dữ liệu.",
+    "example": "Alembicを使用して、新しいテーブルの追加などのマイグレーション（Migration）作業を自動化します。"
+  }
+]

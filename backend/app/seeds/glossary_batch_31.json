@@ -1,0 +1,707 @@
+[
+  {
+    "id": "pm-kick-off-meeting",
+    "english": "Kick-off Meeting",
+    "japanese": "キックオフミーティング / 開始会議",
+    "kana": "キックオフミーティング",
+    "vietnamese": "Họp khởi động dự án / Kick-off",
+    "roles": [
+      "PM",
+      "BrSE",
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Cuộc họp chính thức đầu tiên để giới thiệu dự án và các bên liên quan.",
+    "example": "The kick-off meeting will be held tomorrow to align everyone on the goals."
+  },
+  {
+    "id": "pm-man-day",
+    "english": "MD / Man-day / Person-day",
+    "japanese": "人日 / マンデイ",
+    "kana": "にんにち",
+    "vietnamese": "Người-ngày / Man-day",
+    "roles": [
+      "PM",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Đơn vị đo khối lượng công việc tương đương với một người làm trong một ngày.",
+    "example": "The total effort for testing is 20 MD."
+  },
+  {
+    "id": "pm-man-hour",
+    "english": "MH / Man-hour / Person-hour",
+    "japanese": "人時 / マンアワー",
+    "kana": "にんじ",
+    "vietnamese": "Người-giờ / Man-hour",
+    "roles": [
+      "Dev",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Đơn vị đo khối lượng công việc tương đương với một người làm trong một giờ.",
+    "example": "Bug fixing should not exceed 8 MH per task."
+  },
+  {
+    "id": "pm-man-month",
+    "english": "MM / Man-month / Person-month",
+    "japanese": "人月 / マンマンス",
+    "kana": "にんげつ",
+    "vietnamese": "Người-tháng / Man-month",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Đơn vị đo khối lượng công việc tương đương với một người làm trong một tháng.",
+    "example": "This feature is estimated to take 5 MM to complete."
+  },
+  {
+    "id": "pm-management-reserve",
+    "english": "Management Reserve",
+    "japanese": "マネジメント予備 / 未知の未知への備え",
+    "kana": "マネジメントよび",
+    "vietnamese": "Dự phòng quản lý (chưa biết)",
+    "roles": [
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Ngân sách dự phòng cho các vấn đề hoàn toàn không lường trước được (unknown-unknowns).",
+    "example": "Using the management reserve requires approval from senior management."
+  },
+  {
+    "id": "pm-meeting-minutes",
+    "english": "MOM / Meeting Minutes / Minutes of Meeting",
+    "japanese": "議事録 / ミーティングミニッツ / 会議録",
+    "kana": "ぎじろく",
+    "vietnamese": "Biên bản cuộc họp / MOM",
+    "roles": [
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Tài liệu ghi lại các thảo luận, quyết định và hành động trong cuộc họp.",
+    "example": "Please share the MOM with all participants after the call."
+  },
+  {
+    "id": "pm-milestone",
+    "english": "Milestone",
+    "japanese": "マイルストーン / 重要節目",
+    "kana": "マイルストーン",
+    "vietnamese": "Cột mốc quan trọng / Milestone",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Một sự kiện hoặc điểm quan trọng trong lịch trình dự án.",
+    "example": "Completing the database migration is a major milestone."
+  },
+  {
+    "id": "pm-monthly-report",
+    "english": "Monthly Report",
+    "japanese": "月報 / マンスリーレポート",
+    "kana": "げっぽう",
+    "vietnamese": "Báo cáo tháng",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Báo cáo tổng kết hiệu suất và ngân sách trong một tháng.",
+    "example": "The monthly report shows that we are currently under budget."
+  },
+  {
+    "id": "pm-most-likely-estimate",
+    "english": "Most Likely Estimate",
+    "japanese": "最確値 / 最も可能性の高い見積もり",
+    "kana": "さいかくち",
+    "vietnamese": "Ước lượng khả thi nhất",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Thời gian thực tế nhất để hoàn thành công việc dựa trên kinh nghiệm.",
+    "example": "Our most likely estimate is 10 MD based on similar past projects."
+  },
+  {
+    "id": "pm-mvp",
+    "english": "Minimum Viable Product / MVP",
+    "japanese": "実用最小限の製品 / MVP",
+    "kana": "エムブイピー",
+    "vietnamese": "Sản phẩm khả thi tối thiểu",
+    "roles": [
+      "PM",
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Phiên bản sản phẩm với đủ tính năng để thu hút những khách hàng đầu tiên và xác thực ý tưởng.",
+    "example": "まずはコア機能のみを実装したMVPをリリースし、ユーザーのフィードバックを集めます。"
+  },
+  {
+    "id": "pm-negotiation",
+    "english": "Negotiation",
+    "japanese": "交渉 / ネゴシエーション",
+    "kana": "こうしょう",
+    "vietnamese": "Thương lượng / Đàm phán",
+    "roles": [
+      "PM",
+      "Sales",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Quá trình thảo luận để đạt được sự thỏa thuận giữa các bên.",
+    "example": "We are in negotiation with the client regarding the new budget."
+  },
+  {
+    "id": "pm-net-present-value",
+    "english": "NPV / Net Present Value",
+    "japanese": "正味現在価値 / NPV",
+    "kana": "しょうみげんざいかち",
+    "vietnamese": "Giá trị hiện tại ròng / NPV",
+    "roles": [
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Giá trị hiện tại của dòng tiền trong tương lai trừ đi khoản đầu tư ban đầu.",
+    "example": "A positive NPV indicates that the project is financially attractive."
+  },
+  {
+    "id": "pm-off-shore",
+    "english": "Offshore",
+    "japanese": "オフショア / 海外拠点",
+    "kana": "オフショア",
+    "vietnamese": "Làm việc tại nước ngoài (so với khách hàng) / Offshore",
+    "roles": [
+      "Dev",
+      "QA",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Nhóm phát triển làm việc tại quốc gia khác với quốc gia của khách hàng.",
+    "example": "Communication between the on-site and offshore teams is crucial."
+  },
+  {
+    "id": "pm-offshoring",
+    "english": "Offshoring",
+    "japanese": "オフショアリング / 海外委託",
+    "kana": "オフショアリング",
+    "vietnamese": "Ủy thác ra nước ngoài / Offshoring",
+    "roles": [
+      "Manager",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Chuyển các quy trình hoặc dịch vụ sang một quốc gia khác (thường là để giảm chi phí).",
+    "example": "Offshoring to Vietnam is a popular strategy for Japanese tech firms."
+  },
+  {
+    "id": "pm-on-site",
+    "english": "On-site / Onsite",
+    "japanese": "オンサイト / 客先常駐",
+    "kana": "オンサイト",
+    "vietnamese": "Làm việc tại văn phòng khách hàng / On-site",
+    "roles": [
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Làm việc trực tiếp tại địa điểm của khách hàng.",
+    "example": "The BrSE is currently on-site in Tokyo to support the UAT phase."
+  },
+  {
+    "id": "pm-optimistic-estimate",
+    "english": "Optimistic Estimate / Best-case Scenario",
+    "japanese": "楽観値 / 最良シナリオ",
+    "kana": "らっかんち",
+    "vietnamese": "Ước lượng lạc quan / Trường hợp tốt nhất",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Thời gian ngắn nhất có thể để hoàn thành công việc nếu mọi thứ diễn ra hoàn hảo.",
+    "example": "The optimistic estimate for this module is 2 weeks."
+  },
+  {
+    "id": "pm-outsourcing",
+    "english": "Outsourcing",
+    "japanese": "アウトソーシング / 外注",
+    "kana": "アウトソーシング",
+    "vietnamese": "Thuê ngoài / Outsourcing",
+    "roles": [
+      "Manager",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Thuê một công ty bên ngoài để thực hiện các phần việc của dự án.",
+    "example": "The company decided on outsourcing the mobile app development."
+  },
+  {
+    "id": "pm-ownership",
+    "english": "Ownership",
+    "japanese": "オーナーシップ / 当事者意識",
+    "kana": "オーナーシップ",
+    "vietnamese": "Tinh thần làm chủ / Ownership",
+    "roles": [
+      "Dev",
+      "QA",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Ý thức tự giác và trách nhiệm cao đối với công việc được giao.",
+    "example": "We encourage every developer to take ownership of their code."
+  },
+  {
+    "id": "pm-parametric-estimation",
+    "english": "Parametric Estimation",
+    "japanese": "パラメトリック見積もり / 係数見積もり",
+    "kana": "パラメトリックみつもり",
+    "vietnamese": "Ước lượng tham số",
+    "roles": [
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Sử dụng các mô hình toán học và dữ liệu lịch sử để tính toán (ví dụ: cost per LOC).",
+    "example": "Parametric estimation is often used for infrastructure costs."
+  },
+  {
+    "id": "pm-payback-period",
+    "english": "Payback Period",
+    "japanese": "回収期間",
+    "kana": "かいしゅうきかん",
+    "vietnamese": "Thời gian hoàn vốn",
+    "roles": [
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Thời gian cần thiết để thu hồi lại vốn đầu tư ban đầu.",
+    "example": "The payback period for this solar panel installation is 5 years."
+  },
+  {
+    "id": "pm-pessimistic-estimate",
+    "english": "Pessimistic Estimate / Worst-case Scenario",
+    "japanese": "悲観値 / 最悪シナリオ",
+    "kana": "ひかんち",
+    "vietnamese": "Ước lượng bi quan / Trường hợp xấu nhất",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Thời gian dài nhất có thể nếu gặp nhiều rủi ro và trở ngại.",
+    "example": "In the pessimistic estimate, we include buffers for potential server issues."
+  },
+  {
+    "id": "pm-poc",
+    "english": "Proof of Concept / POC",
+    "japanese": "概念実証 / PoC / ポック",
+    "kana": "ポック",
+    "vietnamese": "Chứng minh khái niệm",
+    "roles": [
+      "PM",
+      "BrSE",
+      "Architect"
+    ],
+    "category": "System Design",
+    "note": "Thực hiện một dự án hoặc phương pháp nhất định để chứng minh tính khả thi của nó.",
+    "example": "新しいAI技術がプロジェクトに適合するかどうか、まずはPoCを実施して検証します。"
+  },
+  {
+    "id": "pm-probability-impact-matrix",
+    "english": "P-I Matrix / Probability and Impact Matrix",
+    "japanese": "発生確率・影響度マトリックス / リスクマトリックス",
+    "kana": "はっせいかくりつ・えいきょうどマトリックス",
+    "vietnamese": "Ma trận xác suất và tác động",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Công cụ trực quan để xếp hạng rủi ro dựa trên xác suất và mức độ ảnh hưởng.",
+    "example": "The P-I Matrix helps us identify high-priority risks that need immediate attention."
+  },
+  {
+    "id": "pm-project-charter",
+    "english": "Project Charter",
+    "japanese": "プロジェクト憲章",
+    "kana": "プロジェクトけんしょう",
+    "vietnamese": "Hiến chương dự án / Project charter",
+    "roles": [
+      "Manager",
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Tài liệu chính thức phê duyệt sự tồn tại của dự án và cấp quyền cho PM.",
+    "example": "The project charter outlines the high-level objectives and stakeholders."
+  },
+  {
+    "id": "pm-qualitative-risk-analysis",
+    "english": "Qualitative Risk Analysis",
+    "japanese": "定性的リスク分析",
+    "kana": "ていせいてきリスクぶんせき",
+    "vietnamese": "Phân tích rủi ro định tính",
+    "roles": [
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Xếp hạng rủi ro dựa trên các tiêu chí cảm tính như Cao/Trung bình/Thấp.",
+    "example": "Qualitative risk analysis helps prioritize which risks to focus on."
+  },
+  {
+    "id": "pm-quality-assurance",
+    "english": "QA / Quality Assurance",
+    "japanese": "品質保証 / QA",
+    "kana": "ひんしつほしょう",
+    "vietnamese": "Đảm bảo chất lượng / QA",
+    "roles": [
+      "QA",
+      "Manager"
+    ],
+    "category": "System Design",
+    "note": "Quy trình tập trung vào việc ngăn ngừa lỗi trong quá trình phát triển.",
+    "example": "QA processes help maintain high standards throughout the project."
+  },
+  {
+    "id": "pm-quality-control",
+    "english": "QC / Quality Control",
+    "japanese": "品質管理 / QC",
+    "kana": "ひんしつかんり",
+    "vietnamese": "Kiểm soát chất lượng / QC",
+    "roles": [
+      "QA",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Quy trình tập trung vào việc phát hiện lỗi trong sản phẩm cuối cùng.",
+    "example": "The QC team found several bugs during the regression testing."
+  },
+  {
+    "id": "pm-quantitative-risk-analysis",
+    "english": "Quantitative Risk Analysis",
+    "japanese": "定量的リスク分析",
+    "kana": "ていりょうてきリスクぶんせき",
+    "vietnamese": "Phân tích rủi ro định lượng",
+    "roles": [
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Sử dụng số liệu và mô hình toán học để đo lường rủi ro (ví dụ: mô phỏng Monte Carlo).",
+    "example": "Quantitative risk analysis provides a numerical impact on project cost."
+  },
+  {
+    "id": "pm-raci-matrix",
+    "english": "RACI / RACI Matrix",
+    "japanese": "RACIチャート / 責任分担マトリックス",
+    "kana": "レイシチャート",
+    "vietnamese": "Ma trận RACI / Ma trận trách nhiệm",
+    "roles": [
+      "PM",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Bảng phân định trách nhiệm: Responsible, Accountable, Consulted, Informed.",
+    "example": "The RACI matrix clarifies who needs to approve the design documents."
+  },
+  {
+    "id": "pm-residual-risk",
+    "english": "Residual Risk",
+    "japanese": "残存リスク",
+    "kana": "ざんぞんリスク",
+    "vietnamese": "Rủi ro còn lại / Residual risk",
+    "roles": [
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Rủi ro vẫn còn tồn tại sau khi đã áp dụng các biện pháp giảm thiểu.",
+    "example": "Even after testing, there is a residual risk of bugs in production."
+  },
+  {
+    "id": "pm-resource-leveling",
+    "english": "Resource Leveling",
+    "japanese": "リソースの平準化",
+    "kana": "リソースのへいじゅんか",
+    "vietnamese": "San bằng nguồn lực",
+    "roles": [
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Kỹ thuật điều chỉnh lịch trình để cân bằng việc sử dụng nguồn lực.",
+    "example": "Resource leveling helped us avoid overworking the senior developers."
+  },
+  {
+    "id": "pm-risk-acceptance",
+    "english": "Risk Acceptance",
+    "japanese": "リスク受容 / リスク承認",
+    "kana": "リスクじゅよう",
+    "vietnamese": "Chấp nhận rủi ro / Acceptance",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Quyết định không thực hiện hành động nào và chấp nhận hậu quả nếu rủi ro xảy ra.",
+    "example": "The team chose risk acceptance for minor UI glitches due to time constraints."
+  },
+  {
+    "id": "pm-risk-analysis",
+    "english": "Risk Analysis",
+    "japanese": "リスク分析",
+    "kana": "リスクぶんせき",
+    "vietnamese": "Phân tích rủi ro",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Xem xét tác động và xác suất xảy ra của từng rủi ro.",
+    "example": "The risk analysis showed that the lack of resources is our biggest threat."
+  },
+  {
+    "id": "pm-risk-assessment",
+    "english": "Risk Assessment / Risk Analysis",
+    "japanese": "リスクアセスメント / リスク分析",
+    "kana": "リスクアセスメント",
+    "vietnamese": "Đánh giá rủi ro",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Quá trình xác định và phân tích các rủi ro tiềm ẩn đối với dự án.",
+    "example": "Monthly risk assessment meetings are mandatory for this project."
+  },
+  {
+    "id": "pm-risk-avoidance",
+    "english": "Risk Avoidance",
+    "japanese": "リスク回避",
+    "kana": "リスクかいひ",
+    "vietnamese": "Né tránh rủi ro / Avoidance",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Thay đổi kế hoạch dự án để loại bỏ hoàn toàn rủi ro.",
+    "example": "We chose risk avoidance by canceling the feature that required a third-party API."
+  },
+  {
+    "id": "pm-risk-identification",
+    "english": "Risk Identification",
+    "japanese": "リスク特定 / リスク識別",
+    "kana": "リスクとくてい",
+    "vietnamese": "Nhận diện rủi ro",
+    "roles": [
+      "PM",
+      "BrSE",
+      "Dev"
+    ],
+    "category": "System Design",
+    "note": "Bước đầu tiên trong quản lý rủi ro để tìm ra các vấn đề có thể xảy ra.",
+    "example": "Brainstorming is a common technique for risk identification."
+  },
+  {
+    "id": "pm-risk-mitigation",
+    "english": "Risk Mitigation / Mitigation Plan",
+    "japanese": "リスク低減 / 軽減策",
+    "kana": "リスクていげん",
+    "vietnamese": "Giảm thiểu rủi ro / Mitigation",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Các hành động nhằm giảm xác suất hoặc tác động của một rủi ro tiêu cực.",
+    "example": "Code reviews are a risk mitigation strategy for security vulnerabilities."
+  },
+  {
+    "id": "pm-risk-owner",
+    "english": "Risk Owner",
+    "japanese": "リスク所有者 / リスク責任者",
+    "kana": "リスクしょゆうしゃ",
+    "vietnamese": "Người chịu trách nhiệm rủi ro",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Người chịu trách nhiệm giám sát và thực hiện kế hoạch ứng phó cho một rủi ro cụ thể.",
+    "example": "The BrSE is the risk owner for all communication-related risks."
+  },
+  {
+    "id": "pm-risk-register",
+    "english": "Risk Register / Risk Log",
+    "japanese": "リスク登録簿 / リスク管理表",
+    "kana": "リスクとうろくぼ",
+    "vietnamese": "Danh mục rủi ro / Risk register",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Tài liệu theo dõi tất cả các rủi ro, trạng thái và biện pháp xử lý.",
+    "example": "Update the risk register if any new technical challenges arise."
+  },
+  {
+    "id": "pm-risk-response",
+    "english": "Risk Response Planning",
+    "japanese": "リスク対応計画",
+    "kana": "リスクたいおうけいかく",
+    "vietnamese": "Lập kế hoạch ứng phó rủi ro",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Xác định các hành động cụ thể để giảm thiểu rủi ro.",
+    "example": "Our risk response planning includes hiring additional contractors."
+  },
+  {
+    "id": "pm-risk-transfer",
+    "english": "Risk Transfer",
+    "japanese": "リスク転嫁 / リスク移転",
+    "kana": "リスクてんか",
+    "vietnamese": "Chuyển giao rủi ro / Transfer",
+    "roles": [
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Chuyển trách nhiệm xử lý rủi ro cho bên thứ ba (ví dụ: mua bảo hiểm).",
+    "example": "Risk transfer was achieved by outsourcing the payment gateway integration."
+  },
+  {
+    "id": "pm-roi",
+    "english": "ROI / Return on Investment",
+    "japanese": "投資利益率 / 投資回収率 / ROI",
+    "kana": "とうしりえきりつ",
+    "vietnamese": "Tỷ suất hoàn vốn / ROI",
+    "roles": [
+      "Manager",
+      "Sales"
+    ],
+    "category": "System Design",
+    "note": "Tỷ lệ lợi nhuận ròng so với chi phí đầu tư.",
+    "example": "Automated testing has a high ROI in long-term maintenance projects."
+  },
+  {
+    "id": "pm-scope-management",
+    "english": "Scope Management",
+    "japanese": "スコープ管理 / スコープマネジメント",
+    "kana": "スコープかんり",
+    "vietnamese": "Quản lý phạm vi",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Quy trình đảm bảo dự án bao gồm tất cả các công việc cần thiết và chỉ những công việc đó.",
+    "example": "Scope management helps avoid doing work that wasn't agreed upon."
+  },
+  {
+    "id": "pm-scope-statement",
+    "english": "Scope Statement",
+    "japanese": "スコープ定義書 / 範囲記述書",
+    "kana": "スコープていぎしょ",
+    "vietnamese": "Bản mô tả phạm vi",
+    "roles": [
+      "PM",
+      "BrSE",
+      "BA"
+    ],
+    "category": "System Design",
+    "note": "Tài liệu chi tiết về các mục tiêu, sản phẩm bàn giao và giới hạn của dự án.",
+    "example": "The scope statement clearly defines what is out of scope for Phase 1."
+  },
+  {
+    "id": "pm-secondary-risk",
+    "english": "Secondary Risk",
+    "japanese": "二次リスク",
+    "kana": "にじリスク",
+    "vietnamese": "Rủi ro thứ cấp",
+    "roles": [
+      "PM"
+    ],
+    "category": "System Design",
+    "note": "Rủi ro phát sinh trực tiếp từ việc thực hiện một biện pháp ứng phó rủi ro khác.",
+    "example": "Using a new framework to avoid old bugs might create secondary risks of learning curves."
+  },
+  {
+    "id": "pm-sign-off",
+    "english": "Sign-off",
+    "japanese": "承認 / サインオフ",
+    "kana": "しょうにん",
+    "vietnamese": "Ký duyệt / Xác nhận hoàn tất",
+    "roles": [
+      "Dev",
+      "Manager",
+      "BrSE",
+      "PM",
+      "QA"
+    ],
+    "category": "System Design",
+    "note": "Sự phê duyệt chính thức bằng văn bản cho một giai đoạn hoặc sản phẩm.",
+    "example": "We need the client's sign-off on the design before starting development."
+  },
+  {
+    "id": "pm-sla",
+    "english": "Service Level Agreement / SLA",
+    "japanese": "サービス品質保証 / SLA",
+    "kana": "エスエルエー",
+    "vietnamese": "Cam kết chất lượng dịch vụ",
+    "roles": [
+      "PM",
+      "Sales",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Thỏa thuận chính thức giữa nhà cung cấp dịch vụ và khách hàng xác định mức độ dịch vụ mong đợi.",
+    "example": "クラウドサービスの稼働率99.9%というSLAを満たすようにシステムを設計してください。"
+  },
+  {
+    "id": "pm-slm",
+    "english": "SLM / Service Level Management",
+    "japanese": "サービスレベル管理 / SLM",
+    "kana": "サービスレベルかんり",
+    "vietnamese": "Quản lý cấp độ dịch vụ / SLM",
+    "roles": [
+      "Manager",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Quá trình đảm bảo các cấp độ dịch vụ được thỏa thuận được duy trì và cải thiện.",
+    "example": "SLM involves regular monitoring of the agreed KPIs."
+  },
+  {
+    "id": "pm-stakeholder-analysis",
+    "english": "Stakeholder Analysis",
+    "japanese": "ステークホルダー分析",
+    "kana": "ステークホルダーぶんせき",
+    "vietnamese": "Phân tích các bên liên quan",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Thu thập và phân tích thông tin để xác định lợi ích và ảnh hưởng của các bên.",
+    "example": "Through stakeholder analysis, we identified the CFO as a key decision-maker."
+  },
+  {
+    "id": "pm-stakeholder-management",
+    "english": "Stakeholder Management",
+    "japanese": "ステークホルダー管理 / 利害関係者管理",
+    "kana": "ステークホルダーかんり",
+    "vietnamese": "Quản lý các bên liên quan",
+    "roles": [
+      "PM",
+      "BrSE"
+    ],
+    "category": "System Design",
+    "note": "Quy trình xác định và đáp ứng nhu cầu của các bên có ảnh hưởng đến dự án.",
+    "example": "Good stakeholder management ensures project buy-in from all departments."
+  }
+]

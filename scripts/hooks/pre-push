@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# ============================================================
+# BrSE OS — pre-push regression gate
+# Runs the fast verification (typecheck + lint + tests + API contract, no build
+# or runtime smoke) before a push so regressions like a dead route or a failing
+# test never leave the machine.
+#
+# Activate on this machine:  git config core.hooksPath scripts/hooks
+# Skip once (WIP):           git push --no-verify
+#
+# NOTE: this repo currently has no git remote, so `git push` never runs and this
+# hook is dormant until a remote is added. Until then, run the gate manually:
+#   bash scripts/verify-brse.sh --quick
+# ============================================================
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+echo "[pre-push] Running fast verification gate (verify-brse.sh --quick)..."
+bash "$ROOT_DIR/scripts/verify-brse.sh" --quick
+echo "[pre-push] ✅ Gate passed."

@@ -1,0 +1,13 @@
+[Unit]
+Description=BrSE OS localhost stack and 9router
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/bakaryuu/BrSE
+ExecStart=/usr/bin/bash /home/bakaryuu/BrSE/scripts/start-brse-stack.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=default.target
