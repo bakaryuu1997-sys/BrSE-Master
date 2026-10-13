@@ -509,7 +509,25 @@ export function upsertMeetingMinutesActionTodo(
   return { item: nextItem, state: nextState, created: !exists };
 }
 
-export function getBrseTodoCommandSummary() {
+export type BrseTodoCommandSummary = {
+  activeProject: BrseTodoProject | undefined;
+  doneToday: BrseTodoItem[];
+  deadlineRisk: BrseTodoItem[];
+  nextFocus: BrseTodoItem[];
+  total: number;
+  done: number;
+};
+
+export const EMPTY_BRSE_TODO_COMMAND_SUMMARY: BrseTodoCommandSummary = {
+  activeProject: undefined,
+  doneToday: [],
+  deadlineRisk: [],
+  nextFocus: [],
+  total: 0,
+  done: 0,
+};
+
+export function getBrseTodoCommandSummary(): BrseTodoCommandSummary {
   const projects = readBrseTodoProjects();
   const today = new Date().toISOString().slice(0, 10);
   const activeProjectId = readActiveBrseTodoProjectId();

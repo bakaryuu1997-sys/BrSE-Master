@@ -104,9 +104,11 @@ export default function PowerToolsPage() {
   const [operationSyncStatus, setOperationSyncStatus] = useState("");
   const [syncStatus, setSyncStatus] = useState(t("tools.syncLoading"));
   const [isLoaded, setIsLoaded] = useState(false);
-  const [activeProjectId, setActiveProjectId] = useState(() => getActiveProject()?.id || "default");
+  const [activeProjectId, setActiveProjectId] = useState("default");
 
   useEffect(() => {
+    setActiveProjectId(getActiveProject()?.id || "default");
+
     function handleProjectChange() {
       setActiveProjectId(getActiveProject()?.id || "default");
     }

@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { formatDateLabel, toIsoDate } from "@/components/dashboard/DashboardCalendarPanel";
-import { getBrseTodoCommandSummary } from "@/lib/brseTodo";
+import { EMPTY_BRSE_TODO_COMMAND_SUMMARY, getBrseTodoCommandSummary } from "@/lib/brseTodo";
 import { fetchEmailHistory, getEmailHistory, type GeneratedEmailHistoryItem } from "@/lib/emailHistory";
 import { getOperationRecords, type OperationRecord } from "@/lib/operations";
 import {
@@ -52,7 +52,7 @@ export function useDashboardData(language: UiLanguage) {
   const [history, setHistory] = useState<GeneratedEmailHistoryItem[]>([]);
   const [operations, setOperations] = useState<OperationRecord[]>([]);
   const [calendarSchedules, setCalendarSchedules] = useState<PersonalSchedule[]>([]);
-  const [todoCommand, setTodoCommand] = useState(() => getBrseTodoCommandSummary());
+  const [todoCommand, setTodoCommand] = useState(EMPTY_BRSE_TODO_COMMAND_SUMMARY);
   const [commandCenter, setCommandCenter] = useState<CommandCenterData | null>(null);
   const commandCenterQuery = useCommandCenterQuery();
 
