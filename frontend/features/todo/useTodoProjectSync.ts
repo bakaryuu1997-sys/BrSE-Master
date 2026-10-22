@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useUiLanguage } from "@/components/LanguageProvider";
 import { useConfirm } from "@/components/ConfirmProvider";
+import { useNotify } from "@/components/ToastProvider";
 import { apiBaseUrl } from "@/lib/config";
 import {
   BRSE_TODO_ACTIVE_PROJECT_KEY,
@@ -521,6 +522,7 @@ export function toggleChecklistLine(note: string, lineIndex: number) {
 export function useTodoProjectSync() {
   const { t } = useUiLanguage();
   const { confirm } = useConfirm();
+  const { notify } = useNotify();
   const { mutate: saveTodoProjectState } = useSaveTodoProjectStateMutation();
   const [items, setItems] = useState<WorkflowItem[]>(() => mergeSavedItems([], "standard"));
   const [operations, setOperations] = useState<OperationRecord[]>([]);
@@ -952,6 +954,21 @@ ${risks.length ? risks.map((item) => `  - ${(t ? t(`todo.workflow.${item.id}.tit
         current.map((item) =>
           item.id === itemId ? { ...item, done: true, evidenceUrl, updatedAt: new Date().toISOString() } : item
         )
+      );
+      notify(
+        `Đã hoàn thành: ${target.title}`,
+        "success",
+        {
+          label: "Hoàn tác (Undo)",
+          onClick: () => {
+            persistItems((current) =>
+              current.map((item) =>
+                item.id === itemId ? { ...item, done: false, updatedAt: new Date().toISOString() } : item
+              )
+            );
+          },
+        },
+        6000
       );
       return;
     }

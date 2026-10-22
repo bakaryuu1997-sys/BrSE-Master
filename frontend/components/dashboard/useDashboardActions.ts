@@ -9,6 +9,7 @@ import {
   type BrseTodoItem,
 } from "@/lib/brseTodo";
 import { useApproveMeetingTodoDraftMutation, useRejectMeetingTodoDraftMutation } from "@/lib/command-center-hooks";
+import type { MeetingTodoDraft } from "@/lib/commandCenter";
 import { buildBatchQnaEmail, saveOperationRecord, type OperationRecord, type OperationRecordInput } from "@/lib/operations";
 import { fetchPersonalSchedules, savePersonalScheduleToDb, type PersonalSchedule } from "@/lib/personalCalendar";
 import type { ProjectSetting } from "@/lib/projectSettings";
@@ -223,6 +224,37 @@ export function useDashboardActions({
     }
   }, [notify, rejectMeetingTodoDraftMutation, setTodoCommand, t]);
 
+  const convertDraftToQna = useCallback(async (draft: MeetingTodoDraft) => {
+    setUpdatingMeetingDraftId(draft.id);
+    try {
+      const saved = await saveOperationRecord({
+        type: "qna",
+        title: draft.task,
+        status: "Waiting Customer",
+        priority: draft.priority || "P1",
+        owner: draft.owner || "BrSE",
+        dueDate: draft.deadline || "",
+        customerOwner: "Customer",
+        projectName: activeProject?.name || "General",
+        fieldA: `[Trích xuất từ Cuộc họp ${draft.meeting_title || "Meeting"}]\n${draft.task}`,
+        fieldB: "",
+        fieldC: "",
+        fieldD: `/app/meeting-note`,
+        fieldE: "Tự động tạo từ 1-Click Meeting Action Triaging",
+      });
+      if (saved) {
+        setOperations((current) => [saved, ...current]);
+        await rejectMeetingTodoDraftMutation.mutateAsync(draft.id);
+        setTodoCommand(getBrseTodoCommandSummary());
+        notify("✅ Đã chuyển Action item thành câu hỏi Q&A khách hàng!");
+      }
+    } catch (err) {
+      notify("❌ Lỗi khi chuyển thành Q&A: " + (err instanceof Error ? err.message : ""), "error");
+    } finally {
+      setUpdatingMeetingDraftId("");
+    }
+  }, [activeProject?.name, notify, rejectMeetingTodoDraftMutation, setOperations, setTodoCommand]);
+
   const saveQuickSchedule = useCallback(async (date: string, title: string) => {
     try {
       await savePersonalScheduleToDb({
@@ -242,6 +274,7 @@ export function useDashboardActions({
 
   return {
     approveMeetingDraft,
+    convertDraftToQna,
     copyCrFollowUp,
     copyDashboardDailySummary,
     copyProactiveHorenso,

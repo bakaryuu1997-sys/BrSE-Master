@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { Download, Plus, Printer, RotateCcw, Save, Trash2, Sparkles, Bot, Loader2, Clock, MapPin, Users, Calendar, ListTodo, Info, ChevronRight, CheckCircle2, FileText, Check } from "lucide-react";
+import { Download, Plus, Printer, RotateCcw, Save, Trash2, Sparkles, Bot, Loader2, Clock, MapPin, Users, Calendar, ListTodo, Info, ChevronRight, CheckCircle2, FileText, Check, HelpCircle, Mail } from "lucide-react";
 import { useUiLanguage } from "@/components/LanguageProvider";
 import { cn } from "@/lib/utils";
 import { AppModal } from "@/components/ui/AppModal";
@@ -57,6 +57,8 @@ export default function NewMeetingMinutesPage() {
     loadTranscriptFromMeeting,
     generateMinutesFromTranscript,
     convertActionToTodo,
+    convertActionToQna,
+    copyActionEmailDraft,
     hasUnsavedChanges,
   } = useMeetingMinutesState();
 
@@ -385,15 +387,39 @@ export default function NewMeetingMinutesPage() {
                       </div>
                     </div>
 
-                    <div className="flex justify-end pt-1">
-                      <Button
-                        size="sm"
-                        type="button"
-                        onClick={() => convertActionToTodo(item, i)}
-                        className="text-[10px] h-7 bg-cyan/10 border border-cyan/20 text-cyan hover:bg-cyan/20 gap-1"
-                      >
-                        <Check className="h-3 w-3" /> {t("minutes.convertToTodo")}
-                      </Button>
+                    <div className="flex flex-wrap items-center justify-between gap-2 border-t border-[var(--brse-panel-border)]/40 pt-2.5">
+                      <span className="text-[10px] font-bold text-textMuted uppercase tracking-wider">
+                        1-Click Action Triaging:
+                      </span>
+                      <div className="flex flex-wrap items-center gap-1.5">
+                        <Button
+                          size="sm"
+                          type="button"
+                          onClick={() => convertActionToTodo(item, i)}
+                          className="text-[10px] h-7 bg-cyan/10 border border-cyan/25 text-cyan hover:bg-cyan/20 gap-1 font-bold"
+                          title="Tạo task trực tiếp trong BrSE Todo"
+                        >
+                          <Check className="h-3 w-3" /> {t("minutes.convertToTodo")}
+                        </Button>
+                        <Button
+                          size="sm"
+                          type="button"
+                          onClick={() => convertActionToQna(item)}
+                          className="text-[10px] h-7 bg-amber-500/10 border border-amber-500/25 text-amber-300 hover:bg-amber-500/20 gap-1 font-bold"
+                          title="Chuyển thành câu hỏi Q&A gửi khách hàng Nhật"
+                        >
+                          <HelpCircle className="h-3 w-3" /> Tạo Q&A
+                        </Button>
+                        <Button
+                          size="sm"
+                          type="button"
+                          onClick={() => copyActionEmailDraft(item)}
+                          className="text-[10px] h-7 bg-purple-500/10 border border-purple-500/25 text-purple-300 hover:bg-purple-500/20 gap-1 font-bold"
+                          title="Copy bản nháp Email Keigo cho việc này"
+                        >
+                          <Mail className="h-3 w-3" /> Copy Email Keigo
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 ))}

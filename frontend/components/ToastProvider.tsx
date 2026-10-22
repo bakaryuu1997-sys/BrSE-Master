@@ -4,16 +4,22 @@ import React, { createContext, useContext, useState, useCallback, ReactNode } fr
 import { CheckCircle2, AlertCircle, Info, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type ToastType = "success" | "error" | "info";
+export type ToastType = "success" | "error" | "info";
+
+export interface ToastAction {
+  label: string;
+  onClick: () => void;
+}
 
 interface Toast {
   id: string;
   message: string;
   type: ToastType;
+  action?: ToastAction;
 }
 
 interface ToastContextType {
-  notify: (message: string, type?: ToastType) => void;
+  notify: (message: string, type?: ToastType, action?: ToastAction, duration?: number) => void;
 }
 
 const ToastContext = createContext<ToastContextType | undefined>(undefined);
@@ -21,14 +27,14 @@ const ToastContext = createContext<ToastContextType | undefined>(undefined);
 export function ToastProvider({ children }: { children: ReactNode }) {
   const [toasts, setToasts] = useState<Toast[]>([]);
 
-  const notify = useCallback((message: string, type: ToastType = "success") => {
+  const notify = useCallback((message: string, type: ToastType = "success", action?: ToastAction, duration: number = 4000) => {
     const id = Math.random().toString(36).substring(2, 9);
-    setToasts((prev) => [...prev, { id, message, type }]);
+    setToasts((prev) => [...prev, { id, message, type, action }]);
     
-    // Auto remove after 4 seconds
+    // Auto remove after specified duration
     setTimeout(() => {
       setToasts((prev) => prev.filter((t) => t.id !== id));
-    }, 4000);
+    }, duration);
   }, []);
 
   return (
@@ -52,6 +58,19 @@ export function ToastProvider({ children }: { children: ReactNode }) {
             
             <p className="flex-1 text-sm font-semibold leading-relaxed">{toast.message}</p>
             
+            {toast.action && (
+              <button
+                type="button"
+                onClick={() => {
+                  toast.action?.onClick();
+                  setToasts((prev) => prev.filter((t) => t.id !== toast.id));
+                }}
+                className="shrink-0 rounded-lg border border-current/25 bg-current/10 px-2.5 py-1 text-xs font-black transition-all hover:bg-current/20 active:scale-95"
+              >
+                {toast.action.label}
+              </button>
+            )}
+
             <button
               onClick={() => setToasts((prev) => prev.filter((t) => t.id !== toast.id))}
               className="p-1 rounded-lg hover:bg-white/10 transition-colors"

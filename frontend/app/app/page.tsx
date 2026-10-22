@@ -118,6 +118,7 @@ export default function AppHomePage() {
 
   const {
     approveMeetingDraft,
+    convertDraftToQna,
     copyCrFollowUp,
     copyDashboardDailySummary,
     copyProactiveHorenso,
@@ -353,6 +354,7 @@ export default function AppHomePage() {
         onCopyCrFollowUp={copyCrFollowUp}
         onApproveMeetingDraft={approveMeetingDraft}
         onRejectMeetingDraft={rejectMeetingDraft}
+        onConvertToQna={convertDraftToQna}
         onCopyProactiveHorenso={copyProactiveHorenso}
         todoActionHref={todoActionHref}
         qnaReminderCandidates={qnaReminderCandidates}

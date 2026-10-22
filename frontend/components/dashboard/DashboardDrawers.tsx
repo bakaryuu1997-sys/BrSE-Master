@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Sparkles } from "lucide-react";
 import { Drawer, DrawerItem, DrawerSection, DrawerEmptyState } from "@/components/Drawer";
 import type { BrseTodoItem } from "@/lib/brseTodo";
-import type { CommandCenterData } from "@/lib/commandCenter";
+import type { CommandCenterData, MeetingTodoDraft } from "@/lib/commandCenter";
 import type { OperationRecord } from "@/lib/operations";
 import type { TranslationKey } from "@/lib/uiLanguage";
 
@@ -30,6 +30,7 @@ interface DashboardDrawersProps {
   onCopyCrFollowUp: (record: OperationRecord) => void;
   onApproveMeetingDraft: (id: string) => void;
   onRejectMeetingDraft: (id: string) => void;
+  onConvertToQna?: (draft: MeetingTodoDraft) => void;
   onCopyProactiveHorenso: () => void;
   todoActionHref: (item: Pick<BrseTodoItem, "id" | "phase">) => string;
   qnaReminderCandidates: OperationRecord[];
@@ -52,6 +53,7 @@ export function DashboardDrawers({
   onCopyCrFollowUp,
   onApproveMeetingDraft,
   onRejectMeetingDraft,
+  onConvertToQna,
   onCopyProactiveHorenso,
   todoActionHref,
   qnaReminderCandidates
@@ -233,9 +235,21 @@ export function DashboardDrawers({
                       onClick={() => onApproveMeetingDraft(draft.id)}
                       disabled={updatingMeetingDraftId === draft.id}
                       className="brse-button brse-button-primary px-2.5 py-1 text-[10px] disabled:cursor-wait disabled:opacity-60"
+                      title="Duyệt vào Todo"
                     >
                       {updatingMeetingDraftId === draft.id ? t("dashboard.saving") : t("dashboard.approve")}
                     </button>
+                    {onConvertToQna && (
+                      <button
+                        type="button"
+                        onClick={() => onConvertToQna(draft)}
+                        disabled={updatingMeetingDraftId === draft.id}
+                        className="brse-button bg-amber-500/10 border border-amber-500/25 text-amber-300 hover:bg-amber-500/20 px-2.5 py-1 text-[10px] disabled:cursor-wait disabled:opacity-60 font-bold"
+                        title="Chuyển thành câu hỏi Q&A khách hàng"
+                      >
+                        + Q&A
+                      </button>
+                    )}
                     <button
                       type="button"
                       onClick={() => onRejectMeetingDraft(draft.id)}

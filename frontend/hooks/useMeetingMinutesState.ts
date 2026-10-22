@@ -21,6 +21,7 @@ import type {
 import { SLIDE_STUDIO_IMPORT_KEY } from "@/lib/slideStudio";
 import { fetchClientStateValue, saveClientStateValue } from "@/lib/clientState";
 import { ensureBrseTodoProject, saveBrseTodoStateToDb, upsertMeetingMinutesActionTodo } from "@/lib/brseTodo";
+import { saveOperationRecord } from "@/lib/operations";
 
 export type AgendaItem = {
   id: string;
@@ -534,6 +535,47 @@ export function useMeetingMinutesState() {
     }
   }
 
+  async function convertActionToQna(item: ActionItem) {
+    if (!item.content.trim()) {
+      setDraftStatus("Action item đang trống.");
+      return;
+    }
+    try {
+      const saved = await saveOperationRecord({
+        type: "qna",
+        title: item.content,
+        status: "Waiting Customer",
+        priority: "P1",
+        owner: item.owner || "BrSE",
+        dueDate: item.deadline || "",
+        customerOwner: "Customer",
+        projectName: activeProject?.name || form.projectName || "General",
+        fieldA: `[Trích xuất từ Cuộc họp ${form.projectName || "Meeting"} (${form.meetingDate || createdDate || getTodayDate()})]\n${item.content}`,
+        fieldB: "",
+        fieldC: "",
+        fieldD: activeMinutesId ? `/app/minutes/new?minutesId=${encodeURIComponent(activeMinutesId)}` : "",
+        fieldE: "Tự động tạo từ 1-Click Meeting Action Triaging",
+      });
+      if (saved) {
+        setDraftStatus("✅ Đã tạo câu hỏi Q&A khách hàng thành công từ Action item!");
+      }
+    } catch (err) {
+      setDraftStatus("❌ Lỗi khi tạo Q&A: " + (err instanceof Error ? err.message : ""));
+    }
+  }
+
+  function copyActionEmailDraft(item: ActionItem) {
+    if (!item.content.trim()) {
+      setDraftStatus("Action item đang trống.");
+      return;
+    }
+    const meetingTitle = form.projectName || "打合せ";
+    const subject = `【ご確認】${meetingTitle} 議事録のアクションアイテムにつきまして`;
+    const body = `いつも大変お世話になっております。BrSEチームでございます。\n\n先ほどの打合せ（${meetingTitle}）における下記のアクションアイテムにつきまして、ご確認いただけますと幸いです。\n\n■ 確認事項・タスク:\n${item.content}\n・担当: ${item.owner || "担当者未定"}\n・期日: ${item.deadline || "未定"}\n\nご確認のほど、何卒よろしくお願い申し上げます。`;
+    navigator.clipboard.writeText(`${subject}\n\n${body}`);
+    setDraftStatus("📋 Đã copy bản nháp Email Keigo cho Action item này vào Clipboard!");
+  }
+
   return {
     form,
     agendaItems,
@@ -577,5 +619,7 @@ export function useMeetingMinutesState() {
     applyExtractedMinutes,
     generateMinutesFromTranscript,
     convertActionToTodo,
+    convertActionToQna,
+    copyActionEmailDraft,
   };
 }
