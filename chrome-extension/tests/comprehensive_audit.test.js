@@ -40,6 +40,7 @@ const CLASSIFIED_HTML_SINK_FILES = new Map([
   ["src/options/options.js", "escaped learned-term renderer and settings status textContent"],
   ["src/popup/popup.js", "escaped Todo/learned-term renderers and settings status textContent"],
   ["src/shared/modelConfig.js", "curated static model option renderer"],
+  ["src/shared/vendor/dompurify.es.js", "vendored DOMPurify sanitizer implementation"],
   ["src/sidepanel/chatController.js", "escaped stream error/status rendering"],
   ["src/sidepanel/chatFormatting.js", "sanitized sidepanel markdown renderer"],
   ["src/sidepanel/crossTabContext.js", "static cross-tab empty state markup"],
