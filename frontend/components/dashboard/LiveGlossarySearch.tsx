@@ -222,7 +222,7 @@ export function LiveGlossarySearch({ t }: { t: (key: TranslationKey) => string }
                 )}
                 {dailyTerm.example && (
                   <div className="rounded bg-accent/5 border border-accent/15 p-2 text-[11px] font-medium text-textPrimary italic">
-                    💡 "{dailyTerm.example}"
+                    💡 &ldquo;{dailyTerm.example}&rdquo;
                   </div>
                 )}
                 <button

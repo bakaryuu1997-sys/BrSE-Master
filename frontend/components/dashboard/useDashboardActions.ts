@@ -253,7 +253,7 @@ export function useDashboardActions({
     } finally {
       setUpdatingMeetingDraftId("");
     }
-  }, [activeProject?.name, notify, rejectMeetingTodoDraftMutation, setOperations, setTodoCommand]);
+  }, [activeProject, notify, rejectMeetingTodoDraftMutation, setOperations, setTodoCommand]);
 
   const saveQuickSchedule = useCallback(async (date: string, title: string) => {
     try {
