@@ -8,6 +8,7 @@ ENV PYTHONPATH=/app
 
 # ffmpeg: audio/video transcription. tesseract-ocr (+ jpn/vie lang data):
 # fully offline image→text OCR so the OCR feature works with no AI/key/network.
+# fonts-ipafont-gothic: Japanese typography support for DOCX/HTML to PDF rendering.
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         ffmpeg \
@@ -16,6 +17,7 @@ RUN apt-get update \
         tesseract-ocr-jpn-vert \
         tesseract-ocr-vie \
         tesseract-ocr-eng \
+        fonts-ipafont-gothic \
     && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt .

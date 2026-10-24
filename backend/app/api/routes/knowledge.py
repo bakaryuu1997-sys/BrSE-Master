@@ -26,6 +26,7 @@ class KnowledgeResponse(KnowledgeBase):
     id: int
     created_at: Any
 
+@router.post("", response_model=KnowledgeResponse, include_in_schema=False)
 @router.post("/", response_model=KnowledgeResponse)
 def create_knowledge(
     item: KnowledgeBase, 
@@ -37,6 +38,7 @@ def create_knowledge(
     db.refresh(db_item)
     return db_item
 
+@router.get("", response_model=List[KnowledgeResponse], include_in_schema=False)
 @router.get("/", response_model=List[KnowledgeResponse])
 def read_knowledges(
     project_id: Optional[str] = None,

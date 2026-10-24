@@ -12,6 +12,7 @@ from app.services.note_projection import backfill_all
 router = APIRouter()
 logger = logging.getLogger(__name__)
 
+@router.get("", response_model=List[dict], include_in_schema=False)
 @router.get("/", response_model=List[dict])
 def list_universal_notes(
     kind: Optional[NoteKind] = None,

@@ -181,7 +181,7 @@ def docx_to_clean_html(docx_path: str) -> str:
     box-sizing: border-box;
   }}
   body {{
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, "Noto Sans JP", sans-serif;
+    font-family: "IPAGothic", "IPAexGothic", "Noto Sans CJK JP", "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     color: #1a202c;
     background: #ffffff;
     line-height: 1.65;

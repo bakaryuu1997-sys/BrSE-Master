@@ -85,9 +85,26 @@ export function DocxToPdfConverter() {
         throw new Error(errDetail);
       }
 
+      const contentType = response.headers.get("content-type") || "";
+      const contentDisposition = response.headers.get("content-disposition") || "";
+      let outputName = selectedFile.name.replace(/\.docx$/i, ".pdf");
+
+      if (contentDisposition) {
+        const utf8Match = contentDisposition.match(/filename\*=UTF-8''([^;]+)/i);
+        const regularMatch = contentDisposition.match(/filename="?([^";]+)"?/i);
+        if (utf8Match && utf8Match[1]) {
+          outputName = decodeURIComponent(utf8Match[1]);
+        } else if (regularMatch && regularMatch[1]) {
+          outputName = regularMatch[1];
+        }
+      }
+
+      if (contentType.includes("text/html") && !outputName.endsWith(".html")) {
+        outputName = outputName.replace(/\.pdf$/i, ".html");
+      }
+
       const blob = await response.blob();
       const url = URL.createObjectURL(blob);
-      const outputName = selectedFile.name.replace(/\.docx$/i, ".pdf");
 
       setConvertedBlobUrl(url);
       setConvertedFilename(outputName);

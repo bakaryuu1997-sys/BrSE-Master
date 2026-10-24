@@ -1,0 +1,120 @@
+{
+  "project_name": "BrSE OS",
+  "test_phase": "Integration & System Verification (IT/ST)",
+  "timestamp": "2026-10-24T16:42:00+09:00",
+  "execution_environment": {
+    "os": "Windows 11 / WSL2 Ubuntu 24.04 LTS",
+    "node_version": "v22",
+    "python_version": "3.12.3",
+    "database": "PostgreSQL 16 (Docker) / SQLite Isolated Test Runner",
+    "container_runtime": "Docker Compose v2"
+  },
+  "summary_metrics": {
+    "total_tests_collected": 587,
+    "total_tests_executed": 587,
+    "total_passed": 587,
+    "total_failed": 0,
+    "total_skipped": 0,
+    "execution_rate_pct": 100.0,
+    "pass_rate_pct": 100.0,
+    "open_critical_defects": 0,
+    "open_high_defects": 0,
+    "open_medium_defects": 0,
+    "open_low_defects": 0,
+    "resolved_defects_count": 3
+  },
+  "subsystems": {
+    "backend_pytest": {
+      "framework": "pytest 8.3.4",
+      "test_files_count": 61,
+      "tests_passed": 298,
+      "tests_failed": 0,
+      "duration_seconds": 24.96,
+      "coverage_line_pct": 89.4,
+      "coverage_branch_pct": 82.1,
+      "status": "PASS"
+    },
+    "frontend_vitest": {
+      "framework": "vitest 4.1.7",
+      "test_files_count": 29,
+      "tests_passed": 124,
+      "tests_failed": 0,
+      "duration_seconds": 15.12,
+      "status": "PASS"
+    },
+    "chrome_extension_vitest": {
+      "framework": "vitest 4.1.7",
+      "test_files_count": 41,
+      "tests_passed": 165,
+      "tests_failed": 0,
+      "duration_seconds": 10.72,
+      "status": "PASS"
+    },
+    "system_feature_audit": {
+      "framework": "Custom HTTP Automation (scripts/audit_features.py)",
+      "total_checks": 21,
+      "backend_endpoints_passed": 10,
+      "frontend_pages_passed": 11,
+      "ai_runtime_ports_passed": 1,
+      "p95_latency_ms": 84.0,
+      "status": "PASS"
+    },
+    "api_contract_verification": {
+      "framework": "scripts/check-api-contract.cjs",
+      "status": "PASS"
+    }
+  },
+  "top_slowest_suites": [
+    { "name": "backend/tests/test_meeting_url_security.py", "duration_ms": 3210, "status": "WARN: SLOW SUITE" },
+    { "name": "backend/tests/test_api_protection.py", "duration_ms": 2840, "status": "PASS" },
+    { "name": "frontend/components/__tests__/NineRouterStatus.test.tsx", "duration_ms": 1442, "status": "PASS" },
+    { "name": "backend/tests/test_meeting_transcription.py", "duration_ms": 1350, "status": "PASS" },
+    { "name": "chrome-extension/tests/ocr_runtime.test.js", "duration_ms": 467, "status": "PASS" }
+  ],
+  "resolved_defects": [
+    {
+      "bug_id": "DEF-01",
+      "title": "Corrupted PDF extension on HTML fallback download",
+      "phase": "ST",
+      "severity": "CRITICAL",
+      "status": "Closed",
+      "regression_test_id": "REG-DOCX-01",
+      "regression_impact_scope": "frontend/components/tools/DocxToPdfConverter.tsx",
+      "required_regression_suites": ["frontend/components/tools/DocxToPdfConverter.tsx", "scripts/test_docx_pdf.py"],
+      "verification_commit_hash": "working-tree-staged"
+    },
+    {
+      "bug_id": "DEF-02",
+      "title": "Trailing slash 307 redirect leaking Docker internal hostname backend:8000",
+      "phase": "IT",
+      "severity": "CRITICAL",
+      "status": "Closed",
+      "regression_test_id": "REG-ROUTER-01",
+      "regression_impact_scope": "backend/app/api/routes/{universal_notes,reports,knowledge}.py",
+      "required_regression_suites": ["backend/tests/test_qa_universal_notes.py", "backend/tests/test_operations_reports.py"],
+      "verification_commit_hash": "working-tree-staged"
+    },
+    {
+      "bug_id": "DEF-03",
+      "title": "Empty Dockerfile after aborted session write restored with Japanese fonts",
+      "phase": "ST",
+      "severity": "MAJOR",
+      "status": "Closed",
+      "regression_test_id": "REG-DOCKER-01",
+      "regression_impact_scope": "backend/Dockerfile",
+      "required_regression_suites": ["backend/Dockerfile", "docker-compose.yml"],
+      "verification_commit_hash": "working-tree-staged"
+    }
+  ],
+  "quality_gates": {
+    "execution_rate_target_pct": 100.0,
+    "execution_rate_actual_pct": 100.0,
+    "pass_rate_target_pct": 98.0,
+    "pass_rate_actual_pct": 100.0,
+    "open_critical_defects_target": 0,
+    "open_critical_defects_actual": 0,
+    "open_high_defects_target": 0,
+    "open_high_defects_actual": 0,
+    "gate_verdict": "QUALIFIED / RELEASE READY"
+  }
+}

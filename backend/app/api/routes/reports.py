@@ -9,6 +9,7 @@ from app.schemas.report import ReportRecordCreate, ReportRecordUpdate, ReportRec
 router = APIRouter()
 
 
+@router.get("", response_model=List[ReportRecordResponse], include_in_schema=False)
 @router.get("/", response_model=List[ReportRecordResponse])
 def get_reports(db: Session = Depends(get_db)):
     """Retrieve all daily report records, newest first."""
@@ -16,6 +17,7 @@ def get_reports(db: Session = Depends(get_db)):
     return records
 
 
+@router.post("", response_model=ReportRecordResponse, include_in_schema=False)
 @router.post("/", response_model=ReportRecordResponse)
 def create_report(report_in: ReportRecordCreate, db: Session = Depends(get_db)):
     """Create a new daily report record."""
