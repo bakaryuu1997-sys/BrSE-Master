@@ -3,6 +3,12 @@ import { renderHook, act, waitFor } from "@testing-library/react";
 import { useGlossaryState } from "@/hooks/useGlossaryState";
 import { useGlossaryStudy } from "@/hooks/useGlossaryStudy";
 import { parseCsv, slugifyTerm } from "@/lib/glossaryUtils";
+import { createElement, type ReactNode } from "react";
+import { ProjectContextProvider } from "@/components/ProjectContextProvider";
+
+// useGlossaryState reads the active project from ProjectContext, as in the real app layout.
+const ProjectProviderWrapper = ({ children }: { children: ReactNode }) =>
+  createElement(ProjectContextProvider, null, children);
 
 // Mock next/navigation
 vi.mock("next/navigation", () => ({
@@ -85,7 +91,7 @@ describe("useGlossaryState Hook", () => {
   });
 
   it("should initialize default states", async () => {
-    const { result } = renderHook(() => useGlossaryState());
+    const { result } = renderHook(() => useGlossaryState(), { wrapper: ProjectProviderWrapper });
 
     expect(result.current.query).toBe("");
     expect(result.current.role).toBe("All Roles");
@@ -101,7 +107,7 @@ describe("useGlossaryState Hook", () => {
   });
 
   it("should toggle mastered term ids correctly", async () => {
-    const { result } = renderHook(() => useGlossaryState());
+    const { result } = renderHook(() => useGlossaryState(), { wrapper: ProjectProviderWrapper });
 
     await waitFor(() => {
       expect(result.current.isHydrated).toBe(true);

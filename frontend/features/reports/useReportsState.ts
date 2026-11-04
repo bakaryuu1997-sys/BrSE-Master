@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useCallback, useEffect, useMemo, useState } from "react";
+import { FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useUiLanguage } from "@/components/LanguageProvider";
 import { useOperationsQuery } from "@/lib/operations-hooks";
 import { useReportsQuery, useSaveReportMutation, useDeleteReportMutation } from "@/lib/reports-hooks";
@@ -18,12 +18,8 @@ import {
 import { getBrseTodoCommandSummary } from "@/lib/brseTodo";
 import { apiBaseUrl } from "@/lib/config";
 import { type OperationRecord } from "@/lib/operations";
-import {
-  ACTIVE_PROJECT_CHANGED_EVENT,
-  getActiveProject,
-  getProjectMemorySummary,
-  type ProjectSetting,
-} from "@/lib/projectSettings";
+import { getProjectMemorySummary } from "@/lib/projectSettings";
+import { useProjectContext } from "@/components/ProjectContextProvider";
 import { buildProjectExecutionWarnings } from "@/lib/projectExecutionWarnings";
 
 export type ReportLanguage = "vi" | "en" | "ja" | "jp-business";
@@ -101,6 +97,11 @@ export const reportLanguageNames: Record<ReportLanguage, string> = {
   "jp-business": "JP Business",
 };
 
+import {
+  getCustomReportTemplate,
+  renderReportTemplate,
+} from "@/lib/reportTemplates";
+
 export function parseTasksDone(value: string) {
   try {
     const parsed = JSON.parse(value || "[]");
@@ -127,19 +128,30 @@ export function buildLocalizedDailyReport(input: {
   customerMemoryNote?: string;
 }) {
   const memoryNote = input.customerMemoryNote?.trim();
-  const enMemory = memoryNote ? `\n\nCustomer-specific report rules\n${memoryNote}` : "";
-  const viMemory = memoryNote ? `\n\nQuy tac bao cao theo khach hang\n${memoryNote}` : "";
+  const enMemory = memoryNote ? `\n\nCustomer-specific report rules:\n${memoryNote}` : "";
+  const viMemory = memoryNote ? `\n\nQuy định báo cáo theo khách hàng:\n${memoryNote}` : "";
 
   if (input.language === "ja" || input.language === "jp-business") {
     const base = buildHoresoReport(input);
     return memoryNote ? `${base}\n\nCustomer rules\n${memoryNote}` : base;
   }
 
-  if (input.language === "en") {
-    return `Daily Report - ${input.reportDate}\n\nProject: ${input.projectName || "-"}\nOwner: ${input.owner || "-"}\nProgress: ${input.progressPercent || "-"}\n\nCompleted today\n${bulletLines(input.tasksDone, "None")}\n\nIn progress\n${input.tasksInProgress || "-"}\n\nTomorrow plan\n${input.tasksTomorrow || "-"}\n\nBlockers / decisions needed\n${input.blockers || "None"}\n\nPriority will be handled in order of Todo, Q&A waiting customer, and pending CR impact.${enMemory}`;
-  }
+  // Get custom or default template
+  const template = getCustomReportTemplate("daily", input.language);
+  const tasksDoneText = bulletLines(input.tasksDone, input.language === "vi" ? "Chưa có" : "None");
+  const customerMemoryText = input.language === "vi" ? viMemory : enMemory;
 
-  return `Bao cao ngay - ${input.reportDate}\n\nDu an: ${input.projectName || "-"}\nNguoi phu trach: ${input.owner || "-"}\nTien do: ${input.progressPercent || "-"}\n\nDa hoan thanh hom nay\n${bulletLines(input.tasksDone, "Khong co")}\n\nDang thuc hien\n${input.tasksInProgress || "-"}\n\nKe hoach ngay mai\n${input.tasksTomorrow || "-"}\n\nVan de / can xac nhan\n${input.blockers || "Khong co"}\n\nUu tien tiep theo se theo thu tu Todo, Q&A dang cho khach va CR pending.${viMemory}`;
+  return renderReportTemplate(template, {
+    reportDate: input.reportDate || todayIso(),
+    projectName: input.projectName || "-",
+    owner: input.owner || "-",
+    progressPercent: input.progressPercent || "-",
+    tasksDone: tasksDoneText,
+    tasksInProgress: input.tasksInProgress || "-",
+    tasksTomorrow: input.tasksTomorrow || "-",
+    blockers: input.blockers || (input.language === "vi" ? "Không có" : "None"),
+    customerMemory: customerMemoryText,
+  });
 }
 
 export function buildLocalizedWeeklyReport(records: ReportRecord[], start: string, end: string, language: ReportLanguage) {
@@ -153,11 +165,17 @@ export function buildLocalizedWeeklyReport(records: ReportRecord[], start: strin
   const done = records.flatMap((record) => parseTasksDone(record.tasksDone));
   const blockers = records.map((record) => record.blockers).filter(Boolean);
 
-  if (language === "en") {
-    return `Weekly Summary - ${start} to ${end}\n\nDaily reports included: ${records.length}\n\nCompleted work\n${bulletLines(done, "No completed items recorded")}\n\nRisks / blockers\n${bulletLines(blockers, "No blockers")}\n\nNext week focus\n- Continue open Todo items by priority.\n- Follow up Q&A waiting customer response.\n- Confirm pending CR impact and approval.`;
-  }
+  const template = getCustomReportTemplate("weekly", language);
+  const tasksDoneText = bulletLines(done, language === "vi" ? "Chưa có việc nào hoàn thành" : "No completed items recorded");
+  const blockersText = bulletLines(blockers, language === "vi" ? "Không có blocker" : "No blockers");
 
-  return `Bao cao tuan - ${start} den ${end}\n\nSo daily report da tong hop: ${records.length}\n\nViec da hoan thanh\n${bulletLines(done, "Chua co item hoan thanh")}\n\nRui ro / blocker\n${bulletLines(blockers, "Khong co blocker")}\n\nUu tien tuan sau\n- Tiep tuc Todo dang mo theo do uu tien.\n- Follow Q&A dang cho khach tra loi.\n- Xac nhan impact va quyet dinh cho CR pending.`;
+  return renderReportTemplate(template, {
+    start,
+    end,
+    count: String(records.length),
+    tasksDone: tasksDoneText,
+    blockers: blockersText,
+  });
 }
 
 export function useReportsState() {
@@ -189,7 +207,10 @@ export function useReportsState() {
 
   // Preview
   const [preview, setPreview] = useState("");
-  const [activeProject, setActiveProject] = useState<ProjectSetting | null>(null);
+  const { activeProject } = useProjectContext();
+  const activeProjectId = activeProject?.id ?? "";
+  const projectSwitchedAt = useRef(0);
+  const lastLivePreview = useRef("");
   const [analytics, setAnalytics] = useState({
     todoProgress: 0,
     todoDone: 0,
@@ -203,16 +224,9 @@ export function useReportsState() {
   const loadData = useCallback((cancelled = false) => {
     setIsLoading(true);
     // records and operations fetches are handled automatically by TanStack Query
-    const proj = getActiveProject();
     if (cancelled) return;
-    setActiveProject(proj);
-    setForm((f) => ({
-      ...f,
-      projectName: proj?.name ?? "",
-      owner: proj?.brse_name ?? "",
-    }));
     try {
-      const todoSummary = getBrseTodoCommandSummary();
+      const todoSummary = getBrseTodoCommandSummary(activeProjectId || undefined);
       const today = todayIso();
       if (!cancelled) setAnalytics({
         todoProgress: todoSummary.total ? Math.round((todoSummary.done / todoSummary.total) * 100) : 0,
@@ -228,19 +242,26 @@ export function useReportsState() {
     } finally {
       if (!cancelled) setIsLoading(false);
     }
-  }, [operations]);
+  }, [operations, activeProjectId]);
 
   useEffect(() => {
     let cancelled = false;
-    const handleActiveProjectChanged = () => loadData(cancelled);
     loadData(cancelled);
-    window.addEventListener(ACTIVE_PROJECT_CHANGED_EVENT, handleActiveProjectChanged);
-
     return () => {
       cancelled = true;
-      window.removeEventListener(ACTIVE_PROJECT_CHANGED_EVENT, handleActiveProjectChanged);
     };
   }, [loadData]);
+
+  // Follow the sidebar project: refresh the form's project fields. A manually edited preview
+  // is kept across the switch (see the preview sync effect below).
+  useEffect(() => {
+    projectSwitchedAt.current = Date.now();
+    setForm((f) => ({
+      ...f,
+      projectName: activeProject?.name ?? "",
+      owner: activeProject?.brse_name ?? "",
+    }));
+  }, [activeProjectId, activeProject?.name, activeProject?.brse_name]);
 
   const { start: weekStart, end: weekEnd } = getWeekRange(new Date());
   const projectMemory = useMemo(() => getProjectMemorySummary(activeProject), [activeProject]);
@@ -286,8 +307,22 @@ export function useReportsState() {
     [reportLanguage, weekRecords, weekStart, weekEnd]
   );
 
+  // Mirror of `preview` for the sync effect below; it must not depend on `preview` itself or
+  // every keystroke would be overwritten by the generated text.
+  const previewRef = useRef("");
+  useEffect(() => {
+    previewRef.current = preview;
+  }, [preview]);
+
   useEffect(() => {
     if (activeTab !== "daily") return;
+    const previousLive = lastLivePreview.current;
+    lastLivePreview.current = liveDailyPreview;
+    // Right after a project switch, keep a hand-edited preview instead of overwriting it.
+    const justSwitchedProject = Date.now() - projectSwitchedAt.current < 1500;
+    const currentPreview = previewRef.current;
+    const handEdited = currentPreview !== "" && currentPreview !== previousLive && currentPreview !== liveDailyPreview;
+    if (justSwitchedProject && handEdited) return;
     setPreview(liveDailyPreview);
     setForm((current) => current.generatedJp === liveDailyPreview ? current : { ...current, generatedJp: liveDailyPreview });
   }, [activeTab, liveDailyPreview]);
@@ -318,7 +353,23 @@ export function useReportsState() {
     const todoSummary = getBrseTodoCommandSummary();
     const operationsDraft = buildOperationsDeltaReportDraft(operations, form.reportDate || todayIso());
     const doneTasks = todoSummary.doneToday.length
-      ? [...todoSummary.doneToday.map((item) => item.title), ...operationsDraft.tasksDone]
+      ? [
+          ...todoSummary.doneToday.map((item) => {
+            const evidenceUrls: string[] = [];
+            if (item.evidences && Array.isArray(item.evidences)) {
+              item.evidences.forEach((ev) => {
+                if (ev.url) evidenceUrls.push(ev.quote && ev.quote !== ev.url ? `${ev.quote} (${ev.url})` : ev.url);
+              });
+            }
+            if (item.evidenceUrl && !evidenceUrls.some((u) => u.includes(item.evidenceUrl))) {
+              evidenceUrls.push(item.evidenceUrl);
+            }
+            return evidenceUrls.length
+              ? `${item.title}\n    - Evidence: ${evidenceUrls.join(", ")}`
+              : item.title;
+          }),
+          ...operationsDraft.tasksDone,
+        ]
       : operationsDraft.tasksDone.length
         ? operationsDraft.tasksDone
         : todoSummary.nextFocus.slice(0, 2).map((item) => `確認中: ${item.title}`);
@@ -473,16 +524,14 @@ export function useReportsState() {
   }
 
   function resetForm() {
-    const proj = getActiveProject();
-    setActiveProject(proj);
     setEditingId("");
     setTasksDoneArr([]);
     setTaskInput("");
     setForm({
       ...emptyInput,
       reportDate: todayIso(),
-      projectName: proj?.name ?? "",
-      owner: proj?.brse_name ?? "",
+      projectName: activeProject?.name ?? "",
+      owner: activeProject?.brse_name ?? "",
     });
   }
 

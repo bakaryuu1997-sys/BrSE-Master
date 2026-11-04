@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { useUiLanguage } from "@/components/LanguageProvider";
 import { glossaryCategories, glossaryRoles, type GlossaryRole, type GlossaryTerm } from "@/lib/glossary";
 import { apiBaseUrl } from "@/lib/config";
-import { ACTIVE_PROJECT_CHANGED_EVENT, getActiveProject, getActiveProjectId, getProjectSettings } from "@/lib/projectSettings";
+import { useProjectContext } from "@/components/ProjectContextProvider";
 import { quarantineLocalStorageValue } from "@/lib/localStorageSafety";
 import {
   allRoles,
@@ -23,10 +23,16 @@ import {
 } from "@/lib/glossaryUtils";
 import { useGlossaryStudy } from "@/hooks/useGlossaryStudy";
 
+const scopeModeStorageKey = "brse.glossary.scopeMode.v1";
+
 export function useGlossaryState() {
   const { t } = useUiLanguage();
   const searchParams = useSearchParams();
-  const [activeProjectId, setActiveProjectId] = useState(() => getActiveProjectId() || globalProjectScope);
+  const { activeProject: contextProject, activeProjectId: contextProjectId } = useProjectContext();
+  // "project" follows the sidebar project; "global" is a separate shared glossary that does not
+  // change when the sidebar project changes. Persisted per browser.
+  const [scopeMode, setScopeModeState] = useState<"project" | "global">("project");
+  const activeProjectId = scopeMode === "global" || !contextProjectId ? globalProjectScope : contextProjectId;
   const [query, setQuery] = useState(() => searchParams.get("q") ?? "");
   const [role, setRole] = useState<GlossaryRole | typeof allRoles>(allRoles);
   const [category, setCategory] = useState<(typeof glossaryCategories)[number] | typeof allCategories>(allCategories);
@@ -44,7 +50,27 @@ export function useGlossaryState() {
   const [customTerms, setCustomTerms] = useState<GlossaryTerm[]>([]);
   const [importStatus, setImportStatus] = useState("");
   const [importStatusKind, setImportStatusKind] = useState<"success" | "error" | "info">("info");
-  const [isHydrated, setIsHydrated] = useState(false);
+  // Scope whose data is currently loaded. Persist effects only run when it matches the active
+  // scope, so a switch can never write the previous scope's data into the new scope's keys.
+  const [hydratedScope, setHydratedScope] = useState("");
+  const isHydrated = hydratedScope === activeProjectId;
+
+  useEffect(() => {
+    try {
+      if (window.localStorage.getItem(scopeModeStorageKey) === "global") setScopeModeState("global");
+    } catch {
+      /* storage unavailable: stay on project scope */
+    }
+  }, []);
+
+  function setScopeMode(mode: "project" | "global") {
+    setScopeModeState(mode);
+    try {
+      window.localStorage.setItem(scopeModeStorageKey, mode);
+    } catch {
+      /* non-fatal */
+    }
+  }
 
   function notifyImport(text: string, kind: "success" | "error" | "info" = "info") {
     setImportStatus(text);
@@ -52,10 +78,7 @@ export function useGlossaryState() {
   }
   
   const deferredQuery = useDeferredValue(query);
-  const activeProject = useMemo(() => {
-    if (activeProjectId === globalProjectScope) return null;
-    return getProjectSettings().find((project) => project.id === activeProjectId) ?? getActiveProject();
-  }, [activeProjectId]);
+  const activeProject = activeProjectId === globalProjectScope ? null : contextProject;
 
   useEffect(() => {
     const nextQuery = searchParams.get("q");
@@ -100,7 +123,8 @@ export function useGlossaryState() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    setIsHydrated(false);
+    let cancelled = false;
+    const scope = activeProjectId;
     const scopedMasteredStorageKey = scopedBrowserKey(masteredStorageKey, activeProjectId);
     const scopedCustomStorageKey = scopedBrowserKey(customGlossaryStorageKey, activeProjectId);
     const scopedMasteredSyncKey = scopedClientStateKey(masteredSyncKey, activeProjectId);
@@ -139,6 +163,7 @@ export function useGlossaryState() {
         quarantineLocalStorageValue(scopedCustomStorageKey);
       }
 
+      if (cancelled) return;
       setMasteredIds(localMastered);
       setCustomTerms(localCustomTerms);
 
@@ -147,17 +172,18 @@ export function useGlossaryState() {
           fetch(`${apiBaseUrl}/client-state/entry/${encodeURIComponent(scopedMasteredSyncKey)}`),
           fetch(`${apiBaseUrl}/client-state/entry/${encodeURIComponent(scopedCustomSyncKey)}`),
         ]);
+        if (cancelled) return;
         if (masteredRes.ok) {
           const payload = (await masteredRes.json()) as { value?: string };
           const parsed = payload.value ? JSON.parse(payload.value) : [];
-          if (Array.isArray(parsed)) {
+          if (!cancelled && Array.isArray(parsed)) {
             setMasteredIds(parsed.filter((item): item is string => typeof item === "string"));
           }
         }
         if (customRes.ok) {
           const payload = (await customRes.json()) as { value?: string };
           const parsed = payload.value ? JSON.parse(payload.value) : [];
-          if (Array.isArray(parsed)) {
+          if (!cancelled && Array.isArray(parsed)) {
             setCustomTerms(
               parsed.filter((term): term is GlossaryTerm => {
                 return (
@@ -175,11 +201,14 @@ export function useGlossaryState() {
       } catch {
         // Local cache remains the fallback when backend sync is unavailable.
       } finally {
-        setIsHydrated(true);
+        if (!cancelled) setHydratedScope(scope);
       }
     }
 
     void hydrateGlossary();
+    return () => {
+      cancelled = true;
+    };
   }, [activeProjectId]);
 
   useEffect(() => {
@@ -207,14 +236,8 @@ export function useGlossaryState() {
   }, [activeProjectId, customTerms, isHydrated]);
 
   useEffect(() => {
-    function handleProjectChange() {
-      setActiveProjectId(getActiveProjectId() || globalProjectScope);
-      setImportStatus("");
-    }
-
-    window.addEventListener(ACTIVE_PROJECT_CHANGED_EVENT, handleProjectChange);
-    return () => window.removeEventListener(ACTIVE_PROJECT_CHANGED_EVENT, handleProjectChange);
-  }, []);
+    setImportStatus("");
+  }, [activeProjectId]);
 
   const masteredSet = useMemo(() => new Set(masteredIds), [masteredIds]);
 
@@ -355,8 +378,11 @@ export function useGlossaryState() {
     masteredIds,
     activeProjectId,
     activeProject,
+    scopeMode,
+    setScopeMode,
+    hasProject: Boolean(contextProjectId),
     isHydrated,
-    
+
     // Delegated study hook states
     ...study,
 
