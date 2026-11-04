@@ -3,12 +3,8 @@
 import { useState, useCallback, useEffect, useMemo } from "react";
 import { useUiLanguage } from "@/components/LanguageProvider";
 import { apiBaseUrl } from "@/lib/config";
-import {
-  ACTIVE_PROJECT_CHANGED_EVENT,
-  getActiveProject,
-  getProjectMemorySummary,
-  type ProjectSetting,
-} from "@/lib/projectSettings";
+import { useProjectContext } from "@/components/ProjectContextProvider";
+import { getProjectMemorySummary } from "@/lib/projectSettings";
 
 export interface KeigoChange {
   original: string;
@@ -254,7 +250,7 @@ export function useKeigoState() {
   const [expandedHistory, setExpandedHistory] = useState<number | null>(null);
 
   // Project state
-  const [activeProject, setActiveProject] = useState<ProjectSetting | null>(null);
+  const { activeProject } = useProjectContext();
   const [lastCheckedInput, setLastCheckedInput] = useState("");
 
   // Requirement mode state
@@ -284,13 +280,6 @@ export function useKeigoState() {
   // Load history on mount
   useEffect(() => {
     fetchHistory();
-    setActiveProject(getActiveProject());
-    function handleProjectChange() {
-      setActiveProject(getActiveProject());
-    }
-
-    window.addEventListener(ACTIVE_PROJECT_CHANGED_EVENT, handleProjectChange);
-    return () => window.removeEventListener(ACTIVE_PROJECT_CHANGED_EVENT, handleProjectChange);
   }, [fetchHistory]);
 
   const filteredHistory = useMemo(() => {

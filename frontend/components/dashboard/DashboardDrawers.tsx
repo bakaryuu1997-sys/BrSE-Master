@@ -11,12 +11,14 @@ import type { TranslationKey } from "@/lib/uiLanguage";
 type TodoCommandSummary = {
   deadlineRisk: BrseTodoItem[];
   nextFocus: BrseTodoItem[];
+  activeProject?: { name: string } | null;
 };
 
 interface DashboardDrawersProps {
   drawerOpen: "" | "todo" | "qna" | "cr" | "meetings";
   onClose: () => void;
   todoCommand: TodoCommandSummary;
+  projectLabel?: string;
   waitingQna: OperationRecord[];
   pendingCr: OperationRecord[];
   commandCenter: CommandCenterData | null;
@@ -40,6 +42,7 @@ export function DashboardDrawers({
   drawerOpen,
   onClose,
   todoCommand,
+  projectLabel,
   waitingQna,
   pendingCr,
   commandCenter,
@@ -64,7 +67,7 @@ export function DashboardDrawers({
         open={drawerOpen === "todo"}
         onClose={onClose}
         title={t("dashboard.drawerTodoRisk")}
-        subtitle={`${todoCommand.deadlineRisk.length} ${t("dashboard.drawerDeadlineRisks")}`}
+        subtitle={`${projectLabel || todoCommand.activeProject?.name || ""} ·${todoCommand.deadlineRisk.length} ${t("dashboard.drawerDeadlineRisks")}`}
         width="md"
         headerActions={
           <Link href="/app/brse-todo" onClick={onClose} className="brse-button px-3 py-1.5 text-xs">
@@ -78,7 +81,7 @@ export function DashboardDrawers({
               <DrawerItem
                 key={item.id}
                 title={item.title}
-                subtitle={item.deadline ? `${t("dashboard.deadline")}: ${item.deadline}` : `${t("dashboard.phase")}: ${item.phase}`}
+                subtitle={`${item.projectName ? `${item.projectName} · ` : ""}${item.deadline ? `${t("dashboard.deadline")}: ${item.deadline}` : `${t("dashboard.phase")}: ${item.phase}`}`}
                 badge={t("dashboard.risk")}
                 badgeVariant="danger"
                 action={
@@ -104,7 +107,7 @@ export function DashboardDrawers({
               <DrawerItem
                 key={item.id}
                 title={item.title}
-                subtitle={`${item.phase} / ${item.priority}`}
+                subtitle={`${item.projectName ? `${item.projectName} · ` : ""}${item.phase} / ${item.priority}`}
                 badge={item.priority}
                 badgeVariant={item.priority === "P0" ? "danger" : item.priority === "P1" ? "warning" : "default"}
                 action={

@@ -34,12 +34,15 @@ export type BrseTodoItem = {
   note: string;
   deadline: string;
   evidenceUrl: string;
+  evidences?: Array<{ type: string; url: string; quote?: string }>;
   operationId: string;
   updatedAt?: string;
   source?: "workflow" | "operation" | "meeting";
   meetingId?: string;
   meetingTitle?: string;
   actionIndex?: number;
+  projectId?: string;
+  projectName?: string;
 };
 
 export type BrseTodoState = {
@@ -509,6 +512,16 @@ export function upsertMeetingMinutesActionTodo(
   return { item: nextItem, state: nextState, created: !exists };
 }
 
+export type BrseTodoProjectStat = {
+  id: string;
+  name: string;
+  activePhase: string;
+  total: number;
+  done: number;
+  percent: number;
+  deadlineRiskCount: number;
+};
+
 export type BrseTodoCommandSummary = {
   activeProject: BrseTodoProject | undefined;
   doneToday: BrseTodoItem[];
@@ -516,6 +529,7 @@ export type BrseTodoCommandSummary = {
   nextFocus: BrseTodoItem[];
   total: number;
   done: number;
+  projectStats: BrseTodoProjectStat[];
 };
 
 export const EMPTY_BRSE_TODO_COMMAND_SUMMARY: BrseTodoCommandSummary = {
@@ -525,15 +539,90 @@ export const EMPTY_BRSE_TODO_COMMAND_SUMMARY: BrseTodoCommandSummary = {
   nextFocus: [],
   total: 0,
   done: 0,
+  projectStats: [],
 };
 
-export function getBrseTodoCommandSummary(): BrseTodoCommandSummary {
-  const projects = readBrseTodoProjects();
+export function getBrseTodoCommandSummary(selectedProjectId?: string): BrseTodoCommandSummary {
+  const projects = readBrseTodoProjects().filter((project) => !project.archivedAt);
   const today = new Date().toISOString().slice(0, 10);
-  const activeProjectId = readActiveBrseTodoProjectId();
-  const activeProject = projects.find((project) => project.id === activeProjectId) ?? projects.find((project) => !project.archivedAt);
+  const activeProjectId = selectedProjectId ?? readActiveBrseTodoProjectId();
+
+  const projectStats: BrseTodoProjectStat[] = projects.map((proj) => {
+    const pState = readBrseTodoState(proj.id);
+    const pItems = pState?.items ?? [];
+    const pDone = pItems.filter((i) => i.done).length;
+    const pTotal = pItems.length;
+    const pPercent = pTotal > 0 ? Math.round((pDone / pTotal) * 100) : 0;
+    const pRisk = pItems.filter((i) => i.deadline && !i.done && i.deadline <= today).length;
+    return {
+      id: proj.id,
+      name: proj.name,
+      activePhase: pState?.activePhase || proj.activePhase || "1. Kick-off & Requirement",
+      total: pTotal,
+      done: pDone,
+      percent: pPercent,
+      deadlineRiskCount: pRisk,
+    };
+  });
+
+  if (activeProjectId === "all") {
+    const allItems: BrseTodoItem[] = [];
+    for (const proj of projects) {
+      const pState = readBrseTodoState(proj.id);
+      if (pState?.items) {
+        for (const item of pState.items) {
+          allItems.push({
+            ...item,
+            projectId: proj.id,
+            projectName: proj.name,
+          });
+        }
+      }
+    }
+    const doneToday = allItems.filter((item) => item.done && item.updatedAt?.slice(0, 10) === today);
+    const deadlineRisk = allItems.filter((item) => item.deadline && !item.done && item.deadline <= today);
+    const nextFocus = allItems
+      .filter((item) => !item.done)
+      .sort(
+        (a, b) =>
+          priorityRank(a.priority) - priorityRank(b.priority) ||
+          phaseRank(a.phase) - phaseRank(b.phase) ||
+          (a.deadline || "9999-12-31").localeCompare(b.deadline || "9999-12-31")
+      )
+      .slice(0, 6);
+
+    return {
+      activeProject: undefined,
+      doneToday,
+      deadlineRisk,
+      nextFocus,
+      total: allItems.length,
+      done: allItems.filter((item) => item.done).length,
+      projectStats,
+    };
+  }
+
+  const matchedProject = projects.find((project) => project.id === activeProjectId);
+  // An explicit project that has no todo list yet must show an empty scope, not silently
+  // fall back to the first project (that made every project look identical).
+  if (!matchedProject && selectedProjectId) {
+    return {
+      activeProject: undefined,
+      doneToday: [],
+      deadlineRisk: [],
+      nextFocus: [],
+      total: 0,
+      done: 0,
+      projectStats,
+    };
+  }
+  const activeProject = matchedProject ?? projects[0];
   const state = activeProject ? readBrseTodoState(activeProject.id) : null;
-  const items = state?.items ?? [];
+  const items = (state?.items ?? []).map((item) => ({
+    ...item,
+    projectId: activeProject?.id,
+    projectName: activeProject?.name,
+  }));
   const doneToday = items.filter((item) => item.done && item.updatedAt?.slice(0, 10) === today);
   const deadlineRisk = items.filter((item) => item.deadline && !item.done && item.deadline <= today);
   const nextFocus = items
@@ -553,5 +642,6 @@ export function getBrseTodoCommandSummary(): BrseTodoCommandSummary {
     nextFocus,
     total: items.length,
     done: items.filter((item) => item.done).length,
+    projectStats,
   };
 }

@@ -10,8 +10,11 @@ import {
   Minimize2,
   Download,
   Settings,
+  Plus,
+  Sparkles,
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { getBrseTodoCommandSummary } from "@/lib/brseTodo";
 import { useDashboardConfig } from "@/components/dashboard/useDashboardConfig";
 import { useDashboardActions } from "@/components/dashboard/useDashboardActions";
 import { useDashboardData } from "@/components/dashboard/useDashboardData";
@@ -25,6 +28,7 @@ import { cn } from "@/lib/utils";
 // Refactored Components
 import { DashboardMorningBriefPanel } from "@/components/dashboard/DashboardMorningBriefPanel";
 import { LiveGlossarySearch } from "@/components/dashboard/LiveGlossarySearch";
+import { PortfolioProgressStrip } from "@/components/dashboard/PortfolioProgressStrip";
 import { ProjectOverviewPanel } from "@/components/dashboard/ProjectOverviewPanel";
 import { QuickKeigoComposer } from "@/components/dashboard/QuickKeigoComposer";
 import { DashboardMetricCards } from "@/components/dashboard/DashboardMetricCards";
@@ -35,6 +39,10 @@ import { DashboardActivityStream } from "@/components/dashboard/DashboardActivit
 import { DashboardDrawers } from "@/components/dashboard/DashboardDrawers";
 import { CommunicationPulseCard } from "@/components/dashboard/CommunicationPulseCard";
 import { DashboardClocks } from "@/components/dashboard/DashboardClocks";
+import { WeatherAisatsuWidget } from "@/components/dashboard/WeatherAisatsuWidget";
+import { QuickCreateTicketModal } from "@/components/dashboard/QuickCreateTicketModal";
+import { DailySyncModal } from "@/components/dashboard/DailySyncModal";
+import { DualTimezoneSmartPing } from "@/components/dashboard/DualTimezoneSmartPing";
 
 import { DashboardCustomizer } from "@/components/dashboard/DashboardCustomizer";
 
@@ -57,6 +65,8 @@ export default function AppHomePage() {
     history,
     operations,
     projects,
+    selectedProjectId,
+    setSelectedProjectId,
     setCalendarSchedules,
     setOperations,
     setTodoCommand,
@@ -84,6 +94,58 @@ export default function AppHomePage() {
   } = useDashboardConfig();
   const [customizerOpen, setCustomizerOpen] = useState(false);
   const [isComposerFullscreen, setIsComposerFullscreen] = useState(false);
+  const [quickTicketOpen, setQuickTicketOpen] = useState(false);
+  const [dailySyncOpen, setDailySyncOpen] = useState(false);
+  const [dailySyncTime, setDailySyncTime] = useState("17:30");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedTime = localStorage.getItem("brse.dailySync.time");
+      if (savedTime) setDailySyncTime(savedTime);
+    }
+  }, []);
+
+  function handleUpdateDailySyncTime(time: string) {
+    setDailySyncTime(time);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("brse.dailySync.time", time);
+    }
+  }
+
+  // Auto-trigger Daily Sync when current time matches dailySyncTime (once per day)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const now = new Date();
+      const currentHhMm = `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+      const todayStr = now.toISOString().slice(0, 10);
+      const lastTriggeredDate = localStorage.getItem("brse.dailySync.lastTriggeredDate");
+
+      if (currentHhMm === dailySyncTime && lastTriggeredDate !== todayStr) {
+        localStorage.setItem("brse.dailySync.lastTriggeredDate", todayStr);
+        setDailySyncOpen(true);
+      }
+    }, 30000);
+    return () => clearInterval(timer);
+  }, [dailySyncTime]);
+
+  useEffect(() => {
+    function handleGlobalKeyDown(e: KeyboardEvent) {
+      if (
+        (e.ctrlKey && e.shiftKey && (e.key === "Q" || e.key === "q")) ||
+        (e.altKey && (e.key === "q" || e.key === "Q"))
+      ) {
+        e.preventDefault();
+        setQuickTicketOpen(true);
+      }
+    }
+    window.addEventListener("keydown", handleGlobalKeyDown);
+    return () => window.removeEventListener("keydown", handleGlobalKeyDown);
+  }, []);
+
+  function handleTicketCreated(record: any) {
+    setOperations((prev) => [record, ...prev]);
+    setTodoCommand(getBrseTodoCommandSummary(selectedProjectId));
+  }
 
   function notify(message: string, tone: DashboardNotice["tone"] = "success") {
     setNotice({ message, tone });
@@ -154,50 +216,71 @@ export default function AppHomePage() {
       )}
 
       <PageHeader
+        compact
         badge={t("dashboard.cockpitBadge")}
         title={
-          <span className="flex flex-wrap items-center gap-4">
+          <span className="flex flex-wrap items-center gap-3">
             <span>{t("dashboard.today")}</span>
-            <span className="text-white/10 text-xl font-light select-none">|</span>
+            <span className="select-none text-lg font-light text-white/10">|</span>
             <DashboardClocks />
+            <WeatherAisatsuWidget />
           </span>
         }
-        description={todayLabel}
+        description={`${todayLabel} · ${selectedProjectId === "all" ? `🌐 ${t("dashboard.allProjects")}` : (projects.find((p) => p.id === selectedProjectId)?.name || activeProject?.name || "Sensei Hub")}`}
         actions={
           <div className="flex flex-wrap items-center gap-2">
             {canInstallPwa && (
               <button
                 onClick={triggerInstallPwa}
-                className="brse-button border-cyan/25 bg-cyan/10 text-cyan hover:bg-cyan/20 group h-10 px-4 gap-2 shadow-[0_0_15px_rgba(6,182,212,0.15)] hover:shadow-[0_0_20px_rgba(6,182,212,0.25)] transition-all duration-300"
+                className="brse-button group h-8.5 gap-1.5 border-cyan/25 bg-cyan/10 px-3 text-xs text-cyan shadow-[0_0_15px_rgba(6,182,212,0.15)] transition-all duration-300 hover:bg-cyan/20 hover:shadow-[0_0_20px_rgba(6,182,212,0.25)]"
                 title={t("dashboard.pwaInstallTitle")}
               >
-                <Download className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+                <Download className="h-3.5 w-3.5 transition-transform group-hover:translate-y-0.5" />
                 {t("dashboard.pwaInstallBtn")}
               </button>
             )}
-            <button onClick={copyDashboardDailySummary} className="brse-button group h-10 px-4">
-              <Copy className="h-4 w-4 transition-transform group-hover:rotate-12" />
+            <button
+              onClick={() => setQuickTicketOpen(true)}
+              className="brse-button group h-8.5 gap-1.5 border-amber-500/30 bg-amber-500/10 px-3 text-xs font-black text-amber-300 shadow-[0_0_15px_rgba(245,158,11,0.15)] transition-all duration-300 hover:bg-amber-500/20"
+              title="Tạo nhanh Q&A / Bug / CR (Ctrl+Shift+Q)"
+            >
+              <Plus className="h-3.5 w-3.5 transition-transform group-hover:rotate-90" />
+              <span>+ Thêm ticket</span>
+            </button>
+            <button
+              onClick={() => setDailySyncOpen(true)}
+              className="brse-button group h-8.5 gap-1.5 border-emerald-500/30 bg-emerald-500/10 px-3 text-xs font-black text-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.15)] transition-all duration-300 hover:bg-emerald-500/20"
+              title={`Tổng kết ngày & Hou-Ren-So tự động (Giờ nhắc tùy chỉnh: ${dailySyncTime})`}
+            >
+              <Sparkles className="h-3.5 w-3.5 text-emerald-400 transition-transform group-hover:scale-110" />
+              <span>⚡ Báo cáo ngày ({dailySyncTime})</span>
+            </button>
+            <button onClick={copyDashboardDailySummary} className="brse-button group h-8.5 gap-1.5 px-3 text-xs">
+              <Copy className="h-3.5 w-3.5 transition-transform group-hover:rotate-12" />
               {t("dashboard.copySummary")}
             </button>
-            <button onClick={() => setCustomizerOpen(true)} className="brse-button h-10 w-10 !p-0" title={t("dashboard.configureInterface")}>
-              <Settings className="h-4 w-4 text-textMuted hover:text-textPrimary" />
+            <button onClick={() => setCustomizerOpen(true)} className="brse-button h-8.5 w-8.5 !p-0" title={t("dashboard.configureInterface")}>
+              <Settings className="h-3.5 w-3.5 text-textMuted hover:text-textPrimary" />
             </button>
-            <Link href="/app/meeting-note" className="brse-button group h-10 px-4">
+            <Link href="/app/meeting-note" className="brse-button group h-8.5 gap-1.5 px-3 text-xs">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan" />
               </span>
               {t("dashboard.recordMeeting")}
             </Link>
-            <Link href="/app/reports" className="brse-button brse-button-primary group h-10 px-5">
-              <Zap className="h-4 w-4 fill-current" />
+            <Link href="/app/reports" className="brse-button brse-button-primary group h-8.5 gap-1.5 px-3.5 text-xs">
+              <Zap className="h-3.5 w-3.5 fill-current" />
               {t("dashboard.dailyReport")}
             </Link>
           </div>
         }
       />
 
-      <div className="mt-6 space-y-6">
+      <div className="mt-4 space-y-4">
+        {/* Dual Timezone Smart Meeting Ping Banner */}
+        <DualTimezoneSmartPing todaySchedules={todaySchedules} />
+
         {loaded && isVisible("metricCards") && (
           <DashboardMetricCards
             t={t}
@@ -211,11 +294,17 @@ export default function AppHomePage() {
         )}
 
         {loaded && isVisible("projectOverview") && (
-          <ProjectOverviewPanel projects={projects} activeProjectId={activeProject?.id} t={t} />
+          <PortfolioProgressStrip
+            projectStats={todoCommand.projectStats}
+            projects={projects}
+            selectedProjectId={selectedProjectId}
+            onSelectProject={setSelectedProjectId}
+            t={t}
+          />
         )}
 
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12">
-          <div className="space-y-8 lg:col-span-8">
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-12">
+          <div className="space-y-5 lg:col-span-8">
             {loaded && getOrderedWidgets("left").map((w) => {
               if (!isVisible(w.id)) return null;
               switch (w.id) {
@@ -262,7 +351,7 @@ export default function AppHomePage() {
             })}
           </div>
 
-          <aside className="space-y-5 lg:col-span-4">
+          <aside className="space-y-4 lg:col-span-4">
             {loaded && getOrderedWidgets("right").map((w) => {
               if (!isVisible(w.id)) return null;
               switch (w.id) {
@@ -287,7 +376,11 @@ export default function AppHomePage() {
                   );
                 case "communicationPulse":
                   return (
-                    <CommunicationPulseCard key={w.id} t={t} />
+                    <CommunicationPulseCard
+                      key={w.id}
+                      projectId={activeProject?.id}
+                      t={t}
+                    />
                   );
                 case "activityStream":
                   return (
@@ -342,6 +435,7 @@ export default function AppHomePage() {
         drawerOpen={drawerOpen}
         onClose={() => setDrawerOpen("")}
         todoCommand={todoCommand}
+        projectLabel={selectedProjectId === "all" ? t("dashboard.allProjects") : (projects.find((p) => p.id === selectedProjectId)?.name || activeProject?.name || "")}
         waitingQna={waitingQna}
         pendingCr={pendingCr}
         commandCenter={commandCenter}
@@ -396,6 +490,26 @@ export default function AppHomePage() {
           </div>
         </div>
       )}
+      {/* Quick Create Ticket Modal (Ctrl+Shift+Q) */}
+      <QuickCreateTicketModal
+        open={quickTicketOpen}
+        onClose={() => setQuickTicketOpen(false)}
+        projects={projects}
+        defaultProjectId={selectedProjectId === "all" ? activeProject?.id : selectedProjectId}
+        onCreated={handleTicketCreated}
+        notify={notify}
+        t={t}
+      />
+      {/* One-Click Daily Sync Modal */}
+      <DailySyncModal
+        open={dailySyncOpen}
+        onClose={() => setDailySyncOpen(false)}
+        todoCommand={todoCommand}
+        operations={operations}
+        activeProject={activeProject}
+        dailySyncTime={dailySyncTime}
+        onUpdateSyncTime={handleUpdateDailySyncTime}
+      />
     </main>
   );
 }

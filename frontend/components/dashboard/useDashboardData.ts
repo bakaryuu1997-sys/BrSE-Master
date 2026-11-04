@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { useProjectContext } from "@/components/ProjectContextProvider";
 import { formatDateLabel, toIsoDate } from "@/components/dashboard/DashboardCalendarPanel";
 import { EMPTY_BRSE_TODO_COMMAND_SUMMARY, getBrseTodoCommandSummary } from "@/lib/brseTodo";
 import { fetchEmailHistory, getEmailHistory, type GeneratedEmailHistoryItem } from "@/lib/emailHistory";
@@ -46,11 +47,13 @@ function buildWeekDates(today: Date | null, lang: UiLanguage) {
 }
 
 export function useDashboardData(language: UiLanguage) {
+  const { activeProjectId: contextProjectId } = useProjectContext();
   const [today, setToday] = useState<Date | null>(null);
+  const [selectedProjectId, setSelectedProjectId] = useState<string>("all");
   const [activeProject, setActiveProject] = useState<ProjectSetting | null>(null);
   const [projects, setProjects] = useState<ProjectSetting[]>([]);
   const [history, setHistory] = useState<GeneratedEmailHistoryItem[]>([]);
-  const [operations, setOperations] = useState<OperationRecord[]>([]);
+  const [rawOperations, setRawOperations] = useState<OperationRecord[]>([]);
   const [calendarSchedules, setCalendarSchedules] = useState<PersonalSchedule[]>([]);
   const [todoCommand, setTodoCommand] = useState(EMPTY_BRSE_TODO_COMMAND_SUMMARY);
   const [commandCenter, setCommandCenter] = useState<CommandCenterData | null>(null);
@@ -72,7 +75,7 @@ export function useDashboardData(language: UiLanguage) {
       setActiveProject(project);
       setProjects(getProjectSettings());
       setHistory(getEmailHistory().slice(0, 3));
-      setTodoCommand(getBrseTodoCommandSummary());
+      setTodoCommand(getBrseTodoCommandSummary(selectedProjectId));
       setCalendarSchedules(getPersonalSchedules());
 
       fetchEmailHistory(project?.id || "default")
@@ -89,10 +92,10 @@ export function useDashboardData(language: UiLanguage) {
         });
       getOperationRecords()
         .then((items) => {
-          if (!cancelled) setOperations(items);
+          if (!cancelled) setRawOperations(items);
         })
         .catch(() => {
-          if (!cancelled) setOperations([]);
+          if (!cancelled) setRawOperations([]);
         });
       fetchPersonalSchedules()
         .then((items) => {
@@ -107,7 +110,38 @@ export function useDashboardData(language: UiLanguage) {
       cancelled = true;
       window.removeEventListener(ACTIVE_PROJECT_CHANGED_EVENT, loadDashboardContext);
     };
-  }, []);
+  }, [selectedProjectId]);
+
+  // Sidebar "Project Context" switch scopes the dashboard (todo drawer, KPIs). Driven by the
+  // shared ProjectContext so the filter can't stay on "all" while the user works in one project.
+  const lastContextProjectId = useRef(contextProjectId);
+  useEffect(() => {
+    const previous = lastContextProjectId.current;
+    if (previous === contextProjectId) return;
+    lastContextProjectId.current = contextProjectId;
+    // "" -> id is the provider's initial hydration, not a user switch: keep the default "all" view.
+    if (previous && contextProjectId) setSelectedProjectId(contextProjectId);
+  }, [contextProjectId]);
+
+  const handleSelectProjectId = (id: string) => {
+    setSelectedProjectId(id);
+    setTodoCommand(getBrseTodoCommandSummary(id));
+  };
+
+  const operations = useMemo(() => {
+    if (selectedProjectId === "all") return rawOperations;
+    const proj = projects.find((p) => p.id === selectedProjectId);
+    const projName = proj?.name?.trim().toLowerCase();
+    return rawOperations.filter((op) => {
+      const opProj = op.projectName?.trim().toLowerCase();
+      return (projName && opProj === projName) || op.projectName === selectedProjectId;
+    });
+  }, [rawOperations, selectedProjectId, projects]);
+
+  const activeProjectScope = useMemo(() => {
+    if (selectedProjectId === "all") return activeProject;
+    return projects.find((p) => p.id === selectedProjectId) ?? activeProject;
+  }, [selectedProjectId, projects, activeProject]);
 
   const todayIso = today ? toIsoDate(today) : "";
   const calendarSchedulesByDate = useMemo(() => groupSchedulesByDate(calendarSchedules), [calendarSchedules]);
@@ -119,14 +153,16 @@ export function useDashboardData(language: UiLanguage) {
   );
 
   return {
-    activeProject,
+    activeProject: activeProjectScope,
+    selectedProjectId,
+    setSelectedProjectId: handleSelectProjectId,
     calendarSchedulesByDate,
     commandCenter,
     history,
     operations,
     projects,
     setCalendarSchedules,
-    setOperations,
+    setOperations: setRawOperations,
     setTodoCommand,
     today,
     todayIso,

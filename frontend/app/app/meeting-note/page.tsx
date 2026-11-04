@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo, useCallback } from "react";
+import Link from "next/link";
 import { Mic, FileText, Loader2, PlayCircle, Scissors, MessageSquare, ScreenShare, Volume2, Pencil } from "lucide-react";
 import { getMeetingHistory, getMeetingTopicClusters, searchMeetingTranscripts, type MeetingRecord, type MeetingTopicCluster, type MeetingTranscriptSearchResult } from "@/lib/meetings";
 import { cn } from "@/lib/utils";
@@ -30,7 +31,7 @@ const VideoTrimModal = dynamic(
   () => import("@/components/VideoTrimModal").then((m) => m.VideoTrimModal),
   { ssr: false }
 );
-import { ACTIVE_PROJECT_CHANGED_EVENT, getActiveProject, type ProjectSetting } from "@/lib/projectSettings";
+import { useProjectContext } from "@/components/ProjectContextProvider";
 import { useMeetingHandlers } from "@/features/meeting/useMeetingHandlers";
 
 // Extracted sub-components
@@ -62,7 +63,7 @@ export default function MeetingNotePage() {
     (text: string, kind: "success" | "error" | "info" = "info") => setNoticeState(text ? { text, kind } : null),
     []
   );
-  const [activeProject, setActiveProject] = useState<ProjectSetting | null>(() => getActiveProject());
+  const { activeProject } = useProjectContext();
   const [isLoading, setIsLoading] = useState(true);
   const [meetingLanguage, setMeetingLanguage] = useState<MeetingLanguage>(language);
   const [meetingTemplate, setMeetingTemplate] = useState<MeetingTemplate>("meeting");
@@ -72,6 +73,7 @@ export default function MeetingNotePage() {
   const [historyFilter, setHistoryFilter] = useState<HistoryFilter>("all");
   const [syncingActionsId, setSyncingActionsId] = useState<string | null>(null);
   const [topicClusters, setTopicClusters] = useState<MeetingTopicCluster[]>([]);
+  const [activeViewTab, setActiveViewTab] = useState<"history" | "record">("history");
   
   // Modal states
   const [viewingMemo, setViewingMemo] = useState<{id: string, title: string} | null>(null);
@@ -92,14 +94,6 @@ export default function MeetingNotePage() {
 
   useEffect(() => {
     void fetchHistory();
-  }, []);
-
-  useEffect(() => {
-    function handleProjectChange() {
-      setActiveProject(getActiveProject());
-    }
-    window.addEventListener(ACTIVE_PROJECT_CHANGED_EVENT, handleProjectChange);
-    return () => window.removeEventListener(ACTIVE_PROJECT_CHANGED_EVENT, handleProjectChange);
   }, []);
 
   useEffect(() => {
@@ -264,6 +258,7 @@ export default function MeetingNotePage() {
   return (
     <main className="brse-page">
       <PageHeader
+        compact={true}
         badge="Communication"
         title={t("meeting.title")}
         description={t("meeting.body")}
@@ -272,116 +267,90 @@ export default function MeetingNotePage() {
           { label: t("meeting.aiProcessing"), value: activeAiCount, variant: "primary" },
           { label: t("meeting.retry"), value: failedCount, variant: "danger" },
         ]}
-        toolbar={
-          <MeetingUploader
-            t={t}
-            meetingLanguage={meetingLanguage}
-            setMeetingLanguage={setMeetingLanguage}
-            meetingTemplate={meetingTemplate}
-            setMeetingTemplate={setMeetingTemplate}
-            transcriptOnlyMode={transcriptOnlyMode}
-            setTranscriptOnlyMode={setTranscriptOnlyMode}
-            keepSourceMedia={keepSourceMedia}
-            setKeepSourceMedia={setKeepSourceMedia}
-            urlInput={urlInput}
-            setUrlInput={setUrlInput}
-            isProcessingUrl={isProcessingUrl}
-            handleUrlSubmit={handleUrlSubmit}
-            isUploading={isUploading}
-            handleFileUpload={handleFileUpload}
-            transcriptTitle={transcriptTitle}
-            setTranscriptTitle={setTranscriptTitle}
-            transcriptText={transcriptText}
-            setTranscriptText={setTranscriptText}
-            isProcessingTranscript={isProcessingTranscript}
-            handleTranscriptSubmit={handleTranscriptSubmit}
-            openRecorder={openRecorder}
-            activeProjectName={activeProject?.name}
-            whisperModel={whisperModel}
-            setWhisperModel={setWhisperModel}
-          />
-        }
-      >
-        <div className="scene-art hidden lg:block">
-          <div className="scene-wave right-10 top-8 h-44 w-44" />
-          <div className="scene-wave right-20 top-16 h-28 w-28 border-cyan/35" />
-          <div className="scene-panel right-8 top-10 w-56 p-4">
-            <span className="scene-kicker">{t("meeting.aiProcessing")}</span>
-            <div className="mt-4 flex items-end gap-2">
-              {[28, 46, 34, 58, 42, 68, 48].map((height, index) => (
-                <span
-                  key={height}
-                  className="w-3 rounded-full bg-[linear-gradient(180deg,rgba(255,180,84,0.95),rgba(255,107,94,0.35))]"
-                  style={{ height }}
-                />
-              ))}
-            </div>
-            <div className="mt-4 flex flex-wrap gap-2">
-              <span className="scene-chip">{t("meeting.upload")}</span>
-              <span className="scene-chip">{t("meeting.transcribe")}</span>
-              <span className="scene-chip">Memo</span>
-            </div>
+        actions={
+          <div className="flex items-center gap-2">
+            <Link href="/app/minutes/new">
+              <Button variant="outline" size="sm" className="gap-1.5 border-matcha/40 text-matcha hover:bg-matcha/10 text-xs font-semibold">
+                <FileText className="h-3.5 w-3.5" />
+                {t("meeting.createMinutes")}
+              </Button>
+            </Link>
+            <Button
+              size="sm"
+              onClick={() => setActiveViewTab(activeViewTab === "record" ? "history" : "record")}
+              className={cn(
+                "gap-1.5 text-xs font-bold transition shadow-sm",
+                activeViewTab === "record"
+                  ? "bg-slate-800 text-slate-200 border border-slate-700 hover:bg-slate-700"
+                  : "bg-primary text-slate-950 hover:bg-primary/90"
+              )}
+            >
+              {activeViewTab === "record" ? (
+                <>
+                  <FileText className="h-3.5 w-3.5" />
+                  {t("meeting.tabMeetings")}
+                </>
+              ) : (
+                <>
+                  <Mic className="h-3.5 w-3.5" />
+                  {t("meeting.newRecording")}
+                </>
+              )}
+            </Button>
           </div>
-        </div>
-      </PageHeader>
+        }
+      />
       
-      <div className="mt-6">
-        <section className="cinema-grid mb-6 grid gap-4 p-4 lg:grid-cols-[1.15fr_0.85fr] lg:p-5">
-          <div className="relative z-10 rounded-[22px] border border-cyan/15 bg-background/45 p-4">
-            <div className="flex items-center justify-between gap-3">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan">{t("meeting.pipelineFlow")}</p>
-                <h2 className="mt-2 text-lg font-semibold text-ink">{t("meeting.pipelineSteps")}</h2>
-              </div>
-              <span className="rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                {processingCount} {t("meeting.runningCount")}
+      <div className="mt-4">
+        {/* Navigation Tabs */}
+        <div className="mb-4 flex items-center justify-between border-b border-[var(--brse-panel-border)] pb-2.5">
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setActiveViewTab("history")}
+              className={cn(
+                "flex items-center gap-2 rounded-xl px-3.5 py-1.5 text-xs font-bold transition border",
+                activeViewTab === "history"
+                  ? "bg-primary/15 text-primary border-primary/30 shadow-sm"
+                  : "text-textMuted border-transparent hover:text-ink hover:bg-slate-900/40"
+              )}
+            >
+              <FileText className="h-3.5 w-3.5" />
+              {t("meeting.tabMeetings")}
+              <span className="rounded-full bg-primary/20 px-1.5 py-0.2 text-[10px] text-primary">
+                {history.length}
               </span>
-            </div>
-            <div className="scene-track mt-5 space-y-4">
-              <div className="scene-track-step">
-                <p className="text-sm font-semibold text-ink">{t("meeting.stepCapture")}</p>
-                <p className="mt-1 text-xs leading-5 text-textMuted">{t("meeting.stepCaptureDesc")}</p>
-              </div>
-              <div className="scene-track-step">
-                <p className="text-sm font-semibold text-ink">{t("meeting.stepAi")}</p>
-                <p className="mt-1 text-xs leading-5 text-textMuted">{t("meeting.stepAiDesc")}</p>
-              </div>
-              <div className="scene-track-step">
-                <p className="text-sm font-semibold text-ink">{t("meeting.stepArtifact")}</p>
-                <p className="mt-1 text-xs leading-5 text-textMuted">{t("meeting.stepArtifactDesc")}</p>
-              </div>
-            </div>
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveViewTab("record")}
+              className={cn(
+                "flex items-center gap-2 rounded-xl px-3.5 py-1.5 text-xs font-bold transition border",
+                activeViewTab === "record"
+                  ? "bg-cyan/15 text-cyan border-cyan/30 shadow-sm"
+                  : "text-textMuted border-transparent hover:text-ink hover:bg-slate-900/40"
+              )}
+            >
+              <Mic className="h-3.5 w-3.5" />
+              {t("meeting.tabRecord")}
+            </button>
           </div>
 
-          <div className="relative z-10 grid gap-3 sm:grid-cols-2">
-            <div className="scene-stat-card p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">{t("meeting.completed")}</p>
-              <p className="mt-3 text-3xl font-black text-ink">{completedCount}</p>
-              <span className="scene-bar mt-4 w-3/4" />
+          {activeProject?.name && (
+            <div className="hidden sm:flex items-center gap-2 text-xs">
+              <span className="text-textMuted text-[11px]">Dự án:</span>
+              <span className="rounded-full bg-primary/10 border border-primary/25 px-2.5 py-0.5 text-[11px] font-bold text-primary">
+                {activeProject.name}
+              </span>
             </div>
-            <div className="scene-stat-card p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan">{t("meeting.resumeQueue")}</p>
-              <p className="mt-3 text-3xl font-black text-ink">{uploadResumeCount}</p>
-              <span className="scene-bar mt-4 w-1/2" />
-            </div>
-            <div className="scene-stat-card p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">{t("meeting.retry")}</p>
-              <p className="mt-3 text-3xl font-black text-ink">{failedCount}</p>
-              <span className="scene-bar mt-4 w-2/5" />
-            </div>
-            <div className="scene-stat-card p-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-matcha">{t("meeting.artifacts")}</p>
-              <p className="mt-3 text-3xl font-black text-ink">{artifactIssueCount}</p>
-              <span className="scene-bar mt-4 w-2/3" />
-            </div>
-          </div>
-        </section>
+          )}
+        </div>
 
         {notice ? (
           <div
             role="status"
             aria-live="polite"
-            className={`mb-6 rounded-xl border px-4 py-3 text-sm leading-6 ${
+            className={`mb-4 rounded-xl border px-4 py-2.5 text-xs leading-5 ${
               notice.kind === "error"
                 ? "border-vermilion/25 bg-vermilion/10 text-vermilion"
                 : notice.kind === "success"
@@ -394,20 +363,20 @@ export default function MeetingNotePage() {
         ) : null}
 
         {uploadProgress ? (
-          <div className="brse-card brse-card-muted mb-6 p-4">
+          <div className="brse-card brse-card-muted mb-4 p-3.5">
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div className="min-w-0">
-                <p className="truncate text-sm font-semibold text-ink">{uploadProgress.queueTotal && uploadProgress.queueTotal > 1 ? `File ${uploadProgress.queueIndex}/${uploadProgress.queueTotal} · ` : ""}{uploadProgress.fileName}</p>
-                <p className="mt-1 text-xs leading-5 text-textMuted">
+                <p className="truncate text-xs font-bold text-ink">{uploadProgress.queueTotal && uploadProgress.queueTotal > 1 ? `File ${uploadProgress.queueIndex}/${uploadProgress.queueTotal} · ` : ""}{uploadProgress.fileName}</p>
+                <p className="mt-0.5 text-[11px] text-textMuted">
                   Upload {uploadProgress.loaded} / {uploadProgress.total}
                   {isUploading ? ` · ${t("meeting.longFileNotice")}` : ` · ${t("meeting.uploadFinished")}`}
                 </p>
               </div>
-              <span className="rounded-md border border-primary/25 bg-primary/10 px-2 py-1 text-xs font-semibold text-primary">
+              <span className="rounded-md border border-primary/25 bg-primary/10 px-2 py-0.5 text-[11px] font-semibold text-primary">
                 {uploadProgress.percent ?? 0}%
               </span>
             </div>
-            <div className="mt-3 h-2 overflow-hidden rounded-full bg-border">
+            <div className="mt-2.5 h-1.5 overflow-hidden rounded-full bg-border">
               <div
                 className="h-full rounded-full bg-primary transition-all"
                 style={{ width: `${uploadProgress.percent ?? 0}%` }}
@@ -416,51 +385,95 @@ export default function MeetingNotePage() {
           </div>
         ) : null}
 
-        <section className="brse-section scene-feature-grid mb-8 grid gap-3 p-4 lg:grid-cols-4">
-          <button
-            type="button"
-            onClick={() => openRecorder("screenVideo")}
-            className="brse-card p-4 text-left transition hover:border-primary"
-          >
-            <ScreenShare className="mb-3 h-5 w-5 text-primary" />
-            <p className="font-semibold text-ink">{t("meeting.screenRecord")}</p>
-            <p className="mt-1 text-xs leading-5 text-textMuted">{t("meeting.screenRecordDesc")}</p>
-          </button>
-          <button
-            type="button"
-            onClick={() => openRecorder("mixed")}
-            className="brse-card p-4 text-left transition hover:border-cyan"
-          >
-            <ScreenShare className="mb-3 h-5 w-5 text-cyan" />
-            <p className="font-semibold text-ink">{t("meeting.screenMic")} <span className="ml-1 rounded-full bg-cyan/15 px-1.5 py-0.5 text-[10px] font-bold text-cyan">Live</span></p>
-            <p className="mt-1 text-xs leading-5 text-textMuted">{t("meeting.screenMicDesc")}</p>
-          </button>
-          <button
-            type="button"
-            onClick={() => openRecorder("system")}
-            className="brse-card p-4 text-left transition hover:border-primary/45"
-          >
-            <Volume2 className="mb-3 h-5 w-5 text-primary" />
-            <p className="font-semibold text-ink">{t("meeting.screenAudio")}</p>
-            <p className="mt-1 text-xs leading-5 text-textMuted">{t("meeting.screenAudioDesc")}</p>
-          </button>
-          <button
-            type="button"
-            onClick={() => openRecorder("mic")}
-            className="brse-card p-4 text-left transition hover:border-primary/45"
-          >
-            <Mic className="mb-3 h-5 w-5 text-primary" />
-            <p className="font-semibold text-ink">{t("meeting.onlyMic")}</p>
-            <p className="mt-1 text-xs leading-5 text-textMuted">{t("meeting.onlyMicDesc")}</p>
-          </button>
-          <div className="brse-card brse-card-muted p-4 text-xs leading-5 text-textMuted lg:col-span-4">
-            {t("meeting.recordHelpPrefix")}<span className="font-semibold text-ink">History</span>{t("meeting.recordHelpSuffix")}<PlayCircle className="inline h-3.5 w-3.5" />{t("meeting.recordHelpPlay")}<Scissors className="inline h-3.5 w-3.5" />{t("meeting.recordHelpTrim")}<FileText className="inline h-3.5 w-3.5" />{t("meeting.recordHelpMemo")}<MessageSquare className="inline h-3.5 w-3.5" />{t("meeting.recordHelpChat")}
-          </div>
-        </section>
+        {activeViewTab === "record" && (
+          <div className="space-y-4 mb-8">
+            <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              <button
+                type="button"
+                onClick={() => openRecorder("mixed")}
+                className="brse-card p-3.5 text-left transition hover:border-cyan hover:shadow-md group"
+              >
+                <div className="flex items-center justify-between">
+                  <ScreenShare className="h-5 w-5 text-cyan" />
+                  <span className="rounded-full bg-cyan/15 px-1.5 py-0.5 text-[10px] font-bold text-cyan">Live</span>
+                </div>
+                <p className="mt-2 font-bold text-ink text-sm">{t("meeting.screenMic")}</p>
+                <p className="mt-1 text-[11px] leading-4 text-textMuted">{t("meeting.screenMicDesc")}</p>
+              </button>
+              <button
+                type="button"
+                onClick={() => openRecorder("screenVideo")}
+                className="brse-card p-3.5 text-left transition hover:border-primary hover:shadow-md group"
+              >
+                <ScreenShare className="h-5 w-5 text-primary" />
+                <p className="mt-2 font-bold text-ink text-sm">{t("meeting.screenRecord")}</p>
+                <p className="mt-1 text-[11px] leading-4 text-textMuted">{t("meeting.screenRecordDesc")}</p>
+              </button>
+              <button
+                type="button"
+                onClick={() => openRecorder("system")}
+                className="brse-card p-3.5 text-left transition hover:border-primary/50 hover:shadow-md group"
+              >
+                <Volume2 className="h-5 w-5 text-primary" />
+                <p className="mt-2 font-bold text-ink text-sm">{t("meeting.screenAudio")}</p>
+                <p className="mt-1 text-[11px] leading-4 text-textMuted">{t("meeting.screenAudioDesc")}</p>
+              </button>
+              <button
+                type="button"
+                onClick={() => openRecorder("mic")}
+                className="brse-card p-3.5 text-left transition hover:border-primary/50 hover:shadow-md group"
+              >
+                <Mic className="h-5 w-5 text-primary" />
+                <p className="mt-2 font-bold text-ink text-sm">{t("meeting.onlyMic")}</p>
+                <p className="mt-1 text-[11px] leading-4 text-textMuted">{t("meeting.onlyMicDesc")}</p>
+              </button>
+            </section>
 
-        <MeetingHistory
-          t={t}
-          language={language}
+            <div className="brse-card p-5">
+              <MeetingUploader
+                t={t}
+                meetingLanguage={meetingLanguage}
+                setMeetingLanguage={setMeetingLanguage}
+                meetingTemplate={meetingTemplate}
+                setMeetingTemplate={setMeetingTemplate}
+                transcriptOnlyMode={transcriptOnlyMode}
+                setTranscriptOnlyMode={setTranscriptOnlyMode}
+                keepSourceMedia={keepSourceMedia}
+                setKeepSourceMedia={setKeepSourceMedia}
+                urlInput={urlInput}
+                setUrlInput={setUrlInput}
+                isProcessingUrl={isProcessingUrl}
+                handleUrlSubmit={(e) => {
+                  handleUrlSubmit(e);
+                  setActiveViewTab("history");
+                }}
+                isUploading={isUploading}
+                handleFileUpload={(e) => {
+                  handleFileUpload(e);
+                  setActiveViewTab("history");
+                }}
+                transcriptTitle={transcriptTitle}
+                setTranscriptTitle={setTranscriptTitle}
+                transcriptText={transcriptText}
+                setTranscriptText={setTranscriptText}
+                isProcessingTranscript={isProcessingTranscript}
+                handleTranscriptSubmit={(e) => {
+                  handleTranscriptSubmit(e);
+                  setActiveViewTab("history");
+                }}
+                openRecorder={openRecorder}
+                activeProjectName={activeProject?.name}
+                whisperModel={whisperModel}
+                setWhisperModel={setWhisperModel}
+              />
+            </div>
+          </div>
+        )}
+
+        {activeViewTab === "history" && (
+          <MeetingHistory
+            t={t}
+            language={language}
           meetingLanguage={meetingLanguage}
           historyFilter={historyFilter}
           setHistoryFilter={setHistoryFilter}
@@ -504,6 +517,7 @@ export default function MeetingNotePage() {
           getMeetingProgress={getMeetingProgress}
           getMeetingStepLabel={getMeetingStepLabel}
         />
+      )}
 
         {viewingMemo && (
           <MeetingMemoModal

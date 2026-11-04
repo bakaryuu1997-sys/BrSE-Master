@@ -5,6 +5,7 @@ import { useEffect, useRef, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { X } from "lucide-react";
 import { useUiLanguage } from "@/components/LanguageProvider";
+import { ModalPortal } from "@/components/ui/ModalPortal";
 
 type DrawerProps = {
   open: boolean;
@@ -62,9 +63,12 @@ export function Drawer({
 
   if (!open) return null;
 
+  // Portal to <body>: an ancestor with backdrop-filter/transform would otherwise become the
+  // containing block of `fixed`, making the drawer taller than the viewport (no scrolling).
   return (
+    <ModalPortal isOpen={open}>
     <div
-      className="fixed inset-0 z-[200] flex justify-end"
+      className="fixed inset-0 z-[200] flex h-[100dvh] justify-end"
       aria-modal="true"
       role="dialog"
       aria-label={title}
@@ -120,7 +124,7 @@ export function Drawer({
         </div>
 
         {/* Scrollable content */}
-        <div className="flex-1 overflow-y-auto custom-scrollbar p-5">
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain custom-scrollbar p-5">
           {children}
         </div>
       </div>
@@ -132,6 +136,7 @@ export function Drawer({
         }
       `}</style>
     </div>
+    </ModalPortal>
   );
 }
 

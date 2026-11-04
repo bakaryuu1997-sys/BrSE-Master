@@ -14,6 +14,7 @@ import { ConfirmProvider } from "@/components/ConfirmProvider";
 import { ToastProvider } from "@/components/ToastProvider";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { QueryProvider } from "@/components/QueryProvider";
+import { ProjectContextProvider } from "@/components/ProjectContextProvider";
 
 export const metadata: Metadata = {
   title: {
@@ -36,6 +37,7 @@ export default function RootLayout({
         <LanguageProvider>
           <QueryProvider>
             <ToastProvider>
+              <ProjectContextProvider>
               <ConfirmProvider>
                 <RouteScrollReset />
                 <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
@@ -62,11 +64,11 @@ export default function RootLayout({
                       </div>
                     </div>
 
-                    <nav className="custom-scrollbar flex-1 overflow-y-auto p-4">
+                    <nav className="custom-scrollbar flex-1 overflow-y-auto px-2 py-3">
                       <Sidebar />
                     </nav>
 
-                    <div className="relative p-4">
+                    <div className="relative px-2.5 py-2">
                       <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan/35 via-fuchsia/30 to-transparent" />
                       <div className="absolute left-10 right-10 top-0 h-[2px] bg-gradient-to-r from-transparent via-cyan/15 via-fuchsia/15 to-transparent blur-[1.5px]" />
                       <NineRouterStatus />
@@ -74,7 +76,7 @@ export default function RootLayout({
                   </aside>
 
                   <div className="app-shell-main">
-                    <header className="sticky top-0 z-40 border-b border-[var(--brse-panel-border)] bg-background/80 px-4 py-3 backdrop-blur-xl lg:hidden">
+                    <header className="sticky top-0 z-40 border-b border-[var(--brse-panel-border)] bg-background/80 px-4 py-2.5 backdrop-blur-xl lg:hidden">
                       <div className="flex items-center justify-between gap-3">
                         <div className="flex items-center gap-3">
                           <div className="brse-brand-mark h-9 w-9 rounded-lg font-display text-xs font-black">
@@ -89,14 +91,15 @@ export default function RootLayout({
                           <LanguageSwitcher />
                         </div>
                       </div>
-                      <nav className="no-scrollbar mt-4 flex gap-2 overflow-x-auto pb-1">
+                      <nav className="no-scrollbar mt-3 flex gap-2 overflow-x-auto pb-1">
                         <Sidebar mode="mobile" />
                       </nav>
                     </header>
 
-                    <div className="fixed right-6 top-6 z-50 hidden items-center gap-3 lg:flex">
-                      <div className="glass-panel flex items-center gap-2 rounded-full px-3 py-2">
+                    <div className="fixed right-6 top-5 z-50 hidden items-center gap-2 lg:flex">
+                      <div className="glass-panel flex items-center gap-2 rounded-full px-2.5 py-1.5 shadow-sm">
                         <GlobalHealthDot />
+                        <div className="h-3 w-px bg-[var(--brse-hairline-border)]" />
                         <LanguageSwitcher />
                       </div>
                     </div>
@@ -107,6 +110,7 @@ export default function RootLayout({
                   </div>
                 </div>
               </ConfirmProvider>
+              </ProjectContextProvider>
             </ToastProvider>
             <div className="slide-studio-shell-chat">
               <AiChatWidget />

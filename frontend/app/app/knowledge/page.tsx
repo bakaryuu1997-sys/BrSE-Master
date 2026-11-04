@@ -1,11 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { Plus } from "lucide-react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Plus, UploadCloud, FileUp, Loader2 } from "lucide-react";
 import { useUiLanguage } from "@/components/LanguageProvider";
 import { useConfirm } from "@/components/ConfirmProvider";
 import { KnowledgeDocumentList } from "@/components/knowledge/KnowledgeDocumentList";
-import { KnowledgeInsightRail } from "@/components/knowledge/KnowledgeInsightRail";
 import { KnowledgeListControls } from "@/components/knowledge/KnowledgeListControls";
 import { KnowledgeQaPanel } from "@/components/knowledge/KnowledgeQaPanel";
 import { KnowledgeEditorModal } from "@/components/knowledge/KnowledgeEditorModal";
@@ -18,7 +17,8 @@ import {
   saveKnowledgeItem,
   type KnowledgeItem,
 } from "@/lib/knowledge";
-import { ACTIVE_PROJECT_CHANGED_EVENT, getActiveProject, type ProjectSetting } from "@/lib/projectSettings";
+import { apiBaseUrl } from "@/lib/config";
+import { useProjectContext } from "@/components/ProjectContextProvider";
 import { extractReferences, sortKnowledgeByRank } from "@/lib/knowledgeSearch";
 
 export default function KnowledgePage() {
@@ -30,6 +30,8 @@ export default function KnowledgePage() {
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [activeTab, setActiveTab] = useState<"list" | "qa">("list");
   const [notice, setNotice] = useState<{ text: string; kind: "success" | "error" | "info" } | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [isUploadingFiles, setIsUploadingFiles] = useState(false);
 
   // Q&A State
   const [qaInput, setQaInput] = useState("");
@@ -44,7 +46,7 @@ export default function KnowledgePage() {
   const [newContent, setNewContent] = useState("");
   const [newCategory, setNewCategory] = useState("spec");
 
-  const [activeProject, setActiveProject] = useState<ProjectSetting | null>(() => getActiveProject());
+  const { activeProject } = useProjectContext();
   const activeProjectId = activeProject?.id;
   const categories = useMemo(() => Array.from(new Set(items.map((item) => item.category))).sort(), [items]);
   const visibleItems = useMemo(() => {
@@ -142,16 +144,14 @@ export default function KnowledgePage() {
     loadKnowledge();
   }, [loadKnowledge]);
 
+  // Reset selection/filter when the user switches project (not on first mount).
+  const lastProjectId = useRef(activeProject?.id);
   useEffect(() => {
-    function handleProjectChange() {
-      setActiveProject(getActiveProject());
-      setSelectedItem(null);
-      setCategoryFilter("all");
-    }
-
-    window.addEventListener(ACTIVE_PROJECT_CHANGED_EVENT, handleProjectChange);
-    return () => window.removeEventListener(ACTIVE_PROJECT_CHANGED_EVENT, handleProjectChange);
-  }, []);
+    if (lastProjectId.current === activeProject?.id) return;
+    lastProjectId.current = activeProject?.id;
+    setSelectedItem(null);
+    setCategoryFilter("all");
+  }, [activeProject?.id]);
 
   async function handleDelete(id: number) {
     const ok = await confirm({ type: "danger", message: t("knowledge.deleteConfirm") });
@@ -200,50 +200,123 @@ export default function KnowledgePage() {
     }
   }
 
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+  };
+
+  const handleDrop = async (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsDragging(false);
+
+    const files = Array.from(e.dataTransfer.files);
+    if (!files.length) return;
+
+    setIsUploadingFiles(true);
+    let successCount = 0;
+
+    for (const file of files) {
+      try {
+        const ext = file.name.split(".").pop()?.toLowerCase() || "";
+        const category = ["sql", "db"].includes(ext)
+          ? "database"
+          : ["api", "json", "yaml", "yml"].includes(ext)
+          ? "api"
+          : ["qa", "faq"].includes(ext)
+          ? "qa"
+          : categoryFilter !== "all"
+          ? categoryFilter
+          : "spec";
+
+        let content = "";
+        if (file.type.startsWith("text/") || ["md", "txt", "json", "yaml", "yml", "sql", "csv", "ts", "js", "py"].includes(ext)) {
+          content = await file.text();
+        } else {
+          const formData = new FormData();
+          formData.append("file", file);
+          const res = await fetch(`${apiBaseUrl}/memos/images`, { method: "POST", body: formData });
+          if (res.ok) {
+            const data = await res.json();
+            content = `File đính kèm: [${file.name}](${data.url})\n\nKích thước: ${(file.size / 1024).toFixed(1)} KB\nĐịnh dạng: ${file.type || ext.toUpperCase()}`;
+          } else {
+            content = `Tài liệu: ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+          }
+        }
+
+        await saveKnowledgeItem({
+          title: file.name.replace(/\.[^/.]+$/, ""),
+          content: content || `Tài liệu ${file.name}`,
+          category,
+          projectId: activeProjectId || "default",
+        });
+        successCount++;
+      } catch (err) {
+        console.error("Drop file error:", err);
+      }
+    }
+
+    setIsUploadingFiles(false);
+    if (successCount > 0) {
+      notify(`Đã nhập thành công ${successCount} tài liệu vào Kho Tri thức!`, "success");
+      loadKnowledge();
+    } else {
+      notify("Không thể nhập tệp đính kèm.", "error");
+    }
+  };
+
   return (
-    <main className="brse-page">
+    <main
+      className="brse-page relative"
+      onDragOver={handleDragOver}
+      onDragLeave={handleDragLeave}
+      onDrop={handleDrop}
+    >
+      {isDragging && (
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background/85 backdrop-blur-md border-4 border-dashed border-primary pointer-events-none">
+          <UploadCloud className="h-16 w-16 text-primary animate-bounce mb-3" />
+          <p className="text-xl font-bold text-ink">Thả tệp vào đây để tải vào Kho Tri thức</p>
+          <p className="text-xs text-textMuted mt-1">Hỗ trợ đa tệp Markdown, Text, PDF, Docs, Code, Database Spec...</p>
+        </div>
+      )}
+      {isUploadingFiles && (
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-background/80 backdrop-blur-sm pointer-events-none">
+          <Loader2 className="h-10 w-10 text-primary animate-spin mb-3" />
+          <p className="text-sm font-bold text-ink">Đang tải và xử lý các tệp tài liệu...</p>
+        </div>
+      )}
       <PageHeader
+        compact
         badge="Knowledge"
         title={t("knowledge.title")}
-        description={t("knowledge.body")}
+        className="mb-2"
         actions={
-          <button
-            onClick={openCreateModal}
-            className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all active:scale-95"
-          >
-            <Plus className="h-4 w-4" />
-            {t("knowledge.add")}
-          </button>
-        }
-        stats={[
-          { label: t("knowledge.docs"), value: items.length },
-          { label: t("knowledge.categories"), value: categories.length, variant: "primary" },
-          { label: t("knowledge.links"), value: backlinkCount, variant: "success" },
-        ]}
-      >
-        <div className="scene-art hidden lg:block">
-          <div className="scene-link right-24 top-16 w-40 rotate-[22deg]" />
-          <div className="scene-link right-28 top-28 w-36 -rotate-[18deg]" />
-          <div className="scene-link right-10 top-24 w-28 rotate-[12deg]" />
-          <span className="scene-node right-64 top-12" />
-          <span className="scene-node right-28 top-24" />
-          <span className="scene-node right-10 top-16" />
-          <span className="scene-node right-20 top-36" />
-          <div className="scene-panel right-8 bottom-6 w-56 p-4">
-            <span className="scene-kicker">{t("knowledge.graph")}</span>
-            <p className="mt-3 text-sm font-semibold text-ink">{backlinkCount} {t("knowledge.backlinks")}</p>
-            <p className="mt-1 text-xs leading-5 text-textMuted">{t("knowledge.graphDesc")}</p>
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="rounded-lg border border-primary/25 bg-primary/10 px-2.5 py-1 text-xs font-bold text-primary">
+              {items.length} {t("knowledge.docs")}
+            </span>
+            <span className="rounded-lg border border-cyan/25 bg-cyan/10 px-2.5 py-1 text-xs font-bold text-cyan">
+              {categories.length} {t("knowledge.categories")}
+            </span>
+            <span className="rounded-lg border border-matcha/25 bg-matcha/10 px-2.5 py-1 text-xs font-bold text-matcha">
+              {backlinkCount} {t("knowledge.links")}
+            </span>
+            <button
+              onClick={openCreateModal}
+              className="flex items-center gap-1.5 rounded-lg bg-primary px-3 py-1.5 text-xs font-bold text-white shadow-sm shadow-primary/20 hover:bg-primaryHover transition-all active:scale-95"
+            >
+              <Plus className="h-3.5 w-3.5" />
+              {t("knowledge.add")}
+            </button>
           </div>
-        </div>
-      </PageHeader>
-
-      <KnowledgeInsightRail
-        itemCount={items.length}
-        categoryCount={categories.length}
-        backlinkCount={backlinkCount}
-        visibleItemCount={visibleItems.length}
-        searchQuery={searchQuery}
-        t={t}
+        }
       />
 
       {notice ? (
