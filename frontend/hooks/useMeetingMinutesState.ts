@@ -1,8 +1,9 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { getActiveProject, ACTIVE_PROJECT_CHANGED_EVENT, type ProjectSetting } from "@/lib/projectSettings";
+import { getActiveProject } from "@/lib/projectSettings";
+import { useProjectContext } from "@/components/ProjectContextProvider";
 import { buildProjectAiPayload } from "@/lib/projectAiContext";
 import { getMeetingHistory, getMeetingTranscript, type MeetingRecord } from "@/lib/meetings";
 import {
@@ -10,15 +11,8 @@ import {
   getMeetingMinutes,
   createMeetingMinutes,
   updateMeetingMinutes,
-  summarizeMinutesToSlides,
   extractMinutesFromTranscript,
 } from "@/lib/meetingMinutes";
-import type {
-  RewriteTone,
-  SlideThemeId,
-  SlideStudioImportPayload,
-} from "@/lib/slideStudio";
-import { SLIDE_STUDIO_IMPORT_KEY } from "@/lib/slideStudio";
 import { fetchClientStateValue, saveClientStateValue } from "@/lib/clientState";
 import { ensureBrseTodoProject, saveBrseTodoStateToDb, upsertMeetingMinutesActionTodo } from "@/lib/brseTodo";
 import { saveOperationRecord } from "@/lib/operations";
@@ -58,38 +52,7 @@ export type MinutesDraft = {
   createdDate: string;
 };
 
-export type SlideAssistMode = "customer" | "executive" | "incident";
-
 const MINUTES_DRAFT_KEY = "brse.meetingMinutesDraft.v1";
-
-export const slideAssistProfiles: Record<
-  SlideAssistMode,
-  {
-    label: string;
-    tone: RewriteTone;
-    themeId: SlideThemeId;
-    deckSuffix: string;
-  }
-> = {
-  customer: {
-    label: "Customer",
-    tone: "japanese-client",
-    themeId: "board-jp",
-    deckSuffix: "customer slides"
-  },
-  executive: {
-    label: "Executive",
-    tone: "executive",
-    themeId: "mono-exec",
-    deckSuffix: "executive slides"
-  },
-  incident: {
-    label: "Incident",
-    tone: "executive",
-    themeId: "incident-command",
-    deckSuffix: "incident slides"
-  }
-};
 
 export function getTodayDate() {
   return new Date().toISOString().slice(0, 10);
@@ -237,15 +200,13 @@ export function useMeetingMinutesState() {
   const [isAiModalOpen, setIsAiModalOpen] = useState(false);
   const [transcript, setTranscript] = useState("");
   const [isGeneratingAi, setIsGeneratingAi] = useState(false);
-  const [isGeneratingSlideDeck, setIsGeneratingSlideDeck] = useState(false);
   const [isSavingMinutes, setIsSavingMinutes] = useState(false);
-  const [slideAssistMode, setSlideAssistMode] = useState<SlideAssistMode>("customer");
   const [meetingPickList, setMeetingPickList] = useState<MeetingRecord[]>([]);
   const [loadingMeetingPickList, setLoadingMeetingPickList] = useState(false);
   const [savedMinutesList, setSavedMinutesList] = useState<Array<{ id: string; title: string; meeting_date: string }>>([]);
   const [activeMinutesId, setActiveMinutesId] = useState("");
   const [loadedMinutesBody, setLoadedMinutesBody] = useState<string | null>(null);
-  const [activeProject, setActiveProject] = useState<ProjectSetting | null>(() => getActiveProject());
+  const { activeProject } = useProjectContext();
   const [activeFormTab, setActiveFormTab] = useState<"info" | "agenda" | "action">("info");
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
 
@@ -285,32 +246,38 @@ export function useMeetingMinutesState() {
     getMeetingMinutesList(pid).then(rows => setSavedMinutesList(Array.isArray(rows) ? rows : [])).catch(() => {});
   }, [activeProject?.id]);
 
+  // Prefill empty form fields when the user switches project (not on first mount).
+  const lastProjectId = useRef(activeProject?.id);
   useEffect(() => {
-    function handleProjectChange() {
-      const nextProject = getActiveProject();
-      setActiveProject(nextProject);
-      setForm((current) => {
-        if (current.projectName || current.creator) return current;
-        return {
-          ...current,
-          projectName: nextProject?.name || "",
-          creator: nextProject?.brse_name || "",
-        };
-      });
-    }
+    if (lastProjectId.current === activeProject?.id) return;
+    lastProjectId.current = activeProject?.id;
+    setForm((current) => {
+      if (current.projectName || current.creator) return current;
+      return {
+        ...current,
+        projectName: activeProject?.name || "",
+        creator: activeProject?.brse_name || "",
+      };
+    });
+  }, [activeProject]);
 
-    window.addEventListener(ACTIVE_PROJECT_CHANGED_EVENT, handleProjectChange);
-    return () => window.removeEventListener(ACTIVE_PROJECT_CHANGED_EVENT, handleProjectChange);
-  }, []);
-
-  useEffect(() => {
-    if (!isAiModalOpen) return;
+  const loadMeetingPickList = useCallback(() => {
     setLoadingMeetingPickList(true);
     getMeetingHistory()
       .then((rows) => setMeetingPickList(rows.filter((row) => row.status === "completed" && row.transcript_available !== false)))
       .catch(() => {})
       .finally(() => setLoadingMeetingPickList(false));
-  }, [isAiModalOpen]);
+  }, []);
+
+  useEffect(() => {
+    loadMeetingPickList();
+  }, [loadMeetingPickList]);
+
+  useEffect(() => {
+    if (isAiModalOpen) {
+      loadMeetingPickList();
+    }
+  }, [isAiModalOpen, loadMeetingPickList]);
 
   useEffect(() => {
     let isMounted = true;
@@ -412,29 +379,6 @@ export function useMeetingMinutesState() {
     setActionItems((current) => current.map((item) => (item.id === id ? { ...item, [key]: value } : item)));
   }
 
-  async function openAiSummarizedSlides() {
-    setIsGeneratingSlideDeck(true);
-    try {
-      const data = await summarizeMinutesToSlides(preview, 6, {
-        projectId: projectAiPayload.project_id,
-        projectContext: projectAiPayload.project_context,
-      });
-      const payload: SlideStudioImportPayload = {
-        source: "meeting-minutes",
-        deckTitle: data.deck_title || "Meeting Recap",
-        markdown: data.markdown || "",
-        themeId: "zen-stone",
-        importedAt: new Date().toISOString()
-      };
-      window.localStorage.setItem(SLIDE_STUDIO_IMPORT_KEY, JSON.stringify(payload));
-      router.push("/app/slides");
-    } catch {
-      setDraftStatus("❌ Lỗi tạo slide.");
-    } finally {
-      setIsGeneratingSlideDeck(false);
-    }
-  }
-
   async function loadTranscriptFromMeeting(meeting: MeetingRecord) {
     setIsGeneratingAi(true);
     setDraftStatus(`Đang tải transcript: ${meeting.title}`);
@@ -444,6 +388,41 @@ export function useMeetingMinutesState() {
       setDraftStatus(`Đã tải transcript: ${meeting.title}`);
     } catch {
       setDraftStatus("❌ Lỗi tải transcript.");
+    } finally {
+      setIsGeneratingAi(false);
+    }
+  }
+
+  async function autoGenerateFromMeeting(meeting: MeetingRecord) {
+    setIsGeneratingAi(true);
+    setDraftStatus(`Đang nạp transcript từ "${meeting.title}"...`);
+    try {
+      const data = await getMeetingTranscript(meeting.id);
+      const text = data.transcript || "";
+      setTranscript(text);
+      if (!text.trim()) {
+        setDraftStatus(`⚠️ Cuộc họp "${meeting.title}" chưa có transcript.`);
+        return;
+      }
+      setDraftStatus(`AI đang trích xuất biên bản từ "${meeting.title}"...`);
+      const extracted = await extractMinutesFromTranscript(text, {
+        projectId: projectAiPayload.project_id,
+        customerStyle: projectAiPayload.customer_style,
+        reportRule: projectAiPayload.report_rule,
+        timezoneRule: projectAiPayload.timezone_rule,
+        communicationNotes: projectAiPayload.communication_notes,
+      });
+      applyExtractedMinutes(extracted);
+      const meetingDate = meeting.created_at ? meeting.created_at.slice(0, 10) : "";
+      if (meetingDate) {
+        setForm((current) => ({
+          ...current,
+          meetingDate: meetingDate || current.meetingDate,
+        }));
+      }
+      setDraftStatus(`✅ Đã tự động tạo biên bản từ "${meeting.title}".`);
+    } catch {
+      setDraftStatus("❌ Lỗi tự động tạo biên bản từ cuộc họp.");
     } finally {
       setIsGeneratingAi(false);
     }
@@ -591,10 +570,7 @@ export function useMeetingMinutesState() {
     transcript,
     setTranscript,
     isGeneratingAi,
-    isGeneratingSlideDeck,
     isSavingMinutes,
-    slideAssistMode,
-    setSlideAssistMode,
     meetingPickList,
     loadingMeetingPickList,
     savedMinutesList,
@@ -614,8 +590,8 @@ export function useMeetingMinutesState() {
     updateAgenda,
     updateAction,
     saveMinutesToDb,
-    openAiSummarizedSlides,
     loadTranscriptFromMeeting,
+    autoGenerateFromMeeting,
     applyExtractedMinutes,
     generateMinutesFromTranscript,
     convertActionToTodo,

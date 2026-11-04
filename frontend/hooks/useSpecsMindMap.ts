@@ -3,6 +3,7 @@
 import { useEffect, useState, useMemo, useCallback, useRef } from "react";
 import { fetchClientStateValue, saveClientStateValue } from "@/lib/clientState";
 import { getActiveProject } from "@/lib/projectSettings";
+import { useNotify } from "@/components/ToastProvider";
 import { apiBaseUrl } from "@/lib/config";
 import type { MindMapNode, NodeState } from "@/components/specs-mindmap/NodeEditModal";
 
@@ -124,6 +125,7 @@ export function parseMarkdownToMindMap(markdown: string): MindMapNode[] {
 }
 
 export function useSpecsMindMap() {
+  const { notify } = useNotify();
   const [activeProject, setActiveProject] = useState<any>(null);
   const [markdown, setMarkdown] = useState(defaultMarkdownTemplate);
   const [qnas, setQnas] = useState<OperationRecord[]>([]);
@@ -348,17 +350,15 @@ ${qaItems}
         if (parsed.body) {
           setMarkdown(parsed.body);
           void handleSaveState(parsed.body, links);
-          alert("Đã nạp bản nháp yêu cầu thành công!");
+          notify("Đã nạp bản nháp yêu cầu thành công!", "success");
           return;
         }
       }
-      alert(
-        "Không tìm thấy bản nháp Specs nào trong Cache. Bạn hãy viết hoặc dán nội dung thủ công!"
-      );
+      notify("Không tìm thấy bản nháp Specs nào trong Cache. Bạn hãy viết hoặc dán nội dung thủ công!", "info");
     } catch {
-      alert("Lỗi khi nạp bản nháp.");
+      notify("Lỗi khi nạp bản nháp.", "error");
     }
-  }, [handleSaveState, links]);
+  }, [handleSaveState, links, notify]);
 
   return {
     activeProject,

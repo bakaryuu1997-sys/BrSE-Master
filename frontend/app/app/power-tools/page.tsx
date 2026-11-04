@@ -15,7 +15,8 @@ import { useUiLanguage } from "@/components/LanguageProvider";
 import { PageHeader } from "@/components/PageHeader";
 import { DocxToPdfConverter } from "@/components/tools/DocxToPdfConverter";
 import { saveOperationRecord, type OperationRecordInput } from "@/lib/operations";
-import { ACTIVE_PROJECT_CHANGED_EVENT, getActiveProject } from "@/lib/projectSettings";
+import { getActiveProject } from "@/lib/projectSettings";
+import { useProjectContext } from "@/components/ProjectContextProvider";
 import { defaultPowerToolsState, fetchPowerToolsState, savePowerToolsState, type PowerToolsState, type RiskItem, type SprintTask } from "@/lib/powerTools";
 
 function createId(prefix: string) {
@@ -104,18 +105,8 @@ export default function PowerToolsPage() {
   const [operationSyncStatus, setOperationSyncStatus] = useState("");
   const [syncStatus, setSyncStatus] = useState(t("tools.syncLoading"));
   const [isLoaded, setIsLoaded] = useState(false);
-  const [activeProjectId, setActiveProjectId] = useState("default");
-
-  useEffect(() => {
-    setActiveProjectId(getActiveProject()?.id || "default");
-
-    function handleProjectChange() {
-      setActiveProjectId(getActiveProject()?.id || "default");
-    }
-
-    window.addEventListener(ACTIVE_PROJECT_CHANGED_EVENT, handleProjectChange);
-    return () => window.removeEventListener(ACTIVE_PROJECT_CHANGED_EVENT, handleProjectChange);
-  }, []);
+  const { activeProject: contextProject } = useProjectContext();
+  const activeProjectId = contextProject?.id || "default";
 
   useEffect(() => {
     let cancelled = false;
@@ -339,7 +330,7 @@ export default function PowerToolsPage() {
   return (
     <main className="brse-page">
       <PageHeader
-        className="mb-6"
+        className="mb-3.5"
         badge={t("tools.badge")}
         title={t("tools.title")}
         description={t("tools.body")}
@@ -352,54 +343,57 @@ export default function PowerToolsPage() {
         ]}
         actions={
           <div className="flex flex-wrap gap-2">
-          <button
-            onClick={exportPowerToolsReport}
-            className="brse-button px-4 py-2.5 text-sm"
-          >
-            {t("tools.exportReport")}
-          </button>
-          <button
-            onClick={applyBrsePreset}
-            className="brse-button px-4 py-2.5 text-sm text-matcha hover:border-matcha/40"
-          >
-            Apply BrSE preset
-          </button>
-          <button
-            onClick={pushOpenRisksToOperations}
-            className="brse-button px-4 py-2.5 text-sm text-gold hover:border-gold/40"
-          >
-            Push risks to Operations
-          </button>
-          <button
-            onClick={saveSnapshot}
-            className="brse-button brse-button-primary px-4 py-2.5 text-sm"
-          >
-            <Save className="h-4 w-4" />
-            {t("tools.saveSnapshot")}
-          </button>
+            <button
+              onClick={exportPowerToolsReport}
+              className="brse-button px-3 py-1.5 text-xs"
+            >
+              {t("tools.exportReport")}
+            </button>
+            <button
+              onClick={applyBrsePreset}
+              className="brse-button px-3 py-1.5 text-xs text-matcha hover:border-matcha/40"
+            >
+              Apply BrSE preset
+            </button>
+            <button
+              onClick={pushOpenRisksToOperations}
+              className="brse-button px-3 py-1.5 text-xs text-gold hover:border-gold/40"
+            >
+              Push risks to Operations
+            </button>
+            <button
+              onClick={saveSnapshot}
+              className="brse-button brse-button-primary px-3 py-1.5 text-xs"
+            >
+              <Save className="h-3.5 w-3.5" />
+              {t("tools.saveSnapshot")}
+            </button>
           </div>
         }
       />
 
-      {savedAt ? (
-        <div className="mb-5 rounded-lg border border-matcha/30 bg-matcha/10 px-4 py-3 text-sm text-matcha">
-          {t("tools.savedAt")} {savedAt}.
+      {(savedAt || operationSyncStatus || syncStatus) && (
+        <div className="mb-3.5 flex flex-wrap items-center justify-between gap-2 rounded-lg border border-[var(--brse-panel-border)] bg-surface/40 px-3 py-1.5 text-xs text-textMuted">
+          <div className="flex items-center gap-2">
+            <span className="inline-flex items-center gap-1">
+              <span className="h-1.5 w-1.5 rounded-full bg-matcha" />
+              Sync: <span className="font-semibold text-textPrimary">{syncStatus}</span>
+            </span>
+            {savedAt && (
+              <span className="text-matcha">({t("tools.savedAt")} {savedAt})</span>
+            )}
+          </div>
+          {operationSyncStatus && (
+            <span className="text-primary font-medium">{operationSyncStatus}</span>
+          )}
         </div>
-      ) : null}
-      {operationSyncStatus ? (
-        <div className="mb-5 rounded-lg border border-primary/25 bg-primary/10 px-4 py-3 text-sm text-primary">
-          {operationSyncStatus}
-        </div>
-      ) : null}
-      <div className="brse-card brse-card-muted mb-5 px-4 py-2 text-xs font-semibold text-textMuted">
-        Sync: {syncStatus}
-      </div>
+      )}
 
-      <div className="mb-8">
+      <div className="mb-4">
         <DocxToPdfConverter />
       </div>
 
-      <section className="mb-8 grid gap-4 lg:grid-cols-3">
+      <section className="mb-4 grid gap-3 lg:grid-cols-3">
         <div className="brse-card p-4">
           <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
             CR Risk Score

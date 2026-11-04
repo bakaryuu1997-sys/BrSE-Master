@@ -20,6 +20,7 @@ import {
   MousePointerClick
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useNotify } from "@/components/ToastProvider";
 import { REQUIREMENT_CHECKLIST_GROUPS, REQUIREMENT_PROMPTS, REQUIREMENT_PLAYBOOKS } from "./useKeigoState";
 import { useSpeechSynthesis } from "./useSpeechSynthesis";
 import { TtsButton } from "./TtsButton";
@@ -62,6 +63,7 @@ export function KeigoRequirementPanel({
 }: KeigoRequirementPanelProps) {
   const [activeTab, setActiveTab] = useState<"blueprint" | "guide" | "templates" | "ai">("ai");
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+  const { notify } = useNotify();
   const { speak, stop, isSpeaking } = useSpeechSynthesis();
 
   // Local state for 5W2H Blueprint Form
@@ -174,7 +176,7 @@ ${blueprint.exceptions ? blueprint.exceptions.split("\n").map(line => line.start
 
     setRequirementContext(md);
     navigator.clipboard.writeText(md);
-    alert("Đã tạo bản nháp Markdown Specs dựa trên khung tư duy 5W2H và sao chép vào Clipboard của bạn!");
+    notify("Đã tạo bản nháp Markdown Specs dựa trên khung tư duy 5W2H và sao chép vào Clipboard của bạn!", "success");
     setActiveTab("ai"); // Auto switch to AI Refiner tab so they can review/ask AI immediately!
   };
 
@@ -190,7 +192,7 @@ ${blueprint.exceptions ? blueprint.exceptions.split("\n").map(line => line.start
       setActiveMode("keigo");
     } else {
       navigator.clipboard.writeText(text);
-      alert("Đã copy mẫu câu Nhật. Hãy dán sang tab Keigo Check để AI sửa lỗi!");
+      notify("Đã copy mẫu câu Nhật. Hãy dán sang tab Keigo Check để AI sửa lỗi!", "success");
     }
   };
 

@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { Scissors, Clock, Loader2, Play, StepBack, StepForward } from "lucide-react";
 import { useUiLanguage } from "@/components/LanguageProvider";
+import { useNotify } from "@/components/ToastProvider";
 import { trimMeeting, MeetingRecord, getMeetingMediaUrl } from "@/lib/meetings";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,6 +17,7 @@ interface VideoTrimModalProps {
 
 export function VideoTrimModal({ meeting, onClose, onFinished }: VideoTrimModalProps) {
   const { t } = useUiLanguage();
+  const { notify } = useNotify();
   const [startTime, setStartTime] = useState("0");
   const [endTime, setEndTime] = useState("60");
   const [isLoading, setIsLoading] = useState(false);
@@ -59,18 +61,18 @@ export function VideoTrimModal({ meeting, onClose, onFinished }: VideoTrimModalP
     const end = parseFloat(endTime);
 
     if (isNaN(start) || isNaN(end) || start >= end) {
-      alert(t("trim.invalidTime"));
+      notify(t("trim.invalidTime"), "error");
       return;
     }
 
     setIsLoading(true);
     try {
       await trimMeeting(meeting.id, start, end);
-      alert(t("trim.started"));
+      notify(t("trim.started"), "success");
       onFinished();
     } catch (error) {
       console.error("Trim error:", error);
-      alert(t("trim.error"));
+      notify(t("trim.error"), "error");
     } finally {
       setIsLoading(false);
     }

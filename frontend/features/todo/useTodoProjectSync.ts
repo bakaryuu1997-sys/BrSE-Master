@@ -522,7 +522,7 @@ export function toggleChecklistLine(note: string, lineIndex: number) {
 export function useTodoProjectSync() {
   const { t } = useUiLanguage();
   const { confirm } = useConfirm();
-  const { notify } = useNotify();
+  const { notify, notifyWithUndo } = useNotify();
   const { mutate: saveTodoProjectState } = useSaveTodoProjectStateMutation();
   const [items, setItems] = useState<WorkflowItem[]>(() => mergeSavedItems([], "standard"));
   const [operations, setOperations] = useState<OperationRecord[]>([]);
@@ -873,7 +873,7 @@ ${risks.length ? risks.map((item) => `  - ${(t ? t(`todo.workflow.${item.id}.tit
 
   async function archiveActiveProject() {
     if (activeProjects.length <= 1) {
-      alert(t("todo.alert.minProject"));
+      notify(t("todo.alert.minProject"), "error");
       return;
     }
     const ok = await confirm({ message: t("todo.confirm.archive").replace("{name}", activeProjectName) });
@@ -900,7 +900,7 @@ ${risks.length ? risks.map((item) => `  - ${(t ? t(`todo.workflow.${item.id}.tit
 
   async function deleteActiveProject() {
     if (activeProjects.length <= 1) {
-      alert(t("todo.alert.minProject"));
+      notify(t("todo.alert.minProject"), "error");
       return;
     }
     const ok = await confirm({ type: "danger", message: t("todo.confirm.delete").replace("{name}", activeProjectName) });
@@ -955,8 +955,22 @@ ${risks.length ? risks.map((item) => `  - ${(t ? t(`todo.workflow.${item.id}.tit
           item.id === itemId ? { ...item, done: true, evidenceUrl, updatedAt: new Date().toISOString() } : item
         )
       );
+      if (target.operationId) {
+        const opStatus = target.phase.includes("Testing") || target.phase.includes("UAT")
+          ? "Resolved"
+          : target.phase.includes("Q&A")
+            ? "Answered"
+            : "Closed";
+        fetch(`${apiBaseUrl}/operations/${target.operationId}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ status: opStatus }),
+        }).catch(() => {});
+      }
       notify(
-        `Đã hoàn thành: ${target.title}`,
+        target.operationId
+          ? `Đã hoàn thành và tự động đồng bộ sang Operations Board (${target.title})`
+          : `Đã hoàn thành: ${target.title}`,
         "success",
         {
           label: "Hoàn tác (Undo)",
@@ -966,6 +980,13 @@ ${risks.length ? risks.map((item) => `  - ${(t ? t(`todo.workflow.${item.id}.tit
                 item.id === itemId ? { ...item, done: false, updatedAt: new Date().toISOString() } : item
               )
             );
+            if (target.operationId) {
+              fetch(`${apiBaseUrl}/operations/${target.operationId}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ status: "Open" }),
+              }).catch(() => {});
+            }
           },
         },
         6000
@@ -977,11 +998,54 @@ ${risks.length ? risks.map((item) => `  - ${(t ? t(`todo.workflow.${item.id}.tit
         item.id === itemId ? { ...item, done: false, updatedAt: new Date().toISOString() } : item
       )
     );
+    if (target.operationId) {
+      fetch(`${apiBaseUrl}/operations/${target.operationId}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status: "Open" }),
+      }).catch(() => {});
+    }
   }
 
   function updateItem(itemId: string, patch: Partial<WorkflowItem>) {
     persistItems((current) =>
       current.map((item) => (item.id === itemId ? { ...item, ...patch, updatedAt: new Date().toISOString() } : item))
+    );
+  }
+
+  function addNewItem(title: string, priority: Priority = "P1", phase = activePhase) {
+    const trimmed = title.trim();
+    if (!trimmed) return;
+    const newItem: WorkflowItem = {
+      id: `custom-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+      phase: phase || activePhase,
+      title: trimmed,
+      detail: "Công việc phát sinh do BrSE thêm vào quy trình.",
+      priority,
+      presets: [preset],
+      done: false,
+      note: "",
+      deadline: "",
+      evidenceUrl: "",
+      operationId: "",
+      updatedAt: new Date().toISOString(),
+      source: "workflow",
+    };
+    persistItems((current) => [newItem, ...current]);
+    notify(`Đã thêm việc mới: ${trimmed}`, "success");
+  }
+
+  function deleteItem(itemId: string) {
+    const itemToDelete = items.find((item) => item.id === itemId);
+    if (!itemToDelete) return;
+    persistItems((current) => current.filter((item) => item.id !== itemId));
+    notifyWithUndo(
+      `Đã xóa việc: "${itemToDelete.title.slice(0, 32)}${itemToDelete.title.length > 32 ? "..." : ""}"`,
+      () => {
+        persistItems((current) => [itemToDelete, ...current]);
+        notify("Đã hoàn tác và khôi phục công việc thành công!", "success");
+      },
+      5000
     );
   }
 
@@ -1005,13 +1069,37 @@ ${risks.length ? risks.map((item) => `  - ${(t ? t(`todo.workflow.${item.id}.tit
       const formData = new FormData();
       formData.append("file", file);
       const response = await fetch(`${apiBaseUrl}/memos/images`, { method: "POST", body: formData });
-      if (!response.ok) return;
+      if (!response.ok) {
+        notify("Tải tài liệu thất bại. Định dạng không được hỗ trợ hoặc vượt quá dung lượng.", "error");
+        return;
+      }
       const payload = (await response.json()) as { url?: string };
       const path = payload.url || "";
       const absolute = path.startsWith("http") ? path : `${apiBaseUrl}${path}`;
-      updateItem(itemId, { evidenceUrl: absolute });
+      const isImg = file.type.startsWith("image/") || /\.(png|jpg|jpeg|webp|gif|svg)$/i.test(file.name);
+
+      setItems((prev) => {
+        const item = prev.find((it) => it.id === itemId);
+        const currentList = item?.evidences ? [...item.evidences] : [];
+        if (item?.evidenceUrl && !currentList.some((ev) => ev.url === item.evidenceUrl)) {
+          currentList.unshift({ type: "link", url: item.evidenceUrl, quote: item.evidenceUrl });
+        }
+        currentList.push({
+          type: isImg ? "image" : "file",
+          url: absolute,
+          quote: file.name || (isImg ? "Screenshot" : "Document"),
+        });
+        const next = prev.map((it) =>
+          it.id === itemId
+            ? { ...it, evidenceUrl: absolute, evidences: currentList, updatedAt: new Date().toISOString() }
+            : it
+        );
+        writeProjectState(activeProjectId, { preset, activePhase, items: next });
+        return next;
+      });
+      notify(`Đã đính kèm tài liệu: ${file.name}`, "success");
     } catch {
-      /* ignore */
+      notify("Có lỗi khi kết nối tới máy chủ tải tệp.", "error");
     }
   }
 
@@ -1187,6 +1275,8 @@ ${risks.length ? risks.map((item) => `  - ${(t ? t(`todo.workflow.${item.id}.tit
     renameActiveProject,
     toggleItem,
     updateItem,
+    addNewItem,
+    deleteItem,
     addSubtask,
     toggleSubtask,
     attachEvidenceImageFromClipboard,

@@ -61,6 +61,11 @@ export function DashboardDrawers({
   todoActionHref,
   qnaReminderCandidates
 }: DashboardDrawersProps) {
+  // Single-project scope: show the live project-settings name (the todo list may hold a stale
+  // name from before a rename). "All projects" scope: show each item's own project name.
+  const scopeName = (item: { projectName?: string }) =>
+    todoCommand.activeProject && projectLabel ? projectLabel : item.projectName;
+
   return (
     <>
       <Drawer
@@ -81,7 +86,7 @@ export function DashboardDrawers({
               <DrawerItem
                 key={item.id}
                 title={item.title}
-                subtitle={`${item.projectName ? `${item.projectName} · ` : ""}${item.deadline ? `${t("dashboard.deadline")}: ${item.deadline}` : `${t("dashboard.phase")}: ${item.phase}`}`}
+                subtitle={`${scopeName(item) ? `${scopeName(item)} · ` : ""}${item.deadline ? `${t("dashboard.deadline")}: ${item.deadline}` : `${t("dashboard.phase")}: ${item.phase}`}`}
                 badge={t("dashboard.risk")}
                 badgeVariant="danger"
                 action={
@@ -107,7 +112,7 @@ export function DashboardDrawers({
               <DrawerItem
                 key={item.id}
                 title={item.title}
-                subtitle={`${item.projectName ? `${item.projectName} · ` : ""}${item.phase} / ${item.priority}`}
+                subtitle={`${scopeName(item) ? `${scopeName(item)} · ` : ""}${item.phase} / ${item.priority}`}
                 badge={item.priority}
                 badgeVariant={item.priority === "P0" ? "danger" : item.priority === "P1" ? "warning" : "default"}
                 action={

@@ -11,6 +11,7 @@ import {
 } from "@/lib/operations";
 import { todayIso } from "./operationsHelpers";
 import { useUiLanguage } from "@/components/LanguageProvider";
+import { useNotify } from "@/components/ToastProvider";
 
 interface OperationsKanbanViewProps {
   filteredRecords: OperationRecord[];
@@ -32,6 +33,7 @@ export function OperationsKanbanView({
   startEdit,
 }: OperationsKanbanViewProps) {
   const { t } = useUiLanguage();
+  const { notify } = useNotify();
 
   // Drag and drop handlers
   const handleDragStart = (e: React.DragEvent, id: string) => {
@@ -65,7 +67,7 @@ export function OperationsKanbanView({
       );
       window.location.reload();
     } catch {
-      alert(t("operations.updateStatusError"));
+      notify(t("operations.updateStatusError"), "error");
     }
   };
 
@@ -99,7 +101,7 @@ export function OperationsKanbanView({
       );
       window.location.reload();
     } catch {
-      alert(t("operations.updateStatusError"));
+      notify(t("operations.updateStatusError"), "error");
     }
   };
 
