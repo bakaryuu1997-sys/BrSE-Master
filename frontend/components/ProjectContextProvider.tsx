@@ -8,6 +8,7 @@ import {
   getActiveProjectId,
   getProjectSettings,
   setActiveProjectId as persistActiveProjectId,
+  setActiveProjectIdToDb,
   type ProjectSetting,
 } from "@/lib/projectSettings";
 
@@ -56,7 +57,9 @@ export function ProjectContextProvider({ children }: { children: ReactNode }) {
   }, [refresh]);
 
   const setActiveProject = useCallback((projectId: string) => {
-    persistActiveProjectId(projectId); // persists + broadcasts; refresh() picks it up
+    persistActiveProjectId(projectId); // persists locally + broadcasts; refresh() picks it up
+    // Also save on the server, otherwise the next load pulls the old value back.
+    void setActiveProjectIdToDb(projectId).catch(() => undefined);
   }, []);
 
   const value = useMemo<ProjectContextValue>(

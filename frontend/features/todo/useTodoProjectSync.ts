@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useUiLanguage } from "@/components/LanguageProvider";
 import { useConfirm } from "@/components/ConfirmProvider";
 import { useNotify } from "@/components/ToastProvider";
+import { useProjectContext } from "@/components/ProjectContextProvider";
 import { apiBaseUrl } from "@/lib/config";
 import {
   BRSE_TODO_ACTIVE_PROJECT_KEY,
@@ -525,6 +526,7 @@ export function useTodoProjectSync() {
   const { confirm } = useConfirm();
   const { notify, notifyWithUndo } = useNotify();
   const { mutate: saveTodoProjectState } = useSaveTodoProjectStateMutation();
+  const { activeProjectId: contextProjectId, setActiveProject: setSidebarProject } = useProjectContext();
   const [items, setItems] = useState<WorkflowItem[]>(() => mergeSavedItems([], "standard"));
   const [operations, setOperations] = useState<OperationRecord[]>([]);
   const [projects, setProjects] = useState<TodoProject[]>([]);
@@ -796,27 +798,32 @@ ${risks.length ? risks.map((item) => `  - ${(t ? t(`todo.workflow.${item.id}.tit
     setQuery("");
     setExpandedItemId("");
     setSavedAt("");
-  }, [activePhase, activeProjectId, items, preset]);
+    // Keep the sidebar switcher in step with a switch made inside the Todo page. Batched with
+    // the state updates above, so the follow-context effect sees a consistent pair.
+    if (projectId !== contextProjectId && getProjectSettings().some((setting) => setting.id === projectId)) {
+      setSidebarProject(projectId);
+    }
+  }, [activePhase, activeProjectId, items, preset, contextProjectId, setSidebarProject]);
 
+  // Follow the sidebar project (ProjectContext). The reverse direction lives in
+  // `switchProject`, which pushes a Todo-page switch back to the sidebar.
+  const lastContextProjectId = useRef(contextProjectId);
   useEffect(() => {
     if (!isLoaded) return;
-
-    function handleProjectContextChange() {
-      const nextProjectId = getActiveProjectId();
-      if (!nextProjectId || nextProjectId === activeProjectId) return;
-      const mergedProjects = mergeProjectSettingsIntoTodoProjects(
-        projects.length ? projects : [createDefaultProject()],
-        getProjectSettings()
-      );
+    // React only to a change of the sidebar project, never to a mismatch the Todo page created
+    // itself (e.g. right after creating/selecting a project here).
+    if (lastContextProjectId.current === contextProjectId) return;
+    lastContextProjectId.current = contextProjectId;
+    if (!contextProjectId || contextProjectId === activeProjectId) return;
+    const mergedProjects = mergeProjectSettingsIntoTodoProjects(
+      projects.length ? projects : [createDefaultProject()],
+      getProjectSettings()
+    );
+    if (mergedProjects.some((project) => project.id === contextProjectId && !project.archivedAt)) {
       setProjects(mergedProjects);
-      if (mergedProjects.some((project) => project.id === nextProjectId && !project.archivedAt)) {
-        switchProject(nextProjectId);
-      }
+      switchProject(contextProjectId);
     }
-
-    window.addEventListener(ACTIVE_PROJECT_CHANGED_EVENT, handleProjectContextChange);
-    return () => window.removeEventListener(ACTIVE_PROJECT_CHANGED_EVENT, handleProjectContextChange);
-  }, [activeProjectId, isLoaded, projects, switchProject]);
+  }, [contextProjectId, activeProjectId, isLoaded, projects, switchProject]);
 
   function addProject() {
     const trimmedName = newProjectName.trim();
@@ -832,6 +839,7 @@ ${risks.length ? risks.map((item) => `  - ${(t ? t(`todo.workflow.${item.id}.tit
       window.dispatchEvent(
         new CustomEvent(ACTIVE_PROJECT_CHANGED_EVENT, { detail: { projectId: getActiveProjectId() } })
       );
+      setSidebarProject(nextProject.id); // the new project becomes active everywhere
     }
     setProjects((current) => [...current, nextProject]);
     setActiveProjectId(nextProject.id);
