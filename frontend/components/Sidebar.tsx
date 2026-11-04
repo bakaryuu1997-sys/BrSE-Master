@@ -10,28 +10,25 @@ import {
   ChevronRight,
   ClipboardList,
   FileBarChart2,
-  FileClock,
   FileText,
   LayoutDashboard,
   Library,
   Mail,
   Mic,
-  Network,
-  Presentation,
   Settings,
   Shield,
   StickyNote,
   SpellCheck,
-  SlidersHorizontal,
-  Zap,
   type LucideIcon,
 } from "lucide-react";
 import { useUiLanguage } from "@/components/LanguageProvider";
 import type { TranslationKey } from "@/lib/uiLanguage";
 import { cn } from "@/lib/utils";
 import { useLiveBadges } from "@/hooks/useLiveBadges";
+import { readBrseTodoProjects } from "@/lib/brseTodo";
 import {
   ACTIVE_PROJECT_CHANGED_EVENT,
+  ensureProjectSettingsForTodoProjects,
   fetchActiveProjectId,
   fetchProjectSettings,
   getActiveProjectId,
@@ -76,7 +73,6 @@ const navGroups: NavGroup[] = [
       { labelKey: "nav.meetingNote",    href: "/app/meeting-note", icon: Mic,      liveBadgeKey: "meetingProcessing" },
       { labelKey: "nav.meetingMinutes", href: "/app/minutes/new",  icon: FileText  },
       { labelKey: "nav.templates",      href: "/app/templates",    icon: Mail      },
-      { labelKey: "nav.history",        href: "/app/history",      icon: FileClock },
       { labelKey: "nav.keigo",          href: "/app/keigo",        icon: SpellCheck, badge: "AI" },
     ],
   },
@@ -98,17 +94,6 @@ const navGroups: NavGroup[] = [
     items: [
       { labelKey: "nav.knowledgeBase", href: "/app/knowledge", icon: BookOpenText },
       { labelKey: "nav.glossary",      href: "/app/glossary",  icon: Library      },
-    ],
-  },
-  {
-    id: "planning",
-    labelKey: "nav.planningTools",
-    icon: Zap,
-    color: "text-amber",
-    items: [
-      { labelKey: "nav.powerTools",   href: "/app/power-tools",   icon: SlidersHorizontal },
-      { labelKey: "nav.slides",       href: "/app/slides",        icon: Presentation      },
-      { labelKey: "nav.specsMindMap", href: "/app/specs-mindmap", icon: Network           },
     ],
   },
   {
@@ -176,6 +161,9 @@ export function Sidebar({ mode = "sidebar" }: SidebarProps) {
     }
 
     async function loadProjectContext() {
+      // Backfill Todo-only projects BEFORE the server merge below snapshots local settings;
+      // otherwise that merge overwrites the backfill with a stale one-project list.
+      ensureProjectSettingsForTodoProjects(readBrseTodoProjects().filter((project) => !project.archivedAt));
       applyCachedState();
       try {
         const nextProjects = await fetchProjectSettings();
@@ -242,14 +230,29 @@ export function Sidebar({ mode = "sidebar" }: SidebarProps) {
 
   return (
     <div className="flex flex-col gap-3">
-      <section className="mx-2 rounded-2xl border border-[var(--brse-hairline-border)] bg-[var(--brse-card-bg)] p-3 shadow-[var(--brse-card-shadow)]">
-        <div className="mb-2 flex items-center justify-between gap-2">
-          <p className="text-[9px] font-black uppercase tracking-[0.18em] text-primary">
-            Project Context
-          </p>
+      <section className="mx-2 rounded-xl border border-[var(--brse-hairline-border)] bg-[var(--brse-card-bg)] px-2.5 py-2 shadow-sm">
+        <div className="mb-1 flex items-center justify-between gap-1">
+          <div className="flex min-w-0 items-center gap-1.5">
+            {activeProject?.health_status ? (
+              <span
+                className={cn(
+                  "h-1.5 w-1.5 shrink-0 rounded-full",
+                  activeProject.health_status === "Red"
+                    ? "bg-vermilion"
+                    : activeProject.health_status === "Yellow"
+                    ? "bg-amber"
+                    : "bg-matcha"
+                )}
+                title={`Health: ${activeProject.health_status}`}
+              />
+            ) : null}
+            <span className="truncate text-[9px] font-black uppercase tracking-[0.16em] text-primary">
+              Project Context
+            </span>
+          </div>
           <Link
             href="/app/settings/projects"
-            className="rounded-lg px-2 py-1 text-[10px] font-bold text-textMuted transition hover:bg-[var(--brse-nav-hover-bg)] hover:text-textPrimary"
+            className="text-[9px] font-semibold text-textMuted transition hover:text-textPrimary"
           >
             Manage
           </Link>
@@ -262,7 +265,7 @@ export function Sidebar({ mode = "sidebar" }: SidebarProps) {
           value={selectedProjectId}
           onChange={(event) => void handleProjectChange(event.target.value)}
           disabled={!projects.length || isSavingProject}
-          className="field-control h-9 w-full rounded-xl px-2.5 py-1.5 text-xs font-bold text-textPrimary"
+          className="field-control h-7.5 w-full rounded-lg px-2 py-0.5 text-xs font-semibold text-textPrimary"
         >
           {projects.length ? null : <option value="">No project configured</option>}
           {projects.map((project) => (
@@ -271,36 +274,19 @@ export function Sidebar({ mode = "sidebar" }: SidebarProps) {
             </option>
           ))}
         </select>
-        <div className="mt-2 min-h-8 text-[10px] leading-4 text-textMuted">
-          {activeProject ? (
-            <>
-              <div className="flex items-center gap-2">
-                {activeProject.health_status ? (
-                  <span
-                    className={cn(
-                      "h-2 w-2 shrink-0 rounded-full",
-                      activeProject.health_status === "Red"
-                        ? "bg-vermilion"
-                        : activeProject.health_status === "Yellow"
-                        ? "bg-amber"
-                        : "bg-matcha"
-                    )}
-                  />
-                ) : null}
-                <p className="min-w-0 truncate font-semibold text-textPrimary">
-                  {activeProject.customer_name || "No customer set"}
-                </p>
-              </div>
-              <p className="truncate">
-                {activeProject.current_phase || activeProject.timezone || "Asia/Tokyo"}
-                {activeProject.next_milestone_date ? ` / ${activeProject.next_milestone_date}` : ""}
-              </p>
-            </>
-          ) : (
-            <p>Create a project profile to bind Todo, Reports, AI and Slides.</p>
-          )}
-          {projectStatus ? <p className="mt-1 text-amber">{projectStatus}</p> : null}
-        </div>
+        {activeProject ? (
+          <div className="mt-1 flex items-center justify-between text-[10px] text-textMuted">
+            <span className="truncate font-medium text-textSecondary">
+              {activeProject.customer_name || "No customer set"}
+            </span>
+            <span className="shrink-0 text-[9px] opacity-75">
+              {activeProject.timezone || "Asia/Tokyo"}
+            </span>
+          </div>
+        ) : (
+          <p className="mt-1 text-[9px] text-textMuted">No active project profile.</p>
+        )}
+        {projectStatus ? <p className="mt-0.5 truncate text-[9px] text-amber">{projectStatus}</p> : null}
       </section>
 
       {/* Pinned section */}

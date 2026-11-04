@@ -1,8 +1,10 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import { readBrseTodoProjects } from "@/lib/brseTodo";
 import {
   ACTIVE_PROJECT_CHANGED_EVENT,
+  ensureProjectSettingsForTodoProjects,
   getActiveProjectId,
   getProjectSettings,
   setActiveProjectId as persistActiveProjectId,
@@ -34,7 +36,17 @@ export function ProjectContextProvider({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
+    // Backfill: Todo-only projects (e.g. created on the Todo page) must appear in the switcher.
+    const created = ensureProjectSettingsForTodoProjects(
+      readBrseTodoProjects().filter((project) => !project.archivedAt)
+    );
     refresh();
+    if (created > 0) {
+      // Tell the Sidebar (which listens to this event) to re-read the project list.
+      window.dispatchEvent(
+        new CustomEvent(ACTIVE_PROJECT_CHANGED_EVENT, { detail: { projectId: getActiveProjectId() } })
+      );
+    }
     window.addEventListener(ACTIVE_PROJECT_CHANGED_EVENT, refresh);
     window.addEventListener("storage", refresh); // another tab switched project
     return () => {

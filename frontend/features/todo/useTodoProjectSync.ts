@@ -22,6 +22,7 @@ import { useSaveTodoProjectStateMutation } from "@/lib/todo-hooks";
 import { getOperationRecords, type OperationRecord } from "@/lib/operations";
 import {
   ACTIVE_PROJECT_CHANGED_EVENT,
+  ensureProjectSettingsForTodoProjects,
   fetchProjectSettings,
   getActiveProject,
   getActiveProjectId,
@@ -826,6 +827,12 @@ ${risks.length ? risks.map((item) => `  - ${(t ? t(`todo.workflow.${item.id}.tit
       createdAt: new Date().toISOString(),
     };
     const nextItems = mergeSavedItems([], "standard");
+    // Keep the sidebar project switcher in sync with Todo projects.
+    if (ensureProjectSettingsForTodoProjects([nextProject]) > 0) {
+      window.dispatchEvent(
+        new CustomEvent(ACTIVE_PROJECT_CHANGED_EVENT, { detail: { projectId: getActiveProjectId() } })
+      );
+    }
     setProjects((current) => [...current, nextProject]);
     setActiveProjectId(nextProject.id);
     setPreset("standard");

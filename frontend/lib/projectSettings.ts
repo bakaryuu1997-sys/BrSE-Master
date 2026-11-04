@@ -153,6 +153,36 @@ export function getProjectSettings(): ProjectSetting[] {
   }
 }
 
+/**
+ * Todo projects and Project Settings are stored separately, so a project created on the Todo
+ * page never reached the sidebar switcher. This adds a minimal Project Setting (same id) for any
+ * Todo project that lacks one. Idempotent; returns how many were created. The default
+ * "personal" Todo placeholder is skipped. New rows are marked dirty so they sync to the DB.
+ */
+export function ensureProjectSettingsForTodoProjects(entries: Array<{ id: string; name: string }>): number {
+  if (!canUseStorage()) return 0;
+  const existing = getProjectSettings();
+  const knownIds = new Set(existing.map((project) => project.id));
+  const missing = entries.filter((entry) => entry.id && entry.id !== "personal" && !knownIds.has(entry.id));
+  if (!missing.length) return 0;
+
+  const now = new Date().toISOString();
+  const created: ProjectSetting[] = missing.map((entry) => ({
+    id: entry.id,
+    name: entry.name?.trim() || "Untitled project",
+    customer_name: "",
+    brse_name: "",
+    pm_name: "",
+    timezone: "Asia/Tokyo",
+    language: "ja",
+    createdAt: now,
+    updatedAt: now,
+  }));
+  window.localStorage.setItem(PROJECTS_KEY, JSON.stringify([...existing, ...created]));
+  created.forEach((project) => markProjectDirty(project.id));
+  return created.length;
+}
+
 function parseUpdatedAt(value: string | undefined): number {
   if (!value) return 0;
   const t = Date.parse(value);
