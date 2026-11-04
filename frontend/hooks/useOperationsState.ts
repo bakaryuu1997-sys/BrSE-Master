@@ -2,6 +2,7 @@
 
 import { ChangeEvent, FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useUiLanguage } from "@/components/LanguageProvider";
+import { useNotify } from "@/components/ToastProvider";
 import {
   useDeleteOperationDecisionLogMutation,
   useOperationsQuery,
@@ -60,6 +61,7 @@ import {
   type BrseTodoProject,
 } from "@/lib/brseTodo";
 import { getActiveProject } from "@/lib/projectSettings";
+import { useProjectContext } from "@/components/ProjectContextProvider";
 
 const EMPTY_OPERATION_RECORDS: OperationRecord[] = [];
 const EMPTY_DECISION_LOGS: DecisionLogEntry[] = [];
@@ -68,6 +70,7 @@ export type OperationsStatus = { text: string; kind: "success" | "error" | "info
 
 export function useOperationsState() {
   const { t } = useUiLanguage();
+  const { notify, notifyWithUndo } = useNotify();
   const { data: recordsData, isLoading: isQueryLoading } = useOperationsQuery();
   const records = recordsData ?? EMPTY_OPERATION_RECORDS;
   const { data: decisionLogsData, isLoading: isDecisionLogsLoading } = useOperationDecisionLogsQuery();
@@ -99,7 +102,7 @@ export function useOperationsState() {
   const [dependencyLinks, setDependencyLinks] = useState(() => getOperationDependencyLinks());
   const [dependencyForm, setDependencyForm] = useState<OperationDependencyInput>(emptyDependencyForm);
   const [editingDependencyId, setEditingDependencyId] = useState("");
-  const [compactMode, setCompactMode] = useState(true);
+  const [compactMode, setCompactMode] = useState(false);
   const [testMatrixItems, setTestMatrixItems] = useState(() => getOperationTestMatrixItems());
   const [testMatrixForm, setTestMatrixForm] = useState<OperationTestMatrixInput>(emptyTestMatrixForm);
   const [editingTestMatrixId, setEditingTestMatrixId] = useState("");
@@ -110,6 +113,9 @@ export function useOperationsState() {
   // Guards the one-time server fetch of dependency/test-matrix data so it does not
   // re-run on every `records` change (refresh() re-fetches after mutations).
   const didInitRef = useRef(false);
+  // Render-time project name must follow the sidebar switch; handlers below still read the
+  // current project at call time via getActiveProject().
+  const { activeProject } = useProjectContext();
 
   // Auto-dismiss the status banner so it doesn't linger forever.
   useEffect(() => {
@@ -186,7 +192,7 @@ export function useOperationsState() {
   }, [activeType, query, records]);
 
   const selectedRecord = records.find((record) => record.id === selectedId) ?? filteredRecords[0] ?? null;
-  const currentProjectName = selectedRecord?.projectName || getActiveProject()?.name || form.projectName || "General";
+  const currentProjectName = selectedRecord?.projectName || activeProject?.name || form.projectName || "General";
   const selectedTodoLinks = selectedRecord ? findBrseTodoLinksByOperation(selectedRecord.id) : [];
   const qnaOverdue = records.filter((record) => isOverdue(record, todayIso())).length;
   const openCount = records.filter((record) => !["Closed", "Done", "Rejected"].includes(record.status)).length;
@@ -230,7 +236,7 @@ export function useOperationsState() {
     records,
     selectedRecord,
     selectedRecordIds: selectedRecords,
-    projectName: getActiveProject()?.name,
+    projectName: activeProject?.name,
   });
 
   async function refresh(nextSelectedId?: string) {
@@ -295,6 +301,11 @@ export function useOperationsState() {
     setIsLoading(true);
     try {
       const saved = await saveOperationMutation.mutateAsync({ input: form, existingId: editingId || undefined });
+      if (saved) {
+        const activeTodoProjectId = readActiveBrseTodoProjectId() || "personal";
+        upsertOperationTodo(activeTodoProjectId, saved);
+        setOperationTodoLinks(readAllBrseTodoLinks());
+      }
       await refresh(saved?.id);
       setEditingId(saved?.id ?? "");
       setStatus(editingId ? t("operations.itemUpdated") : t("operations.itemCreated"));
@@ -307,6 +318,7 @@ export function useOperationsState() {
   }
 
   async function removeRecord(recordId: string) {
+    const recordToDelete = records.find((r) => r.id === recordId);
     setIsLoading(true);
     try {
       await deleteOperationMutation.mutateAsync(recordId);
@@ -318,7 +330,24 @@ export function useOperationsState() {
       newSelected.delete(recordId);
       setSelectedRecords(newSelected);
       
-      setStatus(t("operations.itemDeleted"));
+      if (recordToDelete) {
+        notifyWithUndo(
+          `Đã xóa ticket: "${recordToDelete.title.slice(0, 26)}${recordToDelete.title.length > 26 ? "..." : ""}"`,
+          async () => {
+            try {
+              const { id, createdAt, updatedAt, ...input } = recordToDelete;
+              await saveOperationMutation.mutateAsync({ input, existingId: id });
+              await refresh();
+              notify("Đã hoàn tác và khôi phục ticket thành công!", "success");
+            } catch {
+              notify("Khôi phục ticket thất bại.", "error");
+            }
+          },
+          5000
+        );
+      } else {
+        setStatus(t("operations.itemDeleted"));
+      }
     } catch {
       setStatus("Xóa record Operations thất bại.", "error");
     } finally {
