@@ -231,8 +231,39 @@ class TranscriptionService:
             transcribe_kwargs["vad_parameters"] = {"min_silence_duration_ms": 500}
         return transcribe_kwargs
 
+    @staticmethod
+    def decode_audio_with_ffmpeg(file_path, sampling_rate=16000):
+        """Decode any media file to a mono float32 array using the ffmpeg CLI.
+
+        faster-whisper's own decoder calls av.open(..., metadata_errors=...), which newer PyAV
+        releases reject ("open() got an unexpected keyword argument 'metadata_errors'"). Decoding
+        here keeps transcription independent of that PyAV/faster-whisper version coupling.
+        Returns None when ffmpeg is unavailable or fails so the caller can fall back.
+        """
+        import subprocess
+
+        import numpy as np
+
+        if shutil.which("ffmpeg") is None:
+            return None
+        cmd = [
+            "ffmpeg", "-nostdin", "-v", "error", "-i", str(file_path),
+            "-vn", "-ac", "1", "-ar", str(sampling_rate), "-f", "s16le", "-",
+        ]
+        try:
+            proc = subprocess.run(cmd, capture_output=True, check=True)
+        except (OSError, subprocess.CalledProcessError) as exc:
+            logger.warning("ffmpeg audio decode failed, falling back to faster-whisper decoder: %s", exc)
+            return None
+        if not proc.stdout:
+            return None
+        return np.frombuffer(proc.stdout, dtype=np.int16).astype(np.float32) / 32768.0
+
     def _transcribe_single_file(self, file_path, language=None, progress_callback=None, time_offset=0.0):
-        segments, info = self.model.transcribe(file_path, **self._transcribe_kwargs(language))
+        audio = self.decode_audio_with_ffmpeg(file_path)
+        segments, info = self.model.transcribe(
+            audio if audio is not None else file_path, **self._transcribe_kwargs(language)
+        )
         segments_data = []
         full_text_list = []
         for segment in segments:
