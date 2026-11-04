@@ -25,9 +25,20 @@ def create_project(payload: ProjectCreate, db: Session = Depends(get_db)):
 @router.put("/{project_id}", response_model=ProjectRead)
 def update_project(project_id: str, payload: ProjectUpdate, db: Session = Depends(get_db)):
     record = db.query(ProjectSettingRecord).filter(ProjectSettingRecord.id == project_id).first()
+    changes = payload.model_dump(exclude_unset=True)
     if not record:
-        raise HTTPException(status_code=404, detail="Project not found")
-    for field, value in payload.model_dump(exclude_unset=True).items():
+        # Upsert: the browser creates project ids locally (and from the Todo page) and pushes
+        # them with PUT. A 404 here made that sync fail silently, leaving the DB empty.
+        if not changes.get("name"):
+            raise HTTPException(status_code=404, detail="Project not found")
+        if len(project_id) > 36:
+            raise HTTPException(status_code=422, detail="Project id must be at most 36 characters")
+        record = ProjectSettingRecord(id=project_id, **changes)
+        db.add(record)
+        db.commit()
+        db.refresh(record)
+        return record
+    for field, value in changes.items():
         setattr(record, field, value)
     db.commit()
     db.refresh(record)

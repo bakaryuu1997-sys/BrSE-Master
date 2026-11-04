@@ -37,3 +37,28 @@ def test_project_profile_execution_context_round_trip() -> None:
     updated = update_response.json()
     assert updated["health_status"] == "Red"
     assert updated["current_phase"] == "Release"
+
+
+def test_put_unknown_project_id_creates_it_so_local_projects_can_sync() -> None:
+    project_id = "todo-pytest-upsert"
+    try:
+        response = client.put(
+            f"/api/projects/{project_id}",
+            json={"name": "Local-only project", "customer_name": "Acme"},
+        )
+        assert response.status_code == 200
+        assert response.json()["id"] == project_id
+        listed = [p["id"] for p in client.get("/api/projects").json()]
+        assert project_id in listed
+
+        again = client.put(f"/api/projects/{project_id}", json={"health_status": "Red"})
+        assert again.status_code == 200
+        assert again.json()["health_status"] == "Red"
+        assert again.json()["name"] == "Local-only project"
+    finally:
+        client.delete(f"/api/projects/{project_id}")
+
+
+def test_put_unknown_project_without_name_or_with_long_id_is_rejected() -> None:
+    assert client.put("/api/projects/does-not-exist", json={"health_status": "Red"}).status_code == 404
+    assert client.put("/api/projects/" + "x" * 40, json={"name": "Too long id"}).status_code == 422
