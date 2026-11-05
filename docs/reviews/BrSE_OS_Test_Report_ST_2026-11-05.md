@@ -14,16 +14,16 @@
 
 | 指標 | 値 |
 |---|---|
-| Total test case | **67** (47 ở lượt 1 + 20 ở lượt 2: mobile 375px, tạo/sửa/xóa) |
-| Pass | **61** |
-| Fail | **0** |
-| Blocked | 0 |
+| Total test case | **70** (47 ở lượt 1 + 23 ở lượt 2: mobile 375px, tạo/sửa/xóa, AI) |
+| Pass | **62** |
+| Fail | **1** (ST-AI-01, B-016 đang mở) |
+| Blocked | **1** (ST-AI-03 OCR: thiếu model local, xem mục 4) |
 | N/A (loại khỏi phạm vi) | 1 (ST-PWT-02, B-006 bị Reject: đúng thiết kế) |
-| Not Run | **5** (xem mục 4; NR-01 và NR-03 mới phủ một phần) |
-| Execution rate (Run/(Total−N/A)) | **92.4 %** (61/66) |
-| Pass rate (Pass/Run) | **100 %** (61/61) |
+| Not Run | **5** (xem mục 4; NR-01, NR-03, NR-04 mới phủ một phần) |
+| Execution rate ((Pass+Fail+Blocked)/(Total−N/A)) | **92.8 %** (64/69) |
+| Pass rate (Pass/Run) | **96.9 %** (62/64) |
 | Lần chạy đầu | 19 case Fail → 18 đã sửa và **re-test Pass**, 1 Reject (đúng thiết kế) |
-| Lượt 2 (2026-11-05, :3011 cô lập) | Tìm thêm 6 bug (B-010…B-015), cả 6 đã sửa và re-test Pass trên giao diện thật |
+| Lượt 2 (2026-11-05, :3011 cô lập) | Tìm thêm 7 bug (B-010…B-016): 6 đã sửa và re-test Pass; **B-016 (AI chat chập chờn) còn mở** |
 
 ### 不具合 / Defect
 
@@ -31,7 +31,7 @@
 |---|---|---|
 | Critical | 1 | 0 |
 | High | 2 | 0 |
-| Medium | 7 | 0 |
+| Medium | 8 | **1** (B-016) |
 | Low | 5 (4 Closed, 1 Reject) | **0** |
 
 ## 2. 画面別結果 / Kết quả theo màn hình
@@ -74,6 +74,7 @@
 | B-012 | Glossary ở 375px: nút Dự án/Toàn cục/CSV/Anki bị cắt, không bấm được | Medium | Closed | `shrink-0` → `max-w-full sm:shrink-0` (commit `743c1ad`) |
 | B-013 | Calendar ở 375px: select múi giờ vượt mép phải (426px) | Medium | Closed | `min-w-0` + `w-full`. **Chưa commit**: nằm trong khối form mới chưa commit của chính trang Calendar |
 | B-014 | Minutes mới ở 375px: cuộn ngang 450px | Medium | Closed | `min-w-0` cho 2 cột lưới. **Chưa commit**: cùng file có thay đổi cũ chưa commit |
+| B-016 | AI chat `/api/ai/chat` chập chờn: combo 9router `free-logic` có member hỏng (`gh/gemini-3.1-pro-preview` → 400 `model_not_available_for_integrator`, không fallback); 3 lần gọi cho 400 / 200 (1.2s) / 503 sau **97s**. Trường `model` trong request bị bỏ qua (luôn `free-logic`) | Medium | **Open** | Gốc ở cấu hình combo 9router (ngoài mã BrSE): gỡ member hỏng khỏi combo. Phía BrSE nên cân nhắc timeout ngắn hơn và retry khi 503 |
 | B-015 | Mở `/minutes/new` → sau ~10s tự tạo bản ghi rỗng trong DB (và hộp thoại `beforeunload` ở trang trống) | Medium | Closed | `hasMinutesDraftChanged` so với snapshot đầu (commit `1403263`, +2 test). Sửa thật vẫn tự lưu sau ~10s |
 
 ## 4. 未実施項目 / Hạng mục chưa test (và lý do)
@@ -83,7 +84,7 @@
 | ST-NR-01 | Mobile/tablet (≤768px) | **Một phần.** Đã test 12 màn ở 375px (ST-MOB-01…12). Chưa test: meeting-note, history, power-tools, specs-mindmap, validation, Kanban, drawer/modal, tablet 768px |
 | ST-NR-02 | Bàn phím/screen-reader (a11y) | Chưa thực hiện |
 | ST-NR-03 | Tạo/sửa/xóa dữ liệu | **Một phần**, chạy trên stack cô lập `:3011` (ST-CRD-01…08). Chưa test: Todo tạo/archive dự án, Reports đổi dự án. Glossary không có nút thêm thuật ngữ thủ công (chỉ CSV/trích từ họp) |
-| ST-NR-04 | Tính năng AI (chat, Keigo check, OCR) | Chưa chạy (gọi AI bên ngoài) |
+| ST-NR-04 | Tính năng AI (chat, Keigo check, OCR) | **Một phần, chỉ gọi API** (ST-AI-01..03). Chat: Fail (B-016). Keigo: Pass (14.1s). OCR: **Blocked** — không có `GEMINI_API_KEY` nên backend dùng model local `qwen3.5:9b`, Ollama chưa có model nào (404). Cần `ollama pull qwen3.5:9b` hoặc đặt `GEMINI_API_KEY`. Lưu ý: `PROJECT_SOURCE_OF_TRUTH.md` ghi OCR mặc định là Gemini, nhưng khi không có key thực tế rơi về local. Môi trường: 9router không tự chạy sau khi restart WSL, phải chạy `scripts/start-brse-stack.sh` |
 | ST-NR-05 | Chrome Extension | Sản phẩm riêng, ngoài phạm vi |
 
 Quan sát chưa ghi thành bug: Dashboard cho thấy 24 nút/link nhỏ hơn 32px ở 375px (chưa đánh giá theo chuẩn vùng chạm).
@@ -98,17 +99,17 @@ Quan sát chưa ghi thành bug: Dashboard cho thấy 24 nút/link nhỏ hơn 32p
 
 | Tiêu chí | Ngưỡng | Thực tế | Kết quả |
 |---|---|---|---|
-| Đã chạy 100% | 100 % | 92.4 % (61/66) | ❌ |
-| Pass rate (Pass/Run) | ≥ 98 % | 100 % (61/61) | ✅ |
-| Critical/High còn Open | 0 | 0 | ✅ |
+| Đã chạy 100% | 100 % | 92.8 % (64/69) | ❌ |
+| Pass rate (Pass/Run) | ≥ 98 % | 96.9 % (62/64) | ❌ |
+| Critical/High còn Open | 0 | 0 (còn 1 Medium: B-016) | ✅ |
 | NFR (hiệu năng/bảo mật) | Đạt | Chưa đo | ❌ (chưa test) |
 
-**結論 / Kết luận: ❌ CHƯA ĐẠT exit criteria ST.** Lý do: còn 5 hạng mục Not Run (NR-01 và NR-03 mới phủ một phần) và chưa đo NFR (hiệu năng/bảo mật). Không còn bug nào mở, không có Critical/High mở.
+**結論 / Kết luận: ❌ CHƯA ĐẠT exit criteria ST.** Lý do: còn 5 hạng mục Not Run (NR-01, NR-03, NR-04 mới phủ một phần), 1 case Fail (AI chat, B-016), 1 case Blocked (OCR) và chưa đo NFR (hiệu năng/bảo mật). Không có bug Critical/High mở; còn 1 bug Medium mở (B-016).
 
 ## 7. Go / No-Go
 
 - **Dùng nội bộ hằng ngày (single-user, localhost): GO có điều kiện** — không còn lỗi chặn nghiệp vụ.
-- **Release/nghiệm thu chính thức: NO-GO** cho tới khi: (1) test xong phần còn lại của ST-NR-01..04 trên dữ liệu thử cô lập, (2) đo NFR (hiệu năng/bảo mật). Không còn bug nào mở.
+- **Release/nghiệm thu chính thức: NO-GO** cho tới khi: (1) xử lý B-016 và thông OCR (model local hoặc `GEMINI_API_KEY`), (2) test xong phần còn lại của ST-NR-01..04 trên dữ liệu thử cô lập, (3) đo NFR (hiệu năng/bảo mật).
 - **Việc dở dang cần chú ý:** sửa B-013 (Calendar) và B-014 (Minutes) đã được xác nhận trên giao diện nhưng **chưa commit**, vì nằm lẫn với thay đổi cũ chưa commit trong cùng file.
 
 ## 8. 推奨 / Khuyến nghị
