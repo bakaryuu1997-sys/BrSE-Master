@@ -1,0 +1,573 @@
+import type { GlossaryTerm } from "../glossary";
+
+// Core glossary terms, part 3 of 4 (split from lib/glossary.ts; order is significant).
+export const coreTerms3: GlossaryTerm[] = [
+  {
+    id: "csv-export",
+    english: "CSV Export",
+    japanese: "CSV出力",
+    kana: "CSVしゅつりょく",
+    vietnamese: "Xuất file CSV",
+    roles: ["BA", "BrSE", "Dev", "QA"],
+    category: "Business",
+    note: "Tải dữ liệu ra file CSV để mở bằng Excel.",
+    example: "CSV出力機能を追加します。"
+  },
+  {
+    id: "csv-import",
+    english: "CSV Import",
+    japanese: "CSV取込",
+    kana: "CSVとりこみ",
+    vietnamese: "Nhập file CSV",
+    roles: ["BA", "BrSE", "Dev", "QA"],
+    category: "Business",
+    note: "Đưa dữ liệu từ file CSV vào hệ thống.",
+    example: "CSV取込時のエラーを確認します。"
+  },
+  {
+    id: "duplicate",
+    english: "Duplicate",
+    japanese: "重複",
+    kana: "ちょうふく",
+    vietnamese: "Trùng lặp",
+    roles: ["BA", "BrSE", "Dev", "QA"],
+    category: "Quality",
+    note: "Dữ liệu bị lặp, ví dụ cùng mã hoặc cùng email.",
+    example: "重複チェックを追加します。"
+  },
+  {
+    id: "empty-state",
+    english: "Empty State",
+    japanese: "空状態 / データなし表示",
+    kana: "からじょうたい",
+    vietnamese: "Trạng thái không có dữ liệu",
+    roles: ["BA", "BrSE", "Dev", "QA"],
+    category: "Quality",
+    note: "Màn hình hiển thị khi danh sách chưa có dữ liệu.",
+    example: "データなしの場合の表示を確認します。"
+  },
+  {
+    id: "loading",
+    english: "Loading",
+    japanese: "読み込み中",
+    kana: "よみこみちゅう",
+    vietnamese: "Đang tải",
+    roles: ["BA", "BrSE", "Dev", "QA"],
+    category: "Quality",
+    note: "Trạng thái trong lúc hệ thống đang xử lý/tải dữ liệu.",
+    example: "読み込み中の表示を追加します。"
+  },
+  {
+    id: "timeout",
+    english: "Timeout",
+    japanese: "タイムアウト",
+    vietnamese: "Quá thời gian chờ",
+    roles: ["Dev", "QA", "BrSE"],
+    category: "Quality",
+    note: "Hệ thống chờ quá lâu nên dừng xử lý hoặc báo lỗi.",
+    example: "タイムアウトが発生した場合の挙動を確認します。"
+  },
+  {
+    id: "authentication",
+    english: "Authentication",
+    japanese: "認証",
+    kana: "にんしょう",
+    vietnamese: "Xác thực đăng nhập",
+    roles: ["BA", "BrSE", "Dev", "QA"],
+    category: "Requirement",
+    note: "Kiểm tra user là ai, ví dụ login bằng email/password.",
+    example: "認証方式をご確認ください。"
+  },
+  {
+    id: "authorization",
+    english: "Authorization",
+    japanese: "認可 / 権限チェック",
+    kana: "にんか",
+    vietnamese: "Kiểm tra quyền được làm gì",
+    roles: ["BA", "BrSE", "Dev", "QA"],
+    category: "Requirement",
+    note: "Sau khi login, kiểm tra user có quyền xem/sửa/xóa hay không.",
+    example: "管理者のみ更新可能とします。"
+  },
+  {
+    id: "role",
+    english: "Role",
+    japanese: "ロール / 役割",
+    kana: "やくわり",
+    vietnamese: "Vai trò người dùng",
+    roles: ["BA", "BrSE", "Dev", "QA"],
+    category: "Requirement",
+    note: "Nhóm quyền như admin, manager, general user.",
+    example: "ロール別に表示内容を分けます。"
+  },
+  {
+    id: "audit-log",
+    english: "Audit Log",
+    japanese: "監査ログ",
+    kana: "かんさログ",
+    vietnamese: "Log kiểm tra lịch sử thao tác",
+    roles: ["PM", "BrSE", "Dev", "QA"],
+    category: "Quality",
+    note: "Ghi lại ai đã làm gì, khi nào, để truy vết.",
+    example: "監査ログに操作履歴を残します。"
+  },
+  {
+    id: "backup",
+    english: "Backup",
+    japanese: "バックアップ",
+    vietnamese: "Sao lưu",
+    roles: ["PM", "BrSE", "Dev"],
+    category: "Release",
+    note: "Lưu dữ liệu dự phòng trước khi migrate/release.",
+    example: "作業前にバックアップを取得します。"
+  },
+  {
+    id: "restore",
+    english: "Restore",
+    japanese: "復元",
+    kana: "ふくげん",
+    vietnamese: "Khôi phục dữ liệu",
+    roles: ["PM", "BrSE", "Dev"],
+    category: "Release",
+    note: "Đưa dữ liệu/hệ thống về trạng thái đã backup.",
+    example: "必要に応じてバックアップから復元します。"
+  },
+  {
+    id: "business-rule",
+    english: "Business Rule",
+    japanese: "業務ルール",
+    kana: "ぎょうむルール",
+    vietnamese: "Quy tắc nghiệp vụ",
+    roles: ["BA", "BrSE", "PM", "Dev"],
+    category: "Requirement",
+    note: "Quy định xử lý dữ liệu hoặc điều kiện nghiệp vụ do business quyết định.",
+    example: "業務ルールに基づいて判定します。"
+  },
+  {
+    id: "feasibility",
+    english: "Feasibility",
+    japanese: "実現可否",
+    kana: "じつげんかひ",
+    vietnamese: "Khả năng thực hiện",
+    roles: ["BrSE", "PM", "BA", "Dev"],
+    category: "Requirement",
+    note: "Đánh giá xem yêu cầu có thể làm được về kỹ thuật, cost, schedule hay không.",
+    example: "まず実現可否を確認いたします。"
+  },
+  {
+    id: "spec-gap",
+    english: "Spec Gap",
+    japanese: "仕様差分",
+    kana: "しようさぶん",
+    vietnamese: "Chênh lệch spec",
+    roles: ["BrSE", "BA", "QA", "Dev"],
+    category: "Requirement",
+    note: "Điểm khác nhau giữa tài liệu, mockup, current behavior hoặc môi trường cũ và mới.",
+    example: "仕様差分を一覧化して共有します。"
+  },
+  {
+    id: "data-mapping",
+    english: "Data Mapping",
+    japanese: "データマッピング",
+    vietnamese: "Ánh xạ dữ liệu",
+    roles: ["BA", "BrSE", "Dev", "QA"],
+    category: "Requirement",
+    note: "Bảng ghép cột dữ liệu giữa hệ thống cũ, file import, API hoặc DB mới.",
+    example: "移行前にデータマッピングを確認します。"
+  },
+  {
+    id: "source-of-truth",
+    english: "Source of Truth",
+    japanese: "正本データ / 参照元",
+    kana: "せいほんデータ / さんしょうもと",
+    vietnamese: "Nguồn dữ liệu chuẩn",
+    roles: ["BA", "BrSE", "PM", "Dev"],
+    category: "Business",
+    note: "Nguồn thông tin được xem là chuẩn nhất khi có nhiều tài liệu hoặc nhiều hệ thống.",
+    example: "どのデータを正本とするか決める必要があります。"
+  },
+  {
+    id: "release-window",
+    english: "Release Window",
+    japanese: "リリース枠 / 作業時間帯",
+    vietnamese: "Khung giờ release",
+    roles: ["PM", "BrSE", "Dev"],
+    category: "Release",
+    note: "Khoảng thời gian được phép deploy hoặc cắt chuyển, thường do khách hàng quy định.",
+    example: "リリース枠は土曜日の22時から24時です。"
+  },
+  {
+    id: "freeze-period",
+    english: "Freeze Period",
+    japanese: "凍結期間",
+    kana: "とうけつきかん",
+    vietnamese: "Thời gian đóng băng thay đổi",
+    roles: ["PM", "BrSE", "BA"],
+    category: "Release",
+    note: "Giai đoạn không được đổi spec hay deploy để đảm bảo ổn định trước sự kiện lớn.",
+    example: "月末処理のため凍結期間に入ります。"
+  },
+  {
+    id: "smoke-test",
+    english: "Smoke Test",
+    japanese: "スモークテスト",
+    vietnamese: "Kiểm tra nhanh sau deploy",
+    roles: ["QA", "BrSE", "Dev"],
+    category: "Quality",
+    note: "Bộ test ngắn để xác nhận các luồng sống còn vẫn chạy sau build hoặc release.",
+    example: "反映後にスモークテストを実施します。"
+  },
+  {
+    id: "test-case",
+    english: "Test Case",
+    japanese: "テストケース",
+    vietnamese: "Test case",
+    roles: ["QA", "BrSE", "BA"],
+    category: "Quality",
+    note: "Kịch bản kiểm thử cụ thể gồm điều kiện, bước thực hiện và expected result.",
+    example: "追加仕様に合わせてテストケースを更新します。"
+  },
+  {
+    id: "test-data",
+    english: "Test Data",
+    japanese: "テストデータ",
+    vietnamese: "Dữ liệu test",
+    roles: ["QA", "BrSE", "Dev"],
+    category: "Quality",
+    note: "Bộ dữ liệu dùng để tái hiện bug hoặc xác nhận rule xử lý.",
+    example: "再現用のテストデータを準備します。"
+  },
+  {
+    id: "incident",
+    english: "Incident",
+    japanese: "障害 / インシデント",
+    kana: "しょうがい",
+    vietnamese: "Sự cố vận hành",
+    roles: ["PM", "BrSE", "Dev", "QA"],
+    category: "Quality",
+    note: "Sự cố thực tế ảnh hưởng người dùng, vận hành hoặc production.",
+    example: "本件は本番障害として管理します。"
+  },
+  {
+    id: "escalation",
+    english: "Escalation",
+    japanese: "エスカレーション",
+    vietnamese: "Báo cáo nâng cấp",
+    roles: ["PM", "BrSE", "Comtor"],
+    category: "Communication",
+    note: "Đưa vấn đề lên cấp cao hơn khi cần quyết định nhanh hoặc mức ảnh hưởng lớn.",
+    example: "判断が必要なためエスカレーションします。"
+  },
+  {
+    id: "provisional-response",
+    english: "Provisional Response",
+    japanese: "一次回答",
+    kana: "いちじかいとう",
+    vietnamese: "Phản hồi tạm thời",
+    roles: ["BrSE", "Comtor", "PM"],
+    category: "Communication",
+    note: "Câu trả lời tạm để khách biết team đang điều tra, trước khi có kết luận cuối.",
+    example: "まず一次回答を本日中にお送りします。"
+  },
+  {
+    id: "final-answer",
+    english: "Final Answer",
+    japanese: "最終回答",
+    kana: "さいしゅうかいとう",
+    vietnamese: "Câu trả lời cuối cùng",
+    roles: ["BrSE", "BA", "PM"],
+    category: "Communication",
+    note: "Kết luận chính thức sau khi team đã điều tra và thống nhất.",
+    example: "最終回答を明日午前までに共有します。"
+  },
+  {
+    id: "action-owner",
+    english: "Action Owner",
+    japanese: "担当者",
+    kana: "たんとうしゃ",
+    vietnamese: "Người phụ trách action",
+    roles: ["BrSE", "PM", "BA", "Comtor"],
+    category: "Project",
+    note: "Người chịu trách nhiệm chính cho một action item hoặc deliverable.",
+    example: "各宿題事項の担当者を明確にします。"
+  },
+  {
+    id: "implementation-plan",
+    english: "Implementation Plan",
+    japanese: "実装方針",
+    kana: "じっそうほうしん",
+    vietnamese: "Phương án triển khai",
+    roles: ["Dev", "BrSE", "PM"],
+    category: "Project",
+    note: "Kế hoạch code và release gồm cách làm, rủi ro, thứ tự và mốc thực hiện.",
+    example: "実装方針をレビューしてから着手します。"
+  },
+  {
+    id: "lead-time",
+    english: "Lead Time",
+    japanese: "リードタイム",
+    vietnamese: "Thời gian từ yêu cầu tới hoàn tất",
+    roles: ["PM", "BrSE", "BA"],
+    category: "Business",
+    note: "Khoảng thời gian từ lúc nhận yêu cầu đến khi giao xong kết quả.",
+    example: "通常のリードタイムは3営業日です。"
+  },
+  {
+    id: "sla",
+    english: "SLA",
+    japanese: "サービスレベル合意",
+    kana: "サービスレベルごうい",
+    vietnamese: "Cam kết mức dịch vụ",
+    roles: ["PM", "BrSE", "BA"],
+    category: "Business",
+    note: "Cam kết về thời gian phản hồi, xử lý sự cố hoặc uptime giữa các bên.",
+    example: "SLAに基づいて優先度を判断します。"
+  },
+  {
+    id: "reconciliation",
+    english: "Reconciliation",
+    japanese: "突合",
+    kana: "つきあわせ",
+    vietnamese: "Đối soát dữ liệu",
+    roles: ["BA", "BrSE", "QA", "Dev"],
+    category: "Business",
+    note: "So sánh dữ liệu giữa hai nguồn để xác nhận không lệch sau import hoặc migration.",
+    example: "移行後にデータ突合を行います。"
+  },
+  {
+    id: "contingency-plan",
+    english: "Contingency Plan",
+    japanese: "代替案 / 緊急時対応計画",
+    kana: "だいたいあん / きんきゅうじたいおうけいかく",
+    vietnamese: "Phương án dự phòng",
+    roles: ["PM", "BrSE", "Dev"],
+    category: "Release",
+    note: "Kế hoạch dự phòng nếu release, vendor hoặc phê duyệt không diễn ra như dự kiến.",
+    example: "万一に備えて代替案も準備します。"
+  },
+  {
+    id: "staging-environment",
+    english: "Staging Environment",
+    japanese: "ステージング環境",
+    vietnamese: "Môi trường staging",
+    roles: ["Dev", "QA", "BrSE"],
+    category: "Release",
+    note: "Môi trường gần production để test cuối trước khi lên thật.",
+    example: "まずステージング環境で最終確認します。"
+  },
+  {
+    id: "production-environment",
+    english: "Production Environment",
+    japanese: "本番環境",
+    kana: "ほんばんかんきょう",
+    vietnamese: "Môi trường production",
+    roles: ["Dev", "QA", "BrSE", "PM"],
+    category: "Release",
+    note: "Môi trường người dùng thật đang sử dụng.",
+    example: "本番環境への反映は承認後に実施します。"
+  },
+  {
+    id: "endpoint",
+    english: "Endpoint",
+    japanese: "エンドポイント",
+    vietnamese: "Điểm cuối / Đường dẫn kết nối API",
+    roles: ["Dev", "BrSE", "QA"],
+    category: "Requirement",
+    note: "URL cụ thể mà client gọi để tương tác với tài nguyên hệ thống.",
+    example: "新しいエンドポイントを追加します。"
+  },
+  {
+    id: "repository",
+    english: "Repository",
+    japanese: "リポジトリ",
+    vietnamese: "Kho lưu trữ mã nguồn / Database repo",
+    roles: ["Dev", "BrSE", "PM"],
+    category: "Project",
+    note: "Nơi lưu trữ mã nguồn dự án trên Git (GitHub/GitLab) hoặc layer thao tác DB.",
+    example: "GitHubのリポジトリを作成します。"
+  },
+  {
+    id: "framework",
+    english: "Framework",
+    japanese: "フレームワーク",
+    vietnamese: "Khung phát triển phần mềm",
+    roles: ["Dev", "BrSE"],
+    category: "Requirement",
+    note: "Nền tảng code có sẵn cấu trúc để phát triển ứng dụng nhanh hơn (như React, Next.js, Django).",
+    example: "新しいフレームワークを導入します。"
+  },
+  {
+    id: "middleware",
+    english: "Middleware",
+    japanese: "ミドルウェア",
+    vietnamese: "Phần mềm trung gian",
+    roles: ["Dev", "BrSE"],
+    category: "Requirement",
+    note: "Phần mềm nằm giữa hệ điều hành và ứng dụng, hoặc layer lọc request trong web server.",
+    example: "認証用のミドルウェアを実装します。"
+  },
+  {
+    id: "asynchronous",
+    english: "Asynchronous",
+    japanese: "非同期",
+    kana: "ひどうき",
+    vietnamese: "Bất đồng bộ / Xử lý ngầm",
+    roles: ["Dev", "BrSE"],
+    category: "Requirement",
+    note: "Cơ chế xử lý không chặn dòng chính, tác vụ chạy nền và trả kết quả sau.",
+    example: "非同期処理でパフォーマンスを改善します。"
+  },
+  {
+    id: "authentication",
+    english: "Authentication",
+    japanese: "認証",
+    kana: "にんしょう",
+    vietnamese: "Xác thực người dùng (Đăng nhập)",
+    roles: ["Dev", "BrSE", "QA"],
+    category: "Quality",
+    note: "Kiểm tra danh tính của người dùng (Username/Password hoặc Token).",
+    example: "多要素認証（MFA）を導入します。"
+  },
+  {
+    id: "authorization",
+    english: "Authorization",
+    japanese: "認加 / 権限付与",
+    kana: "にんか",
+    vietnamese: "Phân quyền người dùng",
+    roles: ["Dev", "BrSE", "QA"],
+    category: "Requirement",
+    note: "Kiểm tra xem người dùng đã đăng nhập có quyền thực hiện hành động này không.",
+    example: "管理者ロール of 認可処理を追加します。"
+  },
+  {
+    id: "refactoring",
+    english: "Refactoring",
+    japanese: "リファクタリング",
+    vietnamese: "Tối ưu hóa cấu trúc mã nguồn",
+    roles: ["Dev", "BrSE"],
+    category: "Quality",
+    note: "Sửa đổi cấu trúc code bên trong cho sạch hơn, dễ bảo trì hơn mà không đổi hành vi bên ngoài.",
+    example: "コードのリファクタリングを実施します。"
+  },
+  {
+    id: "debugging",
+    english: "Debugging",
+    japanese: "デバッグ",
+    vietnamese: "Tìm và sửa lỗi mã nguồn",
+    roles: ["Dev", "BrSE", "QA"],
+    category: "Quality",
+    note: "Quá trình xác định, phân tích và loại bỏ lỗi (bug) trong chương trình.",
+    example: "ローカル環境でデバッグを行います。"
+  },
+  {
+    id: "pipeline",
+    english: "Pipeline",
+    japanese: "パイプライン",
+    vietnamese: "Đường ống CI/CD tự động",
+    roles: ["Dev", "BrSE", "QA"],
+    category: "Release",
+    note: "Chuỗi các bước tự động từ build, test đến deploy sản phẩm.",
+    example: "CI/CDのパイプラインが正常に実行されました。"
+  },
+  {
+    id: "pull-request",
+    english: "Pull Request / Merge Request",
+    japanese: "プルリクエスト / マージリクエスト",
+    vietnamese: "Yêu cầu gộp nhánh mã nguồn",
+    roles: ["Dev", "BrSE", "QA"],
+    category: "Project",
+    note: "Yêu cầu gửi code đã viết lên để team review trước khi gộp vào nhánh chính.",
+    example: "プルリクエストのレビューをお願いします。"
+  },
+  {
+    id: "commit",
+    english: "Commit",
+    japanese: "コミット",
+    vietnamese: "Lưu/Xác nhận thay đổi mã nguồn",
+    roles: ["Dev", "BrSE"],
+    category: "Project",
+    note: "Ghi lại trạng thái thay đổi của file vào lịch sử Git kèm message mô tả.",
+    example: "変更をコミットしてプッシュします。"
+  },
+  {
+    id: "branch",
+    english: "Branch",
+    japanese: "ブランチ",
+    vietnamese: "Nhánh phát triển mã nguồn",
+    roles: ["Dev", "BrSE", "PM"],
+    category: "Project",
+    note: "Nhánh tách ra từ luồng code chính để phát triển tính năng độc lập.",
+    example: "開発用ブランチを作成してください。"
+  },
+  {
+    id: "hotfix",
+    english: "Hotfix",
+    japanese: "ホットフィックス / 緊急修正",
+    vietnamese: "Sửa lỗi khẩn cấp trực tiếp",
+    roles: ["Dev", "BrSE", "PM"],
+    category: "Release",
+    note: "Bản sửa lỗi khẩn cấp áp dụng ngay trên môi trường Production để vá lỗi nghiêm trọng.",
+    example: "本番障害のホットフィックスを適用します。"
+  },
+  {
+    id: "webhook",
+    english: "Webhook",
+    japanese: "ウェブフック",
+    vietnamese: "Cơ chế đẩy thông báo tự động",
+    roles: ["Dev", "BrSE"],
+    category: "Requirement",
+    note: "HTTP POST callback gửi dữ liệu tự động giữa các hệ thống khi phát sinh sự kiện.",
+    example: "GitHubのWebhookを設定します。"
+  },
+  {
+    id: "dependency",
+    english: "Dependency",
+    japanese: "依存関係 / 依存ライブラリ",
+    kana: "いぞんかんけい",
+    vietnamese: "Thư viện phụ thuộc",
+    roles: ["Dev", "BrSE"],
+    category: "Requirement",
+    note: "Các gói code hoặc thư viện bên ngoài mà dự án cần có để chạy được.",
+    example: "不要な依存関係を削除します。"
+  },
+  {
+    id: "database",
+    english: "Database",
+    japanese: "データベース",
+    vietnamese: "Cơ sở dữ liệu",
+    roles: ["Dev", "BrSE", "QA"],
+    category: "Requirement",
+    note: "Hệ thống lưu trữ và truy xuất dữ liệu có cấu trúc (như MySQL, PostgreSQL, SQLite).",
+    example: "データベースのマイグレーションを実行します。"
+  },
+  {
+    id: "docker",
+    english: "Docker",
+    japanese: "ドッカー",
+    vietnamese: "Nền tảng đóng gói Container",
+    roles: ["Dev", "BrSE", "QA"],
+    category: "Release",
+    note: "Công cụ ảo hóa giúp đóng gói ứng dụng và tất cả phụ thuộc vào một Container chạy mọi nơi.",
+    example: "Dockerイメージをビルドします。"
+  },
+  {
+    id: "kubernetes",
+    english: "Kubernetes / K8s",
+    japanese: "クバネティス / K8s",
+    vietnamese: "Hệ thống quản lý container tự động",
+    roles: ["Dev", "BrSE"],
+    category: "Release",
+    note: "Nền tảng mã nguồn mở giúp quản lý, scale và deploy tự động các ứng dụng dạng container.",
+    example: "Kubernetesクラスターを構築します。"
+  },
+  {
+    id: "serverless",
+    english: "Serverless",
+    japanese: "サーバーレス",
+    vietnamese: "Kiến trúc không máy chủ",
+    roles: ["Dev", "BrSE"],
+    category: "Release",
+    note: "Kiến trúc chạy code dựa trên trigger sự kiện (FaaS) mà không cần tự quản lý server.",
+    example: "AWS Lambdaを用いたサーバーレス構成です。"
+  },
+];
