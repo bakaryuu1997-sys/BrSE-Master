@@ -62,7 +62,7 @@ export default function GlossaryPage() {
             <span className="text-textMuted/40">·</span>
             <h1 className="text-base font-extrabold tracking-tight text-textPrimary truncate">{t("glossary.title")}</h1>
           </div>
-          <div className="flex flex-wrap items-center gap-1.5 shrink-0">
+          <div className="flex max-w-full flex-wrap items-center gap-1.5 sm:shrink-0">
             <span className="rounded-lg border border-primary/25 bg-primary/10 px-2 py-0.5 text-xs font-bold text-primary">
               {totalItems + customTerms.length} {t("glossary.termsTotal")}
             </span>
@@ -131,7 +131,7 @@ export default function GlossaryPage() {
             </select>
           </div>
 
-          <div className="flex flex-wrap items-center gap-1.5 shrink-0">
+          <div className="flex max-w-full flex-wrap items-center gap-1.5 sm:shrink-0">
             <button
               type="button"
               onClick={() => setHideMastered((current) => !current)}
