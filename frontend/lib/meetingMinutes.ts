@@ -70,44 +70,6 @@ function buildMeetingMinutesAiFields(context?: MeetingMinutesAiContext) {
   };
 }
 
-export async function summarizeMinutesToSlides(markdown: string, maxSlides: number = 6, context?: MeetingMinutesAiContext) {
-  const response = await fetch(`${apiBaseUrl}/ai/slides/summarize`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      markdown,
-      max_slides: maxSlides,
-      project_id: context?.projectId || undefined,
-      project_context: context?.projectContext || undefined,
-    }),
-  });
-  if (!response.ok) throw new Error("AI slide summarize failed");
-  return response.json() as Promise<{
-    deck_title?: string;
-    markdown?: string;
-    summary?: string;
-    error?: string;
-  }>;
-}
-
-export async function rewriteSlides(markdown: string, tone: string, context?: MeetingMinutesAiContext) {
-  const response = await fetch(`${apiBaseUrl}/ai/slides/rewrite`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      markdown,
-      tone,
-      project_id: context?.projectId || undefined,
-      project_context: context?.projectContext || undefined,
-    }),
-  });
-  if (!response.ok) throw new Error("AI slide rewrite failed");
-  return response.json() as Promise<{
-    markdown?: string;
-    error?: string;
-  }>;
-}
-
 export async function extractMinutesFromTranscript(transcript: string, context?: MeetingMinutesAiContext) {
   const response = await fetch(`${apiBaseUrl}/ai/minutes`, {
     method: "POST",

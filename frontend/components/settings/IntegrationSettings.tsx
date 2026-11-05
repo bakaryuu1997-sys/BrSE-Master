@@ -22,7 +22,7 @@ export function IntegrationSettings({
     <section className="brse-card brse-card-muted p-4">
       <p className="text-sm font-semibold text-ink">Project integrations</p>
       <p className="mt-1 text-xs leading-5 text-textMuted">
-        Metadata trước mắt; các flow AI/slide/report sẽ dùng link này ở các bước sau.
+        Metadata liên kết hệ thống dự án (Jira, Redmine, Google Drive, Confluence).
       </p>
       <div className="mt-4 grid gap-3 md:grid-cols-2">
         <input

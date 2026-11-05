@@ -5,7 +5,6 @@ const APP_SHELL = [
   '/app/templates',
   '/app/keigo',
   '/app/minutes/new',
-  '/app/slides',
   '/app/operations',
   '/app/reports',
   '/app/calendar',

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { BookOpenText, CheckCircle2, ClipboardList, Command, ExternalLink, FileText, Languages, Presentation, Search, Send, Sparkles, StickyNote, X, Zap } from "lucide-react";
+import { BookOpenText, CheckCircle2, ClipboardList, Command, ExternalLink, FileText, Languages, Search, Send, Sparkles, StickyNote, X, Zap } from "lucide-react";
 import { useUiLanguage } from "@/components/LanguageProvider";
 import { apiBaseUrl } from "@/lib/config";
 import {
@@ -184,7 +184,6 @@ export function GlobalCommandPalette() {
       { id: "go-keigo",        title: t("commandpalette.goKeigoTitle"),          helper: t("commandpalette.goKeigoHelper"),      href: "/app/keigo",            keywords: "keigo ai email compose japanese" },
       { id: "go-glossary",     title: t("commandpalette.goGlossaryTitle"),       helper: t("commandpalette.goGlossaryHelper"),   href: "/app/glossary",         keywords: "glossary dictionary term translate" },
       { id: "go-notes",        title: t("commandpalette.goNotesTitle"),          helper: t("commandpalette.goNotesHelper"),      href: "/app/notes",            keywords: "notes memo sticky quick capture" },
-      { id: "go-slides",       title: t("commandpalette.goSlidesTitle"),         helper: t("commandpalette.goSlidesHelper"),     href: "/app/slides",           keywords: "slides presentation studio deck" },
       { id: "go-power-tools",  title: t("commandpalette.goPowerToolsTitle"),     helper: t("commandpalette.goPowerToolsHelper"), href: "/app/power-tools",      keywords: "power tools sprint risk capacity" },
       { id: "go-knowledge",    title: t("commandpalette.goKnowledgeTitle"),     helper: t("commandpalette.goKnowledgeHelper"),  href: "/app/knowledge",        keywords: "knowledge base docs internal" },
       { id: "go-minutes",      title: t("commandpalette.goMinutesTitle"),        helper: t("commandpalette.goMinutesHelper"),    href: "/app/minutes/new",      keywords: "minutes meeting formal document" },
@@ -365,7 +364,6 @@ export function GlobalCommandPalette() {
                     {item.id.includes("keigo") ? <Languages className="h-4 w-4" /> :
                      item.id.includes("glossary") ? <BookOpenText className="h-4 w-4" /> :
                      item.id.includes("note") ? <StickyNote className="h-4 w-4" /> :
-                     item.id.includes("slides") ? <Presentation className="h-4 w-4" /> :
                      item.id.includes("reports") ? <FileText className="h-4 w-4" /> :
                      item.action ? <ClipboardList className="h-4 w-4" /> :
                      <ExternalLink className="h-4 w-4" />}

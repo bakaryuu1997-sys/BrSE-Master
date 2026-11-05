@@ -36,25 +36,25 @@ export function OperationsMorningBriefing({
   }
 
   return (
-    <section className="mt-5 rounded-2xl border border-amber-400/20 bg-amber-400/5 p-5">
-      <div className="mb-4 flex items-center gap-3">
-        <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-amber-400/15 text-amber-400">
-          <FileSpreadsheet className="h-4 w-4" />
+    <section className="mt-2.5 rounded-2xl border border-amber-400/20 bg-amber-400/5 p-3">
+      <div className="mb-2.5 flex items-center gap-2.5">
+        <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-amber-400/15 text-amber-400">
+          <FileSpreadsheet className="h-3.5 w-3.5" />
         </div>
         <div>
-          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-400/80">Morning Briefing</p>
-          <p className="text-sm font-black text-textPrimary">{t("operations.briefingTitle")}</p>
+          <p className="text-[9px] font-black uppercase tracking-[0.2em] text-amber-400/80">Morning Briefing</p>
+          <p className="text-xs font-black text-textPrimary">{t("operations.briefingTitle")}</p>
         </div>
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-3">
+      <div className="grid gap-2 sm:grid-cols-3">
         {projectOpenQna > 0 ? (
           <button
             type="button"
             onClick={() => switchType("qna")}
-            className="flex items-center gap-3 rounded-xl border border-amber-400/20 bg-background/40 p-3 text-left transition hover:border-amber-400/40 hover:bg-amber-400/5"
+            className="flex items-center gap-2.5 rounded-xl border border-amber-400/20 bg-background/40 p-2.5 text-left transition hover:border-amber-400/40 hover:bg-amber-400/5"
           >
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-400/15 text-xl">Q</span>
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-400/15 text-sm font-black">Q</span>
             <div>
               <p className="text-xs font-black text-textPrimary">
                 {t("operations.qnaWaiting").replace("{count}", String(projectOpenQna))}
@@ -68,9 +68,9 @@ export function OperationsMorningBriefing({
           <button
             type="button"
             onClick={() => switchType("cr")}
-            className="flex items-center gap-3 rounded-xl border border-primary/20 bg-background/40 p-3 text-left transition hover:border-primary/40 hover:bg-primary/5"
+            className="flex items-center gap-2.5 rounded-xl border border-primary/20 bg-background/40 p-2.5 text-left transition hover:border-primary/40 hover:bg-primary/5"
           >
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/15 text-xl">CR</span>
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/15 text-sm font-black">CR</span>
             <div>
               <p className="text-xs font-black text-textPrimary">
                 {t("operations.crPendingCount").replace("{count}", String(projectPendingCr))}
@@ -84,9 +84,9 @@ export function OperationsMorningBriefing({
           <button
             type="button"
             onClick={() => openRecord(slaEscalations[0].record, switchType, setSelectedId)}
-            className="flex items-center gap-3 rounded-xl border border-rose-500/25 bg-background/40 p-3 text-left transition hover:border-rose-500/40 hover:bg-rose-500/5"
+            className="flex items-center gap-2.5 rounded-xl border border-rose-500/25 bg-background/40 p-2.5 text-left transition hover:border-rose-500/40 hover:bg-rose-500/5"
           >
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-rose-500/15 text-xl">!</span>
+            <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-rose-500/15 text-sm font-black">!</span>
             <div>
               <p className="text-xs font-black text-textPrimary">
                 {t("operations.slaBreachedCount").replace("{count}", String(slaEscalations.length))}

@@ -34,10 +34,7 @@ export default function NewMeetingMinutesPage() {
     transcript,
     setTranscript,
     isGeneratingAi,
-    isGeneratingSlideDeck,
     isSavingMinutes,
-    slideAssistMode,
-    setSlideAssistMode,
     meetingPickList,
     loadingMeetingPickList,
     savedMinutesList,
@@ -53,8 +50,8 @@ export default function NewMeetingMinutesPage() {
     updateAgenda,
     updateAction,
     saveMinutesToDb,
-    openAiSummarizedSlides,
     loadTranscriptFromMeeting,
+    autoGenerateFromMeeting,
     generateMinutesFromTranscript,
     convertActionToTodo,
     convertActionToQna,
@@ -74,7 +71,7 @@ export default function NewMeetingMinutesPage() {
 
   return (
     <main className="brse-page">
-      <header className="mb-6 flex flex-wrap items-center justify-between gap-4 border-b border-[var(--brse-panel-border)] pb-4">
+      <header className="mb-6 flex flex-wrap items-center justify-between gap-4 border-b border-[var(--brse-panel-border)] pb-4 lg:pr-60">
         <div>
           <h1 className="text-2xl font-black bg-gradient-to-r from-matcha to-cyan bg-clip-text text-transparent flex items-center gap-2">
             <Sparkles className="h-6 w-6 text-matcha" />
@@ -99,9 +96,55 @@ export default function NewMeetingMinutesPage() {
         </div>
       )}
 
+      {/* 1-Click Quick Sync Banner from Latest Meeting */}
+      {meetingPickList.length > 0 && (
+        <div className="mb-4 rounded-xl border border-cyan/30 bg-gradient-to-r from-cyan/10 via-matcha/5 to-slate-900/60 p-3.5 flex flex-wrap items-center justify-between gap-3 shadow-sm backdrop-blur-sm">
+          <div className="flex items-center gap-3 min-w-0">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan/20 text-cyan border border-cyan/30 shrink-0">
+              <Sparkles className="h-4.5 w-4.5" />
+            </div>
+            <div className="min-w-0">
+              <div className="flex items-center gap-2">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-cyan">
+                  {t("minutes.recentMeetingAvailable")}:
+                </span>
+                <span className="text-xs font-bold text-textPrimary truncate">
+                  {meetingPickList[0].title}
+                </span>
+                <span className="rounded-full bg-cyan/15 px-2 py-0.5 text-[10px] font-mono text-cyan shrink-0">
+                  {meetingPickList[0].created_at ? meetingPickList[0].created_at.slice(0, 10) : ""}
+                </span>
+              </div>
+              <p className="text-[11px] text-textMuted truncate mt-0.5">
+                Transcript đã sẵn sàng. Bấm 1-click để AI tự động phân tích và tạo biên bản họp.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 shrink-0">
+            <Button
+              size="sm"
+              onClick={() => autoGenerateFromMeeting(meetingPickList[0])}
+              disabled={isGeneratingAi}
+              className="bg-cyan text-slate-950 hover:bg-cyan/90 font-black text-xs h-8 gap-1.5 shadow-sm"
+            >
+              {isGeneratingAi ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Bot className="h-3.5 w-3.5" />}
+              {t("minutes.autoExtractFromMeeting")}
+            </Button>
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={() => setIsAiModalOpen(true)}
+              className="text-xs h-8 border-cyan/30 text-cyan hover:bg-cyan/10"
+            >
+              {t("minutes.viewAllMeetings")} ({meetingPickList.length})
+            </Button>
+          </div>
+        </div>
+      )}
+
       <div className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
         {/* LEFT COLUMN: Premium Editor Workspace */}
-        <section className="space-y-6">
+        <section className="min-w-0 space-y-6">
           {/* Tab Selector for Form */}
           <div className="flex border-b border-[var(--brse-panel-border)] gap-1 pb-px flex-wrap">
             <button
@@ -220,7 +263,7 @@ export default function NewMeetingMinutesPage() {
                   <textarea
                     value={form.customerAttendees}
                     onChange={e => updateForm("customerAttendees", e.target.value)}
-                    rows={6}
+                    rows={3}
                     placeholder={t("minutes.customerAttendeesPlaceholder")}
                     className="field-control px-3 py-2 text-xs font-sans resize-y"
                   />
@@ -230,7 +273,7 @@ export default function NewMeetingMinutesPage() {
                   <textarea
                     value={form.vnAttendees}
                     onChange={e => updateForm("vnAttendees", e.target.value)}
-                    rows={6}
+                    rows={3}
                     placeholder={t("minutes.vnAttendeesPlaceholder")}
                     className="field-control px-3 py-2 text-xs font-sans resize-y"
                   />
@@ -288,7 +331,7 @@ export default function NewMeetingMinutesPage() {
                       <textarea
                         value={item.discussion}
                         onChange={e => updateAgenda(item.id, "discussion", e.target.value)}
-                        rows={6}
+                        rows={4}
                         placeholder={t("minutes.discussionPlaceholder")}
                         className="field-control w-full px-3 py-2 text-xs resize-y"
                       />
@@ -457,24 +500,9 @@ export default function NewMeetingMinutesPage() {
           </div>
         </section>
 
-        {/* RIGHT COLUMN: Universal Note Preview & Slide Export */}
-        <section className="space-y-6 flex flex-col h-full">
-          <div className="mb-3 flex justify-between items-center bg-white/5 border border-[var(--brse-panel-border)] p-3 rounded-xl">
-            <span className="text-xs text-textMuted font-bold flex items-center gap-1.5">
-              <Sparkles className="h-3.5 w-3.5 text-cyan animate-pulse" />
-              Slide Studio Assistant
-            </span>
-            <Button
-              size="sm"
-              onClick={openAiSummarizedSlides}
-              disabled={isGeneratingSlideDeck}
-              className="bg-cyan text-slate-950 hover:bg-cyan/80 gap-1.5 text-xs font-black"
-            >
-              {isGeneratingSlideDeck ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Sparkles className="h-3.5 w-3.5" />}
-              {t("minutes.generateSlides")}
-            </Button>
-          </div>
-          <div className="flex-1">
+        {/* RIGHT COLUMN: Universal Note Preview */}
+        <section className="min-w-0 space-y-4 flex flex-col xl:sticky xl:top-4 xl:max-h-[calc(100vh-5rem)]">
+          <div className="flex-1 min-h-[400px]">
             <UniversalNoteView
               title={`${form.projectName || "Meeting"} - ${form.meetingDate}`}
               content={displayedMinutes}
@@ -483,21 +511,21 @@ export default function NewMeetingMinutesPage() {
           </div>
 
           {/* History / Pick list of saved minutes */}
-          <div className="brse-section p-5">
-            <h3 className="text-sm font-black text-textPrimary mb-3 flex items-center gap-2">
-              <FileText className="h-4.5 w-4.5 text-matcha" />
+          <div className="brse-section p-4">
+            <h3 className="text-xs font-black text-textPrimary mb-2 flex items-center gap-2">
+              <FileText className="h-4 w-4 text-matcha" />
               {t("minutes.historyTitle")}
             </h3>
-            <div className="max-h-[180px] overflow-y-auto space-y-2 pr-1">
+            <div className="max-h-[140px] overflow-y-auto space-y-1.5 pr-1">
               {savedMinutesList.length === 0 ? (
-                <p className="text-xs text-textMuted py-4 text-center">{t("minutes.historyEmpty")}</p>
+                <p className="text-xs text-textMuted py-2 text-center">{t("minutes.historyEmpty")}</p>
               ) : (
                 savedMinutesList.map((row: any) => (
                   <div
                     key={row.id}
                     onClick={() => loadMinutesRecord(row.id)}
                     className={cn(
-                      "flex items-center justify-between p-2.5 rounded-xl border border-[var(--brse-panel-border)] bg-slate-900/40 hover:bg-slate-900/70 hover:border-matcha/40 cursor-pointer transition",
+                      "flex items-center justify-between p-2 rounded-lg border border-[var(--brse-panel-border)] bg-slate-900/40 hover:bg-slate-900/70 hover:border-matcha/40 cursor-pointer transition",
                       activeMinutesId === row.id && "border-matcha bg-matcha/5 text-matcha"
                     )}
                   >

@@ -47,34 +47,6 @@ export default function ReportsPage() {
         </div>
       )}
 
-      {/* Overview stats marquee row */}
-      <section className="cinema-grid scene-marquee mb-6 grid gap-4 p-4 lg:grid-cols-[1fr_0.8fr_0.8fr] lg:p-5">
-        <div className="relative z-10 rounded-[22px] border border-primary/15 bg-background/45 p-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">{state.t("reports.overview")}</p>
-          <h2 className="mt-2 text-lg font-semibold text-ink">{state.t("reports.labDesc")}</h2>
-          <p className="mt-2 text-sm leading-6 text-textMuted">
-            {state.t("reports.labDescSub")}
-          </p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            <span className="scene-chip">Daily</span>
-            <span className="scene-chip">Weekly</span>
-            <span className="scene-chip">JP Business</span>
-          </div>
-        </div>
-        <div className="scene-stat-card relative z-10 p-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cyan">Flow health</p>
-          <p className="mt-3 text-3xl font-black text-ink">{state.analytics.todoProgress}%</p>
-          <p className="mt-1 text-xs text-textMuted">{state.analytics.todoDone}/{state.analytics.todoTotal || 0} todo đã chốt</p>
-          <span className="scene-bar mt-4" style={{ width: `${Math.max(18, state.analytics.todoProgress)}%` }} />
-        </div>
-        <div className="scene-stat-card relative z-10 p-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">Attention lane</p>
-          <p className="mt-3 text-3xl font-black text-ink">{state.analytics.waitingQna + state.analytics.pendingCr}</p>
-          <p className="mt-1 text-xs text-textMuted">{state.t("dashboard.handleRisk")}</p>
-          <span className="scene-bar mt-4 w-3/5" />
-        </div>
-      </section>
-
       {/* Daily Builder Form and Preview */}
       {state.activeTab === "daily" && (
         <ReportsDailyBuilder

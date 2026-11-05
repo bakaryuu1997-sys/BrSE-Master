@@ -89,15 +89,58 @@ export function useDashboardActions({
   }, [activeProject?.name, notify, pendingCr.length, t, todayBoard, todoCommand.deadlineRisk.length, waitingQna.length]);
 
   const copyProactiveHorenso = useCallback(async () => {
-    if (qnaReminderCandidates.length) {
+    const projName = activeProject?.name || todoCommand.activeProject?.name || "対象プロジェクト";
+
+    if (qnaReminderCandidates.length > 0) {
       const subject = `【ご確認】未回答Q&Aのリマインド (${qnaReminderCandidates.length}件)`;
-      const body = buildBatchQnaEmail(qnaReminderCandidates, activeProject?.name || todoCommand.activeProject?.name);
+      const body = buildBatchQnaEmail(qnaReminderCandidates, projName);
       await navigator.clipboard.writeText(`Subject: ${subject}\n\n${body}`);
-      notify(t("commandpalette.qnaReminderCopied"));
+      notify(t("commandpalette.qnaReminderCopied"), "success");
       return;
     }
-    notify(t("dashboard.qnaNoReminders"), "warning");
-  }, [activeProject?.name, notify, qnaReminderCandidates, t, todoCommand.activeProject?.name]);
+
+    if (todoCommand.deadlineRisk.length > 0) {
+      const subject = `【進捗・課題共有】${projName}の重要課題および進捗アラート`;
+      const body = [
+        "お世話になっております。",
+        "BrSE担当チームでございます。",
+        "",
+        `現在進行中の${projName}におきまして、期日管理上の重要課題が発生しております。`,
+        "プロジェクトの納期遵守のため、以下の状況と対応方針をご報告・ご相談申し上げます。",
+        "",
+        "■ 要注意・対応中タスク一覧:",
+        ...todoCommand.deadlineRisk.slice(0, 5).map((task) => `- 【${task.priority}】${task.title} (期限: ${task.deadline || "未定"} / Phase: ${task.phase})`),
+        "",
+        "■ 当方の対応方針:",
+        "- 開発リソースの重点配分および仕様確認の早期完了を進めております。",
+        "- ご不明点やスコープ調整のご相談がございましたら、迅速に対応いたします。",
+        "",
+        "ご確認のほど、何卒よろしくお願い申し上げます。",
+      ].join("\n");
+
+      await navigator.clipboard.writeText(`Subject: ${subject}\n\n${body}`);
+      notify("Đã copy email Horenso cảnh báo rủi ro (Keigo chuẩn Nhật) vào Clipboard!", "success");
+      return;
+    }
+
+    // Default Good-Standing Horenso
+    const subject = `【進捗共有】${projName}の進捗状況のご報告（順調）`;
+    const body = [
+      "お世話になっております。",
+      "BrSE担当チームでございます。",
+      "",
+      `本日時点の${projName}の進捗状況をご報告いたします。`,
+      "現在、ブロッカーおよび遅延はなく、全タスク順調に推移しております。",
+      "",
+      `・総合進捗: ${todoCommand.total ? Math.round((todoCommand.done / todoCommand.total) * 100) : 100}%`,
+      `・完了タスク数: ${todoCommand.done}/${todoCommand.total}`,
+      "",
+      "引き続きよろしくお願い申し上げます。",
+    ].join("\n");
+
+    await navigator.clipboard.writeText(`Subject: ${subject}\n\n${body}`);
+    notify("Đã copy báo cáo tiến độ Hou-Ren-So chuẩn Nhật vào Clipboard!", "success");
+  }, [activeProject?.name, notify, qnaReminderCandidates, t, todoCommand]);
 
   const markQnaReplied = useCallback(async (record: OperationRecord) => {
     setUpdatingOperationId(record.id);

@@ -271,39 +271,38 @@ export function NineRouterStatus() {
     activeModel !== DEFAULT_CURATED_MODEL;
 
   return (
-    <section className="rounded-xl border border-[var(--brse-panel-border)] bg-white/[0.015] shadow-[inset_0_1.5px_1.5px_rgba(255,255,255,0.015)] p-2.5">
-      <div className="flex items-center gap-2">
-        <div className="min-w-0 flex flex-1 items-center gap-2">
-          <div className="flex items-center gap-2 rounded-full bg-surface/55 px-2 py-1 ring-1 ring-[var(--brse-hairline-border)]">
-            <span
-              className={cn(
-                "h-2.5 w-2.5 shrink-0 rounded-full",
-                runtimeState.dot
-              )}
-              aria-hidden="true"
-            />
-            <p className="truncate text-[11px] font-semibold uppercase tracking-[0.12em] text-ink">9router</p>
-          </div>
-          <p className="truncate text-[11px] text-textMuted">
+    <section className="rounded-xl border border-[var(--brse-panel-border)] bg-white/[0.015] p-2 shadow-[inset_0_1.5px_1.5px_rgba(255,255,255,0.015)]">
+      <div className="flex items-center justify-between gap-1.5">
+        <div className="flex min-w-0 flex-1 items-center gap-1.5">
+          <span
+            className={cn(
+              "h-2 w-2 shrink-0 rounded-full",
+              runtimeState.dot
+            )}
+            aria-hidden="true"
+          />
+          <p className="truncate text-[10px] font-black uppercase tracking-[0.14em] text-ink">9router</p>
+          <span className="text-[10px] text-textMuted/40">·</span>
+          <p className="truncate text-[10px] text-textMuted">
             {runtimeState.label}
           </p>
         </div>
         <button
           type="button"
           onClick={loadStatus}
-          className="rounded-md bg-surface/60 p-1.5 text-textMuted ring-1 ring-[var(--brse-hairline-border)] transition hover:ring-primary/30 hover:text-primary"
+          className="rounded-md bg-surface/60 p-1 text-textMuted ring-1 ring-[var(--brse-hairline-border)] transition hover:ring-primary/30 hover:text-primary"
           aria-label="Refresh 9router status"
         >
-          {isLoading ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <RefreshCw className="h-3.5 w-3.5" />}
+          {isLoading ? <Loader2 className="h-3 w-3 animate-spin" /> : <RefreshCw className="h-3 w-3" />}
         </button>
       </div>
 
-      <div className="mt-2 grid grid-cols-[minmax(0,1fr)_auto] gap-2">
+      <div className="mt-1.5 grid grid-cols-[minmax(0,1fr)_auto] gap-1.5">
         <select
           value={activeModel}
           onChange={(event) => changeModel(event.target.value)}
           disabled={isSaving || isLoading || !models.length}
-          className="min-h-8 w-full rounded-md border border-[var(--brse-panel-border)] bg-surface px-2 py-1 text-[11px] font-semibold text-ink outline-none transition focus:border-primary disabled:cursor-not-allowed disabled:opacity-60"
+          className="h-7 w-full rounded-md border border-[var(--brse-panel-border)] bg-surface px-2 py-0.5 text-[11px] font-semibold text-ink outline-none transition focus:border-primary disabled:cursor-not-allowed disabled:opacity-60"
           title={activeModel}
         >
           {models.map((model) => (
@@ -314,7 +313,7 @@ export function NineRouterStatus() {
         </select>
         <span
           className={cn(
-            "inline-flex min-h-8 items-center rounded-md border px-2 text-[10px] font-semibold uppercase tracking-[0.12em]",
+            "inline-flex h-7 items-center rounded-md border px-1.5 text-[9px] font-bold uppercase tracking-[0.12em]",
             runtimeState.badge
           )}
         >
@@ -323,43 +322,48 @@ export function NineRouterStatus() {
       </div>
 
       {error || runtimeState.message ? (
-        <p className={cn("mt-2 line-clamp-2 text-[10px] leading-4", runtimeWarning ? "text-gold" : "text-vermilion")}>
+        <p className={cn("mt-1.5 line-clamp-2 text-[10px] leading-4", runtimeWarning ? "text-gold" : "text-vermilion")}>
           {error || runtimeState.message}
         </p>
       ) : null}
-      {status ? (
-        <p className="mt-1 truncate text-[10px] text-textMuted">
-          {t("ninerouter.activeModel")}: {activePreset?.label ?? activeModel} · {status.provider}
-        </p>
-      ) : null}
-      <div className="mt-2 flex items-center justify-between gap-2">
+
+      <div className="mt-1.5 grid grid-cols-2 gap-1.5">
         <button
           type="button"
           onClick={() => setShowAddModel((value) => !value)}
-          className="rounded-md border border-[var(--brse-hairline-border)] bg-surface/60 px-2 py-1 text-[10px] font-bold text-textMuted transition hover:border-primary/30 hover:text-primary"
+          className="h-6 truncate rounded-md border border-[var(--brse-hairline-border)] bg-surface/60 px-1 text-[9.5px] font-bold text-textMuted transition hover:border-primary/30 hover:text-primary"
         >
           {showAddModel ? t("ninerouter.cancel") : t("ninerouter.addModel")}
         </button>
+        <button
+          type="button"
+          onClick={testAiModels}
+          disabled={isTestingModels || isLoading}
+          className="h-6 truncate rounded-md border border-primary/25 bg-primary/10 px-1 text-[9.5px] font-bold text-primary transition hover:bg-primary/15 disabled:cursor-not-allowed disabled:opacity-60"
+        >
+          {isTestingModels ? t("ninerouter.testingModels") : t("ninerouter.testApiKey")}
+        </button>
       </div>
+
       {showAddModel ? (
         <div className="mt-1.5 grid gap-1.5 rounded-md border border-[var(--brse-panel-border)] bg-surface/40 p-2">
           <input
             value={newModelId}
             onChange={(event) => setNewModelId(event.target.value)}
             placeholder={t("ninerouter.modelIdPlaceholder")}
-            className="min-h-8 w-full rounded-md border border-[var(--brse-panel-border)] bg-surface px-2 py-1 text-[11px] text-ink outline-none focus:border-primary"
+            className="h-7 w-full rounded-md border border-[var(--brse-panel-border)] bg-surface px-2 py-0.5 text-[11px] text-ink outline-none focus:border-primary"
           />
           <input
             value={newModelLabel}
             onChange={(event) => setNewModelLabel(event.target.value)}
             placeholder={t("ninerouter.modelLabelPlaceholder")}
-            className="min-h-8 w-full rounded-md border border-[var(--brse-panel-border)] bg-surface px-2 py-1 text-[11px] text-ink outline-none focus:border-primary"
+            className="h-7 w-full rounded-md border border-[var(--brse-panel-border)] bg-surface px-2 py-0.5 text-[11px] text-ink outline-none focus:border-primary"
           />
           <div className="grid grid-cols-[1fr_auto] gap-1.5">
             <select
               value={newModelProvider}
               onChange={(event) => setNewModelProvider(event.target.value)}
-              className="min-h-8 rounded-md border border-[var(--brse-panel-border)] bg-surface px-2 py-1 text-[11px] font-semibold text-ink outline-none focus:border-primary"
+              className="h-7 rounded-md border border-[var(--brse-panel-border)] bg-surface px-2 py-0.5 text-[11px] font-semibold text-ink outline-none focus:border-primary"
             >
               {PROVIDER_OPTIONS.map((provider) => (
                 <option key={provider} value={provider}>{provider}</option>
@@ -369,22 +373,23 @@ export function NineRouterStatus() {
               type="button"
               onClick={addCustomModel}
               disabled={!newModelId.trim() || isSaving}
-              className="rounded-md border border-primary/25 bg-primary/10 px-2.5 py-1 text-[10px] font-bold text-primary transition hover:bg-primary/15 disabled:cursor-not-allowed disabled:opacity-60"
+              className="rounded-md border border-primary/25 bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary transition hover:bg-primary/15 disabled:cursor-not-allowed disabled:opacity-60"
             >
               {t("ninerouter.addModelConfirm")}
             </button>
           </div>
         </div>
       ) : null}
+
       {models.some((model) => model.custom) ? (
         <div className="mt-1.5 flex flex-wrap gap-1">
           {models.filter((model) => model.custom).map((model) => (
             <span
               key={model.id}
-              className="inline-flex items-center gap-1 rounded-full border border-[var(--brse-hairline-border)] bg-surface/55 px-2 py-0.5 text-[10px] text-textMuted"
+              className="inline-flex items-center gap-1 rounded border border-[var(--brse-hairline-border)] bg-surface/55 px-1.5 py-0.5 text-[9px] text-textMuted"
               title={model.id}
             >
-              {model.label}
+              <span className="max-w-[120px] truncate">{model.label}</span>
               <button
                 type="button"
                 onClick={() => removeCustomModel(model.id)}
@@ -398,60 +403,55 @@ export function NineRouterStatus() {
           ))}
         </div>
       ) : null}
+
       {isOllamaUnavailable ? (
         <button
           type="button"
           onClick={() => changeModel(DEFAULT_CURATED_MODEL)}
           disabled={isSaving}
-          className="mt-2 w-full rounded-md border border-cyan/25 bg-cyan/10 px-2 py-1.5 text-[10px] font-bold text-cyan transition hover:bg-cyan/15 disabled:cursor-not-allowed disabled:opacity-60"
+          className="mt-1.5 w-full rounded-md border border-cyan/25 bg-cyan/10 px-2 py-1 text-[10px] font-bold text-cyan transition hover:bg-cyan/15 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {t("ninerouter.switchToStableModel")}
         </button>
       ) : null}
-      <div className="mt-2 grid gap-1.5">
-        <button
-          type="button"
-          onClick={testAiModels}
-          disabled={isTestingModels || isLoading}
-          className="w-full rounded-md border border-primary/25 bg-primary/10 px-2 py-1.5 text-[10px] font-bold text-primary transition hover:bg-primary/15 disabled:cursor-not-allowed disabled:opacity-60"
-        >
-          {isTestingModels ? t("ninerouter.testingModels") : t("ninerouter.testApiKey")}
-        </button>
-        {modelSmokeResults.length ? (
-          <button
-            type="button"
-            onClick={() => setModelSmokeResults([])}
-            className="w-full rounded-md border border-[var(--brse-hairline-border)] bg-surface/60 px-2 py-1.5 text-[10px] font-bold text-textMuted transition hover:border-primary/30 hover:text-primary"
-          >
-            {t("ninerouter.hideTestResults")}
-          </button>
-        ) : null}
-      </div>
+
       {modelSmokeResults.length ? (
-        <div className="mt-2 grid max-h-64 gap-1.5 overflow-y-auto pr-1">
-          {modelSmokeResults.map((model) => (
-            <div
-              key={model.id}
-              className={cn(
-                "rounded-md border px-2 py-1.5",
-                model.ok
-                  ? "border-green-400/20 bg-green-400/10 text-green-200"
-                  : "border-vermilion/25 bg-vermilion/10 text-vermilion"
-              )}
-              title={model.error || model.reply_preview || model.id}
+        <div className="mt-1.5">
+          <div className="mb-1 flex items-center justify-between">
+            <span className="text-[9px] font-bold uppercase tracking-wider text-textMuted">Smoke Results</span>
+            <button
+              type="button"
+              onClick={() => setModelSmokeResults([])}
+              className="text-[9px] font-bold text-textMuted hover:text-primary"
             >
-              <div className="flex items-center justify-between gap-2">
-                <span className="truncate text-[10px] font-bold">{model.label}</span>
-                <span className="shrink-0 text-[9px] font-black uppercase tracking-[0.12em]">
-                  {model.ok ? "OK" : "NG"}
-                </span>
+              {t("ninerouter.hideTestResults")}
+            </button>
+          </div>
+          <div className="grid max-h-48 gap-1 overflow-y-auto pr-0.5">
+            {modelSmokeResults.map((model) => (
+              <div
+                key={model.id}
+                className={cn(
+                  "rounded border px-1.5 py-1 text-[9.5px]",
+                  model.ok
+                    ? "border-green-400/20 bg-green-400/10 text-green-200"
+                    : "border-vermilion/25 bg-vermilion/10 text-vermilion"
+                )}
+                title={model.error || model.reply_preview || model.id}
+              >
+                <div className="flex items-center justify-between gap-1">
+                  <span className="truncate font-semibold">{model.label}</span>
+                  <span className="shrink-0 text-[8.5px] font-black uppercase tracking-wider">
+                    {model.ok ? "OK" : "NG"}
+                  </span>
+                </div>
+                <p className="mt-0.5 truncate text-[8.5px] opacity-80">
+                  {model.provider} · {model.elapsed_ms ?? "-"}ms
+                  {!model.ok && model.error ? ` · ${model.error}` : ""}
+                </p>
               </div>
-              <p className="mt-0.5 truncate text-[9px] opacity-85">
-                {model.provider} · {model.elapsed_ms ?? "-"}ms
-                {!model.ok && model.error ? ` · ${model.error}` : ""}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       ) : null}
       {isSaving ? (

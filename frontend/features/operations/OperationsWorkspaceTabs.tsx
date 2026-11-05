@@ -7,11 +7,11 @@ type OperationsWorkspaceTabsProps = {
 
 export function OperationsWorkspaceTabs({ activeTab, onChange }: OperationsWorkspaceTabsProps) {
   return (
-    <div className="brse-card-muted mt-5 inline-flex rounded-xl p-1">
+    <div className="brse-card-muted mt-2 mb-1 inline-flex rounded-xl p-0.5">
       <button
         type="button"
         onClick={() => onChange("work")}
-        className={`brse-tab px-4 py-2 text-sm font-semibold ${
+        className={`brse-tab px-3 py-1.5 text-xs font-semibold ${
           activeTab === "work" ? "brse-tab-active" : ""
         }`}
       >
@@ -20,7 +20,7 @@ export function OperationsWorkspaceTabs({ activeTab, onChange }: OperationsWorks
       <button
         type="button"
         onClick={() => onChange("release")}
-        className={`brse-tab px-4 py-2 text-sm font-semibold ${
+        className={`brse-tab px-3 py-1.5 text-xs font-semibold ${
           activeTab === "release" ? "brse-tab-active" : ""
         }`}
       >

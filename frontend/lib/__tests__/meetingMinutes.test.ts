@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { extractMinutesFromTranscript, rewriteSlides, summarizeMinutesToSlides } from "@/lib/meetingMinutes";
+import { extractMinutesFromTranscript } from "@/lib/meetingMinutes";
 
 describe("meeting minutes AI API", () => {
   beforeEach(() => {
@@ -26,32 +26,6 @@ describe("meeting minutes AI API", () => {
       report_rule: "include blockers",
       timezone_rule: "JST",
       communication_notes: "impact first",
-    });
-  });
-
-  it("sends project context to slide summarize and rewrite requests", async () => {
-    await summarizeMinutesToSlides("# Minutes", 5, {
-      projectId: "project-1",
-      projectContext: "Report rule: short",
-    });
-    await rewriteSlides("# Slide", "executive", {
-      projectId: "project-1",
-      projectContext: "Report rule: short",
-    });
-
-    const summarizeBody = JSON.parse((global.fetch as any).mock.calls[0][1].body);
-    const rewriteBody = JSON.parse((global.fetch as any).mock.calls[1][1].body);
-    expect(summarizeBody).toMatchObject({
-      markdown: "# Minutes",
-      max_slides: 5,
-      project_id: "project-1",
-      project_context: "Report rule: short",
-    });
-    expect(rewriteBody).toMatchObject({
-      markdown: "# Slide",
-      tone: "executive",
-      project_id: "project-1",
-      project_context: "Report rule: short",
     });
   });
 });

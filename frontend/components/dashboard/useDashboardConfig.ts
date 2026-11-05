@@ -50,7 +50,7 @@ export type WidgetVisibility = Record<WidgetId, boolean>;
 
 function defaultVisibility(): WidgetVisibility {
   return WIDGET_REGISTRY.reduce<WidgetVisibility>((visibility, widget) => {
-    visibility[widget.id] = true;
+    visibility[widget.id] = widget.id !== "communicationPulse";
     return visibility;
   }, {} as WidgetVisibility);
 }

@@ -19,7 +19,6 @@ const useCases: Array<{ id: AiPromptUseCase; label: string }> = [
   { id: "report", label: "Daily Report" },
   { id: "minutes", label: "Meeting Minutes" },
   { id: "requirements", label: "Requirement Chat" },
-  { id: "slides", label: "Slide Studio" },
   { id: "knowledge", label: "Knowledge Q&A" },
 ];
 

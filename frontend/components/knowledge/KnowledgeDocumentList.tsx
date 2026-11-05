@@ -80,11 +80,11 @@ export function KnowledgeDocumentList({
 
   if (visibleItemCount === 0) {
     return (
-      <div className="brse-section flex flex-col items-center justify-center border-dashed py-20">
-        <BookOpen className="mb-4 h-12 w-12 text-border" />
-        <p className="font-semibold text-ink">{t("knowledge.empty")}</p>
-        <p className="mt-1 text-sm text-textMuted">{t("knowledge.emptyHint")}</p>
-        <button onClick={onCreate} className="mt-6 text-sm font-semibold text-primary hover:underline">
+      <div className="brse-section flex flex-col items-center justify-center border-dashed py-12">
+        <BookOpen className="mb-3 h-10 w-10 text-border" />
+        <p className="text-sm font-semibold text-ink">{t("knowledge.empty")}</p>
+        <p className="mt-1 text-xs text-textMuted">{t("knowledge.emptyHint")}</p>
+        <button onClick={onCreate} className="mt-4 inline-flex items-center gap-1.5 rounded-lg border border-primary/30 bg-primary/10 px-3 py-1.5 text-xs font-bold text-primary hover:bg-primary/20 transition-all">
           + {t("knowledge.addFirst")}
         </button>
       </div>
@@ -93,47 +93,44 @@ export function KnowledgeDocumentList({
 
   return (
     <>
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
         {paginatedItems.map((item) => (
           <div
             key={item.id}
-            className="brse-section group relative overflow-hidden p-5 transition-all animate-in fade-in duration-300 hover:border-primary/30 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
+            className="brse-section group relative overflow-hidden p-4 transition-all animate-in fade-in duration-300 hover:border-primary/30 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
           >
-            <div className={`absolute right-0 top-0 rounded-bl-xl px-3 py-1 text-[10px] font-bold uppercase tracking-widest ${categoryBadgeClass(item.category)}`}>
+            <div className={`absolute right-0 top-0 rounded-bl-xl px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider ${categoryBadgeClass(item.category)}`}>
               {item.category}
             </div>
-            <div className="mb-3 inline-flex rounded-full border border-cyan/25 bg-cyan/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-cyan">
-              Source: Knowledge
-            </div>
-            <h3 className="mb-2 line-clamp-1 text-lg font-semibold text-ink">{highlightMatches(item.title, searchQuery)}</h3>
-            <p className="mb-6 line-clamp-3 text-sm leading-relaxed text-textMuted">
+            <h3 className="mb-1.5 pr-16 line-clamp-1 text-base font-bold text-ink">{highlightMatches(item.title, searchQuery)}</h3>
+            <p className="mb-4 line-clamp-3 text-xs leading-relaxed text-textMuted">
               {highlightMatches(item.content, searchQuery)}
             </p>
-            <div className="mt-auto flex items-center justify-between border-t border-[var(--brse-panel-border)] pt-4">
+            <div className="mt-auto flex items-center justify-between border-t border-[var(--brse-hairline-border)] pt-3">
               <span className="font-mono text-[10px] uppercase text-textMuted">
                 {new Date(item.created_at).toLocaleDateString()}
               </span>
-              <div className="flex gap-2">
+              <div className="flex gap-1">
                 <button
                   onClick={() => onView(item)}
-                  className="rounded-lg p-2 text-textMuted transition-colors hover:bg-primary/10 hover:text-primary"
+                  className="rounded-lg p-1.5 text-textMuted transition-colors hover:bg-primary/10 hover:text-primary"
                   title={t("knowledge.viewDetail")}
                 >
-                  <Eye className="h-4 w-4" />
+                  <Eye className="h-3.5 w-3.5" />
                 </button>
                 <button
                   onClick={() => onEdit(item)}
-                  className="rounded-lg p-2 text-textMuted transition-colors hover:bg-cyan/10 hover:text-cyan"
+                  className="rounded-lg p-1.5 text-textMuted transition-colors hover:bg-cyan/10 hover:text-cyan"
                   title={t("knowledge.edit")}
                 >
-                  <Edit3 className="h-4 w-4" />
+                  <Edit3 className="h-3.5 w-3.5" />
                 </button>
                 <button
                   onClick={() => onDelete(item.id)}
-                  className="rounded-lg p-2 text-textMuted transition-colors hover:bg-red-400/10 hover:text-red-400"
+                  className="rounded-lg p-1.5 text-textMuted transition-colors hover:bg-red-400/10 hover:text-red-400"
                   title={t("knowledge.delete")}
                 >
-                  <Trash2 className="h-4 w-4" />
+                  <Trash2 className="h-3.5 w-3.5" />
                 </button>
               </div>
             </div>

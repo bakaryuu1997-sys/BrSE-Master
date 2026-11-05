@@ -176,14 +176,18 @@ export default function OperationsPage() {
     setTestMatrixForm,
     projectDecisionLogs,
     compactMode,
+    setCompactMode,
+    startCreate,
     projectRecords,
   } = useOperationsState();
 
   return (
     <main className="brse-page">
       <PageHeader
+        compact
         badge={t("operations.badge")}
         title={t("operations.title")}
+        className="mb-2"
       />
 
       {status ? (
@@ -216,6 +220,18 @@ export default function OperationsPage() {
 
       {workspaceTab === "work" ? (
         <>
+        <OperationsHeaderToolbar
+          t={t}
+          activeType={activeType}
+          switchType={switchType}
+          startCreate={startCreate}
+          compactMode={compactMode}
+          setCompactMode={setCompactMode}
+          filteredRecordsCount={filteredRecords.length}
+          handleExportCsv={handleExportCsv}
+          handleImportCsv={handleImportCsv}
+          downloadImportTemplate={downloadImportTemplate}
+        />
         {activeType === "qna" && selectedRecords.size > 0 ? (
           <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-primary/20 bg-primary/10 px-4 py-3">
             <p className="text-sm font-bold text-textPrimary">

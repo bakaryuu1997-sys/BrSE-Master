@@ -8,13 +8,13 @@ export function LanguageSwitcher() {
   const { language, setLanguage, t } = useUiLanguage();
 
   return (
-    <label className="inline-flex items-center gap-2 rounded-lg border border-[var(--brse-panel-border)] bg-surface/95 px-3 py-2 text-xs font-semibold text-textMuted shadow-[0_16px_40px_rgba(15,23,42,0.12)] backdrop-blur-xl">
-      <Globe2 className="h-4 w-4 text-primary" aria-hidden="true" />
-      <span className="hidden sm:inline">{t("layout.topLanguage")}</span>
+    <label className="inline-flex cursor-pointer items-center gap-1.5 text-xs font-semibold text-textMuted">
+      <Globe2 className="h-3.5 w-3.5 shrink-0 text-primary" aria-hidden="true" />
+      <span className="hidden text-[11px] text-textMuted sm:inline">{t("layout.topLanguage")}</span>
       <select
         value={language}
         onChange={(event) => setLanguage(event.target.value as typeof language)}
-        className="rounded-md border border-[var(--brse-panel-border)] bg-background px-2 py-1 text-xs font-semibold text-ink outline-none focus:border-primary"
+        className="rounded-lg border border-[var(--brse-hairline-border)] bg-surface/80 px-2 py-0.5 text-xs font-semibold text-ink outline-none transition focus:border-primary"
         aria-label={t("layout.globalLanguage")}
       >
         {uiLanguageOptions.map((option) => (

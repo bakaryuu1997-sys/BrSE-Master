@@ -107,4 +107,15 @@ describe("buildDashboardPriorityBoard", () => {
     expect(board.map((item) => item.id)).toContain("meeting-m1");
     expect(board[0].kind).toBe("meeting");
   });
+
+  it("preserves project name on priority items", () => {
+    const board = buildDashboardPriorityBoard({
+      ...baseInput(),
+      deadlineRisk: [todo({ id: "d1", title: "Deadline 1", projectName: "Sensei Hub" })],
+      nextFocus: [todo({ id: "n1", title: "Next 1", projectName: "Project Beta" })],
+    });
+
+    expect(board[0].projectName).toBe("Sensei Hub");
+    expect(board[1].projectName).toBe("Project Beta");
+  });
 });

@@ -185,19 +185,46 @@ export default function SpecsMindMapPage() {
   return (
     <main className="brse-page">
       <PageHeader
+        compact={true}
         badge="Quality Check"
         title={t("specsMindmap.title")}
         description={t("specsMindmap.desc")}
-        stats={[
-          { label: t("specsMindmap.totalNodes"), value: allFlatNodes.length },
-          { label: "Clear", value: clearCount, variant: "success" },
-          { label: "Discussing", value: discussingCount, variant: "warning" },
-          { label: "Pending", value: pendingCount, variant: "danger" },
-        ]}
+        actions={
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center gap-1 rounded-md border border-cyan/25 bg-cyan/10 px-2 py-1 text-xs font-semibold text-cyan">
+              {allFlatNodes.length} nodes
+            </span>
+            <span className="inline-flex items-center gap-1 rounded-md border border-matcha/30 bg-matcha/10 px-2 py-1 text-xs font-semibold text-matcha">
+              Clear: {clearCount}
+            </span>
+            <span className="inline-flex items-center gap-1 rounded-md border border-gold/30 bg-gold/10 px-2 py-1 text-xs font-semibold text-gold">
+              Discussing: {discussingCount}
+            </span>
+            {pendingCount > 0 && (
+              <span className="inline-flex items-center gap-1 rounded-md border border-vermilion/30 bg-vermilion/10 px-2 py-1 text-xs font-semibold text-vermilion animate-pulse">
+                Pending: {pendingCount}
+              </span>
+            )}
+            <button
+              type="button"
+              onClick={handleExportQAEmail}
+              className="brse-button text-xs gap-1.5 border-vermilion/20 bg-vermilion/10 text-vermilion hover:bg-vermilion/20 hover:border-vermilion/30 ml-1"
+              title={t("specsMindmap.exportQAEmailTooltip")}
+            >
+              <Mail className="h-3.5 w-3.5" />
+              {t("specsMindmap.exportQAEmail")}
+              {pendingCount > 0 && (
+                <span className="inline-flex h-4 min-w-[16px] items-center justify-center rounded-full bg-vermilion/30 px-1 text-[10px] font-black text-vermilion">
+                  {pendingCount}
+                </span>
+              )}
+            </button>
+          </div>
+        }
       />
 
       {statusMessage && (
-        <div className="mb-4 rounded-xl border border-primary/25 bg-primary/10 px-4 py-2 text-xs font-semibold text-primary transition-all animate-fade-in">
+        <div className="mb-3 rounded-xl border border-primary/25 bg-primary/10 px-4 py-2 text-xs font-semibold text-primary transition-all animate-fade-in">
           {statusMessage}
         </div>
       )}
@@ -207,23 +234,23 @@ export default function SpecsMindMapPage() {
           <RefreshCw className="h-8 w-8 animate-spin text-primary" />
         </div>
       ) : (
-        <div className="mt-5 grid gap-5 lg:grid-cols-[400px_1fr]">
+        <div className="mt-3 grid gap-3 lg:grid-cols-[340px_minmax(0,1fr)] xl:grid-cols-[380px_minmax(0,1fr)] lg:h-[calc(100vh-175px)]">
           {/* Sidebar Left: Markdown Spec Input */}
-          <section className="brse-section p-5 flex flex-col gap-4">
-            <div className="flex items-center justify-between border-b border-[var(--brse-panel-border)] pb-3">
+          <section className="brse-section p-3.5 flex flex-col h-full overflow-hidden">
+            <div className="flex items-center justify-between border-b border-[var(--brse-panel-border)] pb-2.5 mb-2.5">
               <div className="flex items-center gap-2">
-                <FileText className="h-5 w-5 text-primary" />
-                <h2 className="text-sm font-semibold text-textPrimary">
+                <FileText className="h-4 w-4 text-primary" />
+                <h2 className="text-xs font-bold uppercase tracking-wider text-textPrimary">
                   {t("specsMindmap.sidebarTitle")}
                 </h2>
               </div>
               <button
                 type="button"
                 onClick={handleLoadFromClarifier}
-                className="inline-flex items-center gap-1.5 rounded-lg border border-primary/20 bg-primary/10 px-2.5 py-1.5 text-xs font-bold text-primary hover:bg-primary/25 transition active:scale-95"
+                className="inline-flex items-center gap-1.5 rounded-md border border-primary/20 bg-primary/10 px-2 py-1 text-[11px] font-bold text-primary hover:bg-primary/25 transition active:scale-95"
                 title={t("specsMindmap.loadDraftTooltip")}
               >
-                <FolderOpen className="h-3.5 w-3.5" />
+                <FolderOpen className="h-3 w-3" />
                 {t("specsMindmap.loadDraft")}
               </button>
             </div>
@@ -232,71 +259,57 @@ export default function SpecsMindMapPage() {
               value={markdown}
               onChange={(e) => setMarkdown(e.target.value)}
               placeholder={t("specsMindmap.placeholder")}
-              className="flex-1 min-h-[500px] w-full rounded-xl border border-[var(--brse-panel-border)] bg-background/45 p-4 font-mono text-xs leading-6 text-textPrimary outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 resize-y"
+              className="flex-1 w-full rounded-lg border border-[var(--brse-panel-border)] bg-background/45 p-3 font-mono text-xs leading-5 text-textPrimary outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 resize-none overflow-y-auto"
             />
 
-            <div className="rounded-xl bg-white/5 border border-[var(--brse-panel-border)] p-3 text-[11px] text-textMuted leading-relaxed">
-              {"💡 "}
-              <span className="font-bold text-textPrimary">{t("specsMindmap.tipTitle")}</span>
-              {t("specsMindmap.tipBody")}
-              <span className="font-bold text-gold">
-                {t("specsMindmap.tipDoubleClick")}
-              </span>
+            <div className="mt-2 rounded-lg bg-white/5 border border-[var(--brse-panel-border)] p-2 text-[10px] text-textMuted leading-tight shrink-0">
+              💡 <span className="font-bold text-textPrimary">{t("specsMindmap.tipTitle")}</span>{" "}
+              {t("specsMindmap.tipBody")}{" "}
+              <span className="font-bold text-gold">{t("specsMindmap.tipDoubleClick")}</span>{" "}
               {t("specsMindmap.tipClickNode")}
             </div>
           </section>
 
           {/* Main Content Area: Mind-Map Visual Tree Canvas */}
-          <section className="brse-section p-6 overflow-x-auto min-h-[640px] bg-background/20 backdrop-blur-md relative border border-[var(--brse-panel-border)]">
-            {/* Legend & Export Button */}
-            <div className="absolute right-6 top-6 z-10 flex items-center gap-2 flex-wrap">
-              <div className="flex items-center gap-1.5 bg-surface/90 border border-white/5 rounded-lg px-2.5 py-1.5 text-[10px]">
-                <div className="h-2 w-2 rounded-full bg-matcha" />
-                <span className="text-textMuted">Clear</span>
+          <section className="brse-section p-4 overflow-hidden h-full bg-background/20 backdrop-blur-md relative border border-[var(--brse-panel-border)] flex flex-col">
+            {/* Header bar with Canvas Title & Status Legend */}
+            <div className="flex items-center justify-between border-b border-[var(--brse-panel-border)] pb-2.5 mb-3 shrink-0">
+              <div className="flex items-center gap-2">
+                <GitFork className="h-4 w-4 text-cyan" />
+                <h2 className="text-xs font-bold uppercase tracking-wider text-textPrimary">
+                  Requirement Mind-Map Canvas
+                </h2>
               </div>
-              <div className="flex items-center gap-1.5 bg-surface/90 border border-white/5 rounded-lg px-2.5 py-1.5 text-[10px]">
-                <div className="h-2 w-2 rounded-full bg-gold" />
-                <span className="text-textMuted">Discussing</span>
-              </div>
-              <div className="flex items-center gap-1.5 bg-surface/90 border border-white/5 rounded-lg px-2.5 py-1.5 text-[10px]">
-                <div className="h-2 w-2 rounded-full bg-vermilion animate-pulse" />
-                <span className="text-textMuted">Pending</span>
+              <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-1 bg-surface/90 border border-white/5 rounded px-2 py-1 text-[10px]">
+                  <div className="h-2 w-2 rounded-full bg-matcha" />
+                  <span className="text-textMuted">Clear</span>
+                </div>
+                <div className="flex items-center gap-1 bg-surface/90 border border-white/5 rounded px-2 py-1 text-[10px]">
+                  <div className="h-2 w-2 rounded-full bg-gold" />
+                  <span className="text-textMuted">Discussing</span>
+                </div>
+                <div className="flex items-center gap-1 bg-surface/90 border border-white/5 rounded px-2 py-1 text-[10px]">
+                  <div className="h-2 w-2 rounded-full bg-vermilion animate-pulse" />
+                  <span className="text-textMuted">Pending</span>
+                </div>
               </div>
             </div>
 
-            <div className="flex items-center gap-2.5 border-b border-[var(--brse-panel-border)] pb-3 mb-4">
-              <GitFork className="h-5 w-5 text-cyan" />
-              <h2 className="text-base font-black text-textPrimary flex-1">
-                Requirement Mind-Map Canvas
-              </h2>
-              <button
-                type="button"
-                onClick={handleExportQAEmail}
-                className="brse-button text-xs gap-1.5 border-vermilion/20 bg-vermilion/10 text-vermilion hover:bg-vermilion/20 hover:border-vermilion/30"
-                title={t("specsMindmap.exportQAEmailTooltip")}
-              >
-                <Mail className="h-3.5 w-3.5" />
-                {t("specsMindmap.exportQAEmail")}
-                {pendingCount > 0 && (
-                  <span className="inline-flex h-5 min-w-[20px] items-center justify-center rounded-full bg-vermilion/30 px-1.5 text-[10px] font-black text-vermilion">
-                    {pendingCount}
-                  </span>
-                )}
-              </button>
+            <div className="flex-1 overflow-auto pr-2">
+              {treeNodes.length === 0 ? (
+                <div className="flex h-[320px] flex-col items-center justify-center text-center text-textMuted gap-2">
+                  <Network className="h-8 w-8 text-primary/60" />
+                  <p className="text-xs">
+                    {t("specsMindmap.emptyState")}
+                  </p>
+                </div>
+              ) : (
+                <div className="flex flex-col select-none pr-4 pb-4">
+                  {treeNodes.map((node: MindMapNode) => renderNode(node))}
+                </div>
+              )}
             </div>
-
-            {treeNodes.length === 0 ? (
-              <div className="flex h-[400px] flex-col items-center justify-center text-center text-textMuted gap-3">
-                <Network className="h-8 w-8 text-primary" />
-                <p className="text-sm">
-                  {t("specsMindmap.emptyState")}
-                </p>
-              </div>
-            ) : (
-              <div className="flex flex-col select-none pr-6">
-                {treeNodes.map((node: MindMapNode) => renderNode(node))}
-              </div>
-            )}
           </section>
         </div>
       )}

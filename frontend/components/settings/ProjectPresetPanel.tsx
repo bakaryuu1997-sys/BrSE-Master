@@ -1,5 +1,6 @@
 "use client";
 
+import { Sparkles } from "lucide-react";
 import { type TranslationKey } from "@/lib/uiLanguage";
 
 type SettingsTranslator = (key: TranslationKey) => string;
@@ -37,18 +38,21 @@ type ProjectPresetPanelProps = {
 
 export function ProjectPresetPanel({ t, applyPreset }: ProjectPresetPanelProps) {
   return (
-    <div className="rounded-2xl bg-primary/10 p-4 ring-1 ring-primary/15">
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Project preset</p>
-      <div className="mt-3 grid gap-3 md:grid-cols-3">
+    <div className="flex flex-wrap items-center gap-2 rounded-xl border border-primary/20 bg-primary/5 px-3 py-2">
+      <span className="flex items-center gap-1.5 text-xs font-semibold text-primary shrink-0">
+        <Sparkles className="h-3.5 w-3.5" />
+        Preset mẫu:
+      </span>
+      <div className="flex flex-wrap gap-1.5">
         {getProjectPresets(t).map((preset) => (
           <button
             key={preset.id}
             type="button"
+            title={preset.description}
             onClick={() => applyPreset(preset.id)}
-            className="rounded-2xl border border-[var(--brse-panel-border)]/55 bg-background/60 p-3 text-left transition hover:border-primary/35 hover:bg-surfaceHover"
+            className="rounded-lg border border-[var(--brse-panel-border)] bg-background/80 px-2.5 py-1 text-xs font-medium text-ink transition hover:border-primary/40 hover:bg-surfaceHover active:scale-95"
           >
-            <span className="text-sm font-semibold text-ink">{preset.label}</span>
-            <span className="mt-1 block text-xs leading-5 text-textMuted">{preset.description}</span>
+            + {preset.label}
           </button>
         ))}
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Bell, Cpu, Settings as SettingsIcon } from "lucide-react";
+import { Bell, Cpu, FolderGit2, ShieldCheck } from "lucide-react";
 import { ChangeEvent, FormEvent, useEffect, useMemo, useState } from "react";
 import { useConfirm } from "@/components/ConfirmProvider";
 import { useUiLanguage } from "@/components/LanguageProvider";
@@ -53,7 +53,7 @@ export default function ProjectSettingsPage() {
   const [form, setForm] = useState<ProjectSettingInput>(emptyForm);
   const [status, setStatus] = useState<{ text: string; kind: StatusKind } | null>(null);
   const [isSyncing, setIsSyncing] = useState(false);
-  const [activeTab, setActiveTab] = useState<"projects" | "ai" | "notifications">("projects");
+  const [activeTab, setActiveTab] = useState<"projects" | "ai" | "backup" | "notifications">("projects");
   const [conflicts, setConflicts] = useState<ProjectSettingConflict[]>([]);
   const [isSystemBackingUp, setIsSystemBackingUp] = useState(false);
 
@@ -87,7 +87,7 @@ export default function ProjectSettingsPage() {
     setStatus(text ? { text, kind } : null);
   }
 
-  function switchTab(next: "projects" | "ai" | "notifications") {
+  function switchTab(next: "projects" | "ai" | "backup" | "notifications") {
     setStatus(null);
     setActiveTab(next);
   }
@@ -356,55 +356,66 @@ export default function ProjectSettingsPage() {
 
   return (
     <main className="brse-page">
-      <header className="brse-hero mb-6 p-6">
-        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">Settings</p>
-        <div className="mt-2 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+      <header className="brse-hero mb-4 p-3.5 sm:p-4">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">Settings</p>
+        <div className="mt-1 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <div>
-            <h1 className="text-h1">System Settings</h1>
-            <p className="mt-3 max-w-4xl text-ink/70">
+            <h1 className="text-xl font-extrabold tracking-tight text-textPrimary sm:text-2xl">System Settings</h1>
+            <p className="mt-1 max-w-4xl text-xs leading-5 text-ink/70">
               Quản lý dự án, cấu hình AI engine và thiết lập thông báo cho BrSE OS.
             </p>
           </div>
           <Link
             href="/app/templates"
-            className="inline-flex w-fit rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-primaryHover"
+            className="inline-flex h-8 items-center rounded-lg bg-primary px-3 text-xs font-bold text-white transition hover:bg-primaryHover"
           >
             Dùng template
           </Link>
         </div>
-        <div role="tablist" aria-label="Settings sections" className="mt-6 flex border-b border-[var(--brse-panel-border)]/45">
+        <div role="tablist" aria-label="Settings sections" className="mt-4 flex border-b border-[var(--brse-panel-border)]/45">
           <button
             role="tab"
             aria-selected={activeTab === "projects"}
             onClick={() => switchTab("projects")}
-            className={`px-4 py-3 text-sm font-semibold transition border-b-2 ${
+            className={`px-3 py-2 text-xs font-semibold transition border-b-2 ${
               activeTab === "projects" ? "border-primary text-primary" : "border-transparent text-textMuted hover:text-ink hover:border-[var(--brse-panel-border)]"
-            } flex items-center gap-2`}
+            } flex items-center gap-1.5`}
           >
-            <SettingsIcon className="h-4 w-4" />
-            Projects &amp; Data
+            <FolderGit2 className="h-3.5 w-3.5" />
+            {t("settings.tabProjects")}
           </button>
           <button
             role="tab"
             aria-selected={activeTab === "ai"}
             onClick={() => switchTab("ai")}
-            className={`px-4 py-3 text-sm font-semibold transition border-b-2 ${
+            className={`px-3 py-2 text-xs font-semibold transition border-b-2 ${
               activeTab === "ai" ? "border-primary text-primary" : "border-transparent text-textMuted hover:text-ink hover:border-[var(--brse-panel-border)]"
-            } flex items-center gap-2`}
+            } flex items-center gap-1.5`}
           >
-            <Cpu className="h-4 w-4" />
-            AI Engine
+            <Cpu className="h-3.5 w-3.5" />
+            {t("settings.tabAi")}
+          </button>
+          <button
+            role="tab"
+            aria-selected={activeTab === "backup"}
+            onClick={() => switchTab("backup")}
+            className={`px-3 py-2 text-xs font-semibold transition border-b-2 ${
+              activeTab === "backup" ? "border-primary text-primary" : "border-transparent text-textMuted hover:text-ink hover:border-[var(--brse-panel-border)]"
+            } flex items-center gap-1.5`}
+          >
+            <ShieldCheck className="h-3.5 w-3.5" />
+            {t("settings.tabBackup")}
           </button>
           <button
             role="tab"
             aria-selected={activeTab === "notifications"}
             onClick={openNotificationsTab}
-            className={`px-4 py-3 text-sm font-semibold transition border-b-2 ${
+            className={`px-3 py-2 text-xs font-semibold transition border-b-2 ${
               activeTab === "notifications" ? "border-primary text-primary" : "border-transparent text-textMuted hover:text-ink hover:border-[var(--brse-panel-border)]"
-            } flex items-center gap-2`}
+            } flex items-center gap-1.5`}
           >
-            <Bell className="h-4 w-4" />
-            Notifications
+            <Bell className="h-3.5 w-3.5" />
+            {t("settings.tabNotifications")}
           </button>
         </div>
       </header>
@@ -428,10 +439,21 @@ export default function ProjectSettingsPage() {
       {activeTab === "projects" && (
         <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
           {activeProject ? (
-            <section className="mb-6 rounded-2xl bg-matcha/10 p-4 text-sm text-matcha ring-1 ring-matcha/20">
-              Active project: <span className="font-semibold">{activeProject.name}</span>
-              {activeProject.customer_name ? <span> / {activeProject.customer_name}</span> : null}
-            </section>
+            <div className="mb-4 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-matcha/30 bg-matcha/10 px-3.5 py-2 text-xs text-matcha">
+              <div className="flex items-center gap-2">
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-matcha opacity-75"></span>
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-matcha"></span>
+                </span>
+                <span>
+                  Dự án đang kích hoạt: <strong className="font-bold text-ink">{activeProject.name}</strong>
+                  {activeProject.customer_name ? <span className="text-textMuted"> ({activeProject.customer_name})</span> : null}
+                </span>
+              </div>
+              <span className="text-[11px] font-medium text-textMuted">
+                Phase: {activeProject.current_phase || "N/A"} · Health: {activeProject.health_status || "Green"}
+              </span>
+            </div>
           ) : null}
 
           <ProjectConflictHandler
@@ -441,22 +463,7 @@ export default function ProjectSettingsPage() {
             acceptServerConflict={acceptServerConflict}
           />
 
-          <DataSafetyPanel
-            t={t}
-            isSyncing={isSyncing}
-            onSyncLocalToPostgres={syncLocalDataToPostgres}
-            onRestoreFromPostgres={restoreLocalDataFromPostgres}
-            onExportLocal={exportLocalData}
-            onRestoreLocal={restoreLocalData}
-          />
-
-          <SystemBackupVault
-            isBusy={isSystemBackingUp || isSyncing}
-            onCreateBackup={handleSystemBackup}
-            onRestoreBackup={handleSystemRestore}
-          />
-
-          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="grid gap-4 xl:gap-5 xl:grid-cols-[0.95fr_1.05fr]">
             <ProjectProfileForm
               t={t}
               form={form}
@@ -480,6 +487,32 @@ export default function ProjectSettingsPage() {
               onRemove={removeProject}
             />
           </div>
+        </div>
+      )}
+
+      {activeTab === "backup" && (
+        <div className="animate-in fade-in slide-in-from-bottom-2 duration-300 space-y-5">
+          <div className="rounded-xl border border-[var(--brse-panel-border)] bg-surface p-4">
+            <h2 className="text-base font-bold text-ink">Trung tâm An toàn &amp; Phục hồi Dữ liệu</h2>
+            <p className="mt-1 text-xs text-textMuted leading-relaxed">
+              Quản lý sao lưu mã hóa cục bộ (.brsebackup) và đồng bộ snapshot an toàn giữa trình duyệt và PostgreSQL.
+            </p>
+          </div>
+
+          <SystemBackupVault
+            isBusy={isSystemBackingUp || isSyncing}
+            onCreateBackup={handleSystemBackup}
+            onRestoreBackup={handleSystemRestore}
+          />
+
+          <DataSafetyPanel
+            t={t}
+            isSyncing={isSyncing}
+            onSyncLocalToPostgres={syncLocalDataToPostgres}
+            onRestoreFromPostgres={restoreLocalDataFromPostgres}
+            onExportLocal={exportLocalData}
+            onRestoreLocal={restoreLocalData}
+          />
         </div>
       )}
 

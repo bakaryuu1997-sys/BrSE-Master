@@ -1,6 +1,6 @@
 import { apiBaseUrl } from "@/lib/config";
 
-export type AiPromptUseCase = "keigo" | "report" | "minutes" | "chat" | "requirements" | "slides" | "knowledge";
+export type AiPromptUseCase = "keigo" | "report" | "minutes" | "chat" | "requirements" | "knowledge";
 
 export type AiPromptProfile = {
   id: string;

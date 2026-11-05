@@ -30,52 +30,69 @@ export function ReportsPageHeader({
 }: ReportsPageHeaderProps) {
   return (
     <PageHeader
+      compact
       badge="Operations"
       title={t("reports.title")}
-      description={t("reports.body")}
-      stats={[
-        { label: "Todo", value: `${analytics.todoProgress}%` },
-        { label: "Q&A waiting", value: analytics.waitingQna, variant: "warning" },
-        { label: "CR pending", value: analytics.pendingCr, variant: "primary" },
-        { label: "Risk", value: analytics.overdueOps + analytics.openBugs, variant: "danger" },
-      ]}
+      className="mb-2.5"
+      actions={
+        <div className="flex flex-wrap items-center gap-1.5">
+          <span className="rounded-lg border border-primary/25 bg-primary/10 px-2 py-0.5 text-xs font-bold text-primary">
+            Todo {analytics.todoProgress}%
+          </span>
+          <span className="rounded-lg border border-amber-400/25 bg-amber-400/10 px-2 py-0.5 text-xs font-bold text-amber-300">
+            Q&A {analytics.waitingQna}
+          </span>
+          <span className="rounded-lg border border-cyan/25 bg-cyan/10 px-2 py-0.5 text-xs font-bold text-cyan">
+            CR {analytics.pendingCr}
+          </span>
+          <span className="rounded-lg border border-rose-400/25 bg-rose-500/10 px-2 py-0.5 text-xs font-bold text-rose-300">
+            Risk {analytics.overdueOps + analytics.openBugs}
+          </span>
+        </div>
+      }
       toolbar={
-        <div className="flex flex-col gap-4">
-          <div className="flex gap-2">
-            {(["daily", "weekly", "monthly"] as const).map((tab) => (
-              <button
-                key={tab}
-                id={`tab-${tab}`}
-                onClick={() => setActiveTab(tab)}
-                className={`brse-tab px-4 py-2 text-sm font-semibold ${activeTab === tab ? "brse-tab-active" : ""}`}
-              >
-                {tab === "daily" ? t("reports.daily") : tab === "weekly" ? t("reports.weekly") : "Monthly"}
-              </button>
-            ))}
-          </div>
-          <div className="mt-3">
+        <div className="flex flex-col gap-2">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div className="flex items-center gap-1">
+              {(["daily", "weekly", "monthly"] as const).map((tab) => (
+                <button
+                  key={tab}
+                  id={`tab-${tab}`}
+                  onClick={() => setActiveTab(tab)}
+                  className={`rounded-lg border px-3 py-1.5 text-xs font-bold transition-all ${
+                    activeTab === tab
+                      ? "border-primary/40 bg-primary/20 text-primary shadow-sm shadow-primary/20"
+                      : "border-[var(--brse-panel-border)] bg-surface text-textMuted hover:text-ink hover:border-primary/30"
+                  }`}
+                >
+                  {tab === "daily" ? t("reports.daily") : tab === "weekly" ? t("reports.weekly") : "Monthly"}
+                </button>
+              ))}
+            </div>
+
             <div className="flex flex-wrap items-center gap-2">
               <button
                 type="button"
                 onClick={fillFromLiveData}
-                className="brse-button brse-button-primary px-4 py-2 text-sm"
+                className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-3 py-1.5 text-xs font-bold text-white shadow-sm shadow-primary/20 transition hover:bg-primaryHover active:scale-95"
               >
-                <Sparkles className="h-4 w-4" aria-hidden="true" />
+                <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
                 {t("reports.fillLive")}
               </button>
-              <label className="brse-chip gap-2 rounded-md px-3 py-2 text-sm">
-                {t("reports.previewLanguage")}
+              <label className="field-control inline-flex items-center gap-1.5 py-1 px-2.5 text-xs">
+                <span className="text-textMuted">{t("reports.previewLanguage")}:</span>
                 <select
                   value={reportLanguage}
                   onChange={(event) => setReportLanguage(event.target.value as ReportLanguage)}
-                  className="field-control min-h-0 px-2 py-1 text-xs"
+                  className="bg-transparent text-xs font-bold text-textPrimary focus:outline-none cursor-pointer"
                 >
                   {(Object.keys(reportLanguageNames) as ReportLanguage[]).map((language) => (
-                    <option key={language} value={language}>{reportLanguageNames[language]}</option>
+                    <option key={language} value={language} className="bg-surface text-ink">{reportLanguageNames[language]}</option>
                   ))}
                 </select>
               </label>
             </div>
+          </div>
             {projectMemory.hasMemory ? (
               <div className="mt-3 rounded-md border border-primary/20 bg-primary/10 px-4 py-3 text-sm">
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Customer memory</p>
@@ -108,29 +125,7 @@ export function ReportsPageHeader({
               </div>
             ) : null}
           </div>
-        </div>
       }
-    >
-      <div className="scene-art hidden lg:block">
-        <div className="scene-panel right-8 top-8 w-60 p-4">
-          <span className="scene-kicker">Report forge</span>
-          <div className="mt-4 grid grid-cols-5 items-end gap-2">
-            {[24, 40, 34, 58, 46].map((height) => (
-              <span
-                key={height}
-                className="rounded-t-full bg-[linear-gradient(180deg,rgba(255,138,125,0.92),rgba(255,180,84,0.34))]"
-                style={{ height }}
-              />
-            ))}
-          </div>
-          <div className="mt-4 flex items-center justify-between text-[11px] font-semibold uppercase tracking-[0.14em] text-textMuted">
-            <span>Daily</span>
-            <span>Weekly</span>
-          </div>
-        </div>
-        <div className="scene-card-stack right-56 top-24 h-28 w-44 -rotate-6 opacity-75" />
-        <div className="scene-card-stack right-48 top-16 h-28 w-44 rotate-6 opacity-90" />
-      </div>
-    </PageHeader>
+    />
   );
 }
