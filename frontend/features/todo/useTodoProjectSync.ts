@@ -15,9 +15,11 @@ import {
   fetchActiveBrseTodoProjectId,
   fetchBrseTodoProjectsFromDb,
   fetchBrseTodoStateFromDb,
+  mergeTodoItemsByRecency,
   saveBrseTodoProjectToDb,
   saveBrseTodoStateToDb,
   setActiveBrseTodoProjectId,
+  type BrseTodoItem,
 } from "@/lib/brseTodo";
 import { useSaveTodoProjectStateMutation } from "@/lib/todo-hooks";
 import { getOperationRecords, type OperationRecord } from "@/lib/operations";
@@ -615,7 +617,11 @@ export function useTodoProjectSync() {
         }
 
         await Promise.allSettled(
-          projectSettings.map((setting) =>
+          // Only create Todo projects the server does not have yet. Re-saving existing ones with
+          // no state reset their preset/active phase to the defaults on every page load.
+          projectSettings
+            .filter((setting) => !dbProjects.some((project) => project.id === setting.id))
+            .map((setting) =>
             saveBrseTodoProjectToDb({
               id: setting.id,
               name: setting.name || "Untitled project",
@@ -632,14 +638,26 @@ export function useTodoProjectSync() {
           : activeDbProjects.some((project) => project.id === cachedActiveId)
           ? cachedActiveId
           : activeDbProjects[0]?.id ?? mergedProjects[0].id;
-        const dbState = await fetchBrseTodoStateFromDb(preferredId);
+        const dbState = await fetchBrseTodoStateFromDb(preferredId, { persistLocal: false });
         if (cancelled) return;
-        const mergedItems = mergeSavedItems(dbState.items as Partial<WorkflowItem>[], (dbState.preset as PresetKey) || "standard");
+        // Merge with what is stored locally instead of letting the server copy win outright;
+        // an empty/older server copy used to replace local tasks with the default template.
+        const localState = readProjectState(preferredId);
+        const serverHasItems = dbState.items.length > 0;
+        const nextPreset = ((serverHasItems ? dbState.preset : localState.preset) as PresetKey) || "standard";
+        const mergedItems = mergeSavedItems(
+          mergeTodoItemsByRecency(
+            localState.items as BrseTodoItem[],
+            dbState.items
+          ) as Partial<WorkflowItem>[],
+          nextPreset
+        );
+        const nextPhase = serverHasItems ? dbState.activePhase : localState.activePhase;
         setProjects(mergedProjects);
         setActiveProjectId(preferredId);
-        setPreset((dbState.preset as PresetKey) || "standard");
+        setPreset(nextPreset);
         setItems(mergedItems);
-        setActivePhase(mergedItems.some((item) => item.phase === dbState.activePhase) ? dbState.activePhase : mergedItems[0]?.phase ?? defaultPhase);
+        setActivePhase(mergedItems.some((item) => item.phase === nextPhase) ? nextPhase : mergedItems[0]?.phase ?? defaultPhase);
         setSyncStatus(t("todo.syncStatus.synced"));
       } catch {
         if (!cancelled) setSyncStatus(t("todo.syncStatus.usingLocal"));

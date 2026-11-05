@@ -252,7 +252,40 @@ export async function fetchBrseTodoProjectsFromDb(): Promise<BrseTodoProject[]> 
   return projects;
 }
 
-export async function fetchBrseTodoStateFromDb(projectId: string): Promise<BrseTodoState & { project: BrseTodoProject }> {
+function itemHasProgress(item: BrseTodoItem) {
+  return Boolean(item.done || item.note || item.deadline || item.evidenceUrl || item.evidences?.length || item.operationId);
+}
+
+/**
+ * Merge a project's local and server todo items without losing work.
+ * - An item present on only one side is kept (a local-only item is pushed up by the normal save).
+ * - For an item on both sides the more recently updated one wins; on a tie the server wins,
+ *   unless only the local copy carries progress (done, note, deadline, evidence).
+ */
+export function mergeTodoItemsByRecency(local: BrseTodoItem[], server: BrseTodoItem[]): BrseTodoItem[] {
+  const merged = new Map<string, BrseTodoItem>();
+  for (const item of server) merged.set(item.id, item);
+  for (const localItem of local) {
+    const serverItem = merged.get(localItem.id);
+    if (!serverItem) {
+      merged.set(localItem.id, localItem);
+      continue;
+    }
+    const localTime = localItem.updatedAt || "";
+    const serverTime = serverItem.updatedAt || "";
+    const localWins =
+      localTime !== serverTime
+        ? localTime > serverTime
+        : itemHasProgress(localItem) && !itemHasProgress(serverItem);
+    if (localWins) merged.set(localItem.id, localItem);
+  }
+  return sortTodoItems([...merged.values()]);
+}
+
+export async function fetchBrseTodoStateFromDb(
+  projectId: string,
+  options: { persistLocal?: boolean } = {}
+): Promise<BrseTodoState & { project: BrseTodoProject }> {
   const response = await fetch(`${apiBaseUrl}/todos/projects/${encodeURIComponent(projectId)}/state`);
   if (!response.ok) throw new Error("Không tải được BrSE Todo state từ PostgreSQL.");
   const payload = (await response.json()) as { project: ApiTodoProject; items: ApiTodoItem[] };
@@ -262,7 +295,9 @@ export async function fetchBrseTodoStateFromDb(projectId: string): Promise<BrseT
     activePhase: project.activePhase || "1. Kick-off & Requirement",
     items: sortTodoItems((payload.items || []).map(fromApiItem)),
   };
-  writeBrseTodoState(project.id, state);
+  // Callers that merge with local data pass persistLocal:false so the server copy never
+  // overwrites unsynced local work before the merge.
+  if (options.persistLocal !== false) writeBrseTodoState(project.id, state);
   return { ...state, project };
 }
 
