@@ -5,11 +5,11 @@ import { Clock, CheckSquare, ArrowLeft, ArrowRight } from "lucide-react";
 import {
   isDueToday,
   isOverdue,
-  saveOperationRecord,
   type OperationRecord,
   type OperationType,
 } from "@/lib/operations";
-import { todayIso } from "./operationsHelpers";
+import { useSaveOperationMutation } from "@/lib/operations-hooks";
+import { buildStatusChangeInput, nextKanbanStatus, todayIso } from "./operationsHelpers";
 import { useUiLanguage } from "@/components/LanguageProvider";
 import { useNotify } from "@/components/ToastProvider";
 
@@ -34,6 +34,7 @@ export function OperationsKanbanView({
 }: OperationsKanbanViewProps) {
   const { t } = useUiLanguage();
   const { notify } = useNotify();
+  const saveOperationMutation = useSaveOperationMutation();
 
   // Drag and drop handlers
   const handleDragStart = (e: React.DragEvent, id: string) => {
@@ -46,63 +47,25 @@ export function OperationsKanbanView({
     const record = filteredRecords.find((r) => r.id === recordId);
     if (!record || record.status === targetStatus) return;
 
+    await changeStatus(record, targetStatus);
+  };
+
+  // B-010: the mutation invalidates the operations queries, so no full-page reload is needed.
+  const changeStatus = async (record: OperationRecord, targetStatus: string) => {
     try {
-      await saveOperationRecord(
-        {
-          type: record.type,
-          title: record.title,
-          status: targetStatus,
-          priority: record.priority,
-          owner: record.owner,
-          dueDate: record.dueDate,
-          customerOwner: record.customerOwner,
-          projectName: record.projectName,
-          fieldA: record.fieldA,
-          fieldB: record.fieldB,
-          fieldC: record.fieldC,
-          fieldD: record.fieldD,
-          fieldE: record.fieldE,
-        },
-        record.id
-      );
-      window.location.reload();
+      await saveOperationMutation.mutateAsync({
+        input: buildStatusChangeInput(record, targetStatus),
+        existingId: record.id,
+      });
     } catch {
       notify(t("operations.updateStatusError"), "error");
     }
   };
 
   const moveStatus = async (record: OperationRecord, direction: "prev" | "next") => {
-    const statuses = ["Draft", "Sent", "Answered", "Closed"];
-    const currentIdx = statuses.indexOf(record.status);
-    if (currentIdx === -1) return;
-
-    const nextIdx = direction === "next" ? currentIdx + 1 : currentIdx - 1;
-    if (nextIdx < 0 || nextIdx >= statuses.length) return;
-    const targetStatus = statuses[nextIdx];
-
-    try {
-      await saveOperationRecord(
-        {
-          type: record.type,
-          title: record.title,
-          status: targetStatus,
-          priority: record.priority,
-          owner: record.owner,
-          dueDate: record.dueDate,
-          customerOwner: record.customerOwner,
-          projectName: record.projectName,
-          fieldA: record.fieldA,
-          fieldB: record.fieldB,
-          fieldC: record.fieldC,
-          fieldD: record.fieldD,
-          fieldE: record.fieldE,
-        },
-        record.id
-      );
-      window.location.reload();
-    } catch {
-      notify(t("operations.updateStatusError"), "error");
-    }
+    const targetStatus = nextKanbanStatus(record.status, direction);
+    if (!targetStatus) return;
+    await changeStatus(record, targetStatus);
   };
 
   const calculateSlaDays = (dueDateStr: string): number => {

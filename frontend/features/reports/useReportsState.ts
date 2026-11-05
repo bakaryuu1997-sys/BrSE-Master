@@ -115,6 +115,11 @@ export function bulletLines(items: string[], emptyText: string) {
   return items.length ? items.map((item) => `- ${item}`).join("\n") : `- ${emptyText}`;
 }
 
+/** B-011: save what the user sees (including hand edits), not only the auto-generated text. */
+export function resolveReportTextToSave(preview: string, liveDailyPreview: string) {
+  return preview.trim() ? preview : liveDailyPreview;
+}
+
 export function buildLocalizedDailyReport(input: {
   language: ReportLanguage;
   reportDate: string;
@@ -504,7 +509,7 @@ export function useReportsState() {
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    const text = liveDailyPreview;
+    const text = resolveReportTextToSave(preview, liveDailyPreview);
     const toSave: ReportRecordInput = { ...form, generatedJp: text, tasksDone: JSON.stringify(tasksDoneArr) };
     setIsLoading(true);
     try {
