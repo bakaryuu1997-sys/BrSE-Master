@@ -37,15 +37,16 @@ def check_api_auth(request: Request) -> JSONResponse | None:
     if path.startswith("/api"):
         norm_path = path.rstrip("/")
         
-        # Robust opt-out check for public endpoints and their sub-routes
+        # Public endpoints are matched EXACTLY. They used to match by prefix, which silently made every
+        # sub-route of /api/health public (db/inspect/{table} dumped table rows, health/self-heal
+        # mutated state). A new route under these paths is protected unless it is listed here.
         PUBLIC_PATHS = {
             "/api/health",
-            "/api/ai/status"
+            "/api/health/db",
+            "/api/health/deep",
+            "/api/ai/status",
         }
-        is_public = any(
-            norm_path == p or norm_path.startswith(p + "/")
-            for p in PUBLIC_PATHS
-        )
+        is_public = norm_path in PUBLIC_PATHS
         
         if not is_public:
             secret_key = (settings.brse_api_secret or "").strip()

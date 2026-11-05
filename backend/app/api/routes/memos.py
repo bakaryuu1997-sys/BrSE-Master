@@ -101,11 +101,9 @@ async def upload_memo_image(file: UploadFile = File(...)):
         ext = Path(file.filename).suffix.lower()
         if ext in ALLOWED_EXTENSIONS:
             suffix = ext
-    if not suffix and file.filename:
-        ext = Path(file.filename).suffix.lower()
-        suffix = ext if ext else ".bin"
     if not suffix:
-        suffix = ".bin"
+        # Anything outside the allow-list (executables, scripts, unknown/no extension) is refused.
+        raise HTTPException(status_code=415, detail="Loại tệp này không được hỗ trợ.")
 
     content = await file.read()
     if len(content) > MAX_MEMO_IMAGE_BYTES:
@@ -168,11 +166,17 @@ def get_memo_image(filename: str):
     elif ext in {".html", ".htm"}:
         media_type = "text/html; charset=utf-8"
 
-    return FileResponse(
-        path,
-        media_type=media_type,
-        headers={"Content-Disposition": f"inline; filename=\"{path.name}\""}
-    )
+    headers = {
+        "Content-Disposition": f"inline; filename=\"{path.name}\"",
+        # Never let the browser guess a more dangerous type than the one we declared.
+        "X-Content-Type-Options": "nosniff",
+    }
+    if media_type.startswith(("text/html", "image/svg+xml")):
+        # Active content stays viewable but runs in a sandbox: no scripts, unique origin, so an
+        # uploaded page cannot read the app's data or call its API (stored-XSS hardening).
+        headers["Content-Security-Policy"] = "sandbox"
+
+    return FileResponse(path, media_type=media_type, headers=headers)
 
 
 def serialize_memo_from_universal(note: UniversalNoteRecord) -> dict:

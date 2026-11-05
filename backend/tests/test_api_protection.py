@@ -24,10 +24,17 @@ SENSITIVE_ENDPOINTS = [
     ("POST", "/api/todos/projects"),
     ("GET", "/api/reports/"),
     ("POST", "/api/reports/"),
+    # Sub-routes of /api/health are NOT public: the public list is exact-match only.
+    ("GET", "/api/health/db/inspect/client_state"),
+    ("POST", "/api/health/self-heal"),
+    ("POST", "/api/memos/images"),
+    ("GET", "/api/memos/images/2026/11/none.png"),
 ]
 
 PUBLIC_ENDPOINTS = [
     ("GET", "/api/health"),
+    ("GET", "/api/health/db"),
+    ("GET", "/api/health/deep"),
     ("GET", "/api/ai/status"),
 ]
 
