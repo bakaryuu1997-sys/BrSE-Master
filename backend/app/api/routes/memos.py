@@ -23,8 +23,31 @@ from app.services.note_projection import (
 router = APIRouter()
 
 MAX_IMAGES_JSON_BYTES = 8 * 1024 * 1024
-ALLOWED_IMAGE_TYPES = {"image/png": ".png", "image/jpeg": ".jpg", "image/webp": ".webp", "image/gif": ".gif"}
-MAX_MEMO_IMAGE_BYTES = 12 * 1024 * 1024
+ALLOWED_IMAGE_TYPES = {
+    "image/png": ".png",
+    "image/jpeg": ".jpg",
+    "image/webp": ".webp",
+    "image/gif": ".gif",
+    "image/svg+xml": ".svg",
+    "application/pdf": ".pdf",
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": ".xlsx",
+    "application/vnd.ms-excel": ".xls",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document": ".docx",
+    "application/msword": ".doc",
+    "application/vnd.openxmlformats-officedocument.presentationml.presentation": ".pptx",
+    "text/csv": ".csv",
+    "text/plain": ".txt",
+    "text/markdown": ".md",
+    "text/html": ".html",
+    "application/zip": ".zip",
+    "application/x-zip-compressed": ".zip",
+}
+ALLOWED_EXTENSIONS = {
+    ".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg",
+    ".pdf", ".xlsx", ".xls", ".docx", ".doc", ".pptx",
+    ".csv", ".txt", ".md", ".html", ".htm", ".zip"
+}
+MAX_MEMO_IMAGE_BYTES = 32 * 1024 * 1024
 
 
 def memo_image_dir(*parts: str) -> Path:
@@ -74,13 +97,21 @@ def encode_images(images: list[dict] | None) -> str:
 @router.post("/images", status_code=201)
 async def upload_memo_image(file: UploadFile = File(...)):
     suffix = ALLOWED_IMAGE_TYPES.get(file.content_type or "")
+    if not suffix and file.filename:
+        ext = Path(file.filename).suffix.lower()
+        if ext in ALLOWED_EXTENSIONS:
+            suffix = ext
+    if not suffix and file.filename:
+        ext = Path(file.filename).suffix.lower()
+        suffix = ext if ext else ".bin"
     if not suffix:
-        raise HTTPException(status_code=415, detail="Only PNG, JPEG, WebP, and GIF memo images are supported.")
+        suffix = ".bin"
+
     content = await file.read()
     if len(content) > MAX_MEMO_IMAGE_BYTES:
-        raise HTTPException(status_code=413, detail="Memo image is too large.")
+        raise HTTPException(status_code=413, detail="Tài liệu tải lên vượt quá giới hạn 32MB.")
     image_id = str(uuid.uuid4())
-    original = safe_filename(file.filename or "memo-image")
+    original = safe_filename(file.filename or "document")
     filename = f"{image_id}{suffix}"
     now = datetime.now(UTC)
     year = f"{now.year:04d}"
@@ -99,8 +130,49 @@ async def upload_memo_image(file: UploadFile = File(...)):
 def get_memo_image(filename: str):
     path = memo_image_path(filename)
     if not path.exists() or not path.is_file():
-        raise HTTPException(status_code=404, detail="Memo image not found")
-    return FileResponse(path)
+        raise HTTPException(status_code=404, detail="Tài liệu không tồn tại")
+
+    ext = path.suffix.lower()
+    media_type = "application/octet-stream"
+
+    if ext in {".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg"}:
+        media_type = f"image/{ext.lstrip('.')}"
+        if ext in {".jpg", ".jpeg"}:
+            media_type = "image/jpeg"
+        elif ext == ".svg":
+            media_type = "image/svg+xml"
+    elif ext == ".pdf":
+        # Auto-detect if file is an HTML document disguised as PDF
+        try:
+            sample = path.read_bytes()[:120].lower()
+            if b"<!doctype html" in sample or b"<html" in sample:
+                media_type = "text/html; charset=utf-8"
+            else:
+                media_type = "application/pdf"
+        except Exception:
+            media_type = "application/pdf"
+    elif ext == ".xlsx":
+        media_type = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    elif ext == ".xls":
+        media_type = "application/vnd.ms-excel"
+    elif ext == ".docx":
+        media_type = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    elif ext == ".doc":
+        media_type = "application/msword"
+    elif ext == ".pptx":
+        media_type = "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+    elif ext == ".csv":
+        media_type = "text/csv; charset=utf-8"
+    elif ext in {".txt", ".md"}:
+        media_type = "text/plain; charset=utf-8"
+    elif ext in {".html", ".htm"}:
+        media_type = "text/html; charset=utf-8"
+
+    return FileResponse(
+        path,
+        media_type=media_type,
+        headers={"Content-Disposition": f"inline; filename=\"{path.name}\""}
+    )
 
 
 def serialize_memo_from_universal(note: UniversalNoteRecord) -> dict:

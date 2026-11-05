@@ -26,3 +26,35 @@ def test_deep_health_check_contains_resource_and_job_summary() -> None:
     assert "temperature_c" in payload["resources"]["gpu"]
     assert "meeting_jobs" in payload
     assert "warnings" in payload
+
+
+def test_inspect_database_table() -> None:
+    client = TestClient(app)
+    # Valid table
+    res = client.get("/api/health/db/inspect/client_state?limit=5")
+    assert res.status_code == 200
+    data = res.json()
+    assert data["status"] == "ok"
+    assert data["table_name"] == "client_state"
+    assert "columns" in data
+    assert "rows" in data
+    assert isinstance(data["rows"], list)
+
+    # Invalid table
+    res_err = client.get("/api/health/db/inspect/non_existent_table")
+    assert res_err.status_code == 400
+    assert "Unsupported table" in res_err.json()["detail"]
+
+
+def test_self_heal_system() -> None:
+    client = TestClient(app)
+    res = client.post("/api/health/self-heal")
+    assert res.status_code == 200
+    data = res.json()
+    assert data["status"] == "ok"
+    assert "actions" in data
+    assert len(data["actions"]) >= 4
+    assert any(a["step"] == "db_pool" for a in data["actions"])
+    assert any(a["step"] == "stale_jobs" for a in data["actions"])
+    assert any(a["step"] == "ai_runtime" for a in data["actions"])
+
