@@ -14,16 +14,16 @@
 
 | 指標 | 値 |
 |---|---|
-| Total test case | **74** (47 ở lượt 1 + 27 ở lượt 2: mobile 375px, tạo/sửa/xóa, AI, NFR) |
-| Pass | **64** |
-| Fail | **3** (ST-AI-01/B-016, ST-NFR-03/B-017, ST-NFR-04/B-018 — đều đang mở) |
+| Total test case | **76** (47 ở lượt 1 + 29 ở lượt 2: mobile 375px, tạo/sửa/xóa, AI, NFR, a11y) |
+| Pass | **65** |
+| Fail | **4** (ST-AI-01/B-016, ST-NFR-03/B-017, ST-NFR-04/B-018, ST-A11Y-02/B-020 — đều đang mở) |
 | Blocked | **1** (ST-AI-03 OCR: thiếu model local, xem mục 4) |
 | N/A (loại khỏi phạm vi) | 1 (ST-PWT-02, B-006 bị Reject: đúng thiết kế) |
 | Not Run | **5** (xem mục 4; NR-01, NR-03, NR-04 mới phủ một phần) |
-| Execution rate ((Pass+Fail+Blocked)/(Total−N/A)) | **93.2 %** (68/73) |
-| Pass rate (Pass/Run) | **94.1 %** (64/68) |
-| Lần chạy đầu | 21 case Fail → 18 đã sửa và **re-test Pass**, 1 Reject, 3 còn mở |
-| Lượt 2 (2026-11-05, :3011 cô lập) | Tìm thêm 9 bug (B-010…B-018): 6 đã sửa và re-test Pass; **3 còn mở: B-016, B-017 (Medium), B-018 (Low)** |
+| Execution rate ((Pass+Fail+Blocked)/(Total−N/A)) | **93.3 %** (70/75) |
+| Pass rate (Pass/Run) | **92.9 %** (65/70) |
+| Lần chạy đầu | 23 case Fail → 19 đã sửa và **re-test Pass**, 1 Reject, 4 còn mở |
+| Lượt 2 (2026-11-05, :3011 cô lập) | Tìm thêm 11 bug (B-010…B-020): 7 đã sửa và re-test Pass; **4 còn mở: B-016, B-017 (Medium), B-018, B-020 (Low)** |
 
 ### 不具合 / Defect
 
@@ -31,8 +31,8 @@
 |---|---|---|
 | Critical | 1 | 0 |
 | High | 2 | 0 |
-| Medium | 9 | **2** (B-016, B-017) |
-| Low | 6 (4 Closed, 1 Reject, 1 Open) | **1** (B-018) |
+| Medium | 10 | **2** (B-016, B-017) |
+| Low | 7 (4 Closed, 1 Reject, 2 Open) | **2** (B-018, B-020) |
 
 ## 2. 画面別結果 / Kết quả theo màn hình
 
@@ -74,6 +74,8 @@
 | B-012 | Glossary ở 375px: nút Dự án/Toàn cục/CSV/Anki bị cắt, không bấm được | Medium | Closed | `shrink-0` → `max-w-full sm:shrink-0` (commit `743c1ad`) |
 | B-013 | Calendar ở 375px: select múi giờ vượt mép phải (426px) | Medium | Closed | `min-w-0` + `w-full`. **Chưa commit**: nằm trong khối form mới chưa commit của chính trang Calendar |
 | B-014 | Minutes mới ở 375px: cuộn ngang 450px | Medium | Closed | `min-w-0` cho 2 cột lưới. **Chưa commit**: cùng file có thay đổi cũ chưa commit |
+| B-019 | a11y — drawer "Tạo mới" của Operations: không `role="dialog"`/`aria-modal`, focus không vào drawer, Tab ra trang nền (42/60 lần), Escape không đóng | Medium | Closed | Hook dùng chung `useDialogFocus` (focus vào, giữ Tab, Escape, trả focus) + `role/aria-modal/aria-label` (+5 test). Đo lại: 0/60 ra ngoài, Escape đóng, focus về nút mở. `Drawer.tsx` dùng chung chưa có focus trap, chưa sửa |
+| B-020 | a11y tĩnh: 2 thẻ `<main>` lồng nhau ở mọi màn; ô nhập chỉ có placeholder (Reports 9, Todo 3, Glossary 3, Operations 2); nút không tên (Operations 2, Reports 1) | Low | **Open** | Chưa sửa: bỏ `<main>` thừa ở layout hoặc ở page, thêm `aria-label`/`<label>` |
 | B-017 | Bật `BRSE_API_SECRET` (cách bảo vệ khi mở tunnel) làm giao diện web hỏng toàn bộ và **im lặng**: 13/15 API của trang Operations trả 401, frontend không có mã gửi `X-BrSE-Token` (chỉ Chrome Extension có `getAuthHeaders`) | Medium | **Open** | Cần quyết định thiết kế: nếu Next tự gắn token cho mọi request thì secret mất tác dụng với tunnel. Hướng đúng: Cloudflare Access hoặc đăng nhập; tối thiểu UI nên báo lỗi 401 rõ ràng. Hiện chỉ an toàn khi dùng thuần localhost (secret rỗng) |
 | B-018 | `/api/ai/status` (route công khai) lộ `base_url` nội bộ (172.21.x.x:20128) và danh sách model; `?check_runtime=true` cho phép kích hoạt gọi ra ngoài không cần token | Low | **Open** | Trả bản rút gọn khi chưa xác thực |
 | B-016 | AI chat `/api/ai/chat` chập chờn: combo 9router `free-logic` có member hỏng (`gh/gemini-3.1-pro-preview` → 400 `model_not_available_for_integrator`, không fallback); 3 lần gọi cho 400 / 200 (1.2s) / 503 sau **97s**. Trường `model` trong request bị bỏ qua (luôn `free-logic`) | Medium | **Open** | Gốc ở cấu hình combo 9router (ngoài mã BrSE): gỡ member hỏng khỏi combo. Phía BrSE nên cân nhắc timeout ngắn hơn và retry khi 503 |
@@ -84,7 +86,7 @@
 | ID | Hạng mục | Lý do |
 |---|---|---|
 | ST-NR-01 | Mobile/tablet (≤768px) | **Một phần.** Đã test 12 màn ở 375px (ST-MOB-01…12). Chưa test: meeting-note, history, power-tools, specs-mindmap, validation, Kanban, drawer/modal, tablet 768px |
-| ST-NR-02 | Bàn phím/screen-reader (a11y) | Chưa thực hiện |
+| ST-NR-02 | Bàn phím/screen-reader (a11y) | **Một phần** (ST-A11Y-01/02): drawer Operations bằng bàn phím thật + kiểm tra tĩnh 4 màn. Chưa test: các modal khác, thứ tự Tab từng trang, screen reader thật |
 | ST-NR-03 | Tạo/sửa/xóa dữ liệu | **Một phần**, chạy trên stack cô lập `:3011` (ST-CRD-01…08). Chưa test: Todo tạo/archive dự án, Reports đổi dự án. Glossary không có nút thêm thuật ngữ thủ công (chỉ CSV/trích từ họp) |
 | ST-NR-04 | Tính năng AI (chat, Keigo check, OCR) | **Một phần, chỉ gọi API** (ST-AI-01..03). Chat: Fail (B-016). Keigo: Pass (14.1s). OCR: **Blocked** — không có `GEMINI_API_KEY` nên backend dùng model local `qwen3.5:9b`, Ollama chưa có model nào (404). Cần `ollama pull qwen3.5:9b` hoặc đặt `GEMINI_API_KEY`. Lưu ý: `PROJECT_SOURCE_OF_TRUTH.md` ghi OCR mặc định là Gemini, nhưng khi không có key thực tế rơi về local. Môi trường: 9router không tự chạy sau khi restart WSL, phải chạy `scripts/start-brse-stack.sh` |
 | ST-NR-05 | Chrome Extension | Sản phẩm riêng, ngoài phạm vi |
@@ -101,13 +103,13 @@ Quan sát chưa ghi thành bug: Dashboard cho thấy 24 nút/link nhỏ hơn 32p
 
 | Tiêu chí | Ngưỡng | Thực tế | Kết quả |
 |---|---|---|---|
-| Đã chạy 100% | 100 % | 93.2 % (68/73) | ❌ |
-| Pass rate (Pass/Run) | ≥ 98 % | 94.1 % (64/68) | ❌ |
-| Critical/High còn Open | 0 | 0 (còn 2 Medium: B-016, B-017; 1 Low: B-018) | ✅ |
+| Đã chạy 100% | 100 % | 93.3 % (70/75) | ❌ |
+| Pass rate (Pass/Run) | ≥ 98 % | 92.9 % (65/70) | ❌ |
+| Critical/High còn Open | 0 | 0 (còn 2 Medium: B-016, B-017; 2 Low: B-018, B-020) | ✅ |
 | NFR hiệu năng | Đạt | Đạt (ST-NFR-01) | ✅ |
 | NFR bảo mật | Đạt | Một phần: API được bảo vệ đúng (ST-NFR-02 Pass) nhưng UI không dùng được khi có secret (B-017) và `ai/status` lộ cấu hình (B-018) | ❌ |
 
-**結論 / Kết luận: ❌ CHƯA ĐẠT exit criteria ST.** Lý do: còn 5 hạng mục Not Run (NR-01, NR-03, NR-04 mới phủ một phần), 1 case Fail (AI chat, B-016), 1 case Blocked (OCR) 3 case Fail (B-016/B-017/B-018) và NFR bảo mật chưa đạt. Không có bug Critical/High mở; còn 2 Medium (B-016, B-017) và 1 Low (B-018).
+**結論 / Kết luận: ❌ CHƯA ĐẠT exit criteria ST.** Lý do: còn 5 hạng mục Not Run (NR-01, NR-03, NR-04 mới phủ một phần), 1 case Fail (AI chat, B-016), 1 case Blocked (OCR) 4 case Fail (B-016/B-017/B-018/B-020) và NFR bảo mật chưa đạt. Không có bug Critical/High mở; còn 2 Medium (B-016, B-017) và 2 Low (B-018, B-020).
 
 ## 7. Go / No-Go
 
