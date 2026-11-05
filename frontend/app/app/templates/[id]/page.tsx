@@ -21,6 +21,7 @@ import {
   getVariablePlaceholder,
   isTextareaVariable,
   renderTemplate,
+  buildRequiredPlaceholders,
   type EmailTemplate,
   type TemplateValues
 } from "@/lib/emailTemplates";
@@ -121,7 +122,7 @@ export default function TemplateEditorPage() {
           setTemplate(data);
           setValues(historyItem ? { ...defaults, ...historyItem.variables } : nextValues);
           setIsBodyEdited(Boolean(historyItem || draft?.isBodyEdited));
-          setCustomBody(historyItem ? historyItem.body : draft?.isBodyEdited ? draft.customBody : renderTemplate(data.body_template, nextValues));
+          setCustomBody(historyItem ? historyItem.body : draft?.isBodyEdited ? draft.customBody : renderTemplate(data.body_template, nextValues, buildRequiredPlaceholders(data)));
           if (historyItem) setSaveStatus(t("templates.reopenedFromHistory"));
           else if (draft) setSaveStatus(t("templates.draftRestored"));
           setIsDraftReady(true);
@@ -145,11 +146,11 @@ export default function TemplateEditorPage() {
   }, [template, templateId, values, customBody, isBodyEdited, isDraftReady]);
 
   const renderedSubject = useMemo(() => {
-    return template ? renderTemplate(template.subject_template, values) : "";
+    return template ? renderTemplate(template.subject_template, values, buildRequiredPlaceholders(template)) : "";
   }, [template, values]);
 
   const renderedBody = useMemo(() => {
-    return template ? renderTemplate(template.body_template, values) : "";
+    return template ? renderTemplate(template.body_template, values, buildRequiredPlaceholders(template)) : "";
   }, [template, values]);
   const projectMemory = getProjectMemorySummary(activeProject);
 
@@ -184,7 +185,7 @@ export default function TemplateEditorPage() {
     const defaults = { ...getDefaultValues(template), ...getProjectTemplateValues(activeProject) };
     clearEmailDraft(templateId);
     setValues(defaults);
-    setCustomBody(renderTemplate(template.body_template, defaults));
+    setCustomBody(renderTemplate(template.body_template, defaults, buildRequiredPlaceholders(template)));
     setIsBodyEdited(false);
     setCopyStatus("idle");
     setGmailStatus("idle");

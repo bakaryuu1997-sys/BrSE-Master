@@ -39,10 +39,23 @@ function stripEmptyBulletLines(text: string) {
     .join("\n");
 }
 
-export function renderTemplate(templateText: string, values: TemplateValues): string {
+/** Visible markers (e.g. 【Tên BrSE】) for required variables that are still empty. */
+export function buildRequiredPlaceholders(template: EmailTemplate): Record<string, string> {
+  return Object.fromEntries(
+    template.variables.filter((variable) => variable.required).map((variable) => [variable.key, `【${variable.label}】`])
+  );
+}
+
+export function renderTemplate(
+  templateText: string,
+  values: TemplateValues,
+  placeholders: Record<string, string> = {}
+): string {
   const rendered = templateText.replace(/\{\{\s*([a-zA-Z0-9_]+)\s*\}\}/g, (_match, key: string, offset: number) => {
     const value = values[key]?.trim();
-    if (!value) return "";
+    // An empty required field used to vanish, leaving broken sentences such as
+    // "お世話になっております。です。". Show a marker instead; optional fields stay blank.
+    if (!value) return placeholders[key] ?? "";
 
     const lineStart = templateText.lastIndexOf("\n", offset - 1) + 1;
     const currentLinePrefix = templateText.slice(lineStart, offset);

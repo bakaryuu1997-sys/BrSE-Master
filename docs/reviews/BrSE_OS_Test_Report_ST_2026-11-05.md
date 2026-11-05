@@ -15,13 +15,14 @@
 | 指標 | 値 |
 |---|---|
 | Total test case | **47** |
-| Pass | **38** |
-| Fail | **4** (đều mức Low, bug còn Open) |
+| Pass | **41** |
+| Fail | **0** |
 | Blocked | 0 |
+| N/A (loại khỏi phạm vi) | 1 (ST-PWT-02, B-006 bị Reject: đúng thiết kế) |
 | Not Run | **5** (xem mục 4) |
-| Execution rate (Run/Total) | **89.4 %** (42/47) |
-| Pass rate (Pass/Run) | **90.5 %** (38/42) |
-| Lần chạy đầu: Fail / Tổng | 14 case Fail ở lần đầu → 10 case đã sửa và **re-test Pass** |
+| Execution rate (Run/(Total−N/A)) | **89.1 %** (41/46) |
+| Pass rate (Pass/Run) | **100 %** (41/41) |
+| Lần chạy đầu | 13 case Fail → 12 đã sửa và **re-test Pass**, 1 Reject (đúng thiết kế) |
 
 ### 不具合 / Defect
 
@@ -30,7 +31,7 @@
 | Critical | 1 | 0 |
 | High | 2 | 0 |
 | Medium | 2 | 0 |
-| Low | 4 | **3** |
+| Low | 4 (3 Closed, 1 Reject) | **0** |
 
 ## 2. 画面別結果 / Kết quả theo màn hình
 
@@ -38,17 +39,17 @@
 |---|---|---|
 | Dashboard `/app` | ✅ (sau sửa) | B-001/002/003 đã sửa & re-test; weather, Todo drawer đạt |
 | BrSE Todo | ✅ | Đồng bộ 2 chiều với sidebar, task tùy chỉnh được giữ |
-| Calendar | ⚠️ | Đạt chức năng; tiêu đề tiếng Anh cố định (B-007, Low) |
+| Calendar | ✅ (sau sửa) | Tiêu đề đã việt hóa (B-007) |
 | Memo Notes | ✅ | |
 | Meeting Note AI | ✅ | Video `1f75c204` **completed, 670 từ**; không còn `metadata_errors` |
 | Minutes (`/minutes`, `/minutes/new`) | ✅ (sau sửa) | `/minutes` trước đây 404 (B-005) |
-| Templates (list + detail) | ⚠️ | Đạt; chip bị tràn (B-007), preview thiếu biến → câu Nhật hỏng (B-008) — Low |
+| Templates (list + detail) | ✅ (sau sửa) | Chip xuống dòng (B-007); biến bắt buộc còn trống hiện `【nhãn】` thay vì câu Nhật hỏng (B-008) |
 | Keigo | ✅ | |
 | Glossary | ✅ (sau sửa) | Nút "Toàn cục" bị che (B-004) → đã sửa, click thật hoạt động |
 | Knowledge | ✅ | |
 | Operations | ✅ | |
 | Reports | ✅ | Preview 456px, sửa trực tiếp, không còn nút "Sửa tay" |
-| Power Tools | ⚠️ | Đạt; 1 request 404 cho dự án chưa có dữ liệu (B-006, Low) |
+| Power Tools | ✅ | 1 request 404 cho dự án chưa có dữ liệu — đúng thiết kế, FE tự dùng cache cục bộ (B-006 Reject) |
 | Specs Mindmap | ✅ | |
 | Validation | ✅ | |
 | Email History | ✅ | |
@@ -64,9 +65,9 @@
 | B-001 | App tự xin quyền vị trí khi mở Dashboard | Medium | Closed | Chỉ dùng GPS khi đã cấp quyền hoặc bấm Refresh |
 | B-003 | Tiêu đề card chứa nguyên transcript (553px) | Medium | Closed | Cắt 90 ký tự + `line-clamp-3` |
 | B-005 | `/app/minutes`, `/app/settings` trả 404 | Low | Closed | Thêm trang redirect |
-| B-006 | Power Tools: `GET /api/power-tools/{id}` 404 lần đầu | Low | **Open** | Đề xuất trả 200 + dữ liệu rỗng |
-| B-007 | Calendar tiêu đề cố định tiếng Anh; chip Templates/nhãn TIMEZONE tràn | Low | **Open** | |
-| B-008 | Template preview thiếu biến → "お世話になっております。です。" | Low | **Open** | Đề xuất hiển thị placeholder 【BrSE名】 |
+| B-006 | Power Tools: `GET /api/power-tools/{id}` 404 lần đầu | Low | **Reject** | 404 = "chưa lưu" là đúng REST; FE đã fallback sang cache. Đổi thành 200 rỗng sẽ làm app bỏ qua bản cache cục bộ mới hơn |
+| B-007 | Calendar tiêu đề cố định tiếng Anh; chip Templates tràn | Low | Closed | i18n `vi.ts` + `flex-wrap` |
+| B-008 | Template preview thiếu biến → "お世話になっております。です。" | Low | Closed | `renderTemplate` hiển thị `【nhãn】` cho biến bắt buộc còn trống (+3 test) |
 
 ## 4. 未実施項目 / Hạng mục chưa test (và lý do)
 
@@ -98,13 +99,13 @@
 ## 7. Go / No-Go
 
 - **Dùng nội bộ hằng ngày (single-user, localhost): GO có điều kiện** — không còn lỗi chặn nghiệp vụ.
-- **Release/nghiệm thu chính thức: NO-GO** cho tới khi: (1) test xong ST-NR-01..04 trên dữ liệu thử cô lập, (2) sửa B-006/B-007/B-008 hoặc được chấp nhận rủi ro, (3) đo NFR.
+- **Release/nghiệm thu chính thức: NO-GO** cho tới khi: (1) test xong ST-NR-01..04 trên dữ liệu thử cô lập, (2) đo NFR (hiệu năng/bảo mật). Không còn bug nào mở.
 
 ## 8. 推奨 / Khuyến nghị
 
 1. Dựng **DB/profile thử riêng** (không dùng dữ liệu thật) để test được thao tác tạo/sửa/xóa và AI.
 2. Thêm test E2E tự động (Playwright) cho: đổi dự án, Glossary scope, báo cáo sửa tay.
-3. Sửa B-006/B-007/B-008; thêm kiểm tra `Pass rate` vào gate.
+3. Ghi nhận: thao tác đổi dự án trong test **ghi lên server** (dự án đang chọn, bản nháp template) — test sau nên chạy trên môi trường cô lập.
 
 ## 承認 / Phê duyệt
 
