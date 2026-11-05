@@ -2,13 +2,15 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useProjectContext } from "@/components/ProjectContextProvider";
+import { useUiLanguage } from "@/components/LanguageProvider";
+import { useNotify } from "@/components/ToastProvider";
 import { formatDateLabel, toIsoDate } from "@/components/dashboard/DashboardCalendarPanel";
 import { EMPTY_BRSE_TODO_COMMAND_SUMMARY, getBrseTodoCommandSummary } from "@/lib/brseTodo";
 import { fetchEmailHistory, getEmailHistory, type GeneratedEmailHistoryItem } from "@/lib/emailHistory";
 import { getOperationRecords, type OperationRecord } from "@/lib/operations";
 import {
   ACTIVE_PROJECT_CHANGED_EVENT,
-  fetchProjectSettings,
+  fetchProjectSettingsWithFallback,
   getActiveProject,
   getProjectSettings,
   type ProjectSetting,
@@ -48,6 +50,14 @@ function buildWeekDates(today: Date | null, lang: UiLanguage) {
 
 export function useDashboardData(language: UiLanguage) {
   const { activeProjectId: contextProjectId } = useProjectContext();
+  const { t } = useUiLanguage();
+  const { notify } = useNotify();
+  const projectsFallbackNotified = useRef(false);
+  // Latest toast callback without making the data-loading effect depend on t/notify identity.
+  const notifyCacheFallback = useRef<() => void>(() => undefined);
+  useEffect(() => {
+    notifyCacheFallback.current = () => notify(t("settings.status.usingCache"), "info");
+  }, [notify, t]);
   const [today, setToday] = useState<Date | null>(null);
   const [selectedProjectId, setSelectedProjectId] = useState<string>("all");
   const [activeProject, setActiveProject] = useState<ProjectSetting | null>(null);
@@ -83,13 +93,13 @@ export function useDashboardData(language: UiLanguage) {
           if (!cancelled) setHistory(items.slice(0, 3));
         })
         .catch(() => {});
-      fetchProjectSettings()
-        .then((items) => {
-          if (!cancelled) setProjects(items);
-        })
-        .catch(() => {
-          if (!cancelled) setProjects(getProjectSettings());
-        });
+      fetchProjectSettingsWithFallback(() => {
+        if (cancelled || projectsFallbackNotified.current) return;
+        projectsFallbackNotified.current = true;
+        notifyCacheFallback.current();
+      }).then((items) => {
+        if (!cancelled) setProjects(items);
+      });
       getOperationRecords()
         .then((items) => {
           if (!cancelled) setRawOperations(items);

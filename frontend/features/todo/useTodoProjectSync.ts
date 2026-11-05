@@ -26,7 +26,7 @@ import { getOperationRecords, type OperationRecord } from "@/lib/operations";
 import {
   ACTIVE_PROJECT_CHANGED_EVENT,
   ensureProjectSettingsForTodoProjects,
-  fetchProjectSettings,
+  fetchProjectSettingsWithFallback,
   getActiveProject,
   getActiveProjectId,
   getProjectSettings,
@@ -602,9 +602,14 @@ export function useTodoProjectSync() {
 
     async function hydrateFromDb() {
       try {
+        // Don't let a failed Project Settings fetch pass silently: remember it so the final
+        // sync status says "using local cache" instead of "synced".
+        let settingsFellBack = false;
         const [dbProjects, projectSettings] = await Promise.all([
           fetchBrseTodoProjectsFromDb().catch(() => []),
-          fetchProjectSettings().catch(() => getProjectSettings()),
+          fetchProjectSettingsWithFallback(() => {
+            settingsFellBack = true;
+          }),
         ]);
         if (cancelled) return;
 
@@ -658,7 +663,7 @@ export function useTodoProjectSync() {
         setPreset(nextPreset);
         setItems(mergedItems);
         setActivePhase(mergedItems.some((item) => item.phase === nextPhase) ? nextPhase : mergedItems[0]?.phase ?? defaultPhase);
-        setSyncStatus(t("todo.syncStatus.synced"));
+        setSyncStatus(settingsFellBack ? t("settings.status.usingCache") : t("todo.syncStatus.synced"));
       } catch {
         if (!cancelled) setSyncStatus(t("todo.syncStatus.usingLocal"));
       }

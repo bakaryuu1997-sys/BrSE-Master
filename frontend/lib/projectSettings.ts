@@ -274,6 +274,19 @@ export async function fetchProjectSettings(): Promise<ProjectSetting[]> {
   return getProjectSettings();
 }
 
+/**
+ * Same as fetchProjectSettings, but never throws: on failure it returns the local cache and calls
+ * `onFallback` so the caller can tell the user the list may be stale (instead of failing silently).
+ */
+export async function fetchProjectSettingsWithFallback(onFallback?: (error: unknown) => void): Promise<ProjectSetting[]> {
+  try {
+    return await fetchProjectSettings();
+  } catch (error) {
+    onFallback?.(error);
+    return getProjectSettings();
+  }
+}
+
 export function getActiveProjectId(): string {
   if (!canUseStorage()) return "";
   return window.localStorage.getItem(ACTIVE_PROJECT_KEY) ?? "";
