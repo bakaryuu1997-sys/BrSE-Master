@@ -90,6 +90,11 @@ describe("mergeSavedItems", () => {
     expect(merged.find((item) => item.id === "custom-1")).toMatchObject({ title: "My task", phase: phaseOrder[2], priority: "P0" });
   });
 
+  it("does not throw for a custom item without title when no translator is passed (B-022)", () => {
+    const merged = mergeSavedItems([{ id: "custom-3" }], "standard");
+    expect(merged.find((item) => item.id === "custom-3")?.title).toBe("Linked operation todo");
+  });
+
   it("fills defaults for a custom item without title when a translator is passed", () => {
     // t() returns the key for unknown ids, which makes the code fall back to the default title.
     const merged = mergeSavedItems([{ id: "custom-2" }], "standard", (key: string) => key);

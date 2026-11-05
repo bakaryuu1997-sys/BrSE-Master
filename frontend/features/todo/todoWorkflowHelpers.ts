@@ -129,7 +129,8 @@ export function mergeSavedItems(saved: Partial<WorkflowItem>[], preset: PresetKe
     .map((item) => ({
       id: item.id,
       phase: item.phase || "5. Q&A & Change",
-      title: (t ? t(`todo.workflow.${item.id}.title` as any) : item.title) !== `todo.workflow.${item.id}.title` ? (t ? t(`todo.workflow.${item.id}.title` as any) : item.title) : item.title || "Linked operation todo",
+      // B-022: without a translator and without a title the result used to be undefined (crash in sort).
+      title: ((t ? t(`todo.workflow.${item.id}.title` as any) : item.title) !== `todo.workflow.${item.id}.title` ? (t ? t(`todo.workflow.${item.id}.title` as any) : item.title) : item.title) || "Linked operation todo",
       detail: (t ? t(`todo.workflow.${item.id}.detail` as any) : item.detail) !== `todo.workflow.${item.id}.detail` ? (t ? t(`todo.workflow.${item.id}.detail` as any) : item.detail) : item.detail || "",
       priority: item.priority ?? "P1",
       presets: item.presets ?? ["standard", "web", "mobile", "migration", "maintenance"],
