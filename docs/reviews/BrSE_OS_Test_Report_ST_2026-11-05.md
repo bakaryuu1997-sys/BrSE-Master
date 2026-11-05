@@ -15,15 +15,15 @@
 | 指標 | 値 |
 |---|---|
 | Total test case | **78** (47 ở lượt 1 + 31 ở lượt 2: mobile 375px, tạo/sửa/xóa, AI, NFR, a11y, dữ liệu) |
-| Pass | **65** |
-| Fail | **6** (ST-AI-01/B-016, ST-NFR-03/B-017, ST-NFR-04/B-018, ST-A11Y-02/B-020, ST-DAT-01/B-021, ST-DAT-02/B-022 — đều đang mở) |
+| Pass | **66** |
+| Fail | **5** (ST-AI-01/B-016, ST-NFR-03/B-017, ST-NFR-04/B-018, ST-A11Y-02/B-020, ST-DAT-01/B-021 — đều đang mở) |
 | Blocked | **1** (ST-AI-03 OCR: thiếu model local, xem mục 4) |
 | N/A (loại khỏi phạm vi) | 1 (ST-PWT-02, B-006 bị Reject: đúng thiết kế) |
 | Not Run | **5** (xem mục 4; NR-01, NR-03, NR-04 mới phủ một phần) |
 | Execution rate ((Pass+Fail+Blocked)/(Total−N/A)) | **93.5 %** (72/77) |
-| Pass rate (Pass/Run) | **90.3 %** (65/72) |
-| Lần chạy đầu | 25 case Fail → 19 đã sửa và **re-test Pass**, 1 Reject, 6 còn mở |
-| Lượt 2 (2026-11-05, :3011 cô lập) | Tìm thêm 13 bug (B-010…B-022): 7 đã sửa và re-test Pass; **6 còn mở: B-016, B-017 (Medium); B-018, B-020, B-021, B-022 (Low)** |
+| Pass rate (Pass/Run) | **91.7 %** (66/72) |
+| Lần chạy đầu | 25 case Fail → 20 đã sửa và **re-test Pass**, 1 Reject, 5 còn mở |
+| Lượt 2 (2026-11-05, :3011 cô lập) | Tìm thêm 13 bug (B-010…B-022): 8 đã sửa và re-test Pass; **5 còn mở: B-016, B-017 (Medium); B-018, B-020, B-021 (Low)** |
 
 ### 不具合 / Defect
 
@@ -32,7 +32,7 @@
 | Critical | 1 | 0 |
 | High | 2 | 0 |
 | Medium | 10 | **2** (B-016, B-017) |
-| Low | 9 (4 Closed, 1 Reject, 4 Open) | **4** (B-018, B-020, B-021, B-022) |
+| Low | 9 (5 Closed, 1 Reject, 3 Open) | **3** (B-018, B-020, B-021) |
 
 ## 2. 画面別結果 / Kết quả theo màn hình
 
@@ -75,7 +75,7 @@
 | B-013 | Calendar ở 375px: select múi giờ vượt mép phải (426px) | Medium | Closed | `min-w-0` + `w-full`. **Chưa commit**: nằm trong khối form mới chưa commit của chính trang Calendar |
 | B-014 | Minutes mới ở 375px: cuộn ngang 450px | Medium | Closed | `min-w-0` cho 2 cột lưới. **Chưa commit**: cùng file có thay đổi cũ chưa commit |
 | B-021 | Glossary tĩnh (`lib/glossary`): 257 thuật ngữ nhưng chỉ 247 id duy nhất — 10 id trùng với nội dung khác nhau (rollback, deployment, dependency, hotfix, unit-test, integration-test, migration, asynchronous, authentication, authorization); gây kết quả trùng ở command palette/live search | Low | **Open** | Chưa sửa. Đã khoá trong `glossaryData.golden.test.ts` để việc khử trùng sau này là thay đổi có chủ đích |
-| B-022 | `mergeSavedItems()` ném `TypeError` (`localeCompare`) với mục tuỳ biến thiếu `title` khi không truyền hàm dịch `t`; `readProjectState` gọi đúng kiểu đó | Low | **Open** | Chưa sửa (giữ nguyên hành vi khi tách file). Hướng sửa: mặc định `title` về "Linked operation todo" khi không có `t` |
+| B-022 | `mergeSavedItems()` ném `TypeError` (`localeCompare`) với mục tuỳ biến thiếu `title` khi không truyền hàm dịch `t`; `readProjectState` gọi đúng kiểu đó | Low | Closed | Mặc định `title` về "Linked operation todo" khi không có `t` (commit `fix(todo) B-022`; test mới fail trước, pass sau, 19/19) |
 | B-019 | a11y — drawer "Tạo mới" của Operations: không `role="dialog"`/`aria-modal`, focus không vào drawer, Tab ra trang nền (42/60 lần), Escape không đóng | Medium | Closed | Hook dùng chung `useDialogFocus` (focus vào, giữ Tab, Escape, trả focus) + `role/aria-modal/aria-label` (+5 test). Đo lại: 0/60 ra ngoài, Escape đóng, focus về nút mở. `Drawer.tsx` dùng chung chưa có focus trap, chưa sửa |
 | B-020 | a11y tĩnh: 2 thẻ `<main>` lồng nhau ở mọi màn; ô nhập chỉ có placeholder (Reports 9, Todo 3, Glossary 3, Operations 2); nút không tên (Operations 2, Reports 1) | Low | **Open** | Chưa sửa: bỏ `<main>` thừa ở layout hoặc ở page, thêm `aria-label`/`<label>` |
 | B-017 | Bật `BRSE_API_SECRET` (cách bảo vệ khi mở tunnel) làm giao diện web hỏng toàn bộ và **im lặng**: 13/15 API của trang Operations trả 401, frontend không có mã gửi `X-BrSE-Token` (chỉ Chrome Extension có `getAuthHeaders`) | Medium | **Open** | Cần quyết định thiết kế: nếu Next tự gắn token cho mọi request thì secret mất tác dụng với tunnel. Hướng đúng: Cloudflare Access hoặc đăng nhập; tối thiểu UI nên báo lỗi 401 rõ ràng. Hiện chỉ an toàn khi dùng thuần localhost (secret rỗng) |
@@ -106,12 +106,12 @@ Quan sát chưa ghi thành bug: Dashboard cho thấy 24 nút/link nhỏ hơn 32p
 | Tiêu chí | Ngưỡng | Thực tế | Kết quả |
 |---|---|---|---|
 | Đã chạy 100% | 100 % | 93.5 % (72/77) | ❌ |
-| Pass rate (Pass/Run) | ≥ 98 % | 90.3 % (65/72) | ❌ |
-| Critical/High còn Open | 0 | 0 (còn 2 Medium: B-016, B-017; 4 Low: B-018, B-020, B-021, B-022) | ✅ |
+| Pass rate (Pass/Run) | ≥ 98 % | 91.7 % (66/72) | ❌ |
+| Critical/High còn Open | 0 | 0 (còn 2 Medium: B-016, B-017; 3 Low: B-018, B-020, B-021) | ✅ |
 | NFR hiệu năng | Đạt | Đạt (ST-NFR-01) | ✅ |
 | NFR bảo mật | Đạt | Một phần: API được bảo vệ đúng (ST-NFR-02 Pass) nhưng UI không dùng được khi có secret (B-017) và `ai/status` lộ cấu hình (B-018) | ❌ |
 
-**結論 / Kết luận: ❌ CHƯA ĐẠT exit criteria ST.** Lý do: còn 5 hạng mục Not Run (NR-01, NR-03, NR-04 mới phủ một phần), 1 case Fail (AI chat, B-016), 1 case Blocked (OCR) 6 case Fail (B-016/B-017/B-018/B-020/B-021/B-022) và NFR bảo mật chưa đạt. Không có bug Critical/High mở; còn 2 Medium (B-016, B-017) và 4 Low (B-018, B-020, B-021, B-022).
+**結論 / Kết luận: ❌ CHƯA ĐẠT exit criteria ST.** Lý do: còn 5 hạng mục Not Run (NR-01, NR-03, NR-04 mới phủ một phần), 1 case Fail (AI chat, B-016), 1 case Blocked (OCR) 5 case Fail (B-016/B-017/B-018/B-020/B-021) và NFR bảo mật chưa đạt. Không có bug Critical/High mở; còn 2 Medium (B-016, B-017) và 3 Low (B-018, B-020, B-021).
 
 ## 7. Go / No-Go
 
