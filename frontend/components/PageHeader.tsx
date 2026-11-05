@@ -21,6 +21,7 @@ interface PageHeaderProps {
   /** Extra section rendered below stats (e.g. search bar row) */
   toolbar?: React.ReactNode;
   className?: string;
+  compact?: boolean;
 }
 
 const variantStyles: Record<NonNullable<StatItem["variant"]>, string> = {
@@ -43,6 +44,7 @@ export function PageHeader({
   children,
   toolbar,
   className,
+  compact = true,
 }: PageHeaderProps) {
   return (
     <header className={cn("brse-hero", className)}>
@@ -50,29 +52,31 @@ export function PageHeader({
       <div className="hero-mesh" />
       <div className="prism-orbit right-[-3rem] top-[-4rem] h-52 w-52 rotate-12 opacity-80" />
       <div className="prism-orbit bottom-[-5rem] right-24 h-40 w-40 -rotate-12 opacity-60" />
-      <div className="relative flex flex-col gap-8 p-5 sm:p-6 lg:p-8">
+      <div className={cn("relative flex flex-col", compact ? "gap-3 p-3.5 sm:p-4 lg:p-5" : "gap-8 p-5 sm:p-6 lg:p-8")}>
         {/* Top section: badge + title + description */}
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-20">
-          <div className="flex-1">
+        {/* flex-wrap (not lg:flex-row + shrink-0): at 1000-1300px the actions used to be pushed
+            past the viewport edge; now they drop below the title when they do not fit. */}
+        <div className={cn("flex flex-wrap lg:items-end lg:justify-between", compact ? "gap-3 lg:gap-x-8" : "gap-6 lg:gap-x-20")}>
+          <div className="min-w-0 flex-1 basis-[26rem]">
             {badge && (
-              <div className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-primary transition-all duration-300">
+              <div className={cn("font-semibold uppercase text-primary transition-all duration-300", compact ? "mb-1 text-xs tracking-[0.16em]" : "mb-4 text-sm tracking-[0.22em]")}>
                 {badge}
               </div>
             )}
             
-            <h1 className="text-h1 max-w-4xl select-none">
+            <h1 className={cn("max-w-4xl select-none", compact ? "text-xl sm:text-2xl lg:text-3xl font-extrabold tracking-tight" : "text-h1")}>
               {title}
             </h1>
 
             {description && (
-              <p className="mt-4 max-w-3xl text-sm font-medium leading-6 text-textMuted lg:text-base">
+              <p className={cn("max-w-3xl font-medium text-textMuted", compact ? "mt-1 text-xs leading-5" : "mt-4 text-sm leading-6 lg:text-base")}>
                 {description}
               </p>
             )}
           </div>
 
           {actions && (
-            <div className="flex shrink-0 flex-wrap items-center gap-3">
+            <div className={cn("flex max-w-full flex-wrap items-center", compact ? "gap-2" : "gap-3")}>
               {actions}
             </div>
           )}
@@ -81,11 +85,12 @@ export function PageHeader({
         {/* Stats Grid */}
         {stats && stats.length > 0 && (
           <div className={cn(
-            "grid gap-4",
-            stats.length === 2 ? "sm:grid-cols-2" :
-            stats.length === 3 ? "sm:grid-cols-3" :
-            stats.length === 4 ? "sm:grid-cols-2 lg:grid-cols-4" :
-            "sm:grid-cols-3"
+            "grid",
+            compact ? "gap-2 sm:gap-2.5" : "gap-4",
+            stats.length === 2 ? "grid-cols-2" :
+            stats.length === 3 ? "grid-cols-3" :
+            stats.length === 4 ? "grid-cols-2 lg:grid-cols-4" :
+            "grid-cols-2 sm:grid-cols-3"
           )}>
             {stats.map((stat) => {
               const variant = stat.variant ?? "default";
@@ -94,13 +99,14 @@ export function PageHeader({
                   key={stat.label}
                   className={cn(
                     "metric-pill group relative overflow-hidden",
+                    compact ? "py-1.5 px-3" : "p-4 sm:p-5",
                     variantStyles[variant]
                   )}
                 >
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-textMuted/60 transition-colors group-hover:text-primary">
+                  <p className={cn("font-bold uppercase tracking-[0.16em] text-textMuted/70 transition-colors group-hover:text-primary truncate", compact ? "text-[9.5px]" : "text-[10px]")}>
                     {stat.label}
                   </p>
-                  <p className="mt-3 text-3xl font-black tracking-tighter text-textPrimary lg:text-4xl">
+                  <p className={cn("font-black tracking-tight text-textPrimary truncate", compact ? "mt-0.5 text-lg sm:text-xl font-display" : "mt-3 text-3xl lg:text-4xl")}>
                     {stat.value}
                   </p>
                   <div className="absolute -bottom-2 -right-2 h-16 w-16 rounded-full bg-current/10 blur-2xl transition-all group-hover:bg-current/20" />
@@ -111,7 +117,7 @@ export function PageHeader({
         )}
 
         {toolbar && (
-          <div className="border-t soft-divider pt-5">
+          <div className={cn("border-t soft-divider", compact ? "pt-3" : "pt-5")}>
             {toolbar}
           </div>
         )}

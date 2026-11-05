@@ -104,7 +104,9 @@ export default function RootLayout({
                       </div>
                     </div>
 
-                    <main className="flex-1" data-route-scroll-root>
+                    {/* The fixed top-right toolbar (health + language) overlaps right-aligned page
+                        header controls below ~1500px, so reserve room for it on those widths. */}
+                    <main className="flex-1 lg:max-[1500px]:pt-14" data-route-scroll-root>
                       <ErrorBoundary>{children}</ErrorBoundary>
                     </main>
                   </div>

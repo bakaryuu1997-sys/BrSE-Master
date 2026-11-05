@@ -11,6 +11,7 @@ import {
   Settings,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ModalPortal } from "@/components/ui/ModalPortal";
 import {
   WIDGET_REGISTRY,
   type WidgetId,
@@ -63,8 +64,10 @@ export function DashboardCustomizer({
     .map((id) => WIDGET_REGISTRY.find((w) => w.id === id)!)
     .filter(Boolean);
 
+  // Rendered through a portal and only while open: the always-mounted off-canvas panel sat
+  // inside a containing block, which made the whole dashboard scroll horizontally.
   return (
-    <>
+    <ModalPortal isOpen={open}>
       {/* Backdrop */}
       <div
         className={cn(
@@ -204,6 +207,6 @@ export function DashboardCustomizer({
           </button>
         </div>
       </div>
-    </>
+    </ModalPortal>
   );
 }

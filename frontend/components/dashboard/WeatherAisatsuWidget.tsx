@@ -92,6 +92,15 @@ function findNearestCity(lat: number, lon: number): { name: string; nameJa: stri
   return { name: `GPS ${label}`, nameJa: `現在地 (${label})` };
 }
 
+async function isGeolocationGranted(): Promise<boolean> {
+  try {
+    const status = await navigator.permissions?.query({ name: "geolocation" as PermissionName });
+    return status?.state === "granted";
+  } catch {
+    return false;
+  }
+}
+
 function getWeatherInfo(code: number) {
   if (code === 0) {
     return { label: "Nắng đẹp", labelJa: "快晴", icon: Sun, color: "text-amber-400" };
@@ -194,8 +203,10 @@ export function WeatherAisatsuWidget() {
       });
     }
 
-    // 2. Local Fetch (GPS with Hanoi default)
-    if (navigator.geolocation) {
+    // 2. Local Fetch (GPS with Hanoi default). Only prompt for location on an explicit refresh
+    // click; on page load use GPS only when permission was already granted (no surprise prompt).
+    const canUseGps = forceRefresh || (await isGeolocationGranted());
+    if (navigator.geolocation && canUseGps) {
       navigator.geolocation.getCurrentPosition(
         async (pos) => {
           try {
