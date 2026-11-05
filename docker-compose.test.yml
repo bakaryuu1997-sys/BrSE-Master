@@ -1,0 +1,66 @@
+# Isolated BrSE OS stack for destructive / data-writing tests (create, edit, delete, upload).
+#
+#   docker compose -p brse-test -f docker-compose.test.yml up -d --build
+#   -> http://127.0.0.1:3011/app   (production data stays on :3010 and is never touched)
+#   docker compose -p brse-test -f docker-compose.test.yml down -v   # wipe all test data
+#
+# Isolation guarantees:
+#   * own compose project/network (`brse-test`), so service name `db` is the TEST database
+#   * own named volumes for Postgres, uploads, transcripts and memos (no bind mounts to ./uploads etc.)
+#   * no cloudflared/tunnel, port published on 127.0.0.1:3011 only, no source bind mounts
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: brse_test
+      POSTGRES_PASSWORD: brse_test_password
+      POSTGRES_DB: brse_test
+    volumes:
+      - test_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U brse_test -d brse_test"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./backend
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    env_file:
+      - .env
+    environment:
+      # Overrides win over .env: point at the TEST database only.
+      DATABASE_URL: postgresql+psycopg://brse_test:brse_test_password@db:5432/brse_test
+      POSTGRES_USER: brse_test
+      POSTGRES_PASSWORD: brse_test_password
+      POSTGRES_DB: brse_test
+      APP_ORIGIN: http://127.0.0.1:3011
+      BRSE_ALLOWED_ORIGINS: http://127.0.0.1:3011,http://localhost:3011
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - test_uploads:/app/uploads
+      - test_transcripts:/app/transcripts
+      - test_memos:/app/memos
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        INTERNAL_API_BASE_URL: http://backend:8000
+    environment:
+      NODE_ENV: production
+      NEXT_PUBLIC_API_BASE_URL: /api
+      INTERNAL_API_BASE_URL: http://backend:8000
+    ports:
+      - "127.0.0.1:3011:3000"
+    depends_on:
+      - backend
+
+volumes:
+  test_postgres_data:
+  test_uploads:
+  test_transcripts:
+  test_memos:
