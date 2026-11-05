@@ -14,16 +14,16 @@
 
 | 指標 | 値 |
 |---|---|
-| Total test case | **70** (47 ở lượt 1 + 23 ở lượt 2: mobile 375px, tạo/sửa/xóa, AI) |
-| Pass | **62** |
-| Fail | **1** (ST-AI-01, B-016 đang mở) |
+| Total test case | **74** (47 ở lượt 1 + 27 ở lượt 2: mobile 375px, tạo/sửa/xóa, AI, NFR) |
+| Pass | **64** |
+| Fail | **3** (ST-AI-01/B-016, ST-NFR-03/B-017, ST-NFR-04/B-018 — đều đang mở) |
 | Blocked | **1** (ST-AI-03 OCR: thiếu model local, xem mục 4) |
 | N/A (loại khỏi phạm vi) | 1 (ST-PWT-02, B-006 bị Reject: đúng thiết kế) |
 | Not Run | **5** (xem mục 4; NR-01, NR-03, NR-04 mới phủ một phần) |
-| Execution rate ((Pass+Fail+Blocked)/(Total−N/A)) | **92.8 %** (64/69) |
-| Pass rate (Pass/Run) | **96.9 %** (62/64) |
-| Lần chạy đầu | 19 case Fail → 18 đã sửa và **re-test Pass**, 1 Reject (đúng thiết kế) |
-| Lượt 2 (2026-11-05, :3011 cô lập) | Tìm thêm 7 bug (B-010…B-016): 6 đã sửa và re-test Pass; **B-016 (AI chat chập chờn) còn mở** |
+| Execution rate ((Pass+Fail+Blocked)/(Total−N/A)) | **93.2 %** (68/73) |
+| Pass rate (Pass/Run) | **94.1 %** (64/68) |
+| Lần chạy đầu | 21 case Fail → 18 đã sửa và **re-test Pass**, 1 Reject, 3 còn mở |
+| Lượt 2 (2026-11-05, :3011 cô lập) | Tìm thêm 9 bug (B-010…B-018): 6 đã sửa và re-test Pass; **3 còn mở: B-016, B-017 (Medium), B-018 (Low)** |
 
 ### 不具合 / Defect
 
@@ -31,8 +31,8 @@
 |---|---|---|
 | Critical | 1 | 0 |
 | High | 2 | 0 |
-| Medium | 8 | **1** (B-016) |
-| Low | 5 (4 Closed, 1 Reject) | **0** |
+| Medium | 9 | **2** (B-016, B-017) |
+| Low | 6 (4 Closed, 1 Reject, 1 Open) | **1** (B-018) |
 
 ## 2. 画面別結果 / Kết quả theo màn hình
 
@@ -74,6 +74,8 @@
 | B-012 | Glossary ở 375px: nút Dự án/Toàn cục/CSV/Anki bị cắt, không bấm được | Medium | Closed | `shrink-0` → `max-w-full sm:shrink-0` (commit `743c1ad`) |
 | B-013 | Calendar ở 375px: select múi giờ vượt mép phải (426px) | Medium | Closed | `min-w-0` + `w-full`. **Chưa commit**: nằm trong khối form mới chưa commit của chính trang Calendar |
 | B-014 | Minutes mới ở 375px: cuộn ngang 450px | Medium | Closed | `min-w-0` cho 2 cột lưới. **Chưa commit**: cùng file có thay đổi cũ chưa commit |
+| B-017 | Bật `BRSE_API_SECRET` (cách bảo vệ khi mở tunnel) làm giao diện web hỏng toàn bộ và **im lặng**: 13/15 API của trang Operations trả 401, frontend không có mã gửi `X-BrSE-Token` (chỉ Chrome Extension có `getAuthHeaders`) | Medium | **Open** | Cần quyết định thiết kế: nếu Next tự gắn token cho mọi request thì secret mất tác dụng với tunnel. Hướng đúng: Cloudflare Access hoặc đăng nhập; tối thiểu UI nên báo lỗi 401 rõ ràng. Hiện chỉ an toàn khi dùng thuần localhost (secret rỗng) |
+| B-018 | `/api/ai/status` (route công khai) lộ `base_url` nội bộ (172.21.x.x:20128) và danh sách model; `?check_runtime=true` cho phép kích hoạt gọi ra ngoài không cần token | Low | **Open** | Trả bản rút gọn khi chưa xác thực |
 | B-016 | AI chat `/api/ai/chat` chập chờn: combo 9router `free-logic` có member hỏng (`gh/gemini-3.1-pro-preview` → 400 `model_not_available_for_integrator`, không fallback); 3 lần gọi cho 400 / 200 (1.2s) / 503 sau **97s**. Trường `model` trong request bị bỏ qua (luôn `free-logic`) | Medium | **Open** | Gốc ở cấu hình combo 9router (ngoài mã BrSE): gỡ member hỏng khỏi combo. Phía BrSE nên cân nhắc timeout ngắn hơn và retry khi 503 |
 | B-015 | Mở `/minutes/new` → sau ~10s tự tạo bản ghi rỗng trong DB (và hộp thoại `beforeunload` ở trang trống) | Medium | Closed | `hasMinutesDraftChanged` so với snapshot đầu (commit `1403263`, +2 test). Sửa thật vẫn tự lưu sau ~10s |
 
@@ -99,17 +101,33 @@ Quan sát chưa ghi thành bug: Dashboard cho thấy 24 nút/link nhỏ hơn 32p
 
 | Tiêu chí | Ngưỡng | Thực tế | Kết quả |
 |---|---|---|---|
-| Đã chạy 100% | 100 % | 92.8 % (64/69) | ❌ |
-| Pass rate (Pass/Run) | ≥ 98 % | 96.9 % (62/64) | ❌ |
-| Critical/High còn Open | 0 | 0 (còn 1 Medium: B-016) | ✅ |
-| NFR (hiệu năng/bảo mật) | Đạt | Chưa đo | ❌ (chưa test) |
+| Đã chạy 100% | 100 % | 93.2 % (68/73) | ❌ |
+| Pass rate (Pass/Run) | ≥ 98 % | 94.1 % (64/68) | ❌ |
+| Critical/High còn Open | 0 | 0 (còn 2 Medium: B-016, B-017; 1 Low: B-018) | ✅ |
+| NFR hiệu năng | Đạt | Đạt (ST-NFR-01) | ✅ |
+| NFR bảo mật | Đạt | Một phần: API được bảo vệ đúng (ST-NFR-02 Pass) nhưng UI không dùng được khi có secret (B-017) và `ai/status` lộ cấu hình (B-018) | ❌ |
 
-**結論 / Kết luận: ❌ CHƯA ĐẠT exit criteria ST.** Lý do: còn 5 hạng mục Not Run (NR-01, NR-03, NR-04 mới phủ một phần), 1 case Fail (AI chat, B-016), 1 case Blocked (OCR) và chưa đo NFR (hiệu năng/bảo mật). Không có bug Critical/High mở; còn 1 bug Medium mở (B-016).
+**結論 / Kết luận: ❌ CHƯA ĐẠT exit criteria ST.** Lý do: còn 5 hạng mục Not Run (NR-01, NR-03, NR-04 mới phủ một phần), 1 case Fail (AI chat, B-016), 1 case Blocked (OCR) 3 case Fail (B-016/B-017/B-018) và NFR bảo mật chưa đạt. Không có bug Critical/High mở; còn 2 Medium (B-016, B-017) và 1 Low (B-018).
 
 ## 7. Go / No-Go
 
 - **Dùng nội bộ hằng ngày (single-user, localhost): GO có điều kiện** — không còn lỗi chặn nghiệp vụ.
-- **Release/nghiệm thu chính thức: NO-GO** cho tới khi: (1) xử lý B-016 và thông OCR (model local hoặc `GEMINI_API_KEY`), (2) test xong phần còn lại của ST-NR-01..04 trên dữ liệu thử cô lập, (3) đo NFR (hiệu năng/bảo mật).
+- **Release/nghiệm thu chính thức: NO-GO** cho tới khi: (1) xử lý B-016, B-017, B-018 và thông OCR (model local hoặc `GEMINI_API_KEY`), (2) test xong phần còn lại của ST-NR-01..04 trên dữ liệu thử cô lập, (3) quyết định cách bảo vệ khi mở ra ngoài localhost (hiện **không nên mở tunnel** với `BRSE_API_SECRET` vì UI sẽ hỏng; dùng Cloudflare Access hoặc không mở).
+
+## 7b. NFR đã đo (lượt 2, `:3011`, build production, 1 lần đo, backend ấm)
+
+| Màn hình | FCP | LCP | Số API khi tải | API chậm nhất |
+|---|---|---|---|---|
+| `/app` | 1236 ms | 1964 ms | 17 | `projects` 1159 ms |
+| `/app/brse-todo` | 264 ms | 568 ms | 19 | `ai/status?check_runtime=true` 426 ms |
+| `/app/operations` | 208 ms | 208 ms | 17 | `ai/status?check_runtime=true` 2049 ms |
+| `/app/reports` | 276 ms | 1492 ms | 14 | `operations` 601 ms |
+| `/app/glossary` | 568 ms | 568 ms | 9 | `operations` 3328 ms |
+| `/app/knowledge` | 428 ms | 428 ms | 13 | `operations` 866 ms |
+
+Tất cả trong ngưỡng Web Vitals "good" (FCP ≤ 1.8 s, LCP ≤ 2.5 s). Quan sát (chưa ghi bug): mỗi trang gọi 9–19 API; `ai/status?check_runtime=true` chạy ở mọi trang và có lúc mất 2 s; `/operations` được tải cả ở Glossary/Knowledge dù không dùng (3.3 s ở Glossary). Một lần đo, chưa lặp lại, chưa đo dưới tải.
+
+**Bảo mật (có `BRSE_API_SECRET`, đo bằng curl):** middleware `check_api_auth` bảo vệ mọi `/api/*` trừ `/api/health*` và `/api/ai/status`. Không token hoặc sai token → 401 cho projects, operations, glossary, reports, meeting-minutes, client-state, todos, calendar, knowledge, meetings, `POST ai/chat|ocr`, `DELETE`, `openapi.json`, `docs`. Token đúng → 200. `X-Forwarded-For: 127.0.0.1` giả mạo vẫn 401. CORS từ origin lạ không có `access-control-allow-origin`. `/uploads`, `/docs` ngoài `/api` → 404. Phát hiện: B-017, B-018 ở trên.
 - **Việc dở dang cần chú ý:** sửa B-013 (Calendar) và B-014 (Minutes) đã được xác nhận trên giao diện nhưng **chưa commit**, vì nằm lẫn với thay đổi cũ chưa commit trong cùng file.
 
 ## 8. 推奨 / Khuyến nghị
