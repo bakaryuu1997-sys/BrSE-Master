@@ -1,8 +1,9 @@
 "use client";
 
-import type { FormEvent } from "react";
+import { useRef, type FormEvent } from "react";
 import { Plus, X } from "lucide-react";
 import { useUiLanguage } from "@/components/LanguageProvider";
+import { useDialogFocus } from "@/lib/useDialogFocus";
 import type { OperationRecordInput, OperationType } from "@/lib/operations";
 import { configs } from "./operationsConfig";
 
@@ -33,12 +34,19 @@ export function OperationRecordSlideOver({
 }: OperationRecordSlideOverProps) {
   const { t } = useUiLanguage();
   const config = configs[activeType];
+  const panelRef = useRef<HTMLElement>(null);
+  // B-019: dialog keyboard behaviour (focus in, Tab trap, Escape, restore focus).
+  useDialogFocus(panelRef, isOpen, onClose);
 
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 bg-slate-950/65 backdrop-blur-sm" onClick={onClose}>
       <aside
+        ref={panelRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label={`${editingId ? "Edit operation" : "Create operation"}: ${typeTitle}`}
         className={`ml-auto flex h-full w-full max-w-xl flex-col border-l border-[var(--brse-panel-border)] bg-slate-950/95 shadow-[0_28px_90px_rgba(0,0,0,0.48)] ${isLoading ? "pointer-events-none opacity-70" : ""}`}
         onClick={(event) => event.stopPropagation()}
       >
@@ -48,7 +56,7 @@ export function OperationRecordSlideOver({
             <h2 className="mt-1 text-lg font-semibold text-ink">{typeTitle}</h2>
             <p className="mt-1 text-xs leading-5 text-textMuted">{config.subtitle}</p>
           </div>
-          <button type="button" onClick={onClose} className="rounded-xl border border-[var(--brse-panel-border)] bg-background/70 p-2 text-textMuted transition hover:border-primary/35 hover:text-primary">
+          <button type="button" onClick={onClose} aria-label={t("drawer.close")} className="rounded-xl border border-[var(--brse-panel-border)] bg-background/70 p-2 text-textMuted transition hover:border-primary/35 hover:text-primary">
             <X className="h-4 w-4" aria-hidden="true" />
           </button>
         </header>
