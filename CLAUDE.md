@@ -70,5 +70,10 @@ bash scripts/start-brse-stack.sh
 
 ## Repo notes
 
-- Active branch is `master`; the repo's own git default-branch config is also `master` and there is no `main` branch. (Some tooling assumes `main` by default — that is a tooling default, not this repo's convention.)
-- No git remote and no CI are configured yet (intentionally deferred).
+- Trunk is `main` (decided 2026-11-06). Remote `origin` = github.com/bakaryuu1997-sys/BrSE-Master. The local
+  `master` branch holds the original 106-commit history and stays **local only** as an archive: never push it.
+- A `pre-push` hook re-runs the verify gate. CI lives in `.github/workflows/ci.yml` (backend ruff+pytest, frontend
+  typecheck+eslint+vitest, API contract); it has not run on GitHub yet, so check the first run.
+- Public API routes are an EXACT list in `backend/app/core/security.py` (`/api/health`, `/api/health/db`,
+  `/api/health/deep`, `/api/ai/status`). Any new route is protected by default; add it to
+  `backend/tests/test_api_protection.py` instead of widening that list.
