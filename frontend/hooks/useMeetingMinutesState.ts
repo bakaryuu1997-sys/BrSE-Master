@@ -111,6 +111,15 @@ export async function fetchMinutesDraftFromDb(): Promise<MinutesDraft | null> {
   }
 }
 
+/**
+ * B-015: a draft only counts as "changed" once it differs from the first snapshot taken when the
+ * page became ready. Otherwise merely opening the page would auto-create an empty DB record.
+ */
+export function hasMinutesDraftChanged(baselineJson: string | null, current: unknown): boolean {
+  if (baselineJson === null) return false;
+  return JSON.stringify(current) !== baselineJson;
+}
+
 export function saveMinutesDraft(draft: MinutesDraft) {
   if (typeof window !== "undefined") {
     window.localStorage.setItem(MINUTES_DRAFT_KEY, JSON.stringify(draft));
@@ -353,10 +362,16 @@ export function useMeetingMinutesState() {
     }
   }, [activeMinutesId, activeProject, agendaItems, actionItems, displayedMinutes, form.projectName, form.meetingDate, form.location]);
 
+  const draftBaselineRef = useRef<string | null>(null);
   useEffect(() => {
     if (!isDraftReady) return;
-    saveMinutesDraft({ form, agendaItems, actionItems, createdDate });
-    setHasUnsavedChanges(true);
+    const draft = { form, agendaItems, actionItems, createdDate };
+    saveMinutesDraft(draft);
+    if (draftBaselineRef.current === null) {
+      draftBaselineRef.current = JSON.stringify(draft);
+      return;
+    }
+    if (hasMinutesDraftChanged(draftBaselineRef.current, draft)) setHasUnsavedChanges(true);
   }, [form, agendaItems, actionItems, createdDate, isDraftReady]);
 
   useEffect(() => {
