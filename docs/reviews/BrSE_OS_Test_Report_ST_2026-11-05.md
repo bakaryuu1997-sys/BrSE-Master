@@ -6,7 +6,7 @@
 | 実施日 / Ngày | 2026-11-05 (JST) |
 | 環境 / Môi trường | Chrome điều khiển trực tiếp (CDP), viewport 1271×652 → 1332×771; backend/DB trong Docker (WSL2) |
 | 範囲 / Phạm vi | 20 màn hình/route của `/app` (xem mục 2) |
-| 方針 / Phương pháp | Chỉ thao tác **đọc/điều hướng** + vài thao tác cục bộ có hoàn tác (không tạo/xóa dữ liệu thật) |
+| 方針 / Phương pháp | Lượt 1: chỉ **đọc/điều hướng** trên `:3010`. Lượt 2: test tạo/sửa/xóa và mobile 375px trên stack **cô lập `:3011`** (DB riêng, Playwright MCP), không đụng dữ liệu thật |
 | 成果物 / Tài liệu | `BrSE_OS_Test_Execution_ST_2026-11-05.xlsx` (sheet `ST`, `Defects`, `Dashboard`) |
 | 証跡 / Bằng chứng | Chrome session `…\superpowers\browser\2026-11-05\session-1793842392712` (file `NNN-*.png/.md/.html`, ghi trong cột Evidence) |
 
@@ -14,15 +14,16 @@
 
 | 指標 | 値 |
 |---|---|
-| Total test case | **47** |
-| Pass | **41** |
+| Total test case | **67** (47 ở lượt 1 + 20 ở lượt 2: mobile 375px, tạo/sửa/xóa) |
+| Pass | **61** |
 | Fail | **0** |
 | Blocked | 0 |
 | N/A (loại khỏi phạm vi) | 1 (ST-PWT-02, B-006 bị Reject: đúng thiết kế) |
-| Not Run | **5** (xem mục 4) |
-| Execution rate (Run/(Total−N/A)) | **89.1 %** (41/46) |
-| Pass rate (Pass/Run) | **100 %** (41/41) |
-| Lần chạy đầu | 13 case Fail → 12 đã sửa và **re-test Pass**, 1 Reject (đúng thiết kế) |
+| Not Run | **5** (xem mục 4; NR-01 và NR-03 mới phủ một phần) |
+| Execution rate (Run/(Total−N/A)) | **92.4 %** (61/66) |
+| Pass rate (Pass/Run) | **100 %** (61/61) |
+| Lần chạy đầu | 19 case Fail → 18 đã sửa và **re-test Pass**, 1 Reject (đúng thiết kế) |
+| Lượt 2 (2026-11-05, :3011 cô lập) | Tìm thêm 6 bug (B-010…B-015), cả 6 đã sửa và re-test Pass trên giao diện thật |
 
 ### 不具合 / Defect
 
@@ -30,8 +31,8 @@
 |---|---|---|
 | Critical | 1 | 0 |
 | High | 2 | 0 |
-| Medium | 2 | 0 |
-| Low | 4 (3 Closed, 1 Reject) | **0** |
+| Medium | 7 | 0 |
+| Low | 5 (4 Closed, 1 Reject) | **0** |
 
 ## 2. 画面別結果 / Kết quả theo màn hình
 
@@ -68,16 +69,24 @@
 | B-006 | Power Tools: `GET /api/power-tools/{id}` 404 lần đầu | Low | **Reject** | 404 = "chưa lưu" là đúng REST; FE đã fallback sang cache. Đổi thành 200 rỗng sẽ làm app bỏ qua bản cache cục bộ mới hơn |
 | B-007 | Calendar tiêu đề cố định tiếng Anh; chip Templates tràn | Low | Closed | i18n `vi.ts` + `flex-wrap` |
 | B-008 | Template preview thiếu biến → "お世話になっております。です。" | Low | Closed | `renderTemplate` hiển thị `【nhãn】` cho biến bắt buộc còn trống (+3 test) |
+| B-010 | Operations Kanban: kéo thả/mũi tên đổi trạng thái đều `window.location.reload()` cả trang | Low | Closed | Dùng `useSaveOperationMutation` (tự invalidate query) + helper `nextKanbanStatus`/`buildStatusChangeInput` (commit `1829db4`, +2 test) |
+| B-011 | Reports: sửa tay Preview rồi Lưu → server lưu bản tự sinh, mất bản sửa tay | Medium | Closed | `resolveReportTextToSave(preview, live)` (commit `1829db4`, +3 test). Bản ghi cũ lưu trước khi sửa **không** được phục hồi |
+| B-012 | Glossary ở 375px: nút Dự án/Toàn cục/CSV/Anki bị cắt, không bấm được | Medium | Closed | `shrink-0` → `max-w-full sm:shrink-0` (commit `743c1ad`) |
+| B-013 | Calendar ở 375px: select múi giờ vượt mép phải (426px) | Medium | Closed | `min-w-0` + `w-full`. **Chưa commit**: nằm trong khối form mới chưa commit của chính trang Calendar |
+| B-014 | Minutes mới ở 375px: cuộn ngang 450px | Medium | Closed | `min-w-0` cho 2 cột lưới. **Chưa commit**: cùng file có thay đổi cũ chưa commit |
+| B-015 | Mở `/minutes/new` → sau ~10s tự tạo bản ghi rỗng trong DB (và hộp thoại `beforeunload` ở trang trống) | Medium | Closed | `hasMinutesDraftChanged` so với snapshot đầu (commit `1403263`, +2 test). Sửa thật vẫn tự lưu sau ~10s |
 
 ## 4. 未実施項目 / Hạng mục chưa test (và lý do)
 
 | ID | Hạng mục | Lý do |
 |---|---|---|
-| ST-NR-01 | Mobile/tablet (≤768px) | Công cụ không đổi được viewport |
+| ST-NR-01 | Mobile/tablet (≤768px) | **Một phần.** Đã test 12 màn ở 375px (ST-MOB-01…12). Chưa test: meeting-note, history, power-tools, specs-mindmap, validation, Kanban, drawer/modal, tablet 768px |
 | ST-NR-02 | Bàn phím/screen-reader (a11y) | Chưa thực hiện |
-| ST-NR-03 | Tạo/sửa/xóa dữ liệu (Todo, Operations, Reports…) | Bảo vệ dữ liệu thật của người dùng |
-| ST-NR-04 | Tính năng AI (chat, Keigo check, OCR) | Gọi AI bên ngoài, chưa chạy |
+| ST-NR-03 | Tạo/sửa/xóa dữ liệu | **Một phần**, chạy trên stack cô lập `:3011` (ST-CRD-01…08). Chưa test: Todo tạo/archive dự án, Reports đổi dự án. Glossary không có nút thêm thuật ngữ thủ công (chỉ CSV/trích từ họp) |
+| ST-NR-04 | Tính năng AI (chat, Keigo check, OCR) | Chưa chạy (gọi AI bên ngoài) |
 | ST-NR-05 | Chrome Extension | Sản phẩm riêng, ngoài phạm vi |
+
+Quan sát chưa ghi thành bug: Dashboard cho thấy 24 nút/link nhỏ hơn 32px ở 375px (chưa đánh giá theo chuẩn vùng chạm).
 
 ## 5. 分析 / Phân tích
 
@@ -89,17 +98,18 @@
 
 | Tiêu chí | Ngưỡng | Thực tế | Kết quả |
 |---|---|---|---|
-| Đã chạy 100% | 100 % | 89.4 % | ❌ |
-| Pass rate | ≥ 98 % | 90.5 % | ❌ |
+| Đã chạy 100% | 100 % | 92.4 % (61/66) | ❌ |
+| Pass rate (Pass/Run) | ≥ 98 % | 100 % (61/61) | ✅ |
 | Critical/High còn Open | 0 | 0 | ✅ |
 | NFR (hiệu năng/bảo mật) | Đạt | Chưa đo | ❌ (chưa test) |
 
-**結論 / Kết luận: ❌ CHƯA ĐẠT exit criteria ST.** Lý do: còn 5 hạng mục Not Run và 3 bug Low Open; chưa đo NFR. Không có bug Critical/High mở.
+**結論 / Kết luận: ❌ CHƯA ĐẠT exit criteria ST.** Lý do: còn 5 hạng mục Not Run (NR-01 và NR-03 mới phủ một phần) và chưa đo NFR (hiệu năng/bảo mật). Không còn bug nào mở, không có Critical/High mở.
 
 ## 7. Go / No-Go
 
 - **Dùng nội bộ hằng ngày (single-user, localhost): GO có điều kiện** — không còn lỗi chặn nghiệp vụ.
-- **Release/nghiệm thu chính thức: NO-GO** cho tới khi: (1) test xong ST-NR-01..04 trên dữ liệu thử cô lập, (2) đo NFR (hiệu năng/bảo mật). Không còn bug nào mở.
+- **Release/nghiệm thu chính thức: NO-GO** cho tới khi: (1) test xong phần còn lại của ST-NR-01..04 trên dữ liệu thử cô lập, (2) đo NFR (hiệu năng/bảo mật). Không còn bug nào mở.
+- **Việc dở dang cần chú ý:** sửa B-013 (Calendar) và B-014 (Minutes) đã được xác nhận trên giao diện nhưng **chưa commit**, vì nằm lẫn với thay đổi cũ chưa commit trong cùng file.
 
 ## 8. 推奨 / Khuyến nghị
 
