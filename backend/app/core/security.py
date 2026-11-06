@@ -32,6 +32,32 @@ def is_local_ip(ip: str) -> bool:
         return False
 
 
+def is_remote_request(request: Request) -> bool:
+    """True when the request did not come from the local machine/LAN (e.g. via a CF tunnel or proxy)."""
+    client_host = request.client.host if request.client else "unknown"
+    x_forwarded_for = request.headers.get("x-forwarded-for", "")
+    cf_connecting_ip = request.headers.get("cf-connecting-ip", "")
+
+    return not (
+        is_local_ip(client_host)
+        and (not x_forwarded_for or is_local_ip(x_forwarded_for.split(",")[0].strip()))
+        and (not cf_connecting_ip or is_local_ip(cf_connecting_ip.strip()))
+    )
+
+
+def caller_is_trusted(request: Request) -> bool:
+    """Whether this caller may see detail on a *public* route (which skips the auth middleware).
+
+    With BRSE_API_SECRET set, only a valid X-BrSE-Token counts. Without a secret (local single-user
+    mode) local callers are trusted and remote ones are not.
+    """
+    secret_key = (settings.brse_api_secret or "").strip()
+    if secret_key:
+        token = request.headers.get("x-brse-token") or request.headers.get("x-brse-api-key")
+        return bool(token) and secrets.compare_digest(token, secret_key)
+    return not is_remote_request(request)
+
+
 def check_api_auth(request: Request) -> JSONResponse | None:
     path = request.url.path
     if path.startswith("/api"):
@@ -52,16 +78,8 @@ def check_api_auth(request: Request) -> JSONResponse | None:
             secret_key = (settings.brse_api_secret or "").strip()
             
             # Check if request is remote (e.g. CF Tunnel or external network proxy)
-            client_host = request.client.host if request.client else "unknown"
-            x_forwarded_for = request.headers.get("x-forwarded-for", "")
-            cf_connecting_ip = request.headers.get("cf-connecting-ip", "")
-            
-            is_remote = not (
-                is_local_ip(client_host) and 
-                (not x_forwarded_for or is_local_ip(x_forwarded_for.split(",")[0].strip())) and 
-                (not cf_connecting_ip or is_local_ip(cf_connecting_ip.strip()))
-            )
-            
+            is_remote = is_remote_request(request)
+
             if is_remote and not secret_key:
                 return JSONResponse(
                     status_code=401,

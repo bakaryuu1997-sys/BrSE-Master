@@ -14,12 +14,13 @@ import time
 from typing import Any, Optional
 
 import httpx
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Request
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 
 from app.core.config import settings
+from app.core.security import caller_is_trusted
 from app.core.redaction import redact_sensitive_text
 from app.core.ai_runtime import (
     DEFAULT_MODEL,
@@ -482,9 +483,22 @@ async def extract_minutes(request: MinutesRequest, db: Session = Depends(get_db)
 
 
 @router.get("/status")
-async def get_ai_status(check_runtime: bool = False) -> dict[str, Any]:
-    """Return AI config and optionally check whether the local 9Router runtime responds."""
+async def get_ai_status(request: Request, check_runtime: bool = False) -> dict[str, Any]:
+    """Return AI config and optionally check whether the local 9Router runtime responds.
+
+    This route is public (the status badge and Docker/health tooling use it), so callers that are not
+    trusted get a minimal payload: no internal base_url, model names or model list, and no runtime
+    probe (B-018). Trusted = valid X-BrSE-Token, or a local caller when no secret is configured.
+    """
     selected_model = get_selected_ai_model()
+    if not caller_is_trusted(request):
+        return {
+            "provider": "ollama" if is_ollama_model(selected_model) else "9router",
+            "configured": bool(selected_model),
+            "restricted": True,
+            "runtime_checked": False,
+            "runtime_reachable": None,
+        }
     uses_ollama = is_ollama_model(selected_model)
     base_url = settings.ollama_base_url if uses_ollama else settings.openai_base_url
     status: dict[str, Any] = {
