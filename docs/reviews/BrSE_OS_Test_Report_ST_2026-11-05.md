@@ -15,15 +15,15 @@
 | 指標 | 値 |
 |---|---|
 | Total test case | **78** (47 ở lượt 1 + 31 ở lượt 2: mobile 375px, tạo/sửa/xóa, AI, NFR, a11y, dữ liệu) |
-| Pass | **66** |
-| Fail | **5** (ST-AI-01/B-016, ST-NFR-03/B-017, ST-NFR-04/B-018, ST-A11Y-02/B-020, ST-DAT-01/B-021 — đều đang mở) |
+| Pass | **67** |
+| Fail | **4** (ST-AI-01/B-016, ST-NFR-03/B-017, ST-A11Y-02/B-020, ST-DAT-01/B-021 — đều đang mở) |
 | Blocked | **1** (ST-AI-03 OCR: thiếu model local, xem mục 4) |
 | N/A (loại khỏi phạm vi) | 1 (ST-PWT-02, B-006 bị Reject: đúng thiết kế) |
 | Not Run | **5** (xem mục 4; NR-01, NR-03, NR-04 mới phủ một phần) |
 | Execution rate ((Pass+Fail+Blocked)/(Total−N/A)) | **93.5 %** (72/77) |
-| Pass rate (Pass/Run) | **91.7 %** (66/72) |
-| Lần chạy đầu | 25 case Fail → 20 đã sửa và **re-test Pass**, 1 Reject, 5 còn mở |
-| Lượt 2 (2026-11-05, :3011 cô lập) | Tìm thêm 13 bug (B-010…B-022): 8 đã sửa và re-test Pass; **5 còn mở: B-016, B-017 (Medium); B-018, B-020, B-021 (Low)** |
+| Pass rate (Pass/Run) | **93.1 %** (67/72) |
+| Lần chạy đầu | 25 case Fail → 21 đã sửa và **re-test Pass**, 1 Reject, 4 còn mở |
+| Lượt 2 (2026-11-05/06, :3011 cô lập) | Tìm thêm 13 bug (B-010…B-022): 9 đã sửa và re-test Pass; **4 còn mở: B-016, B-017 (Medium); B-020, B-021 (Low)** |
 
 ### 不具合 / Defect
 
@@ -32,7 +32,7 @@
 | Critical | 1 | 0 |
 | High | 2 | 0 |
 | Medium | 10 | **2** (B-016, B-017) |
-| Low | 9 (5 Closed, 1 Reject, 3 Open) | **3** (B-018, B-020, B-021) |
+| Low | 9 (6 Closed, 1 Reject, 2 Open) | **2** (B-020, B-021) |
 
 ## 2. 画面別結果 / Kết quả theo màn hình
 
@@ -79,7 +79,7 @@
 | B-019 | a11y — drawer "Tạo mới" của Operations: không `role="dialog"`/`aria-modal`, focus không vào drawer, Tab ra trang nền (42/60 lần), Escape không đóng | Medium | Closed | Hook dùng chung `useDialogFocus` (focus vào, giữ Tab, Escape, trả focus) + `role/aria-modal/aria-label` (+5 test). Đo lại: 0/60 ra ngoài, Escape đóng, focus về nút mở. `Drawer.tsx` dùng chung chưa có focus trap, chưa sửa |
 | B-020 | a11y tĩnh: 2 thẻ `<main>` lồng nhau ở mọi màn; ô nhập chỉ có placeholder (Reports 9, Todo 3, Glossary 3, Operations 2); nút không tên (Operations 2, Reports 1) | Low | **Open** | Chưa sửa: bỏ `<main>` thừa ở layout hoặc ở page, thêm `aria-label`/`<label>` |
 | B-017 | Bật `BRSE_API_SECRET` (cách bảo vệ khi mở tunnel) làm giao diện web hỏng toàn bộ và **im lặng**: 13/15 API của trang Operations trả 401, frontend không có mã gửi `X-BrSE-Token` (chỉ Chrome Extension có `getAuthHeaders`) | Medium | **Open** | Cần quyết định thiết kế: nếu Next tự gắn token cho mọi request thì secret mất tác dụng với tunnel. Hướng đúng: Cloudflare Access hoặc đăng nhập; tối thiểu UI nên báo lỗi 401 rõ ràng. Hiện chỉ an toàn khi dùng thuần localhost (secret rỗng) |
-| B-018 | `/api/ai/status` (route công khai) lộ `base_url` nội bộ (172.21.x.x:20128) và danh sách model; `?check_runtime=true` cho phép kích hoạt gọi ra ngoài không cần token | Low | **Open** | Trả bản rút gọn khi chưa xác thực |
+| B-018 | `/api/ai/status` (route công khai) lộ `base_url` nội bộ (172.21.x.x:20128) và danh sách model; `?check_runtime=true` cho phép kích hoạt gọi ra ngoài không cần token | Low | Closed | Route vẫn công khai nhưng trả bản rút gọn `{provider, configured, restricted}` và không gọi runtime khi caller chưa tin cậy (`caller_is_trusted` trong `security.py`). Không đổi hành vi khi dùng local không secret. Test đỏ trước, xanh sau |
 | B-016 | AI chat `/api/ai/chat` chập chờn: combo 9router `free-logic` có member hỏng (`gh/gemini-3.1-pro-preview` → 400 `model_not_available_for_integrator`, không fallback); 3 lần gọi cho 400 / 200 (1.2s) / 503 sau **97s**. Trường `model` trong request bị bỏ qua (luôn `free-logic`) | Medium | **Open** | Gốc ở cấu hình combo 9router (ngoài mã BrSE): gỡ member hỏng khỏi combo. Phía BrSE nên cân nhắc timeout ngắn hơn và retry khi 503 |
 | B-015 | Mở `/minutes/new` → sau ~10s tự tạo bản ghi rỗng trong DB (và hộp thoại `beforeunload` ở trang trống) | Medium | Closed | `hasMinutesDraftChanged` so với snapshot đầu (commit `1403263`, +2 test). Sửa thật vẫn tự lưu sau ~10s |
 
@@ -107,16 +107,16 @@ Quan sát chưa ghi thành bug: Dashboard cho thấy 24 nút/link nhỏ hơn 32p
 |---|---|---|---|
 | Đã chạy 100% | 100 % | 93.5 % (72/77) | ❌ |
 | Pass rate (Pass/Run) | ≥ 98 % | 91.7 % (66/72) | ❌ |
-| Critical/High còn Open | 0 | 0 (còn 2 Medium: B-016, B-017; 3 Low: B-018, B-020, B-021) | ✅ |
+| Critical/High còn Open | 0 | 0 (còn 2 Medium: B-016, B-017; 2 Low: B-020, B-021) | ✅ |
 | NFR hiệu năng | Đạt | Đạt (ST-NFR-01) | ✅ |
-| NFR bảo mật | Đạt | Một phần: API được bảo vệ đúng (ST-NFR-02 Pass) nhưng UI không dùng được khi có secret (B-017) và `ai/status` lộ cấu hình (B-018) | ❌ |
+| NFR bảo mật | Đạt | Một phần: API được bảo vệ đúng (ST-NFR-02 Pass) và `ai/status` không còn lộ cấu hình (ST-NFR-04 Pass, B-018 đã sửa), nhưng UI không dùng được khi có secret (B-017) | ❌ |
 
-**結論 / Kết luận: ❌ CHƯA ĐẠT exit criteria ST.** Lý do: còn 5 hạng mục Not Run (NR-01, NR-03, NR-04 mới phủ một phần), 1 case Fail (AI chat, B-016), 1 case Blocked (OCR) 5 case Fail (B-016/B-017/B-018/B-020/B-021) và NFR bảo mật chưa đạt. Không có bug Critical/High mở; còn 2 Medium (B-016, B-017) và 3 Low (B-018, B-020, B-021).
+**結論 / Kết luận: ❌ CHƯA ĐẠT exit criteria ST.** Lý do: còn 5 hạng mục Not Run (NR-01, NR-03, NR-04 mới phủ một phần), 4 case Fail (B-016/B-017/B-020/B-021), 1 case Blocked (OCR) và NFR bảo mật chưa đạt (B-017). Không có bug Critical/High mở; còn 2 Medium (B-016, B-017) và 2 Low (B-020, B-021).
 
 ## 7. Go / No-Go
 
 - **Dùng nội bộ hằng ngày (single-user, localhost): GO có điều kiện** — không còn lỗi chặn nghiệp vụ.
-- **Release/nghiệm thu chính thức: NO-GO** cho tới khi: (1) xử lý B-016, B-017, B-018 và thông OCR (model local hoặc `GEMINI_API_KEY`), (2) test xong phần còn lại của ST-NR-01..04 trên dữ liệu thử cô lập, (3) quyết định cách bảo vệ khi mở ra ngoài localhost (hiện **không nên mở tunnel** với `BRSE_API_SECRET` vì UI sẽ hỏng; dùng Cloudflare Access hoặc không mở).
+- **Release/nghiệm thu chính thức: NO-GO** cho tới khi: (1) xử lý B-016, B-017 và thông OCR (model local hoặc `GEMINI_API_KEY`), (2) test xong phần còn lại của ST-NR-01..04 trên dữ liệu thử cô lập, (3) quyết định cách bảo vệ khi mở ra ngoài localhost (hiện **không nên mở tunnel** với `BRSE_API_SECRET` vì UI sẽ hỏng; dùng Cloudflare Access hoặc không mở).
 
 ## 7b. NFR đã đo (lượt 2, `:3011`, build production, 1 lần đo, backend ấm)
 
